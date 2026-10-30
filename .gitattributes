@@ -1,0 +1,6 @@
+# Shell scripts run inside Linux (WSL) from a Windows checkout; CRLF breaks them.
+*.sh text eol=lf
+engine/bin/* text eol=lf
+
+# Locked documents: keep the bytes the lock hashed, on every platform.
+docs/design/** -text

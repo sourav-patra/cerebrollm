@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-04",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:17Z",
+ "seconds": 1.55,
+ "prompt_sha256": "2b6ea5b6a72d2ad13b704409d81766cc1c5235ae5c9d1fab5a0268c71b6e8199",
+ "answer": "\"default GPT-5.6+ to Responses\" [promptfoo/0.123.0.md (lines 9-23)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2260,
+  "output": 33
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1624317900
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:57:19.2601671Z",
+  "response": "\"default GPT-5.6+ to Responses\" [promptfoo/0.123.0.md (lines 9-23)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1624317900,
+  "load_duration": 14339100,
+  "prompt_eval_count": 2260,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 968150000,
+  "eval_count": 33,
+  "eval_duration": 253025000
+ }
+}

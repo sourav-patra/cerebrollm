@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 4,
+ "started_utc": "2026-10-29T17:36:40Z",
+ "seconds": 11.12,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "I do not know the specific parameter counts for the Nemotron 3.5 Bolt model in Ollama, as this information is not provided in the context given. The context mentions a \"120B-parameter hybrid Mamba-2/Transformer mixture-of-experts backbone\" for Nemotron 3.5 Super and a \"compact sibling, Nemotron 3.5 Bolt, distills Super down to 74B parameters (9B active),\" but the latter is not explicitly associated with Ollama.\n\nFor accurate information, you may need to refer to the official documentation or source where the model details are specified. [ollama.com/library/nemotron-3.5-bolt] is mentioned as a source, but no direct parameter details for Ollama are provided in the context.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2036,
+  "output": 162
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9245892400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:36:50.0206931Z",
+  "response": "I do not know the specific parameter counts for the Nemotron 3.5 Bolt model in Ollama, as this information is not provided in the context given. The context mentions a \"120B-parameter hybrid Mamba-2/Transformer mixture-of-experts backbone\" for Nemotron 3.5 Super and a \"compact sibling, Nemotron 3.5 Bolt, distills Super down to 74B parameters (9B active),\" but the latter is not explicitly associated with Ollama.\n\nFor accurate information, you may need to refer to the official documentation or source where the model details are specified. [ollama.com/library/nemotron-3.5-bolt] is mentioned as a source, but no direct parameter details for Ollama are provided in the context.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9245892400,
+  "load_duration": 15601300,
+  "prompt_eval_count": 2036,
+  "prompt_eval_cached_count": 106,
+  "prompt_eval_duration": 1001084000,
+  "eval_count": 162,
+  "eval_duration": 8078562000
+ }
+}

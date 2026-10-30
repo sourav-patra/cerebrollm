@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-01",
+ "run": 1,
+ "started_utc": "2026-10-29T17:12:41Z",
+ "seconds": 3.42,
+ "prompt_sha256": "6b24b53d9e74ec4a02d457527687083549c4113cc98dcf294f5d69aa8760a802",
+ "answer": "I do not know the default value of the `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. This setting is specific to the configuration of the `pgvector` extension, which integrates vector search capabilities into PostgreSQL. For precise information, it would be best to consult the official `pgvector` documentation or the configuration files provided with the extension.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 76
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3677247100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:12:44.9151057Z",
+  "response": "I do not know the default value of the `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. This setting is specific to the configuration of the `pgvector` extension, which integrates vector search capabilities into PostgreSQL. For precise information, it would be best to consult the official `pgvector` documentation or the configuration files provided with the extension.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3677247100,
+  "load_duration": 14035900,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 214673000,
+  "eval_count": 76,
+  "eval_duration": 3433939000
+ }
+}

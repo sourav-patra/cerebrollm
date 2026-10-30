@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-07",
+ "run": 5,
+ "started_utc": "2026-10-29T01:56:58Z",
+ "seconds": 13.31,
+ "prompt_file": "runs/prompts/A3/ST-07.txt",
+ "prompt_sha256": "649b84b0105b8fe71efbaddbb7ddf11348d4f5febf344fd8719e94841db2461c",
+ "answer": "To set the embedding model globally, assign it on the `Settings` object. The docs show this pattern:\n\n\"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\n`Settings` is a global singleton that supplies defaults for any component you don't pass in directly: \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nIf you don't set the embedding model, LlamaIndex falls back to `text-embedding-ada-002`. For new projects, the docs recommend choosing a current model explicitly: \"We recommend doing this for new projects.\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\nFor the LLM, the excerpts show the same `Settings` mechanism and an Ollama example, but not the exact `Settings.llm` assignment line, so I can't quote it. The migration guide shows that `Settings` applies to every module: \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex.\" It also imports Ollama: \"from llama_index.llms.ollama import Ollama\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. The LLM is probably set as `Settings.llm = ...`, but please confirm this in the full settings page [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md], which lists the configurable attributes.",
+ "tokens": {
+  "input": 3397,
+  "output": 1912,
+  "thinking": 1364,
+  "cache_read": 3009,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00106349,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8968,
+  "stop_reason": "end_turn",
+  "session_id": "54a79044-008c-43cf-b0f6-cfcd1b1bdc59",
+  "total_cost_usd": 0.00106349,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 3009,
+   "output_tokens": 1912,
+   "output_tokens_details": {
+    "thinking_tokens": 1364
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1912,
+     "cache_read_input_tokens": 3009,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1912,
+    "cacheReadInputTokens": 3009,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00106349,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1364,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To set the embedding model globally, assign it on the `Settings` object. The docs show this pattern:\n\n\"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\n`Settings` is a global singleton that supplies defaults for any component you don't pass in directly: \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nIf you don't set the embedding model, LlamaIndex falls back to `text-embedding-ada-002`. For new projects, the docs recommend choosing a current model explicitly: \"We recommend doing this for new projects.\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\nFor the LLM, the excerpts show the same `Settings` mechanism and an Ollama example, but not the exact `Settings.llm` assignment line, so I can't quote it. The migration guide shows that `Settings` applies to every module: \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex.\" It also imports Ollama: \"from llama_index.llms.ollama import Ollama\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. The LLM is probably set as `Settings.llm = ...`, but please confirm this in the full settings page [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md], which lists the configurable attributes.",
+  "ttft_ms": 7045,
+  "type": "result",
+  "duration_ms": 9094,
+  "uuid": "61e72ac8-3302-4ea3-893b-7bf4bd0f9980",
+  "ttft_stream_ms": 2881,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2881,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

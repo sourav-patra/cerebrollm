@@ -1,0 +1,3023 @@
+{
+  "seed": 27,
+  "sample_size": 150,
+  "snapshot_sha256": "5900cdc76c16d99db0db63b7741ed95dd399043af5e5386e94efa42544ba7c19",
+  "chunks_in_snapshot": 13431,
+  "eligible_chunks": 13382,
+  "skipped_after_five_attempts": [
+    {
+      "node_id": "52ec3c88-92fe-4ef5-ab12-b03594899972",
+      "path": "promptfoo/site/docs/providers/aimlapi.md",
+      "text_sha256": "e0859aef2b9ce096345c85c1f0bbd195884f6d3ea3b29d19516f84d389652f90",
+      "question": "What setting should be adjusted to specify where the AI/ML API will stop generating sequences?",
+      "valid": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the `stop` parameter do in the AI/ML API configuration options?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What should be specified in the configuration to determine where the AI/ML API will cease generating sequences?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 2,
+          "questions": [
+            "What should be set in the configuration to specify where the AI/ML API will stop generating sequences?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 3,
+          "questions": [
+            "What configuration setting should be adjusted to determine where the AI/ML API will cease generating sequences?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 4,
+          "questions": [
+            "What setting should be adjusted to specify where the AI/ML API will stop generating sequences?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        }
+      ]
+    },
+    {
+      "node_id": "4348df4a-d675-4798-a44a-11395e2e06c0",
+      "path": "promptfoo/site/docs/contributing.md",
+      "text_sha256": "0bcd0ed0c86947cd8fb8d5b0c77df0ec70373300d7e4e4451395ed88916568e3",
+      "question": "What actions should be taken to ensure code quality and consistency for JavaScript/TypeScript, CSS/HTML, and Markdown files before submitting a pull request?",
+      "valid": false,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What tools and commands should be used for linting and formatting JavaScript/TypeScript, CSS/HTML, and Markdown before submitting a pull request?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What steps should be taken to ensure code quality and consistency for JavaScript/TypeScript, CSS/HTML, and Markdown before submitting a pull request?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 2,
+          "questions": [
+            "What actions should be taken to ensure code quality and consistency for JavaScript/TypeScript, CSS/HTML, and Markdown files before submitting a pull request?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 3,
+          "questions": [
+            "What steps should be taken to ensure code quality and consistency for JavaScript/TypeScript, CSS/HTML, and Markdown files before submitting a pull request?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 4,
+          "questions": [
+            "What actions should be taken to ensure code quality and consistency for JavaScript/TypeScript, CSS/HTML, and Markdown files before submitting a pull request?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "index": 0,
+      "node_id": "cb8871e4-5f0c-4881-9e80-e012d7d4866e",
+      "path": "promptfoo/site/docs/providers/quiverai.md",
+      "text_sha256": "e53b9cf1368065af724626ed8153d57e31f9199e0af17e9024e3a58756ec47da",
+      "question": "What configuration settings are used to ensure that the generated SVG matches the style of the provided reference images?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What configuration settings are used to ensure that the generated SVG matches the style of the provided reference images?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "node_id": "9732fd07-fec4-4418-92b8-c0b69e9c70e5",
+      "path": "promptfoo/site/docs/providers/orcarouter.md",
+      "text_sha256": "1987eb2cff2f6886aa5e10f8c2705c3a34ad93e1318bccafb3be62d7ed409133",
+      "question": "What does the adaptive router model in OrcaRouter do for each request?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `orcarouter/auto` model in OrcaRouter?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What does the adaptive router model in OrcaRouter do for each request?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "node_id": "dbddf55c-3b94-4568-b7e7-df77ab37c912",
+      "path": "promptfoo/site/docs/providers/openai-codex-app-server.md",
+      "text_sha256": "5709fb305b1def55ea3169fa0432421f4bca30884dfa4c9103b5ca82e101c301",
+      "question": "What are the configuration settings for the provider that specify its mode and approval policy?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What configuration settings are specified for the provider in the `promptfooconfig.yaml` file?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What are the configuration settings for the provider that specify its mode and approval policy?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "node_id": "56ceceae-ad36-4690-89e3-88db393ccedc",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "2ac1faef5c265f92b106c0f0e3a7d6788162b2f55d83760554ce24b7fca8e25c",
+      "question": "What features were added or fixed in the `llama-index-multi-modal-llms-huggingface` and `llama-index-node-parser-docling` versions?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What features were added or fixed in the `llama-index-multi-modal-llms-huggingface` and `llama-index-node-parser-docling` versions?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "node_id": "599371a0-f864-4225-bb9e-30d676c85063",
+      "path": "promptfoo/site/docs/red-team/llm-agents.md",
+      "text_sha256": "1b6dc4c2b038009cf50d7c7da993e799fd3beb125331d674ff1b178732473e90",
+      "question": "What is the purpose of the custom policy plugin in the automated detection configuration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the custom policy plugin in the automated detection configuration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "node_id": "3c6dd93c-851c-4cea-a04f-eb9cdbec5a42",
+      "path": "ollama/docs/capabilities/vision.md",
+      "text_sha256": "026e788c912eb8bdc1dae8c7dc02f1ba9f044548308ff479f66a32b1148b5555",
+      "question": "How should image data be formatted when sending it to Ollama's API using the REST API?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How should image data be formatted when sending it to Ollama's API using the REST API?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "node_id": "16cc165e-5cd0-4d01-b9ea-edf5a730c606",
+      "path": "promptfoo/site/docs/providers/openai.md",
+      "text_sha256": "3f949d034a3c91b5bd92dbadf692f7d6c2bda1b04ccd4a6f0d2ebd26ea131380",
+      "question": "What is the behavior of the `PROMPTFOO_EVAL_TIMEOUT_MS` environment variable in OpenAI?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the behavior of the `PROMPTFOO_EVAL_TIMEOUT_MS` environment variable in OpenAI?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "node_id": "144b31ff-85c4-4a5b-9497-2e1423518538",
+      "path": "promptfoo/site/docs/guides/google-cloud-model-armor.md",
+      "text_sha256": "8f6303bac0bf2e188686b5d59742341405ea92dc9af56b73f5dee474fcce1c98",
+      "question": "What type of content does the CSAM filter in Google Cloud Model Armor detect?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What type of content does the CSAM filter in Google Cloud Model Armor detect?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "node_id": "4f5bd896-09f7-4a93-87a4-77fed7229230",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "7cf811958cd4294d569c19a9c2ac73a94d2b8f96d5e8f589b1bf3d757361a87b",
+      "question": "How many updates were made to the uv group across 31 directories in the context provided?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How many updates were made to the uv group across 31 directories in the context provided?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "node_id": "a9980115-e10b-49b4-8a29-55309a89fff7",
+      "path": "promptfoo/site/docs/model-audit/scanners.md",
+      "text_sha256": "1490973e80a535e1a620ff5145331efa81ec5a7e3805f7828fb45a54965c953a",
+      "question": "What are the potential security risks associated with the new `.keras` ZIP format introduced in Keras 3?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the potential security risks associated with the new `.keras` ZIP format introduced in Keras 3?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "node_id": "68533c09-232b-46df-8b84-b20c4a9ea6c0",
+      "path": "promptfoo/site/docs/providers/xai.md",
+      "text_sha256": "b116995c158d9f9d9cda2caf819315a9710c4601b41caca23d7074cbcdb70fde",
+      "question": "What is the recommended alternative to `grok-code-fast-1` for code workloads, and how should it be configured in Promptfoo?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the recommended alternative to `grok-code-fast-1` for code workloads, and how should it be configured in Promptfoo?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "node_id": "4ed331d1-39d1-4ca4-8d5f-2aecbb6fffd5",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "17d56dd6fae2541e4af24aafccda24e87e2e16ae4dcce524c79c476ff41691f8",
+      "question": "What is the common action taken for both `llama-index-embeddings-openai-like` and `llama-index-embeddings-openvino-genai` as indicated in the context?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the common action taken for both `llama-index-embeddings-openai-like` and `llama-index-embeddings-openvino-genai` as indicated in the context?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "node_id": "74eaac26-94d8-457c-a1af-5f665ccac40a",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "1f76c071aeea8dbcf7e2dc5d6ba1be5c319b59c608a2ce8b8056e8fd2c7751c7",
+      "question": "What change was made to the default model in `llama-index-llms-gemini` version 0.1.12?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What change was made to the default model in `llama-index-llms-gemini` version 0.1.12?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "node_id": "ff58eac6-b87d-40da-8218-442a1cdcef8a",
+      "path": "promptfoo/site/docs/model-audit/index.md",
+      "text_sha256": "f136fa369c65a01f50f704e32f3e252ac6ea896970b500b165d81275d601fb36",
+      "question": "What are the file extensions associated with the Pickle format for Python serialization?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the file extensions associated with the Pickle format for Python serialization?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "node_id": "7ea93636-a6fd-436d-92a3-4f79272e7fd5",
+      "path": "promptfoo/site/docs/usage/self-hosting.md",
+      "text_sha256": "6f46f4b0a2fe869c09b4c8482969daa5ead59a0a2c5ba54e7fd595b6b8edf9f5",
+      "question": "How do you configure the `promptfoo` CLI to communicate with a self-hosted instance instead of the default cloud service?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How do you configure the `promptfoo` CLI to communicate with a self-hosted instance instead of the default cloud service?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "node_id": "38780c2b-8513-4a2c-a769-91067523f6a1",
+      "path": "promptfoo/site/docs/usage/node-api-reference.md",
+      "text_sha256": "928ba0d3767c36a333c86977bbe40e805b173edfb6083de1070128a25ec66d17",
+      "question": "What is the purpose of the `loadApiProviders` function, and how can it be used to configure and utilize multiple API providers in parallel?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `loadApiProviders` function, and how can it be used to configure and utilize multiple API providers in parallel?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "node_id": "4d11e85a-29e6-46ce-9431-d5ef92e0eb39",
+      "path": "llama_index/docs/src/content/docs/framework/community/faq/chat_engines.md",
+      "text_sha256": "2a68c3a395d18a68d94af188480bcfa820c8202d357da47ecfc214eaa71d06cd",
+      "question": "How can I make a bot retain context while answering using LlamaIndex?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can I make a bot retain context while answering using LlamaIndex?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "node_id": "4a352978-a2c8-415c-a305-c02877ab3496",
+      "path": "llama_index/docs/api_reference/api_reference/query_engine/multi_step.md",
+      "text_sha256": "7391e9b0e534484ca6b988a9d61e2472b28b4fc2449f1a5b0d9c3ee1f84f1c07",
+      "question": "What are the options available under `llama_index.core.query_engine`?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the options available under `llama_index.core.query_engine`?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "node_id": "9ab8683b-8d6e-42e9-97ed-b4713b9b425b",
+      "path": "llama_index/docs/src/content/docs/framework/community/integrations/graph_stores.md",
+      "text_sha256": "1eaa7cc79b71c3d68d74c390f57bbf1902e0106c0931711da4e6e2402877ad5d",
+      "question": "What are the types of Amazon Neptune integrations supported as graph store integrations?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the types of Amazon Neptune integrations supported as graph store integrations?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "node_id": "1621b052-e063-4264-815c-9d0465bfcf31",
+      "path": "promptfoo/site/docs/releases.md",
+      "text_sha256": "db552ab653e63d4fae85696d368939bae3352b7f9e9b19999846fb722984f7ec",
+      "question": "What are the new plugins introduced for red teaming telecommunications AI systems and testing RAG systems' source attribution?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the new plugins introduced for red teaming telecommunications AI systems and testing RAG systems' source attribution?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "node_id": "e55d9aab-952e-4e49-b51d-90dbb109cce5",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "7e5049a0338765e8185bd9534e42752368c543cb7c33b954a86d4090f038c371",
+      "question": "What changes were made in version 0.4.0 of `llama-index-multi-modal-llms-azure-openai` to prevent code duplication?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What changes were made in version 0.4.0 of `llama-index-multi-modal-llms-azure-openai` to prevent code duplication?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "node_id": "c80491e2-073f-4754-b28a-3fa1789fcfd5",
+      "path": "promptfoo/site/docs/guides/choosing-best-gpt-model.md",
+      "text_sha256": "9587e2c794512cb40d6133156b921e82c6df2c0bb770f58ec6054bf24de7c6d0",
+      "question": "What are the global latency and cost requirements specified in the final eval configuration for the inference process?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the global latency and cost requirements specified in the final eval configuration for the inference process?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "node_id": "b390882a-b290-4071-8be6-84c00efe1ac8",
+      "path": "llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md",
+      "text_sha256": "ef3989de917e5c21b1f2486fee4385285a4d4410bfec3765af98801adf4bedad",
+      "question": "What are the different vector stores supported by LlamaIndex, and how are they constructed in Python?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the different vector stores supported by LlamaIndex, and how are they constructed in Python?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "node_id": "cd0695fa-1886-45af-a04f-151ca0696ccf",
+      "path": "ollama/docs/context-length.md",
+      "text_sha256": "cb9a07aafe82ae55235804f842a1dd58fb9313884041da28aa8acf023114473f",
+      "question": "How does setting a larger context length affect the memory requirements for running a model, and what should be ensured before increasing it?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does setting a larger context length affect the memory requirements for running a model, and what should be ensured before increasing it?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "node_id": "183cc4d9-a7c6-4ea6-8d8d-cdedbb0af984",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "a289ef8194e0d52b13a91c2ec1cc0d41e714d5af961f6e0b35d3081b8ae87fc8",
+      "question": "What new features were introduced in version 0.9.24 of the software?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What new features were introduced in version 0.9.24 of the software?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "node_id": "bfc89274-90d2-4d56-bde6-c08a90145915",
+      "path": "ollama/docs/docker.md",
+      "text_sha256": "63e9e4772179469a93ad9e76ab2dddf6b330bb88ccf8e0ceb9f44a5c8926cf8a",
+      "question": "What command is used to run the Ollama container using only the CPU?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What command is used to run the Ollama container using only the CPU?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "node_id": "857e7426-817d-4e48-8bf2-9c84608ba2f0",
+      "path": "promptfoo/site/docs/red-team/plugins/memory-poisoning.md",
+      "text_sha256": "160164a026d8f50fa785769abae24022a9c0a0ca2ae58c0b5640373af7b0db5c",
+      "question": "What are some of the key concepts related to vulnerabilities and management in large language models (LLMs) as discussed in the context?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are some of the key concepts related to vulnerabilities and management in large language models (LLMs) as discussed in the context?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "node_id": "f2df2517-bb4a-4014-98e7-ba2f1f820376",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/deterministic.md",
+      "text_sha256": "46de9d0d19ab4d01e74d027ae8ce876430bd75b50139df90f66b226330f945d3",
+      "question": "What condition must be met for the [starts-with](#starts-with) assertion type to return true?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What condition must be met for the [starts-with](#starts-with) assertion type to return true?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "node_id": "831f89fd-3691-4e50-93b3-2cf68cd5d5a7",
+      "path": "promptfoo/site/docs/guides/llm-as-a-judge.md",
+      "text_sha256": "9601f150c0a77b7ecec5254b6d5228dded3053edfe37603a41b01d24feb6f752",
+      "question": "What steps are included in the CI integration workflow for evaluating pull requests using the `promptfoo-action`?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What steps are included in the CI integration workflow for evaluating pull requests using the `promptfoo-action`?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "node_id": "e8d05eeb-284b-44df-88ac-ce5d60874ef6",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/deterministic.md",
+      "text_sha256": "3f8252af56970575b2d50828635d80964d43633105414911aeb8a7612aee37eb",
+      "question": "What condition must be met for the assertion type [trajectory:tool-args-match] to return true?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What condition must be met for the assertion type [trajectory:tool-args-match] to return true?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "node_id": "107da9b3-3e7e-4564-9b46-120c60363a71",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "dd5d5be4c398158d7420a2fc782e922174621741ee40cb12396b16a3da3064ba",
+      "question": "What changes were made in the llama-index-embeddings-databricks version 0.5.1 regarding Python 3.9 and version updates?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What changes were made in the llama-index-embeddings-databricks version 0.5.1 regarding Python 3.9 and version updates?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "node_id": "ce01987e-195f-442d-b104-237907ab0423",
+      "path": "promptfoo/site/docs/red-team/strategies/other-encodings.md",
+      "text_sha256": "ddbdfdf8c36a68493cf561c1a28f12bcd45693ef355c8ec5a5bd24a5802b500c",
+      "question": "How are standard ASCII characters converted to Morse code, and what happens to spaces between words in this conversion?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How are standard ASCII characters converted to Morse code, and what happens to spaces between words in this conversion?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "node_id": "89d337f7-6599-460d-b5c3-f855d8293517",
+      "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+      "text_sha256": "5977ed9884a70fc6fb772c7a55385ef332460d027b1876a305fca9ee2195d3bb",
+      "question": "What is the evidence source type for the OpenAI Codex SDK?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the evidence source type for the OpenAI Codex SDK?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "node_id": "6d49d8d3-e9af-4496-8e4b-137fcb3a730e",
+      "path": "promptfoo/site/docs/red-team/plugins/rag-poisoning.md",
+      "text_sha256": "c74fd236107a44d4728454be4772e5562ecc54d5d75abff3f075efa671265cb6",
+      "question": "How does the directory structure of poisoned documents compare to the original input files, and how are files generated from direct text input named?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does the directory structure of poisoned documents compare to the original input files, and how are files generated from direct text input named?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "node_id": "04356448-58fe-4b1a-91e8-659d1eb8842c",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "5cd7133817c2874d768e3d09403177077f1e47302e15177803b1c656fd2f0677",
+      "question": "What new features were introduced in version 0.9.9 of the software?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What new features were introduced in version 0.9.9 of the software?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "node_id": "c997c3cb-bd25-4e42-959e-91bfe1008b77",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "f08e068b4e9bf1c493790074f520a4ce1f36ec5c6ac96d93d48649151f8280a6",
+      "question": "What version of `llama-index-embeddings-azure-inference` introduced support for `api_version` and Azure AI model inference service?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What version of `llama-index-embeddings-azure-inference` introduced support for `api_version` and Azure AI model inference service?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "node_id": "9695c00c-c268-4bc7-b011-b686e3d0c9c3",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "7df34eaa2443f33293a7ee07fcd23f28f3ac824786897f6926ba7cf51a3f7034",
+      "question": "What new integration was added in the `llama-index-indices-managed-lancedb` version 0.1.0?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What new integration was added in the `llama-index-indices-managed-lancedb` version 0.1.0?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "node_id": "4ed52386-9680-4acd-b340-df8674778779",
+      "path": "promptfoo/site/docs/red-team/owasp-api-top-10.md",
+      "text_sha256": "085e1c11ce116eb81f86fa1aaf928691d09af1e030a30dee463a6b6f13953732",
+      "question": "What vulnerability occurs when an API returns more data than necessary or allows users to modify object properties they shouldn't access?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What vulnerability occurs when an API returns more data than necessary or allows users to modify object properties they shouldn't access?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "node_id": "2a5a4b2d-ff53-4bfa-a515-5fc794e8a1ae",
+      "path": "promptfoo/site/docs/configuration/rate-limits.md",
+      "text_sha256": "f439c195b54e3e00f8b10f99b7eeecd10acded3c89777b96b61f92ec7de41fdd",
+      "question": "Which rate limit headers does Promptfoo parse from major providers?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "Which rate limit headers does Promptfoo parse from major providers?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "node_id": "c04db15e-e615-4d7e-8f03-1cfe1f2dba11",
+      "path": "ollama/docs/template.md",
+      "text_sha256": "e699de5f5edc8654e7d55309fdc4387e7194823797a7018a5e09ce971fc6911d",
+      "question": "What is the purpose of the `Codestral [22B]` template with the `fill-in-middle` feature?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `Codestral [22B]` template with the `fill-in-middle` feature?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "node_id": "69e3b8e1-09ec-41e0-bf70-118c7d826494",
+      "path": "promptfoo/site/docs/providers/anthropic.md",
+      "text_sha256": "0a284c43202fe6b5b6ebd65c0f4d79e7cc463d8734f21e3023e40aa5ffe9818b",
+      "question": "Which cloud platforms are integrated with Claude as per the examples provided?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "Which cloud platforms are integrated with Claude as per the examples provided?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "node_id": "bf66cd07-3467-41cc-84c1-01b724a94b93",
+      "path": "promptfoo/site/docs/red-team/plugins/insurance.md",
+      "text_sha256": "50effcd323ab5516bd7a1a2c652dfea81722414e85bfc991f7a79da5fea6d9e2",
+      "question": "What are the specific compliance functions tested by the Insurance Red-Teaming Plugins in AI systems operating within the insurance industry?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the specific compliance functions tested by the Insurance Red-Teaming Plugins in AI systems operating within the insurance industry?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "node_id": "cbf7d64e-f228-4f6f-9b98-8f85b405753a",
+      "path": "promptfoo/site/docs/red-team/llm-agents.md",
+      "text_sha256": "230e78a923ee2823015d18ef12b9a160339a3158b398593df3530cb3283c31d9",
+      "question": "What trajectory evidence can indicate that an agent has exfiltrated or beamed out during a red team test?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What trajectory evidence can indicate that an agent has exfiltrated or beamed out during a red team test?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "node_id": "46d349d5-84bc-469a-93c6-ff7cfa27c76c",
+      "path": "llama_index/docs/api_reference/api_reference/tools/brightdata.md",
+      "text_sha256": "e99ff3866f08526c053f9e419af42a63b1c69c1180bd7e458ee3c81ad7cce53b",
+      "question": "What are the members included in the BrightDataToolSpec options for llama_index.tools.brightdata?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the members included in the BrightDataToolSpec options for llama_index.tools.brightdata?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "node_id": "dce363b5-e6c4-459e-b2c8-5a5e24b1a57a",
+      "path": "promptfoo/site/docs/red-team/plugins/tool-discovery.md",
+      "text_sha256": "2aca80564438ec75f50a2b2b12ce0aa5c11402e1fb833bcd9330850709d34025",
+      "question": "What are the potential security risks associated with an AI system revealing its tools, functions, or API calls?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the potential security risks associated with an AI system revealing its tools, functions, or API calls?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "node_id": "a493e6fa-0880-4420-9916-d7bf5578e447",
+      "path": "promptfoo/site/docs/providers/python.md",
+      "text_sha256": "482d518c18e8e524973496f1a35b3eebcda5591df90cbb1779e917927e914879",
+      "question": "What should you do next to learn about creating custom checks and integrating continuous integration and deployment processes?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the next steps for learning about custom assertions and setting up CI/CD integration?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What should you do next to learn about creating custom checks and integrating continuous integration and deployment processes?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "node_id": "2b4ce8d5-8845-43de-9eb3-9f111f0c4d17",
+      "path": "llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md",
+      "text_sha256": "7f67f8c27bf2306ef642a8e6fe702ee633b41d039a67b9f3537c993e9487269b",
+      "question": "Which classes have been deprecated in favor of `AgentWorkflow` and `Workflows`, and what are their replacements?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "Which classes have been deprecated in favor of `AgentWorkflow` and `Workflows`, and what are their replacements?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "node_id": "1ed43b05-7c5a-471c-a70b-abee5318211f",
+      "path": "llama_index/docs/src/content/docs/framework/understanding/putting_it_all_together/chatbots/building_a_chatbot.md",
+      "text_sha256": "fa1947243df4b697797b7e5615403a0ada29a3a84f6e2839f46b062b401cf54f",
+      "question": "What is the process for setting up a chatbot agent using a `FunctionAgent` with OpenAI API function calling, and how are the tools for querying SEC 10-K documents for Uber integrated into this setup?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the process for setting up a chatbot agent using a `FunctionAgent` with OpenAI API function calling, and how are the tools for querying SEC 10-K documents for Uber integrated into this setup?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "node_id": "7ab476b1-8d8c-4bf7-9a05-252443029c64",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/deterministic.md",
+      "text_sha256": "53d8e8f2e3b7cbc66d17fb94021b293151452a9601c510c8f60d9abb9e596117",
+      "question": "What is the difference between `perplexity-score` and `perplexity`, and how does `perplexity-score` facilitate comparison across multiple GPT models?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the difference between `perplexity-score` and `perplexity`, and how does `perplexity-score` facilitate comparison across multiple GPT models?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "node_id": "ec8b9056-5797-415c-8203-66f8272bb93c",
+      "path": "llama_index/docs/api_reference/api_reference/tools/code_interpreter.md",
+      "text_sha256": "e6c6287f49237fcbff50d14ffcae21d5a28fd08c4192b1c0b4fb0f8901df6ab6",
+      "question": "What tool specification is included in the `llama_index.tools.code_interpreter` options?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What tool specification is included in the `llama_index.tools.code_interpreter` options?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "node_id": "5e466016-7cda-4d7d-90e7-5fcd17f47850",
+      "path": "cerebrollm/research/model-study/sources/phi4.md",
+      "text_sha256": "7b69873974c85e333249d800e109427390628ff513d2664d4389b8a7a5b8af95",
+      "question": "What is the MMLU benchmark score for the GPT-4o model according to the Phi-4 Model Card?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the MMLU benchmark score for the GPT-4o model according to the Phi-4 Model Card?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "node_id": "ebed073a-b93b-4ec0-8cb9-ed0d7e40536c",
+      "path": "promptfoo/site/docs/red-team/configuration.md",
+      "text_sha256": "08c3b569a9fa3d9d3e5ac9f30911a533bd5e2344f359b589bd624fb25da0bab3",
+      "question": "How can you ensure that a provider accesses test data files as file contents rather than plain strings in a configuration file?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can you ensure that a provider accesses test data files as file contents rather than plain strings in a configuration file?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "node_id": "f9a60ac3-5d2f-4293-ba42-e9f466fe3f2f",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "345d78b5f3ab5a308658f62d4cd0be7d80ed5e1e4acdde6ddeed7ee1ae99cbd2",
+      "question": "What updates and fixes were made in version 0.6.19 of `llama-index-llms-anthropic` to support Claude 4 in Anthropic LLM?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What updates and fixes were made in version 0.6.19 of `llama-index-llms-anthropic` to support Claude 4 in Anthropic LLM?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "node_id": "0b8ee5f8-c5f6-4149-acd8-01f0d1984e56",
+      "path": "llama_index/docs/src/content/docs/framework/community/integrations/uptrain.md",
+      "text_sha256": "29879c38f348e16a21bc5c2e02f8a24e3a696c1a51d0b1a76ee67c66d0083431",
+      "question": "How does the context reranking evaluation determine if the re-ranked nodes are more relevant to the query than the original order?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does the context reranking evaluation determine if the re-ranked nodes are more relevant to the query than the original order?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "node_id": "f318d4f5-df6f-4b74-8e59-6c891fd6145a",
+      "path": "ollama/docs/integrations/marimo.md",
+      "text_sha256": "3aebf36da8308024c5eb11276903f02a01f454dd473ec76932f06c77668cd8a7",
+      "question": "How can you configure Ollama for AI chats and inline code completion in marimo?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can you configure Ollama for AI chats and inline code completion in marimo?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "node_id": "d561eeff-c418-4568-9c53-dc66504a2087",
+      "path": "promptfoo/site/docs/providers/claude-agent-sdk.md",
+      "text_sha256": "c9340ab6cf512205bf9f1cd85d8a2551f7fd8adbb7599e1aafe33c3866eb41c5",
+      "question": "What does the `deny` behavior do when using the Convenience Option in the Claude Agent SDK's AskUserQuestion Tool?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the `deny` behavior do when using the Convenience Option in the Claude Agent SDK's AskUserQuestion Tool?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "node_id": "a6aeab6f-5083-4e7b-b9bc-0eedd0eadb40",
+      "path": "llama_index/docs/src/content/docs/framework/understanding/agent/streaming.md",
+      "text_sha256": "f3d7d49c2c24b5eae4d96c691e7f4335a73bf2f658815d5b6738532ecda0eefc",
+      "question": "How can you provide real-time feedback to users about the progress of an agent using `AgentWorkflow` in Python?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can you provide real-time feedback to users about the progress of an agent using `AgentWorkflow` in Python?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "node_id": "1a74d01a-3591-4d19-8200-a86571b7aae2",
+      "path": "promptfoo/site/docs/providers/openai.md",
+      "text_sha256": "5527b0a961049f19304e8f1cfd2902ed8021676210369d95ae85629c3a7497f6",
+      "question": "What is the Provider ID for the text to speech task using the GPT-4o-mini-tts model?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the Provider ID for the text to speech task using the GPT-4o-mini-tts model?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "node_id": "3478bcf9-f9ac-4403-a268-95c81def91e0",
+      "path": "promptfoo/site/docs/providers/claude-agent-sdk.md",
+      "text_sha256": "cd661f3c1ab9470bc406f4c2c89241ec6061269b19e16cdd49289c4af87e7841",
+      "question": "What is the default value for the `agent` parameter in the Claude Agent SDK?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the default value for the `agent` parameter in the Claude Agent SDK?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "node_id": "90583231-369a-437b-af99-03bd9160e7ab",
+      "path": "promptfoo/site/docs/usage/node-api-examples.md",
+      "text_sha256": "93272ed6ab0d17a07431c227a921bd96693d9a03cf041342181015c6dfdf2872",
+      "question": "How does the assertion in the provided TypeScript code evaluate the quality of a response based on technical content, provider information, token usage, and latency?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does the assertion in the provided TypeScript code evaluate the quality of a response based on technical content, provider information, token usage, and latency?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "node_id": "de2f57ec-d690-4fb1-92be-7b29aba28280",
+      "path": "promptfoo/site/docs/usage/troubleshooting.md",
+      "text_sha256": "bae975799e552c76fbe0ff13f53dbed2669aa39cf7634bcf21b76fc8aa5e30b5",
+      "question": "How can you customize the directory where log files are stored when using Promptfoo?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can you customize the directory where log files are stored when using Promptfoo?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "node_id": "2ece3378-c48c-48d9-82a0-75222ef59b4e",
+      "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+      "text_sha256": "ae4f9ef8f885e5987ea1f7829169bc2fc7278e3ed9997355b4ad4ef5800491fc",
+      "question": "What are the required properties for each bug in the structured bug report generated by the configuration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the required properties for each bug in the structured bug report generated by the configuration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "node_id": "a9be9230-7bea-43d6-8c75-e6092e6ed0ee",
+      "path": "promptfoo/site/docs/providers/xai.md",
+      "text_sha256": "833524e48c37e130d93cdaf063d44e3fca24b9e944cbc58229291a76f4c28bc0",
+      "question": "What does the `store` parameter in the Responses API Configuration indicate?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the `store` parameter in the Responses API Configuration indicate?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "node_id": "0ff0ce36-1df2-4ce9-83b0-fa7bfab3e8b7",
+      "path": "llama_index/docs/src/content/docs/framework/module_guides/storing/vector_stores.md",
+      "text_sha256": "6fd81247fd0b6c93d306336a3d455acbe2b909577fe8dd121b8b3df10884b86f",
+      "question": "Which vector store supports metadata filtering, hybrid search, and the ability to delete and store documents?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "Which vector store supports metadata filtering, hybrid search, and the ability to delete and store documents?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "node_id": "355211d1-2d5d-4c34-8959-feba8b5313cf",
+      "path": "promptfoo/site/docs/red-team/plugins/insurance.md",
+      "text_sha256": "31730505d7372463a5ec523ab7a9a45b2386805ed4ff5ef6bec0e3f96ae9f7dd",
+      "question": "What types of systems and platforms can benefit from using plugins to test for data protection and compliance in the insurance and healthcare industries?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What types of systems and platforms can benefit from using plugins to test for data protection and compliance in the insurance and healthcare industries?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "node_id": "ff113755-23ee-4a73-b548-01de9c4a17b8",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/index.md",
+      "text_sha256": "98122bcb0aa3979a20cde0c66df24de8f3c7746dc1dee4aed6ebea83238e3624",
+      "question": "What does the assertion type [trajectory:step-count] return true for?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the assertion type [trajectory:step-count] return true for?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "node_id": "04fe6af3-6461-43e0-9b76-b6abb6251799",
+      "path": "promptfoo/site/docs/integrations/looper.md",
+      "text_sha256": "aa8158ca9e87ffd61d5844566a2dc8ed1a0abc3503ab7d8819eaab793ea887ed",
+      "question": "What are the essential software versions and tools needed to configure a system capable of executing workflows, particularly focusing on a JavaScript runtime environment and a command-line tool for processing JSON data?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the prerequisites needed for setting up a Looper installation with workflow execution enabled, specifically regarding Node.js and jq versions?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What are the necessary software versions and tools required to set up a system with workflow execution capabilities, specifically focusing on Node.js and a command-line JSON processor?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 2,
+          "questions": [
+            "What are the essential software versions and tools needed to configure a system capable of executing workflows, particularly focusing on a JavaScript runtime environment and a command-line tool for processing JSON data?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "node_id": "8df12a45-82d0-4da6-8b8c-67ed713597d2",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/model-graded/pi.md",
+      "text_sha256": "f5cded1a57c412c86bb9d2058acd5e169743a4e01bc372ed21e85785961cbd22",
+      "question": "How do you set up the `WITHPI_API_KEY` environment variable for using Pi?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How do you set up the `WITHPI_API_KEY` environment variable for using Pi?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "node_id": "f4279cb4-b577-45df-bb52-0fd4bd8ab8f6",
+      "path": "promptfoo/site/docs/guides/evaluate-openai-agents-python.md",
+      "text_sha256": "69ed53f8638c0930e261877bbf56231f40c9a03ced1a860d1c643850f35ce5a1",
+      "question": "What are the default settings for the `codex_tool` when integrating it with a Python SDK agent for repository inspection tasks?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the default settings for the `codex_tool` when integrating it with a Python SDK agent for repository inspection tasks?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "node_id": "2e9ec8a5-8e6b-4dff-a0e6-ccadb5ae130c",
+      "path": "promptfoo/site/docs/providers/vertex.md",
+      "text_sha256": "6f7a49b0b679b8bead5eb2a6dc3a939790cdbc52dec3c11d849b41485292723f",
+      "question": "What should you do if you encounter an \"invalid_grant\" error with the description \"invalid_rapt\" during an API call?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What should you do if you encounter an \"invalid_grant\" error with the description \"invalid_rapt\" during an API call?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "node_id": "6c4e9b23-9d08-450c-979e-3eaadcac1307",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "bda9942f583f9859a2aa76151ecb71bba3816b70a826e3b839c958710fc431ff",
+      "question": "What was the purpose of the update labeled \"vbump all the things\" in the context of llama-index-llms-perplexity and llama-index-llms-portkey?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What was the purpose of the update labeled \"vbump all the things\" in the context of llama-index-llms-perplexity and llama-index-llms-portkey?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "node_id": "b3e77ebc-25b1-4092-825d-de2f80ebc065",
+      "path": "promptfoo/site/docs/providers/google.md",
+      "text_sha256": "d3e0a3f8a5a3b3b0952c88a30739348daad6dd00861dfc3a23f60f975184c4b7",
+      "question": "What are the key features of a system that supports real-time bidirectional communication, multimodal capabilities, and low-latency interactions?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the key features of a system that supports real-time bidirectional communication, multimodal capabilities, and low-latency interactions?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "node_id": "b41f98e8-36a2-4adf-9c12-4c6049e42c13",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "44a5eaa14ef20794aeca4e938345e1ea41fc5ed29714825b4f741dc0c9c3d6ab",
+      "question": "How many times was the \"uv group\" bumped across directories in the updates for llama-index-packs-gmail-openai-agent version 0.5.0?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How many times was the \"uv group\" bumped across directories in the updates for llama-index-packs-gmail-openai-agent version 0.5.0?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "node_id": "8292f1a3-99a1-406c-9362-c6d37a72b5fa",
+      "path": "promptfoo/site/docs/usage/node-api-quick-reference.md",
+      "text_sha256": "f6c92cab1e435b48bf9b8160de56137ce0f710a025bb2747ddf8f4adc4e716fe",
+      "question": "How does the code ensure that the evaluation of `testSuite` is performed within a specific cache namespace?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does the code ensure that the evaluation of `testSuite` is performed within a specific cache namespace?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "node_id": "142f47ab-3990-4d87-80e4-f62e3ee95d02",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/javascript.md",
+      "text_sha256": "a38c48682cfe05a79446237afae101e5348dbdf04a39f47590d39765a0ffb344",
+      "question": "What are the possible return types for a JavaScript function in the context of grading, and how are numeric values and component results handled within these types?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the possible return types for a JavaScript function in the context of grading, and how are numeric values and component results handled within these types?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "node_id": "602da9fd-8660-40c1-b062-b32fb4e0d1ee",
+      "path": "ollama/docs/gpu.md",
+      "text_sha256": "27c2d31ff45eaf518aaacf11498ce1ea4054060ed3ef27e5a2af2c9e594b58f3",
+      "question": "What is an example of a GPU that corresponds to the LLVM target gfx1030 for AMD Radeon on Linux?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is an example of a GPU that corresponds to the LLVM target gfx1030 for AMD Radeon on Linux?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "node_id": "89445716-614c-452f-b4a5-be19f8c689ce",
+      "path": "promptfoo/site/docs/red-team/owasp-llm-top-10.md",
+      "text_sha256": "d106afb89d35e3169d30cda66aab8fa1be2fa79d999e73e9a409be19a79ff6f2",
+      "question": "What are some methods Promptfoo uses to detect the effects of data poisoning in language models?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are some methods Promptfoo uses to detect the effects of data poisoning in language models?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "node_id": "932dbe7c-7ec8-45d9-9177-01a32ff0d578",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "4a5f6019cc703ff367fb3341bad104c57dd1e1ab57e3482f288deb363f5e43d9",
+      "question": "What changes were made to the Confluence integration in the llama-index-readers-confluence version 0.6.0?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What changes were made to the Confluence integration in the llama-index-readers-confluence version 0.6.0?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "node_id": "6e338f07-99ff-4c7e-9576-ec19a4cdc998",
+      "path": "promptfoo/site/docs/guides/evaluate-crewai.md",
+      "text_sha256": "a6a8038d4e2409c5717f8842e0b8d956728f224fb810754f10706ec6df1d7ab7",
+      "question": "What are the steps taken to configure the CrewAI recruitment agent to ensure it returns structured candidate data and how are these steps validated?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the steps taken to configure the CrewAI recruitment agent to ensure it returns structured candidate data and how are these steps validated?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "node_id": "0455ebea-3ffc-49b9-b377-c527399cbee6",
+      "path": "promptfoo/site/docs/providers/index.md",
+      "text_sha256": "16135619da0995bcf309043da9698b2e7eb3d2629d2e8e638e655fe054f74b2e",
+      "question": "What are some examples of syntax and usage for accessing models through the TrueFoundry API provider?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are some examples of syntax and usage for accessing models through the TrueFoundry API provider?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "node_id": "711eeb5b-9458-4ce9-9ea4-972447dfbf82",
+      "path": "promptfoo/site/docs/providers/vertex.md",
+      "text_sha256": "247cb5c944a8e21aa90123abee67b4be7082f83fc941cc4adcbe27defd49b5a3",
+      "question": "What are the notes regarding the support status of image generation in Google Vertex?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the notes regarding the support status of image generation in Google Vertex?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "node_id": "3040ce0f-89f4-47e9-b122-9ee71b63b6da",
+      "path": "promptfoo/site/docs/guides/evaluate-rag.md",
+      "text_sha256": "22dfa023dce3ed27be5d2f26984e828fe6a5620dbae51104d84a042ca1132077",
+      "question": "What are some common patterns for transforming context data in YAML configurations, particularly when dealing with arrays of objects, missing data, or nested metadata?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are some common patterns for transforming context data in YAML configurations, particularly when dealing with arrays of objects, missing data, or nested metadata?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "node_id": "f4bec6aa-5568-4ba5-a12c-875fd2578861",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/moderation.md",
+      "text_sha256": "3cc5e3d50e3cf859141da72904163235f3447628d1e0251ab1bbda24dd4d0665",
+      "question": "What categories does the Azure Content Safety API check content for?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What categories does the Azure Content Safety API check content for?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "node_id": "53137187-e7a5-4ca0-a6da-92cbe8fb3967",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/deterministic.md",
+      "text_sha256": "a0467de963e0ec08959a318a752825d2271c5543b184be37a171d65eb21dd770",
+      "question": "Which providers implement the validation of JSON LLM output against the schema specified in the `functions` configuration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "Which providers implement the validation of JSON LLM output against the schema specified in the `functions` configuration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "node_id": "36f96d07-a133-49bc-8dd1-40b3ee2bdee1",
+      "path": "ollama/README.md",
+      "text_sha256": "4b85754a0d1c475bf7ff13560ddd22d1369fd7e1c0d9142aef6f9c95aaf7f259",
+      "question": "What are some tools available for integrating large language models (LLMs) into terminal and command-line interfaces?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are some tools available for integrating large language models (LLMs) into terminal and command-line interfaces?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "node_id": "98083f6e-54cd-4c82-85e4-0cb7da9b5c8c",
+      "path": "llama_index/docs/src/content/docs/framework/community/faq/chat_engines.md",
+      "text_sha256": "6dcf077be593216028cb621abb8fb923c34a2761b1c178f62dd9736146583ef1",
+      "question": "How do you use Data Agents with the Chat engine?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How do you use Data Agents with the Chat engine?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "node_id": "700be564-85d8-4138-a20d-7cd660406e2f",
+      "path": "promptfoo/site/docs/providers/websocket.md",
+      "text_sha256": "97b2225b24394c13775d63f5d41d6059ab732a2ca8a456a292c762d091eca90b",
+      "question": "What are the supported values for the provider `id` field when specifying a full URL, and how does the OpenAI Realtime provider handle custom endpoint configurations?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the supported values for the provider `id` field when specifying a full URL, and how does the OpenAI Realtime provider handle custom endpoint configurations?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "node_id": "a268063c-c5af-4ac1-8153-cfa13b5b886a",
+      "path": "promptfoo/site/docs/usage/command-line.md",
+      "text_sha256": "a799cba5063be11e84423189decac743c25735bff8b2aae36aa5385191686bff",
+      "question": "Can the current user create cloud targets?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "Can the current user create cloud targets?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "node_id": "1336ae8f-3af3-49c2-9071-d4038a26238d",
+      "path": "ollama/docs/api.md",
+      "text_sha256": "b2c0556890dab9a1ddea90c0c1db65ea3144816028f4b897134b5d963d2ba8f6",
+      "question": "What parameters can be optionally specified when creating a new model, and what are their purposes?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What parameters can be optionally specified when creating a new model, and what are their purposes?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "node_id": "a291169e-e243-4c3c-af8b-988e68a76034",
+      "path": "promptfoo/site/docs/red-team/configuration.md",
+      "text_sha256": "dbf1f7c3afe6cc79a877c3dee18036303b0b8772b5c00ab6c8d8e19726ea13cd",
+      "question": "What are the essential elements needed to configure a red team test setup for generating adversarial tests?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the key components of a red team configuration in a `promptfooconfig.yaml` file for generating red team tests?"
+          ],
+          "copied_sentence": false,
+          "file_named": true,
+          "valid": false
+        },
+        {
+          "attempt": 1,
+          "questions": [
+            "What are the essential elements needed to configure a red team test setup for generating adversarial tests?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 90,
+      "node_id": "4d80624a-d074-42b9-80a0-1aa8dce4797e",
+      "path": "promptfoo/site/docs/providers/azure.md",
+      "text_sha256": "4896f1c39f12254fb015b41cfcf68e643e8b34c99b3770f82f95b88e9f93f871",
+      "question": "What is the purpose of the `AZURE_API_KEY` environment variable in Azure's Video Generation (Sora) section?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `AZURE_API_KEY` environment variable in Azure's Video Generation (Sora) section?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "node_id": "346435b0-41ea-488f-aaa9-58da9905bf63",
+      "path": "promptfoo/site/docs/providers/minimax.md",
+      "text_sha256": "b1633b4df13e6f0ca8149b1e9eeaa0dfcf9d0abfec0e4d20d778be956dc43d03",
+      "question": "What are the available APIs for text processing on the Minimax platform?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the available APIs for text processing on the Minimax platform?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "node_id": "40614e30-4e9f-4029-bfd5-8a7bc2faeb87",
+      "path": "promptfoo/site/docs/guides/qwen-benchmark.md",
+      "text_sha256": "8bc24cd2a4d1643eb2e0988a9c11b4499e41fb3b0339a2689a800a48065e6dad",
+      "question": "What are the key functionalities that a customer support chatbot should have to effectively handle common customer inquiries?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the key functionalities that a customer support chatbot should have to effectively handle common customer inquiries?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "node_id": "efd6b910-87cf-4d74-b120-fc15d64e5ebf",
+      "path": "promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md",
+      "text_sha256": "9233e397e25ab325d9f1c36eb065069d59613ea6cbe91af4dad1a0263430230f",
+      "question": "How many tests passed in the evaluation of OSWorld with Inspect using the full-corpus GPT-5.5 run?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How many tests passed in the evaluation of OSWorld with Inspect using the full-corpus GPT-5.5 run?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 94,
+      "node_id": "e6f2f594-4239-4a13-8202-0fe92408052b",
+      "path": "promptfoo/site/docs/guides/evaluate-openai-agents-python.md",
+      "text_sha256": "5b11cb807e26018fdf3bcd3fe423a6044d048e58cb0d2ddc576c0e616a03b0fc",
+      "question": "How does the Python SDK handle the evaluation of Agent Skills in a local environment, and what are the key components involved in this process?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does the Python SDK handle the evaluation of Agent Skills in a local environment, and what are the key components involved in this process?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "node_id": "9a25ae4e-d940-44a5-9835-fb1b28829d83",
+      "path": "promptfoo/site/docs/red-team/plugins/rag-source-attribution.md",
+      "text_sha256": "f416fc047112a6d77faf06b2fd9171aa0c8180ed91bfcd0a54e44746fae40736",
+      "question": "How can RAG systems be detected when they fabricate document citations, policy references, or source attributions that don't exist in the knowledge base?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can RAG systems be detected when they fabricate document citations, policy references, or source attributions that don't exist in the knowledge base?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "node_id": "ae41d54f-c24b-4433-aaed-dc14be47a09d",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "a19e1c6801e098b7a1df72729e99b1d15e85f551dcaa16f61c956449cb45f026",
+      "question": "What improvements and fixes were introduced in the `llama-index-core` version 0.13.2?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What improvements and fixes were introduced in the `llama-index-core` version 0.13.2?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "node_id": "1c6ea5a9-5e18-4bd3-b3a9-d2bcee451ce5",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "4a5b142871641e7949f40c1bd00080e9aec04e7b77b0bc05b990832e89e1ec23",
+      "question": "What version of the `cohere` library is used in the `llama-index-llms-cohere` package version 0.1.5?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What version of the `cohere` library is used in the `llama-index-llms-cohere` package version 0.1.5?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "node_id": "68fdf1fa-e66c-418b-8da9-298d3b70b12e",
+      "path": "promptfoo/site/docs/providers/azure.md",
+      "text_sha256": "e1a107e4ab827e4809d44e0db7f909006e9c21346c77535aec9a01b4b2e676dd",
+      "question": "What is the purpose of the `AZURE_CLIENT_ID` environment variable in Azure?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `AZURE_CLIENT_ID` environment variable in Azure?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "node_id": "6a0b216b-8a29-4fcc-938e-ef7d254bd346",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "35459bbe3c2f342ef82551dbb765e4374ad84059f9d541852534eee5ad819981",
+      "question": "What change was made to the Postgres ChatStore in version 0.3.2 of llama-index-storage-chat-store-postgres?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What change was made to the Postgres ChatStore in version 0.3.2 of llama-index-storage-chat-store-postgres?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 100,
+      "node_id": "ef9dea5e-fa12-4aa7-9e77-9ab07287edae",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "6cbfa45f24b9c260f7d42b262a58576448e25d07902f2f1d4b9af87b3f7961d9",
+      "question": "What specific version update was made to `llama-index-llms-cerebras` to address compatibility with `llama-index-llms-openai-like`?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What specific version update was made to `llama-index-llms-cerebras` to address compatibility with `llama-index-llms-openai-like`?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "node_id": "11e5d8ab-487a-4804-aa96-efc4fa850a2e",
+      "path": "promptfoo/site/docs/guides/evaluate-llm-temperature.md",
+      "text_sha256": "d26ef67e0e913e038d49a9abf66df661f093bc67e34dfab8738600937b8cd0b0",
+      "question": "What are the prerequisites for setting up an evaluation with promptfoo?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the prerequisites for setting up an evaluation with promptfoo?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 102,
+      "node_id": "7b18bf2d-d7e7-4c57-9721-4210f3107667",
+      "path": "promptfoo/site/docs/providers/openai-agents-api.md",
+      "text_sha256": "c59ae2764f6be517dbd922cbfdd16ac2b44fc47c23d7ca297f6051e73389cec6",
+      "question": "What is the default timeout in milliseconds for cancelling unfinished work and deleting a session in the configuration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the default timeout in milliseconds for cancelling unfinished work and deleting a session in the configuration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 103,
+      "node_id": "6b71a35e-2ab0-43e1-9863-fca878049383",
+      "path": "promptfoo/site/docs/integrations/circle-ci.md",
+      "text_sha256": "faa87855ab2dcd8892d93b2fc292fbc3a4500d934765e6d0413d590c6eee9dbc",
+      "question": "How does CircleCI make evaluation results available and shareable after they are stored as artifacts?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does CircleCI make evaluation results available and shareable after they are stored as artifacts?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 104,
+      "node_id": "c77e510a-7938-47c5-bedd-3482bfe4d03c",
+      "path": "llama_index/docs/src/content/docs/framework/community/integrations/deepeval.md",
+      "text_sha256": "d0aca3217679255db5fb6b967b84fc8b4281b40cffd35ae6c8b0d7a324ffc310",
+      "question": "How do you install and set up the DeepEval library for testing, and what optional step can enhance the testing experience?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How do you install and set up the DeepEval library for testing, and what optional step can enhance the testing experience?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 105,
+      "node_id": "237649ee-9d37-41de-8c59-73151e444fbc",
+      "path": "promptfoo/site/docs/red-team/plugins/rag-source-attribution.md",
+      "text_sha256": "169020f6a33a4ced4025bc96155eabfdc2ebbd5c8f92523c597611741a5dd342",
+      "question": "In which industries is this plugin particularly valuable for creating AI systems that require accurate citations and document retrieval?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "In which industries is this plugin particularly valuable for creating AI systems that require accurate citations and document retrieval?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 106,
+      "node_id": "5e440289-21d0-4492-9c1d-baa6cc6585f6",
+      "path": "ollama/docs/integrations/cline-cli.md",
+      "text_sha256": "e97dad843c92403fbaf9a6ac67a8a284918c86449dcbd0c3fde64cd5b42e9f55",
+      "question": "What is Cline CLI and how is it used in interactive terminal sessions?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is Cline CLI and how is it used in interactive terminal sessions?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 107,
+      "node_id": "4f59c18a-7802-4c5c-9795-6956d1700514",
+      "path": "promptfoo/site/docs/configuration/huggingface-datasets.md",
+      "text_sha256": "e33e8d43ea35ef97383828af28a3936590d556b97bd3930f6bfa213ac4b90c0a",
+      "question": "How can you load specific portions of a dataset using query parameters for different splits and configurations?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can you load specific portions of a dataset using query parameters for different splits and configurations?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 108,
+      "node_id": "f9cda661-b23a-438c-8d09-dbf4348c01fc",
+      "path": "llama_index/docs/api_reference/api_reference/storage/vector_store/neo4jvector.md",
+      "text_sha256": "4cdf4907b124bcf0d5ff76bcde3545ab809a216a8b66e0af3e3b6420420a8474",
+      "question": "What are the options available under the `llama_index.vector_stores.neo4jvector` context?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the options available under the `llama_index.vector_stores.neo4jvector` context?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 109,
+      "node_id": "ae498157-6b39-444e-a3e0-6f6b485313aa",
+      "path": "promptfoo/site/docs/red-team/troubleshooting/multiple-response-types.md",
+      "text_sha256": "0ad34bc315b5d30a0607c66aa54d43e4b237c852363a36d4f300bcdb049935ad",
+      "question": "What are the possible response types when a target is blocked by a guardrail?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the possible response types when a target is blocked by a guardrail?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 110,
+      "node_id": "da2b40f8-b4ea-4179-af8e-299a5620a3b2",
+      "path": "promptfoo/site/docs/integrations/agent-skill.md",
+      "text_sha256": "e5b066cd4950d245735918349c377a15de32054a075d8c1fde640673328173c3",
+      "question": "What are the purposes of installing Promptfoo agent skills in Claude Code and OpenAI Codex?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the purposes of installing Promptfoo agent skills in Claude Code and OpenAI Codex?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 111,
+      "node_id": "d84e67d0-11f9-4945-9506-0af683143df0",
+      "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+      "text_sha256": "e29fe57cfcdd7591c349f5212afa269c313b182feab0e6892412803603fb8f1a",
+      "question": "What are the different ways to reference the provider using base IDs and model names?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the different ways to reference the provider using base IDs and model names?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 112,
+      "node_id": "19af6e66-ee23-4dc8-9efe-377f82088064",
+      "path": "llama_index/docs/api_reference/api_reference/embeddings/huggingface_openvino.md",
+      "text_sha256": "6168ec1e53a8df88a27d3952b17056c5f177e1a2819ece6a983e6e6edf8f8ad6",
+      "question": "What are the options available under the `llama_index.embeddings.huggingface_openvino` context?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the options available under the `llama_index.embeddings.huggingface_openvino` context?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 113,
+      "node_id": "5dbaa5bb-11d1-476e-8039-92bb53b39c5d",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "cf0c9edd9c6d724969ce0bc586cf672999e0f3f75ea056463bf0b162878e8bd0",
+      "question": "What bug fix was implemented in `llama-index-vector-stores-postgres` version 0.1.9?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What bug fix was implemented in `llama-index-vector-stores-postgres` version 0.1.9?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 114,
+      "node_id": "8f825989-61e5-46c5-86c2-e332cf1ab497",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "dd1e5c2e96d99f0215fb6a1f51045eaa52ecd8656e0b47915ec58445da575031",
+      "question": "What enhancements were made to the `llama-index-llms-cortex` version 0.3.0?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What enhancements were made to the `llama-index-llms-cortex` version 0.3.0?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 115,
+      "node_id": "91e1f778-f4d1-40f6-af79-af61f01cd2aa",
+      "path": "promptfoo/site/docs/releases.md",
+      "text_sha256": "7c4e7a5037e72c002f3d092dd8146d8b83a34b8d68d7f67c9e6ff088c48bdd55",
+      "question": "What advanced authentication methods have been added to enhance security, including support for client certificates, signature-based authentication, and credential sanitization?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What advanced authentication methods have been added to enhance security, including support for client certificates, signature-based authentication, and credential sanitization?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 116,
+      "node_id": "5925832d-a4d9-4430-a828-574bca3b60b5",
+      "path": "promptfoo/site/docs/providers/hyperbolic.md",
+      "text_sha256": "f0e6d58c58c9161439e02bc252a3063ab894dc64605ad63c0fd824b48f305e1d",
+      "question": "What does the `sdp_ratio` parameter control in the audio generation options?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the `sdp_ratio` parameter control in the audio generation options?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 117,
+      "node_id": "a160bcb3-2125-405e-86fb-f51c0b86e9dc",
+      "path": "promptfoo/site/docs/providers/elevenlabs.md",
+      "text_sha256": "5076277de30565696947282b52d748f7ef57c54fdb6dc01c532c9514684e7c96",
+      "question": "What is the purpose of the `apiKey` parameter in the ElevenLabs configuration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `apiKey` parameter in the ElevenLabs configuration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 118,
+      "node_id": "2423b233-efef-4f77-b8bc-17f20c5a767e",
+      "path": "promptfoo/site/docs/providers/openinterpreter.md",
+      "text_sha256": "3302ccfedfbf9b554710f5a45219f2191ebdf7a9e931ac2d5c97b96be2484b03",
+      "question": "What is the purpose of the `cli_env` parameter in the Open Interpreter configuration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `cli_env` parameter in the Open Interpreter configuration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 119,
+      "node_id": "b762faac-7291-43c9-9b0e-8a473aa2115a",
+      "path": "promptfoo/site/docs/providers/perplexity.md",
+      "text_sha256": "68bb35985d368bfca86fcb1238d6018775177a5334c926b5b5529e904e3818f8",
+      "question": "What are the different types of configurations available in the Perplexity example, and what specific capabilities do they showcase?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the different types of configurations available in the Perplexity example, and what specific capabilities do they showcase?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 120,
+      "node_id": "0727fd05-be92-43e7-bdf6-24b89494c3f7",
+      "path": "promptfoo/site/docs/usage/command-line.md",
+      "text_sha256": "f10ad7606a8de4b61ee8a47ff7331121d96fb5862a8a7eb439220e235bd6d96c",
+      "question": "What is the purpose of the `PROMPTFOO_DISABLE_REF_PARSER` environment variable?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `PROMPTFOO_DISABLE_REF_PARSER` environment variable?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 121,
+      "node_id": "593a624a-aa16-4705-920b-f4fd325e9579",
+      "path": "promptfoo/site/docs/providers/mistral.md",
+      "text_sha256": "6802851e47d9607f59b0ec26b03922af4bacb9dbd9c97fc073c5e49ef485eca7",
+      "question": "What is the purpose of the `MISTRAL_API_BASE_URL` environment variable in Mistral AI's configuration options?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `MISTRAL_API_BASE_URL` environment variable in Mistral AI's configuration options?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 122,
+      "node_id": "f259d939-71e5-4417-b324-c7fc501bced6",
+      "path": "promptfoo/site/docs/usage/command-line.md",
+      "text_sha256": "45832e7bc0f78c10a6a90cfa325ac19e9804ca998fd264b0270db938551b563c",
+      "question": "What does the `-f, --force` option do when using the `promptfoo config unset email` command?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the `-f, --force` option do when using the `promptfoo config unset email` command?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 123,
+      "node_id": "9635677f-d280-4e02-9e77-e1a0b9efd405",
+      "path": "llama_index/docs/api_reference/api_reference/readers/bagel.md",
+      "text_sha256": "a1f383b9f08c466a6dd12418e9f1c08fb3567baac1bf6c989dd486858f91b474",
+      "question": "What are the options available under the `llama_index.readers.bagel` context?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the options available under the `llama_index.readers.bagel` context?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 124,
+      "node_id": "adc9afd1-4de0-4540-bacf-95d2fb61a77c",
+      "path": "promptfoo/site/docs/faq.md",
+      "text_sha256": "f150dd1e9e51299b853111ee54bf5ad26e337951f03c381ca16247a5566bb190",
+      "question": "How can I configure Promptfoo to operate in a completely offline environment?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can I configure Promptfoo to operate in a completely offline environment?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 125,
+      "node_id": "aa561279-5036-4810-8bd5-fe48cf02dcfe",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "26ba4c0b016a4a3bab92a1f0c3b9cce783f2c82b54aeeb5612a193f3c71c30f3",
+      "question": "What new feature was added to `llama-index-vector-stores-milvus` in version 0.2.7?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What new feature was added to `llama-index-vector-stores-milvus` in version 0.2.7?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 126,
+      "node_id": "d7044246-5b9f-4e22-af1f-e1382e1aa505",
+      "path": "promptfoo/site/docs/providers/helicone.md",
+      "text_sha256": "4ef02aa2fde77d386d6fc651b9b1fbe21bfe834aead2d6c86d6c5cde22fe3a18",
+      "question": "How does the promptfoo provider handle request logging in relation to the gateway's Helicone integration?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does the promptfoo provider handle request logging in relation to the gateway's Helicone integration?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 127,
+      "node_id": "2583bffc-f375-49e8-8342-92f735cc32d6",
+      "path": "promptfoo/site/docs/red-team/plugins/vlguard.md",
+      "text_sha256": "b247b40d9fdcd27ebfa3f3b6959e092c3f080623373513f86c4d8a98eda18e7c",
+      "question": "What does the VLGuard plugin evaluate in multi-modal models using the VLGuard dataset?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What does the VLGuard plugin evaluate in multi-modal models using the VLGuard dataset?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 128,
+      "node_id": "01663d52-797e-4c25-b96f-6d5f162a8b4f",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "f85a94bb964e94ed9e31337749417db13b63ec2f25f7060929fe024766137a48",
+      "question": "What changes were made to the Solr client in the latest update of llama-index-vector-stores-solr?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What changes were made to the Solr client in the latest update of llama-index-vector-stores-solr?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 129,
+      "node_id": "b983701f-d912-44a6-95cd-8c6ed828a34f",
+      "path": "promptfoo/site/docs/configuration/huggingface-datasets.md",
+      "text_sha256": "25cb61da44305f81d0c4a72d265fe73e8ce9a138fa84d8e972972fb61d5a753b",
+      "question": "What are the key features of the MMLU-Pro Comparison example project in the HuggingFace Datasets?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the key features of the MMLU-Pro Comparison example project in the HuggingFace Datasets?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 130,
+      "node_id": "11f9b48c-3e31-4002-b5a1-9455c3918494",
+      "path": "promptfoo/site/docs/providers/xai.md",
+      "text_sha256": "2cfcbe5599c7b211c16d4c99852a525764320f443d31d755f5ce80b50c3e33fc",
+      "question": "What are the supported video resolutions for Grok Imagine Video 1.5?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the supported video resolutions for Grok Imagine Video 1.5?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 131,
+      "node_id": "7508742e-1a86-4e2c-84e7-c74f965bbe8c",
+      "path": "promptfoo/site/docs/red-team/plugins/insurance.md",
+      "text_sha256": "7aaa6dbd619847f4e072fc1549b3156824b7165fdb897fad0f103e54a8e2018c",
+      "question": "What types of discriminatory practices does the `insurance:coverage-discrimination` plugin detect in insurance coverage, underwriting, and claims decisions?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What types of discriminatory practices does the `insurance:coverage-discrimination` plugin detect in insurance coverage, underwriting, and claims decisions?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 132,
+      "node_id": "f9f49a4a-56c4-4986-b5e4-0168caa785da",
+      "path": "promptfoo/site/docs/configuration/expected-outputs/deterministic.md",
+      "text_sha256": "a025c8f4333ea093f666dadd62ae511c54136a7acd94977fcb5533050a0729a4",
+      "question": "What assertion can be used to verify that the output is not a supported well-formed XML document, and what are the limitations of the `is-xml` assertion in terms of document validation?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What assertion can be used to verify that the output is not a supported well-formed XML document, and what are the limitations of the `is-xml` assertion in terms of document validation?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 133,
+      "node_id": "3a4010b5-f935-4a51-90af-e815ea896a62",
+      "path": "promptfoo/site/docs/providers/cometapi.md",
+      "text_sha256": "849c9622293f1e002f3bd3220cff1f7f30fd1344995c916ac5cc03e336c52061",
+      "question": "How does CometAPI enable the use of over 500 AI models from multiple providers through a unified interface?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does CometAPI enable the use of over 500 AI models from multiple providers through a unified interface?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 134,
+      "node_id": "5cbc5e53-98e0-42c8-9587-13e132d532b8",
+      "path": "promptfoo/site/docs/red-team/plugins/financial.md",
+      "text_sha256": "f3af10dca0fcaa3d7d9c86bbf7653af51b4b7c79c72963884902eaec25cd02fb",
+      "question": "What types of activities does the financial SOX compliance plugin detect that could lead to violations of the Sarbanes-Oxley Act?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What types of activities does the financial SOX compliance plugin detect that could lead to violations of the Sarbanes-Oxley Act?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 135,
+      "node_id": "db4ef231-2d90-4aa2-8fb2-bccf544a98ae",
+      "path": "ollama/docs/api/anthropic-compatibility.md",
+      "text_sha256": "a2ef1858d1acf53dec7c943ee2fe3b6fe209aba12e6861f8d80a47186d56d7bf",
+      "question": "What command is used to pull a local model in Ollama?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What command is used to pull a local model in Ollama?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 136,
+      "node_id": "c0bfd77d-c069-4240-9c9f-16bbfe81c1a0",
+      "path": "promptfoo/site/docs/providers/openai-agents.md",
+      "text_sha256": "9a545b5a0012f9fd5b6632ec383de1aa87cbd859e1a2a881d07d7bb1ea3eab6a",
+      "question": "How does Promptfoo handle JSON objects or arrays that match the SDK's `AgentInputItem` shape when passed to `run()`?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How does Promptfoo handle JSON objects or arrays that match the SDK's `AgentInputItem` shape when passed to `run()`?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 137,
+      "node_id": "1e4df38c-a3e1-4618-a749-0d82cee73744",
+      "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+      "text_sha256": "b52d68bf5e9b89f700d6807267bd78f71fe49ad03658541a75e3e89fe0f4c81f",
+      "question": "What are the different access levels available for the `sandbox_mode` parameter in the OpenAI Codex SDK?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the different access levels available for the `sandbox_mode` parameter in the OpenAI Codex SDK?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 138,
+      "node_id": "0a059e1f-1e45-44de-b0a5-bc8fb5597b74",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "739a152218761aaac91c8cbbda9794da0b80709e314c72a3db98038c17f0299d",
+      "question": "What specific update was applied to both the llama-index-indices-managed-bge-m3 and llama-index-indices-managed-colbert versions?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What specific update was applied to both the llama-index-indices-managed-bge-m3 and llama-index-indices-managed-colbert versions?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 139,
+      "node_id": "b028c2c0-7294-4fc3-ac7a-fc641d6eb4bd",
+      "path": "promptfoo/site/docs/red-team/strategies/homoglyph.md",
+      "text_sha256": "9925e18d6bbfb675e3600b52ae00066583d855581b7527951705bb31169942fb",
+      "question": "What is the homoglyph replacement for the original character 'x' according to the Homoglyph Encoding Strategy?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the homoglyph replacement for the original character 'x' according to the Homoglyph Encoding Strategy?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 140,
+      "node_id": "849d4cdf-a23b-4bd3-b8f1-217023523143",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "4a606adbe94e715915159b3d73c75a3e18e98f454b4e84e9d360982982fc9569",
+      "question": "What fix was implemented in `llama-index-vector-stores-qdrant` version 0.4.2 for handling `query_str` when it is `None`?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What fix was implemented in `llama-index-vector-stores-qdrant` version 0.4.2 for handling `query_str` when it is `None`?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 141,
+      "node_id": "8103cea2-011a-4cf4-8f67-2cd3d2d6be6a",
+      "path": "promptfoo/site/docs/guides/hle-benchmark.md",
+      "text_sha256": "c5c057019853de1811e95850d436ec0aa8df86715590df9968fbc7bde7962a96",
+      "question": "What is the accuracy of the GPT-5.2 model in the context of \"Testing Humanity's Last Exam with Promptfoo\"?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the accuracy of the GPT-5.2 model in the context of \"Testing Humanity's Last Exam with Promptfoo\"?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 142,
+      "node_id": "eaf1e793-adfb-426a-96b3-b09b516232d3",
+      "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+      "text_sha256": "c08ffad7ef7b983d51498f958b53773d9a6102f4daf1c781966a0b893f624e29",
+      "question": "What updates were made to the `uv` group across 33 directories in the `llama-index-readers-azcognitive-search` version 0.5.0?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What updates were made to the `uv` group across 33 directories in the `llama-index-readers-azcognitive-search` version 0.5.0?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 143,
+      "node_id": "90ca7e93-2b9f-4e43-8184-8a42a6e05992",
+      "path": "promptfoo/site/docs/providers/browser.md",
+      "text_sha256": "8e16a911d72ed97b4edade74d14a4a280e321e84678393765b7908dde8fe17ea",
+      "question": "What are the required arguments for the \"type\" action in the Supported Browser Actions section?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What are the required arguments for the \"type\" action in the Supported Browser Actions section?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 144,
+      "node_id": "e795427b-0cf2-49e2-9a66-3b4c71f4ed53",
+      "path": "cerebrollm/research/model-study/sources/devstral-2505.md",
+      "text_sha256": "e6a78d475f8fed091bc46ea7adabda22f35a7e25bbd117228d7c6d0eda91b0f7",
+      "question": "What is the purpose of the `snapshot_download` function in the provided Python code snippet?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `snapshot_download` function in the provided Python code snippet?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 145,
+      "node_id": "015c9150-abb5-4052-8cf8-5890981221d8",
+      "path": "promptfoo/site/docs/model-audit/scanners.md",
+      "text_sha256": "60f4f033d29b0ddc95bdfb79547b06f0f77e4d151c1d453bb69b34d698a10bbf",
+      "question": "What vulnerabilities does the Skops Scanner detect in scikit-learn models saved with the skops library, and why are they significant?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What vulnerabilities does the Skops Scanner detect in scikit-learn models saved with the skops library, and why are they significant?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 146,
+      "node_id": "37f987db-ff8e-499d-8374-107b1c79606b",
+      "path": "llama_index/docs/src/content/docs/framework/getting_started/discover_llamaindex.md",
+      "text_sha256": "aa1047d25c9ff3353dc23d304930449ba0260d82ea77357db713cbdbccc25fac",
+      "question": "How can the `SubQuestionQueryEngine` be applied to financial documents to help decompose complex queries into multiple sub-questions?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "How can the `SubQuestionQueryEngine` be applied to financial documents to help decompose complex queries into multiple sub-questions?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 147,
+      "node_id": "6dfbf28d-40d9-4e5f-aa5d-70e8052f53e0",
+      "path": "promptfoo/site/docs/providers/hyperbolic.md",
+      "text_sha256": "1ddf4a67f1fda4bed48df766c79e8d19bad840a8a70b767f4ca842f6d4b7878c",
+      "question": "What is the purpose of the `controlnet_image` parameter in the Image Generation Options?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the purpose of the `controlnet_image` parameter in the Image Generation Options?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 148,
+      "node_id": "e97abf91-3493-4dd1-b15b-b243c9aba8ef",
+      "path": "promptfoo/site/docs/releases.md",
+      "text_sha256": "dca2a980ecc24df5b38ac936683bbd8f6bccded4062d7683f630c76461c83494",
+      "question": "What specialized plugins have been introduced for industries where AI errors have serious consequences, and how do they ensure comprehensive safety testing?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What specialized plugins have been introduced for industries where AI errors have serious consequences, and how do they ensure comprehensive safety testing?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "index": 149,
+      "node_id": "04cd4159-93d2-4b0c-abfb-68010349b60f",
+      "path": "promptfoo/site/docs/providers/anthropic.md",
+      "text_sha256": "260bae3f3acb872aa4484f77a54a10e12800a8142d82f978e42444bf4d5d48a2",
+      "question": "What is the suggested replacement for the model `claude-3-opus-20240229` on the Anthropic API?",
+      "valid": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "questions": [
+            "What is the suggested replacement for the model `claude-3-opus-20240229` on the Anthropic API?"
+          ],
+          "copied_sentence": false,
+          "file_named": false,
+          "valid": true
+        }
+      ]
+    }
+  ]
+}

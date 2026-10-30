@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 4,
+ "started_utc": "2026-10-29T17:35:01Z",
+ "seconds": 3.51,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "I do not know the specific replication lag that pgvector guarantees for HNSW index updates on a streaming replica. This information would typically depend on the configuration and capabilities of the specific database setup, as well as any documentation provided by the developers of pgvector regarding replication performance and guarantees. For precise details, consulting the official documentation or support resources for pgvector would be recommended.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 76
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3621089900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:35:03.7209609Z",
+  "response": "I do not know the specific replication lag that pgvector guarantees for HNSW index updates on a streaming replica. This information would typically depend on the configuration and capabilities of the specific database setup, as well as any documentation provided by the developers of pgvector regarding replication performance and guarantees. For precise details, consulting the official documentation or support resources for pgvector would be recommended.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3621089900,
+  "load_duration": 22183300,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 218153000,
+  "eval_count": 76,
+  "eval_duration": 3366052000
+ }
+}

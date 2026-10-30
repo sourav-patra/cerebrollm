@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:46Z",
+ "seconds": 15.06,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "llama-index-llms-anthropic 0.11.10 sets the context window for Claude Opus 4.6 to 1M tokens.\n\nThe release notes for that version say: \"fix(anthropic): correct Opus 4.6 context window to 1M ([#22555](https://github.com/run-llama/llama_index/pull/22555))\" [llama_index/v0.14.24.md]",
+ "tokens": {
+  "input": 2737,
+  "output": 125,
+  "thinking": 0,
+  "cache_read": 2370,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.002951,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 11269,
+  "stop_reason": "end_turn",
+  "session_id": "b74870a3-7487-4ab5-a296-90ddf828f65e",
+  "total_cost_usd": 0.002951,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 2370,
+   "output_tokens": 125,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 125,
+     "cache_read_input_tokens": 2370,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 125,
+    "cacheReadInputTokens": 2370,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.002951,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "llama-index-llms-anthropic 0.11.10 sets the context window for Claude Opus 4.6 to 1M tokens.\n\nThe release notes for that version say: \"fix(anthropic): correct Opus 4.6 context window to 1M ([#22555](https://github.com/run-llama/llama_index/pull/22555))\" [llama_index/v0.14.24.md]",
+  "ttft_ms": 11331,
+  "type": "result",
+  "duration_ms": 11355,
+  "uuid": "f6c18409-97c9-4b63-b24a-cd1ac348bb2b",
+  "ttft_stream_ms": 9718,
+  "time_to_request_ms": 108,
+  "first_content_frame_ms": 9719,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

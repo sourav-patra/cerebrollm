@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 2,
+ "started_utc": "2026-10-29T16:24:33Z",
+ "seconds": 2.65,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "promptfoo 0.122.0 dropped support for Node.js 20.  \n“* drop Node.js 20 support” [promptfoo/0.122.0.md]",
+ "thinking_chars": 387,
+ "tokens": {
+  "input": 1834,
+  "output": 157
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 2817091000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:24:35.6390742Z",
+  "response": "promptfoo 0.122.0 dropped support for Node.js 20.  \n“* drop Node.js 20 support” [promptfoo/0.122.0.md]",
+  "thinking": "We need to answer: Which Node.js major version did promptfoo 0.122.0 stop supporting? We must quote from context. Look at context lines [3] and [4] showing \"drop Node.js 20 support\". So major version 20. Provide quote: \"* drop Node.js 20 support\". Need to cite path. Let's quote from [3] or [4]. Provide: \"drop Node.js 20 support\". Path: promptfoo/0.122.0.md. Provide answer: Node.js 20.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2817091000,
+  "load_duration": 13757600,
+  "prompt_eval_count": 1834,
+  "prompt_eval_cached_count": 1829,
+  "prompt_eval_duration": 58450000,
+  "eval_count": 157,
+  "eval_duration": 2681324000
+ }
+}

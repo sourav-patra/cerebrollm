@@ -1,0 +1,11 @@
+=== 2026-10-28T23:00:34Z r2_wsl.py speed phi4
+guard pull phi4 exit 0 phi4 digest ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba 
+phi4-default 8000 1 valid True [] gen_tps 14.490776564112346 prompt_tps 1721.6390365806258 gpu% 80.9
+phi4-default 8000 2 valid True [] gen_tps 14.471575507989044 prompt_tps 1720.7542876646094 gpu% 80.9
+phi4-default 8000 3 valid True [] gen_tps 14.460936125310791 prompt_tps 1689.149173065664 gpu% 80.9
+phi4-default 200 1 valid True [] gen_tps 22.17418009020214 prompt_tps 519.0651584066272 gpu% 80.9
+phi4-default 200 2 valid True [] gen_tps 22.271486285897332 prompt_tps 606.80541466569 gpu% 80.9
+phi4-default 200 3 valid True [] gen_tps 22.262826758074123 prompt_tps 507.0773139243942 gpu% 80.9
+guard unload phi4 exit 0 phi4 unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T23:07:08Z

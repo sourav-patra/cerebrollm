@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-11",
+ "run": 3,
+ "started_utc": "2026-10-29T01:58:19Z",
+ "seconds": 8.04,
+ "prompt_file": "runs/prompts/A0/ST-11.txt",
+ "prompt_sha256": "070cac5a92521498abad22c165711759349caac6dcd474c3d71a8e1e408012bc",
+ "answer": "Use **LlamaIndex Workflows**. It's LlamaIndex's event-driven framework for multi-step LLM logic.\n\n- You define a `Workflow` subclass with methods decorated by `@step`. Each step takes one or more typed `Event` objects as input and emits new events, which route execution to other steps.\n- You can pass state between steps with a `Context` object.\n- It supports branching, loops, and parallel steps, and it can stream intermediate events.\n\nThe older `QueryPipeline` is a DAG-style chaining abstraction. For event-driven, multi-step orchestration, Workflows is the recommended choice.\n\nI'm not certain of the exact import paths and API details for your installed version, so check the current LlamaIndex docs for the specifics.",
+ "tokens": {
+  "input": 667,
+  "output": 415,
+  "thinking": 168,
+  "cache_read": 0,
+  "cache_creation": 665
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003407,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3345,
+  "stop_reason": "end_turn",
+  "session_id": "c8b39129-f8e6-4c03-b8ea-7adc410bf448",
+  "total_cost_usd": 0.0003407,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 665,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 415,
+   "output_tokens_details": {
+    "thinking_tokens": 168
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 665,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 415,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 665,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 665
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 415,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 665,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003407,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 168,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 665,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **LlamaIndex Workflows**. It's LlamaIndex's event-driven framework for multi-step LLM logic.\n\n- You define a `Workflow` subclass with methods decorated by `@step`. Each step takes one or more typed `Event` objects as input and emits new events, which route execution to other steps.\n- You can pass state between steps with a `Context` object.\n- It supports branching, loops, and parallel steps, and it can stream intermediate events.\n\nThe older `QueryPipeline` is a DAG-style chaining abstraction. For event-driven, multi-step orchestration, Workflows is the recommended choice.\n\nI'm not certain of the exact import paths and API details for your installed version, so check the current LlamaIndex docs for the specifics.",
+  "ttft_ms": 2892,
+  "type": "result",
+  "duration_ms": 3490,
+  "uuid": "0b8d2d65-af66-46a3-8034-9c1b1ef5233d",
+  "ttft_stream_ms": 2890,
+  "time_to_request_ms": 179,
+  "first_content_frame_ms": 2890,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

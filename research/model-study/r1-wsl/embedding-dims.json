@@ -1,0 +1,13 @@
+{
+ "bge-m3": {
+  "native_length": 1024
+ },
+ "qwen3-embedding:0.6b": {
+  "native_length": 1024,
+  "length_with_dimensions_1024": 1024
+ },
+ "qwen3-embedding:4b": {
+  "native_length": 2560,
+  "length_with_dimensions_1024": 1024
+ }
+}

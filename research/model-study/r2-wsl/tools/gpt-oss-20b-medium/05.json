@@ -1,0 +1,158 @@
+{
+  "id": 6,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Save the single line print(42) into scratch/answer.py."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": "medium",
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:24:10.8077843Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "We need to write a file scratch/answer.py with content \"print(42)\". Use write_file.",
+      "tool_calls": [
+        {
+          "id": "call_vvx7phns",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "path": "scratch/answer.py",
+              "content": "print(42)"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3816953400,
+    "load_duration": 13184700,
+    "prompt_eval_count": 286,
+    "prompt_eval_cached_count": 269,
+    "prompt_eval_duration": 2559963000,
+    "eval_count": 56,
+    "eval_duration": 1235546000
+  },
+  "wall_seconds": 3.5827042319997418,
+  "load_average_before": [
+    0.4462890625,
+    0.28515625,
+    0.15478515625
+  ],
+  "load_average_after": [
+    0.4462890625,
+    0.28515625,
+    0.15478515625
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "scratch/answer.py",
+      "content": "print(42)"
+    }
+  },
+  "passed": true
+}

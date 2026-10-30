@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-11",
+ "run": 2,
+ "started_utc": "2026-10-29T01:41:17Z",
+ "seconds": 7.68,
+ "prompt_file": "runs/prompts/A3/EX-11.txt",
+ "prompt_sha256": "ae9ee8005dae4266f43919c3d79d5ed6eb0af90fb05513c906e7426ed6859f21",
+ "answer": "The starter bundle installed by `pip install llama-index` includes these four packages:\n\n- \"`llama-index-core`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n- \"`llama-index-llms-openai`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n- \"`llama-index-embeddings-openai`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n- \"`llama-index-readers-file`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n\nThe source line that describes the bundle is: \"This is a starter bundle of packages, containing\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]",
+ "tokens": {
+  "input": 3015,
+  "output": 262,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3013
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007338000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2998,
+  "stop_reason": "end_turn",
+  "session_id": "0247bc84-e3ca-4fa8-8dc2-c3172e4388e6",
+  "total_cost_usd": 0.0007338000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3013,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 262,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3013,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 262,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3013,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3013
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 262,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3013,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007338000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3013,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The starter bundle installed by `pip install llama-index` includes these four packages:\n\n- \"`llama-index-core`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n- \"`llama-index-llms-openai`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n- \"`llama-index-embeddings-openai`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n- \"`llama-index-readers-file`\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]\n\nThe source line that describes the bundle is: \"This is a starter bundle of packages, containing\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md]",
+  "ttft_ms": 3118,
+  "type": "result",
+  "duration_ms": 3138,
+  "uuid": "042fa352-2883-4563-96b7-318976d94834",
+  "ttft_stream_ms": 3116,
+  "time_to_request_ms": 136,
+  "first_content_frame_ms": 3116,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

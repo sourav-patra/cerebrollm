@@ -1,0 +1,158 @@
+{
+  "id": 4,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Create the file hello.txt containing exactly the text: hello world"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": true,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:28:17.4747315Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "Okay, the user wants me to create a file called hello.txt with the exact text \"hello world\". Let me see which tool I can use here.\n\nLooking at the available functions, there's write_file that writes text to a file. The parameters needed are path and content. The user specified the path as hello.txt and the content as \"hello world\". \n\nI should make sure that the function call includes both parameters. The path is straightforward. The content needs to be a string, which it is. \n\nNo other functions seem necessary here. The other tools are for reading files, running tests, or searching code, which don't apply to this request. \n\nSo the correct tool to use is write_file with the path set to \"hello.txt\" and content set to \"hello world\".\n",
+      "tool_calls": [
+        {
+          "id": "call_9uvj98nh",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "path": "hello.txt",
+              "content": "hello world"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7894972600,
+    "load_duration": 11574100,
+    "prompt_eval_count": 340,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 166859000,
+    "eval_count": 192,
+    "eval_duration": 7711003000
+  },
+  "wall_seconds": 7.4148728720010695,
+  "load_average_before": [
+    0.046875,
+    0.025390625,
+    0.00244140625
+  ],
+  "load_average_after": [
+    0.0390625,
+    0.0244140625,
+    0.00146484375
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "hello.txt",
+      "content": "hello world"
+    }
+  },
+  "passed": true
+}

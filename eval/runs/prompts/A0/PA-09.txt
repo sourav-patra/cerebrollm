@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: What is the size limit of a single non-partitioned Postgres table, which bounds how many vectors it can hold?

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 4,
+ "started_utc": "2026-10-29T16:44:02Z",
+ "seconds": 6.98,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "\"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]",
+ "thinking_chars": 1019,
+ "tokens": {
+  "input": 2124,
+  "output": 293
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5155263400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:44:08.3954186Z",
+  "response": "\"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]",
+  "thinking": "We need to answer: Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default? The context: In release 0.34.3, \"GET /api/show\" now advertises each model's thinking controls and default. The question: \"Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default?\" The answer: GET /api/show. We must quote the line and cite its path. We need to find the line that states this. In context [1] lines 1-41: The snippet shows \"GET /api/show now advertises each model's thinking controls and default:\" and then shows available in CLI with \"ollama show gemma4\". So the line \"GET /api/show now advertises each model's thinking controls and default:\" is the quote. Path: [1] ollama/v0.34.3.md. So we should quote: \"GET /api/show now advertises each model's thinking controls and default:\" with the path. Ensure double quotes. So answer: \"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5155263400,
+  "load_duration": 13502100,
+  "prompt_eval_count": 2124,
+  "prompt_eval_cached_count": 2119,
+  "prompt_eval_duration": 57449000,
+  "eval_count": 293,
+  "eval_duration": 5024131000
+ }
+}

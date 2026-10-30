@@ -1,0 +1,11 @@
+{
+  "error": "TimeoutExpired(['docker.exe', 'rm', '-f', 'r2-devstral-24b-default-0'], 30)",
+  "index": 0,
+  "task_id": "HumanEval/122",
+  "load_average": [
+    0.0751953125,
+    0.1572265625,
+    0.1337890625
+  ],
+  "passed": false
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-01",
+ "run": 1,
+ "started_utc": "2026-10-29T01:37:49Z",
+ "seconds": 8.68,
+ "prompt_file": "runs/prompts/A0/EX-01.txt",
+ "prompt_sha256": "421726b9e01ed8cd5f11c62bcacc8cacdf1da592c65480fc5fe89beef8378fa7",
+ "answer": "The environment variable is **`OLLAMA_CONTEXT_LENGTH`**. You set it before starting the server. In PowerShell, since you're on Windows:\n\n```powershell\n$env:OLLAMA_CONTEXT_LENGTH = 8192\nollama serve\n```\n\nThe default has been 4096 tokens in recent releases, though I'm not certain of the exact default for your installed version. Models can also override this per request, so check your version's documentation if the value doesn't seem to apply.",
+ "tokens": {
+  "input": 656,
+  "output": 399,
+  "thinking": 237,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003305,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2985,
+  "stop_reason": "end_turn",
+  "session_id": "b185e49a-0e53-442f-b630-2aa05ef84244",
+  "total_cost_usd": 0.0003305,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 399,
+   "output_tokens_details": {
+    "thinking_tokens": 237
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 399,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 399,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003305,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 237,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The environment variable is **`OLLAMA_CONTEXT_LENGTH`**. You set it before starting the server. In PowerShell, since you're on Windows:\n\n```powershell\n$env:OLLAMA_CONTEXT_LENGTH = 8192\nollama serve\n```\n\nThe default has been 4096 tokens in recent releases, though I'm not certain of the exact default for your installed version. Models can also override this per request, so check your version's documentation if the value doesn't seem to apply.",
+  "ttft_ms": 3128,
+  "type": "result",
+  "duration_ms": 3144,
+  "uuid": "0ab852d4-52d7-47a4-bf93-5e672b1d6c6d",
+  "ttft_stream_ms": 3127,
+  "time_to_request_ms": 186,
+  "first_content_frame_ms": 3127,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

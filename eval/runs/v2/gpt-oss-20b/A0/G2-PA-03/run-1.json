@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-PA-03",
+ "run": 1,
+ "started_utc": "2026-10-29T16:04:14Z",
+ "seconds": 3.04,
+ "prompt_sha256": "98200b24f98d7ad2eb6bb7ace9cd93045ca11119a4738c7f7930ca7ec85d6b10",
+ "answer": "I’m sorry, but I don’t have that information.",
+ "thinking_chars": 641,
+ "tokens": {
+  "input": 113,
+  "output": 179
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3222963000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:04:18.4408444Z",
+  "response": "I’m sorry, but I don’t have that information.",
+  "thinking": "We need to answer: \"How many total and how many active parameters does the Nemotron 3.5 Bolt model have in Ollama?\" We must answer based on knowledge. The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So if we don't know, we say we don't know. We need to see if we have knowledge about Nemotron 3.5 Bolt model in Ollama. It's a specific model. I don't recall any specific numbers. Might be a recent release. The question: \"How many total and how many active parameters does the Nemotron 3.5 Bolt model have in Ollama?\" I don't think I have that knowledge. I should answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3222963000,
+  "load_duration": 14633700,
+  "prompt_eval_count": 113,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 183792000,
+  "eval_count": 179,
+  "eval_duration": 3004963000
+ }
+}

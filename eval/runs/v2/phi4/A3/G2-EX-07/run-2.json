@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 2,
+ "started_utc": "2026-10-29T17:23:05Z",
+ "seconds": 9.04,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "Promptfoo 0.125.0 added two ROUGE-based assertion types: `rouge-l` and `rouge-s`. This information is found in the context provided from the document \"promptfoo/0.125.0.md\" under the Features section:\n\n* **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\n\n[\"add rouge-l and rouge-s assertion types.\" [1] promptfoo/0.125.0.md (lines 14-25)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2180,
+  "output": 161
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9654563100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:23:13.8048219Z",
+  "response": "Promptfoo 0.125.0 added two ROUGE-based assertion types: `rouge-l` and `rouge-s`. This information is found in the context provided from the document \"promptfoo/0.125.0.md\" under the Features section:\n\n* **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\n\n[\"add rouge-l and rouge-s assertion types.\" [1] promptfoo/0.125.0.md (lines 14-25)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9654563100,
+  "load_duration": 14972500,
+  "prompt_eval_count": 2180,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 1165671000,
+  "eval_count": 161,
+  "eval_duration": 8284508000
+ }
+}

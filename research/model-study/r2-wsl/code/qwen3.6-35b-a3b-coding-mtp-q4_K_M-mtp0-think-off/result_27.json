@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/35",
+  "index": 27,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 0
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:06:43.8295338Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n    if not l:\n        raise ValueError(\"List is empty\")\n    max_val = l[0]\n    for item in l[1:]:\n        if item > max_val:\n            max_val = item\n    return max_val\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3277470800,
+    "load_duration": 12831800,
+    "prompt_eval_count": 123,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 438222000,
+    "eval_count": 144,
+    "eval_duration": 2776446000
+  },
+  "wall_seconds": 3.06044116699195,
+  "load_average_before": [
+    0.24365234375,
+    0.337890625,
+    0.19140625
+  ],
+  "load_average_after": [
+    0.22412109375,
+    0.33203125,
+    0.18994140625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off-27",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_27.py"
+    ],
+    "wall_seconds": 0.9040165549959056,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

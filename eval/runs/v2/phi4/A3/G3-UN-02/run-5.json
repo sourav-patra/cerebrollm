@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 5,
+ "started_utc": "2026-10-29T17:45:57Z",
+ "seconds": 10.05,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "Based on the context provided, the version of pgvector that includes support for carrying HNSW indexes across a major PostgreSQL upgrade using `pg_upgrade` without rebuilding them is version 0.8.0. This is indicated by the information from [1] pgvector/CHANGELOG.md (lines 102-116) which states:\n\n- \"0.8.0 (2023-07-09)\"\n  - \"Added support for `pg_upgrade` to carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them\"\n\nThus, pgvector version 0.8.0 is the version that supports this feature. [1] pgvector/CHANGELOG.md [lines 102-116]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1674,
+  "output": 144
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8076562000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:46:06.2193981Z",
+  "response": "Based on the context provided, the version of pgvector that includes support for carrying HNSW indexes across a major PostgreSQL upgrade using `pg_upgrade` without rebuilding them is version 0.8.0. This is indicated by the information from [1] pgvector/CHANGELOG.md (lines 102-116) which states:\n\n- \"0.8.0 (2023-07-09)\"\n  - \"Added support for `pg_upgrade` to carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them\"\n\nThus, pgvector version 0.8.0 is the version that supports this feature. [1] pgvector/CHANGELOG.md [lines 102-116]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8076562000,
+  "load_duration": 14480000,
+  "prompt_eval_count": 1674,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 867488000,
+  "eval_count": 144,
+  "eval_duration": 7042566000
+ }
+}

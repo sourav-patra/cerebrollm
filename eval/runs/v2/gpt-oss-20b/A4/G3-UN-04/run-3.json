@@ -1,0 +1,89 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-04",
+ "run": 3,
+ "started_utc": "2026-10-30T06:37:18Z",
+ "seconds": 17.51,
+ "prompt_sha256": "a82b2279d333b96ef59f1479bc2952f8db1a33f36dd3e8c4f598909409adbe83",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 0.76,
+   "rerank": 9.34,
+   "generate": 5.03,
+   "verify": 0.0,
+   "total": 15.13
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 8,
+    "rerank_score": 0.31093,
+    "path": "pgvector/README.md",
+    "line_start": 1150,
+    "line_end": 1189
+   },
+   {
+    "rank": 2,
+    "search_rank": 1,
+    "rerank_score": 0.23439,
+    "path": "pgvector/CHANGELOG.md",
+    "line_start": 102,
+    "line_end": 116
+   },
+   {
+    "rank": 3,
+    "search_rank": 2,
+    "rerank_score": 0.11498,
+    "path": "pgvector/README.md",
+    "line_start": 823,
+    "line_end": 829
+   },
+   {
+    "rank": 4,
+    "search_rank": 4,
+    "rerank_score": 0.1111,
+    "path": "pgvector/README.md",
+    "line_start": 206,
+    "line_end": 255
+   },
+   {
+    "rank": 5,
+    "search_rank": 3,
+    "rerank_score": 0.10778,
+    "path": "pgvector/README.md",
+    "line_start": 742,
+    "line_end": 760
+   },
+   {
+    "rank": 6,
+    "search_rank": 5,
+    "rerank_score": 0.09764,
+    "path": "pgvector/README.md",
+    "line_start": 181,
+    "line_end": 204
+   },
+   {
+    "rank": 7,
+    "search_rank": 9,
+    "rerank_score": 0.05691,
+    "path": "pgvector/CHANGELOG.md",
+    "line_start": 30,
+    "line_end": 39
+   },
+   {
+    "rank": 8,
+    "search_rank": 14,
+    "rerank_score": 0.01361,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 3404,
+    "line_end": 3423
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

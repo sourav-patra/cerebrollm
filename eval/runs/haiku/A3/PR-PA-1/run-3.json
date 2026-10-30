@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-PA-1",
+ "run": 3,
+ "started_utc": "2026-10-29T01:53:31Z",
+ "seconds": 7.62,
+ "prompt_file": "runs/prompts/A3/PR-PA-1.txt",
+ "prompt_sha256": "275c9be19279b929f495bf64d66752d53c3d9d0df4d1971f974b8e9825f41fb3",
+ "answer": "Start the container with the `--gpus=all` flag, as shown in the Nvidia GPU section of the Docker guide:\n\n```shell\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThis command is quoted from \"docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\" [ollama/docs/docker.md].\n\nBefore running it, you need the NVIDIA Container Toolkit installed and Docker configured to use it. The docs say: \"sudo nvidia-ctk runtime configure --runtime=docker\" followed by \"sudo systemctl restart docker\" [ollama/docs/docker.md]. Those steps are listed under \"Configure Docker to use Nvidia driver.\"\n\nTo confirm the container can see your GPUs, the troubleshooting guide suggests: \"Try `docker run --gpus all ubuntu nvidia-smi` - if this doesn't work, Ollama won't be able to see your NVIDIA GPU.\" [ollama/docs/troubleshooting.md]\n\nThe docs also note that if you want Ollama to use only a subset of GPUs, you can set `CUDA_VISIBLE_DEVICES`: \"If you have multiple NVIDIA GPUs in your system and want to limit Ollama to use a subset, you can set `CUDA_VISIBLE_DEVICES` to a comma separated list of GPUs.\" [ollama/docs/gpu.md]",
+ "tokens": {
+  "input": 2724,
+  "output": 513,
+  "thinking": 0,
+  "cache_read": 2335,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035745,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2943,
+  "stop_reason": "end_turn",
+  "session_id": "1e65f012-4271-49e4-8fe0-8fe9baf9fef8",
+  "total_cost_usd": 0.00035745,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2335,
+   "output_tokens": 513,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 513,
+     "cache_read_input_tokens": 2335,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 513,
+    "cacheReadInputTokens": 2335,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035745,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Start the container with the `--gpus=all` flag, as shown in the Nvidia GPU section of the Docker guide:\n\n```shell\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThis command is quoted from \"docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\" [ollama/docs/docker.md].\n\nBefore running it, you need the NVIDIA Container Toolkit installed and Docker configured to use it. The docs say: \"sudo nvidia-ctk runtime configure --runtime=docker\" followed by \"sudo systemctl restart docker\" [ollama/docs/docker.md]. Those steps are listed under \"Configure Docker to use Nvidia driver.\"\n\nTo confirm the container can see your GPUs, the troubleshooting guide suggests: \"Try `docker run --gpus all ubuntu nvidia-smi` - if this doesn't work, Ollama won't be able to see your NVIDIA GPU.\" [ollama/docs/troubleshooting.md]\n\nThe docs also note that if you want Ollama to use only a subset of GPUs, you can set `CUDA_VISIBLE_DEVICES`: \"If you have multiple NVIDIA GPUs in your system and want to limit Ollama to use a subset, you can set `CUDA_VISIBLE_DEVICES` to a comma separated list of GPUs.\" [ollama/docs/gpu.md]",
+  "ttft_ms": 3052,
+  "type": "result",
+  "duration_ms": 3073,
+  "uuid": "bf28e66b-f7e0-448b-9795-83dc92e03618",
+  "ttft_stream_ms": 2837,
+  "time_to_request_ms": 167,
+  "first_content_frame_ms": 2838,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

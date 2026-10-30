@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 4,
+ "started_utc": "2026-10-29T16:43:15Z",
+ "seconds": 12.0,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "I’m not 100 % certain, but the default `separator_regex` used by LlamaIndex’s `TokenTextSplitter` is:\n\n```python\nr'\\n{2,}'\n```\n\n—i.e., it splits on two or more consecutive newline characters.",
+ "thinking_chars": 2624,
+ "tokens": {
+  "input": 105,
+  "output": 741
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 12798133100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:43:28.8336785Z",
+  "response": "I’m not 100 % certain, but the default `separator_regex` used by LlamaIndex’s `TokenTextSplitter` is:\n\n```python\nr'\\n{2,}'\n```\n\n—i.e., it splits on two or more consecutive newline characters.",
+  "thinking": "We need to answer: \"What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" We need to know default separator_regex. LlamaIndex is a library (now known as LlamaIndex? Actually LlamaIndex is a library for building LLM indexing). TokenTextSplitter likely splits text into tokens based on regex. The default separator regex might be something like r'\\s+' or r'\\n+|[\\.\\!\\?]' etc. I need to recall. Let's search memory: In LlamaIndex, there is a class TokenTextSplitter in llama_index/text_splitter/token_text_splitter.py. I think default separator_regex is r'\\n{2,}|(?<!\\w)\\.(?!\\w)|(?<!\\w)\\?(?!\\w)|(?<!\\w)\\!(?!\\w)'. But not sure.\n\nLet's think: The text splitter splits on separators such as newlines, punctuation. I recall the default separators for LlamaIndex's TextSplitter: default_separator = r'\\n\\n|(?<!\\w)[\\.\\?\\!](?!\\w)'. Might be. Let's search memory: In LlamaIndex v0.9, there is a class called TokenTextSplitter. It uses a regex to split text into sections. The default separator_regex was r'\\n{2,}|\\.\\.\\.|(?<!\\w)[\\.\\!\\?](?!\\w)'. But I'm not certain.\n\nAlternatively, maybe the default separator_regex is r'\\n{2,}'. Actually the default separator_regex might be something like r'\\n{2,}'. But LlamaIndex's TokenTextSplitter splits into token chunks with a maximum token size. The separator_regex could be used to split into chunks based on separators like paragraphs.\n\nLet's search memory: I recall reading the LlamaIndex docs: \"TokenTextSplitter\" splits text into chunks of tokens, using a separator regex to split on paragraphs. The default separator_regex is r'\\n{2,}'. I think that is plausible. But maybe it's r'\\n{2,}|(?<!\\w)[\\.\\!\\?](?!\\w)' to also split on punctuation.\n\nLet's think: In the library, there is also \"RecursiveCharacterTextSplitter\" which splits on characters like newlines, whitespace, etc. But TokenTextSplitter maybe simpler: it splits on paragraphs, using regex r'\\n{2,}'. Let's search memory: I recall reading about \"TokenTextSplitter\" in LlamaIndex: It splits text into chunks based on a separator regex. The default separator_regex is r'\\n{2,}'. Let’s confirm: In the LlamaIndex docs, the TokenTextSplitter is described as splitting text into chunks of tokens. The default separator_regex is r'\\n{2,}'. That seems plausible.\n\nAlternatively, maybe the default separator_regex is r'\\n{2,}|\\.\\.\\.|(?<!\\w)[\\.\\!\\?](?!\\w)'. But that seems more complex. The simplest default might be r'\\n{2,}'. I'll choose that.\n\nThus answer: The default separator_regex is r'\\n{2,}'. If uncertain, we can say we do not know exactly. But the question expects a specific value. I'll answer: r'\\n{2,}'.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 12798133100,
+  "load_duration": 12943800,
+  "prompt_eval_count": 105,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 184557000,
+  "eval_count": 741,
+  "eval_duration": 12585540000
+ }
+}

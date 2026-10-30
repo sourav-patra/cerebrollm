@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-10",
+ "run": 4,
+ "started_utc": "2026-10-29T01:41:09Z",
+ "seconds": 7.72,
+ "prompt_file": "runs/prompts/A3/EX-10.txt",
+ "prompt_sha256": "2cf9a2c44e3c8628adaba832f3845cfe6969b446baafacc73a91083c2d93ebc2",
+ "answer": "The default value of `hnsw.max_scan_tuples` is 20,000. The README says: \"Specify the max number of tuples to visit (20,000 by default)\" [pgvector/README.md].",
+ "tokens": {
+  "input": 2948,
+  "output": 224,
+  "thinking": 160,
+  "cache_read": 2561,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00021481,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2939,
+  "stop_reason": "end_turn",
+  "session_id": "78b30fae-e3ab-4430-a4b0-34f87afa052b",
+  "total_cost_usd": 0.00021481,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2561,
+   "output_tokens": 224,
+   "output_tokens_details": {
+    "thinking_tokens": 160
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 224,
+     "cache_read_input_tokens": 2561,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 224,
+    "cacheReadInputTokens": 2561,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00021481,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 160,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The default value of `hnsw.max_scan_tuples` is 20,000. The README says: \"Specify the max number of tuples to visit (20,000 by default)\" [pgvector/README.md].",
+  "ttft_ms": 3046,
+  "type": "result",
+  "duration_ms": 3069,
+  "uuid": "2ccaa967-61d3-40ba-9b65-3f2ba3b1302c",
+  "ttft_stream_ms": 3045,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 3045,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

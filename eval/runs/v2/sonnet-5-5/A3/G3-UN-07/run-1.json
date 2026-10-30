@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-07",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:26Z",
+ "seconds": 8.27,
+ "prompt_sha256": "dbdfd668dc693024eaf55238eb69d2a3c8e309f8350f53a3767d1d06f0d0b83e",
+ "answer": "I do not know. The retrieved documents don't mention an `OLLAMA_KV_CACHE_RETENTION` variable. The closest match is the K/V cache setting, which is a different variable:\n\n\"`OLLAMA_KV_CACHE_TYPE` - The quantization type for the K/V cache. Default is `f16`.\" [ollama/docs/faq.md]\n\nThat variable controls quantization type, not retention. If you meant how long a model stays loaded in memory, the docs say:\n\n\"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nIf you do mean `OLLAMA_KV_CACHE_RETENTION`, I can't confirm it exists or give a default for it from this material.",
+ "tokens": {
+  "input": 2927,
+  "output": 246,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 2925
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.014164000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4310,
+  "stop_reason": "end_turn",
+  "session_id": "0aa69056-4e87-4ced-9d27-7e9a485f7c88",
+  "total_cost_usd": 0.014164000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2925,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 246,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2925,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 246,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2925,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2925
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 246,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2925,
+    "webSearchRequests": 0,
+    "costUSD": 0.014164000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2925,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I do not know. The retrieved documents don't mention an `OLLAMA_KV_CACHE_RETENTION` variable. The closest match is the K/V cache setting, which is a different variable:\n\n\"`OLLAMA_KV_CACHE_TYPE` - The quantization type for the K/V cache. Default is `f16`.\" [ollama/docs/faq.md]\n\nThat variable controls quantization type, not retention. If you meant how long a model stays loaded in memory, the docs say:\n\n\"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nIf you do mean `OLLAMA_KV_CACHE_RETENTION`, I can't confirm it exists or give a default for it from this material.",
+  "ttft_ms": 4369,
+  "type": "result",
+  "duration_ms": 4394,
+  "uuid": "db39cac7-0f8f-4840-8035-1ad7e7e9e24d",
+  "ttft_stream_ms": 2572,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 2572,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

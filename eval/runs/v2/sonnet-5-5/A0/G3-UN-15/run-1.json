@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-15",
+ "run": 1,
+ "started_utc": "2026-10-29T15:44:19Z",
+ "seconds": 9.34,
+ "prompt_sha256": "2ae30404b1685d3b484219c6e90a4e895d45b50e4711a03a3b84c2bd8a751c88",
+ "answer": "I don't know of a promptfoo command that exports an evaluation to Parquet, and I don't want to guess one.\n\nWhat I do know:\n- `promptfoo export eval <evalId> -o <file>` exports an evaluation, but as JSON.\n- `promptfoo eval --output <file>` writes results based on the file extension. The formats I'm aware of are JSON, YAML, CSV, HTML, XML, and JSONL, not Parquet.\n\nIf you need Parquet, the usual route is to export to JSON or CSV and convert it with a tool like pandas or DuckDB. A newer promptfoo version might have added native Parquet support after what I know. `promptfoo export --help` or the current docs would confirm that.",
+ "tokens": {
+  "input": 633,
+  "output": 394,
+  "thinking": 160,
+  "cache_read": 0,
+  "cache_creation": 631
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006468,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5249,
+  "stop_reason": "end_turn",
+  "session_id": "722c868b-fbd7-46a9-8a4d-cfb84f656196",
+  "total_cost_usd": 0.006468,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 631,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 394,
+   "output_tokens_details": {
+    "thinking_tokens": 160
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 631,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 394,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 631,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 631
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 394,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 631,
+    "webSearchRequests": 0,
+    "costUSD": 0.006468,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 160,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 631,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a promptfoo command that exports an evaluation to Parquet, and I don't want to guess one.\n\nWhat I do know:\n- `promptfoo export eval <evalId> -o <file>` exports an evaluation, but as JSON.\n- `promptfoo eval --output <file>` writes results based on the file extension. The formats I'm aware of are JSON, YAML, CSV, HTML, XML, and JSONL, not Parquet.\n\nIf you need Parquet, the usual route is to export to JSON or CSV and convert it with a tool like pandas or DuckDB. A newer promptfoo version might have added native Parquet support after what I know. `promptfoo export --help` or the current docs would confirm that.",
+  "ttft_ms": 3438,
+  "type": "result",
+  "duration_ms": 5326,
+  "uuid": "b21d9177-669d-4c90-a536-036d785d847f",
+  "ttft_stream_ms": 2500,
+  "time_to_request_ms": 98,
+  "first_content_frame_ms": 2501,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

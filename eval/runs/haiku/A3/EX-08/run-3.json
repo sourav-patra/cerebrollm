@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-08",
+ "run": 3,
+ "started_utc": "2026-10-29T01:40:22Z",
+ "seconds": 7.42,
+ "prompt_file": "runs/prompts/A3/EX-08.txt",
+ "prompt_sha256": "c7d823e248496c9b4be0d91e387fad20c75f7fb43a906214f0ea475532cdc04f",
+ "answer": "The default value of `ef_construction` is 64. The README says: \"`ef_construction` - the size of the dynamic candidate list for constructing the graph (64 by default)\" [pgvector/README.md (lines 257-268)].",
+ "tokens": {
+  "input": 3319,
+  "output": 74,
+  "thinking": 0,
+  "cache_read": 2931,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00014371000000000002,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2737,
+  "stop_reason": "end_turn",
+  "session_id": "b00bc419-af8a-4021-a6a9-1273ab26cc6a",
+  "total_cost_usd": 0.00014371000000000002,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2931,
+   "output_tokens": 74,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 74,
+     "cache_read_input_tokens": 2931,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 74,
+    "cacheReadInputTokens": 2931,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00014371000000000002,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The default value of `ef_construction` is 64. The README says: \"`ef_construction` - the size of the dynamic candidate list for constructing the graph (64 by default)\" [pgvector/README.md (lines 257-268)].",
+  "ttft_ms": 2853,
+  "type": "result",
+  "duration_ms": 2869,
+  "uuid": "0e834cbc-24c1-46da-90c5-1ded3a969175",
+  "ttft_stream_ms": 2851,
+  "time_to_request_ms": 150,
+  "first_content_frame_ms": 2851,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

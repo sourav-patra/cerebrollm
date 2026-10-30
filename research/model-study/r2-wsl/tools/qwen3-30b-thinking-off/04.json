@@ -1,0 +1,157 @@
+{
+  "id": 5,
+  "request": {
+    "model": "qwen3:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Overwrite src/version.py so that it contains exactly this text: VERSION = \"2.1.0\""
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": false,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:30b",
+    "created_at": "2026-10-29T01:06:28.6028164Z",
+    "message": {
+      "role": "assistant",
+      "content": "Okay, the user wants me to overwrite src/version.py with the exact text VERSION = \"2.1.0\". Let me check the available tools. There's a write_file function that takes path and content. The path should be src/version.py and the content is VERSION = \"2.1.0\". I need to make sure I use the correct parameters. The function requires path and content as arguments. So I'll structure the tool call with those. No other tools are needed here since it's a straightforward write operation. Let me confirm the parameters: path is \"src/version.py\" and content is \"VERSION = \\\"2.1.0\\\"\". Wait, in JSON, the quotes need to be escaped, but the function expects a string. So the content should have the quotes properly escaped. Wait, the user provided the text as VERSION = \"2.1.0\", so in the content string, the quotes around 2.1.0 are part of the string. So when writing to the file, it should be exactly that. So the content argument should be VERSION = \"2.1.0\". But in JSON, to include double quotes inside a string, they need to be escaped. Wait, but the function's content parameter is a string, so in the tool call, the content should be written as a JSON string with escaped quotes. Wait, no. The tool call is a JSON object where the content is a string. So the actual value for content should be VERSION = \"2.1.0\", but in JSON, the double quotes inside the string need to be escaped. Wait, no. Let me think. If the content is VERSION = \"2.1.0\", then in the JSON string, the double quotes around 2.1.0 would need to be escaped as \\\" to be valid JSON. So the content parameter should be \"VERSION = \\\"2.1.0\\\"\" as a string. Wait, but the user's instruction says \"exactly this text\", so the actual content should have the quotes. So when writing to the file, the file should have VERSION = \"2.1.0\", which includes the quotes. Therefore, in the tool call's content argument, the string must include the quotes, so in JSON, they need to be escaped. So the content would be VERSION = \\\"2.1.0\\\". Wait, but in the JSON for the tool call, the content is a string, so the double quotes inside the string need to be escaped. So the correct way is to have the content as VERSION = \\\"2.1.0\\\". Let me check: if I write \"VERSION = \\\"2.1.0\\\"\", then when parsed, it becomes VERSION = \"2.1.0\". Yes, that's correct. So the arguments should be path: \"src/version.py\", content: \"VERSION = \\\"2.1.0\\\"\". Wait, but the user wrote \"VERSION = \"2.1.0\"\", so the quotes are part of the string. So in the content string, the quotes are present, so to represent that in JSON, they need to be escaped. So the content value in the tool call should have the quotes escaped. So the correct content string is VERSION = \\\"2.1.0\\\". Therefore, the tool call should have content as VERSION = \\\"2.1.0\\\". Let me make sure. If I don't escape them, the JSON would be invalid. So yes, escaping is necessary. So the tool call will have the content with escaped quotes. Alright, that's the correct approach.\n</think>\n\n",
+      "tool_calls": [
+        {
+          "id": "call_h7w98luc",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "path": "src/version.py",
+              "content": "VERSION = \"2.1.0\""
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 20133205900,
+    "load_duration": 11600600,
+    "prompt_eval_count": 350,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 208478000,
+    "eval_count": 780,
+    "eval_duration": 19903458000
+  },
+  "wall_seconds": 20.125989053998637,
+  "load_average_before": [
+    0.0615234375,
+    0.06103515625,
+    0.00732421875
+  ],
+  "load_average_after": [
+    0.04296875,
+    0.05615234375,
+    0.00537109375
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "src/version.py",
+      "content": "VERSION = \"2.1.0\""
+    }
+  },
+  "passed": true
+}

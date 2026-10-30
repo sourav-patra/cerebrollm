@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-PA-2",
+ "run": 2,
+ "started_utc": "2026-10-29T01:53:48Z",
+ "seconds": 8.12,
+ "prompt_file": "runs/prompts/A0/PR-PA-2.txt",
+ "prompt_sha256": "91459a040207abea8d0455b92b65439fa88bf06235ac60cdb66af8c1a143ed04",
+ "answer": "The image is **`pgvector/pgvector:pg17-bookworm`**, published by the pgvector project on Docker Hub. It's Postgres 17 with pgvector preinstalled, built on Debian bookworm.\n\nTo pin a pgvector release, use a tag like `pgvector/pgvector:0.8.0-pg17-bookworm`. I'm not sure which pgvector versions are currently published, so check the Docker Hub tag list before relying on a specific version.\n\nI don't have any details about your particular project, so if it uses a custom Dockerfile or compose setup, the image reference may need to match that configuration.",
+ "tokens": {
+  "input": 664,
+  "output": 449,
+  "thinking": 247,
+  "cache_read": 0,
+  "cache_creation": 662
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035710000000000006,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3522,
+  "stop_reason": "end_turn",
+  "session_id": "9f50677a-5037-4ffb-9b36-715ac0d7dac2",
+  "total_cost_usd": 0.00035710000000000006,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 662,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 449,
+   "output_tokens_details": {
+    "thinking_tokens": 247
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 662,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 449,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 662,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 662
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 449,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 662,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035710000000000006,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 247,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 662,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The image is **`pgvector/pgvector:pg17-bookworm`**, published by the pgvector project on Docker Hub. It's Postgres 17 with pgvector preinstalled, built on Debian bookworm.\n\nTo pin a pgvector release, use a tag like `pgvector/pgvector:0.8.0-pg17-bookworm`. I'm not sure which pgvector versions are currently published, so check the Docker Hub tag list before relying on a specific version.\n\nI don't have any details about your particular project, so if it uses a custom Dockerfile or compose setup, the image reference may need to match that configuration.",
+  "ttft_ms": 2918,
+  "type": "result",
+  "duration_ms": 3668,
+  "uuid": "3b85a0a5-db64-48d3-8ace-c37afb557de0",
+  "ttft_stream_ms": 2916,
+  "time_to_request_ms": 220,
+  "first_content_frame_ms": 2917,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

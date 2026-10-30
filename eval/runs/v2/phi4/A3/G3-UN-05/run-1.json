@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-05",
+ "run": 1,
+ "started_utc": "2026-10-29T17:17:36Z",
+ "seconds": 13.08,
+ "prompt_sha256": "24b4f0a37bcdab2f151d071b7668e6d0bfd5e8d71c91b1bd324da97df9d05009",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. The provided context does not mention this specific environment variable or its default value. \n\nThe context discusses other environment variables such as `OLLAMA_CONTEXT_LENGTH` and `OLLAMA_HOST`, but does not cover `OLLAMA_UNLOAD_TIMEOUT`. \n\nFor accurate information, you might need to refer to the Ollama documentation or source code directly. \n\nHere is a relevant part of the context for reference:\n- Regarding context length: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md (lines 15-49)].\n- Regarding host configuration: \"Ollama binds 127.0.0.1 port 11434 by default.\" [ollama/docs/faq.md (lines 183-187)]. \n\nIf you need further assistance, checking the latest documentation or reaching out to the Ollama community may provide the needed information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1586,
+  "output": 205
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11117766000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:17:48.2900758Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. The provided context does not mention this specific environment variable or its default value. \n\nThe context discusses other environment variables such as `OLLAMA_CONTEXT_LENGTH` and `OLLAMA_HOST`, but does not cover `OLLAMA_UNLOAD_TIMEOUT`. \n\nFor accurate information, you might need to refer to the Ollama documentation or source code directly. \n\nHere is a relevant part of the context for reference:\n- Regarding context length: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md (lines 15-49)].\n- Regarding host configuration: \"Ollama binds 127.0.0.1 port 11434 by default.\" [ollama/docs/faq.md (lines 183-187)]. \n\nIf you need further assistance, checking the latest documentation or reaching out to the Ollama community may provide the needed information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11117766000,
+  "load_duration": 13189100,
+  "prompt_eval_count": 1586,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 758475000,
+  "eval_count": 205,
+  "eval_duration": 10155305000
+ }
+}

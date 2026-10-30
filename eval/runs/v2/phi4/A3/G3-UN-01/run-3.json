@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-01",
+ "run": 3,
+ "started_utc": "2026-10-29T17:31:40Z",
+ "seconds": 5.25,
+ "prompt_sha256": "8d36acc17d80b55b637bc1eb276b47450f693cfc08efce7585ec3adf0f9b16dc",
+ "answer": "I do not know the default value of pgvector's `hnsw.max_scan_tuples_per_page` setting. The provided context does not mention this specific setting or its default value. The context discusses other `hnsw` settings, such as `hnsw.max_scan_tuples`, but not `hnsw.max_scan_tuples_per_page`. [1] pgvector/README.md (lines 518-538) [2] pgvector/README.md (lines 478-516).",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1620,
+  "output": 97
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5643057100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:31:45.329163Z",
+  "response": "I do not know the default value of pgvector's `hnsw.max_scan_tuples_per_page` setting. The provided context does not mention this specific setting or its default value. The context discusses other `hnsw` settings, such as `hnsw.max_scan_tuples`, but not `hnsw.max_scan_tuples_per_page`. [1] pgvector/README.md (lines 518-538) [2] pgvector/README.md (lines 478-516).",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5643057100,
+  "load_duration": 12828600,
+  "prompt_eval_count": 1620,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 765324000,
+  "eval_count": 97,
+  "eval_duration": 4722623000
+ }
+}

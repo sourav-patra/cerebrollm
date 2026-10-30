@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-EX-01",
+ "run": 1,
+ "started_utc": "2026-10-30T05:59:23Z",
+ "seconds": 38.71,
+ "prompt_sha256": "362c113ff0ed7b4be237ce705120d029b8bf19656ff82d6d4db71febf3cdf8a2",
+ "answer": "\"GET /api/show` now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "ollama/v0.34.3.md",
+   "quote": "GET /api/show` now advertises each model's thinking controls and default:",
+   "verify": "OK",
+   "detail": "ollama/v0.34.3.md@file sha256 60942ac037c7"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 3.28,
+   "rerank": 8.59,
+   "generate": 24.18,
+   "verify": 0.32,
+   "total": 36.37
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.99527,
+    "path": "ollama/v0.34.3.md",
+    "line_start": 1,
+    "line_end": 41
+   },
+   {
+    "rank": 2,
+    "search_rank": 3,
+    "rerank_score": 0.93616,
+    "path": "ollama/docs/capabilities/thinking.md",
+    "line_start": 11,
+    "line_end": 35
+   },
+   {
+    "rank": 3,
+    "search_rank": 4,
+    "rerank_score": 0.79313,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 1,
+    "line_end": 53
+   },
+   {
+    "rank": 4,
+    "search_rank": 2,
+    "rerank_score": 0.79065,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 69,
+    "line_end": 120
+   },
+   {
+    "rank": 5,
+    "search_rank": 17,
+    "rerank_score": 0.55926,
+    "path": "ollama/docs/api/anthropic-compatibility.md",
+    "line_start": 321,
+    "line_end": 332
+   },
+   {
+    "rank": 6,
+    "search_rank": 9,
+    "rerank_score": 0.52938,
+    "path": "ollama/docs/capabilities/thinking.md",
+    "line_start": 37,
+    "line_end": 94
+   },
+   {
+    "rank": 7,
+    "search_rank": 18,
+    "rerank_score": 0.33446,
+    "path": "promptfoo/site/docs/providers/aws-bedrock.md",
+    "line_start": 961,
+    "line_end": 1026
+   },
+   {
+    "rank": 8,
+    "search_rank": 7,
+    "rerank_score": 0.25899,
+    "path": "ollama/v0.35.0.md",
+    "line_start": 1,
+    "line_end": 69
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

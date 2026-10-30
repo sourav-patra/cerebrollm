@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:55:59Z",
+ "seconds": 8.23,
+ "prompt_sha256": "73be9dfb45008cb75564d567ccea5273c6a04906a34b660f2587f48b8ac9e9aa",
+ "answer": "Since Ollama 0.35.1, a model that uses web search can perform up to ten searches per response, up from three.\n\n\"Models using web search can now perform up to ten searches per response, up from three\" [ollama/v0.35.1.md]\n\nNote that another document, the ChatGPT integration page, still says web search is \"limited to three calls per response\" [ollama/docs/integrations/chatgpt.md]. That appears to describe the Codex/ChatGPT integration specifically, and it may simply be out of date relative to the 0.35.1 release notes. I can't tell from the context which one applies there.",
+ "tokens": {
+  "input": 2955,
+  "output": 191,
+  "thinking": 0,
+  "cache_read": 2588,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0036328,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3123,
+  "stop_reason": "end_turn",
+  "session_id": "850d2b56-12a0-4f64-aba4-9caad6253f4a",
+  "total_cost_usd": 0.0036328,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 2588,
+   "output_tokens": 191,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 191,
+     "cache_read_input_tokens": 2588,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 191,
+    "cacheReadInputTokens": 2588,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0036328,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Since Ollama 0.35.1, a model that uses web search can perform up to ten searches per response, up from three.\n\n\"Models using web search can now perform up to ten searches per response, up from three\" [ollama/v0.35.1.md]\n\nNote that another document, the ChatGPT integration page, still says web search is \"limited to three calls per response\" [ollama/docs/integrations/chatgpt.md]. That appears to describe the Codex/ChatGPT integration specifically, and it may simply be out of date relative to the 0.35.1 release notes. I can't tell from the context which one applies there.",
+  "ttft_ms": 3241,
+  "type": "result",
+  "duration_ms": 3258,
+  "uuid": "cdeec06b-622f-4693-b331-38ad5679c4b9",
+  "ttft_stream_ms": 2810,
+  "time_to_request_ms": 134,
+  "first_content_frame_ms": 2810,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

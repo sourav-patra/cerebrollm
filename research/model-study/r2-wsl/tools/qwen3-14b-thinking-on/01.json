@@ -1,0 +1,156 @@
+{
+  "id": 2,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "I need to see the file README.md before I change anything."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": true,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:28:02.7792053Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "Okay, the user wants to see the README.md file before making any changes. Let me check the available tools. There's a read_file function that takes a path. Since the user mentioned README.md, I should call read_file with the path set to \"README.md\". That should get the contents for them. I don't need to use any other tools here because the request is straightforward. Just read the file and return its contents.\n",
+      "tool_calls": [
+        {
+          "id": "call_fdn9h9lp",
+          "function": {
+            "index": 0,
+            "name": "read_file",
+            "arguments": {
+              "path": "README.md"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4706300200,
+    "load_duration": 12453100,
+    "prompt_eval_count": 341,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 179796000,
+    "eval_count": 113,
+    "eval_duration": 4508058000
+  },
+  "wall_seconds": 4.316643423000642,
+  "load_average_before": [
+    0.05615234375,
+    0.0263671875,
+    0.00341796875
+  ],
+  "load_average_after": [
+    0.05126953125,
+    0.02587890625,
+    0.0029296875
+  ],
+  "expected": {
+    "name": "read_file",
+    "arguments": {
+      "path": "README.md"
+    }
+  },
+  "passed": true
+}

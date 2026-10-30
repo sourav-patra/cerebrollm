@@ -1,0 +1,19 @@
+{
+  "model": "bge-m3",
+  "table": "data_study_d_bge_m3",
+  "start": 3376,
+  "chunks": 16,
+  "duration_seconds": 0.6496311280002374,
+  "backoff_seconds": 0.0,
+  "embedding_dimension": 1024,
+  "load_average_before": [
+    0.10986328125,
+    0.08642578125,
+    0.08544921875
+  ],
+  "load_average_after": [
+    0.1005859375,
+    0.0849609375,
+    0.0849609375
+  ]
+}

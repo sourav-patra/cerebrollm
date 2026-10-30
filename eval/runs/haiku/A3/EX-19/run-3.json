@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-19",
+ "run": 3,
+ "started_utc": "2026-10-29T01:44:15Z",
+ "seconds": 7.65,
+ "prompt_file": "runs/prompts/A3/EX-19.txt",
+ "prompt_sha256": "fd08973308dc24055040206e51b177c1dac24f956f67069d1293fba101b3f2b7",
+ "answer": "The option is `--filter-sample-seed <number>`. It is described as \"Numeric seed used to make `--filter-sample` select the same tests on repeated runs\" [promptfoo/site/docs/usage/command-line.md].\n\nThe reference doc also shows it as a config setting, `filterSampleSeed: 42 # Repeat the same random sample` [promptfoo/site/docs/configuration/reference.md].",
+ "tokens": {
+  "input": 3261,
+  "output": 136,
+  "thinking": 0,
+  "cache_read": 2876,
+  "cache_creation": 383
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00017356,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2721,
+  "stop_reason": "end_turn",
+  "session_id": "db2fe495-5add-40cd-ba79-d913e23277bd",
+  "total_cost_usd": 0.00017356,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 383,
+   "cache_read_input_tokens": 2876,
+   "output_tokens": 136,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 383,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 136,
+     "cache_read_input_tokens": 2876,
+     "cache_creation_input_tokens": 383,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 383
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 136,
+    "cacheReadInputTokens": 2876,
+    "cacheCreationInputTokens": 383,
+    "webSearchRequests": 0,
+    "costUSD": 0.00017356,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 383,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The option is `--filter-sample-seed <number>`. It is described as \"Numeric seed used to make `--filter-sample` select the same tests on repeated runs\" [promptfoo/site/docs/usage/command-line.md].\n\nThe reference doc also shows it as a config setting, `filterSampleSeed: 42 # Repeat the same random sample` [promptfoo/site/docs/configuration/reference.md].",
+  "ttft_ms": 2829,
+  "type": "result",
+  "duration_ms": 2845,
+  "uuid": "bf148cd7-f845-404e-833a-b59b1fc220fb",
+  "ttft_stream_ms": 2827,
+  "time_to_request_ms": 123,
+  "first_content_frame_ms": 2827,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

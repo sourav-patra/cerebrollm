@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 1,
+ "started_utc": "2026-10-29T17:16:00Z",
+ "seconds": 10.77,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "The safe mode that `promptfoo` version 0.125.0 added to `eval` turns off inline JavaScript assertions and shared transforms. Specifically, it rejects string-based JavaScript assertions and inline expressions that are handled by the shared transform helper. This mode can be activated using the command `promptfoo eval --safe-mode` or by setting the environment variable `PROMPTFOO_SAFE_MODE=true`. This configuration ensures that JavaScript function values passed through the Node API are still supported, but rejected assertions and transforms are handled with errors.\n\nRelevant quotes:\n- \"Reject inline JavaScript assertions and shared transforms.\" [1] promptfoo/site/docs/usage/command-line.md (lines 125-125)\n- \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [2] promptfoo/site/docs/configuration/expected-outputs/javascript.md (lines 11-64)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1883,
+  "output": 200
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11830902300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:16:10.5985391Z",
+  "response": "The safe mode that `promptfoo` version 0.125.0 added to `eval` turns off inline JavaScript assertions and shared transforms. Specifically, it rejects string-based JavaScript assertions and inline expressions that are handled by the shared transform helper. This mode can be activated using the command `promptfoo eval --safe-mode` or by setting the environment variable `PROMPTFOO_SAFE_MODE=true`. This configuration ensures that JavaScript function values passed through the Node API are still supported, but rejected assertions and transforms are handled with errors.\n\nRelevant quotes:\n- \"Reject inline JavaScript assertions and shared transforms.\" [1] promptfoo/site/docs/usage/command-line.md (lines 125-125)\n- \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [2] promptfoo/site/docs/configuration/expected-outputs/javascript.md (lines 11-64)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11830902300,
+  "load_duration": 20853100,
+  "prompt_eval_count": 1883,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 946097000,
+  "eval_count": 200,
+  "eval_duration": 10633748000
+ }
+}

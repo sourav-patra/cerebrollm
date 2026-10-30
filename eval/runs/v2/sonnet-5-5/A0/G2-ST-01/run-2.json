@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-ST-01",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:45Z",
+ "seconds": 7.76,
+ "prompt_sha256": "8b00f378a73a21bdd8c46b7a85782cd4ac026b3ce46afdc5a6741e16b986ff50",
+ "answer": "I don't know. I have no information about a \"Muse Glimmer\" model or an Ollama release 0.32.15, and nothing in this project's context covers them. I'd rather not guess at supported platforms.\n\nTo find out, check the Ollama release notes on GitHub (github.com/ollama/ollama/releases) or the model's page on ollama.com. If you paste the relevant release notes here, I can help interpret them.",
+ "tokens": {
+  "input": 655,
+  "output": 134,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.003956,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3539,
+  "stop_reason": "end_turn",
+  "session_id": "70ea9c8d-639c-451f-8867-6ddccd8d7df6",
+  "total_cost_usd": 0.003956,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 134,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 134,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 134,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.003956,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no information about a \"Muse Glimmer\" model or an Ollama release 0.32.15, and nothing in this project's context covers them. I'd rather not guess at supported platforms.\n\nTo find out, check the Ollama release notes on GitHub (github.com/ollama/ollama/releases) or the model's page on ollama.com. If you paste the relevant release notes here, I can help interpret them.",
+  "ttft_ms": 3608,
+  "type": "result",
+  "duration_ms": 3626,
+  "uuid": "85863e94-7bda-472e-8fca-ad580bcde8a0",
+  "ttft_stream_ms": 2612,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 2612,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

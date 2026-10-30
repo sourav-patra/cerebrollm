@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 1,
+ "started_utc": "2026-10-29T16:13:37Z",
+ "seconds": 6.14,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "The 0.124.0 release adds support for comma‑separated OR values in the `--filter-metadata` option.  \n\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+ "thinking_chars": 1065,
+ "tokens": {
+  "input": 1749,
+  "output": 326
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6809583000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:13:43.653573Z",
+  "response": "The 0.124.0 release adds support for comma‑separated OR values in the `--filter-metadata` option.  \n\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+  "thinking": "We need to answer: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" We need to quote a line we rely on, with path. We have context lines.\n\nFrom context [3] we see Features: cli support comma-separated OR values in --filter-metadata. That indicates new form of value: comma-separated OR values. So answer: It accepts comma-separated OR values. Must quote. The line: \"* cli: support comma-separated OR values in --filter-metadata ([#11320]...\" from [3].\n\nAlso maybe [1] shows filter-metadata usage. But the question: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" That is indeed the comma-separated OR values.\n\nThus answer: It can accept comma-separated values as OR logic within a single key. Provide quote and path.\n\nWe need to quote the line: \"cli: support comma-separated OR values in --filter-metadata\". Path: [promptfoo/0.124.0.md] lines 20-31. Provide in format: \"cli: support comma-separated OR values in --filter-metadata\". [promptfoo/0.124.0.md].\n\nLet's produce final answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6809583000,
+  "load_duration": 16546600,
+  "prompt_eval_count": 1749,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 751638000,
+  "eval_count": 326,
+  "eval_duration": 5989048000
+ }
+}

@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/35",
+  "index": 27,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "medium"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:21:52.8186479Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n    if not l:\n        raise ValueError(\"max_element() arg is an empty sequence\")\n    max_val = l[0]\n    for x in l[1:]:\n        if x > max_val:\n            max_val = x\n    return max_val\n```",
+      "thinking": "We need to implement max_element that returns maximum element in list. Should handle empty list? Not specified. Probably raise ValueError. Use built-in max? But maybe implement manually. Use built-in max for simplicity. But maybe they want manual. We'll implement manual to avoid built-in. But built-in is fine. But tests may check for error on empty. We'll raise ValueError. Implementation: iterate. Return max. Provide docstring. Provide type hints. Provide imports? None needed. Provide function. Let's implement."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4557856800,
+    "load_duration": 23424100,
+    "prompt_eval_count": 168,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 188907000,
+    "eval_count": 248,
+    "eval_duration": 4316769000
+  },
+  "wall_seconds": 4.293952300000456,
+  "load_average_before": [
+    0.2333984375,
+    0.1044921875,
+    0.0810546875
+  ],
+  "load_average_after": [
+    0.2333984375,
+    0.1044921875,
+    0.0810546875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-medium-27",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-medium:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_27.py"
+    ],
+    "wall_seconds": 0.8377194139993662,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

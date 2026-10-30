@@ -1,0 +1,158 @@
+{
+  "id": 5,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Overwrite src/version.py so that it contains exactly this text: VERSION = \"2.1.0\""
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": "low",
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:28:00.8111552Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "We need to write file. Use write_file.",
+      "tool_calls": [
+        {
+          "id": "call_t6qzng1x",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "path": "src/version.py",
+              "content": "VERSION = \"2.1.0\""
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 984563700,
+    "load_duration": 13044500,
+    "prompt_eval_count": 293,
+    "prompt_eval_cached_count": 269,
+    "prompt_eval_duration": 144647000,
+    "eval_count": 48,
+    "eval_duration": 817956000
+  },
+  "wall_seconds": 0.9310928569993848,
+  "load_average_before": [
+    0.2509765625,
+    0.2041015625,
+    0.1416015625
+  ],
+  "load_average_after": [
+    0.23046875,
+    0.20068359375,
+    0.140625
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "src/version.py",
+      "content": "VERSION = \"2.1.0\""
+    }
+  },
+  "passed": true
+}

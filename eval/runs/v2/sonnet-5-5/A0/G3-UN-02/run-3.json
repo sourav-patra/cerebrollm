@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-02",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:04Z",
+ "seconds": 12.97,
+ "prompt_sha256": "60f868e3a7814623d1f9aa36fa2798b82971e32e3304cf4ebc7d143ef20c3e6b",
+ "answer": "I don't know of a specific pgvector version that adds this, and I have no project files here that say so.\n\nWhat I can say from general knowledge, with less certainty:\n\n- HNSW indexes were introduced in pgvector 0.5.0, so nothing earlier is relevant.\n- `pg_upgrade` normally copies or links index files as they are, so an HNSW index should carry over if the new cluster has a compatible pgvector build installed. I'm not aware of a version that changed this behavior.\n- I can't confirm whether any release changed the on-disk format in a way that would force a rebuild.\n\nFor a definitive answer, check the pgvector `CHANGELOG.md` and the README's upgrade notes, or test with a copy of your data using `pg_upgrade --check`. If you tell me which pgvector and PostgreSQL versions you're on, I can help work out what to verify.",
+ "tokens": {
+  "input": 657,
+  "output": 551,
+  "thinking": 270,
+  "cache_read": 0,
+  "cache_creation": 655
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.008133999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8867,
+  "stop_reason": "end_turn",
+  "session_id": "e3f4978f-bf63-486e-a459-6a50efcf14a8",
+  "total_cost_usd": 0.008133999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 655,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 551,
+   "output_tokens_details": {
+    "thinking_tokens": 270
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 655,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 551,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 655,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 655
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 551,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 655,
+    "webSearchRequests": 0,
+    "costUSD": 0.008133999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 270,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 655,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a specific pgvector version that adds this, and I have no project files here that say so.\n\nWhat I can say from general knowledge, with less certainty:\n\n- HNSW indexes were introduced in pgvector 0.5.0, so nothing earlier is relevant.\n- `pg_upgrade` normally copies or links index files as they are, so an HNSW index should carry over if the new cluster has a compatible pgvector build installed. I'm not aware of a version that changed this behavior.\n- I can't confirm whether any release changed the on-disk format in a way that would force a rebuild.\n\nFor a definitive answer, check the pgvector `CHANGELOG.md` and the README's upgrade notes, or test with a copy of your data using `pg_upgrade --check`. If you tell me which pgvector and PostgreSQL versions you're on, I can help work out what to verify.",
+  "ttft_ms": 6740,
+  "type": "result",
+  "duration_ms": 8987,
+  "uuid": "ebdc3814-3465-4748-b52f-ff3418263ec7",
+  "ttft_stream_ms": 4411,
+  "time_to_request_ms": 116,
+  "first_content_frame_ms": 4411,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

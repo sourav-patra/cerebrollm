@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 3,
+ "started_utc": "2026-10-29T15:57:47Z",
+ "seconds": 7.32,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "I don't know the three question types. The retrieved documents don't list them.\n\nThe only type name that appears in the `/v1/systemone` examples is `noul`: \"`\"type\": \"noul\"`\" [ollama/docs/capabilities/decision.md]\n\nThe CLI release notes describe three kinds of tasks, but they are not given as API type names: \"ask yes/no questions, classify text into labels, or score against a rubric\" [ollama/v0.40.4.md]\n\nThe API reference for question types is probably in the full `ollama/docs/capabilities/decision.md`, but the retrieved excerpt only covers the cloud-model section.",
+ "tokens": {
+  "input": 3821,
+  "output": 309,
+  "thinking": 108,
+  "cache_read": 3456,
+  "cache_creation": 363
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0048916,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3017,
+  "stop_reason": "end_turn",
+  "session_id": "5e9f7ccc-0130-46df-9fa0-104755005a0a",
+  "total_cost_usd": 0.0048916,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 363,
+   "cache_read_input_tokens": 3456,
+   "output_tokens": 309,
+   "output_tokens_details": {
+    "thinking_tokens": 108
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 363,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 309,
+     "cache_read_input_tokens": 3456,
+     "cache_creation_input_tokens": 363,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 363
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 309,
+    "cacheReadInputTokens": 3456,
+    "cacheCreationInputTokens": 363,
+    "webSearchRequests": 0,
+    "costUSD": 0.0048916,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 108,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 363,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the three question types. The retrieved documents don't list them.\n\nThe only type name that appears in the `/v1/systemone` examples is `noul`: \"`\"type\": \"noul\"`\" [ollama/docs/capabilities/decision.md]\n\nThe CLI release notes describe three kinds of tasks, but they are not given as API type names: \"ask yes/no questions, classify text into labels, or score against a rubric\" [ollama/v0.40.4.md]\n\nThe API reference for question types is probably in the full `ollama/docs/capabilities/decision.md`, but the retrieved excerpt only covers the cloud-model section.",
+  "ttft_ms": 2466,
+  "type": "result",
+  "duration_ms": 3103,
+  "uuid": "b3e1e6ff-26b6-4fe9-8fad-8f6065d1ba28",
+  "ttft_stream_ms": 2465,
+  "time_to_request_ms": 106,
+  "first_content_frame_ms": 2465,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

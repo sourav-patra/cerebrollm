@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 3,
+ "started_utc": "2026-10-29T17:32:58Z",
+ "seconds": 7.7,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "Based on the provided context, there is no specific information regarding how many documents per second LlamaIndex's IngestionPipeline can process on a single CPU core. The documentation discusses various aspects of the IngestionPipeline, including parallel processing, async support, and usage patterns, but it does not provide performance metrics or throughput data for single-core processing.\n\nIf you need detailed performance metrics, you might need to consult additional resources such as performance benchmarks or test results provided by the developers or community, which were not included in the context provided. If such information is crucial, reaching out directly to the LlamaIndex support or community forums could also be helpful.\n\nTherefore, I do not know the answer to the question based on the context provided.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1690,
+  "output": 149
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8330608400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:33:07.1741119Z",
+  "response": "Based on the provided context, there is no specific information regarding how many documents per second LlamaIndex's IngestionPipeline can process on a single CPU core. The documentation discusses various aspects of the IngestionPipeline, including parallel processing, async support, and usage patterns, but it does not provide performance metrics or throughput data for single-core processing.\n\nIf you need detailed performance metrics, you might need to consult additional resources such as performance benchmarks or test results provided by the developers or community, which were not included in the context provided. If such information is crucial, reaching out directly to the LlamaIndex support or community forums could also be helpful.\n\nTherefore, I do not know the answer to the question based on the context provided.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8330608400,
+  "load_duration": 13310000,
+  "prompt_eval_count": 1690,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 882384000,
+  "eval_count": 149,
+  "eval_duration": 7303884000
+ }
+}

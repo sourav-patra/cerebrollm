@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-PA-03",
+ "run": 2,
+ "started_utc": "2026-10-29T16:18:13Z",
+ "seconds": 14.23,
+ "prompt_sha256": "98200b24f98d7ad2eb6bb7ace9cd93045ca11119a4738c7f7930ca7ec85d6b10",
+ "answer": "I do not know.",
+ "thinking_chars": 3260,
+ "tokens": {
+  "input": 113,
+  "output": 895
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 15430243600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:18:27.9153303Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"How many total and how many active parameters does the Nemotron 3.5 Bolt model have in Ollama?\" We need to answer based on known info. It's a question about the Nemotron 3.5 Bolt model in Ollama. I need to check if I know about Nemotron 3.5 Bolt. It's likely a variant of Nemotron 3.5, maybe with fewer parameters. The model is from Microsoft? Nemotron? Actually \"Nemotron\" is a model by Microsoft? No, \"Nemotron\" is a model by OpenAI? Wait, \"Nemotron\" maybe from \"Nemotron\" by \"Nemotron\"? Might be from \"Nemotron\" by \"Nemotron\"? I'm not sure. Let's think: There's a model called \"Nemotron 3.5\" from \"Nemotron\" by \"Nemotron\"? Actually, \"Nemotron\" is a product by \"NVIDIA\"? No. Wait. \"Nemotron\" might be from \"Nemotron\" by \"Nemotron\"? I recall that \"Nemotron\" is a large language model by \"Nemotron\" from \"Nemotron\"? I'm not certain.\n\nThe question: \"How many total and how many active parameters does the Nemotron 3.5 Bolt model have in Ollama?\" This is likely a question about a specific model from the Ollama platform. Ollama hosts many LLMs. The \"Nemotron 3.5 Bolt\" is a model. The question asks for the total number of parameters and the number of active parameters. In Llama, the total parameters are the sum of all weights. Active parameters refer to those used during inference? The difference might be due to static weights vs dynamic? I'm not sure.\n\nLet's search memory: I recall \"Nemotron 3.5 Bolt\" is a variant of \"Nemotron 3.5\" with some optimizations. The \"Bolt\" suffix might indicate a smaller or faster version. The model might have 1.4B or 2.3B parameters? Actually \"Nemotron 3.5\" might be similar to \"Gemma 2B\"? No.\n\nLet's research from memory: \"Nemotron\" is a Llama-like model by \"Nemotron\" from \"Nemotron\"? There's \"Nemotron 3.5\" which is a 7B model? The \"Bolt\" variant might be 3.5B? I'm not certain.\n\nLet's think about \"Nemotron 3.5\" from \"Nemotron\". I think it's a 7B model. But \"Bolt\" could be a smaller variant maybe 3.5B. The question specifically asks for \"total\" and \"active\" parameters. For example, \"Llama 2 7B\" has 7B total, but 6.5B active? Actually Llama 2 7B has 7B parameters, but only 7B active? Not sure.\n\nLet's consider the difference between total and active parameters. In some models, they use \"rope\" scaling or \"attention\" that reduces active parameters. But I'm not sure.\n\nMaybe the answer: \"The Nemotron 3.5 Bolt model in Ollama has 1.5B total parameters and 1.4B active parameters.\" But this is guess.\n\nAlternatively, maybe the answer: \"The model has 3.5B total parameters and 3.5B active parameters.\" But that seems trivial.\n\nLet's think: The question likely expects a specific answer: \"The Nemotron 3.5 Bolt model has 1.1B total parameters and 1.0B active parameters\" or something.\n\nWe need to answer \"How many total and how many active parameters does the Nemotron 3.5 Bolt model have in Ollama?\" If I do not know, I should say I do not know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I need to answer from what I know. I don't know. So I should say I do not know. But maybe I can provide an approximate? The instruction is to only answer from what I know. If I don't know, say you do not know. So I should say \"I do not know.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 15430243600,
+  "load_duration": 14281400,
+  "prompt_eval_count": 113,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181856000,
+  "eval_count": 895,
+  "eval_duration": 15211515000
+ }
+}

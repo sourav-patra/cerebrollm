@@ -1,0 +1,7 @@
+sonnet-5-5: 105 calls to do
+20/105 elapsed 63s
+40/105 elapsed 126s
+60/105 elapsed 181s
+80/105 elapsed 241s
+100/105 elapsed 298s
+done sonnet-5-5 105 calls in 318s

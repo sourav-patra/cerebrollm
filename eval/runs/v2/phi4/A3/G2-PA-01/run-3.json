@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-01",
+ "run": 3,
+ "started_utc": "2026-10-29T17:29:10Z",
+ "seconds": 10.69,
+ "prompt_sha256": "b68c308c97c0daa435047538b07503e1e432d54a44f514835f01f54c67648323",
+ "answer": "In Ollama version 0.32.10 and later, models that do not set their own `repeat_penalty` default to 1.0, which is considered \"off.\" This change was made to match other engines and speed up speculative decoding. This information is indicated in the release notes:\n\n\"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding; set a per-model parameter if an older model repeats itself.\"  \n[ollama/v0.32.10.md (lines 1-9)](https://github.com/ollama/ollama/releases/tag/v0.32.10)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1990,
+  "output": 149
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8850580400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:29:20.8110268Z",
+  "response": "In Ollama version 0.32.10 and later, models that do not set their own `repeat_penalty` default to 1.0, which is considered \"off.\" This change was made to match other engines and speed up speculative decoding. This information is indicated in the release notes:\n\n\"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding; set a per-model parameter if an older model repeats itself.\"  \n[ollama/v0.32.10.md (lines 1-9)](https://github.com/ollama/ollama/releases/tag/v0.32.10)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8850580400,
+  "load_duration": 14181400,
+  "prompt_eval_count": 1990,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1021649000,
+  "eval_count": 149,
+  "eval_duration": 7614081000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-18",
+ "run": 1,
+ "started_utc": "2026-10-29T01:52:22Z",
+ "seconds": 10.2,
+ "prompt_file": "runs/prompts/A3/PA-18.txt",
+ "prompt_sha256": "e917661a1e2cab8152f8867b0f48189c9f41b8dc9069990cca997ecd06aa9b32",
+ "answer": "To cap concurrent API calls in `promptfoo eval`, use the `-j` or `--max-concurrency` flag. The docs describe it as \"Maximum number of concurrent API calls\" [\"`-j, --max-concurrency <number>` ... Maximum number of concurrent API calls\" [promptfoo/site/docs/usage/command-line.md]].\n\nFor example, the OSWorld guide runs with a concurrency of 1:\n\n```bash\npromptfoo eval -c promptfooconfig.yaml --no-cache \\\n  --filter-metadata app=libreoffice_calc --max-concurrency 1 \\\n  -o osworld-libreoffice-calc.json\n```\n\nThis command appears in \"promptfoo eval -c promptfooconfig.yaml --no-cache --filter-metadata app=libreoffice_calc --max-concurrency 1\" [promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md].\n\nThe provided excerpts don't show the default concurrency value, or whether the setting can also be placed in `promptfooconfig.yaml`. I don't know those details from this context. Also, `redteam run` has a separate `-j, --max-concurrency` option, but that applies to red team runs, not to `eval`.",
+ "tokens": {
+  "input": 3141,
+  "output": 949,
+  "thinking": 535,
+  "cache_read": 0,
+  "cache_creation": 3139
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0011025,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5096,
+  "stop_reason": "end_turn",
+  "session_id": "7126bcb0-3037-45f0-b4ed-fce7e1f0ace5",
+  "total_cost_usd": 0.0011025,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3139,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 949,
+   "output_tokens_details": {
+    "thinking_tokens": 535
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3139,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 949,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3139,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3139
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 949,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3139,
+    "webSearchRequests": 0,
+    "costUSD": 0.0011025,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 535,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3139,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To cap concurrent API calls in `promptfoo eval`, use the `-j` or `--max-concurrency` flag. The docs describe it as \"Maximum number of concurrent API calls\" [\"`-j, --max-concurrency <number>` ... Maximum number of concurrent API calls\" [promptfoo/site/docs/usage/command-line.md]].\n\nFor example, the OSWorld guide runs with a concurrency of 1:\n\n```bash\npromptfoo eval -c promptfooconfig.yaml --no-cache \\\n  --filter-metadata app=libreoffice_calc --max-concurrency 1 \\\n  -o osworld-libreoffice-calc.json\n```\n\nThis command appears in \"promptfoo eval -c promptfooconfig.yaml --no-cache --filter-metadata app=libreoffice_calc --max-concurrency 1\" [promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md].\n\nThe provided excerpts don't show the default concurrency value, or whether the setting can also be placed in `promptfooconfig.yaml`. I don't know those details from this context. Also, `redteam run` has a separate `-j, --max-concurrency` option, but that applies to red team runs, not to `eval`.",
+  "ttft_ms": 3647,
+  "type": "result",
+  "duration_ms": 5226,
+  "uuid": "76874a89-ea6e-48fb-ab43-b7ce2afa6e11",
+  "ttft_stream_ms": 2884,
+  "time_to_request_ms": 177,
+  "first_content_frame_ms": 2884,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

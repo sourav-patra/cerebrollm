@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-15",
+ "run": 3,
+ "started_utc": "2026-10-29T16:33:32Z",
+ "seconds": 7.4,
+ "prompt_sha256": "2ae30404b1685d3b484219c6e90a4e895d45b50e4711a03a3b84c2bd8a751c88",
+ "answer": "I’m not aware of any official Promptfoo command that writes evaluation results directly to a Parquet file. The CLI supports exporting to CSV, JSON, and other text‑based formats, but there isn’t a built‑in “export‑to‑Parquet” flag or sub‑command. If you need Parquet output, you’d have to pipe the JSON/CSV output into a script that converts it to Parquet.",
+ "thinking_chars": 1612,
+ "tokens": {
+  "input": 103,
+  "output": 463
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7903433900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:33:39.8133868Z",
+  "response": "I’m not aware of any official Promptfoo command that writes evaluation results directly to a Parquet file. The CLI supports exporting to CSV, JSON, and other text‑based formats, but there isn’t a built‑in “export‑to‑Parquet” flag or sub‑command. If you need Parquet output, you’d have to pipe the JSON/CSV output into a script that converts it to Parquet.",
+  "thinking": "We need to answer: \"Which promptfoo command exports an evaluation to a Parquet file?\" The user says \"Answer from what you know about this project; if you do not know, say you do not know.\" So we need to know about \"promptfoo\" project. I recall promptfoo is a tool for evaluating LLM prompts. The command to export evaluation to Parquet file: There's a CLI command \"promptfoo export\" maybe? Let's search memory: In promptfoo docs, there are commands like \"promptfoo run\", \"promptfoo list\", \"promptfoo export\". The export command can output to CSV, JSON, or Parquet. The command might be \"promptfoo export --format parquet\" or \"promptfoo export --output-format parquet\". Alternatively, there might be \"promptfoo export -f parquet\" or \"promptfoo export --output parquet\". The question: \"Which promptfoo command exports an evaluation to a Parquet file?\" So answer: \"promptfoo export --output-format parquet\" or \"promptfoo export -f parquet\". Let's check official docs: I recall \"promptfoo export\" can specify output format with --format. Eg: \"promptfoo export -f parquet\". The help: \"promptfoo export [options] <evaluationName>\" maybe. The command might be \"promptfoo export --format parquet <evaluationName>\" or \"promptfoo export --output-format parquet <evaluationName>\". The question likely expects: \"promptfoo export --format parquet\" or \"promptfoo export -f parquet\". Which one? The phrase \"Which promptfoo command exports an evaluation to a Parquet file?\" So answer: \"Use the 'promptfoo export' command with the '--format parquet' option.\" I'd answer that. If unsure, say do not know. But I think it's correct.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7903433900,
+  "load_duration": 13485900,
+  "prompt_eval_count": 103,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 54070000,
+  "eval_count": 463,
+  "eval_duration": 7813445000
+ }
+}

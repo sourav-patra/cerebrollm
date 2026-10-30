@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 4,
+ "started_utc": "2026-10-29T16:45:51Z",
+ "seconds": 4.84,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "\"**assertions:** add rouge-l and rouge-s assertion types\" [promptfoo/0.125.0.md]",
+ "thinking_chars": 887,
+ "tokens": {
+  "input": 2235,
+  "output": 293
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5133704300
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:45:55.9368791Z",
+  "response": "\"**assertions:** add rouge-l and rouge-s assertion types\" [promptfoo/0.125.0.md]",
+  "thinking": "We need to answer: Which two ROUGE-based assertion types did promptfoo 0.125.0 add? We need to find in the context where 0.125.0 added ROUGE-based assertion types. In the context we saw in [1] lines 14-25: Features list includes \"* **assertions:** add rouge-l and rouge-s assertion types\". That appears to be about 0.125.0. Let's check context [1]. It says:\n\n> * **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\n\nThus the two ROUGE-based assertion types are rouge-l and rouge-s. So answer: rouge-l and rouge-s. We need to quote the line and path. The line is from [1] lines 14-25. The quote: \"* **assertions:** add rouge-l and rouge-s assertion types\". Let's capture that. The path is promptfoo/0.125.0.md. So final.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5133704300,
+  "load_duration": 14547700,
+  "prompt_eval_count": 2235,
+  "prompt_eval_cached_count": 2230,
+  "prompt_eval_duration": 58301000,
+  "eval_count": 293,
+  "eval_duration": 4981774000
+ }
+}

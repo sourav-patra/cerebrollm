@@ -1,0 +1,42 @@
+{
+ "exit": 0,
+ "cmd": [
+  "%USERPROFILE%\\.local\\bin\\claude.EXE",
+  "-p",
+  "--model",
+  "haiku",
+  "--tools",
+  "",
+  "--strict-mcp-config",
+  "--disable-slash-commands",
+  "--no-session-persistence",
+  "--setting-sources",
+  "",
+  "--effort",
+  "medium",
+  "--system-prompt",
+  "You are a helpful assistant.",
+  "--output-format",
+  "stream-json",
+  "--verbose"
+ ],
+ "init": {
+  "tools": [],
+  "mcp_servers": [],
+  "model": "claude-haiku-5-5",
+  "slash_commands": [],
+  "skills": [],
+  "permissionMode": "default",
+  "apiKeySource": "none"
+ },
+ "tool_use_blocks": 0,
+ "num_turns": 1,
+ "permission_denials": [],
+ "result": "OK",
+ "message_types": [
+  "system",
+  "assistant",
+  "rate_limit_event",
+  "result"
+ ]
+}

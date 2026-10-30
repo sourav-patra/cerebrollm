@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:21Z",
+ "seconds": 1.69,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "promptfoo 0.124.0 supports \"comma-separated OR values\" for the --filter-metadata option.\n\n\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md (lines 20-31)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1995,
+  "output": 65
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1786284800
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:58:23.7978296Z",
+  "response": "promptfoo 0.124.0 supports \"comma-separated OR values\" for the --filter-metadata option.\n\n\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md (lines 20-31)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1786284800,
+  "load_duration": 16534700,
+  "prompt_eval_count": 1995,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 890380000,
+  "eval_count": 65,
+  "eval_duration": 582339000
+ }
+}

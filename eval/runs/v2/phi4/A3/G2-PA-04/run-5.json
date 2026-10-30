@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-04",
+ "run": 5,
+ "started_utc": "2026-10-29T17:44:49Z",
+ "seconds": 12.51,
+ "prompt_sha256": "2b6ea5b6a72d2ad13b704409d81766cc1c5235ae5c9d1fab5a0268c71b6e8199",
+ "answer": "Promptfoo version 0.123.0 uses the Responses API by default for GPT-5.6 and newer models. This change is indicated as a breaking change in the release notes, which specifies that the default for these models has been switched to Responses.\n\nThe relevant line from the context is:  \n\"**providers:** default GPT-5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))\" [promptfoo/0.123.0.md (lines 9-23)].\n\nAdditionally, this is supported by the following line:  \n\"Responses supports text, image and file inputs, built-in tools, and response state. GPT-5.6 and newer models use it by default:\" [promptfoo/site/docs/providers/openai.md (lines 408-430)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2063,
+  "output": 175
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10005044900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:45:01.1328885Z",
+  "response": "Promptfoo version 0.123.0 uses the Responses API by default for GPT-5.6 and newer models. This change is indicated as a breaking change in the release notes, which specifies that the default for these models has been switched to Responses.\n\nThe relevant line from the context is:  \n\"**providers:** default GPT-5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))\" [promptfoo/0.123.0.md (lines 9-23)].\n\nAdditionally, this is supported by the following line:  \n\"Responses supports text, image and file inputs, built-in tools, and response state. GPT-5.6 and newer models use it by default:\" [promptfoo/site/docs/providers/openai.md (lines 408-430)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10005044900,
+  "load_duration": 12744800,
+  "prompt_eval_count": 2063,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 1038627999,
+  "eval_count": 175,
+  "eval_duration": 8798671000
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-06",
+ "run": 2,
+ "started_utc": "2026-10-29T17:24:51Z",
+ "seconds": 6.77,
+ "prompt_sha256": "c9f4fdb460682b97dbcf6fbbea7a2d7680542f3fd6ab7249edf525b1c9919d0a",
+ "answer": "I do not know which Ollama environment variable sets how many model layers are downloaded concurrently during an `ollama pull`. The provided context does not mention any environment variable related to concurrent downloads of model layers. If this information is available, it might be found in the project's documentation or source code, but it is not present in the context provided. [ollama/docs/api.md (lines 1543-1599)](ollama/docs/api.md) and [ollama/docs/faq.md (lines 163-181)](ollama/docs/faq.md) do not specify such a variable.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1772,
+  "output": 124
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7295665600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:24:58.2908658Z",
+  "response": "I do not know which Ollama environment variable sets how many model layers are downloaded concurrently during an `ollama pull`. The provided context does not mention any environment variable related to concurrent downloads of model layers. If this information is available, it might be found in the project's documentation or source code, but it is not present in the context provided. [ollama/docs/api.md (lines 1543-1599)](ollama/docs/api.md) and [ollama/docs/faq.md (lines 163-181)](ollama/docs/faq.md) do not specify such a variable.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7295665600,
+  "load_duration": 12937800,
+  "prompt_eval_count": 1772,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 917839000,
+  "eval_count": 124,
+  "eval_duration": 6247791000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-07",
+ "run": 1,
+ "started_utc": "2026-10-29T01:56:33Z",
+ "seconds": 12.75,
+ "prompt_file": "runs/prompts/A3/ST-07.txt",
+ "prompt_sha256": "649b84b0105b8fe71efbaddbb7ddf11348d4f5febf344fd8719e94841db2461c",
+ "answer": "The excerpts show how to set the embedding model globally, but the LLM line is cut off, so I can't confirm the exact `Settings.llm` code from them.\n\n**Embedding model:** Set `Settings.embed_model`. The docs say: \"The most common usage for an embedding model will be setting it in the global `Settings` object, and then using it to construct an index and query.\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\nThe usage example shows:\n\n```python\nfrom llama_index.embeddings.openai import OpenAIEmbedding\nfrom llama_index.core import Settings\n\n# changing the global default\nSettings.embed_model = OpenAIEmbedding()\n```\n\nThis snippet is from \"# changing the global default\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. If you don't set it, LlamaIndex falls back to OpenAI's default, and the docs say \"We recommend doing this for new projects\" when you choose a current model explicitly [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md].\n\n**LLM:** The excerpts don't show the full `Settings.llm` assignment. They do say the `Settings` object is \"a simple singleton object that lives throughout your application. Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. A migration page also mentions an Ollama-based config for non-OpenAI setups, but the code is truncated [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. Setting `Settings.llm` the same way as `Settings.embed_model` is the likely pattern, but check the full Settings documentation to confirm the exact code.",
+ "tokens": {
+  "input": 3398,
+  "output": 1731,
+  "thinking": 1113,
+  "cache_read": 0,
+  "cache_creation": 3396
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0015449,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8336,
+  "stop_reason": "end_turn",
+  "session_id": "68c0ecd1-f317-4533-9fc0-c872bd8cda09",
+  "total_cost_usd": 0.0015449,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3396,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1731,
+   "output_tokens_details": {
+    "thinking_tokens": 1113
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3396,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1731,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3396,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3396
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1731,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3396,
+    "webSearchRequests": 0,
+    "costUSD": 0.0015449,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1113,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3396,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The excerpts show how to set the embedding model globally, but the LLM line is cut off, so I can't confirm the exact `Settings.llm` code from them.\n\n**Embedding model:** Set `Settings.embed_model`. The docs say: \"The most common usage for an embedding model will be setting it in the global `Settings` object, and then using it to construct an index and query.\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\nThe usage example shows:\n\n```python\nfrom llama_index.embeddings.openai import OpenAIEmbedding\nfrom llama_index.core import Settings\n\n# changing the global default\nSettings.embed_model = OpenAIEmbedding()\n```\n\nThis snippet is from \"# changing the global default\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. If you don't set it, LlamaIndex falls back to OpenAI's default, and the docs say \"We recommend doing this for new projects\" when you choose a current model explicitly [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md].\n\n**LLM:** The excerpts don't show the full `Settings.llm` assignment. They do say the `Settings` object is \"a simple singleton object that lives throughout your application. Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. A migration page also mentions an Ollama-based config for non-OpenAI setups, but the code is truncated [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. Setting `Settings.llm` the same way as `Settings.embed_model` is the likely pattern, but check the full Settings documentation to confirm the exact code.",
+  "ttft_ms": 6267,
+  "type": "result",
+  "duration_ms": 8472,
+  "uuid": "8e51b827-698c-4487-82b4-9572667a2c69",
+  "ttft_stream_ms": 2871,
+  "time_to_request_ms": 132,
+  "first_content_frame_ms": 2871,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

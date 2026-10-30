@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-07",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:15Z",
+ "seconds": 6.98,
+ "prompt_sha256": "24255e1886d61d7264d37c09ec8fa0df7ca5290b3436d3592af4bb6e4467f6ac",
+ "answer": "I don't know. I have no information about the llama-index-core 0.14.25 release or which reranker class gained native async support in it. The working directory also doesn't appear to contain anything about this project, and I'd rather not guess at a class name.\n\nTo find out, you could check the llama-index changelog (`CHANGELOG.md` in the run-llama/llama_index repo) or the GitHub release notes for 0.14.25. If you point me to a local copy of the repo or the changelog, I can look through it for you.",
+ "tokens": {
+  "input": 635,
+  "output": 161,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 633
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004146,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2594,
+  "stop_reason": "end_turn",
+  "session_id": "33e87f55-b834-408a-b013-36bb86a67b79",
+  "total_cost_usd": 0.004146,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 633,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 161,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 633,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 161,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 633,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 633
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 161,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 633,
+    "webSearchRequests": 0,
+    "costUSD": 0.004146,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 633,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no information about the llama-index-core 0.14.25 release or which reranker class gained native async support in it. The working directory also doesn't appear to contain anything about this project, and I'd rather not guess at a class name.\n\nTo find out, you could check the llama-index changelog (`CHANGELOG.md` in the run-llama/llama_index repo) or the GitHub release notes for 0.14.25. If you point me to a local copy of the repo or the changelog, I can look through it for you.",
+  "ttft_ms": 2664,
+  "type": "result",
+  "duration_ms": 2680,
+  "uuid": "245f8730-e06d-4459-8835-9c7bb40cd2a3",
+  "ttft_stream_ms": 2660,
+  "time_to_request_ms": 125,
+  "first_content_frame_ms": 2660,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

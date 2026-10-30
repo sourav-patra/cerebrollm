@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-17",
+ "run": 5,
+ "started_utc": "2026-10-29T02:00:49Z",
+ "seconds": 7.38,
+ "prompt_file": "runs/prompts/A0/ST-17.txt",
+ "prompt_sha256": "35edda8df31f6567af0330c38001d97848db6e0e1aa2a79982297a1108e67349",
+ "answer": "In promptfoo's Azure OpenAI provider, you mark a deployment as a reasoning model with the **`isReasoningModel: true`** config option. I believe it goes in the provider's `config` block, for example for o-series deployments such as o1 or o3-mini. I'm not certain of the exact placement or whether other options accompany it, so check the current Azure provider docs before relying on this.",
+ "tokens": {
+  "input": 659,
+  "output": 326,
+  "thinking": 198,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0002946,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2808,
+  "stop_reason": "end_turn",
+  "session_id": "97413dfd-8dd5-4b45-9acd-3ea0ff72606a",
+  "total_cost_usd": 0.0002946,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 326,
+   "output_tokens_details": {
+    "thinking_tokens": 198
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 326,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 326,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.0002946,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 198,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In promptfoo's Azure OpenAI provider, you mark a deployment as a reasoning model with the **`isReasoningModel: true`** config option. I believe it goes in the provider's `config` block, for example for o-series deployments such as o1 or o3-mini. I'm not certain of the exact placement or whether other options accompany it, so check the current Azure provider docs before relying on this.",
+  "ttft_ms": 2923,
+  "type": "result",
+  "duration_ms": 2936,
+  "uuid": "907073de-5f09-4826-b0d7-263e358ab265",
+  "ttft_stream_ms": 2921,
+  "time_to_request_ms": 250,
+  "first_content_frame_ms": 2922,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

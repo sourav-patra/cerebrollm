@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 3,
+ "started_utc": "2026-10-29T16:37:11Z",
+ "seconds": 19.13,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I do not know.",
+ "thinking_chars": 4687,
+ "tokens": {
+  "input": 1545,
+  "output": 1052
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 18167321200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:37:29.3817751Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the default value of promptfoo's evaluateOptions.maxTokensPerCell?\" We need to find that in the project docs. The context provided includes some parts of docs but not necessarily that property. It might be in configuration/reference.md but not in the excerpt. We need to search the repository mentally. But we have no direct search ability. We have to rely on knowledge or guess. The question: evaluateOptions.maxTokensPerCell - likely a property controlling table cell width? Wait, evaluateOptions is in configuration/reference.md lines 1121-1149. That excerpt shows EvaluateOptions interface but doesn't include maxTokensPerCell. So maybe evaluateOptions.maxTokensPerCell is a property in the EvaluateOptions interface or in some config elsewhere. The question likely expects \"default is 200\" or something. Let's think: In promptfoo, there is a table cell max length option (--table-cell-max-length) in command line. That sets truncation of console table cells. In docs, there is also a default value for the console table cell max length, maybe 50? The evaluateOptions.maxTokensPerCell might refer to the maximum number of tokens per cell in the results table. Let's search memory: I recall reading that evaluateOptions.maxTokensPerCell defaults to 200. But I'm not sure.\n\nLet's examine the context: [3] command line includes --table-cell-max-length. That is for truncating console table cells. That might correspond to evaluateOptions.maxTokensPerCell? No, maybe evaluateOptions.maxTokensPerCell is used in evaluateOptions. Wait, evaluateOptions in docs includes options like cache, delay, generateSuggestions, suggestionsCount, interactiveProviders, maxConcurrency, repeat, showProgressBar, timeoutMs, maxEvalTimeMs, isRedteam, silent, abortSignal, progressCallback. No maxTokensPerCell. So maybe it's a different config: evaluateOptions.maxTokensPerCell might be part of the evaluation options for the table output. It might default to 200? Let's search memory: In promptfoo, there is a \"tableCellMaxLength\" option maybe? The CLI option is --table-cell-max-length. The evaluate options may have a property maxTokensPerCell? Could be default 200. I need to find a source.\n\nWe have the context for configuration/reference.md lines 52-52 but not showing. That might include a property tableCellMaxLength? Let's open the relevant part: [5] promptfoo/site/docs/configuration/reference.md (lines 52-52) but it's just header. Not helpful.\n\nWe might need to search the repository mentally. But given the question, maybe it's a trick: The default value is 200 tokens. Or maybe it's 2000 tokens. Let's think: If you print a table cell, you might want to limit to 200 tokens per cell to avoid huge output. 200 tokens ~ 1200 characters. That seems plausible. But maybe default is 200 tokens. I recall reading that in promptfoo docs: \"maxTokensPerCell: The maximum number of tokens to display in a cell. Defaults to 200.\" I'm not entirely sure.\n\nLet's search the code: In promptfoo, there is src/evaluate.ts maybe. But we can't search. But we can approximate.\n\nAlternatively, the answer might be \"It defaults to 200 tokens.\" Provide quote. But we need a quote from context. We don't have that in context. So we must say we don't know. But the instruction says: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So if we don't have evidence, we should say we don't know. But we can try to find a reference. Let's look at [3] command-line option: It says --table-cell-max-length <number>. It might have default value. But the excerpt doesn't show default. But maybe in docs, it's default 50? The table cell max length might be default 200? The CLI option description is just \"Truncate console table cells to this length\". It doesn't show default. But maybe the default is 200. But we don't have evidence.\n\nLet's search other context: [6] tracing config includes \"commandToolNames\". Not relevant.\n\nSo we don't have a quote. So we should say \"I do not know.\" But the question expects a specific value. But we cannot confirm. So we should answer \"I do not know\" citing that we don't have that info.\n\nBut maybe we can infer from the code: In promptfoo, the EvaluateOptions interface likely includes a property \"maxTokensPerCell\" with default 200. But we don't have the interface lines. The context didn't include that property. So we cannot quote. So answer: I do not know.\n\nThus we respond: \"I do not know.\" And no quote. According to guidelines, we should say we do not know. We can also mention we cannot find it in the provided context. So answer: I do not know.\n\nLet's produce that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 18167321200,
+  "load_duration": 13416300,
+  "prompt_eval_count": 1545,
+  "prompt_eval_cached_count": 1540,
+  "prompt_eval_duration": 57336000,
+  "eval_count": 1052,
+  "eval_duration": 18035677000
+ }
+}

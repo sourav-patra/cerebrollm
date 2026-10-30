@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 1,
+ "started_utc": "2026-10-29T15:44:11Z",
+ "seconds": 11.88,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "I don't know of a built-in promptfoo assertion type that computes BERTScore, and I haven't inspected any files in this working directory, so I can't confirm it from the project itself.\n\nAs far as I know, promptfoo's reference-based metrics are:\n\n- `similar`, which compares embedding cosine similarity\n- `levenshtein`\n- `rouge-n`\n- `bleu`\n- `gleu`\n- `meteor`, in newer versions\n\nBERTScore isn't among them as far as I know. If you need it, you could write a custom `python` assertion that calls the `bert-score` package and returns a score. The promptfoo assertion docs or a search of its source for \"bertscore\" would confirm whether a native type has been added since my knowledge.",
+ "tokens": {
+  "input": 637,
+  "output": 426,
+  "thinking": 187,
+  "cache_read": 0,
+  "cache_creation": 635
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006803999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8064,
+  "stop_reason": "end_turn",
+  "session_id": "1e9d4689-de1a-4064-9409-0fc4502572dc",
+  "total_cost_usd": 0.006803999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 635,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 426,
+   "output_tokens_details": {
+    "thinking_tokens": 187
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 635,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 426,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 635,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 635
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 426,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 635,
+    "webSearchRequests": 0,
+    "costUSD": 0.006803999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 187,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 635,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a built-in promptfoo assertion type that computes BERTScore, and I haven't inspected any files in this working directory, so I can't confirm it from the project itself.\n\nAs far as I know, promptfoo's reference-based metrics are:\n\n- `similar`, which compares embedding cosine similarity\n- `levenshtein`\n- `rouge-n`\n- `bleu`\n- `gleu`\n- `meteor`, in newer versions\n\nBERTScore isn't among them as far as I know. If you need it, you could write a custom `python` assertion that calls the `bert-score` package and returns a score. The promptfoo assertion docs or a search of its source for \"bertscore\" would confirm whether a native type has been added since my knowledge.",
+  "ttft_ms": 6343,
+  "type": "result",
+  "duration_ms": 8169,
+  "uuid": "09e3cd1d-a4bc-4af8-ae33-67fee134811e",
+  "ttft_stream_ms": 4547,
+  "time_to_request_ms": 104,
+  "first_content_frame_ms": 4547,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

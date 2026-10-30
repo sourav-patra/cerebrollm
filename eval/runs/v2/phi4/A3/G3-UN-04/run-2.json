@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-04",
+ "run": 2,
+ "started_utc": "2026-10-29T17:24:36Z",
+ "seconds": 9.07,
+ "prompt_sha256": "d7d8fbac53fff77aabef414bb850210a10a62dab90fdb5a939e34cdf882699f1",
+ "answer": "I do not know the specific replication lag that pgvector guarantees for HNSW index updates on a streaming replica. The provided context mentions that pgvector uses the write-ahead log (WAL) for replication but does not specify any guarantees regarding replication lag for HNSW index updates. \n\nFor more detailed information, you might need to consult the official pgvector documentation or contact the maintainers for insights specific to replication lag with HNSW indexes. \n\nReference: \"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\" [pgvector/README.md (lines 823-829) > pgvector > Frequently Asked Questions > Is replication supported?]\n\nIf you have further questions or need more specific details, reviewing the official documentation or reaching out to the project maintainers would be advisable.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1848,
+  "output": 171
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9728862700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:24:45.3008553Z",
+  "response": "I do not know the specific replication lag that pgvector guarantees for HNSW index updates on a streaming replica. The provided context mentions that pgvector uses the write-ahead log (WAL) for replication but does not specify any guarantees regarding replication lag for HNSW index updates. \n\nFor more detailed information, you might need to consult the official pgvector documentation or contact the maintainers for insights specific to replication lag with HNSW indexes. \n\nReference: \"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\" [pgvector/README.md (lines 823-829) > pgvector > Frequently Asked Questions > Is replication supported?]\n\nIf you have further questions or need more specific details, reviewing the official documentation or reaching out to the project maintainers would be advisable.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9728862700,
+  "load_duration": 14540800,
+  "prompt_eval_count": 1848,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 946227000,
+  "eval_count": 171,
+  "eval_duration": 8624347000
+ }
+}

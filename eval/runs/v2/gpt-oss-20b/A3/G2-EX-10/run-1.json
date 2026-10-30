@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-10",
+ "run": 1,
+ "started_utc": "2026-10-29T16:13:47Z",
+ "seconds": 2.76,
+ "prompt_sha256": "d8b687abd783fb2454539937c693a008992fd01c7661361827c7c6240812e159",
+ "answer": "\"Remove deprecated ipex-llm and optimum-intel IPEX integrations.\" [llama_index/v0.14.25.md]",
+ "thinking_chars": 274,
+ "tokens": {
+  "input": 2089,
+  "output": 108
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 2963937200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:13:51.0733147Z",
+  "response": "\"Remove deprecated ipex-llm and optimum-intel IPEX integrations.\" [llama_index/v0.14.25.md]",
+  "thinking": "We need answer: \"Which two deprecated integrations did llama-index-core 0.14.25 remove?\" The context [1] line mentions: \"- Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406]\". So answer: ipex-llm and optimum-intel IPEX integrations. Provide quote line.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2963937200,
+  "load_duration": 14672000,
+  "prompt_eval_count": 2089,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 878057000,
+  "eval_count": 108,
+  "eval_duration": 2020883000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 5,
+ "started_utc": "2026-10-29T16:56:31Z",
+ "seconds": 5.62,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "The 0.122.0 release dropped support for **Node.js 20**.  \n> \"* drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))*\" [promptfoo/0.122.0.md]",
+ "thinking_chars": 924,
+ "tokens": {
+  "input": 1834,
+  "output": 336
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5979024800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:56:38.0348477Z",
+  "response": "The 0.122.0 release dropped support for **Node.js 20**.  \n> \"* drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))*\" [promptfoo/0.122.0.md]",
+  "thinking": "We need to answer: Which Node.js major version did promptfoo 0.122.0 stop supporting? We have context. Let's search. In the context we have lines about \"drop Node.js 20 support\". That indicates that 0.122.0 dropped Node.js 20 support. So answer: Node.js 20. Provide quote. The quote lines: In [3] and [4], lines: \"* drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\". Also [4] \"⚠ BREAKING CHANGES * drop Node.js 20 support\". So we can quote that.\n\nWe should include the line with quote and path. Use the exact line: \"* drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\". Path: [promptfoo/0.122.0.md]. Let's cite the path. The context shows [3] lines 29-31 and [4] lines 9-23. So choose one. The path: promptfoo/0.122.0.md. Provide the quote. Also maybe mention that Node.js 20 is major version 20. So answer: Node.js 20.\n\nLet's respond accordingly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5979024800,
+  "load_duration": 13210100,
+  "prompt_eval_count": 1834,
+  "prompt_eval_cached_count": 1829,
+  "prompt_eval_duration": 55311000,
+  "eval_count": 336,
+  "eval_duration": 5840107000
+ }
+}

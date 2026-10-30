@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-04",
+ "run": 5,
+ "started_utc": "2026-10-29T16:56:55Z",
+ "seconds": 5.67,
+ "prompt_sha256": "2b6ea5b6a72d2ad13b704409d81766cc1c5235ae5c9d1fab5a0268c71b6e8199",
+ "answer": "The default is the **Responses API**.\n\n> \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"  \n> [promptfoo/site/docs/providers/openai.md]",
+ "thinking_chars": 973,
+ "tokens": {
+  "input": 2085,
+  "output": 342
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6090881000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:57:00.8171104Z",
+  "response": "The default is the **Responses API**.\n\n> \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"  \n> [promptfoo/site/docs/providers/openai.md]",
+  "thinking": "We need to answer: Which OpenAI API does promptfoo 0.123.0 use by default for GPT-5.6 and newer models? In the context, we saw lines: [4] \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\" Also [5] \"GPT-5.6 and newer models use it by default:\" with example of Responses. Also [7] indicates \"providers: default GPT-5.6+ to Responses\". So answer: It uses the Responses API by default. Need quote.\n\nLet's locate the quote: from [4] line 78-80: \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\" That indicates default API is Responses.\n\nAlso [5] shows example provider with config. But the question: Which OpenAI API does promptfoo 0.123.0 use by default for GPT-5.6 and newer models? The answer: Responses API.\n\nWe should quote from [4] or [5]. Use [4] because it's concise. Provide quote.\n\nThus answer: It uses the Responses API. Provide quote.\n\n",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6090881000,
+  "load_duration": 14249600,
+  "prompt_eval_count": 2085,
+  "prompt_eval_cached_count": 2080,
+  "prompt_eval_duration": 56562000,
+  "eval_count": 342,
+  "eval_duration": 5954869000
+ }
+}

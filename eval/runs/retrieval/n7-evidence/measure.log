@@ -1,0 +1,66 @@
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:  45%|████▍     | 175/393 [00:00<00:00, 1734.80it/s]Loading weights: 100%|██████████| 393/393 [00:00<00:00, 2323.64it/s]
+EX-01
+EX-02
+EX-03
+EX-04
+EX-05
+EX-06
+EX-07
+EX-08
+EX-09
+EX-10
+EX-11
+EX-12
+EX-13
+EX-14
+EX-15
+EX-16
+EX-17
+EX-18
+EX-19
+EX-20
+PA-01
+PA-02
+PA-03
+PA-04
+PA-05
+PA-06
+PA-07
+PA-08
+PA-09
+PA-10
+PA-11
+PA-12
+PA-13
+PA-14
+PA-15
+PA-16
+PA-17
+PA-18
+PA-19
+PA-20
+ST-01
+ST-02
+ST-03
+ST-04
+ST-05
+ST-06
+ST-07
+ST-08
+ST-09
+ST-10
+ST-11
+ST-12
+ST-13
+ST-14
+ST-15
+ST-16
+ST-17
+ST-18
+ST-19
+ST-20
+| arm | all | exact | paraphrase | stale (quotes) | stale (superseding line) |
+|---|---|---|---|---|---|
+| default search top 8 | 45/60 | 18/20 | 17/20 | 10/20 | 9/20 |
+| search top 20 + rerank top 8 | 46/60 | 17/20 | 18/20 | 11/20 | 9/20 |
+| (reference) any of search top 20 | 48/60 | 18/20 | 18/20 | 12/20 | n/a |

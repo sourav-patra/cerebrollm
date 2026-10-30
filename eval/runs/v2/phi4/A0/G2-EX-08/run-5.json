@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-08",
+ "run": 5,
+ "started_utc": "2026-10-29T17:41:35Z",
+ "seconds": 3.03,
+ "prompt_sha256": "b411a6fb69c2354af49cdcea218c3db8945d222685dc2218b23d5dcb151d6f97",
+ "answer": "I do not know the specific details about what the safe mode added to `eval` in `promptfoo 0.125.0` turns off. Generally, a safe mode in the context of evaluation functions might restrict certain operations to prevent security vulnerabilities, but without specific information on this version of `promptfoo`, I cannot provide a definitive answer.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 53,
+  "output": 71
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3362103200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:41:38.8057351Z",
+  "response": "I do not know the specific details about what the safe mode added to `eval` in `promptfoo 0.125.0` turns off. Generally, a safe mode in the context of evaluation functions might restrict certain operations to prevent security vulnerabilities, but without specific information on this version of `promptfoo`, I cannot provide a definitive answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3362103200,
+  "load_duration": 14704000,
+  "prompt_eval_count": 53,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 209527000,
+  "eval_count": 71,
+  "eval_duration": 3126385000
+ }
+}

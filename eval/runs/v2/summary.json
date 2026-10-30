@@ -1,0 +1,509 @@
+{
+ "models": {
+  "gpt-oss-20b": {
+   "A0": {
+    "records_graded": 175,
+    "correct_majority_of_20": 3,
+    "correct_runs": 15,
+    "answerable_runs": 100,
+    "abstained_correctly_majority_of_15": 3,
+    "right_outcome_majority_of_35": 6,
+    "confidently_wrong_items_majority": 28,
+    "confidently_wrong_runs": 122,
+    "abstained_wrong_runs": 15,
+    "empty_runs": 1,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 0,
+     "paraphrase": 0,
+     "stale": 3,
+     "unanswerable": 3
+    }
+   },
+   "A3": {
+    "records_graded": 175,
+    "correct_majority_of_20": 19,
+    "correct_runs": 92,
+    "answerable_runs": 100,
+    "abstained_correctly_majority_of_15": 13,
+    "right_outcome_majority_of_35": 32,
+    "confidently_wrong_items_majority": 3,
+    "confidently_wrong_runs": 17,
+    "abstained_wrong_runs": 4,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 9,
+     "paraphrase": 7,
+     "stale": 3,
+     "unanswerable": 13
+    },
+    "verified_citation_answers": 60
+   },
+   "A4": {
+    "records_graded": 104,
+    "correct_majority_of_20": 15,
+    "correct_runs": 43,
+    "answerable_runs": 59,
+    "abstained_correctly_majority_of_15": 13,
+    "right_outcome_majority_of_35": 28,
+    "confidently_wrong_items_majority": 2,
+    "confidently_wrong_runs": 7,
+    "abstained_wrong_runs": 16,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 7,
+     "paraphrase": 7,
+     "stale": 1,
+     "unanswerable": 13
+    }
+   }
+  },
+  "gemma4-12b": {
+   "A0": {
+    "records_graded": 175,
+    "correct_majority_of_20": 0,
+    "correct_runs": 0,
+    "answerable_runs": 100,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 15,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 0,
+    "abstained_wrong_runs": 100,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 0,
+     "paraphrase": 0,
+     "stale": 0,
+     "unanswerable": 15
+    }
+   },
+   "A3": {
+    "records_graded": 175,
+    "correct_majority_of_20": 18,
+    "correct_runs": 91,
+    "answerable_runs": 100,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 33,
+    "confidently_wrong_items_majority": 1,
+    "confidently_wrong_runs": 4,
+    "abstained_wrong_runs": 5,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 8,
+     "paraphrase": 7,
+     "stale": 3,
+     "unanswerable": 15
+    },
+    "verified_citation_answers": 79
+   },
+   "A4": {
+    "records_graded": 105,
+    "correct_majority_of_20": 7,
+    "correct_runs": 21,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 22,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 0,
+    "abstained_wrong_runs": 39,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 2,
+     "paraphrase": 3,
+     "stale": 2,
+     "unanswerable": 15
+    }
+   }
+  },
+  "phi4": {
+   "A0": {
+    "records_graded": 175,
+    "correct_majority_of_20": 0,
+    "correct_runs": 0,
+    "answerable_runs": 100,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 15,
+    "confidently_wrong_items_majority": 4,
+    "confidently_wrong_runs": 28,
+    "abstained_wrong_runs": 72,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 0,
+     "paraphrase": 0,
+     "stale": 0,
+     "unanswerable": 15
+    }
+   },
+   "A3": {
+    "records_graded": 175,
+    "correct_majority_of_20": 17,
+    "correct_runs": 86,
+    "answerable_runs": 100,
+    "abstained_correctly_majority_of_15": 14,
+    "right_outcome_majority_of_35": 31,
+    "confidently_wrong_items_majority": 2,
+    "confidently_wrong_runs": 10,
+    "abstained_wrong_runs": 7,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 9,
+     "paraphrase": 5,
+     "stale": 3,
+     "unanswerable": 14
+    },
+    "verified_citation_answers": 77
+   },
+   "A4": {
+    "records_graded": 105,
+    "correct_majority_of_20": 6,
+    "correct_runs": 18,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 21,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 0,
+    "abstained_wrong_runs": 42,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 2,
+     "paraphrase": 4,
+     "stale": 0,
+     "unanswerable": 15
+    }
+   }
+  },
+  "sonnet-5-5": {
+   "A0": {
+    "records_graded": 105,
+    "correct_majority_of_20": 0,
+    "correct_runs": 0,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 15,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 3,
+    "abstained_wrong_runs": 60,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "by_kind_majority_ok": {
+     "exact": 0,
+     "paraphrase": 0,
+     "stale": 0,
+     "unanswerable": 15
+    }
+   },
+   "A3": {
+    "records_graded": 105,
+    "correct_majority_of_20": 19,
+    "correct_runs": 57,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 34,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 0,
+    "abstained_wrong_runs": 3,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "met",
+    "by_kind_majority_ok": {
+     "exact": 9,
+     "paraphrase": 7,
+     "stale": 3,
+     "unanswerable": 15
+    },
+    "verified_citation_answers": 101
+   }
+  }
+ },
+ "retrieval_hit_items": 20,
+ "judge_agreement": {
+  "same": 432,
+  "total": 454,
+  "kappa": 0.899
+ },
+ "judge_disagreements": [
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-EX-01",
+    3
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly states that release 0.34.3 extended the /api/show endpoint to advertise each model's thinking controls and default values.",
+   "reason_gemma4": "The answer states it is not aware of a different endpoint before providing the correct one, which triggers the rule for 'does not know'."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-01",
+    2
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly states that Muse Glimmer is available on all major desktop platforms (Linux, macOS, Windows), matching the reference that it is available on all platforms.",
+   "reason_gemma4": "The answer states it is not sure and provides a specific list of architectures instead of the reference fact that it is available on all platforms."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-01",
+    3
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly states that Muse Glimmer runs on all platforms (Windows, macOS, Linux).",
+   "reason_gemma4": "The answer states it is not aware of platform-specific restrictions, which constitutes a lack of information according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-01",
+    4
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "Answer correctly states that Muse Glimmer is available on all platforms, matching the reference.",
+   "reason_gemma4": "The answer states it is not aware of platform-specific restrictions, which constitutes a lack of information according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-02",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly lists Linux, Windows, and macOS as the operating systems on which Flint runs, matching the reference.",
+   "reason_gemma4": "The answer states it does not have the full text in front of it, which triggers a 'N' verdict according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-02",
+    2
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly lists Windows, macOS, and Linux as the operating systems on which Ollama runs, matching the reference fact.",
+   "reason_gemma4": "The answer states it is not sure of the exact wording, which triggers the rule for 'does not know'."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-02",
+    4
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly lists Linux, macOS, and Windows as the operating systems on which Ollama runs Flint, matching the reference.",
+   "reason_gemma4": "The answer states it is not aware of any other support beyond the release notes, which constitutes a 'does not know' statement."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-02",
+    5
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly states that Ollama runs on Windows, macOS, and Linux, matching the reference facts.",
+   "reason_gemma4": "The answer states it does not have the exact wording from the release notes, which triggers a 'N' verdict according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-03",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly lists Linux, Windows, and Apple silicon (via macOS arm64) as supported platforms, matching the reference, and does not contradict it.",
+   "reason_gemma4": "The answer states it is not aware of platform-specific restrictions, which constitutes a lack of information according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-03",
+    3
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly lists Linux, Windows, and Apple silicon (macOS arm64) as the platforms for LFM3 models, matching the reference.",
+   "reason_gemma4": "The answer states that it is not aware of any platform-specific restrictions, which constitutes a lack of information according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G2-ST-03",
+    4
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer correctly lists Linux, Windows, and Apple silicon as platforms for LFM3 models, matching the reference facts.",
+   "reason_gemma4": "The answer states it is not aware of any other platform support beyond what the notes state, which constitutes a lack of information according to the rules."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G3-UN-01",
+    5
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "The answer admits it does not know the value and does not provide a specific answer.",
+   "reason_gemma4": "The answer states it is not sure but does not explicitly state that the information is missing from the provided sources."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G3-UN-04",
+    2
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer gives a specific statement that pgvector does not guarantee any replication lag for HNSW index updates.",
+   "reason_gemma4": "The answer correctly states that it is not aware of a specific guarantee and does not provide a specific value or guess."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G3-UN-04",
+    4
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer provides a specific statement about the replication lag, claiming it is whatever the normal streaming‑replication lag is, which is a concrete answer to the question.",
+   "reason_gemma4": "The answer states it is not aware of a specific guarantee and does not provide a specific value or procedure."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A0",
+    "G3-UN-04",
+    5
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "Answer gives a specific claim that pgvector introduces no extra lag beyond normal streaming replication.",
+   "reason_gemma4": "The answer states that it is not aware of a specific guarantee and does not provide a specific value for the replication lag."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A3",
+    "G3-UN-05",
+    2
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer gives a specific value (5 minutes) for the requested environment variable.",
+   "reason_gemma4": "The answer correctly identifies that the information is not in the sources by stating the default value is 5 minutes based on the provided documentation."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A3",
+    "G3-UN-05",
+    3
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer gives a specific value for the default timeout.",
+   "reason_gemma4": "The answer correctly identifies that the information is not in the sources by stating the default value is 5 minutes based on the provided documentation."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A3",
+    "G3-UN-05",
+    4
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer gives a specific value for the default timeout.",
+   "reason_gemma4": "The answer correctly identifies that the information is not in the sources by stating the default value is 5 minutes based on the provided documentation."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A3",
+    "G3-UN-07",
+    5
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer gives a specific value (f16) for a different variable, not acknowledging the lack of information for the asked fact.",
+   "reason_gemma4": "The answer states it does not know and does not provide a value for the specific environment variable asked."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A3",
+    "G3-UN-12",
+    3
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer gives a specific value (4 retries) for the flag.",
+   "reason_gemma4": "The answer correctly states that a specific value for the flag is not in the documentation and does not provide an invented value."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A3",
+    "G3-UN-13",
+    4
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer claims ignorance but then provides a guess (BLEU), which violates the requirement to give no invented answer.",
+   "reason_gemma4": "The answer states that it does not know and does not provide a specific assertion type for BERTScore."
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G3-UN-12",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "The answer provides a specific default value (3 retries).",
+   "reason_gemma4": "The answer correctly identifies that the default value is 3 based on the provided documentation."
+  }
+ ],
+ "grader_errors": 0
+}

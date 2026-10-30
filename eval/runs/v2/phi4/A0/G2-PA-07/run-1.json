@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-07",
+ "run": 1,
+ "started_utc": "2026-10-29T17:12:39Z",
+ "seconds": 1.78,
+ "prompt_sha256": "24255e1886d61d7264d37c09ec8fa0df7ca5290b3436d3592af4bb6e4467f6ac",
+ "answer": "I do not know which reranker class gained native async support in llama-index-core 0.14.25. My training data does not include specific version details for this project.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 52,
+  "output": 37
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 1909409400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:12:41.195738Z",
+  "response": "I do not know which reranker class gained native async support in llama-index-core 0.14.25. My training data does not include specific version details for this project.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1909409400,
+  "load_duration": 13410700,
+  "prompt_eval_count": 52,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 215703000,
+  "eval_count": 37,
+  "eval_duration": 1657864000
+ }
+}

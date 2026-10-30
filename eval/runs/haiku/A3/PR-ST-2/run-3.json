@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-ST-2",
+ "run": 3,
+ "started_utc": "2026-10-29T02:02:30Z",
+ "seconds": 9.98,
+ "prompt_file": "runs/prompts/A3/PR-ST-2.txt",
+ "prompt_sha256": "f9ce1bfad36cb3a66f12ea1b29a01770317e5a74182e565091cd9df714d86225",
+ "answer": "The provided excerpts don't say which sampling parameter, if any, is deprecated upstream, so I can't confirm that premise. They show a sample Ollama config with these sampling settings:\n\n\"temperature: 0.7\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]\n\n\"top_p: 0.9\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]\n\n\"num_predict: 1024\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]\n\nThe same excerpt points to Ollama's parameter reference for what each one does: \"for what each one does:\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]. That reference, at https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#parameter, is the place to check which parameter is deprecated. I'd confirm the deprecation there before choosing, and then prefer the non-deprecated options.",
+ "tokens": {
+  "input": 3567,
+  "output": 1185,
+  "thinking": 855,
+  "cache_read": 3179,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00070169,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5945,
+  "stop_reason": "end_turn",
+  "session_id": "c5465616-f41d-440e-a6da-ad9d92d98255",
+  "total_cost_usd": 0.00070169,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 3179,
+   "output_tokens": 1185,
+   "output_tokens_details": {
+    "thinking_tokens": 855
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1185,
+     "cache_read_input_tokens": 3179,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1185,
+    "cacheReadInputTokens": 3179,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00070169,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 855,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided excerpts don't say which sampling parameter, if any, is deprecated upstream, so I can't confirm that premise. They show a sample Ollama config with these sampling settings:\n\n\"temperature: 0.7\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]\n\n\"top_p: 0.9\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]\n\n\"num_predict: 1024\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]\n\nThe same excerpt points to Ollama's parameter reference for what each one does: \"for what each one does:\" [promptfoo/site/docs/providers/ollama.md (lines 53-67)]. That reference, at https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#parameter, is the place to check which parameter is deprecated. I'd confirm the deprecation there before choosing, and then prefer the non-deprecated options.",
+  "ttft_ms": 4846,
+  "type": "result",
+  "duration_ms": 6074,
+  "uuid": "ad8c15f7-3b1b-4367-bbf6-d0200f545f0b",
+  "ttft_stream_ms": 2850,
+  "time_to_request_ms": 162,
+  "first_content_frame_ms": 2850,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

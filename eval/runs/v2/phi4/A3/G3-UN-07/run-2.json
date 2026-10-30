@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-07",
+ "run": 2,
+ "started_utc": "2026-10-29T17:24:58Z",
+ "seconds": 13.34,
+ "prompt_sha256": "dbdfd668dc693024eaf55238eb69d2a3c8e309f8350f53a3767d1d06f0d0b83e",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_KV_CACHE_RETENTION`. The provided context does not mention this specific variable. Here are the relevant sections related to cache configuration:\n\n- For setting the quantization type for the K/V cache: \"To use quantized K/V cache with Ollama you can set the following environment variable: - `OLLAMA_KV_CACHE_TYPE`\" [ollama/docs/faq.md, lines 348-369].\n- For keeping a model loaded in memory: \"The `keep_alive` parameter can be set to: a duration string (such as \"10m\" or \"24h\") - a number in seconds (such as 3600) - any negative number which will keep the model loaded in memory (e.g. -1 or \"-1m\") - '0' which will unload the model immediately after generating a response\" [ollama/docs/faq.md, lines 289-318].\n\nHowever, there is no mention of `OLLAMA_KV_CACHE_RETENTION`.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1504,
+  "output": 217
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11690566800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:25:10.0248946Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_KV_CACHE_RETENTION`. The provided context does not mention this specific variable. Here are the relevant sections related to cache configuration:\n\n- For setting the quantization type for the K/V cache: \"To use quantized K/V cache with Ollama you can set the following environment variable: - `OLLAMA_KV_CACHE_TYPE`\" [ollama/docs/faq.md, lines 348-369].\n- For keeping a model loaded in memory: \"The `keep_alive` parameter can be set to: a duration string (such as \"10m\" or \"24h\") - a number in seconds (such as 3600) - any negative number which will keep the model loaded in memory (e.g. -1 or \"-1m\") - '0' which will unload the model immediately after generating a response\" [ollama/docs/faq.md, lines 289-318].\n\nHowever, there is no mention of `OLLAMA_KV_CACHE_RETENTION`.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11690566800,
+  "load_duration": 12479500,
+  "prompt_eval_count": 1504,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 741132000,
+  "eval_count": 217,
+  "eval_duration": 10774905000
+ }
+}

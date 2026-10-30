@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-14",
+ "run": 3,
+ "started_utc": "2026-10-29T01:50:58Z",
+ "seconds": 7.84,
+ "prompt_file": "runs/prompts/A0/PA-14.txt",
+ "prompt_sha256": "544d14380cd0432c5f4f671379a5d8cc93ab10fd47ac3e48cbcfb6a97416ecde",
+ "answer": "I don't know which Hugging Face embedding model, if any, is configured in the LlamaIndex OpenAI starter example. I can't confirm that from memory, and I can't check the repository from here.\n\nThe LlamaIndex Hugging Face embedding integration has defaulted to `BAAI/bge-small-en-v1.5` in the versions I'm familiar with, but I can't say whether the OpenAI starter example uses it. To find the answer, you could search the example's source for `HuggingFaceEmbedding` or `model_name`, or check the `Settings.embed_model` assignment in its starter script.",
+ "tokens": {
+  "input": 666,
+  "output": 521,
+  "thinking": 324,
+  "cache_read": 0,
+  "cache_creation": 664
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00039349999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3115,
+  "stop_reason": "end_turn",
+  "session_id": "805a6aba-cf57-4c78-ab3e-8ff3bc3244d5",
+  "total_cost_usd": 0.00039349999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 664,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 521,
+   "output_tokens_details": {
+    "thinking_tokens": 324
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 664,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 521,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 664,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 664
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 521,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 664,
+    "webSearchRequests": 0,
+    "costUSD": 0.00039349999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 324,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 664,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know which Hugging Face embedding model, if any, is configured in the LlamaIndex OpenAI starter example. I can't confirm that from memory, and I can't check the repository from here.\n\nThe LlamaIndex Hugging Face embedding integration has defaulted to `BAAI/bge-small-en-v1.5` in the versions I'm familiar with, but I can't say whether the OpenAI starter example uses it. To find the answer, you could search the example's source for `HuggingFaceEmbedding` or `model_name`, or check the `Settings.embed_model` assignment in its starter script.",
+  "ttft_ms": 2812,
+  "type": "result",
+  "duration_ms": 3231,
+  "uuid": "8be34b52-2078-4817-9859-599038cd2197",
+  "ttft_stream_ms": 2811,
+  "time_to_request_ms": 146,
+  "first_content_frame_ms": 2811,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-10",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:40Z",
+ "seconds": 6.72,
+ "prompt_sha256": "d8b687abd783fb2454539937c693a008992fd01c7661361827c7c6240812e159",
+ "answer": "llama-index-core 0.14.25 removed the deprecated **ipex-llm** and **optimum-intel IPEX** integrations.\n\nThe release note says: \"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\" [llama_index/v0.14.25.md].",
+ "tokens": {
+  "input": 3601,
+  "output": 125,
+  "thinking": 0,
+  "cache_read": 3233,
+  "cache_creation": 366
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0030413000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2541,
+  "stop_reason": "end_turn",
+  "session_id": "20df677b-bc01-47c0-a281-80b6a53ab4ff",
+  "total_cost_usd": 0.0030413000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 366,
+   "cache_read_input_tokens": 3233,
+   "output_tokens": 125,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 366,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 125,
+     "cache_read_input_tokens": 3233,
+     "cache_creation_input_tokens": 366,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 366
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 125,
+    "cacheReadInputTokens": 3233,
+    "cacheCreationInputTokens": 366,
+    "webSearchRequests": 0,
+    "costUSD": 0.0030413000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 366,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "llama-index-core 0.14.25 removed the deprecated **ipex-llm** and **optimum-intel IPEX** integrations.\n\nThe release note says: \"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\" [llama_index/v0.14.25.md].",
+  "ttft_ms": 2612,
+  "type": "result",
+  "duration_ms": 2629,
+  "uuid": "b52d97df-d9af-4361-a1ac-6957e0e4d936",
+  "ttft_stream_ms": 2608,
+  "time_to_request_ms": 85,
+  "first_content_frame_ms": 2609,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

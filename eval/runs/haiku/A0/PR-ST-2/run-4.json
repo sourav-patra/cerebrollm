@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-ST-2",
+ "run": 4,
+ "started_utc": "2026-10-29T02:02:34Z",
+ "seconds": 9.1,
+ "prompt_file": "runs/prompts/A0/PR-ST-2.txt",
+ "prompt_sha256": "376319f9fd071e1966cf9e55f19d27d2925ea0f6c3d70e811610a68002c91c1d",
+ "answer": "I don't know which sampling parameter promptfoo has deprecated for its Ollama provider, so I can't say with confidence which one to avoid. I also can't check the current promptfoo docs or changelog from here.\n\nOllama's own options include `temperature`, `top_p`, `top_k`, `min_p`, `seed`, `num_predict`, `stop`, `repeat_penalty`, and `num_ctx`. For evaluations, `temperature` and `seed` are the usual choices for reproducibility, and `top_p` or `top_k` can be added if you need them. Check the parameter names against your promptfoo version, since the provider's accepted keys may differ from Ollama's raw API.\n\nTo find the deprecated option:\n- Check the Ollama provider page in the promptfoo docs for deprecation notes.\n- Search the promptfoo changelog or release notes for \"deprecated\" along with \"ollama\".\n- If promptfoo is installed locally, search `node_modules` for the Ollama provider source and look for deprecation warnings or `@deprecated` tags. Running the eval will often print a warning for deprecated config keys too.",
+ "tokens": {
+  "input": 677,
+  "output": 758,
+  "thinking": 390,
+  "cache_read": 0,
+  "cache_creation": 675
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005142,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4673,
+  "stop_reason": "end_turn",
+  "session_id": "63434a53-8c78-430d-876c-0b0518ec3a05",
+  "total_cost_usd": 0.0005142,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 675,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 758,
+   "output_tokens_details": {
+    "thinking_tokens": 390
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 675,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 758,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 675,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 675
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 758,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 675,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005142,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 390,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 675,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know which sampling parameter promptfoo has deprecated for its Ollama provider, so I can't say with confidence which one to avoid. I also can't check the current promptfoo docs or changelog from here.\n\nOllama's own options include `temperature`, `top_p`, `top_k`, `min_p`, `seed`, `num_predict`, `stop`, `repeat_penalty`, and `num_ctx`. For evaluations, `temperature` and `seed` are the usual choices for reproducibility, and `top_p` or `top_k` can be added if you need them. Check the parameter names against your promptfoo version, since the provider's accepted keys may differ from Ollama's raw API.\n\nTo find the deprecated option:\n- Check the Ollama provider page in the promptfoo docs for deprecation notes.\n- Search the promptfoo changelog or release notes for \"deprecated\" along with \"ollama\".\n- If promptfoo is installed locally, search `node_modules` for the Ollama provider source and look for deprecation warnings or `@deprecated` tags. Running the eval will often print a warning for deprecated config keys too.",
+  "ttft_ms": 2980,
+  "type": "result",
+  "duration_ms": 4796,
+  "uuid": "8e0e9dfa-295e-41b9-b258-79eb30bf9fd8",
+  "ttft_stream_ms": 2787,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 2787,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

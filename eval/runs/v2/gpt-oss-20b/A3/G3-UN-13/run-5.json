@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 5,
+ "started_utc": "2026-10-29T16:59:02Z",
+ "seconds": 6.36,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know.",
+ "thinking_chars": 1526,
+ "tokens": {
+  "input": 1662,
+  "output": 375
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6683403000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:59:08.3353283Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" We need to search context. The context has many docs but not specifically BERTScore. BERTScore is a metric. The question asks which assertion type computes BERTScore. Let's search in context: I don't see BERTScore. But maybe it's in docs not included. We can try to infer from known project: promptfoo supports deterministic metrics like BLEU, ROUGE, METEOR, etc. Also model-graded metrics like llm-rubric. But BERTScore is a deterministic metric. In promptfoo, I think there is an assertion type \"bertscore\". Maybe exists. The question likely expects \"bertscore\" as the assertion type. But we must quote a line that says that. Let's search context for \"bertscore\". Not present. Maybe not in context. The instructions: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So if we don't know, we say we don't know. But we might guess. However we have no evidence. So we must say we do not know. But we could recall from memory that promptfoo supports \"bertscore\" assertion type. But we must quote from context. There's no context. So we must say we do not know. According to instructions, we can say we don't know. But we should respond: \"I do not know.\" Provide no quote. But maybe we can use knowledge: The project may have an assertion type \"bertscore\". But we can't quote. So we must say we do not know.\n\nThus answer: \"I do not know.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6683403000,
+  "load_duration": 15259600,
+  "prompt_eval_count": 1662,
+  "prompt_eval_cached_count": 1657,
+  "prompt_eval_duration": 57175000,
+  "eval_count": 375,
+  "eval_duration": 6543567000
+ }
+}

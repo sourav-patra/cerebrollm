@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 3,
+ "started_utc": "2026-10-29T17:29:49Z",
+ "seconds": 11.14,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "According to the provided context, Flint is supported on the following operating systems:\n\n- **macOS**: \"Note: Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md (lines 8-21)].\n- **Linux**: \"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)].\n- **Windows**: \"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)].\n\nThere is no mention of support for Flint beyond version 0.40.12 in the provided documents, so any information regarding version 0.40.13 or later is not available in this context. [ollama/v0.40.12.md (lines 29-37)] does not specifically mention Flint, so it doesn't provide additional information about operating system support beyond what is covered in the previous versions.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1716,
+  "output": 215
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11969677700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:29:59.9801795Z",
+  "response": "According to the provided context, Flint is supported on the following operating systems:\n\n- **macOS**: \"Note: Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md (lines 8-21)].\n- **Linux**: \"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)].\n- **Windows**: \"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)].\n\nThere is no mention of support for Flint beyond version 0.40.12 in the provided documents, so any information regarding version 0.40.13 or later is not available in this context. [ollama/v0.40.12.md (lines 29-37)] does not specifically mention Flint, so it doesn't provide additional information about operating system support beyond what is covered in the previous versions.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11969677700,
+  "load_duration": 14831500,
+  "prompt_eval_count": 1716,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 903847000,
+  "eval_count": 215,
+  "eval_duration": 10898545000
+ }
+}

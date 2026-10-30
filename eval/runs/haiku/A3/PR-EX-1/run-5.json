@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-EX-1",
+ "run": 5,
+ "started_utc": "2026-10-29T01:45:04Z",
+ "seconds": 8.55,
+ "prompt_file": "runs/prompts/A3/PR-EX-1.txt",
+ "prompt_sha256": "f993d909be021d62db6f852f02a2e4ac71219b324c80d52644fa38dd337268d0",
+ "answer": "The provided documents don't name a CLI command for this. The closest match is the API endpoint for listing running models:\n\n\"List models that are currently loaded into memory.\" [ollama/docs/api.md]\n\nThe documented request is `GET /api/ps`, shown as `curl http://localhost:11434/api/ps` [ollama/docs/api.md]. That is an HTTP endpoint, not a CLI command.\n\nFrom general knowledge outside these documents, I believe `ollama ps` is the CLI command that shows loaded models, but I can't confirm that from the provided context.",
+ "tokens": {
+  "input": 3339,
+  "output": 487,
+  "thinking": 306,
+  "cache_read": 2950,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003506,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3446,
+  "stop_reason": "end_turn",
+  "session_id": "bbe0a6d6-5117-43db-a6ad-397c5cefc9fb",
+  "total_cost_usd": 0.0003506,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2950,
+   "output_tokens": 487,
+   "output_tokens_details": {
+    "thinking_tokens": 306
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 487,
+     "cache_read_input_tokens": 2950,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 487,
+    "cacheReadInputTokens": 2950,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003506,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 306,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided documents don't name a CLI command for this. The closest match is the API endpoint for listing running models:\n\n\"List models that are currently loaded into memory.\" [ollama/docs/api.md]\n\nThe documented request is `GET /api/ps`, shown as `curl http://localhost:11434/api/ps` [ollama/docs/api.md]. That is an HTTP endpoint, not a CLI command.\n\nFrom general knowledge outside these documents, I believe `ollama ps` is the CLI command that shows loaded models, but I can't confirm that from the provided context.",
+  "ttft_ms": 2924,
+  "type": "result",
+  "duration_ms": 3578,
+  "uuid": "0780a58d-6c02-473a-887d-04b31d7660e4",
+  "ttft_stream_ms": 2922,
+  "time_to_request_ms": 159,
+  "first_content_frame_ms": 2923,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

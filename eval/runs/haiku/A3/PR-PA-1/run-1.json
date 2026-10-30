@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-PA-1",
+ "run": 1,
+ "started_utc": "2026-10-29T01:53:22Z",
+ "seconds": 8.76,
+ "prompt_file": "runs/prompts/A3/PR-PA-1.txt",
+ "prompt_sha256": "275c9be19279b929f495bf64d66752d53c3d9d0df4d1971f974b8e9825f41fb3",
+ "answer": "Start the container with the `--gpus=all` flag, as shown in the Nvidia GPU section of the Docker docs:\n\n```shell\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThe docs say: \"docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\" [ollama/docs/docker.md (lines 45-61) > Nvidia GPU > Configure Docker to use Nvidia driver]\n\nBefore running this, the docs say you need the NVIDIA Container Toolkit installed and Docker configured to use the Nvidia driver. The docs give these commands: \"sudo nvidia-ctk runtime configure --runtime=docker\" and \"sudo systemctl restart docker\" [ollama/docs/docker.md (lines 45-61) > Nvidia GPU > Configure Docker to use Nvidia driver]. The toolkit itself is linked from \"Install the [NVIDIA Container Toolkit]\" [ollama/docs/docker.md (lines 1-9) > Nvidia GPU].\n\nTo confirm the container can see your GPUs, the troubleshooting docs suggest: \"docker run --gpus all ubuntu nvidia-smi\" [ollama/docs/troubleshooting.md (lines 88-103) > NVIDIA GPU Discovery > Linux NVIDIA Troubleshooting].\n\nThe provided context doesn't say how to run this on Windows natively. It only mentions GPU acceleration in Docker on Windows with WSL2: \"GPU acceleration is available in Docker on Linux or Windows (with WSL2)\" is not quoted verbatim, but the FAQ says: \"The Ollama Docker container can be configured with GPU acceleration in Linux or Windows (with WSL2).\" [ollama/docs/faq.md (lines 253-257) > How do I use Ollama with GPU acceleration in Docker?]",
+ "tokens": {
+  "input": 2724,
+  "output": 674,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 2722
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008816,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3991,
+  "stop_reason": "end_turn",
+  "session_id": "ec30586c-488a-48ba-8e1a-4f9163159c90",
+  "total_cost_usd": 0.0008816,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2722,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 674,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2722,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 674,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2722,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2722
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 674,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2722,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008816,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2722,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Start the container with the `--gpus=all` flag, as shown in the Nvidia GPU section of the Docker docs:\n\n```shell\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThe docs say: \"docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\" [ollama/docs/docker.md (lines 45-61) > Nvidia GPU > Configure Docker to use Nvidia driver]\n\nBefore running this, the docs say you need the NVIDIA Container Toolkit installed and Docker configured to use the Nvidia driver. The docs give these commands: \"sudo nvidia-ctk runtime configure --runtime=docker\" and \"sudo systemctl restart docker\" [ollama/docs/docker.md (lines 45-61) > Nvidia GPU > Configure Docker to use Nvidia driver]. The toolkit itself is linked from \"Install the [NVIDIA Container Toolkit]\" [ollama/docs/docker.md (lines 1-9) > Nvidia GPU].\n\nTo confirm the container can see your GPUs, the troubleshooting docs suggest: \"docker run --gpus all ubuntu nvidia-smi\" [ollama/docs/troubleshooting.md (lines 88-103) > NVIDIA GPU Discovery > Linux NVIDIA Troubleshooting].\n\nThe provided context doesn't say how to run this on Windows natively. It only mentions GPU acceleration in Docker on Windows with WSL2: \"GPU acceleration is available in Docker on Linux or Windows (with WSL2)\" is not quoted verbatim, but the FAQ says: \"The Ollama Docker container can be configured with GPU acceleration in Linux or Windows (with WSL2).\" [ollama/docs/faq.md (lines 253-257) > How do I use Ollama with GPU acceleration in Docker?]",
+  "ttft_ms": 4122,
+  "type": "result",
+  "duration_ms": 4134,
+  "uuid": "d19fd47c-4852-4da8-b0b4-971b5f983666",
+  "ttft_stream_ms": 2955,
+  "time_to_request_ms": 146,
+  "first_content_frame_ms": 2955,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

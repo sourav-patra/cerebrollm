@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-11",
+ "run": 4,
+ "started_utc": "2026-10-29T01:58:26Z",
+ "seconds": 8.9,
+ "prompt_file": "runs/prompts/A3/ST-11.txt",
+ "prompt_sha256": "4585c0cab7d69f7d23a207e896ab3d5c9dee598ebbec56ac0e34a9dfb12cd9da",
+ "answer": "Use **Workflows**. The concepts doc describes them this way: \"A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\" [\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\"]\n\nThe agent docs say you can \"build your own agentic workflows from scratch\" in the \"Building Workflows\" section [\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\"]. The understanding guide also notes that workflows can maintain state and can be traced and debugged with integrations like Arize Phoenix and OpenTelemetry [\"llama_index/docs/src/content/docs/framework/understanding/index.md\"].\n\nThe context doesn't include code examples for defining workflow steps or events, so check the Workflows guide for those details.",
+ "tokens": {
+  "input": 3394,
+  "output": 770,
+  "thinking": 483,
+  "cache_read": 3005,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00049265,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4263,
+  "stop_reason": "end_turn",
+  "session_id": "92b44995-8bf0-4a1e-ad4b-2488be414fde",
+  "total_cost_usd": 0.00049265,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 3005,
+   "output_tokens": 770,
+   "output_tokens_details": {
+    "thinking_tokens": 483
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 770,
+     "cache_read_input_tokens": 3005,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 770,
+    "cacheReadInputTokens": 3005,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00049265,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 483,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **Workflows**. The concepts doc describes them this way: \"A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\" [\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\"]\n\nThe agent docs say you can \"build your own agentic workflows from scratch\" in the \"Building Workflows\" section [\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\"]. The understanding guide also notes that workflows can maintain state and can be traced and debugged with integrations like Arize Phoenix and OpenTelemetry [\"llama_index/docs/src/content/docs/framework/understanding/index.md\"].\n\nThe context doesn't include code examples for defining workflow steps or events, so check the Workflows guide for those details.",
+  "ttft_ms": 3255,
+  "type": "result",
+  "duration_ms": 4397,
+  "uuid": "85875347-31bb-4e30-9b9a-b71dd4e5e9a9",
+  "ttft_stream_ms": 2874,
+  "time_to_request_ms": 136,
+  "first_content_frame_ms": 2874,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

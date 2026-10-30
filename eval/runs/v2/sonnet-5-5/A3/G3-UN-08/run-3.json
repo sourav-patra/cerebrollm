@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-08",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:50Z",
+ "seconds": 6.5,
+ "prompt_sha256": "6aa67305c2d3d502e197c468c7f1133f40522aa105aede1e8c22e0c41cf5c9f1",
+ "answer": "I do not know of any Ollama CLI flag that sets the number of parallel layer downloads for `ollama pull`. The retrieved documents don't mention one.\n\nWhat they do show about pulling:\n\n- The CLI docs list only the basic command: \"ollama pull gemma4\" [ollama/docs/cli.md]\n- The API docs say of pulls: \"Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.\" [ollama/docs/api.md]\n- The API's pull parameters are `model`, `insecure`, and `stream`, with no setting for download concurrency [ollama/docs/api.md].",
+ "tokens": {
+  "input": 2943,
+  "output": 208,
+  "thinking": 0,
+  "cache_read": 2575,
+  "cache_creation": 366
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0038055,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2557,
+  "stop_reason": "end_turn",
+  "session_id": "0b1a401f-5bc5-4d4a-be91-ebe02719125f",
+  "total_cost_usd": 0.0038055,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 366,
+   "cache_read_input_tokens": 2575,
+   "output_tokens": 208,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 366,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 208,
+     "cache_read_input_tokens": 2575,
+     "cache_creation_input_tokens": 366,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 366
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 208,
+    "cacheReadInputTokens": 2575,
+    "cacheCreationInputTokens": 366,
+    "webSearchRequests": 0,
+    "costUSD": 0.0038055,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 366,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I do not know of any Ollama CLI flag that sets the number of parallel layer downloads for `ollama pull`. The retrieved documents don't mention one.\n\nWhat they do show about pulling:\n\n- The CLI docs list only the basic command: \"ollama pull gemma4\" [ollama/docs/cli.md]\n- The API docs say of pulls: \"Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.\" [ollama/docs/api.md]\n- The API's pull parameters are `model`, `insecure`, and `stream`, with no setting for download concurrency [ollama/docs/api.md].",
+  "ttft_ms": 2620,
+  "type": "result",
+  "duration_ms": 2642,
+  "uuid": "ce80a738-e450-47e7-8751-34833318d3b8",
+  "ttft_stream_ms": 2617,
+  "time_to_request_ms": 98,
+  "first_content_frame_ms": 2617,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

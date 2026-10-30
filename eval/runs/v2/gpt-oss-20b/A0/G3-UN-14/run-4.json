@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-14",
+ "run": 4,
+ "started_utc": "2026-10-29T16:43:54Z",
+ "seconds": 2.54,
+ "prompt_sha256": "9d067e0c6b7ba45e0eaf44837d4b94f745188a5d9fde256f833802a42f3aab92",
+ "answer": "I’m sorry, but I don’t have that information.",
+ "thinking_chars": 525,
+ "tokens": {
+  "input": 106,
+  "output": 148
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 2704224000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:43:57.0704674Z",
+  "response": "I’m sorry, but I don’t have that information.",
+  "thinking": "The user asks: \"What is the default value of promptfoo's evaluateOptions.maxTokensPerCell?\" They want a specific value. I need to check if I have knowledge of promptfoo library. I know promptfoo is a tool for evaluating LLM prompts. I recall that evaluateOptions.maxTokensPerCell might be a setting. But I'm not sure. I need to answer based on knowledge. I think I don't know the exact default. I can say I don't know. But maybe I can guess: It might default to 2000? Or 500? But I shouldn't guess. I should say I don't know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2704224000,
+  "load_duration": 12303300,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 186029000,
+  "eval_count": 148,
+  "eval_duration": 2494810000
+ }
+}

@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/86",
+  "index": 28,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef anti_shuffle(s):\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    anti_shuffle('Hi') returns 'Hi'\n    anti_shuffle('hello') returns 'ehllo'\n    anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "low"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:27:03.9150284Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef anti_shuffle(s: str) -> str:\n    \"\"\"\n    Return a string where each word (separated by spaces) has its characters\n    sorted in ascending ASCII order, preserving the original word order and\n    spaces.\n    \"\"\"\n    # Split on spaces, preserving empty strings for consecutive spaces\n    parts = s.split(' ')\n    # Sort characters in each part\n    sorted_parts = [''.join(sorted(part)) for part in parts]\n    # Rejoin with single spaces\n    return ' '.join(sorted_parts)\n```",
+      "thinking": "We need to sort characters within each word, but keep spaces. Words separated by space. Also punctuation attached to word stays part of word. So split on spaces preserving spaces? Use split(' ') gives empty strings for multiple spaces. Then sort each token. Return join with space. Example: 'Hello World!!!' -> tokens ['Hello','World!!!'] sorted: 'Hello' stays same? 'Hello' sorted gives 'Hello'? Actually letters: H e l l o -> ascii: H(72), e(101), l(108), l(108), o(111) sorted: H e l l o same. 'World!!!' letters: W o r l d ! ! ! ascii: ! 33, ! 33, ! 33, W 87, d 100, l 108, o 111, r 114. Sorted: ! ! ! W d l o r -> '!!!Wdlor'. Good. So implement."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5712469900,
+    "load_duration": 12094000,
+    "prompt_eval_count": 214,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 193007000,
+    "eval_count": 317,
+    "eval_duration": 5494383000
+  },
+  "wall_seconds": 5.384297633998358,
+  "load_average_before": [
+    0.10595703125,
+    0.189453125,
+    0.13525390625
+  ],
+  "load_average_after": [
+    0.09716796875,
+    0.18603515625,
+    0.13427734375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-low-28",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-low:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_28.py"
+    ],
+    "wall_seconds": 0.7053761780007335,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-EX-2",
+ "run": 5,
+ "started_utc": "2026-10-29T01:45:21Z",
+ "seconds": 7.69,
+ "prompt_file": "runs/prompts/A3/PR-EX-2.txt",
+ "prompt_sha256": "f2477ce5da7cb183172b0139b7906f9c6a97879642a9e3d503461b73319f0f43",
+ "answer": "The README does not give a default number of probes for an IVFFlat index. It says the value is \"1 by default\" in the Query Options section, which is the default for the `ivfflat.probes` setting, not a per-index default:\n\n\"Specify the number of probes (1 by default)\" [pgvector/README.md (lines 378-395) > pgvector > IVFFlat > Query Options]",
+ "tokens": {
+  "input": 2663,
+  "output": 120,
+  "thinking": 0,
+  "cache_read": 2276,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00015996,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2786,
+  "stop_reason": "end_turn",
+  "session_id": "92142b14-289f-4ed7-b11e-044c1996ad1f",
+  "total_cost_usd": 0.00015996,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2276,
+   "output_tokens": 120,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 120,
+     "cache_read_input_tokens": 2276,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 120,
+    "cacheReadInputTokens": 2276,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00015996,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The README does not give a default number of probes for an IVFFlat index. It says the value is \"1 by default\" in the Query Options section, which is the default for the `ivfflat.probes` setting, not a per-index default:\n\n\"Specify the number of probes (1 by default)\" [pgvector/README.md (lines 378-395) > pgvector > IVFFlat > Query Options]",
+  "ttft_ms": 2915,
+  "type": "result",
+  "duration_ms": 2941,
+  "uuid": "5ac6cb49-3bb7-4990-8c80-81550bfdfad5",
+  "ttft_stream_ms": 2913,
+  "time_to_request_ms": 150,
+  "first_content_frame_ms": 2914,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

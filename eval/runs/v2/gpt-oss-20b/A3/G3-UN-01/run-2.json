@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-01",
+ "run": 2,
+ "started_utc": "2026-10-29T16:25:18Z",
+ "seconds": 5.48,
+ "prompt_sha256": "8d36acc17d80b55b637bc1eb276b47450f693cfc08efce7585ec3adf0f9b16dc",
+ "answer": "I do not know.",
+ "thinking_chars": 1250,
+ "tokens": {
+  "input": 1693,
+  "output": 321
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5805296400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:25:24.9067487Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the default value of pgvector's hnsw.max_scan_tuples_per_page setting?\" We must search in context for that setting. In the provided context, I see references to hnsw.max_scan_tuples (default 20,000) and hnsw.scan_mem_multiplier (default 1). But the question is about hnsw.max_scan_tuples_per_page. That specific setting is not present in context. So we must answer that we don't know. According to instructions: \"If you do not know, say you do not know.\" And we should quote the line we rely on and cite path. We do not have a line about max_scan_tuples_per_page. So we must say we do not know, citing that no such setting appears in context. According to instructions: \"Quote the line you rely on and cite its path.\" Since we rely on the fact that it's not in context, but we can't quote a line that says that. We might quote the line that shows hnsw.max_scan_tuples default 20000. But that doesn't answer the question. We can say: \"I do not know.\" Provide no quote? The instruction says: \"If you do not know, say you do not know.\" I think we should simply say: \"I do not know.\" That is acceptable. But we might also provide a quote that shows there's no such setting. But there is no line. So we just say we do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5805296400,
+  "load_duration": 14780000,
+  "prompt_eval_count": 1693,
+  "prompt_eval_cached_count": 1688,
+  "prompt_eval_duration": 57563000,
+  "eval_count": 321,
+  "eval_duration": 5674528000
+ }
+}

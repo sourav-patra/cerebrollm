@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-03",
+ "run": 4,
+ "started_utc": "2026-10-29T16:44:12Z",
+ "seconds": 5.65,
+ "prompt_sha256": "db75b1c050dbf2852df8783d1fd5d7792e27408e214d188243cff0240c6cf5a4",
+ "answer": "I do not know.",
+ "thinking_chars": 1386,
+ "tokens": {
+  "input": 1795,
+  "output": 343
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5997368800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:44:17.6237942Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"How large is the context window of Recursive's Flint model on Ollama?\" We need to find relevant info. The context includes a description of Flint in [1]. It states: \"Flint is an Apache 2.0-licensed, 40B-parameter mixture-of-experts model with approximately 2.5B parameters active per token.\" It doesn't mention context window. The other context includes general context window defaults: default 4096 tokens, can be overridden. But for Flint? Might be in some docs not included. We must answer based on what we know. If not known, say we do not know. The question: \"How large is the context window of Recursive's Flint model on Ollama?\" We need to check if any mention of Flint context window. In [1], no. In other docs, no mention. So we likely don't know. We can say we don't know. But maybe we can infer that Flint's context window is similar to default? But no guarantee. The question likely expects \"We don't know from the provided context.\" So answer: I do not know. Provide quote? We should quote the line that says we don't know? We could say \"I do not have that information.\" But we need to quote a line we rely on. Could quote the fact that no mention: maybe quote from [1] lines? But that doesn't say context. We can say \"I do not know.\" and quote the fact that no mention. But guidelines: If you do not know, say you do not know. So answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5997368800,
+  "load_duration": 13313000,
+  "prompt_eval_count": 1795,
+  "prompt_eval_cached_count": 1790,
+  "prompt_eval_duration": 56401000,
+  "eval_count": 343,
+  "eval_duration": 5868970000
+ }
+}

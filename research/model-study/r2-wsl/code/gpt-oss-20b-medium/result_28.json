@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/86",
+  "index": 28,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef anti_shuffle(s):\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    anti_shuffle('Hi') returns 'Hi'\n    anti_shuffle('hello') returns 'ehllo'\n    anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "medium"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:22:05.6638771Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nimport re\n\ndef anti_shuffle(s: str) -> str:\n    \"\"\"\n    Return a string where each word (sequence of non-space characters) is sorted\n    by ascending ASCII value, while preserving the original spaces.\n    \"\"\"\n    if not s:\n        return s\n    tokens = re.findall(r'\\S+|\\s+', s)\n    sorted_tokens = [\n        ''.join(sorted(tok)) if not tok.isspace() else tok\n        for tok in tokens\n    ]\n    return ''.join(sorted_tokens)\n```",
+      "thinking": "We need to implement anti_shuffle(s). The description: \"ordered version of string, is a string where all words (separated by space) are replaced by a new word where all the characters arranged in ascending order based on ascii value. Note: You should keep the order of words and blank spaces in the sentence.\"\n\nExamples: anti_shuffle('Hi') returns 'Hi' (since only one word, sorted letters: 'Hi' sorted ascending ascii: 'Hi' because 'H' ascii 72, 'i' ascii 105, so 'Hi' remains). anti_shuffle('hello') returns 'ehllo' (sorted letters). anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'. Let's analyze: Input: \"Hello World!!!\". Words separated by space: \"Hello\", \"World!!!\". For \"Hello\", sorted ascending ascii: 'Hello' sorted: 'Hello'? Let's check: letters: H(72), e(101), l(108), l(108), o(111). Sorted ascending: H e l l o => \"Hello\". So unchanged. For \"World!!!\": characters: W(87), o(111), r(114), l(108), d(100), !(33), !(33), !(33). Sorted ascending ascii: '!!!Wdlor'? Let's sort: ascii values: 33,33,33, 87, 100, 108, 111, 114. So string: '!!!Wdlor'. Yes. So output: \"Hello !!!Wdlor\". Note that there is a space between Hello and !!!Wdlor. So we keep spaces.\n\nEdge cases: multiple spaces? \"Hello  World\" with double space. We should keep the order of words and blank spaces. So we need to split by spaces but preserve spaces. Approach: iterate over string, accumulate characters until space, sort them, output sorted word, then output space(s). But we need to preserve multiple spaces. So we can use regex to split into words and spaces: re.findall(r'\\S+|\\s+', s). For each token: if token.isspace(): keep as is; else: sort token characters ascending ascii: ''.join(sorted(token)). Then join tokens.\n\nAlso note that punctuation attached to words should be sorted as part of word. Example: \"World!!!\" sorted includes punctuation. So we treat punctuation as part of word.\n\nEdge: empty string: return empty string.\n\nImplementation: import re.\n\nReturn string.\n\nLet's produce code.\n\nAlso note that we need to keep order of words and blank spaces. So we preserve tokens.\n\nLet's implement.\n\nAlso we need to handle newline? Not necessary.\n\nLet's produce final code."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 11895988200,
+    "load_duration": 17320300,
+    "prompt_eval_count": 214,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 192833000,
+    "eval_count": 664,
+    "eval_duration": 11670997000
+  },
+  "wall_seconds": 11.201290515000437,
+  "load_average_before": [
+    0.294921875,
+    0.11962890625,
+    0.08642578125
+  ],
+  "load_average_after": [
+    0.2490234375,
+    0.115234375,
+    0.08544921875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-medium-28",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-medium:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_28.py"
+    ],
+    "wall_seconds": 0.7263209809989348,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-20",
+ "run": 1,
+ "started_utc": "2026-10-29T01:44:25Z",
+ "seconds": 7.96,
+ "prompt_file": "runs/prompts/A0/EX-20.txt",
+ "prompt_sha256": "ccf187e202d9bc42608368778037f8bbf87a11b345e6f79bb60947a84a871a61",
+ "answer": "The flag is **`--repeat <number>`**, for example:\n\n```\npromptfoo eval --repeat 3\n```\n\nThis runs each test case three times. It's useful for measuring variability in non-deterministic model outputs. I'm answering from memory, so run `promptfoo eval --help` to confirm it in your installed version.",
+ "tokens": {
+  "input": 648,
+  "output": 447,
+  "thinking": 343,
+  "cache_read": 0,
+  "cache_creation": 646
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003529,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3242,
+  "stop_reason": "end_turn",
+  "session_id": "a8dd582d-25d1-4d6c-b516-02de9410483a",
+  "total_cost_usd": 0.0003529,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 646,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 447,
+   "output_tokens_details": {
+    "thinking_tokens": 343
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 646,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 447,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 646,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 646
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 447,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 646,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003529,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 343,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 646,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The flag is **`--repeat <number>`**, for example:\n\n```\npromptfoo eval --repeat 3\n```\n\nThis runs each test case three times. It's useful for measuring variability in non-deterministic model outputs. I'm answering from memory, so run `promptfoo eval --help` to confirm it in your installed version.",
+  "ttft_ms": 2946,
+  "type": "result",
+  "duration_ms": 3383,
+  "uuid": "a0be03ff-a244-4e00-a5ea-3652ca2e2e70",
+  "ttft_stream_ms": 2838,
+  "time_to_request_ms": 194,
+  "first_content_frame_ms": 2838,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

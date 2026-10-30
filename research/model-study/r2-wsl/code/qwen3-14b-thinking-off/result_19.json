@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/108",
+  "index": 19,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:32:09.504087Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef count_nums(arr):\n    \"\"\"\n    Write a function count_nums which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> count_nums([]) == 0\n    >>> count_nums([-1, 11, -11]) == 1\n    >>> count_nums([1, 1, 2]) == 3\n    \"\"\"\n    def sum_signed_digits(n):\n        if n < 0:\n            digits = list(map(int, str(abs(n))))\n            digits[0] = -digits[0]\n            return sum(digits)\n        else:\n            return sum(map(int, str(n)))\n    \n    count = 0\n    for num in arr:\n        if sum_signed_digits(num) > 0:\n            count += 1\n    return count\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 8658442800,
+    "load_duration": 11611500,
+    "prompt_eval_count": 163,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 113428000,
+    "eval_count": 214,
+    "eval_duration": 8504860000
+  },
+  "wall_seconds": 8.125416384000346,
+  "load_average_before": [
+    0.09375,
+    0.0576171875,
+    0.01318359375
+  ],
+  "load_average_after": [
+    0.07861328125,
+    0.0556640625,
+    0.01220703125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-off-19",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_19.py"
+    ],
+    "wall_seconds": 0.6626673049995588,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

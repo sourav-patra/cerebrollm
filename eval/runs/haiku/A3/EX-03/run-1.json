@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-03",
+ "run": 1,
+ "started_utc": "2026-10-29T01:38:31Z",
+ "seconds": 8.37,
+ "prompt_file": "runs/prompts/A3/EX-03.txt",
+ "prompt_sha256": "ca22c376bc50f167ac779c9f8f437df0697e727771499a152e46d3195e0924af",
+ "answer": "The context says the default is 5 minutes, but it doesn't state a `keep_alive` default for the `/api/generate` request itself.\n\nThe FAQ says: \"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nThe FAQ also says the `keep_alive` parameter works with `/api/generate` and `/api/chat` and accepts durations, seconds, negative numbers, or `0`. [ollama/docs/faq.md] Taking the FAQ's \"by default\" statement to mean the value used when `keep_alive` is omitted is my inference, not something the text spells out.\n\nThe promptfoo config sets `keep_alive: '5m'` explicitly, but the text presents that as a configured value, not a default: \"How long Ollama keeps the model loaded after the request\" [promptfoo/site/docs/providers/ollama.md].",
+ "tokens": {
+  "input": 3345,
+  "output": 629,
+  "thinking": 340,
+  "cache_read": 0,
+  "cache_creation": 3343
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0009833,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3271,
+  "stop_reason": "end_turn",
+  "session_id": "c1d1d83d-3c14-411e-9e65-32d2d5cd8869",
+  "total_cost_usd": 0.0009833,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3343,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 629,
+   "output_tokens_details": {
+    "thinking_tokens": 340
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3343,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 629,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3343,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3343
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 629,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3343,
+    "webSearchRequests": 0,
+    "costUSD": 0.0009833,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 340,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3343,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The context says the default is 5 minutes, but it doesn't state a `keep_alive` default for the `/api/generate` request itself.\n\nThe FAQ says: \"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nThe FAQ also says the `keep_alive` parameter works with `/api/generate` and `/api/chat` and accepts durations, seconds, negative numbers, or `0`. [ollama/docs/faq.md] Taking the FAQ's \"by default\" statement to mean the value used when `keep_alive` is omitted is my inference, not something the text spells out.\n\nThe promptfoo config sets `keep_alive: '5m'` explicitly, but the text presents that as a configured value, not a default: \"How long Ollama keeps the model loaded after the request\" [promptfoo/site/docs/providers/ollama.md].",
+  "ttft_ms": 3009,
+  "type": "result",
+  "duration_ms": 3452,
+  "uuid": "c07fb6fe-bb11-4bd8-8d20-cd4ddf7fd101",
+  "ttft_stream_ms": 3007,
+  "time_to_request_ms": 182,
+  "first_content_frame_ms": 3007,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

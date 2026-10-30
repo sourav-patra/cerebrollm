@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-08",
+ "run": 3,
+ "started_utc": "2026-10-29T16:36:28Z",
+ "seconds": 6.07,
+ "prompt_sha256": "6aa67305c2d3d502e197c468c7f1133f40522aa105aede1e8c22e0c41cf5c9f1",
+ "answer": "I do not know.",
+ "thinking_chars": 1571,
+ "tokens": {
+  "input": 1659,
+  "output": 380
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6596382700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:36:33.6818813Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: Which Ollama CLI flag sets the number of parallel layer downloads for ollama pull? We have context from docs. Search for flag. The docs show API for pull with parameter \"stream\", \"insecure\". But not \"parallel\" or number of layers. Maybe there's a flag like \"--parallel\" or \"--threads\". Let's search context: Not present. But maybe the docs mention that in the CLI. Let's think: In the API, you can set \"stream\" optional. For CLI, maybe there is a flag like \"--parallel\" or \"-p\" or something. Let's search quickly memory: Ollama CLI 'ollama pull' might support '--parallel' or '--threads' to set parallel layer downloads. I recall reading about a flag '--parallel' in the docs. The question: Which flag sets number of parallel layer downloads for ollama pull? Likely it's '--parallel' or '-p' but need to confirm.\n\nSearch in context: Not present. But maybe in other docs not included. The answer might be that there is no flag for that. However the question implies there is a flag. Let's recall: In Ollama docs, there is a flag '--parallel' to set number of parallel layer downloads. Yes I think there is: \"ollama pull --parallel 4\". So answer: The flag is \"--parallel\". Provide quote from docs. Let's locate quote: Not in provided context, but we can say we don't know. But we should quote from source path. Since context does not include this, we cannot quote. We must say we do not know. The instruction says: \"If you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we should say we do not know. Provide no quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6596382700,
+  "load_duration": 16321600,
+  "prompt_eval_count": 1659,
+  "prompt_eval_cached_count": 1654,
+  "prompt_eval_duration": 57558000,
+  "eval_count": 380,
+  "eval_duration": 6466201000
+ }
+}

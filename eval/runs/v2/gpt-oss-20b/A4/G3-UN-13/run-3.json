@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-13",
+ "run": 3,
+ "started_utc": "2026-10-30T06:40:50Z",
+ "seconds": 29.35,
+ "prompt_sha256": "26ca5e4933408a5ada39b4e4d3ec1f2d7a79281ca6059a75aa8d1883af172a88",
+ "answer": "The assertion type that computes BERTScore between an output and a reference is **`similar`**.  \n\"Checks semantic similarity between output and expected value using embedding models.\" [promptfoo/site/docs/configuration/expected-outputs/model-graded/index.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "promptfoo/site/docs/configuration/expected-outputs/model-graded/index.md",
+   "quote": "Checks semantic similarity between output and expected value using embedding models.",
+   "verify": "OK",
+   "detail": "promptfoo/site/docs/configuration/expected-outputs/model-graded/index.md@file sha256 df31664805a3"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 1.43,
+   "rerank": 11.45,
+   "generate": 13.44,
+   "verify": 0.28,
+   "total": 26.61
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 2,
+    "rerank_score": 0.87011,
+    "path": "promptfoo/site/docs/configuration/expected-outputs/model-graded/index.md",
+    "line_start": 1,
+    "line_end": 30
+   },
+   {
+    "rank": 2,
+    "search_rank": 3,
+    "rerank_score": 0.70484,
+    "path": "promptfoo/site/docs/providers/openai-decisions.md",
+    "line_start": 126,
+    "line_end": 200
+   },
+   {
+    "rank": 3,
+    "search_rank": 9,
+    "rerank_score": 0.65807,
+    "path": "promptfoo/site/docs/guides/factuality-eval.md",
+    "line_start": 73,
+    "line_end": 81
+   },
+   {
+    "rank": 4,
+    "search_rank": 4,
+    "rerank_score": 0.54021,
+    "path": "promptfoo/site/docs/providers/openai-decisions.md",
+    "line_start": 108,
+    "line_end": 124
+   },
+   {
+    "rank": 5,
+    "search_rank": 16,
+    "rerank_score": 0.49576,
+    "path": "promptfoo/site/docs/configuration/expected-outputs/guardrails.md",
+    "line_start": 167,
+    "line_end": 250
+   },
+   {
+    "rank": 6,
+    "search_rank": 7,
+    "rerank_score": 0.4748,
+    "path": "promptfoo/site/docs/configuration/expected-outputs/index.md",
+    "line_start": 18,
+    "line_end": 30
+   },
+   {
+    "rank": 7,
+    "search_rank": 13,
+    "rerank_score": 0.46096,
+    "path": "promptfoo/site/docs/configuration/guide.md",
+    "line_start": 361,
+    "line_end": 404
+   },
+   {
+    "rank": 8,
+    "search_rank": 11,
+    "rerank_score": 0.39619,
+    "path": "promptfoo/site/docs/usage/node-package.md",
+    "line_start": 145,
+    "line_end": 194
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

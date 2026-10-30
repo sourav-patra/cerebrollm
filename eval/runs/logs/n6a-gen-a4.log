@@ -1,0 +1,136 @@
+== 2026-10-29T17:47:50Z waiting for lock: gen gemma4-12b A4
+== 2026-10-29T18:00:39Z lock held: gen gemma4-12b
+gemma4-12b: 175 calls to do
+== 2026-10-29T18:03:30Z waiting for lock: gen gemma4-12b A4
+== 2026-10-29T18:04:23Z lock held: gen gemma4-12b
+gemma4-12b: 99 calls to do
+20/99 elapsed 487s
+40/99 elapsed 1025s
+60/99 elapsed 1525s
+FAIL gemma4-12b A4 G2-PA-03 3 ask exit 2: cerebrollm ask failed: ReadError: [Errno 104] Connection reset by peer
+
+FAIL gemma4-12b A4 G2-ST-01 3 ask exit 2: cerebrollm ask failed: ReadError: [Errno 104] Connection reset by peer
+
+FAIL gemma4-12b A4 G2-ST-02 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-ST-03 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-EX-06 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-EX-07 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-EX-08 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-PA-04 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-PA-05 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+80/99 elapsed 1818s
+FAIL gemma4-12b A4 G2-EX-09 3 ask exit 2: cerebrollm ask failed: RemoteProtocolError: Server disconnected without sending a response.
+
+FAIL gemma4-12b A4 G2-EX-10 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-PA-06 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G2-PA-07 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-01 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-02 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-03 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-04 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-05 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-06 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-07 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-08 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-09 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-10 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-11 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-12 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-13 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-14 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gemma4-12b A4 G3-UN-15 3 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.12/http/client.py", line 1365, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1411, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1360, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1120, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1064, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1030, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<repo>/eval/run_v2.py", line 315, in <module>
+    cmd_gen(a.model, a.arms.split(","), a.runs, a.jobs)
+  File "<repo>/eval/run_v2.py", line 227, in cmd_gen
+    unload(cfg)
+  File "<repo>/eval/run_v2.py", line 205, in unload
+    urllib.request.urlopen(urllib.request.Request(L.OLLAMA + "/api/generate", body,
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+== 2026-10-29T18:35:23Z lock released
+== 2026-10-29T18:35:23Z waiting for lock: gen gpt-oss-20b A4
+== 2026-10-29T18:35:23Z lock held: gen gpt-oss-20b
+gpt-oss-20b: 105 calls to do
+FAIL gpt-oss-20b A4 G2-EX-01 1 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gpt-oss-20b A4 G2-EX-02 1 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gpt-oss-20b A4 G2-EX-03 1 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+FAIL gpt-oss-20b A4 G2-EX-04 1 ask exit 2: cerebrollm ask failed: ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded,
+== 2026-10-29T18:39:59Z stopped by builder: Ollama 0.40.13 upgrade at 18:35Z left no GPU (library=cpu); remaining A4 and grading wait for the GPU
+== 2026-10-30T05:46:45Z waiting for lock: gen gemma4-12b A4
+== 2026-10-30T05:46:45Z lock held: gen gemma4-12b ollama {"version":"0.40.13"}
+gemma4-12b: 28 calls to do
+20/28 elapsed 519s
+done gemma4-12b 28 calls in 713s
+== 2026-10-30T05:58:39Z lock released
+== 2026-10-30T05:58:39Z waiting for lock: gen gpt-oss-20b A4
+== 2026-10-30T05:59:23Z lock held: gen gpt-oss-20b ollama {"version":"0.40.13"}
+gpt-oss-20b: 105 calls to do
+20/105 elapsed 446s
+40/105 elapsed 945s
+60/105 elapsed 1379s
+FAIL gpt-oss-20b A4 G2-EX-04 3 ask exit 2: w/pytorch/pytorch/aten/src/ATen/cuda/CUDABlas.cpp:1754.)
+  return F.linear(input, self.weight, self.bias)
+ce
+80/105 elapsed 1965s
+100/105 elapsed 2432s
+done gpt-oss-20b 105 calls in 2563s
+== 2026-10-30T06:42:07Z lock released
+== 2026-10-30T06:42:07Z waiting for lock: gen phi4 A4
+== 2026-10-30T06:56:29Z lock held: gen phi4 ollama {"version":"0.40.13"}
+phi4: 105 calls to do
+20/105 elapsed 586s
+40/105 elapsed 1132s
+60/105 elapsed 1642s
+80/105 elapsed 2235s
+100/105 elapsed 2796s
+done phi4 105 calls in 2949s
+== 2026-10-30T07:45:39Z lock released
+== 2026-10-30T07:46:02Z waiting for lock: gen gpt-oss-20b A4
+== 2026-10-30T09:13:18Z lock held: gen gpt-oss-20b ollama {"version":"0.40.13"}
+gpt-oss-20b: 1 calls to do
+FAIL gpt-oss-20b A4 G2-EX-04 3 ask exit 2: <00:00, 216.07it/s]
+Loading weights: 100%|██████████| 393/393 [00:01<00:00, 311.69it/s]
+cerebrollm ask faile
+done gpt-oss-20b 1 calls in 47s
+== 2026-10-30T09:14:06Z lock released

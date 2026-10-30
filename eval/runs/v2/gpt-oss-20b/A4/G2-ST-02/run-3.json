@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-ST-02",
+ "run": 3,
+ "started_utc": "2026-10-30T06:31:25Z",
+ "seconds": 43.3,
+ "prompt_sha256": "015406e86ce9b22b4efbb17c7fa4af74b8a836705729e767a11b8242b267e46c",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "ollama/v0.40.9.md",
+   "quote": "Flint now runs on Linux and Windows as well as macOS.",
+   "verify": "MISSING",
+   "detail": "quote not found in ollama/v0.40.9.md@file"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 1.0,
+   "rerank": 30.96,
+   "generate": 8.71,
+   "verify": 0.0,
+   "total": 40.67
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 3,
+    "rerank_score": 0.95157,
+    "path": "ollama/v0.40.9.md",
+    "line_start": 1,
+    "line_end": 8
+   },
+   {
+    "rank": 2,
+    "search_rank": 1,
+    "rerank_score": 0.91618,
+    "path": "ollama/v0.40.8.md",
+    "line_start": 8,
+    "line_end": 21
+   },
+   {
+    "rank": 3,
+    "search_rank": 5,
+    "rerank_score": 0.78582,
+    "path": "ollama/v0.40.11.md",
+    "line_start": 1,
+    "line_end": 12
+   },
+   {
+    "rank": 4,
+    "search_rank": 20,
+    "rerank_score": 0.6108,
+    "path": "ollama/v0.40.13.md",
+    "line_start": 1,
+    "line_end": 11
+   },
+   {
+    "rank": 5,
+    "search_rank": 7,
+    "rerank_score": 0.39127,
+    "path": "ollama/docs/windows.md",
+    "line_start": 82,
+    "line_end": 103
+   },
+   {
+    "rank": 6,
+    "search_rank": 12,
+    "rerank_score": 0.22458,
+    "path": "ollama/v0.40.12.md",
+    "line_start": 29,
+    "line_end": 37
+   },
+   {
+    "rank": 7,
+    "search_rank": 6,
+    "rerank_score": 0.219,
+    "path": "ollama/docs/troubleshooting.md",
+    "line_start": 68,
+    "line_end": 74
+   },
+   {
+    "rank": 8,
+    "search_rank": 4,
+    "rerank_score": 0.18666,
+    "path": "ollama/v0.32.7.md",
+    "line_start": 1,
+    "line_end": 42
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

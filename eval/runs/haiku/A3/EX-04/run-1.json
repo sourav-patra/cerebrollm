@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-04",
+ "run": 1,
+ "started_utc": "2026-10-29T01:38:48Z",
+ "seconds": 8.88,
+ "prompt_file": "runs/prompts/A3/EX-04.txt",
+ "prompt_sha256": "7217b4bdc84e8b5d6c4be165e43b370b6b7e12310f840e3834e6fbb17d388402",
+ "answer": "The minimum NVIDIA driver version for Ollama on Windows is **551.61**. The Windows system requirements say: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general Nvidia hardware page gives different numbers: \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md] It also says: \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nThe Windows-specific figure is the one that applies to Windows, but the documents don't explain the discrepancy.",
+ "tokens": {
+  "input": 2699,
+  "output": 649,
+  "thinking": 402,
+  "cache_read": 0,
+  "cache_creation": 2697
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008641,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3649,
+  "stop_reason": "end_turn",
+  "session_id": "58ea723b-c5b5-4cb2-bf9d-7cbdace668ed",
+  "total_cost_usd": 0.0008641,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2697,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 649,
+   "output_tokens_details": {
+    "thinking_tokens": 402
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2697,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 649,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2697,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2697
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 649,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2697,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008641,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 402,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2697,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The minimum NVIDIA driver version for Ollama on Windows is **551.61**. The Windows system requirements say: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general Nvidia hardware page gives different numbers: \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md] It also says: \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nThe Windows-specific figure is the one that applies to Windows, but the documents don't explain the discrepancy.",
+  "ttft_ms": 3146,
+  "type": "result",
+  "duration_ms": 3810,
+  "uuid": "7dbdb4ca-c667-4f28-ade1-2fd547694488",
+  "ttft_stream_ms": 3145,
+  "time_to_request_ms": 161,
+  "first_content_frame_ms": 3145,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

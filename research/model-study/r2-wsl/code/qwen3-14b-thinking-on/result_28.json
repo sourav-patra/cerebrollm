@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/86",
+  "index": 28,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef anti_shuffle(s):\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    ascending order based on ascii value.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    anti_shuffle('Hi') returns 'Hi'\n    anti_shuffle('hello') returns 'ehllo'\n    anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": true
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:09:09.3975351Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nimport re\n\ndef anti_shuffle(s):\n    tokens = re.findall(r'\\S+|\\s+', s)\n    result = []\n    for token in tokens:\n        if token.isspace():\n            result.append(token)\n        else:\n            sorted_token = ''.join(sorted(token))\n            result.append(sorted_token)\n    return ''.join(result)\n```",
+      "thinking": "Okay, I need to implement this Python function called anti_shuffle. Let me read the problem statement again carefully.\n\nThe function takes a string and returns an ordered version. The ordered version has each word's characters arranged in ascending order based on ASCII value. But the order of words and blank spaces should be kept. Oh right, so the words are separated by spaces, and the spaces themselves need to be preserved in their original positions. Wait, but how about multiple spaces? Like if there are two spaces between words, does that get kept as is? The example given is anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'. Let me check that example. The input has 'Hello' followed by a space, then 'World!!!'. The output is 'Hello' followed by ' !!!Wdlor'. So the original space is kept, but the second word's characters are sorted. So the space is kept as is, but the words are processed. So the function needs to split the original string into words and spaces, process each word by sorting its characters, and then reassemble them in the original order, keeping the spaces as they are.\n\nSo the approach is: split the original string into tokens that are either words or spaces. Then, for each token, if it's a word (i.e., not a space), sort its characters in ascending ASCII order. If it's a space, leave it as is. Then, concatenate all the tokens back together.\n\nBut how to split the string into words and spaces? Because splitting on spaces would lose the information about how many spaces there are. For example, if there are two spaces between words, splitting on spaces would give a list where the spaces are not preserved. So perhaps we need to split the string into a list of tokens where each token is either a word or a sequence of spaces. Then, process each token: if it's a word, sort the characters; if it's spaces, leave as is.\n\nSo how to split the string into such tokens? One way is to iterate through the string and group consecutive non-space characters as words, and consecutive spaces as space tokens. For example, for the string 'Hello   World', the tokens would be ['Hello', '   ', 'World'].\n\nOnce I have these tokens, I can process each one. For each word token, sort the characters. For space tokens, leave them as is.\n\nSo the steps are:\n\n1. Split the input string into tokens of words and spaces.\n2. For each token, if it's a word (i.e., not a space), sort the characters in ascending ASCII order.\n3. Concatenate all tokens back together.\n\nNow, how to split the string into these tokens? Let's think about using regular expressions. The regex pattern could be something like (\\S+|\\s+), which matches either a sequence of non-space characters (a word) or a sequence of spaces. Using re.findall, we can get all the tokens.\n\nYes, that's a good approach. So using re.findall(r'\\S+|\\s+', s) would split the string into a list of tokens, each being either a word or a group of spaces.\n\nOnce I have that list, I can loop through each token. For each token, check if it's a space (i.e., if it consists of only whitespace characters). If it is, leave it as is. Otherwise, sort the characters in the token.\n\nWait, but how to check if a token is a space? Well, for each token in the list, if the token is made up of only whitespace characters, then it's a space token. Otherwise, it's a word.\n\nSo for each token in tokens:\n\nif token.strip() == '':  # meaning it's all whitespace\n    add it as is\nelse:\n    sort the characters and join them.\n\nWait, but token.strip() would remove leading and trailing whitespace. Wait, no. For example, if the token is '   ', then token.strip() is an empty string. So, perhaps checking if the token consists of only whitespace. Alternatively, we can check if the token is composed of only whitespace characters. How?\n\nAnother approach: for each token, check if all characters in it are whitespace. For example, using token.isspace().\n\nYes! Because for a token that is a sequence of spaces, token.isspace() returns True. For a word token, it returns False. So that's a good way to check.\n\nSo, in code:\n\ntokens = re.findall(r'\\S+|\\s+', s)\n\nresult = []\nfor token in tokens:\n    if token.isspace():\n        result.append(token)\n    else:\n        # sort the characters in the token\n        sorted_chars = sorted(token)\n        result.append(''.join(sorted_chars))\n\nreturn ''.join(result)\n\nWait, but let's test this with the examples.\n\nFirst example: anti_shuffle('Hi') returns 'Hi'. The tokens would be ['Hi'], which is a word. sorted('Hi') is ['H', 'i'], joined as 'Hi', which is correct.\n\nSecond example: anti_shuffle('hello') returns 'ehllo'. The tokens are ['hello'], sorted gives 'ehllo'.\n\nThird example: 'Hello World!!!' \u2192 tokens are ['Hello', ' ', 'World!!!']. The first token is 'Hello' \u2192 sorted is 'Hello' (H, e, l, l, o \u2192 sorted as e, H, l, l, o? Wait, no. Wait, the ASCII value of 'H' is 72, 'e' is 101. Wait, no, wait: 'H' is uppercase, 'e' is lowercase. Oh right! So in the example given, anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'. Let's check that.\n\nOriginal 'Hello' \u2192 characters are H, e, l, l, o. When sorted by ASCII value, the order is e (101), H (72?), wait wait no: ASCII values for uppercase letters are before lowercase. So 'H' is 72, 'e' is 101. So sorted in ascending order would be H, e, l, l, o? No, wait no. Wait, the ASCII value of 'H' is 72, which is lower than 'e' (101). So when sorted, the order would be H, e, l, l, o? Wait, but that would make the sorted string 'He llo'? Wait, but the example says that anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'. So the first word is 'Hello' which is not changed. Wait why?\n\nWait the example says that anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'. Let me check. The original 'Hello' is a word. The function is supposed to arrange all the characters in ascending order based on ASCII value. So let's look at the characters in 'Hello':\n\nH (72), e (101), l (108), l (108), o (111). So sorted in ascending order would be H, e, l, l, o \u2192 which is 'Hello' (since H comes first, then e, then l, l, o). So the sorted version is same as original. Hence, the first word remains 'Hello'.\n\nThe second word is 'World!!!', which has characters W, o, r, l, d, !, !, !. Let's list their ASCII values:\n\n'!' is 33, 'd' is 100, 'l' is 108, 'o' is 111, 'r' is 114, 'W' is 87. So sorted order would be !, !, !, W, d, l, o, r \u2192 joined as '!!!Wdlor'. So the second word becomes '!!!Wdlor'. The space between the words is kept as is. So the output is 'Hello !!!Wdlor', which matches the example.\n\nSo the code seems to handle that case correctly.\n\nAnother test case: if the input is 'ab cD', then the tokens are ['ab', ' ', 'cD']. The first token sorted is 'ab' (since a and b are already in order). The third token is 'cD' \u2192 characters are 'c' (99), 'D' (68). Sorted order is D, c \u2192 'Dc'. So the output is 'ab Dc'.\n\nSo the code seems to handle that.\n\nNow, what about multiple spaces? For example, input 'hello   world' \u2192 tokens are ['hello', '   ', 'world']. The sorted 'hello' is 'ehllo', the spaces are kept as '   ', and 'world' becomes 'dlorw'. So the output is 'ehllo   dlorw'.\n\nSo the code handles that.\n\nNow, the code needs to import re. So the function will need to import the re module.\n\nSo putting it all together:\n\nThe function anti_shuffle(s) will:\n\n- Use re.findall to split the string into tokens.\n\nBut wait, what about if the string is empty? Well, the code should handle that.\n\nSo the code:\n\nimport re\n\ndef anti_shuffle(s):\n    tokens = re.findall(r'\\S+|\\s+', s)\n    result = []\n    for token in tokens:\n        if token.isspace():\n            result.append(token)\n        else:\n            sorted_token = ''.join(sorted(token))\n            result.append(sorted_token)\n    return ''.join(result)\n\nWait, but in Python, the re.findall(r'\\S+|\\s+', s) will split the string into the tokens. Let me test with some examples.\n\nFor example, the string 'Hello World!!!' \u2192 the tokens are ['Hello', ' ', 'World!!!'].\n\nYes. So the code would process each token.\n\nYes. So this should work.\n\nNow, check the example where the input is 'Hi' \u2192 tokens is ['Hi'], which is processed to sorted('Hi') \u2192 ['H', 'i'] \u2192 'Hi', which is correct.\n\nAnother example: 'hello' \u2192 sorted is 'ehllo'.\n\nYes.\n\nSo this code should work.\n\nNow, the problem says to return the complete executable function with any needed imports, in one Python code block.\n\nSo the code would be:\n\nimport re\n\ndef anti_shuffle(s):\n    tokens = re.findall(r'\\S+|\\s+', s)\n    result = []\n    for token in tokens:\n        if token.isspace():\n            result.append(token)\n        else:\n            sorted_token = ''.join(sorted(token))\n            result.append(sorted_token)\n    return ''.join(result)\n\nYes. That should be the code.\n\nTesting the example 'Hello World!!!' \u2192 the code returns 'Hello !!!Wdlor' as expected.\n\nAnother test case: input '   ' (only spaces) \u2192 returns the same.\n\nAnother case: input 'a b c' \u2192 returns 'a b c' (each single character is already sorted).\n\nAnother case: input 'ba ab' \u2192 tokens are ['ba', ' ', 'ab']. sorted('ba') is 'ab', sorted('ab') is 'ab', so output is 'ab ab'.\n\nYes.\n\nSo this code should handle all cases.\n"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 102576944400,
+    "load_duration": 12092700,
+    "prompt_eval_count": 159,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 113773000,
+    "eval_count": 2429,
+    "eval_duration": 102417170000
+  },
+  "wall_seconds": 96.0993894910007,
+  "load_average_before": [
+    0.62548828125,
+    0.16650390625,
+    0.05224609375
+  ],
+  "load_average_after": [
+    0.12548828125,
+    0.11669921875,
+    0.04296875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-on-28",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-on:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_28.py"
+    ],
+    "wall_seconds": 0.721985295000195,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

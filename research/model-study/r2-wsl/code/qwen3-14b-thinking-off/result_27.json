@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/35",
+  "index": 27,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:32:56.7325913Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n    return max(l)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3706494200,
+    "load_duration": 14238000,
+    "prompt_eval_count": 122,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 90630000,
+    "eval_count": 91,
+    "eval_duration": 3577292000
+  },
+  "wall_seconds": 3.452560966999954,
+  "load_average_before": [
+    0.19775390625,
+    0.09326171875,
+    0.02490234375
+  ],
+  "load_average_after": [
+    0.181640625,
+    0.09130859375,
+    0.0244140625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-off-27",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_27.py"
+    ],
+    "wall_seconds": 0.6664101619990106,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

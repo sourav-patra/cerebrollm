@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-15",
+ "run": 2,
+ "started_utc": "2026-10-29T16:22:57Z",
+ "seconds": 5.11,
+ "prompt_sha256": "2ae30404b1685d3b484219c6e90a4e895d45b50e4711a03a3b84c2bd8a751c88",
+ "answer": "I don’t have the exact source‑code or documentation in front of me, but from what’s publicly documented about **promptfoo** the command that writes an evaluation out as a Parquet file is the **export** command with the `--format parquet` flag.\n\n```bash\npromptfoo export --format parquet\n```\n\n(You can also supply the evaluation name or path to the result file if you’re exporting a specific run.)\n\nIf you’re looking for a different syntax or flag, check the latest `promptfoo --help` output or the official docs for any recent changes.",
+ "thinking_chars": 809,
+ "tokens": {
+  "input": 103,
+  "output": 307
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5427420600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:23:02.7395897Z",
+  "response": "I don’t have the exact source‑code or documentation in front of me, but from what’s publicly documented about **promptfoo** the command that writes an evaluation out as a Parquet file is the **export** command with the `--format parquet` flag.\n\n```bash\npromptfoo export --format parquet\n```\n\n(You can also supply the evaluation name or path to the result file if you’re exporting a specific run.)\n\nIf you’re looking for a different syntax or flag, check the latest `promptfoo --help` output or the official docs for any recent changes.",
+  "thinking": "We need to answer: \"Which promptfoo command exports an evaluation to a Parquet file?\" This is about promptfoo, a tool. The question: which command? Maybe \"promptfoo export\" or \"promptfoo export parquet\". I recall promptfoo has a command \"promptfoo export\" with flags like --format parquet. There's \"promptfoo export --format parquet\". Maybe \"promptfoo export parquet\". I should check knowledge: Promptfoo is a prompt engineering tool. Commands: promptfoo run, promptfoo evaluate, promptfoo export. The export command can export to CSV, JSON, Parquet. The command: \"promptfoo export --format parquet\". Or \"promptfoo export parquet\". Let's answer: \"promptfoo export --format parquet\". If not sure, say I don't know. But likely correct.\n\nThus answer: use \"promptfoo export --format parquet\". Provide explanation.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5427420600,
+  "load_duration": 14405300,
+  "prompt_eval_count": 103,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181308000,
+  "eval_count": 307,
+  "eval_duration": 5218648000
+ }
+}

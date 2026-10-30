@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:02Z",
+ "seconds": 1.6,
+ "prompt_sha256": "6313660d1f260ef897c26ddf6e354ac3a22e43ef4d770c6c48c8b2c3e4f95811",
+ "answer": "\"apps can stream audio through the OpenAI-compatible `/v1/audio/speech` endpoint.\" [ollama/v0.40.11.md (lines 6-7)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2199,
+  "output": 42
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1747644900
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:57:03.6251365Z",
+  "response": "\"apps can stream audio through the OpenAI-compatible `/v1/audio/speech` endpoint.\" [ollama/v0.40.11.md (lines 6-7)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1747644900,
+  "load_duration": 15115700,
+  "prompt_eval_count": 2199,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 963755000,
+  "eval_count": 42,
+  "eval_duration": 358742000
+ }
+}

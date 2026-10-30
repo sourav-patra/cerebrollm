@@ -1,0 +1,89 @@
+{
+ "model": "phi4",
+ "arm": "A4",
+ "id": "G3-UN-10",
+ "run": 3,
+ "started_utc": "2026-10-30T07:42:31Z",
+ "seconds": 33.93,
+ "prompt_sha256": "62ad94e3ceba26bf87ddc4503171cbf7257f5881c4d09761cb45279ab0d71683",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 5.82,
+   "rerank": 9.49,
+   "generate": 16.3,
+   "verify": 0.0,
+   "total": 31.61
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 5,
+    "rerank_score": 0.67846,
+    "path": "llama_index/docs/src/content/docs/framework/community/integrations/deepeval.md",
+    "line_start": 69,
+    "line_end": 99
+   },
+   {
+    "rank": 2,
+    "search_rank": 9,
+    "rerank_score": 0.65415,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md",
+    "line_start": 1,
+    "line_end": 13
+   },
+   {
+    "rank": 3,
+    "search_rank": 10,
+    "rerank_score": 0.54304,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md",
+    "line_start": 357,
+    "line_end": 399
+   },
+   {
+    "rank": 4,
+    "search_rank": 2,
+    "rerank_score": 0.43261,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md",
+    "line_start": 517,
+    "line_end": 583
+   },
+   {
+    "rank": 5,
+    "search_rank": 18,
+    "rerank_score": 0.39912,
+    "path": "llama_index/docs/src/content/docs/framework/understanding/index.md",
+    "line_start": 9,
+    "line_end": 45
+   },
+   {
+    "rank": 6,
+    "search_rank": 19,
+    "rerank_score": 0.28487,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md",
+    "line_start": 12,
+    "line_end": 51
+   },
+   {
+    "rank": 7,
+    "search_rank": 7,
+    "rerank_score": 0.23569,
+    "path": "llama_index/docs/src/content/docs/framework/optimizing/rag_failure_mode_checklist.md",
+    "line_start": 260,
+    "line_end": 270
+   },
+   {
+    "rank": 8,
+    "search_rank": 4,
+    "rerank_score": 0.22784,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/indexing/llama_cloud_index.md",
+    "line_start": 1,
+    "line_end": 16
+   }
+  ],
+  "model": "phi4"
+ }
+}

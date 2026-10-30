@@ -1,0 +1,156 @@
+{
+  "id": 12,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Use code search to find where load_config appears."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": true,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:29:16.0997205Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "Okay, the user wants to find where 'load_config' appears in the codebase. Let me check the available tools. There's a function called search_code that takes a query parameter. The query is the text to search for. So I need to call search_code with \"load_config\" as the query. That should return the matching lines. I don't need to use any other tools here since the user specifically mentioned using code search. Let me make sure the parameters are correct. The function expects a query string, which is provided. Alright, that's all.\n",
+      "tool_calls": [
+        {
+          "id": "call_u9xbshfm",
+          "function": {
+            "index": 0,
+            "name": "search_code",
+            "arguments": {
+              "query": "load_config"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5784152700,
+    "load_duration": 11700000,
+    "prompt_eval_count": 338,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 169986000,
+    "eval_count": 140,
+    "eval_duration": 5596123000
+  },
+  "wall_seconds": 5.402512882999872,
+  "load_average_before": [
+    0.01513671875,
+    0.01953125,
+    0.0
+  ],
+  "load_average_after": [
+    0.013671875,
+    0.01904296875,
+    0.0
+  ],
+  "expected": {
+    "name": "search_code",
+    "arguments": {
+      "query": "load_config"
+    }
+  },
+  "passed": true
+}

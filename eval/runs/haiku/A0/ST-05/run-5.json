@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-05",
+ "run": 5,
+ "started_utc": "2026-10-29T01:56:05Z",
+ "seconds": 8.63,
+ "prompt_file": "runs/prompts/A0/ST-05.txt",
+ "prompt_sha256": "4ece7102ce55b865c451b89e67d531541c32ed21f535d023d71ae85c1638e020",
+ "answer": "I'm not certain of this. My best recollection is that pgvector's `vector` type is declared without an explicit `STORAGE` clause, so it uses PostgreSQL's default for variable-length types, `extended`. I don't have a reliable memory of whether a later release changed this to `external` or specified it explicitly, so please check `sql/vector.sql` in the pgvector repository for your version, or run `SELECT typstorage FROM pg_type WHERE typname = 'vector';` on your database to confirm.",
+ "tokens": {
+  "input": 657,
+  "output": 610,
+  "thinking": 443,
+  "cache_read": 0,
+  "cache_creation": 655
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004362,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3975,
+  "stop_reason": "end_turn",
+  "session_id": "6d4439f7-89e3-4f6a-9715-2562d2be8643",
+  "total_cost_usd": 0.0004362,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 655,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 610,
+   "output_tokens_details": {
+    "thinking_tokens": 443
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 655,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 610,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 655,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 655
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 610,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 655,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004362,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 443,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 655,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I'm not certain of this. My best recollection is that pgvector's `vector` type is declared without an explicit `STORAGE` clause, so it uses PostgreSQL's default for variable-length types, `extended`. I don't have a reliable memory of whether a later release changed this to `external` or specified it explicitly, so please check `sql/vector.sql` in the pgvector repository for your version, or run `SELECT typstorage FROM pg_type WHERE typname = 'vector';` on your database to confirm.",
+  "ttft_ms": 3362,
+  "type": "result",
+  "duration_ms": 4085,
+  "uuid": "bf8aba08-234c-4a61-af44-d3436a57566d",
+  "ttft_stream_ms": 2797,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 2797,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-09",
+ "run": 5,
+ "started_utc": "2026-10-29T01:49:09Z",
+ "seconds": 10.04,
+ "prompt_file": "runs/prompts/A0/PA-09.txt",
+ "prompt_sha256": "f722ed625fc836a796c3355df9d382db3dcb83c814fa8ea57c968ac4dd08d5c7",
+ "answer": "A single non-partitioned Postgres table is limited to **32 TB** with the default 8 KB block size. The limit comes from the 32-bit block number: 2³² blocks × 8 KB = 32 TB. Building Postgres with a 32 KB block size raises it to 128 TB.\n\nFor vectors (e.g., with pgvector), the number of vectors is bounded by that size divided by the bytes per row. Each row also has overhead, and a row must fit within a single page. A 1536-dimension `vector` takes about 6 KB, so only one such row fits per 8 KB page. That makes the practical ceiling about 2³² (roughly 4.3 billion) rows, well before the 32 TB figure is reached.\n\nI don't have information about this specific project's configuration, such as its block size or vector dimensions, so these figures are general Postgres and pgvector behavior. Partitioning the table is the usual way to go beyond these limits.",
+ "tokens": {
+  "input": 666,
+  "output": 845,
+  "thinking": 541,
+  "cache_read": 0,
+  "cache_creation": 664
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005555,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5678,
+  "stop_reason": "end_turn",
+  "session_id": "f686fb0a-07b1-4c95-beed-8d59034874ac",
+  "total_cost_usd": 0.0005555,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 664,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 845,
+   "output_tokens_details": {
+    "thinking_tokens": 541
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 664,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 845,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 664,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 664
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 845,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 664,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005555,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 541,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 664,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "A single non-partitioned Postgres table is limited to **32 TB** with the default 8 KB block size. The limit comes from the 32-bit block number: 2³² blocks × 8 KB = 32 TB. Building Postgres with a 32 KB block size raises it to 128 TB.\n\nFor vectors (e.g., with pgvector), the number of vectors is bounded by that size divided by the bytes per row. Each row also has overhead, and a row must fit within a single page. A 1536-dimension `vector` takes about 6 KB, so only one such row fits per 8 KB page. That makes the practical ceiling about 2³² (roughly 4.3 billion) rows, well before the 32 TB figure is reached.\n\nI don't have information about this specific project's configuration, such as its block size or vector dimensions, so these figures are general Postgres and pgvector behavior. Partitioning the table is the usual way to go beyond these limits.",
+  "ttft_ms": 4232,
+  "type": "result",
+  "duration_ms": 5807,
+  "uuid": "0e448b44-6768-40f2-b887-f56868912bfb",
+  "ttft_stream_ms": 2872,
+  "time_to_request_ms": 161,
+  "first_content_frame_ms": 2872,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

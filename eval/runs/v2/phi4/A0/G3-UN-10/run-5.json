@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-10",
+ "run": 5,
+ "started_utc": "2026-10-29T17:42:27Z",
+ "seconds": 3.58,
+ "prompt_sha256": "f858bb3557149a1d503d6b3fb8d5c981d06bfa01ad5a503c151be74811859b19",
+ "answer": "I do not know the specific details about the `GraphRAGCommunityRetriever` class or the base class it extends within the LlamaIndex project. This information would typically be found in the project's documentation or source code. If you are looking for this information, I recommend checking the official repository or documentation for LlamaIndex for the most accurate and up-to-date details.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 55,
+  "output": 78
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3678304500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:42:32.4203195Z",
+  "response": "I do not know the specific details about the `GraphRAGCommunityRetriever` class or the base class it extends within the LlamaIndex project. This information would typically be found in the project's documentation or source code. If you are looking for this information, I recommend checking the official repository or documentation for LlamaIndex for the most accurate and up-to-date details.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3678304500,
+  "load_duration": 13357100,
+  "prompt_eval_count": 55,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 216506000,
+  "eval_count": 78,
+  "eval_duration": 3431806000
+ }
+}

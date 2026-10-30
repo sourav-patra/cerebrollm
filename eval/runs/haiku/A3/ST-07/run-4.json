@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-07",
+ "run": 4,
+ "started_utc": "2026-10-29T01:56:48Z",
+ "seconds": 14.66,
+ "prompt_file": "runs/prompts/A3/ST-07.txt",
+ "prompt_sha256": "649b84b0105b8fe71efbaddbb7ddf11348d4f5febf344fd8719e94841db2461c",
+ "answer": "You set both on the global `Settings` object, before you build indexes or run queries. The retrieved text covers the embedding model directly, but the LLM assignment is only partly shown.\n\n**Embedding model:** The docs say that \"embedding models will be specified in the `Settings` object\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The usage example shows the global assignment under the comment \"# changing the global default\" with \"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The same page says that without this setting, LlamaIndex falls back to \"text-embedding-ada-002\", and it recommends naming a current model explicitly for new projects [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The model name is cut off in the retrieved text, so I can't quote the exact recommended name.\n\n**LLM:** The `Settings` object is a \"simple singleton object that lives throughout your application\" and \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. The retrieved text doesn't include the line that assigns the LLM. The attribute list is truncated, and the migration guide only shows an Ollama import [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. From general knowledge of LlamaIndex, the LLM is set with `Settings.llm`, but please verify that against the full settings docs.\n\nA combined example, using a local setup:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3\")  # LLM: from general knowledge, not the retrieved text\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nFor the local embedding option, the privacy guide describes \"HuggingFaceEmbedding, which runs any Sentence Transformers model on your own hardware\" [llama_index/docs/src/content/docs/framework/understanding/privacy.md]. The model name in the example above is my own choice, not from the docs.\n\nBecause `Settings` is global, these defaults apply to every module that doesn't receive its own model. The migration guide notes that \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. You can also pass a model directly to an individual index or component to override the global default.",
+ "tokens": {
+  "input": 3395,
+  "output": 2270,
+  "thinking": 1328,
+  "cache_read": 3009,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0012420899999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 10196,
+  "stop_reason": "end_turn",
+  "session_id": "d7fad20f-cac1-4166-a7af-35d928d1dc01",
+  "total_cost_usd": 0.0012420899999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 3009,
+   "output_tokens": 2270,
+   "output_tokens_details": {
+    "thinking_tokens": 1328
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 2270,
+     "cache_read_input_tokens": 3009,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 2270,
+    "cacheReadInputTokens": 3009,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.0012420899999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1328,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You set both on the global `Settings` object, before you build indexes or run queries. The retrieved text covers the embedding model directly, but the LLM assignment is only partly shown.\n\n**Embedding model:** The docs say that \"embedding models will be specified in the `Settings` object\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The usage example shows the global assignment under the comment \"# changing the global default\" with \"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The same page says that without this setting, LlamaIndex falls back to \"text-embedding-ada-002\", and it recommends naming a current model explicitly for new projects [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The model name is cut off in the retrieved text, so I can't quote the exact recommended name.\n\n**LLM:** The `Settings` object is a \"simple singleton object that lives throughout your application\" and \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. The retrieved text doesn't include the line that assigns the LLM. The attribute list is truncated, and the migration guide only shows an Ollama import [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. From general knowledge of LlamaIndex, the LLM is set with `Settings.llm`, but please verify that against the full settings docs.\n\nA combined example, using a local setup:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3\")  # LLM: from general knowledge, not the retrieved text\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nFor the local embedding option, the privacy guide describes \"HuggingFaceEmbedding, which runs any Sentence Transformers model on your own hardware\" [llama_index/docs/src/content/docs/framework/understanding/privacy.md]. The model name in the example above is my own choice, not from the docs.\n\nBecause `Settings` is global, these defaults apply to every module that doesn't receive its own model. The migration guide notes that \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. You can also pass a model directly to an individual index or component to override the global default.",
+  "ttft_ms": 6879,
+  "type": "result",
+  "duration_ms": 10322,
+  "uuid": "9ab0bd30-a57d-461d-adc6-bd7af69caf94",
+  "ttft_stream_ms": 2910,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 2910,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

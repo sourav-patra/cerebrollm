@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-PA-06",
+ "run": 1,
+ "started_utc": "2026-10-30T06:06:12Z",
+ "seconds": 18.69,
+ "prompt_sha256": "32a05fb07567bcd8d89fe7c56963c0f1e9646f5300f415c012ce3b5f2931a22d",
+ "answer": "\"fix(anthropic): correct Opus 4.6 context window to 1M\" [llama_index/v0.14.24.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "llama_index/v0.14.24.md",
+   "quote": "fix(anthropic): correct Opus 4.6 context window to 1M",
+   "verify": "OK",
+   "detail": "llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 0.8,
+   "rerank": 8.91,
+   "generate": 6.18,
+   "verify": 0.27,
+   "total": 16.17
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.9712,
+    "path": "llama_index/v0.14.24.md",
+    "line_start": 55,
+    "line_end": 60
+   },
+   {
+    "rank": 2,
+    "search_rank": 5,
+    "rerank_score": 0.90918,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 3610,
+    "line_end": 3617
+   },
+   {
+    "rank": 3,
+    "search_rank": 14,
+    "rerank_score": 0.79234,
+    "path": "promptfoo/site/docs/providers/vertex.md",
+    "line_start": 147,
+    "line_end": 179
+   },
+   {
+    "rank": 4,
+    "search_rank": 17,
+    "rerank_score": 0.33777,
+    "path": "promptfoo/site/docs/providers/anthropic.md",
+    "line_start": 639,
+    "line_end": 663
+   },
+   {
+    "rank": 5,
+    "search_rank": 2,
+    "rerank_score": 0.32626,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 6235,
+    "line_end": 6242
+   },
+   {
+    "rank": 6,
+    "search_rank": 10,
+    "rerank_score": 0.3194,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 4723,
+    "line_end": 4730
+   },
+   {
+    "rank": 7,
+    "search_rank": 4,
+    "rerank_score": 0.19293,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 371,
+    "line_end": 374
+   },
+   {
+    "rank": 8,
+    "search_rank": 8,
+    "rerank_score": 0.1827,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 12589,
+    "line_end": 12595
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 3,
+ "started_utc": "2026-10-29T17:28:47Z",
+ "seconds": 7.76,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "Based on the provided context, the information about the speed improvement of the `/api/tags` endpoint in Ollama 0.34.1 is found in the changelog of the release documentation. Here is the relevant quote:\n\n\"Run `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.\" \n\nThis indicates that after the speed-up, the `/api/tags` request took 294 milliseconds in a cold start testing scenario on a large model library. \n\n[1] ollama/v0.34.1.md (lines 1-15)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2301,
+  "output": 133
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8333147900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:28:54.6122591Z",
+  "response": "Based on the provided context, the information about the speed improvement of the `/api/tags` endpoint in Ollama 0.34.1 is found in the changelog of the release documentation. Here is the relevant quote:\n\n\"Run `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.\" \n\nThis indicates that after the speed-up, the `/api/tags` request took 294 milliseconds in a cold start testing scenario on a large model library. \n\n[1] ollama/v0.34.1.md (lines 1-15)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8333147900,
+  "load_duration": 13455700,
+  "prompt_eval_count": 2301,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1192086000,
+  "eval_count": 133,
+  "eval_duration": 6976966000
+ }
+}

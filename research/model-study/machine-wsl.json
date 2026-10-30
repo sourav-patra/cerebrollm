@@ -1,0 +1,86 @@
+{
+  "measured_at": "2026-10-29T00:08:12+05:30",
+  "work_order": "J (issue #9)",
+  "ollama": {
+    "version": "0.40.12",
+    "runs_on": "Windows",
+    "url": "http://127.0.0.1:11434 (same from Ubuntu: WSL mirrored networking)",
+    "model_store": "%USERPROFILE%\\.ollama\\models (default; OLLAMA_MODELS not set)",
+    "source": "GET /api/version; ollama --version printed 'ollama version is 0.40.12'"
+  },
+  "cpu": {
+    "name": "13th Gen Intel(R) Core(TM) i5-13600K",
+    "cores": 14,
+    "logical_processors": 20,
+    "source": "PowerShell Get-CimInstance Win32_Processor; wsl nproc = 20"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4070 SUPER",
+    "vram_mib": 12282,
+    "driver": "621.01",
+    "source": "nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader"
+  },
+  "ram": {
+    "windows_total_bytes": 34116210688,
+    "source": "PowerShell Get-CimInstance Win32_ComputerSystem TotalPhysicalMemory"
+  },
+  "wsl": {
+    "memory_cap": "12GB",
+    "swap": "0",
+    "networking_mode": "mirrored",
+    "wsl_version": "2.7.14.0",
+    "kernel": "6.18.33.2-microsoft-standard-WSL2",
+    "ubuntu_visible_memory_bytes": 12539559936,
+    "source": "%USERPROFILE%\\.wslconfig; wsl --version; wsl -d Ubuntu-24.04 -- free -b"
+  },
+  "disk": {
+    "volume": "C:",
+    "ubuntu_mount": "/mnt/c",
+    "free_bytes": 401479979008,
+    "used_bytes": 597560238080,
+    "total_bytes": 999040217088,
+    "floor_bytes": 8589934592,
+    "floor_note": "guard floor is 8 GiB (engine/models.toml [host] floor_gb)",
+    "source": "PowerShell Get-PSDrive C; wsl df -B1 /mnt/c"
+  },
+  "os": {
+    "windows": "Microsoft Windows 11 Pro 10.0.26300 (build 26300)",
+    "ubuntu": "Ubuntu 24.04.5 LTS (WSL distro Ubuntu-24.04)",
+    "engine_venv_python": "3.12.3 (~/.cerebrollm/venv)",
+    "windows_python": "3.11.9",
+    "source": "PowerShell Get-CimInstance Win32_OperatingSystem; wsl lsb_release -d; python --version"
+  },
+  "macos_iogpu_wired_limit_mb": "not applicable on Windows (ruling R-8): the macOS GPU wired-memory limit does not exist here; the 12 GB of VRAM is dedicated and fixed",
+  "installed_before_this_run": [
+    {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+      "size_bytes": 1157672605
+    },
+    {
+      "name": "kimi-k3:cloud",
+      "digest": "630e737485bd19f7244fa91f135be116780a25e942ceed0d2aceabaccbd5bf99",
+      "size_bytes": 308
+    },
+    {
+      "name": "qwen3.5:9b",
+      "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+      "size_bytes": 6550825550
+    }
+  ],
+  "installed_before_this_run_note": "read from GET /api/tags at development step J. kimi-k3:cloud is a cloud entry and is never called. qwen3.5:9b and kimi-k3:cloud are pre-existing and must not be modified. bge-m3 is the live embedding model.",
+  "pulled_digests": {
+    "phi4": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+    "qwen3-embedding:0.6b": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+    "qwen3-embedding:4b": "df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907",
+    "devstral:24b": "9bd74193e93935e9d8564d88607b220a9d341c4a36b748cffcbd9ad4f47a9ca9",
+    "gpt-oss:20b": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+    "qwen3:14b": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "qwen3:8b": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "qwen3-coder:30b": "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca",
+    "qwen3:30b": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+    "gemma4:12b": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+    "qwen3.6:35b-a3b-coding-mtp-q4_K_M": "6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649",
+    "glm-4.7-flash:q4_K_M": "4475827791a269b02c8ec49b1c3bc1abb5846bacf3fae015b75d33986322d8f6"
+  }
+}

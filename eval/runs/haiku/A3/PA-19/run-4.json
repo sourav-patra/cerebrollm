@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-19",
+ "run": 4,
+ "started_utc": "2026-10-29T01:52:55Z",
+ "seconds": 7.56,
+ "prompt_file": "runs/prompts/A3/PA-19.txt",
+ "prompt_sha256": "53508afb4e68a578f77dadd4d7f23e82c5e59a705cac464b2707dfb39261fe0e",
+ "answer": "The command is `promptfoo view`. It starts a browser UI for visualizing results: \"Start a browser UI for visualization of results.\" [promptfoo/site/docs/usage/command-line.md]\n\nYou can also run it with `npx promptfoo@latest view`: \"npx promptfoo@latest view\" [promptfoo/site/docs/usage/web-ui.md]. The web viewer docs describe it this way: \"After [running an eval](/docs/getting-started), view results in your browser:\" [promptfoo/site/docs/usage/web-ui.md]",
+ "tokens": {
+  "input": 2766,
+  "output": 182,
+  "thinking": 0,
+  "cache_read": 2377,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00019237,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2823,
+  "stop_reason": "end_turn",
+  "session_id": "8148312e-8d87-480c-aaa4-a6847f332ea2",
+  "total_cost_usd": 0.00019237,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2377,
+   "output_tokens": 182,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 182,
+     "cache_read_input_tokens": 2377,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 182,
+    "cacheReadInputTokens": 2377,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00019237,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The command is `promptfoo view`. It starts a browser UI for visualizing results: \"Start a browser UI for visualization of results.\" [promptfoo/site/docs/usage/command-line.md]\n\nYou can also run it with `npx promptfoo@latest view`: \"npx promptfoo@latest view\" [promptfoo/site/docs/usage/web-ui.md]. The web viewer docs describe it this way: \"After [running an eval](/docs/getting-started), view results in your browser:\" [promptfoo/site/docs/usage/web-ui.md]",
+  "ttft_ms": 2935,
+  "type": "result",
+  "duration_ms": 2952,
+  "uuid": "fbbe5001-bef9-41f3-a071-cc410a7a5469",
+  "ttft_stream_ms": 2933,
+  "time_to_request_ms": 127,
+  "first_content_frame_ms": 2933,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

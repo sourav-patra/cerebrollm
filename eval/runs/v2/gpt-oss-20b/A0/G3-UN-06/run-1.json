@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-06",
+ "run": 1,
+ "started_utc": "2026-10-29T16:08:23Z",
+ "seconds": 6.1,
+ "prompt_sha256": "a2128622bd33ab8470d5545049e2bbaa01efad76ef0c0f33e0399f30876aac75",
+ "answer": "I’m not aware of an Ollama environment variable that directly controls the number of layers downloaded concurrently during `ollama pull`. If you’re looking for a way to tweak download concurrency, you might need to refer to the latest Ollama documentation or community discussions for any new or undocumented settings.",
+ "thinking_chars": 1321,
+ "tokens": {
+  "input": 108,
+  "output": 361
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6463805100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:08:28.8004664Z",
+  "response": "I’m not aware of an Ollama environment variable that directly controls the number of layers downloaded concurrently during `ollama pull`. If you’re looking for a way to tweak download concurrency, you might need to refer to the latest Ollama documentation or community discussions for any new or undocumented settings.",
+  "thinking": "We need to answer: \"Which Ollama environment variable sets how many model layers are downloaded concurrently during ollama pull?\" We need knowledge about Ollama, a tool for running LLMs locally. It has environment variables for configuring behavior. The question: Which environment variable sets how many model layers are downloaded concurrently during \"ollama pull\"? Probably something like \"OLLAMA_PARALLEL_DOWNLOADS\" or \"OLLAMA_PULL_CONCURRENCY\" or \"OLLAMA_MAX_DOWNLOAD_CONCURRENCY\". Let's search memory: I know that ollama has env var \"OLLAMA_HOST\", \"OLLAMA_API_HOST\", \"OLLAMA_ORGANIZATION\". For concurrency, maybe \"OLLAMA_CONCURRENT_DOWNLOADS\". Quick google? I can't but recall reading documentation: \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\" maybe. The variable might be \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\" or \"OLLAMA_MAX_DOWNLOADS\". Another possibility: \"OLLAMA_PULL_PARALLELISM\". Let's think: The official docs mention environment variable \"OLLAMA_KEEP_ALIVE\" etc. For pulling models, I think it's \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\". Let's answer that.\n\nWe need to answer: Which environment variable sets how many model layers are downloaded concurrently during ollama pull? The answer: \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\". If unsure, we say we don't know. But I think it's that.\n\nThus answer: OLLAMA_MAX_CONCURRENT_DOWNLOADS.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6463805100,
+  "load_duration": 14733100,
+  "prompt_eval_count": 108,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 183784000,
+  "eval_count": 361,
+  "eval_duration": 6246105000
+ }
+}

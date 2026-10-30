@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-04",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:30Z",
+ "seconds": 7.82,
+ "prompt_sha256": "9dd50f777b37d86f0bebca501def5b8f743d5f2f37f6da0f8ef1ca3e24ec69ca",
+ "answer": "I don't know. I have no information about Ollama 0.34.1 or about any testing of cold `/api/tags` requests on a large model library after a speed-up, and nothing in this project's context covers it. I'd rather not guess at a number.\n\nIf you can point me to the release notes, a changelog, or a PR/issue, I can read it and pull out the figure. If the relevant files are in the working directory, tell me where and I'll look.",
+ "tokens": {
+  "input": 652,
+  "output": 137,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 650
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.003974,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3835,
+  "stop_reason": "end_turn",
+  "session_id": "5d20bb8a-f17b-43db-bfe3-98f00c874062",
+  "total_cost_usd": 0.003974,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 650,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 137,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 650,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 137,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 650,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 650
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 137,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 650,
+    "webSearchRequests": 0,
+    "costUSD": 0.003974,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 650,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no information about Ollama 0.34.1 or about any testing of cold `/api/tags` requests on a large model library after a speed-up, and nothing in this project's context covers it. I'd rather not guess at a number.\n\nIf you can point me to the release notes, a changelog, or a PR/issue, I can read it and pull out the figure. If the relevant files are in the working directory, tell me where and I'll look.",
+  "ttft_ms": 3902,
+  "type": "result",
+  "duration_ms": 3925,
+  "uuid": "859c89fd-8255-4b3a-8539-1dac5b5655dc",
+  "ttft_stream_ms": 2862,
+  "time_to_request_ms": 316,
+  "first_content_frame_ms": 2862,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

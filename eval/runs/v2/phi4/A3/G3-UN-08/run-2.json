@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-08",
+ "run": 2,
+ "started_utc": "2026-10-29T17:25:11Z",
+ "seconds": 6.64,
+ "prompt_sha256": "6aa67305c2d3d502e197c468c7f1133f40522aa105aede1e8c22e0c41cf5c9f1",
+ "answer": "Based on the provided context, there is no mention of an Ollama CLI flag specifically setting the number of parallel layer downloads for the `ollama pull` command. The documents describe the `ollama pull` operation, its parameters, and how it handles downloads, but they do not specify a parameter or flag for controlling parallel layer downloads.\n\nFor further clarification or specific usage details, you may need to refer to additional documentation or resources provided by Ollama. If you have access to other sections of the Ollama documentation or the development team, they might offer more insights or updates beyond the provided context.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1621,
+  "output": 124
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7119929600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:25:17.190461Z",
+  "response": "Based on the provided context, there is no mention of an Ollama CLI flag specifically setting the number of parallel layer downloads for the `ollama pull` command. The documents describe the `ollama pull` operation, its parameters, and how it handles downloads, but they do not specify a parameter or flag for controlling parallel layer downloads.\n\nFor further clarification or specific usage details, you may need to refer to additional documentation or resources provided by Ollama. If you have access to other sections of the Ollama documentation or the development team, they might offer more insights or updates beyond the provided context.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7119929600,
+  "load_duration": 14644000,
+  "prompt_eval_count": 1621,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 770021000,
+  "eval_count": 124,
+  "eval_duration": 6201090000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-06",
+ "run": 3,
+ "started_utc": "2026-10-29T01:48:00Z",
+ "seconds": 7.53,
+ "prompt_file": "runs/prompts/A3/PA-06.txt",
+ "prompt_sha256": "6a03fc6b3513f9c7aee92fb9a4dceb7803becc5fbe99988bad8df67c68e6d6ae",
+ "answer": "The feature is **iterative index scans**, available starting with pgvector 0.8.0. \"With approximate indexes, queries with filtering can return less results since filtering is applied *after* the index is scanned. Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\" [pgvector/README.md]\n\nYou enable it with a session setting. For strict distance ordering: \"SET hnsw.iterative_scan = strict_order;\" [pgvector/README.md]\n\nRelaxed ordering gives better recall at the cost of slightly out-of-order results: \"SET hnsw.iterative_scan = relaxed_order;\" with the IVFFlat equivalent \"SET ivfflat.iterative_scan = relaxed_order;\" [pgvector/README.md]",
+ "tokens": {
+  "input": 3357,
+  "output": 579,
+  "thinking": 279,
+  "cache_read": 2968,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00039678,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2917,
+  "stop_reason": "end_turn",
+  "session_id": "21a7cc39-c180-4880-93f9-b33b0f6288b6",
+  "total_cost_usd": 0.00039678,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2968,
+   "output_tokens": 579,
+   "output_tokens_details": {
+    "thinking_tokens": 279
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 579,
+     "cache_read_input_tokens": 2968,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 579,
+    "cacheReadInputTokens": 2968,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00039678,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 279,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The feature is **iterative index scans**, available starting with pgvector 0.8.0. \"With approximate indexes, queries with filtering can return less results since filtering is applied *after* the index is scanned. Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\" [pgvector/README.md]\n\nYou enable it with a session setting. For strict distance ordering: \"SET hnsw.iterative_scan = strict_order;\" [pgvector/README.md]\n\nRelaxed ordering gives better recall at the cost of slightly out-of-order results: \"SET hnsw.iterative_scan = relaxed_order;\" with the IVFFlat equivalent \"SET ivfflat.iterative_scan = relaxed_order;\" [pgvector/README.md]",
+  "ttft_ms": 3000,
+  "type": "result",
+  "duration_ms": 3036,
+  "uuid": "8e424b63-7fd8-4ec0-8020-8e7505d3f720",
+  "ttft_stream_ms": 2999,
+  "time_to_request_ms": 120,
+  "first_content_frame_ms": 2999,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

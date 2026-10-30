@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-01",
+ "run": 2,
+ "started_utc": "2026-10-29T01:54:31Z",
+ "seconds": 8.92,
+ "prompt_file": "runs/prompts/A3/ST-01.txt",
+ "prompt_sha256": "97332b187f8a05a358ba3bafcf1841c5f4c6045464a099af9f7ec9d377d356c3",
+ "answer": "Call **`/api/embed`** (POST to `http://localhost:11434/api/embed`). Its `input` field takes either a single string or an array of strings. The docs show the single-string form: \"input\": \"The quick brown fox jumps over the lazy dog.\" [ollama/docs/capabilities/embeddings.md]. For batches, \"Pass an array of strings to `input`.\" [ollama/docs/capabilities/embeddings.md]\n\nThe request also needs a `model` field, such as `\"model\": \"embeddinggemma\"` [ollama/docs/capabilities/embeddings.md].\n\nThe API reference also lists an older-looking endpoint, `/api/embeddings`, which takes a `prompt` field instead of `input`: \"prompt\": \"Here is an article about llamas...\" [ollama/docs/api.md]. The context doesn't say whether it's deprecated, so I'd use `/api/embed` unless you have a reason to need the other one.",
+ "tokens": {
+  "input": 3352,
+  "output": 657,
+  "thinking": 350,
+  "cache_read": 2966,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00043516000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4162,
+  "stop_reason": "end_turn",
+  "session_id": "a55a60b4-c0e1-439e-a7c1-c267d484026f",
+  "total_cost_usd": 0.00043516000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 2966,
+   "output_tokens": 657,
+   "output_tokens_details": {
+    "thinking_tokens": 350
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 657,
+     "cache_read_input_tokens": 2966,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 657,
+    "cacheReadInputTokens": 2966,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.00043516000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 350,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Call **`/api/embed`** (POST to `http://localhost:11434/api/embed`). Its `input` field takes either a single string or an array of strings. The docs show the single-string form: \"input\": \"The quick brown fox jumps over the lazy dog.\" [ollama/docs/capabilities/embeddings.md]. For batches, \"Pass an array of strings to `input`.\" [ollama/docs/capabilities/embeddings.md]\n\nThe request also needs a `model` field, such as `\"model\": \"embeddinggemma\"` [ollama/docs/capabilities/embeddings.md].\n\nThe API reference also lists an older-looking endpoint, `/api/embeddings`, which takes a `prompt` field instead of `input`: \"prompt\": \"Here is an article about llamas...\" [ollama/docs/api.md]. The context doesn't say whether it's deprecated, so I'd use `/api/embed` unless you have a reason to need the other one.",
+  "ttft_ms": 3025,
+  "type": "result",
+  "duration_ms": 4317,
+  "uuid": "9c7cbcac-fd12-4d7d-9201-688a9db866ba",
+  "ttft_stream_ms": 2790,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2791,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

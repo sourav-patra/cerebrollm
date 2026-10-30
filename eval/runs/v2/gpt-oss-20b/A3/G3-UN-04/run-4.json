@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-04",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:52Z",
+ "seconds": 6.75,
+ "prompt_sha256": "d7d8fbac53fff77aabef414bb850210a10a62dab90fdb5a939e34cdf882699f1",
+ "answer": "I don’t know the exact lag guarantee. The project documentation only states that replication is supported through the WAL, but it does not specify a guaranteed lag for HNSW index updates.\n\n\"Yes, pgvector uses the write‑ahead log (WAL), which allows for replication and point‑in‑time recovery.\" [2]",
+ "thinking_chars": 923,
+ "tokens": {
+  "input": 1924,
+  "output": 278
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4885239900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:46:57.6237068Z",
+  "response": "I don’t know the exact lag guarantee. The project documentation only states that replication is supported through the WAL, but it does not specify a guaranteed lag for HNSW index updates.\n\n\"Yes, pgvector uses the write‑ahead log (WAL), which allows for replication and point‑in‑time recovery.\" [2]",
+  "thinking": "We need to answer: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" We need to see if any mention of replication lag guarantee exists. The context includes a FAQ: \"Is replication supported?\" says yes. But replication lag guarantee? Search context. There's no mention. Possibly no guarantee. The answer: I don't know. Must say I don't know, quoting line that indicates that it uses WAL but no guarantee. The line [2] says uses WAL which allows replication. That is a quote. But question: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" There's no guarantee. So answer: I do not know. But we need to quote line that says replication is supported but no guarantee. Use the quote: \"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\" [2]. And say I don't know the guarantee. So final.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4885239900,
+  "load_duration": 13993700,
+  "prompt_eval_count": 1924,
+  "prompt_eval_cached_count": 1919,
+  "prompt_eval_duration": 56228000,
+  "eval_count": 278,
+  "eval_duration": 4747698000
+ }
+}

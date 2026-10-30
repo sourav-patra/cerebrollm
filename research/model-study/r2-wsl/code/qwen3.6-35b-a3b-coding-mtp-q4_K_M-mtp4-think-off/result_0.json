@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/122",
+  "index": 0,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 4
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:00:01.884778Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef add_elements(arr, k):\n    \"\"\"\n    Given a non-empty array of integers arr and an integer k, return\n    the sum of the elements with at most two digits from the first k elements of arr.\n\n    Example:\n\n        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4\n        Output: 24 # sum of 21 + 3\n\n    Constraints:\n        1. 1 <= len(arr) <= 100\n        2. 1 <= k <= len(arr)\n    \"\"\"\n    total = 0\n    for i in range(k):\n        num = arr[i]\n        # Check if the number has at most two digits\n        # A number has at most two digits if its absolute value is between 0 and 99 inclusive\n        if abs(num) <= 99:\n            total += num\n    return total\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 31713184000,
+    "load_duration": 27694840500,
+    "prompt_eval_count": 175,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1025438000,
+    "eval_count": 219,
+    "eval_duration": 2975609000
+  },
+  "wall_seconds": 29.384821120998822,
+  "load_average_before": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "load_average_after": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off-0",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_0.py"
+    ],
+    "wall_seconds": 8.002514658990549,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

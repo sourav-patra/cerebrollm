@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-06",
+ "run": 5,
+ "started_utc": "2026-10-29T17:41:31Z",
+ "seconds": 2.01,
+ "prompt_sha256": "76eeb457029140d225af9863f4ff3e13b0a7dccc8497126a58581f184707e600",
+ "answer": "I do not know which Node.js major version promptfoo 0.122.0 stopped supporting. To find this information, you would typically need to check the release notes or documentation specific to that version of promptfoo.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 50,
+  "output": 45
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2225493700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:41:32.9362749Z",
+  "response": "I do not know which Node.js major version promptfoo 0.122.0 stopped supporting. To find this information, you would typically need to check the release notes or documentation specific to that version of promptfoo.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2225493700,
+  "load_duration": 12564000,
+  "prompt_eval_count": 50,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 219031000,
+  "eval_count": 45,
+  "eval_duration": 1980325000
+ }
+}

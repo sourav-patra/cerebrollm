@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-10",
+ "run": 5,
+ "started_utc": "2026-10-29T01:58:06Z",
+ "seconds": 10.28,
+ "prompt_file": "runs/prompts/A0/ST-10.txt",
+ "prompt_sha256": "cac20d72cd8d3edb728448ab42438a2027e7e298191a84c9aef4a1af7cccd1b4",
+ "answer": "For tool-calling agents in current LlamaIndex, I'd use the **agent workflow classes** in `llama_index.core.agent.workflow`, such as `FunctionAgent` (for LLMs with native function calling) and `ReActAgent` (for text-based reasoning). These are built on LlamaIndex's Workflows framework. The older `from_tools` / `AgentRunner` style and `OpenAIAgent` are legacy and should be avoided in new code.\n\nA minimal example:\n\n```python\n# pip install llama-index llama-index-llms-openai\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    return a * b\n\nagent = FunctionAgent(\n    tools=[multiply],  # plain Python functions work; docstrings describe the tool\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant.\",\n)\n\nasync def main():\n    response = await agent.run(user_msg=\"What is 12 times 7?\")\n    print(response)\n\nasyncio.run(main())\n```\n\nNotes:\n- Plain functions with type hints and docstrings can be passed directly. For more control, wrap them with `FunctionTool.from_defaults(fn=..., name=..., description=...)`.\n- Multi-agent setups use `AgentWorkflow` or `AgentWorkflow.from_tools_or_functions`.\n- Use `await agent.run(...)` in async code. Streaming and per-run state are handled through the workflow context.\n- Since my knowledge has a cutoff and LlamaIndex changes quickly, check the current docs at docs.llamaindex.ai for the exact import paths and class names before relying on this.",
+ "tokens": {
+  "input": 654,
+  "output": 988,
+  "thinking": 373,
+  "cache_read": 0,
+  "cache_creation": 652
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0006246,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5515,
+  "stop_reason": "end_turn",
+  "session_id": "9a6b566c-04fd-4fac-84bb-bd77f228cfd9",
+  "total_cost_usd": 0.0006246,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 652,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 988,
+   "output_tokens_details": {
+    "thinking_tokens": 373
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 652,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 988,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 652,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 652
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 988,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 652,
+    "webSearchRequests": 0,
+    "costUSD": 0.0006246,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 373,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 652,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "For tool-calling agents in current LlamaIndex, I'd use the **agent workflow classes** in `llama_index.core.agent.workflow`, such as `FunctionAgent` (for LLMs with native function calling) and `ReActAgent` (for text-based reasoning). These are built on LlamaIndex's Workflows framework. The older `from_tools` / `AgentRunner` style and `OpenAIAgent` are legacy and should be avoided in new code.\n\nA minimal example:\n\n```python\n# pip install llama-index llama-index-llms-openai\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    return a * b\n\nagent = FunctionAgent(\n    tools=[multiply],  # plain Python functions work; docstrings describe the tool\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant.\",\n)\n\nasync def main():\n    response = await agent.run(user_msg=\"What is 12 times 7?\")\n    print(response)\n\nasyncio.run(main())\n```\n\nNotes:\n- Plain functions with type hints and docstrings can be passed directly. For more control, wrap them with `FunctionTool.from_defaults(fn=..., name=..., description=...)`.\n- Multi-agent setups use `AgentWorkflow` or `AgentWorkflow.from_tools_or_functions`.\n- Use `await agent.run(...)` in async code. Streaming and per-run state are handled through the workflow context.\n- Since my knowledge has a cutoff and LlamaIndex changes quickly, check the current docs at docs.llamaindex.ai for the exact import paths and class names before relying on this.",
+  "ttft_ms": 3195,
+  "type": "result",
+  "duration_ms": 5642,
+  "uuid": "8f92798d-9a58-450b-a55f-359dd32438f4",
+  "ttft_stream_ms": 2864,
+  "time_to_request_ms": 205,
+  "first_content_frame_ms": 2865,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-PA-2",
+ "run": 5,
+ "started_utc": "2026-10-29T01:53:59Z",
+ "seconds": 7.87,
+ "prompt_file": "runs/prompts/A0/PR-PA-2.txt",
+ "prompt_sha256": "91459a040207abea8d0455b92b65439fa88bf06235ac60cdb66af8c1a143ed04",
+ "answer": "I don't have any project files or Dockerfiles in this session, so I can't say which tag this project uses. From general knowledge, the official `pgvector/pgvector` image on Docker Hub publishes Postgres 17 tags on Debian bookworm, such as `pg17-bookworm`, and version-pinned variants like `0.8.0-pg17-bookworm`. I'm not certain of the exact tag names or which pgvector versions are current, so check the image's Docker Hub page. If you share the `docker-compose.yml` or Dockerfile, I can tell you what it uses.",
+ "tokens": {
+  "input": 664,
+  "output": 451,
+  "thinking": 260,
+  "cache_read": 0,
+  "cache_creation": 662
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035810000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3197,
+  "stop_reason": "end_turn",
+  "session_id": "aa6416b0-eb6b-46cc-8302-43d0a7144424",
+  "total_cost_usd": 0.00035810000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 662,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 451,
+   "output_tokens_details": {
+    "thinking_tokens": 260
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 662,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 451,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 662,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 662
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 451,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 662,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035810000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 260,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 662,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't have any project files or Dockerfiles in this session, so I can't say which tag this project uses. From general knowledge, the official `pgvector/pgvector` image on Docker Hub publishes Postgres 17 tags on Debian bookworm, such as `pg17-bookworm`, and version-pinned variants like `0.8.0-pg17-bookworm`. I'm not certain of the exact tag names or which pgvector versions are current, so check the image's Docker Hub page. If you share the `docker-compose.yml` or Dockerfile, I can tell you what it uses.",
+  "ttft_ms": 2841,
+  "type": "result",
+  "duration_ms": 3320,
+  "uuid": "727c3a3e-7076-46ae-860f-5c1b8d2f668c",
+  "ttft_stream_ms": 2840,
+  "time_to_request_ms": 153,
+  "first_content_frame_ms": 2841,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

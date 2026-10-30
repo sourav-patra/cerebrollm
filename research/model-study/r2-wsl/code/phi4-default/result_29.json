@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/58",
+  "index": 29,
+  "request": {
+    "model": "phi4",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "phi4",
+    "created_at": "2026-10-28T20:50:31.3057557Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\"\"\"\n    # Convert both lists to sets to find common elements\n    set1 = set(l1)\n    set2 = set(l2)\n    \n    # Find the intersection of both sets\n    common_elements = set1.intersection(set2)\n    \n    # Convert the set to a sorted list\n    return sorted(common_elements)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4325552300,
+    "load_duration": 11029300,
+    "prompt_eval_count": 143,
+    "prompt_eval_cached_count": 28,
+    "prompt_eval_duration": 115820000,
+    "eval_count": 93,
+    "eval_duration": 4156560999
+  },
+  "wall_seconds": 4.08957830899908,
+  "load_average_before": [
+    0.0654296875,
+    0.15576171875,
+    0.12890625
+  ],
+  "load_average_after": [
+    0.06005859375,
+    0.15283203125,
+    0.1279296875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-phi4-default-29",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\phi4-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_29.py"
+    ],
+    "wall_seconds": 0.6585794650000025,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

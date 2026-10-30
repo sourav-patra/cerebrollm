@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-12",
+ "run": 3,
+ "started_utc": "2026-10-29T17:28:11Z",
+ "seconds": 2.68,
+ "prompt_sha256": "e1200184b323a2c8814ad450516cddee19c4dbcd96f07faf83c21a3a790ea8a1",
+ "answer": "I do not know the default value of the `--max-retries` flag for the `promptfoo eval` command. This information might be available in the official documentation for `promptfoo`, or by checking the help output of the command itself using `promptfoo eval --help`.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 50,
+  "output": 58
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2876131000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:28:13.5909283Z",
+  "response": "I do not know the default value of the `--max-retries` flag for the `promptfoo eval` command. This information might be available in the official documentation for `promptfoo`, or by checking the help output of the command itself using `promptfoo eval --help`.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2876131000,
+  "load_duration": 13596200,
+  "prompt_eval_count": 50,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 217227000,
+  "eval_count": 58,
+  "eval_duration": 2629705000
+ }
+}

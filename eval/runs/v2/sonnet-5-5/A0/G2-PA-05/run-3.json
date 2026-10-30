@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-05",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:44Z",
+ "seconds": 6.74,
+ "prompt_sha256": "0029e8b4caf8e96161381415b24b55a425803651c47c409acbb58c0159ac97f0",
+ "answer": "I don't know. I don't have reliable knowledge of the promptfoo 0.124.0 release notes, so I can't say what new form of value `--filter-metadata` accepts in that version. I also have no project files in this working directory that I've looked at to confirm it.\n\nTo find out, you could check the promptfoo changelog or the GitHub releases page for v0.124.0, or run `promptfoo eval --help` on that version to see the option's description. If you'd like, I can look through a local copy of the repo or its docs if you point me to one.",
+ "tokens": {
+  "input": 641,
+  "output": 171,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 639
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00427,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2614,
+  "stop_reason": "end_turn",
+  "session_id": "f7e8f12d-64f0-46bc-bb41-2467b4818197",
+  "total_cost_usd": 0.00427,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 639,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 171,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 639,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 171,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 639,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 639
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 171,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 639,
+    "webSearchRequests": 0,
+    "costUSD": 0.00427,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 639,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I don't have reliable knowledge of the promptfoo 0.124.0 release notes, so I can't say what new form of value `--filter-metadata` accepts in that version. I also have no project files in this working directory that I've looked at to confirm it.\n\nTo find out, you could check the promptfoo changelog or the GitHub releases page for v0.124.0, or run `promptfoo eval --help` on that version to see the option's description. If you'd like, I can look through a local copy of the repo or its docs if you point me to one.",
+  "ttft_ms": 2677,
+  "type": "result",
+  "duration_ms": 2690,
+  "uuid": "7a8b59b8-fba7-4f9d-91c6-b75c5c1b0002",
+  "ttft_stream_ms": 2674,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 2674,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

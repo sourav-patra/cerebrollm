@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 4,
+ "started_utc": "2026-10-29T16:43:49Z",
+ "seconds": 4.17,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "The **`bertscore`** assertion type in Promptfoo computes the BERTScore between an output and a reference.",
+ "thinking_chars": 885,
+ "tokens": {
+  "input": 106,
+  "output": 251
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4452579600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:43:54.3225784Z",
+  "response": "The **`bertscore`** assertion type in Promptfoo computes the BERTScore between an output and a reference.",
+  "thinking": "We need to answer: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" The question refers to \"promptfoo\", which is an open-source tool for evaluating LLM prompts. The assertion types include e.g., \"cosine\", \"rouge\", \"bleu\", \"bertscore\" maybe. The question: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" So likely answer: \"bertscore\" assertion type. In promptfoo documentation, there is an assertion type \"bertscore\" or \"bert-score\" maybe. The answer: \"bertscore\". Let's double-check: I recall that promptfoo supports \"bertscore\" as an assertion type. The assertion type name may be \"bertscore\" or \"bert\". The question: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" The answer: \"bertscore\". If unsure, respond I do not know. But I think I know. So answer: \"bertscore\".",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4452579600,
+  "load_duration": 13335800,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 189056000,
+  "eval_count": 251,
+  "eval_duration": 4236256000
+ }
+}

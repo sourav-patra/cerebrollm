@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-07",
+ "run": 2,
+ "started_utc": "2026-10-29T01:56:36Z",
+ "seconds": 11.19,
+ "prompt_file": "runs/prompts/A3/ST-07.txt",
+ "prompt_sha256": "649b84b0105b8fe71efbaddbb7ddf11348d4f5febf344fd8719e94841db2461c",
+ "answer": "The docs show how to set the embedding model globally, but the excerpts I have don't include the exact line for setting the LLM.\n\n**Embedding model:** Set `Settings.embed_model`. The usage section shows the pattern: \"# changing the global default\" followed by \"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The Getting Started section recommends setting an explicit model for new projects, because without it LlamaIndex falls back to \"`OpenAIEmbedding`'s default of `text-embedding-ada-002`\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The example there is `OpenAIEmbedding(model=\"text-embedding-3-sma...`, but the excerpt is truncated, so I can't confirm the full model name from it.\n\n**LLM:** The excerpts don't show the exact line for setting the LLM on `Settings`. The migration guide says the global Settings are the place to change defaults. It also gives an example for non-OpenAI setups that starts with \"from llama_index.llms.ollama import Ollama\", but that excerpt is cut off before the assignment [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. I don't want to guess the exact attribute from these excerpts. Check the full settings page for the LLM attribute.\n\n**How the global default works:** \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. Because it is global, \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md] You can also pass a model directly into an interface to override the global setting for that component: \"Local configurations (transformations, LLMs, embedding models) can be passed directly into the interfaces that make use of them.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]",
+ "tokens": {
+  "input": 3397,
+  "output": 1448,
+  "thinking": 716,
+  "cache_read": 3009,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00083149,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6625,
+  "stop_reason": "end_turn",
+  "session_id": "ddeeceaf-ca60-4ecb-ad88-d1dedfca5b85",
+  "total_cost_usd": 0.00083149,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 3009,
+   "output_tokens": 1448,
+   "output_tokens_details": {
+    "thinking_tokens": 716
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1448,
+     "cache_read_input_tokens": 3009,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1448,
+    "cacheReadInputTokens": 3009,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00083149,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 716,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The docs show how to set the embedding model globally, but the excerpts I have don't include the exact line for setting the LLM.\n\n**Embedding model:** Set `Settings.embed_model`. The usage section shows the pattern: \"# changing the global default\" followed by \"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The Getting Started section recommends setting an explicit model for new projects, because without it LlamaIndex falls back to \"`OpenAIEmbedding`'s default of `text-embedding-ada-002`\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The example there is `OpenAIEmbedding(model=\"text-embedding-3-sma...`, but the excerpt is truncated, so I can't confirm the full model name from it.\n\n**LLM:** The excerpts don't show the exact line for setting the LLM on `Settings`. The migration guide says the global Settings are the place to change defaults. It also gives an example for non-OpenAI setups that starts with \"from llama_index.llms.ollama import Ollama\", but that excerpt is cut off before the assignment [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md]. I don't want to guess the exact attribute from these excerpts. Check the full settings page for the LLM attribute.\n\n**How the global default works:** \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. Because it is global, \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md] You can also pass a model directly into an interface to override the global setting for that component: \"Local configurations (transformations, LLMs, embedding models) can be passed directly into the interfaces that make use of them.\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]",
+  "ttft_ms": 3910,
+  "type": "result",
+  "duration_ms": 6813,
+  "uuid": "0843103e-f711-47b9-8e7f-01dad9126e47",
+  "ttft_stream_ms": 2945,
+  "time_to_request_ms": 186,
+  "first_content_frame_ms": 2945,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

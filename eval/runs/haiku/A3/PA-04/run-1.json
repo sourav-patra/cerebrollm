@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-04",
+ "run": 1,
+ "started_utc": "2026-10-29T01:47:10Z",
+ "seconds": 9.4,
+ "prompt_file": "runs/prompts/A3/PA-04.txt",
+ "prompt_sha256": "7255ceee50c9aa13635250d63cf5ed25a99a4daa43893313d6a2a111e4eaa281",
+ "answer": "The provided documents don't say what temperature Ollama uses when a Modelfile doesn't set it. The only temperature setting in them is in the basic example, which sets it explicitly:\n\n\"PARAMETER temperature 1\" [ollama/docs/modelfile.md]\n\nThe parameter table in [5] would normally list defaults, but the retrieved excerpt is truncated before that column, so it doesn't answer the question either.\n\nFrom general knowledge, not these documents, I believe Ollama's built-in default is 0.8. I haven't verified that against this project's docs. To confirm it, check the full parameter table in `ollama/docs/modelfile.md`, or run `ollama show --modelfile <model>` to see what a given model sets.",
+ "tokens": {
+  "input": 3179,
+  "output": 756,
+  "thinking": 520,
+  "cache_read": 0,
+  "cache_creation": 3177
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0010136000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4657,
+  "stop_reason": "end_turn",
+  "session_id": "b4823ad4-5059-406f-a656-44ef369996a8",
+  "total_cost_usd": 0.0010136000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3177,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 756,
+   "output_tokens_details": {
+    "thinking_tokens": 520
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3177,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 756,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3177,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3177
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 756,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3177,
+    "webSearchRequests": 0,
+    "costUSD": 0.0010136000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 520,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3177,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided documents don't say what temperature Ollama uses when a Modelfile doesn't set it. The only temperature setting in them is in the basic example, which sets it explicitly:\n\n\"PARAMETER temperature 1\" [ollama/docs/modelfile.md]\n\nThe parameter table in [5] would normally list defaults, but the retrieved excerpt is truncated before that column, so it doesn't answer the question either.\n\nFrom general knowledge, not these documents, I believe Ollama's built-in default is 0.8. I haven't verified that against this project's docs. To confirm it, check the full parameter table in `ollama/docs/modelfile.md`, or run `ollama show --modelfile <model>` to see what a given model sets.",
+  "ttft_ms": 3710,
+  "type": "result",
+  "duration_ms": 4774,
+  "uuid": "dc0ca836-b0e0-4874-be07-60328ec36733",
+  "ttft_stream_ms": 2798,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2798,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

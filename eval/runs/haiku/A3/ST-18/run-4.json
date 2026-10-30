@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-18",
+ "run": 4,
+ "started_utc": "2026-10-29T02:01:08Z",
+ "seconds": 10.05,
+ "prompt_file": "runs/prompts/A3/ST-18.txt",
+ "prompt_sha256": "a3650b587f7538b5ecca46e46210d93acbc199d88b9d3f0c49f50f2aa67cfa6c",
+ "answer": "I don't know which promptfoo provider to use for IBM-hosted models. The documents I was given don't mention IBM or any IBM provider, so I can't name one without guessing.\n\nThe documents do say that promptfoo \"supports 60+ providers including OpenAI, Anthropic, Google, and many others:\" [promptfoo/site/docs/getting-started.md]. The provider list itself isn't in what I have, so IBM may or may not be on it.\n\nIf IBM's endpoint is OpenAI-compatible, you might be able to use the approach the red-team quickstart describes for self-hosted servers: \"For llamafile, vLLM, and Text Generation WebUI, keep the `openai:chat:` prefix, enter the server's model name, and set `apiBaseUrl` including `/v1`.\" [promptfoo/site/docs/red-team/quickstart.md]. The docs don't say this works for IBM, so check IBM's API compatibility and promptfoo's provider documentation first.",
+ "tokens": {
+  "input": 3402,
+  "output": 957,
+  "thinking": 635,
+  "cache_read": 3016,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00058566,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5402,
+  "stop_reason": "end_turn",
+  "session_id": "52ef48f9-fc85-49ec-987e-40bef4b269b7",
+  "total_cost_usd": 0.00058566,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 3016,
+   "output_tokens": 957,
+   "output_tokens_details": {
+    "thinking_tokens": 635
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 957,
+     "cache_read_input_tokens": 3016,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 957,
+    "cacheReadInputTokens": 3016,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.00058566,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 635,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know which promptfoo provider to use for IBM-hosted models. The documents I was given don't mention IBM or any IBM provider, so I can't name one without guessing.\n\nThe documents do say that promptfoo \"supports 60+ providers including OpenAI, Anthropic, Google, and many others:\" [promptfoo/site/docs/getting-started.md]. The provider list itself isn't in what I have, so IBM may or may not be on it.\n\nIf IBM's endpoint is OpenAI-compatible, you might be able to use the approach the red-team quickstart describes for self-hosted servers: \"For llamafile, vLLM, and Text Generation WebUI, keep the `openai:chat:` prefix, enter the server's model name, and set `apiBaseUrl` including `/v1`.\" [promptfoo/site/docs/red-team/quickstart.md]. The docs don't say this works for IBM, so check IBM's API compatibility and promptfoo's provider documentation first.",
+  "ttft_ms": 4123,
+  "type": "result",
+  "duration_ms": 5530,
+  "uuid": "76c52a99-04a2-4db4-acf8-790e8bc261b6",
+  "ttft_stream_ms": 2896,
+  "time_to_request_ms": 178,
+  "first_content_frame_ms": 2896,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

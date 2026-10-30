@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-PA-1",
+ "run": 2,
+ "started_utc": "2026-10-29T01:53:26Z",
+ "seconds": 10.23,
+ "prompt_file": "runs/prompts/A3/PR-PA-1.txt",
+ "prompt_sha256": "275c9be19279b929f495bf64d66752d53c3d9d0df4d1971f974b8e9825f41fb3",
+ "answer": "To run the Ollama container with access to all NVIDIA GPUs, first install the NVIDIA Container Toolkit, then configure Docker and start the container.\n\n1. Install the toolkit. The docs say to \"Install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation).\" [ollama/docs/docker.md]\n\n2. Configure Docker to use the NVIDIA runtime, then restart Docker:\n   ```shell\n   sudo nvidia-ctk runtime configure --runtime=docker\n   sudo systemctl restart docker\n   ```\n   [ollama/docs/docker.md]\n\n3. Start the container. The docs give this command:\n   ```shell\n   docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n   ```\n   The `--gpus=all` flag passes all GPUs into the container. [ollama/docs/docker.md]\n\nTo check that the container runtime can see your GPUs, the troubleshooting guide suggests running `docker run --gpus all ubuntu nvidia-smi`. If this fails, Ollama won't be able to see your NVIDIA GPU. [ollama/docs/troubleshooting.md]\n\nThe FAQ says GPU acceleration in Docker works on Linux or on Windows with WSL2, but not on Docker Desktop for macOS. [ollama/docs/faq.md] Since the setup commands above are Linux shell commands, on Windows you would likely run them inside a WSL2 distribution. That last point is my inference from the docs, not something they state directly.",
+ "tokens": {
+  "input": 2724,
+  "output": 1310,
+  "thinking": 748,
+  "cache_read": 2335,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00075595,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5835,
+  "stop_reason": "end_turn",
+  "session_id": "c7e30172-540e-49f8-9b76-4e8cd0826b1b",
+  "total_cost_usd": 0.00075595,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2335,
+   "output_tokens": 1310,
+   "output_tokens_details": {
+    "thinking_tokens": 748
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1310,
+     "cache_read_input_tokens": 2335,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1310,
+    "cacheReadInputTokens": 2335,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00075595,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 748,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To run the Ollama container with access to all NVIDIA GPUs, first install the NVIDIA Container Toolkit, then configure Docker and start the container.\n\n1. Install the toolkit. The docs say to \"Install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation).\" [ollama/docs/docker.md]\n\n2. Configure Docker to use the NVIDIA runtime, then restart Docker:\n   ```shell\n   sudo nvidia-ctk runtime configure --runtime=docker\n   sudo systemctl restart docker\n   ```\n   [ollama/docs/docker.md]\n\n3. Start the container. The docs give this command:\n   ```shell\n   docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n   ```\n   The `--gpus=all` flag passes all GPUs into the container. [ollama/docs/docker.md]\n\nTo check that the container runtime can see your GPUs, the troubleshooting guide suggests running `docker run --gpus all ubuntu nvidia-smi`. If this fails, Ollama won't be able to see your NVIDIA GPU. [ollama/docs/troubleshooting.md]\n\nThe FAQ says GPU acceleration in Docker works on Linux or on Windows with WSL2, but not on Docker Desktop for macOS. [ollama/docs/faq.md] Since the setup commands above are Linux shell commands, on Windows you would likely run them inside a WSL2 distribution. That last point is my inference from the docs, not something they state directly.",
+  "ttft_ms": 4087,
+  "type": "result",
+  "duration_ms": 5955,
+  "uuid": "9307211f-3fa7-4176-a9e1-7fb50dd22ab6",
+  "ttft_stream_ms": 2911,
+  "time_to_request_ms": 156,
+  "first_content_frame_ms": 2911,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

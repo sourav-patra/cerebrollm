@@ -1,0 +1,87 @@
+{
+  "question": "What is the default keep_alive value for the Ollama /api/generate request?",
+  "model": "gpt-oss:20b",
+  "answer": "Not in the sources.",
+  "abstained": true,
+  "citations": [
+    {
+      "path": "ollama/docs/api.md",
+      "quote": "keep_alive: controls how long the model will stay loaded into memory following the request (default: `5m`)",
+      "verify": "MISSING",
+      "detail": "quote not found in ollama/docs/api.md@file"
+    }
+  ],
+  "hits": [
+    {
+      "rank": 1,
+      "search_rank": 2,
+      "rerank_score": 0.97344,
+      "path": "promptfoo/site/docs/providers/ollama.md",
+      "line_start": 53,
+      "line_end": 67
+    },
+    {
+      "rank": 2,
+      "search_rank": 1,
+      "rerank_score": 0.9723,
+      "path": "ollama/docs/faq.md",
+      "line_start": 289,
+      "line_end": 318
+    },
+    {
+      "rank": 3,
+      "search_rank": 13,
+      "rerank_score": 0.96002,
+      "path": "ollama/docs/api.md",
+      "line_start": 459,
+      "line_end": 470
+    },
+    {
+      "rank": 4,
+      "search_rank": 12,
+      "rerank_score": 0.92791,
+      "path": "promptfoo/site/docs/providers/ollama.md",
+      "line_start": 402,
+      "line_end": 444
+    },
+    {
+      "rank": 5,
+      "search_rank": 20,
+      "rerank_score": 0.9128,
+      "path": "promptfoo/site/docs/providers/ollama.md",
+      "line_start": 327,
+      "line_end": 361
+    },
+    {
+      "rank": 6,
+      "search_rank": 19,
+      "rerank_score": 0.89092,
+      "path": "ollama/docs/api.md",
+      "line_start": 1141,
+      "line_end": 1153
+    },
+    {
+      "rank": 7,
+      "search_rank": 16,
+      "rerank_score": 0.86094,
+      "path": "ollama/docs/api.md",
+      "line_start": 1666,
+      "line_end": 1684
+    },
+    {
+      "rank": 8,
+      "search_rank": 4,
+      "rerank_score": 0.74202,
+      "path": "ollama/docs/api.md",
+      "line_start": 42,
+      "line_end": 59
+    }
+  ],
+  "timings": {
+    "search": 0.52,
+    "rerank": 10.49,
+    "generate": 25.45,
+    "verify": 0.0,
+    "total": 36.46
+  }
+}

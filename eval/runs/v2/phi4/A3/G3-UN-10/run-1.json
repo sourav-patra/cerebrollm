@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-10",
+ "run": 1,
+ "started_utc": "2026-10-29T17:18:17Z",
+ "seconds": 7.23,
+ "prompt_sha256": "51ac80b6e62672310139a96464ccc983ad375f80ef8674d713b62d1c5dd224bb",
+ "answer": "I do not know which LlamaIndex class the `GraphRAGCommunityRetriever` is or what base class it extends. The provided context does not mention a class by that name. Based on the context:\n\n- The `GraphRAG` class is mentioned in [6] but does not specify any relation to `GraphRAGCommunityRetriever`.\n- Other retrievers like `LLMSynonymRetriever`, `VectorContextRetriever`, and `TextToCypherRetriever` are listed but do not match the name `GraphRAGCommunityRetriever`.\n\nTherefore, I do not have enough information to answer the question about `GraphRAGCommunityRetriever`.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1423,
+  "output": 145
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7862771200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:18:23.7790339Z",
+  "response": "I do not know which LlamaIndex class the `GraphRAGCommunityRetriever` is or what base class it extends. The provided context does not mention a class by that name. Based on the context:\n\n- The `GraphRAG` class is mentioned in [6] but does not specify any relation to `GraphRAGCommunityRetriever`.\n- Other retrievers like `LLMSynonymRetriever`, `VectorContextRetriever`, and `TextToCypherRetriever` are listed but do not match the name `GraphRAGCommunityRetriever`.\n\nTherefore, I do not have enough information to answer the question about `GraphRAGCommunityRetriever`.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7862771200,
+  "load_duration": 12527500,
+  "prompt_eval_count": 1423,
+  "prompt_eval_cached_count": 108,
+  "prompt_eval_duration": 713520000,
+  "eval_count": 145,
+  "eval_duration": 6976694000
+ }
+}

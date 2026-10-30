@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-ST-1",
+ "run": 1,
+ "started_utc": "2026-10-29T02:02:00Z",
+ "seconds": 7.49,
+ "prompt_file": "runs/prompts/A3/PR-ST-1.txt",
+ "prompt_sha256": "50019051c806dd26fc0ba6c16743359613213703e53f5eba615ab01fe88a8307",
+ "answer": "Ollama defaults to a **4k context** on a GPU with 12 GiB of VRAM, because that falls under the \"< 24 GiB VRAM\" tier. \"< 24 GiB VRAM: 4k context\" [ollama/docs/context-length.md]\n\nThe FAQ gives the same figure: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md]",
+ "tokens": {
+  "input": 2845,
+  "output": 379,
+  "thinking": 242,
+  "cache_read": 0,
+  "cache_creation": 2843
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007583000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2761,
+  "stop_reason": "end_turn",
+  "session_id": "af0acf13-2b0c-4169-9f76-635afbe9e02c",
+  "total_cost_usd": 0.0007583000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2843,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 379,
+   "output_tokens_details": {
+    "thinking_tokens": 242
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2843,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 379,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2843,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2843
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 379,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2843,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007583000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 242,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2843,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Ollama defaults to a **4k context** on a GPU with 12 GiB of VRAM, because that falls under the \"< 24 GiB VRAM\" tier. \"< 24 GiB VRAM: 4k context\" [ollama/docs/context-length.md]\n\nThe FAQ gives the same figure: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md]",
+  "ttft_ms": 2895,
+  "type": "result",
+  "duration_ms": 2911,
+  "uuid": "7b1c5a78-b2f0-4e5e-9c37-ec56f3c0237d",
+  "ttft_stream_ms": 2894,
+  "time_to_request_ms": 150,
+  "first_content_frame_ms": 2894,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

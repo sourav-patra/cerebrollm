@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 5,
+ "started_utc": "2026-10-29T16:56:46Z",
+ "seconds": 8.94,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "The safe‑mode flag disables any inline JavaScript that is embedded directly in the eval configuration. In practice it turns off:\n\n> \"Reject inline JavaScript assertions and shared transforms.\"  \n>  [promptfoo/site/docs/usage/command-line.md]  \n\nand more specifically:\n\n> \"Reject string‑based JavaScript assertions and inline expressions handled by the shared transform helper.\"  \n>  [promptfoo/site/docs/configuration/expected-outputs/javascript.md]",
+ "thinking_chars": 2182,
+ "tokens": {
+  "input": 1939,
+  "output": 539
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9555844900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:56:54.6733978Z",
+  "response": "The safe‑mode flag disables any inline JavaScript that is embedded directly in the eval configuration. In practice it turns off:\n\n> \"Reject inline JavaScript assertions and shared transforms.\"  \n>  [promptfoo/site/docs/usage/command-line.md]  \n\nand more specifically:\n\n> \"Reject string‑based JavaScript assertions and inline expressions handled by the shared transform helper.\"  \n>  [promptfoo/site/docs/configuration/expected-outputs/javascript.md]",
+  "thinking": "We need to answer: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" The question refers to safe mode added to eval in promptfoo 0.125.0. We need to check context: [1] line about `--safe-mode` option: \"Reject inline JavaScript assertions and shared transforms.\" [2] details about safe mode: \"Reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" Also \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" It says \"Move these expressions into reviewed `file://` scripts when using this mode. JavaScript function values passed through the Node API remain supported.\" So safe mode turns off inline JavaScript assertions and inline expressions handled by the shared transform helper. The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So answer: It turns off inline JavaScript assertions and inline expressions in shared transforms. We need to quote. Use quotes from context. The relevant quote: from [1] \"Reject inline JavaScript assertions and shared transforms.\" Also from [2] \"Reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" So answer: It turns off string-based JavaScript assertions and inline expressions in shared transforms. Provide quote.\n\nAlso mention that it does not disable guard by config. Provide answer: safe mode turns off inline JavaScript assertions and shared transform inline expressions. Provide citation.\n\nLet's craft answer: \"The safe mode disables inline JavaScript assertions and inline expressions handled by the shared transform helper (i.e., it rejects string-based JavaScript assertions and shared transforms).\" Provide quote: \"Reject inline JavaScript assertions and shared transforms.\" [promptfoo/site/docs/usage/command-line.md line 125] and \"Reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md lines 11-64]. Use those.\n\nThus answer accordingly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9555844900,
+  "load_duration": 14961200,
+  "prompt_eval_count": 1939,
+  "prompt_eval_cached_count": 1934,
+  "prompt_eval_duration": 56227000,
+  "eval_count": 539,
+  "eval_duration": 9413677000
+ }
+}

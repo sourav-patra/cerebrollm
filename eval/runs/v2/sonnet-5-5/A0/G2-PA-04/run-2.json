@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-04",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:00Z",
+ "seconds": 8.08,
+ "prompt_sha256": "14fdc993daeb14fc601114caf128b618448037451bb731a2a9ad691d09d3a328",
+ "answer": "I don't know. I have no reliable information about promptfoo 0.123.0 or which OpenAI API (Chat Completions vs. Responses) it defaults to for GPT-5.6 and newer models. The working directory also doesn't appear to contain the project, so I have nothing to check it against.\n\nIf you'd like a definitive answer, I can look at the promptfoo changelog or release notes for 0.123.0, or the OpenAI provider docs, if you point me to a local copy or let me fetch them.",
+ "tokens": {
+  "input": 648,
+  "output": 163,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 646
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0042179999999999995,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3949,
+  "stop_reason": "end_turn",
+  "session_id": "70c6567d-6784-42a6-98ce-868fa122706f",
+  "total_cost_usd": 0.0042179999999999995,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 646,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 163,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 646,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 163,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 646,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 646
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 163,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 646,
+    "webSearchRequests": 0,
+    "costUSD": 0.0042179999999999995,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 646,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable information about promptfoo 0.123.0 or which OpenAI API (Chat Completions vs. Responses) it defaults to for GPT-5.6 and newer models. The working directory also doesn't appear to contain the project, so I have nothing to check it against.\n\nIf you'd like a definitive answer, I can look at the promptfoo changelog or release notes for 0.123.0, or the OpenAI provider docs, if you point me to a local copy or let me fetch them.",
+  "ttft_ms": 4012,
+  "type": "result",
+  "duration_ms": 4032,
+  "uuid": "4a40eae0-f547-45c7-8ff7-b3124b02efa4",
+  "ttft_stream_ms": 2572,
+  "time_to_request_ms": 107,
+  "first_content_frame_ms": 2572,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

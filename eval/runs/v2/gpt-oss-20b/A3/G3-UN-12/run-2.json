@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 2,
+ "started_utc": "2026-10-29T16:26:21Z",
+ "seconds": 11.16,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I’m not aware of a documented default for the `--max-retries` flag in the command‑line help.  \nThe only default retry setting mentioned in the docs is the provider‑level retry that Promptfoo applies when a provider’s `maxRetries` isn’t overridden:\n\n> “Retries `callApi()` with 1‑second base backoff, up to **3 times by default**.”  \n> [promptfoo/site/docs/configuration/rate-limits.md]",
+ "thinking_chars": 2468,
+ "tokens": {
+  "input": 1681,
+  "output": 676
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11725254400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:26:32.6462908Z",
+  "response": "I’m not aware of a documented default for the `--max-retries` flag in the command‑line help.  \nThe only default retry setting mentioned in the docs is the provider‑level retry that Promptfoo applies when a provider’s `maxRetries` isn’t overridden:\n\n> “Retries `callApi()` with 1‑second base backoff, up to **3 times by default**.”  \n> [promptfoo/site/docs/configuration/rate-limits.md]",
+  "thinking": "We need to answer: \"What is the default value of the --max-retries flag of promptfoo eval?\" The context includes information about retry layers and provider config, but we need the flag --max-retries for promptfoo eval. There is no mention of --max-retries in the provided context. However, maybe there's a default value mentioned elsewhere. The context didn't include --max-retries. We might not know. According to instructions: If you do not know, say you do not know. Quote the line you rely on and cite its path. But we have no line quoting default value. We can say we do not know. We can quote that nothing indicates default. But we must provide a quote that shows no mention. We can quote a line that says something about default but not max-retries. But it's better to say we do not know. Provide a quote: maybe \"If a provider config sets maxRetries, the scheduler uses that value (including 0 to disable scheduler retries entirely).\" That's line [3] but it's not about the flag. The question: \"What is the default value of the --max-retries flag of promptfoo eval?\" The context doesn't mention it. So answer: I do not know. Provide a quote showing no mention of default. Use [3] line. Let's quote: \"If a provider config sets maxRetries, the scheduler uses that value (including 0 to disable scheduler retries entirely).\" That indicates default maybe 3? Actually the scheduler default is 1-second base backoff, up to 3 times by default. That is provider-level retry default. But the flag --max-retries is likely the number of retries for HTTP-level? But context says default HTTP-level retry is 4. But flag --max-retries might refer to provider-level? There's no explicit mention. The safest: I do not know. Provide quote from context about default of provider-level retry: \"Retries callApi() with 1-second base backoff, up to 3 times by default.\" That indicates default of 3. But the question is about flag --max-retries of promptfoo eval. I think that flag sets maxRetries. If not specified, default is 3. But we don't see that in context. The context says \"Retries callApi() with 1-second base backoff, up to 3 times by default.\" That is the default provider-level retry. So maybe the flag refers to that. But not sure. The question likely expects answer: 3. But we need to cite. We can quote the line: \"Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" That's from [3] line 95-113. Let's use that. Provide answer: 3. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11725254400,
+  "load_duration": 15779300,
+  "prompt_eval_count": 1681,
+  "prompt_eval_cached_count": 1676,
+  "prompt_eval_duration": 55006000,
+  "eval_count": 676,
+  "eval_duration": 11595146000
+ }
+}

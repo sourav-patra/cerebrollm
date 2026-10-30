@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:12Z",
+ "seconds": 9.7,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "The retrieved context doesn't say safe mode was added in 0.125.0. The 0.125.0 changelog excerpts don't mention it. The docs do describe what the option does:\n\n\"Reject inline JavaScript assertions and shared transforms.\" [promptfoo/site/docs/usage/command-line.md]\n\nMore specifically:\n\n\"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n\nSo it turns off inline (string-based) JavaScript assertions and inline transform expressions. You can move them into reviewed `file://` scripts instead. JavaScript function values passed through the Node API stay supported. Rejected assertions fail with an explanatory reason, and rejected transforms produce an error.\n\nIt is a limited guard, not a sandbox:\n\n\"This option is not a sandbox and does not make untrusted configurations safe to run.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n\nFile callbacks, programmatic functions, executable providers, and config modules are not blocked (the excerpt cuts off after that list).\n\nYou can also enable it with `commandLineOptions.safeMode: true` in the config. Config settings cannot disable a guard enabled by the CLI flag or environment.",
+ "tokens": {
+  "input": 3560,
+  "output": 709,
+  "thinking": 234,
+  "cache_read": 3193,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.008873299999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6001,
+  "stop_reason": "end_turn",
+  "session_id": "a34bdd22-ee77-4358-b51f-a971740bd968",
+  "total_cost_usd": 0.008873299999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 3193,
+   "output_tokens": 709,
+   "output_tokens_details": {
+    "thinking_tokens": 234
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 709,
+     "cache_read_input_tokens": 3193,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 709,
+    "cacheReadInputTokens": 3193,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.008873299999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 234,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The retrieved context doesn't say safe mode was added in 0.125.0. The 0.125.0 changelog excerpts don't mention it. The docs do describe what the option does:\n\n\"Reject inline JavaScript assertions and shared transforms.\" [promptfoo/site/docs/usage/command-line.md]\n\nMore specifically:\n\n\"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n\nSo it turns off inline (string-based) JavaScript assertions and inline transform expressions. You can move them into reviewed `file://` scripts instead. JavaScript function values passed through the Node API stay supported. Rejected assertions fail with an explanatory reason, and rejected transforms produce an error.\n\nIt is a limited guard, not a sandbox:\n\n\"This option is not a sandbox and does not make untrusted configurations safe to run.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n\nFile callbacks, programmatic functions, executable providers, and config modules are not blocked (the excerpt cuts off after that list).\n\nYou can also enable it with `commandLineOptions.safeMode: true` in the config. Config settings cannot disable a guard enabled by the CLI flag or environment.",
+  "ttft_ms": 3951,
+  "type": "result",
+  "duration_ms": 6106,
+  "uuid": "9e8b89e3-8379-42d7-8035-3f07ff72ab0c",
+  "ttft_stream_ms": 2669,
+  "time_to_request_ms": 100,
+  "first_content_frame_ms": 2670,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

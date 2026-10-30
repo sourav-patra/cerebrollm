@@ -1,0 +1,99 @@
+{
+  "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+  "mode": "mtp4-think-off",
+  "length": 200,
+  "run": 3,
+  "calibration": {
+    "repetitions": 128,
+    "length": 200,
+    "prompt_tokens": 200,
+    "template_overhead_tokens": 13
+  },
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793296334.525292,
+    "loadavg": [
+      0.0615234375,
+      0.02587890625,
+      0.07275390625
+    ],
+    "win_cpu_pct": 14.5,
+    "gpu_util_pct": 6,
+    "gpu_mem_mib": 11631,
+    "ollama_ps": [
+      "qwen3.6:35b-a3b-coding-mtp-q4_K_M"
+    ]
+  },
+  "load_average_after": [
+    0.05126953125,
+    0.02490234375,
+    0.07177734375
+  ],
+  "ttft_seconds": 0.6670750040066196,
+  "first_visible_content_seconds": 0.6670750040066196,
+  "wall_seconds": 5.225817541999277,
+  "events": 250,
+  "final": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:52:26.69679Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 5615633900,
+    "load_duration": 13022600,
+    "prompt_eval_count": 200,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 654123000,
+    "eval_count": 256,
+    "eval_duration": 4899944000
+  },
+  "prompt_tps": 305.7528935689465,
+  "generation_tps": 52.24549505055568,
+  "ps_api": [
+    {
+      "name": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+      "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+      "size": 22690146546,
+      "digest": "6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35moe",
+        "families": [
+          "qwen35moe"
+        ],
+        "parameter_size": "35.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-29T23:37:26.69679+05:30",
+      "size_vram": 9360816208,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    }
+  ],
+  "ps_cli": "NAME                                 ID              SIZE     PROCESSOR          CONTEXT    RUNNER      UNTIL               \nqwen3.6:35b-a3b-coding-mtp-q4_K_M    6f7983cafbe2    22 GB    59%/41% CPU/GPU    16384      llamacpp    14 minutes from now    \n",
+  "gpu_pct": 41.3,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Performance measurement run 3. Read the following data.\nriver meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer\nWrite a detailed explanation of binary search, including Python examples and complexity. Continue for at least 500 words."
+      }
+    ],
+    "stream": true,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 256,
+      "draft_num_predict": 4
+    },
+    "think": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 3,
+ "started_utc": "2026-10-29T16:37:07Z",
+ "seconds": 4.34,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know.",
+ "thinking_chars": 1066,
+ "tokens": {
+  "input": 1662,
+  "output": 268
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4718832200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:37:11.1626415Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer which promptfoo assertion type computes BERTScore between an output and a reference. We need to find from the context or knowledge. The context includes documentation about deterministic metrics, model-graded metrics, etc. BERTScore is a metric used for text similarity. It might be listed in deterministic metrics. Let's search context for \"BERTScore\". The given context includes deterministic.md lines 1427-1471 for BLEU, 1609-1627 for METEOR. No BERTScore. Also model-graded metrics include llm-rubric, agent-rubric, search-rubric. There might be a deterministic metric for BERTScore. But not shown in context. Might not be present. The question: Which promptfoo assertion type computes BERTScore between an output and a reference? The answer likely: \"bert-score\" or \"bert\" or \"bertscore\" or \"bert\". Need to find in docs. I don't see BERTScore in the provided context. So maybe I need to say I do not know. But maybe it's \"bert\" assertion type. But we need to quote a line that mentions it. Since it's not in context, I should say I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4718832200,
+  "load_duration": 14300500,
+  "prompt_eval_count": 1662,
+  "prompt_eval_cached_count": 1657,
+  "prompt_eval_duration": 55606000,
+  "eval_count": 268,
+  "eval_duration": 4587294000
+ }
+}

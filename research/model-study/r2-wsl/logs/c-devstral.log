@@ -1,0 +1,57 @@
+=== 2026-10-28T20:52:13Z r2_wsl.py correctness devstral:24b
+guard pull devstral:24b exit 0 devstral:24b digest 9bd74193e93935e9d8564d88607b220a9d341c4a36b748cffcbd9ad4f47a9ca9 
+devstral-24b-default code 1 ERROR TimeoutExpired(['docker.exe', 'rm', '-f', 'r2-devstral-24b-default-0'], 30)
+devstral-24b-default code 2 passed True
+devstral-24b-default code 3 passed True
+devstral-24b-default code 4 passed True
+devstral-24b-default code 5 passed True
+devstral-24b-default code 6 passed True
+devstral-24b-default code 7 passed False
+devstral-24b-default code 8 passed True
+devstral-24b-default code 9 passed False
+devstral-24b-default code 10 passed True
+devstral-24b-default code 11 passed False
+devstral-24b-default code 12 passed True
+devstral-24b-default code 13 passed True
+devstral-24b-default code 14 passed True
+devstral-24b-default code 15 passed True
+devstral-24b-default code 16 passed True
+devstral-24b-default code 17 passed True
+devstral-24b-default code 18 passed False
+devstral-24b-default code 19 passed True
+devstral-24b-default code 20 passed False
+devstral-24b-default code 21 passed True
+devstral-24b-default code 22 passed True
+devstral-24b-default code 23 passed True
+devstral-24b-default code 24 passed True
+devstral-24b-default code 25 passed True
+devstral-24b-default code 26 passed False
+devstral-24b-default code 27 passed True
+devstral-24b-default code 28 passed True
+devstral-24b-default code 29 passed True
+devstral-24b-default code 30 passed True
+devstral-24b-default code 31 passed True
+devstral-24b-default code 32 passed True
+devstral-24b-default code 33 passed True
+devstral-24b-default code 34 passed True
+devstral-24b-default code 35 passed True
+devstral-24b-default code 36 passed True
+devstral-24b-default code 37 passed True
+devstral-24b-default code 38 passed False
+devstral-24b-default code 39 passed True
+devstral-24b-default code 40 passed True
+devstral-24b-default tools 1 True
+devstral-24b-default tools 2 False
+devstral-24b-default tools 3 True
+devstral-24b-default tools 4 True
+devstral-24b-default tools 5 True
+devstral-24b-default tools 6 True
+devstral-24b-default tools 7 True
+devstral-24b-default tools 8 True
+devstral-24b-default tools 9 True
+devstral-24b-default tools 10 True
+devstral-24b-default tools 11 True
+devstral-24b-default tools 12 True
+guard unload devstral:24b exit 0 devstral:24b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T21:15:43Z

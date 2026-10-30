@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-14",
+ "run": 5,
+ "started_utc": "2026-10-29T01:42:31Z",
+ "seconds": 8.92,
+ "prompt_file": "runs/prompts/A0/EX-14.txt",
+ "prompt_sha256": "41f8ab777e39b2fa0dce62e95f2fb9a073bba11d476de0892b23cec5127ce5f3",
+ "answer": "The function is **`load_index_from_storage`**, imported from `llama_index.core`. You pass it a `StorageContext`, usually one created from the persist directory:\n\n```python\nfrom llama_index.core import StorageContext, load_index_from_storage\n\nstorage_context = StorageContext.from_defaults(persist_dir=\"./storage\")\nindex = load_index_from_storage(storage_context)\n```\n\nTo load a specific index when the storage directory holds several, pass its ID with `index_id=\"...\"`. I'm confident in this for recent LlamaIndex versions, but I can't check the exact signature against your installed version.",
+ "tokens": {
+  "input": 656,
+  "output": 313,
+  "thinking": 118,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0002875,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4267,
+  "stop_reason": "end_turn",
+  "session_id": "8c0c6658-5a55-4b9d-b548-66891a623f28",
+  "total_cost_usd": 0.0002875,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 313,
+   "output_tokens_details": {
+    "thinking_tokens": 118
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 313,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 313,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.0002875,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 118,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The function is **`load_index_from_storage`**, imported from `llama_index.core`. You pass it a `StorageContext`, usually one created from the persist directory:\n\n```python\nfrom llama_index.core import StorageContext, load_index_from_storage\n\nstorage_context = StorageContext.from_defaults(persist_dir=\"./storage\")\nindex = load_index_from_storage(storage_context)\n```\n\nTo load a specific index when the storage directory holds several, pass its ID with `index_id=\"...\"`. I'm confident in this for recent LlamaIndex versions, but I can't check the exact signature against your installed version.",
+  "ttft_ms": 3565,
+  "type": "result",
+  "duration_ms": 4405,
+  "uuid": "dde2073e-e63a-4486-a3cb-4f4b0bb50a23",
+  "ttft_stream_ms": 3025,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 3025,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

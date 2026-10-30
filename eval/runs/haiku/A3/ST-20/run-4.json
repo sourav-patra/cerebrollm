@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-20",
+ "run": 4,
+ "started_utc": "2026-10-29T02:01:51Z",
+ "seconds": 10.14,
+ "prompt_file": "runs/prompts/A3/ST-20.txt",
+ "prompt_sha256": "84b1f912f9ce382d0cfbf2d6a3cca5b7b91ebf1f4f20efd29d3edb260a451282",
+ "answer": "You don't pass a separate registry option. You put the registry reference directly in the `scan-model` path argument, and set credentials through environment variables.\n\n**MLflow:** Use a `models:/` URI as the path. The docs give this example: \"promptfoo scan-model models:/MyModel/Latest\" [promptfoo/site/docs/model-audit/usage.md]. The server address comes from the environment: \"- `MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\" [promptfoo/site/docs/model-audit/usage.md]. Credentials are set with `MLFLOW_TRACKING_USERNAME` and `MLFLOW_TRACKING_PASSWORD` [promptfoo/site/docs/model-audit/usage.md]. Scanning MLflow also requires the mlflow package: \"pip install mlflow\" [promptfoo/site/docs/model-audit/index.md].\n\n**JFrog Artifactory:** Pass the full artifact URL as the path. The docs show \"promptfoo scan-model \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"\" [promptfoo/site/docs/model-audit/usage.md]. Set the base URL and token first: \"- `JFROG_URL`: The base URL of your JFrog Artifactory instance.\" and \"- `JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\" [promptfoo/site/docs/model-audit/usage.md]\n\nNote that the JFrog ML provider (for inference) is a different product from JFrog Artifactory, which is what ModelAudit scans [promptfoo/site/docs/providers/jfrog.md].\n\nThe context doesn't show a dedicated flag for selecting a registry, so I don't know of one.",
+ "tokens": {
+  "input": 2999,
+  "output": 1196,
+  "thinking": 592,
+  "cache_read": 2610,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007017000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5777,
+  "stop_reason": "end_turn",
+  "session_id": "0716e278-eee7-4f21-a86c-ed6cfad8fec4",
+  "total_cost_usd": 0.0007017000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2610,
+   "output_tokens": 1196,
+   "output_tokens_details": {
+    "thinking_tokens": 592
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1196,
+     "cache_read_input_tokens": 2610,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1196,
+    "cacheReadInputTokens": 2610,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007017000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 592,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You don't pass a separate registry option. You put the registry reference directly in the `scan-model` path argument, and set credentials through environment variables.\n\n**MLflow:** Use a `models:/` URI as the path. The docs give this example: \"promptfoo scan-model models:/MyModel/Latest\" [promptfoo/site/docs/model-audit/usage.md]. The server address comes from the environment: \"- `MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\" [promptfoo/site/docs/model-audit/usage.md]. Credentials are set with `MLFLOW_TRACKING_USERNAME` and `MLFLOW_TRACKING_PASSWORD` [promptfoo/site/docs/model-audit/usage.md]. Scanning MLflow also requires the mlflow package: \"pip install mlflow\" [promptfoo/site/docs/model-audit/index.md].\n\n**JFrog Artifactory:** Pass the full artifact URL as the path. The docs show \"promptfoo scan-model \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"\" [promptfoo/site/docs/model-audit/usage.md]. Set the base URL and token first: \"- `JFROG_URL`: The base URL of your JFrog Artifactory instance.\" and \"- `JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\" [promptfoo/site/docs/model-audit/usage.md]\n\nNote that the JFrog ML provider (for inference) is a different product from JFrog Artifactory, which is what ModelAudit scans [promptfoo/site/docs/providers/jfrog.md].\n\nThe context doesn't show a dedicated flag for selecting a registry, so I don't know of one.",
+  "ttft_ms": 3726,
+  "type": "result",
+  "duration_ms": 5905,
+  "uuid": "c9ef723e-2b13-4f50-9d52-936f070f0460",
+  "ttft_stream_ms": 2878,
+  "time_to_request_ms": 127,
+  "first_content_frame_ms": 2878,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

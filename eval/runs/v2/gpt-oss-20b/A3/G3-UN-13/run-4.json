@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 4,
+ "started_utc": "2026-10-29T16:48:06Z",
+ "seconds": 10.2,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know.  \n\"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric originally designed for evaluating machine translation.\" [promptfoo/site/docs/configuration/expected-outputs/deterministic.md]",
+ "thinking_chars": 2483,
+ "tokens": {
+  "input": 1662,
+  "output": 616
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 10740412200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:48:16.3678078Z",
+  "response": "I do not know.  \n\"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric originally designed for evaluating machine translation.\" [promptfoo/site/docs/configuration/expected-outputs/deterministic.md]",
+  "thinking": "We need to answer: Which promptfoo assertion type computes BERTScore between an output and a reference? We must check if any docs mention BERTScore. The context provided includes many references. None mention BERTScore explicitly. We can search the context for \"BERTScore\". It doesn't appear in the context excerpt. So likely not known. We might not have knowledge. The instruction: If you do not know, say you do not know. So answer: I do not know. But we need to quote a line that says we don't know? Actually we should say we don't know. The answer: I do not know. And we should cite path? We can say \"I do not know\" but we need to quote a line we rely on. But we rely on the fact that context does not mention BERTScore. We can quote a line: \"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric...\" Not relevant. We might need to say we do not know. According to guidelines: If you do not know, say you do not know. But also need to quote a line and path. The instruction says: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we should quote the line that indicates we don't know? But we don't have a line that says that. We can quote a line that indicates BERTScore not present. For example, \"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric...\" That doesn't mention BERTScore. So maybe we can say we don't know. We should provide quote: \"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric originally designed for evaluating machine translation.\" [promptfoo/site/docs/configuration/expected-outputs/deterministic.md] But that doesn't show BERTScore. But we can still quote that. But the instruction: quote the line you rely on. In this case we rely on the absence of mention. So maybe quote a line that doesn't mention BERTScore? That might not satisfy. But we can interpret: we do not know, so we say \"I do not know.\" Provide a quote from the context that indicates no mention of BERTScore. We can pick line that doesn't mention BERTScore. So we can quote \"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric originally designed for evaluating machine translation.\" [promptfoo/site/docs/configuration/expected-outputs/deterministic.md] That line shows that only BLEU is mentioned. But we cannot guarantee BERTScore not present elsewhere. But we can state we do not know. So answer: I do not know. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10740412200,
+  "load_duration": 13926900,
+  "prompt_eval_count": 1662,
+  "prompt_eval_cached_count": 1657,
+  "prompt_eval_duration": 62292000,
+  "eval_count": 616,
+  "eval_duration": 10594396000
+ }
+}

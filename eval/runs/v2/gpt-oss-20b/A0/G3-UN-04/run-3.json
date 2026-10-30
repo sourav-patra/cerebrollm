@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 3,
+ "started_utc": "2026-10-29T16:32:06Z",
+ "seconds": 7.49,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "I don’t have a special replication‑lag guarantee for HNSW index updates in pgvector.  The updates to an HNSW index are streamed to a streaming replica just like any other index change, so the lag is whatever the underlying replication mechanism allows.  In short, pgvector does not provide a separate or tighter guarantee for HNSW index replication lag.",
+ "thinking_chars": 1805,
+ "tokens": {
+  "input": 108,
+  "output": 434
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7919981600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:32:15.1029331Z",
+  "response": "I don’t have a special replication‑lag guarantee for HNSW index updates in pgvector.  The updates to an HNSW index are streamed to a streaming replica just like any other index change, so the lag is whatever the underlying replication mechanism allows.  In short, pgvector does not provide a separate or tighter guarantee for HNSW index replication lag.",
+  "thinking": "We need to answer: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" The question likely refers to a project pgvector, a PostgreSQL extension for vector operations. The question asks about replication lag guarantee for HNSW index updates on a streaming replica. We need to answer based on knowledge. I recall that pgvector does not guarantee anything about replication lag for HNSW index updates. In PostgreSQL, logical replication or streaming replication may or may not replicate index changes. The HNSW index is built by updates; but replication lag is not guaranteed; replication lag depends on the replication process. So the answer: it doesn't guarantee any replication lag; it's not guaranteed, it's same as other index updates. But maybe there's a specific guarantee: \"pgvector does not guarantee replication lag for HNSW index updates; they are streamed like normal index changes.\" Or maybe the guarantee is \"zero replication lag\" or \"no guarantee\". The question: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" The likely answer: none; it doesn't guarantee any replication lag, same as standard replication. Or it guarantees \"no replication lag\" but that's unrealistic. Let's think: The question likely from some documentation or issue. The answer: \"pgvector does not guarantee replication lag; updates to HNSW indices are streamed just like normal index updates and replication lag is whatever the replication pipeline allows.\" So answer: It does not guarantee any; it's the same as other index updates.\n\nThus answer: None. There's no guarantee; replication lag is whatever replication mechanism provides. So answer: It doesn't guarantee any replication lag; it's just the same as any other index update.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7919981600,
+  "load_duration": 14886800,
+  "prompt_eval_count": 108,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 186411000,
+  "eval_count": 434,
+  "eval_duration": 7703309000
+ }
+}

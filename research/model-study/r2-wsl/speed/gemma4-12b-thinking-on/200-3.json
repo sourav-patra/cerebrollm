@@ -1,0 +1,98 @@
+{
+  "model": "gemma4:12b",
+  "mode": "thinking-on",
+  "length": 200,
+  "run": 3,
+  "calibration": {
+    "repetitions": 143,
+    "length": 200,
+    "prompt_tokens": 199,
+    "template_overhead_tokens": 17
+  },
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793252495.114225,
+    "loadavg": [
+      0.0341796875,
+      0.20947265625,
+      0.2578125
+    ],
+    "win_cpu_pct": 18.4,
+    "gpu_util_pct": 8,
+    "gpu_mem_mib": 11380,
+    "ollama_ps": [
+      "gemma4:12b"
+    ]
+  },
+  "load_average_after": [
+    0.0283203125,
+    0.2021484375,
+    0.2548828125
+  ],
+  "ttft_seconds": 0.34596964399679564,
+  "first_visible_content_seconds": null,
+  "wall_seconds": 2.3820785869975225,
+  "events": 218,
+  "final": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:41:43.9962437Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 2491550000,
+    "load_duration": 15330800,
+    "prompt_eval_count": 199,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 292151000,
+    "eval_count": 256,
+    "eval_duration": 2163592000
+  },
+  "prompt_tps": 681.154608404558,
+  "generation_tps": 118.32175382419607,
+  "ps_api": [
+    {
+      "name": "gemma4:12b",
+      "model": "gemma4:12b",
+      "size": 1471330384,
+      "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "11.9B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-29T11:26:43.9962437+05:30",
+      "size_vram": 1471330384,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    }
+  ],
+  "ps_cli": "NAME          ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL               \ngemma4:12b    6114515d63c1    1.5 GB    100% GPU     16384      llamacpp    14 minutes from now    \n",
+  "gpu_pct": 100.0,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Performance measurement run 3. Read the following data.\nriver meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder garden ribbon saddle season cobalt jungle river meadow\nWrite a detailed explanation of binary search, including Python examples and complexity. Continue for at least 500 words."
+      }
+    ],
+    "stream": true,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 256
+    },
+    "think": true
+  }
+}

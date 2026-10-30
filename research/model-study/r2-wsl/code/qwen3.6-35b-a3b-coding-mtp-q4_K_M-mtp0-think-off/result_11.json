@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/103",
+  "index": 11,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef rounded_avg(n, m):\n    \"\"\"You are given two positive integers n and m, and your task is to compute the\n    average of the integers from n through m (including n and m). \n    Round the answer to the nearest integer and convert that to binary.\n    If n is greater than m, return -1.\n    Example:\n    rounded_avg(1, 5) => \"0b11\"\n    rounded_avg(7, 5) => -1\n    rounded_avg(10, 20) => \"0b1111\"\n    rounded_avg(20, 33) => \"0b11010\"\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 0
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:05:03.9986932Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef rounded_avg(n, m):\n    \"\"\"You are given two positive integers n and m, and your task is to compute the\n    average of the integers from n through m (including n and m). \n    Round the answer to the nearest integer and convert that to binary.\n    If n is greater than m, return -1.\n    Example:\n    rounded_avg(1, 5) => \"0b11\"\n    rounded_avg(7, 5) => -1\n    rounded_avg(10, 20) => \"0b1111\"\n    rounded_avg(20, 33) => \"0b11010\"\n    \"\"\"\n    if n > m:\n        return -1\n    \n    # Compute the average of integers from n to m inclusive\n    count = m - n + 1\n    total = (n + m) * count // 2\n    average = total / count\n    \n    # Round to the nearest integer\n    rounded = round(average)\n    \n    # Convert to binary with '0b' prefix\n    return bin(rounded)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5420778700,
+    "load_duration": 21334000,
+    "prompt_eval_count": 189,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 467313000,
+    "eval_count": 249,
+    "eval_duration": 4871125000
+  },
+  "wall_seconds": 5.06039007299114,
+  "load_average_before": [
+    0.4267578125,
+    0.40673828125,
+    0.20263671875
+  ],
+  "load_average_after": [
+    0.392578125,
+    0.39990234375,
+    0.201171875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off-11",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_11.py"
+    ],
+    "wall_seconds": 0.7926180200011004,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

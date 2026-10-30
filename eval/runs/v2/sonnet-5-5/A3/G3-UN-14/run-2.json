@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:29Z",
+ "seconds": 8.49,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I don't know. The retrieved docs don't mention an `evaluateOptions.maxTokensPerCell` option or any default for it.\n\nThe `EvaluateOptions` interface lists other fields, such as \"maxConcurrency?: number;\" [promptfoo/site/docs/configuration/reference.md], but the excerpt is truncated and none of the visible fields is `maxTokensPerCell`. The only nearby option is a CLI flag for console table cells: \"`--table-cell-max-length <number>`\" with the description \"Truncate console table cells to this length\" [promptfoo/site/docs/usage/command-line.md]. That is a different name, and no default is shown for it.\n\nI can't confirm that `maxTokensPerCell` exists. If you meant `--table-cell-max-length`, the excerpt gives no default for it either.",
+ "tokens": {
+  "input": 3190,
+  "output": 428,
+  "thinking": 157,
+  "cache_read": 2822,
+  "cache_creation": 366
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0060301999999999994,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4397,
+  "stop_reason": "end_turn",
+  "session_id": "e931ffa0-9c62-4b9f-a74b-443a406591a2",
+  "total_cost_usd": 0.0060301999999999994,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 366,
+   "cache_read_input_tokens": 2822,
+   "output_tokens": 428,
+   "output_tokens_details": {
+    "thinking_tokens": 157
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 366,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 428,
+     "cache_read_input_tokens": 2822,
+     "cache_creation_input_tokens": 366,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 366
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 428,
+    "cacheReadInputTokens": 2822,
+    "cacheCreationInputTokens": 366,
+    "webSearchRequests": 0,
+    "costUSD": 0.0060301999999999994,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 157,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 366,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved docs don't mention an `evaluateOptions.maxTokensPerCell` option or any default for it.\n\nThe `EvaluateOptions` interface lists other fields, such as \"maxConcurrency?: number;\" [promptfoo/site/docs/configuration/reference.md], but the excerpt is truncated and none of the visible fields is `maxTokensPerCell`. The only nearby option is a CLI flag for console table cells: \"`--table-cell-max-length <number>`\" with the description \"Truncate console table cells to this length\" [promptfoo/site/docs/usage/command-line.md]. That is a different name, and no default is shown for it.\n\nI can't confirm that `maxTokensPerCell` exists. If you meant `--table-cell-max-length`, the excerpt gives no default for it either.",
+  "ttft_ms": 2690,
+  "type": "result",
+  "duration_ms": 4479,
+  "uuid": "c477d951-d555-475a-b0db-06ff01c32d2e",
+  "ttft_stream_ms": 2531,
+  "time_to_request_ms": 104,
+  "first_content_frame_ms": 2531,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

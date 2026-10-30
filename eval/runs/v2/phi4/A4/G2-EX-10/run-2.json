@@ -1,0 +1,96 @@
+{
+ "model": "phi4",
+ "arm": "A4",
+ "id": "G2-EX-10",
+ "run": 2,
+ "started_utc": "2026-10-30T07:20:40Z",
+ "seconds": 24.47,
+ "prompt_sha256": "06df10553b8cb5045c8d41c0e3b30957745235d55478fb52858e7c293d82554c",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "llama_index/v0.14.25.md",
+   "quote": "Remove deprecated ipex-llm and optimum-intel IPEX integrations.",
+   "verify": "MISSING",
+   "detail": "quote not found in llama_index/v0.14.25.md@file"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 4.11,
+   "rerank": 7.66,
+   "generate": 10.39,
+   "verify": 0.0,
+   "total": 22.16
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.99699,
+    "path": "llama_index/v0.14.25.md",
+    "line_start": 58,
+    "line_end": 66
+   },
+   {
+    "rank": 2,
+    "search_rank": 2,
+    "rerank_score": 0.82495,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 10324,
+    "line_end": 10330
+   },
+   {
+    "rank": 3,
+    "search_rank": 20,
+    "rerank_score": 0.74394,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 4234,
+    "line_end": 4260
+   },
+   {
+    "rank": 4,
+    "search_rank": 3,
+    "rerank_score": 0.73433,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 6047,
+    "line_end": 6063
+   },
+   {
+    "rank": 5,
+    "search_rank": 17,
+    "rerank_score": 0.71099,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 227,
+    "line_end": 245
+   },
+   {
+    "rank": 6,
+    "search_rank": 5,
+    "rerank_score": 0.68544,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 4790,
+    "line_end": 4812
+   },
+   {
+    "rank": 7,
+    "search_rank": 9,
+    "rerank_score": 0.67548,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 1,
+    "line_end": 30
+   },
+   {
+    "rank": 8,
+    "search_rank": 6,
+    "rerank_score": 0.65574,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 3404,
+    "line_end": 3423
+   }
+  ],
+  "model": "phi4"
+ }
+}

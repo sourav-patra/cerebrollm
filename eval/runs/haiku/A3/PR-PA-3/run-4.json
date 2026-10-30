@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-PA-3",
+ "run": 4,
+ "started_utc": "2026-10-29T01:54:17Z",
+ "seconds": 7.61,
+ "prompt_file": "runs/prompts/A3/PR-PA-3.txt",
+ "prompt_sha256": "b2566560bf41ae84a155ce83d7a9999de3ff9142ea8fe73cba8bf42ec5d710a4",
+ "answer": "The retrieved context doesn't include the code from the local starter example, so I can't say what timeout it sets. The excerpt from that file covers only its introduction and the models it uses: \"We will use [`BAAI/bge-base-en-v1.5`](https://huggingface.co/BAAI/bge-base-en-v1.5) as our embedding model and `llama3.1 8B` served through `Ollama`.\" [llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md]\n\nThe only Ollama example in the context that sets a timeout uses `request_timeout=60.0`, but it is in a general LLM guide, not the starter tutorial: \"llm = Ollama(model=\"llama3.3\", request_timeout=60.0, ...)\" [llama_index/docs/src/content/docs/framework/understanding/using_llms.md]. The FAQ shows the same value: \"model=\"mistral\", request_timeout=60.0,\" [llama_index/docs/src/content/docs/framework/getting_started/faq.md]. The starter tutorial may use the same value, but I can't confirm that from these excerpts.",
+ "tokens": {
+  "input": 3166,
+  "output": 567,
+  "thinking": 200,
+  "cache_read": 2777,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00038887,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2926,
+  "stop_reason": "end_turn",
+  "session_id": "f0223634-348a-4206-b0ce-1f0712549089",
+  "total_cost_usd": 0.00038887,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2777,
+   "output_tokens": 567,
+   "output_tokens_details": {
+    "thinking_tokens": 200
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 567,
+     "cache_read_input_tokens": 2777,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 567,
+    "cacheReadInputTokens": 2777,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00038887,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 200,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The retrieved context doesn't include the code from the local starter example, so I can't say what timeout it sets. The excerpt from that file covers only its introduction and the models it uses: \"We will use [`BAAI/bge-base-en-v1.5`](https://huggingface.co/BAAI/bge-base-en-v1.5) as our embedding model and `llama3.1 8B` served through `Ollama`.\" [llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md]\n\nThe only Ollama example in the context that sets a timeout uses `request_timeout=60.0`, but it is in a general LLM guide, not the starter tutorial: \"llm = Ollama(model=\"llama3.3\", request_timeout=60.0, ...)\" [llama_index/docs/src/content/docs/framework/understanding/using_llms.md]. The FAQ shows the same value: \"model=\"mistral\", request_timeout=60.0,\" [llama_index/docs/src/content/docs/framework/getting_started/faq.md]. The starter tutorial may use the same value, but I can't confirm that from these excerpts.",
+  "ttft_ms": 2832,
+  "type": "result",
+  "duration_ms": 3063,
+  "uuid": "f91500ee-40fb-40a3-8919-be1dc8377c48",
+  "ttft_stream_ms": 2831,
+  "time_to_request_ms": 135,
+  "first_content_frame_ms": 2831,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 5,
+ "started_utc": "2026-10-29T17:44:22Z",
+ "seconds": 9.13,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "Promptfoo version 0.122.0 stopped supporting Node.js version 20. This information can be found in the document:\n\n- **Reference:** \"[0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > Miscellaneous Chores\" [3]\n\n- **Relevant Quote:** \"drop Node.js 20 support\" [3]\n\nAdditionally, the same change is indicated under the breaking changes section:\n\n- **Reference:** \"[0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > ⚠ BREAKING CHANGES\" [4]\n\n- **Relevant Quote:** \"drop Node.js 20 support\" [4]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1777,
+  "output": 182
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10108457600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:44:31.5777595Z",
+  "response": "Promptfoo version 0.122.0 stopped supporting Node.js version 20. This information can be found in the document:\n\n- **Reference:** \"[0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > Miscellaneous Chores\" [3]\n\n- **Relevant Quote:** \"drop Node.js 20 support\" [3]\n\nAdditionally, the same change is indicated under the breaking changes section:\n\n- **Reference:** \"[0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > ⚠ BREAKING CHANGES\" [4]\n\n- **Relevant Quote:** \"drop Node.js 20 support\" [4]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10108457600,
+  "load_duration": 13582300,
+  "prompt_eval_count": 1777,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 942390000,
+  "eval_count": 182,
+  "eval_duration": 8989610000
+ }
+}

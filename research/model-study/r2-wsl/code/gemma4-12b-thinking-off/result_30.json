@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/36",
+  "index": 30,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef fizz_buzz(n: int):\n    \"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n    >>> fizz_buzz(50)\n    0\n    >>> fizz_buzz(78)\n    2\n    >>> fizz_buzz(79)\n    3\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:36:34.370333Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef fizz_buzz(n: int) -> int:\n    \"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n    >>> fizz_buzz(50)\n    0\n    >>> fizz_buzz(78)\n    2\n    >>> fizz_buzz(79)\n    3\n    \"\"\"\n    count = 0\n    for i in range(n):\n        if i % 11 == 0 or i % 13 == 0:\n            count += str(i).count('7')\n    return count\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1087707300,
+    "load_duration": 12411800,
+    "prompt_eval_count": 120,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 91194000,
+    "eval_count": 142,
+    "eval_duration": 936100000
+  },
+  "wall_seconds": 1.0412252039968735,
+  "load_average_before": [
+    0.6708984375,
+    0.27197265625,
+    0.27783203125
+  ],
+  "load_average_after": [
+    0.61669921875,
+    0.26708984375,
+    0.27587890625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-off-30",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_30.py"
+    ],
+    "wall_seconds": 0.757869462002418,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

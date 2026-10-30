@@ -1,0 +1,11 @@
+=== 2026-10-28T23:38:05Z r2_wsl.py speed qwen3:8b
+guard pull qwen3:8b exit 0 qwen3:8b digest 500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41 
+qwen3-8b-thinking-off 8000 1 valid True [] gen_tps 67.35032508370777 prompt_tps 4235.707999785695 gpu% 100.0
+qwen3-8b-thinking-off 8000 2 valid True [] gen_tps 67.53345148169976 prompt_tps 4063.786950688986 gpu% 100.0
+qwen3-8b-thinking-off 8000 3 valid True [] gen_tps 67.59498878213634 prompt_tps 4127.436208237815 gpu% 100.0
+qwen3-8b-thinking-off 200 1 valid True [] gen_tps 81.48638811266385 prompt_tps 652.205018651067 gpu% 100.0
+qwen3-8b-thinking-off 200 2 valid True [] gen_tps 81.42480689439107 prompt_tps 507.585292457179 gpu% 100.0
+qwen3-8b-thinking-off 200 3 valid True [] gen_tps 81.5259621974304 prompt_tps 622.0267281076741 gpu% 100.0
+guard unload qwen3:8b exit 0 qwen3:8b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T23:42:35Z

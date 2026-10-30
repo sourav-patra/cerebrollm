@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-03",
+ "run": 4,
+ "started_utc": "2026-10-29T17:39:13Z",
+ "seconds": 7.58,
+ "prompt_sha256": "ea1c0621f7cf79de8af3f668c6d57ad0ac7fab228bd8a07e61bee258a07b2ea9",
+ "answer": "I do not know the maximum number of dimensions pgvector supports for the bitvec type. The context provided does not specify a maximum number of dimensions for the bitvec type. It only mentions the storage requirements for each bit vector and references the Postgres documentation for more information. Therefore, I cannot provide a specific number of dimensions supported.\n\nRelevant lines: \"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the [Postgres docs](https://www.postgresql.org/docs/current/datatype-bit.html) for more info.\" [pgvector/README.md (lines 951-960)].\n\nIf you need the exact information, checking the Postgres documentation or pgvector's official documentation or source code might be necessary.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1629,
+  "output": 153
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8415027800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:39:21.3518962Z",
+  "response": "I do not know the maximum number of dimensions pgvector supports for the bitvec type. The context provided does not specify a maximum number of dimensions for the bitvec type. It only mentions the storage requirements for each bit vector and references the Postgres documentation for more information. Therefore, I cannot provide a specific number of dimensions supported.\n\nRelevant lines: \"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the [Postgres docs](https://www.postgresql.org/docs/current/datatype-bit.html) for more info.\" [pgvector/README.md (lines 951-960)].\n\nIf you need the exact information, checking the Postgres documentation or pgvector's official documentation or source code might be necessary.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8415027800,
+  "load_duration": 14282700,
+  "prompt_eval_count": 1629,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 784800000,
+  "eval_count": 153,
+  "eval_duration": 7466733000
+ }
+}

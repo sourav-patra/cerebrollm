@@ -1,0 +1,23 @@
+{
+  "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+  "mode": "mtp4-think-off",
+  "ollama_version": "0.40.13",
+  "steps": {
+    "8192": {
+      "runs": 1,
+      "valid_runs": 1,
+      "memory": {
+        "samples": 50,
+        "min_free_mb": 972.0,
+        "min_available_mb": 995.0,
+        "max_pages_per_sec": 123358.5,
+        "median_pages_per_sec": 15677.8,
+        "longest_paging_run_samples": 50,
+        "sustained_paging": true,
+        "free_ok": false
+      },
+      "next_step_allowed": false
+    }
+  },
+  "rule": "free RAM > 2048 MB and no 5 consecutive Pages/sec samples above 1000"
+}

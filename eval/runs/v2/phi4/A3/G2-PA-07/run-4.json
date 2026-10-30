@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-07",
+ "run": 4,
+ "started_utc": "2026-10-29T17:38:41Z",
+ "seconds": 7.49,
+ "prompt_sha256": "966074e791335ca871ebd5a7d82b30bbeb317f071d36667858d564446d44005d",
+ "answer": "Based on the provided context, there is no mention of any reranker class gaining native async support in the `llama-index-core` version `0.14.25`. The only feature related to async support mentioned for this version is: \n\n\"feat(core): add native async support to StructuredLLMRerank\" [1].\n\nHowever, this refers to the `StructuredLLMRerank` class, not a reranker class. Therefore, based on the available information, I do not know of any reranker class that gained native async support in `llama-index-core` version `0.14.25`. \n\nReference: [1] llama_index/v0.14.25.md (lines 58-66).",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1429,
+  "output": 149
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8320187600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:38:48.9286289Z",
+  "response": "Based on the provided context, there is no mention of any reranker class gaining native async support in the `llama-index-core` version `0.14.25`. The only feature related to async support mentioned for this version is: \n\n\"feat(core): add native async support to StructuredLLMRerank\" [1].\n\nHowever, this refers to the `StructuredLLMRerank` class, not a reranker class. Therefore, based on the available information, I do not know of any reranker class that gained native async support in `llama-index-core` version `0.14.25`. \n\nReference: [1] llama_index/v0.14.25.md (lines 58-66).",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8320187600,
+  "load_duration": 12520600,
+  "prompt_eval_count": 1429,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 725986000,
+  "eval_count": 149,
+  "eval_duration": 7447531000
+ }
+}

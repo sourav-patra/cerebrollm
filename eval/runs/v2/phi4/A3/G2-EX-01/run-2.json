@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 2,
+ "started_utc": "2026-10-29T17:21:02Z",
+ "seconds": 8.89,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "The Ollama API endpoint extended in release 0.34.3 to advertise each model's thinking controls and default is `GET /api/show`. This information is found in the context provided:\n\n```\n`GET /api/show` now advertises each model's thinking controls and default:\n```\n\nThe context reference is: [ollama/v0.34.3.md](https://github.com/ollama/ollama/releases/tag/v0.34.3) [1].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2084,
+  "output": 100
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 6416068000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:21:10.186087Z",
+  "response": "The Ollama API endpoint extended in release 0.34.3 to advertise each model's thinking controls and default is `GET /api/show`. This information is found in the context provided:\n\n```\n`GET /api/show` now advertises each model's thinking controls and default:\n```\n\nThe context reference is: [ollama/v0.34.3.md](https://github.com/ollama/ollama/releases/tag/v0.34.3) [1].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6416068000,
+  "load_duration": 13709600,
+  "prompt_eval_count": 2084,
+  "prompt_eval_cached_count": 24,
+  "prompt_eval_duration": 1230188000,
+  "eval_count": 100,
+  "eval_duration": 5144852000
+ }
+}

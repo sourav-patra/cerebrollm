@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-05",
+ "run": 4,
+ "started_utc": "2026-10-29T17:33:56Z",
+ "seconds": 2.35,
+ "prompt_sha256": "f5453282a54f4164904d9cb3243c4050d7797a59152b249963801a9d37113365",
+ "answer": "I do not know the specific details about the three question types supported by Ollama's /v1/systemone decision-model API. This information would typically be found in Ollama's official API documentation or technical resources related to their services.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 54,
+  "output": 50
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2430532600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:33:57.8883521Z",
+  "response": "I do not know the specific details about the three question types supported by Ollama's /v1/systemone decision-model API. This information would typically be found in Ollama's official API documentation or technical resources related to their services.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2430532600,
+  "load_duration": 13046200,
+  "prompt_eval_count": 54,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 213195000,
+  "eval_count": 50,
+  "eval_duration": 2189082000
+ }
+}

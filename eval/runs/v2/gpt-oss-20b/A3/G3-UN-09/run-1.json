@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-09",
+ "run": 1,
+ "started_utc": "2026-10-29T16:15:34Z",
+ "seconds": 6.22,
+ "prompt_sha256": "33a2e37033519f45139e844295bea3f485cce58529b79198feb005d00dc1f617",
+ "answer": "I’m sorry, but I don’t have that information.",
+ "thinking_chars": 1137,
+ "tokens": {
+  "input": 1640,
+  "output": 286
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6534566600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:15:41.8842541Z",
+  "response": "I’m sorry, but I don’t have that information.",
+  "thinking": "We need to answer: \"What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" We have context but no direct mention of separator_regex. We need to rely on knowledge of LlamaIndex. The default separator_regex likely is something like r\"(?<!\\\\n)(?<!\\n)\". But we should check.\n\nTokenTextSplitter defined in llama_index/core/node_parser/text/token.py (link from context [7]). But we don't have code here. The question: default separator_regex. It likely is a regex that splits on whitespace: r\"\\s+\". But default separator provided in example is \" \". The separator parameter is a string; separator_regex is internal? Let's search memory: In LlamaIndex, TokenTextSplitter splits by token count, but to keep chunks consistent, it may use a regex to split. Default separator_regex is likely r\"\\s+|\\n\". Actually, I think it's something like r\"\\n\". Wait.\n\nWe need to see actual code. But we cannot fetch. However, we can answer: The default separator_regex is `r\"\\s+\"`. But we must quote the line and cite path. We don't have that line. So we must say we don't know.\n\nGiven context, we don't have that info. So answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6534566600,
+  "load_duration": 16739100,
+  "prompt_eval_count": 1640,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 726808000,
+  "eval_count": 286,
+  "eval_duration": 5702181000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-02",
+ "run": 4,
+ "started_utc": "2026-10-29T16:44:09Z",
+ "seconds": 2.95,
+ "prompt_sha256": "73be9dfb45008cb75564d567ccea5273c6a04906a34b660f2587f48b8ac9e9aa",
+ "answer": "\"Models using web search can now perform up to ten searches per response, up from three.\" [ollama/v0.35.1.md]",
+ "thinking_chars": 522,
+ "tokens": {
+  "input": 1618,
+  "output": 176
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3126453200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:44:11.5764549Z",
+  "response": "\"Models using web search can now perform up to ten searches per response, up from three.\" [ollama/v0.35.1.md]",
+  "thinking": "We need to answer: Since Ollama 0.35.1, how many web searches can a model that uses web search perform per response? The context includes [2] ollama/v0.35.1.md lines 38-44: *Models using web search can now perform up to ten searches per response, up from three*. So answer: up to ten searches per response. Quote that line.\n\nWe need to quote the line and provide path. The line: \"*Models using web search can now perform up to ten searches per response, up from three\". Path: [2] ollama/v0.35.1.md. Provide quote and path.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3126453200,
+  "load_duration": 14100100,
+  "prompt_eval_count": 1618,
+  "prompt_eval_cached_count": 1613,
+  "prompt_eval_duration": 56406000,
+  "eval_count": 176,
+  "eval_duration": 2996295000
+ }
+}

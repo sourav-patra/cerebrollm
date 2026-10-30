@@ -1,0 +1,19 @@
+{
+  "model": "qwen3-embedding:0.6b",
+  "table": "data_study_d_qwen_06b",
+  "start": 7456,
+  "chunks": 16,
+  "duration_seconds": 0.6208491549996324,
+  "backoff_seconds": 0.0,
+  "embedding_dimension": 1024,
+  "load_average_before": [
+    0.072265625,
+    0.22900390625,
+    0.20654296875
+  ],
+  "load_average_after": [
+    0.14697265625,
+    0.2421875,
+    0.2109375
+  ]
+}

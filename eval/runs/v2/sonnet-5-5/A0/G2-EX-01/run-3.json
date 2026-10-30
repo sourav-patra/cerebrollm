@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-01",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:03Z",
+ "seconds": 7.33,
+ "prompt_sha256": "cd5beccda834537ed90607bebba8f323798037e5af9bfbced1755b5de537a08b",
+ "answer": "I don't know. I have no reliable information about Ollama release 0.34.3, so I can't say which API endpoint it extended to advertise each model's thinking controls and default. This project's working directory also has nothing I could check it against. The release notes on Ollama's GitHub releases page should name the endpoint.",
+ "tokens": {
+  "input": 646,
+  "output": 174,
+  "thinking": 76,
+  "cache_read": 0,
+  "cache_creation": 644
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00432,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3218,
+  "stop_reason": "end_turn",
+  "session_id": "91ee2545-e0b8-4c20-aee8-41c3f612cf52",
+  "total_cost_usd": 0.00432,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 644,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 174,
+   "output_tokens_details": {
+    "thinking_tokens": 76
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 644,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 174,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 644,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 644
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 174,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 644,
+    "webSearchRequests": 0,
+    "costUSD": 0.00432,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 76,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 644,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable information about Ollama release 0.34.3, so I can't say which API endpoint it extended to advertise each model's thinking controls and default. This project's working directory also has nothing I could check it against. The release notes on Ollama's GitHub releases page should name the endpoint.",
+  "ttft_ms": 2824,
+  "type": "result",
+  "duration_ms": 3297,
+  "uuid": "c4d75dba-0113-4ee5-b81b-502afe9dcc4c",
+  "ttft_stream_ms": 2823,
+  "time_to_request_ms": 76,
+  "first_content_frame_ms": 2823,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

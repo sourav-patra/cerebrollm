@@ -1,0 +1,154 @@
+{
+  "id": 9,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "The fix is in. Run the test file tests/test_api.py now."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:08:37.6170692Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_gnap8xst",
+          "function": {
+            "index": 0,
+            "name": "run_tests",
+            "arguments": {
+              "path": "tests/test_api.py"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 832899200,
+    "load_duration": 13244800,
+    "prompt_eval_count": 566,
+    "prompt_eval_cached_count": 546,
+    "prompt_eval_duration": 164700000,
+    "eval_count": 25,
+    "eval_duration": 647901000
+  },
+  "wall_seconds": 0.7770495699987805,
+  "load_average_before": [
+    0.0859375,
+    0.09326171875,
+    0.0263671875
+  ],
+  "load_average_after": [
+    0.0859375,
+    0.09326171875,
+    0.0263671875
+  ],
+  "expected": {
+    "name": "run_tests",
+    "arguments": {
+      "path": "tests/test_api.py"
+    }
+  },
+  "passed": true
+}

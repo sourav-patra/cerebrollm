@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-03",
+ "run": 2,
+ "started_utc": "2026-10-29T16:23:08Z",
+ "seconds": 6.96,
+ "prompt_sha256": "db75b1c050dbf2852df8783d1fd5d7792e27408e214d188243cff0240c6cf5a4",
+ "answer": "The Flint model on Ollama supports a 262,000‑token context window.  \n\"and a **262K‑token context window** support longer tasks across files and tool interactions.\" [1] ollama/v0.40.8.md (lines 8‑21)",
+ "thinking_chars": 947,
+ "tokens": {
+  "input": 1795,
+  "output": 297
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5222911700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:23:14.2141225Z",
+  "response": "The Flint model on Ollama supports a 262,000‑token context window.  \n\"and a **262K‑token context window** support longer tasks across files and tool interactions.\" [1] ollama/v0.40.8.md (lines 8‑21)",
+  "thinking": "We need to answer: \"How large is the context window of Recursive's Flint model on Ollama?\" We have context lines. We need to find info. The docs mention context window default: 4096 tokens. But for Flint? The model might have larger context. In the context, there is no explicit mention of Flint's context window. But maybe the \"Recursive Flint\" page includes context. Let's search context: line 8-21 includes description, but not context window. The context length docs mention default 4k for <24 GiB VRAM. But Flint might be 262k? The description says 262K-token context window. In [1] it says: \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" So the context window is 262,000 tokens. So answer: 262K tokens. Provide quote: \"and a 262K-token context window support longer tasks across files and tool interactions.\" Path: [1] ollama/v0.40.8.md (lines 8-21). Let's capture.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5222911700,
+  "load_duration": 16605000,
+  "prompt_eval_count": 1795,
+  "prompt_eval_cached_count": 1790,
+  "prompt_eval_duration": 57123000,
+  "eval_count": 297,
+  "eval_duration": 5090070000
+ }
+}

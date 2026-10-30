@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 5,
+ "started_utc": "2026-10-29T15:59:57Z",
+ "seconds": 0.15,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I do not know.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 59,
+  "output": 6
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 159408500
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:59:57.6415977Z",
+  "response": "I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 159408500,
+  "load_duration": 15096100,
+  "prompt_eval_count": 59,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 65494000,
+  "eval_count": 6,
+  "eval_duration": 55644000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-06",
+ "run": 4,
+ "started_utc": "2026-10-29T01:48:02Z",
+ "seconds": 7.92,
+ "prompt_file": "runs/prompts/A3/PA-06.txt",
+ "prompt_sha256": "6a03fc6b3513f9c7aee92fb9a4dceb7803becc5fbe99988bad8df67c68e6d6ae",
+ "answer": "The feature is **iterative index scans**, available starting with pgvector 0.8.0. The README says: \"Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\" [pgvector/README.md]\n\nYou enable it per session for HNSW indexes with:\n\n\"SET hnsw.iterative_scan = strict_order;\" [pgvector/README.md]\n\nUse `relaxed_order` instead for better recall, at the cost of results that may be slightly out of distance order. For IVFFlat, the setting is `ivfflat.iterative_scan`. [pgvector/README.md]",
+ "tokens": {
+  "input": 3355,
+  "output": 573,
+  "thinking": 331,
+  "cache_read": 2968,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00039338000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3215,
+  "stop_reason": "end_turn",
+  "session_id": "3aa92281-a053-4823-9ec6-9f6231a2c55d",
+  "total_cost_usd": 0.00039338000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2968,
+   "output_tokens": 573,
+   "output_tokens_details": {
+    "thinking_tokens": 331
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 573,
+     "cache_read_input_tokens": 2968,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 573,
+    "cacheReadInputTokens": 2968,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00039338000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 331,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The feature is **iterative index scans**, available starting with pgvector 0.8.0. The README says: \"Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\" [pgvector/README.md]\n\nYou enable it per session for HNSW indexes with:\n\n\"SET hnsw.iterative_scan = strict_order;\" [pgvector/README.md]\n\nUse `relaxed_order` instead for better recall, at the cost of results that may be slightly out of distance order. For IVFFlat, the setting is `ivfflat.iterative_scan`. [pgvector/README.md]",
+  "ttft_ms": 2830,
+  "type": "result",
+  "duration_ms": 3341,
+  "uuid": "d57ad812-c65d-4033-a524-84b90befd2fd",
+  "ttft_stream_ms": 2829,
+  "time_to_request_ms": 164,
+  "first_content_frame_ms": 2829,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 1,
+ "started_utc": "2026-10-29T15:54:29Z",
+ "seconds": 7.79,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "Nemotron 3.5 Bolt has 74B total parameters and 9B active parameters.\n\nThe Ollama v0.40.5 release notes say: \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md]",
+ "tokens": {
+  "input": 3599,
+  "output": 175,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3597
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.016142,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3270,
+  "stop_reason": "end_turn",
+  "session_id": "4389760f-e034-4958-89cf-7bc4c5fda483",
+  "total_cost_usd": 0.016142,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3597,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 175,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3597,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 175,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3597,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3597
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 175,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3597,
+    "webSearchRequests": 0,
+    "costUSD": 0.016142,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3597,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Nemotron 3.5 Bolt has 74B total parameters and 9B active parameters.\n\nThe Ollama v0.40.5 release notes say: \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md]",
+  "ttft_ms": 3384,
+  "type": "result",
+  "duration_ms": 3411,
+  "uuid": "b51dc2ea-a779-4264-b8b3-25d7e3c0e161",
+  "ttft_stream_ms": 2817,
+  "time_to_request_ms": 352,
+  "first_content_frame_ms": 2818,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-05",
+ "run": 2,
+ "started_utc": "2026-10-29T16:25:43Z",
+ "seconds": 4.19,
+ "prompt_sha256": "24b4f0a37bcdab2f151d071b7668e6d0bfd5e8d71c91b1bd324da97df9d05009",
+ "answer": "The default unload timeout is **5 minutes**.  \n\"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]",
+ "thinking_chars": 931,
+ "tokens": {
+  "input": 1617,
+  "output": 259
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4557911000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:25:47.5960807Z",
+  "response": "The default unload timeout is **5 minutes**.  \n\"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]",
+  "thinking": "We need to answer: default value of OLLAMA_UNLOAD_TIMEOUT. The context contains docs on keep_alive, unload. I didn't see OLLAMA_UNLOAD_TIMEOUT. Search the context: lines 289-318: talk about default 5 minutes before unload. That likely is OLLAMA_UNLOAD_TIMEOUT default 300 seconds? The docs mention default 5 minutes. So default value is 5 minutes. But we need to quote a line that says default value. The context snippet: \"By default models are kept in memory for 5 minutes before being unloaded.\" That line indicates default unload timeout 5 minutes. That likely corresponds to OLLAMA_UNLOAD_TIMEOUT default 5 minutes. But no explicit mention of variable name. The question: \"What is the default value of the Ollama environment variable OLLAMA_UNLOAD_TIMEOUT?\" The answer: 5 minutes. Provide quote: \"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md lines 289-318]. Let's provide that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4557911000,
+  "load_duration": 14605500,
+  "prompt_eval_count": 1617,
+  "prompt_eval_cached_count": 1612,
+  "prompt_eval_duration": 54848000,
+  "eval_count": 259,
+  "eval_duration": 4432213000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-20",
+ "run": 3,
+ "started_utc": "2026-10-29T01:44:33Z",
+ "seconds": 7.89,
+ "prompt_file": "runs/prompts/A3/EX-20.txt",
+ "prompt_sha256": "3bcc604503a54287e2c8aae4ae240bed833fd0d2cddceaeb17dc5266f9087975",
+ "answer": "The flag is `--repeat`. \"The `eval` command has a parameter, `repeat`, which runs each test multiple times:\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md]\n\nFor example, `promptfoo eval --repeat 3` runs the LLM three times for each test case. \"The above command runs the LLM three times for each test case, helping you get a more complete sample of how it performs at a given temperature.\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md]",
+ "tokens": {
+  "input": 3331,
+  "output": 490,
+  "thinking": 318,
+  "cache_read": 2942,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035202,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2935,
+  "stop_reason": "end_turn",
+  "session_id": "8d332e65-fa93-40ae-b83b-ceb3ef28d0bf",
+  "total_cost_usd": 0.00035202,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2942,
+   "output_tokens": 490,
+   "output_tokens_details": {
+    "thinking_tokens": 318
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 490,
+     "cache_read_input_tokens": 2942,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 490,
+    "cacheReadInputTokens": 2942,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035202,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 318,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The flag is `--repeat`. \"The `eval` command has a parameter, `repeat`, which runs each test multiple times:\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md]\n\nFor example, `promptfoo eval --repeat 3` runs the LLM three times for each test case. \"The above command runs the LLM three times for each test case, helping you get a more complete sample of how it performs at a given temperature.\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md]",
+  "ttft_ms": 2809,
+  "type": "result",
+  "duration_ms": 3072,
+  "uuid": "15f5732a-acd0-4fb4-8dbb-3d758f15e70a",
+  "ttft_stream_ms": 2807,
+  "time_to_request_ms": 135,
+  "first_content_frame_ms": 2808,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

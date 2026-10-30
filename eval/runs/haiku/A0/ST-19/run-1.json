@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-19",
+ "run": 1,
+ "started_utc": "2026-10-29T02:01:15Z",
+ "seconds": 7.45,
+ "prompt_file": "runs/prompts/A0/ST-19.txt",
+ "prompt_sha256": "af7d152f46cedc781c35e76ed0b03e26e2ad9c7fc713b872cdaa5f6b8c9cfa92",
+ "answer": "The field is **`label`**. In promptfoo, a prompt object's `label` is the name shown for that prompt in the output and the web UI. The actual prompt content is in `raw`, which is not what gets displayed as the prompt's name.",
+ "tokens": {
+  "input": 664,
+  "output": 356,
+  "thinking": 279,
+  "cache_read": 0,
+  "cache_creation": 662
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003106,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2810,
+  "stop_reason": "end_turn",
+  "session_id": "b0ea318d-5dcf-461e-9ba9-1e8b50e47207",
+  "total_cost_usd": 0.0003106,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 662,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 356,
+   "output_tokens_details": {
+    "thinking_tokens": 279
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 662,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 356,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 662,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 662
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 356,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 662,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003106,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 279,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 662,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The field is **`label`**. In promptfoo, a prompt object's `label` is the name shown for that prompt in the output and the web UI. The actual prompt content is in `raw`, which is not what gets displayed as the prompt's name.",
+  "ttft_ms": 2783,
+  "type": "result",
+  "duration_ms": 2926,
+  "uuid": "3612a3c3-fbda-4dee-92ab-da1e033c68b1",
+  "ttft_stream_ms": 2782,
+  "time_to_request_ms": 153,
+  "first_content_frame_ms": 2782,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

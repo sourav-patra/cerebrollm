@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-17",
+ "run": 4,
+ "started_utc": "2026-10-29T01:52:10Z",
+ "seconds": 11.58,
+ "prompt_file": "runs/prompts/A0/PA-17.txt",
+ "prompt_sha256": "0b727d7eb81ef9321a681ceaa4861e106e84e277214e2cfb8d36e4df76a91b69",
+ "answer": "Promptfoo saves results to its local database, which by default lives in a `.promptfoo` folder in your home directory (on Windows, `C:\\Users\\<you>\\.promptfoo`). I don't know of a config setting that turns this off permanently, but these options should help:\n\n1. **Skip writing for a single run:** add `--no-write` to your eval command:\n   ```powershell\n   npx promptfoo eval --no-write\n   ```\n   This is the most direct option. Check `npx promptfoo eval --help` to confirm the flag exists in your installed version.\n\n2. **Move the directory elsewhere:** set `PROMPTFOO_CONFIG_DIR` to a folder you choose. In PowerShell:\n   ```powershell\n   $env:PROMPTFOO_CONFIG_DIR = \"D:\\scratch\\promptfoo\"\n   npx promptfoo eval\n   ```\n   To make this permanent, set it under System Environment Variables. Results will then go to that folder instead.\n\n3. **Disable the cache:** if the concern is cached responses rather than results, use `--no-cache`.\n\n4. **Write output only to a file you specify:** use `--output results.json` (or `.csv`, `.html`) to control exactly where results go, and combine it with `--no-write` if you don't want the database updated.\n\nIf none of these match what you're seeing, tell me which folder is being written to and what command you're running, and I can help narrow it down. I'm not certain about the exact flag names in every promptfoo version, so the `--help` output is the authoritative check.",
+ "tokens": {
+  "input": 656,
+  "output": 1008,
+  "thinking": 504,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.000635,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7310,
+  "stop_reason": "end_turn",
+  "session_id": "b633c58c-66dd-4883-b314-9f2a698f46fc",
+  "total_cost_usd": 0.000635,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1008,
+   "output_tokens_details": {
+    "thinking_tokens": 504
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1008,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1008,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.000635,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 504,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Promptfoo saves results to its local database, which by default lives in a `.promptfoo` folder in your home directory (on Windows, `C:\\Users\\<you>\\.promptfoo`). I don't know of a config setting that turns this off permanently, but these options should help:\n\n1. **Skip writing for a single run:** add `--no-write` to your eval command:\n   ```powershell\n   npx promptfoo eval --no-write\n   ```\n   This is the most direct option. Check `npx promptfoo eval --help` to confirm the flag exists in your installed version.\n\n2. **Move the directory elsewhere:** set `PROMPTFOO_CONFIG_DIR` to a folder you choose. In PowerShell:\n   ```powershell\n   $env:PROMPTFOO_CONFIG_DIR = \"D:\\scratch\\promptfoo\"\n   npx promptfoo eval\n   ```\n   To make this permanent, set it under System Environment Variables. Results will then go to that folder instead.\n\n3. **Disable the cache:** if the concern is cached responses rather than results, use `--no-cache`.\n\n4. **Write output only to a file you specify:** use `--output results.json` (or `.csv`, `.html`) to control exactly where results go, and combine it with `--no-write` if you don't want the database updated.\n\nIf none of these match what you're seeing, tell me which folder is being written to and what command you're running, and I can help narrow it down. I'm not certain about the exact flag names in every promptfoo version, so the `--help` output is the authoritative check.",
+  "ttft_ms": 4376,
+  "type": "result",
+  "duration_ms": 7435,
+  "uuid": "811b8b1a-b9f1-427c-a9a8-a27f8fe7f675",
+  "ttft_stream_ms": 2841,
+  "time_to_request_ms": 174,
+  "first_content_frame_ms": 2841,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

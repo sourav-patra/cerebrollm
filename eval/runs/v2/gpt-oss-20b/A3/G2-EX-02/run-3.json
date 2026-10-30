@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-02",
+ "run": 3,
+ "started_utc": "2026-10-29T16:33:43Z",
+ "seconds": 3.13,
+ "prompt_sha256": "73be9dfb45008cb75564d567ccea5273c6a04906a34b660f2587f48b8ac9e9aa",
+ "answer": "\"Models using web search can now perform up to ten searches per response, up from three.\" [ollama/v0.35.1.md]",
+ "thinking_chars": 556,
+ "tokens": {
+  "input": 1618,
+  "output": 184
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3292226200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:33:46.5011102Z",
+  "response": "\"Models using web search can now perform up to ten searches per response, up from three.\" [ollama/v0.35.1.md]",
+  "thinking": "The question: \"Since Ollama 0.35.1, how many web searches can a model that uses web search perform per response?\" We need to find from context. We have context snippet [2] \"ollama/v0.35.1.md\" lines 38-44: \"Models using web search can now perform up to ten searches per response, up from three\". So answer: ten searches per response. We need to quote the line and path.\n\nLet's capture the exact line: \"Models using web search can now perform up to ten searches per response, up from three\". Path: \"ollama/v0.35.1.md\". So answer: ten. Provide quote and path.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3292226200,
+  "load_duration": 13147600,
+  "prompt_eval_count": 1618,
+  "prompt_eval_cached_count": 1613,
+  "prompt_eval_duration": 59355000,
+  "eval_count": 184,
+  "eval_duration": 3161019000
+ }
+}

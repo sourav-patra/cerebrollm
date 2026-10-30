@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-15",
+ "run": 4,
+ "started_utc": "2026-10-29T17:40:45Z",
+ "seconds": 9.81,
+ "prompt_sha256": "91f74cc3c7653a53e8e91b56d2c0ea621cc83f19ed7a0bbda799584df94aa639",
+ "answer": "Based on the provided context, there is no specific mention of a command in `promptfoo` that exports an evaluation to a Parquet file. The available documentation excerpts mention exporting to JSON and XML formats, but there is no reference to Parquet.\n\nTherefore, I do not know which `promptfoo` command exports an evaluation to a Parquet file.\n\n[7] promptfoo/site/docs/usage/command-line.md (lines 544-550) > Command line > `promptfoo export`  \n[7] promptfoo/site/docs/configuration/outputs.md (lines 204-230) > Output Formats > Available Formats > Promptfoo XML Full Export",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1628,
+  "output": 131
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7346813200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:40:53.9133139Z",
+  "response": "Based on the provided context, there is no specific mention of a command in `promptfoo` that exports an evaluation to a Parquet file. The available documentation excerpts mention exporting to JSON and XML formats, but there is no reference to Parquet.\n\nTherefore, I do not know which `promptfoo` command exports an evaluation to a Parquet file.\n\n[7] promptfoo/site/docs/usage/command-line.md (lines 544-550) > Command line > `promptfoo export`  \n[7] promptfoo/site/docs/configuration/outputs.md (lines 204-230) > Output Formats > Available Formats > Promptfoo XML Full Export",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7346813200,
+  "load_duration": 13044500,
+  "prompt_eval_count": 1628,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 759741000,
+  "eval_count": 131,
+  "eval_duration": 6445027000
+ }
+}

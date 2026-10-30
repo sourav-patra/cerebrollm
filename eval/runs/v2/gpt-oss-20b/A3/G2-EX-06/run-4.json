@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 4,
+ "started_utc": "2026-10-29T16:45:45Z",
+ "seconds": 5.89,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "\"drop Node.js 20 support\" [promptfoo/0.122.0.md]",
+ "thinking_chars": 694,
+ "tokens": {
+  "input": 1834,
+  "output": 226
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3984527800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:45:50.7524774Z",
+  "response": "\"drop Node.js 20 support\" [promptfoo/0.122.0.md]",
+  "thinking": "We need to answer: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" We have context that in 0.122.0 release notes, there's a breaking change: drop Node.js 20 support. So answer: Node.js 20. Provide quote.\n\nWe need to quote the line that says drop Node.js 20 support. Look at context [4] lines 9-23: \"drop Node.js 20 support\". Also [3] lines 29-31: same. So we quote that line.\n\nWe should include path: e.g., [promptfoo/0.122.0.md]. The path in the context: \"promptfoo/0.122.0.md\". Provide the quote exactly: \"* drop Node.js 20 support\". But we need to quote the line. Let's choose the line: \"* drop Node.js 20 support\". Provide path.\n\nThus answer: Node.js 20. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3984527800,
+  "load_duration": 14706200,
+  "prompt_eval_count": 1834,
+  "prompt_eval_cached_count": 1829,
+  "prompt_eval_duration": 55351000,
+  "eval_count": 226,
+  "eval_duration": 3848974000
+ }
+}

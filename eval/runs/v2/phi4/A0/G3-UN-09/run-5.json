@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 5,
+ "started_utc": "2026-10-29T17:42:24Z",
+ "seconds": 3.11,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "I do not know the default `separator_regex` of LlamaIndex's `TokenTextSplitter`. This information would typically be found in the specific documentation or source code of the LlamaIndex library. If you are developing with or exploring LlamaIndex, consulting its official documentation or codebase would be the best way to find this detail.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 49,
+  "output": 70
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3325020700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:42:28.7030507Z",
+  "response": "I do not know the default `separator_regex` of LlamaIndex's `TokenTextSplitter`. This information would typically be found in the specific documentation or source code of the LlamaIndex library. If you are developing with or exploring LlamaIndex, consulting its official documentation or codebase would be the best way to find this detail.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3325020700,
+  "load_duration": 12410400,
+  "prompt_eval_count": 49,
+  "prompt_eval_cached_count": 31,
+  "prompt_eval_duration": 213914000,
+  "eval_count": 70,
+  "eval_duration": 3076044000
+ }
+}

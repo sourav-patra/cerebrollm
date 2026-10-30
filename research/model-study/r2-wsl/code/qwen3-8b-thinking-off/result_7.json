@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/138",
+  "index": 7,
+  "request": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:8b",
+    "created_at": "2026-10-28T22:35:11.4973501Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef is_equal_to_sum_even(n):\n    import math\n    return n >= 8 and (n - 8) % 2 == 0\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 500572900,
+    "load_duration": 12045500,
+    "prompt_eval_count": 112,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 27131000,
+    "eval_count": 37,
+    "eval_duration": 446811000
+  },
+  "wall_seconds": 0.4718048689992429,
+  "load_average_before": [
+    0.58251953125,
+    0.1953125,
+    0.06201171875
+  ],
+  "load_average_after": [
+    0.58251953125,
+    0.1953125,
+    0.06201171875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-8b-thinking-off-7",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-8b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_7.py"
+    ],
+    "wall_seconds": 0.6207700970007863,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

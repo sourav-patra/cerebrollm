@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 2,
+ "started_utc": "2026-10-29T17:20:18Z",
+ "seconds": 5.48,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "I do not have specific information on the replication lag that pgvector guarantees for HNSW index updates on a streaming replica. pgvector is an extension for PostgreSQL that adds support for vector operations, and HNSW (Hierarchical Navigable Small World) is a graph-based algorithm used for efficient approximate nearest neighbor searches. However, details about replication lag guarantees, especially for specific index types like HNSW, would typically depend on the implementation details and documentation provided by the pgvector project or PostgreSQL replication mechanisms. For precise information, consulting the official pgvector documentation or support resources would be recommended.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 121
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5916415100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:20:25.2536482Z",
+  "response": "I do not have specific information on the replication lag that pgvector guarantees for HNSW index updates on a streaming replica. pgvector is an extension for PostgreSQL that adds support for vector operations, and HNSW (Hierarchical Navigable Small World) is a graph-based algorithm used for efficient approximate nearest neighbor searches. However, details about replication lag guarantees, especially for specific index types like HNSW, would typically depend on the implementation details and documentation provided by the pgvector project or PostgreSQL replication mechanisms. For precise information, consulting the official pgvector documentation or support resources would be recommended.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5916415100,
+  "load_duration": 13548000,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 219726000,
+  "eval_count": 121,
+  "eval_duration": 5666706000
+ }
+}

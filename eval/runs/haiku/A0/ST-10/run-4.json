@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-10",
+ "run": 4,
+ "started_utc": "2026-10-29T01:57:57Z",
+ "seconds": 10.64,
+ "prompt_file": "runs/prompts/A0/ST-10.txt",
+ "prompt_sha256": "cac20d72cd8d3edb728448ab42438a2027e7e298191a84c9aef4a1af7cccd1b4",
+ "answer": "For current LlamaIndex, I'd use the **agent workflow API** in `llama_index.core.agent.workflow`:\n\n- **`FunctionAgent`** is the usual choice when your LLM supports native function/tool calling, such as OpenAI or Anthropic models.\n- **`ReActAgent`** is the fallback for LLMs without native tool calling. It uses a text-based reasoning loop.\n- **`CodeActAgent`** is for agents that write and run code as their action, and is less common.\n\nTools are usually plain Python functions wrapped with `FunctionTool.from_defaults(fn=...)`. Give each function a clear name, type hints, and a docstring, since the LLM reads these to decide when to call the tool.\n\nA minimal example looks like this:\n\n```python\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.core.tools import FunctionTool\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    return a * b\n\nagent = FunctionAgent(\n    tools=[FunctionTool.from_defaults(fn=multiply)],\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant.\",\n)\n\nasync def main():\n    response = await agent.run(user_msg=\"What is 12 times 7?\")\n    print(response)\n\nasyncio.run(main())\n```\n\nThings to be aware of:\n\n- Agents run asynchronously. Use `await agent.run(...)` and pass a `Context` if you need multi-turn memory.\n- Older APIs such as `ReActAgent.from_tools(...)`, `OpenAIAgent`, and `AgentRunner` are legacy. You'll see them in older tutorials, but I'd avoid them in new code.\n- Install the LLM integration separately, for example `llama-index-llms-openai`.\n- I'm not certain of the exact current signatures, and LlamaIndex changes quickly. Check the official docs for the agent workflow and the version you have installed (`pip show llama-index-core`) before relying on this.",
+ "tokens": {
+  "input": 655,
+  "output": 1181,
+  "thinking": 462,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007213,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6221,
+  "stop_reason": "end_turn",
+  "session_id": "a0de6b61-231c-430c-ac18-a5b1be1f7741",
+  "total_cost_usd": 0.0007213,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1181,
+   "output_tokens_details": {
+    "thinking_tokens": 462
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1181,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1181,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007213,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 462,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "For current LlamaIndex, I'd use the **agent workflow API** in `llama_index.core.agent.workflow`:\n\n- **`FunctionAgent`** is the usual choice when your LLM supports native function/tool calling, such as OpenAI or Anthropic models.\n- **`ReActAgent`** is the fallback for LLMs without native tool calling. It uses a text-based reasoning loop.\n- **`CodeActAgent`** is for agents that write and run code as their action, and is less common.\n\nTools are usually plain Python functions wrapped with `FunctionTool.from_defaults(fn=...)`. Give each function a clear name, type hints, and a docstring, since the LLM reads these to decide when to call the tool.\n\nA minimal example looks like this:\n\n```python\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.core.tools import FunctionTool\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    return a * b\n\nagent = FunctionAgent(\n    tools=[FunctionTool.from_defaults(fn=multiply)],\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant.\",\n)\n\nasync def main():\n    response = await agent.run(user_msg=\"What is 12 times 7?\")\n    print(response)\n\nasyncio.run(main())\n```\n\nThings to be aware of:\n\n- Agents run asynchronously. Use `await agent.run(...)` and pass a `Context` if you need multi-turn memory.\n- Older APIs such as `ReActAgent.from_tools(...)`, `OpenAIAgent`, and `AgentRunner` are legacy. You'll see them in older tutorials, but I'd avoid them in new code.\n- Install the LLM integration separately, for example `llama-index-llms-openai`.\n- I'm not certain of the exact current signatures, and LlamaIndex changes quickly. Check the official docs for the agent workflow and the version you have installed (`pip show llama-index-core`) before relying on this.",
+  "ttft_ms": 3416,
+  "type": "result",
+  "duration_ms": 6348,
+  "uuid": "aff254fa-d8a1-4271-9303-161b692d339a",
+  "ttft_stream_ms": 3079,
+  "time_to_request_ms": 128,
+  "first_content_frame_ms": 3079,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

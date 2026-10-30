@@ -1,0 +1,49 @@
+{
+  "purpose": "R1 protocol rebuilt for the public corpus (development step L, ruling R-2). The original private protocol.json is not in this repository; this one follows development step D, 'R1 method'.",
+  "corpus": "~/cerebrollm-corpus (research/corpus/manifest.json); indexed with engine/cerebrollm.toml into the live table; the chunk snapshot is exported from that table",
+  "statuses": [
+    "locked",
+    "current"
+  ],
+  "sample_size": 150,
+  "seed": 27,
+  "sampling": "random.Random(27).sample(eligible chunks, len(eligible)) over rows ordered by node_id; the first 150 chunks that yield a valid question are used (a chunk with no valid question after five attempts is skipped and recorded)",
+  "question_generation": {
+    "helper": "sources/llama-embedding-qa.py generate_qa_embedding_pairs (LlamaIndex 0.10.68; the old name generate_question_context_pairs)",
+    "model": "phi4",
+    "questions_per_chunk": 1,
+    "temperature": 0,
+    "seed": 27,
+    "num_predict": 160,
+    "prompt": "as in study.py selection() and r1_selection.py PROMPT, with up to four rewrite variants on rejection"
+  },
+  "question_num_ctx": 16384,
+  "num_ctx": 8192,
+  "embedding_dim": 1024,
+  "models": [
+    "bge-m3",
+    "qwen3-embedding:0.6b",
+    "qwen3-embedding:4b"
+  ],
+  "qwen_query_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:",
+  "document_prefix": "",
+  "modes": [
+    "vector",
+    "hybrid"
+  ],
+  "k": [
+    5,
+    10
+  ],
+  "metrics": [
+    "hit@5",
+    "hit@10",
+    "MRR@10"
+  ],
+  "scoring": {
+    "node_id": "LlamaIndex RetrieverEvaluator (hit_rate, mrr) with expected_ids=[sampled node id]; the fixed R1 rule uses this scoring",
+    "text_identity": "a retrieved chunk whose text sha256 equals the sampled chunk's text sha256 counts, whatever its id; reported alongside (ruling R-2)"
+  },
+  "rule": "highest hybrid hit@5 (node-id scoring), then hybrid MRR@10, then chunks/min; indexing must finish in under 60 minutes",
+  "embedding_pacing": "research/model-study/embed_pace.py caps embed calls at 25 texts/s (Windows ephemeral-port limit); backoff seconds are excluded from index time"
+}

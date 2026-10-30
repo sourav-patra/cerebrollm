@@ -1,0 +1,96 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A4",
+ "id": "G2-ST-03",
+ "run": 1,
+ "started_utc": "2026-10-29T18:06:05Z",
+ "seconds": 24.86,
+ "prompt_sha256": "bae9d29d446b48b4fd77c16c6ea225a524794b128a5ec13cb68812c0fd2ff164",
+ "answer": "\"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" [ollama/v0.40.13.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "ollama/v0.40.13.md",
+   "quote": "Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.",
+   "verify": "OK",
+   "detail": "ollama/v0.40.13.md@file sha256 0dc33ae41416"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 3.1,
+   "rerank": 10.16,
+   "generate": 8.98,
+   "verify": 0.24,
+   "total": 22.48
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 2,
+    "rerank_score": 0.96317,
+    "path": "ollama/v0.40.13.md",
+    "line_start": 1,
+    "line_end": 11
+   },
+   {
+    "rank": 2,
+    "search_rank": 6,
+    "rerank_score": 0.68483,
+    "path": "ollama/v0.40.12.md",
+    "line_start": 19,
+    "line_end": 27
+   },
+   {
+    "rank": 3,
+    "search_rank": 5,
+    "rerank_score": 0.36753,
+    "path": "ollama/v0.32.7.md",
+    "line_start": 1,
+    "line_end": 42
+   },
+   {
+    "rank": 4,
+    "search_rank": 3,
+    "rerank_score": 0.34064,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 1,
+    "line_end": 53
+   },
+   {
+    "rank": 5,
+    "search_rank": 18,
+    "rerank_score": 0.30635,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 69,
+    "line_end": 120
+   },
+   {
+    "rank": 6,
+    "search_rank": 1,
+    "rerank_score": 0.27136,
+    "path": "ollama/v0.40.12.md",
+    "line_start": 1,
+    "line_end": 17
+   },
+   {
+    "rank": 7,
+    "search_rank": 9,
+    "rerank_score": 0.26375,
+    "path": "ollama/v0.34.3.md",
+    "line_start": 1,
+    "line_end": 41
+   },
+   {
+    "rank": 8,
+    "search_rank": 7,
+    "rerank_score": 0.23809,
+    "path": "ollama/v0.40.11.md",
+    "line_start": 1,
+    "line_end": 12
+   }
+  ],
+  "model": "gemma4:12b"
+ }
+}

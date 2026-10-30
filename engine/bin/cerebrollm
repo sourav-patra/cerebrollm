@@ -1,0 +1,5 @@
+#!/bin/sh
+# Run cerebrollm with its virtualenv, from any directory.
+HERE="$(cd "$(dirname "$0")/.." && pwd)"
+PY="${CEREBROLLM_PYTHON:-$HOME/.cerebrollm/venv/bin/python}"
+PYTHONPATH="$HERE${PYTHONPATH:+:$PYTHONPATH}" exec "$PY" -P -m cerebrollm "$@"   # -P: never import a cerebrollm package from the current directory

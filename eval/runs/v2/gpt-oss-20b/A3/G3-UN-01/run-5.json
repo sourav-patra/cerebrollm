@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-01",
+ "run": 5,
+ "started_utc": "2026-10-29T16:57:27Z",
+ "seconds": 6.9,
+ "prompt_sha256": "8d36acc17d80b55b637bc1eb276b47450f693cfc08efce7585ec3adf0f9b16dc",
+ "answer": "I do not know.",
+ "thinking_chars": 1589,
+ "tokens": {
+  "input": 1693,
+  "output": 418
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7463958100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:57:34.9186443Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer question: \"What is the default value of pgvector's hnsw.max_scan_tuples_per_page setting?\" We must search context for mention of hnsw.max_scan_tuples_per_page. The provided context includes hnsw.max_scan_tuples and hnsw.scan_mem_multiplier, but not max_scan_tuples_per_page. None of the context shows that setting. We must answer based on knowledge. But we should not fabricate. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So if we don't know, say we do not know. But we can rely on external knowledge: pgvector's hnsw.max_scan_tuples_per_page default? I don't recall. Let's quickly recall: In pgvector extension, there is config hnsw.max_scan_tuples, hnsw.scan_mem_multiplier, hnsw.ef_search, etc. There's also hnsw.max_scan_tuples_per_page? I don't think it's in the README; maybe default is 2000? Let's search memory: I have seen code: hnsw.max_scan_tuples_per_page default is 2000? I'm not sure. Let's search mental memory: In pgvector docs, iterative index scans: hnsw.max_scan_tuples default 20000. hnsw.max_scan_tuples_per_page might default 2000? Another possibility is 2000? Or 200? Let's maybe check actual source: In pgvector, there is a config variable defined as: hnsw.max_scan_tuples_per_page default 2000. I recall reading about it in docs? Not sure.\n\nBut the context does not provide it. So we must say we don't know. But the instruction: \"If you do not know, say you do not know.\" So answer: I do not know. Provide that. No quote. That satisfies.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7463958100,
+  "load_duration": 15678100,
+  "prompt_eval_count": 1693,
+  "prompt_eval_cached_count": 1688,
+  "prompt_eval_duration": 56417000,
+  "eval_count": 418,
+  "eval_duration": 7334406000
+ }
+}

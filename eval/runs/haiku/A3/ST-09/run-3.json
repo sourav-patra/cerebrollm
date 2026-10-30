@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-09",
+ "run": 3,
+ "started_utc": "2026-10-29T01:57:35Z",
+ "seconds": 8.31,
+ "prompt_file": "runs/prompts/A3/ST-09.txt",
+ "prompt_sha256": "31d318638b3cf0b7687b578ebfbd1dcec72f676c828f9288dbbbc0a4ec6bffa9",
+ "answer": "Use **`VectorStoreIndex`**. Load your documents, then build the index with its `from_documents` method. The docs say: \"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`\" [llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md].\n\nThe example import is \"from llama_index.core import VectorStoreIndex\" [llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md], and the build step is \"index = VectorStoreIndex.from_documents(documents)\" [llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md].",
+ "tokens": {
+  "input": 3361,
+  "output": 546,
+  "thinking": 311,
+  "cache_read": 2975,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00037975000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3032,
+  "stop_reason": "end_turn",
+  "session_id": "9541255f-08ba-457a-a3c1-34c9ce12b920",
+  "total_cost_usd": 0.00037975000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 2975,
+   "output_tokens": 546,
+   "output_tokens_details": {
+    "thinking_tokens": 311
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 546,
+     "cache_read_input_tokens": 2975,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 546,
+    "cacheReadInputTokens": 2975,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.00037975000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 311,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **`VectorStoreIndex`**. Load your documents, then build the index with its `from_documents` method. The docs say: \"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`\" [llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md].\n\nThe example import is \"from llama_index.core import VectorStoreIndex\" [llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md], and the build step is \"index = VectorStoreIndex.from_documents(documents)\" [llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md].",
+  "ttft_ms": 2875,
+  "type": "result",
+  "duration_ms": 3193,
+  "uuid": "26fae3c2-aaa8-4864-b572-47faef2524bf",
+  "ttft_stream_ms": 2874,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 2874,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

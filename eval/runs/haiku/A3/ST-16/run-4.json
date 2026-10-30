@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-16",
+ "run": 4,
+ "started_utc": "2026-10-29T02:00:25Z",
+ "seconds": 7.79,
+ "prompt_file": "runs/prompts/A3/ST-16.txt",
+ "prompt_sha256": "dd6f2bb19fab12929bae4693c9cd861d3d51a959282f887fef3eaa4784e3a92a",
+ "answer": "The field is `transformResponse`. It sits under the provider's `config` block and takes either an inline expression or a file reference.\n\nIn the red-team docs, the example sets it to an inline expression: \"transformResponse: 'json.output'\" [promptfoo/site/docs/red-team/configuration.md]\n\nThe guardrails docs show it pointing to a file: \"transformResponse: file://./transforms/guardrail-response.mjs\" [promptfoo/site/docs/configuration/expected-outputs/guardrails.md]",
+ "tokens": {
+  "input": 3344,
+  "output": 539,
+  "thinking": 370,
+  "cache_read": 2958,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00037608000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3131,
+  "stop_reason": "end_turn",
+  "session_id": "211600f9-3dec-413d-b3ae-befd9914f333",
+  "total_cost_usd": 0.00037608000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 2958,
+   "output_tokens": 539,
+   "output_tokens_details": {
+    "thinking_tokens": 370
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 539,
+     "cache_read_input_tokens": 2958,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 539,
+    "cacheReadInputTokens": 2958,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.00037608000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 370,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The field is `transformResponse`. It sits under the provider's `config` block and takes either an inline expression or a file reference.\n\nIn the red-team docs, the example sets it to an inline expression: \"transformResponse: 'json.output'\" [promptfoo/site/docs/red-team/configuration.md]\n\nThe guardrails docs show it pointing to a file: \"transformResponse: file://./transforms/guardrail-response.mjs\" [promptfoo/site/docs/configuration/expected-outputs/guardrails.md]",
+  "ttft_ms": 2888,
+  "type": "result",
+  "duration_ms": 3276,
+  "uuid": "50083bc1-c679-4ef1-97a9-f9bee16c49cd",
+  "ttft_stream_ms": 2887,
+  "time_to_request_ms": 176,
+  "first_content_frame_ms": 2887,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

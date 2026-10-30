@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 1,
+ "started_utc": "2026-10-29T17:15:34Z",
+ "seconds": 9.68,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "Promptfoo version 0.122.0 stopped supporting Node.js 20. This information is found in the release notes for version 0.122.0, specifically under \"BREAKING CHANGES,\" which states:\n\n* \"drop Node.js 20 support\" [4] promptfoo/0.122.0.md (lines 9-23) > [0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > ⚠ BREAKING CHANGES\n\nThis indicates that starting with version 0.122.0, Node.js 20 is no longer supported. [4] promptfoo/0.122.0.md (lines 9-23) [4] promptfoo/0.122.0.md (lines 29-31)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1777,
+  "output": 183
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10559311300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:15:45.333624Z",
+  "response": "Promptfoo version 0.122.0 stopped supporting Node.js 20. This information is found in the release notes for version 0.122.0, specifically under \"BREAKING CHANGES,\" which states:\n\n* \"drop Node.js 20 support\" [4] promptfoo/0.122.0.md (lines 9-23) > [0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > ⚠ BREAKING CHANGES\n\nThis indicates that starting with version 0.122.0, Node.js 20 is no longer supported. [4] promptfoo/0.122.0.md (lines 9-23) [4] promptfoo/0.122.0.md (lines 29-31)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10559311300,
+  "load_duration": 13579300,
+  "prompt_eval_count": 1777,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 943048000,
+  "eval_count": 183,
+  "eval_duration": 9277218000
+ }
+}

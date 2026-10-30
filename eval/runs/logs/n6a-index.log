@@ -1,0 +1,184 @@
+== 2026-10-29T15:39:25Z status before
+cerebrollm status  domain=org  table=chunks
+documents 1412  chunks 13431
+tier status      documents  chunks
+T3   current          1411   13382
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1416  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-28T20:31:41+0000  mode=full  duration=583.2s  chunks embedded=13431
+embedding model: qwen3-embedding:0.6b  digest: ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d  num_ctx: 8192
+same: ollama/v0.32.10.md
+same: ollama/v0.32.7.md
+same: ollama/v0.32.8.md
+same: ollama/v0.34.1.md
+same: ollama/v0.34.3.md
+same: ollama/v0.35.0.md
+same: ollama/v0.35.1.md
+same: ollama/v0.40.11.md
+same: ollama/v0.40.12.md
+same: ollama/v0.40.13.md
+same: ollama/v0.40.4.md
+same: ollama/v0.40.5.md
+same: ollama/v0.40.8.md
+same: ollama/v0.40.9.md
+same: promptfoo/0.122.0.md
+same: promptfoo/0.123.0.md
+same: promptfoo/0.124.0.md
+same: promptfoo/0.125.0.md
+same: llama_index/v0.14.24.md
+same: llama_index/v0.14.25.md
+== 2026-10-29T15:39:29Z waiting for gpu.lock
+== 2026-10-29T15:39:29Z lock held, index start
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<repo>/engine/cerebrollm/__main__.py", line 5, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<repo>/engine/cerebrollm/cli.py", line 48, in main
+    print(json.dumps(run_index(cfg, changed=args.changed), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/engine/cerebrollm/indexer.py", line 84, in run_index
+    nodes = pipeline.run(documents=docs, show_progress=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index_instrumentation/dispatcher.py", line 413, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/ingestion/pipeline.py", line 638, in run
+    nodes = run_transformations(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/ingestion/pipeline.py", line 110, in run_transformations
+    nodes = transform(nodes, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index_instrumentation/dispatcher.py", line 413, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/base/embeddings/base.py", line 639, in __call__
+    embeddings = self.get_text_embedding_batch(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index_instrumentation/dispatcher.py", line 413, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/base/embeddings/base.py", line 517, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/embeddings/ollama/base.py", line 95, in _get_text_embeddings
+    return self.get_general_text_embeddings(formatted_texts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/embeddings/ollama/base.py", line 104, in get_general_text_embeddings
+    result = self._client.embed(
+             ^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/ollama/_client.py", line 442, in embed
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/ollama/_client.py", line 203, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/ollama/_client.py", line 147, in _request_raw
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: do embedding request: Post "http://127.0.0.1:63468/v1/embeddings": dial tcp 127.0.0.1:63468: connectex: Only one usage of each socket address (protocol/network address/port) is normally permitted. (status code: 400)
+index exit 1
+== 2026-10-29T15:40:43Z lock released
+== 2026-10-29T15:40:43Z status after
+cerebrollm status  domain=org  table=chunks
+documents 1412  chunks 13431
+tier status      documents  chunks
+T3   current          1411   13382
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1416  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-28T20:31:41+0000  mode=full  duration=583.2s  chunks embedded=13431
+embedding model: qwen3-embedding:0.6b  digest: ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d  num_ctx: 8192
+== attempt 2 (paced) ==
+== 2026-10-29T15:41:56Z status before
+cerebrollm status  domain=org  table=chunks
+documents 1412  chunks 13431
+tier status      documents  chunks
+T3   current          1411   13382
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1416  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-28T20:31:41+0000  mode=full  duration=583.2s  chunks embedded=13431
+embedding model: qwen3-embedding:0.6b  digest: ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d  num_ctx: 8192
+exists, kept: ollama/v0.32.10.md
+same: ollama/v0.32.10.md
+exists, kept: ollama/v0.32.7.md
+same: ollama/v0.32.7.md
+exists, kept: ollama/v0.32.8.md
+same: ollama/v0.32.8.md
+exists, kept: ollama/v0.34.1.md
+same: ollama/v0.34.1.md
+exists, kept: ollama/v0.34.3.md
+same: ollama/v0.34.3.md
+exists, kept: ollama/v0.35.0.md
+same: ollama/v0.35.0.md
+exists, kept: ollama/v0.35.1.md
+same: ollama/v0.35.1.md
+exists, kept: ollama/v0.40.11.md
+same: ollama/v0.40.11.md
+exists, kept: ollama/v0.40.12.md
+same: ollama/v0.40.12.md
+exists, kept: ollama/v0.40.13.md
+same: ollama/v0.40.13.md
+exists, kept: ollama/v0.40.4.md
+same: ollama/v0.40.4.md
+exists, kept: ollama/v0.40.5.md
+same: ollama/v0.40.5.md
+exists, kept: ollama/v0.40.8.md
+same: ollama/v0.40.8.md
+exists, kept: ollama/v0.40.9.md
+same: ollama/v0.40.9.md
+exists, kept: promptfoo/0.122.0.md
+same: promptfoo/0.122.0.md
+exists, kept: promptfoo/0.123.0.md
+same: promptfoo/0.123.0.md
+exists, kept: promptfoo/0.124.0.md
+same: promptfoo/0.124.0.md
+exists, kept: promptfoo/0.125.0.md
+same: promptfoo/0.125.0.md
+exists, kept: llama_index/v0.14.24.md
+same: llama_index/v0.14.24.md
+exists, kept: llama_index/v0.14.25.md
+same: llama_index/v0.14.25.md
+== 2026-10-29T15:41:59Z waiting for gpu.lock
+== 2026-10-29T15:41:59Z lock held, index start
+{
+  "mode": "full",
+  "duration_s": 594.7,
+  "documents": 1432,
+  "chunks_embedded": 13627,
+  "chunks_located": 13627,
+  "chunks_per_min": 1375,
+  "skipped_rule": {},
+  "skipped_secret": [
+    "notes:promptfoo/site/docs/providers/slack.md",
+    "notes:promptfoo/site/docs/providers/http.md"
+  ],
+  "no_rule": 0,
+  "files_seen": 1436,
+  "duplicates_collapsed": 2,
+  "backoff_seconds": 0.0,
+  "pace_max_texts_per_second": 25,
+  "wall_seconds": 594.9
+}
+index exit 0
+== 2026-10-29T15:51:56Z lock released
+== 2026-10-29T15:51:56Z status after
+cerebrollm status  domain=org  table=chunks
+documents 1432  chunks 13627
+tier status      documents  chunks
+T3   current          1431   13578
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1436  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-29T15:51:55+0000  mode=full  duration=594.7s  chunks embedded=13627
+embedding model: qwen3-embedding:0.6b  digest: ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d  num_ctx: 8192

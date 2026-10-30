@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-15",
+ "run": 1,
+ "started_utc": "2026-10-29T17:13:28Z",
+ "seconds": 4.79,
+ "prompt_sha256": "2ae30404b1685d3b484219c6e90a4e895d45b50e4711a03a3b84c2bd8a751c88",
+ "answer": "I do not know which specific `promptfoo` command exports an evaluation to a Parquet file. Without specific documentation or further context about the `promptfoo` tool and its commands, it's difficult to provide an accurate answer. Parquet is a columnar storage file format often used for storing large datasets, but the exact command would depend on how `promptfoo` is designed to handle file exports. If you have access to `promptfoo` documentation or support resources, those would be the best places to look for this information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 46,
+  "output": 108
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5138981600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:13:34.836579Z",
+  "response": "I do not know which specific `promptfoo` command exports an evaluation to a Parquet file. Without specific documentation or further context about the `promptfoo` tool and its commands, it's difficult to provide an accurate answer. Parquet is a columnar storage file format often used for storing large datasets, but the exact command would depend on how `promptfoo` is designed to handle file exports. If you have access to `promptfoo` documentation or support resources, those would be the best places to look for this information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5138981600,
+  "load_duration": 13481400,
+  "prompt_eval_count": 46,
+  "prompt_eval_cached_count": 30,
+  "prompt_eval_duration": 157447000,
+  "eval_count": 108,
+  "eval_duration": 4949480000
+ }
+}

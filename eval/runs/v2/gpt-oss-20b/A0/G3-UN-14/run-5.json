@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-14",
+ "run": 5,
+ "started_utc": "2026-10-29T16:54:43Z",
+ "seconds": 4.32,
+ "prompt_sha256": "9d067e0c6b7ba45e0eaf44837d4b94f745188a5d9fde256f833802a42f3aab92",
+ "answer": "I do not know.",
+ "thinking_chars": 1008,
+ "tokens": {
+  "input": 106,
+  "output": 257
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4602301600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:54:48.5200909Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the default value of promptfoo's evaluateOptions.maxTokensPerCell?\" The user says \"Answer from what you know about this project; if you do not know, say you do not know.\"\n\nWe need to know about promptfoo. It's a library? EvaluateOptions likely part of promptfoo's configuration. We need default value of maxTokensPerCell. I don't know offhand. Let's think: Promptfoo is an open-source tool for evaluating LLM prompts. It has a configuration YAML. The evaluateOptions might include maxTokensPerCell. Might be an integer. Could be something like 1000 or 2000. But we need to be sure. We could try to recall from docs: I think there is a default of 2000 tokens per cell? Not sure.\n\nWe need to answer with \"I do not know\" if uncertain. But it's safer to say we don't know. The user wants an answer. But we can say \"I do not know.\" The instructions: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we must say we don't know. That seems best.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4602301600,
+  "load_duration": 14724300,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 184067000,
+  "eval_count": 257,
+  "eval_duration": 4390975000
+ }
+}

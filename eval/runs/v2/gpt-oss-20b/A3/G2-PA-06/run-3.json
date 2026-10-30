@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 3,
+ "started_utc": "2026-10-29T16:35:22Z",
+ "seconds": 5.35,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "The 0.11.10 release of **llama‑index‑llms‑anthropic** sets the context window for Claude Opus 4.6 to **1 million tokens**.  \n\n\"fix(anthropic): correct Opus 4.6 context window to 1M\" [1]",
+ "thinking_chars": 892,
+ "tokens": {
+  "input": 1609,
+  "output": 339
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5934006800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:35:27.9061788Z",
+  "response": "The 0.11.10 release of **llama‑index‑llms‑anthropic** sets the context window for Claude Opus 4.6 to **1 million tokens**.  \n\n\"fix(anthropic): correct Opus 4.6 context window to 1M\" [1]",
+  "thinking": "We need to answer the question: \"What context window does llama-index-llms-anthropic 0.11.10 set for Claude Opus 4.6?\" We need to find from context lines referencing context window for Claude Opus 4.6 in version 0.11.10. Let's search context: In [1] we see \"fix(anthropic): correct Opus 4.6 context window to 1M\". That says correct Opus 4.6 context window to 1M. That likely sets to 1M tokens. So answer: 1M tokens. Provide quote: \"fix(anthropic): correct Opus 4.6 context window to 1M\" [1]. But maybe other lines mention context window. In [4] we see \"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6\". That is earlier. But the question is specifically about llama-index-llms-anthropic 0.11.10. So use [1] line. Provide the quote. Also maybe mention that context window is 1M tokens. So answer: The context window is set to 1 million tokens. Provide the quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5934006800,
+  "load_duration": 14871800,
+  "prompt_eval_count": 1609,
+  "prompt_eval_cached_count": 1604,
+  "prompt_eval_duration": 56115000,
+  "eval_count": 339,
+  "eval_duration": 5803779000
+ }
+}

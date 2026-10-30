@@ -1,0 +1,53 @@
+name: tests
+
+# Runs only the tests that need no PostgreSQL, Ollama or GPU. The tests that do need them
+# (engine/tests/test_end_to_end.py, test_swap.py and the stdio case in test_mcp_server.py) stay in the
+# repository and skip themselves with the cause when the database is not reachable, as it is on a runner.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install the package and pytest (no reranker extra, no GPU)
+        run: pip install ".[test]"
+      - name: Engine tests
+        working-directory: engine
+        run: python -m pytest -q -rs tests
+      - name: Evaluation tests
+        working-directory: eval
+        run: |
+          python test_grade.py
+          python -m unittest test_judge test_check_items_v2 test_run_v2
+      - name: Model study script tests
+        working-directory: research/model-study
+        run: python -m unittest test_model_guard test_r1_live_index test_r2 test_selection_replay test_study_configs test_studyconfig
+
+  package:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the sdist and the wheel
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Install the wheel into a fresh environment and run the help commands
+        run: |
+          python -m venv "$RUNNER_TEMP/wheel-env"
+          "$RUNNER_TEMP/wheel-env/bin/pip" install dist/*.whl
+          "$RUNNER_TEMP/wheel-env/bin/cerebrollm" --help
+          "$RUNNER_TEMP/wheel-env/bin/cerebrollm" ask --help

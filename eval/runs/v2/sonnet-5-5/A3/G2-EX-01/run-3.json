@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 3,
+ "started_utc": "2026-10-29T15:57:37Z",
+ "seconds": 9.86,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "Release 0.34.3 extended the `GET /api/show` endpoint.\n\nThe release notes say: \"`GET /api/show` now advertises each model's thinking controls and default\" [ollama/v0.34.3.md].\n\nThe response includes a top-level `thinking` object with `values` and `default`. The release's own example request uses `curl` with a JSON body, and the Ollama thinking docs also show `/api/show` being called with a POST-style body containing the model name. The docs describe it this way: \"Use `/api/show` to discover the values a model supports and the value Ollama uses by default\" [ollama/docs/capabilities/thinking.md].",
+ "tokens": {
+  "input": 3724,
+  "output": 207,
+  "thinking": 0,
+  "cache_read": 3360,
+  "cache_creation": 362
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.003858,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5509,
+  "stop_reason": "end_turn",
+  "session_id": "9eaa767f-a8c9-4a33-9cd5-e7c1fb8b6026",
+  "total_cost_usd": 0.003858,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 362,
+   "cache_read_input_tokens": 3360,
+   "output_tokens": 207,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 362,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 207,
+     "cache_read_input_tokens": 3360,
+     "cache_creation_input_tokens": 362,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 362
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 207,
+    "cacheReadInputTokens": 3360,
+    "cacheCreationInputTokens": 362,
+    "webSearchRequests": 0,
+    "costUSD": 0.003858,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 362,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Release 0.34.3 extended the `GET /api/show` endpoint.\n\nThe release notes say: \"`GET /api/show` now advertises each model's thinking controls and default\" [ollama/v0.34.3.md].\n\nThe response includes a top-level `thinking` object with `values` and `default`. The release's own example request uses `curl` with a JSON body, and the Ollama thinking docs also show `/api/show` being called with a POST-style body containing the model name. The docs describe it this way: \"Use `/api/show` to discover the values a model supports and the value Ollama uses by default\" [ollama/docs/capabilities/thinking.md].",
+  "ttft_ms": 5573,
+  "type": "result",
+  "duration_ms": 5601,
+  "uuid": "cbb7e6bf-1796-41e0-8e4d-6fee67ba2095",
+  "ttft_stream_ms": 4121,
+  "time_to_request_ms": 110,
+  "first_content_frame_ms": 4121,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

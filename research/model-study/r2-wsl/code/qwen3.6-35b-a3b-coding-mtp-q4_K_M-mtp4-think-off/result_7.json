@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/138",
+  "index": 7,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 4
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:00:37.8269245Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    # The smallest sum of 4 positive even numbers is 2 + 2 + 2 + 2 = 8\n    # All positive even numbers are >= 2\n    # So the minimum sum is 8\n    # Also, the sum of 4 even numbers is always even\n    # So n must be even and >= 8\n    \n    if n < 8 or n % 2 != 0:\n        return False\n    \n    # For any even n >= 8, we can write it as the sum of 4 positive even numbers\n    # For example: 2, 2, 2, n-6 (where n-6 is even and >= 2 when n >= 8)\n    return True\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3895089600,
+    "load_duration": 12844600,
+    "prompt_eval_count": 110,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 508433000,
+    "eval_count": 236,
+    "eval_duration": 3320226000
+  },
+  "wall_seconds": 3.638501011999324,
+  "load_average_before": [
+    1.94921875,
+    0.55224609375,
+    0.1884765625
+  ],
+  "load_average_after": [
+    1.79296875,
+    0.54296875,
+    0.18701171875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off-7",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_7.py"
+    ],
+    "wall_seconds": 0.9460534730023937,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

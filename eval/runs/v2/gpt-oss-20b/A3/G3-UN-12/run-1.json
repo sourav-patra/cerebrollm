@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 1,
+ "started_utc": "2026-10-29T16:16:00Z",
+ "seconds": 13.56,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I’m not aware of a `--max-retries` flag being documented in the command‑line docs that ship with Promptfoo.  \nHowever, the built‑in retry logic that Promptfoo uses for provider calls defaults to **3 retries** (provider‑level) and **4 retries** (HTTP‑level) unless overridden by a provider’s own `maxRetries` setting.\n\n> \"Retries `callApi()` with 1‑second base backoff, up to **3 times by default**.\"  \n>  [promptfoo/site/docs/configuration/rate-limits.md]",
+ "thinking_chars": 2287,
+ "tokens": {
+  "input": 1681,
+  "output": 685
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 14512250600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:16:14.798408Z",
+  "response": "I’m not aware of a `--max-retries` flag being documented in the command‑line docs that ship with Promptfoo.  \nHowever, the built‑in retry logic that Promptfoo uses for provider calls defaults to **3 retries** (provider‑level) and **4 retries** (HTTP‑level) unless overridden by a provider’s own `maxRetries` setting.\n\n> \"Retries `callApi()` with 1‑second base backoff, up to **3 times by default**.\"  \n>  [promptfoo/site/docs/configuration/rate-limits.md]",
+  "thinking": "We need to answer question: \"What is the default value of the --max-retries flag of promptfoo eval?\" We need to search context. The context contains docs about rate limits, backoff config, provider-level retry, HTTP-level retry. It mentions defaults: provider-level retry (scheduler) defaults to 1-second base backoff, up to 3 times by default. HTTP-level retry defaults to 4 retries, or provider's maxRetries when set. But question: default value of the --max-retries flag of promptfoo eval. Might refer to a CLI flag that sets max retries for eval? The context doesn't mention \"max-retries\" flag in command line docs. Search context: The rate limits doc uses maxRetries. The question may be about the CLI flag that sets max retries for eval. But I don't see that flag in provided context. Maybe the flag is part of `promptfoo eval` CLI options. Not included in excerpt.\n\nWe need to answer based on what we know. We should say: The default is 3 retries for provider-level, 4 for HTTP-level. But the question specifically: default value of the --max-retries flag of promptfoo eval. Might be default 3? The context: \"Promptfoo has two retry layers: 1. Provider-level retry (scheduler): Retries callApi() with 1-second base backoff, up to 3 times by default. 2. HTTP-level retry: Retries failed HTTP requests. Defaults to 4 retries, or the provider's maxRetries when set.\" So if you don't set --max-retries, it uses provider's maxRetries? Wait, the flag is for eval? The docs may have a flag that sets maxRetries. The default value might be 3. But we need to cite a line. The relevant line: \"Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" That line is in context [3] lines 95-113. So we can quote that. But the question is about --max-retries flag of promptfoo eval. If that flag exists, maybe it sets provider's maxRetries. But the docs don't mention --max-retries flag. We could answer that we don't know. But we have context that default provider-level retry is 3. So maybe answer: default is 3. Provide quote. Let's find exact line: In [3] lines 95-113: \"Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" We'll quote. And also mention HTTP-level default 4. But question: default value of --max-retries flag. Likely 3. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 14512250600,
+  "load_duration": 13509800,
+  "prompt_eval_count": 1681,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 791092000,
+  "eval_count": 685,
+  "eval_duration": 13662695000
+ }
+}

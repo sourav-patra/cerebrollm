@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/112",
+  "index": 22,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef reverse_delete(s,c):\n    \"\"\"Task\n    We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\n    then check if the result string is palindrome.\n    A string is called palindrome if it reads the same backward as forward.\n    You should return a tuple containing the result string and True/False for the check.\n    Example\n    For s = \"abcde\", c = \"ae\", the result should be ('bcd',False)\n    For s = \"abcdef\", c = \"b\"  the result should be ('acdef',False)\n    For s = \"abcdedcba\", c = \"ab\", the result should be ('cdedc',True)\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:32:25.2134761Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef reverse_delete(s, c):\n    import string\n    result = ''.join([char for char in s if char not in c])\n    is_palindrome = result == result[::-1]\n    return (result, is_palindrome)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 2242457500,
+    "load_duration": 25300600,
+    "prompt_eval_count": 197,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 120291000,
+    "eval_count": 53,
+    "eval_duration": 2072186000
+  },
+  "wall_seconds": 2.097482907000085,
+  "load_average_before": [
+    0.3017578125,
+    0.10302734375,
+    0.02734375
+  ],
+  "load_average_after": [
+    0.3017578125,
+    0.10302734375,
+    0.02734375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-off-22",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_22.py"
+    ],
+    "wall_seconds": 0.8021997830001055,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

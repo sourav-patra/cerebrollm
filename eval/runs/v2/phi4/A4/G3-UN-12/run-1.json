@@ -1,0 +1,89 @@
+{
+ "model": "phi4",
+ "arm": "A4",
+ "id": "G3-UN-12",
+ "run": 1,
+ "started_utc": "2026-10-30T07:11:14Z",
+ "seconds": 29.28,
+ "prompt_sha256": "d8f843a690c2086ae808478b6186c5e95f3c23ea61785ee2e0468112be4371f8",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 4.72,
+   "rerank": 8.12,
+   "generate": 13.6,
+   "verify": 0.0,
+   "total": 26.44
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 3,
+    "rerank_score": 0.95753,
+    "path": "promptfoo/site/docs/configuration/rate-limits.md",
+    "line_start": 95,
+    "line_end": 113
+   },
+   {
+    "rank": 2,
+    "search_rank": 9,
+    "rerank_score": 0.93888,
+    "path": "promptfoo/site/docs/providers/sagemaker.md",
+    "line_start": 507,
+    "line_end": 517
+   },
+   {
+    "rank": 3,
+    "search_rank": 19,
+    "rerank_score": 0.8007,
+    "path": "promptfoo/site/docs/getting-started.md",
+    "line_start": 231,
+    "line_end": 294
+   },
+   {
+    "rank": 4,
+    "search_rank": 6,
+    "rerank_score": 0.67577,
+    "path": "promptfoo/site/docs/configuration/reference.md",
+    "line_start": 226,
+    "line_end": 278
+   },
+   {
+    "rank": 5,
+    "search_rank": 14,
+    "rerank_score": 0.66578,
+    "path": "promptfoo/site/docs/configuration/expected-outputs/model-graded/index.md",
+    "line_start": 1,
+    "line_end": 30
+   },
+   {
+    "rank": 6,
+    "search_rank": 4,
+    "rerank_score": 0.65686,
+    "path": "promptfoo/site/docs/usage/troubleshooting.md",
+    "line_start": 356,
+    "line_end": 373
+   },
+   {
+    "rank": 7,
+    "search_rank": 8,
+    "rerank_score": 0.65423,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 8,
+    "line_end": 66
+   },
+   {
+    "rank": 8,
+    "search_rank": 12,
+    "rerank_score": 0.65316,
+    "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+    "line_start": 721,
+    "line_end": 769
+   }
+  ],
+  "model": "phi4"
+ }
+}

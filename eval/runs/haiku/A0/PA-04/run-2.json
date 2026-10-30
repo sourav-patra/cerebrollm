@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-04",
+ "run": 2,
+ "started_utc": "2026-10-29T01:47:11Z",
+ "seconds": 7.41,
+ "prompt_file": "runs/prompts/A0/PA-04.txt",
+ "prompt_sha256": "99c2ac73a9bbb1ba3c7d062879c149968b1d08b5af6447e11ae05f62f7481549",
+ "answer": "If the Modelfile doesn't set `temperature`, Ollama uses **0.8**, which is the default listed in its Modelfile documentation.\n\nIf the Modelfile inherits from a base model (`FROM ...`) that defines its own temperature, that base model's value applies instead. I'm working from memory and haven't checked the current source, so confirm against the Ollama docs if the exact default matters for your setup.",
+ "tokens": {
+  "input": 658,
+  "output": 351,
+  "thinking": 218,
+  "cache_read": 0,
+  "cache_creation": 656
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00030690000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2774,
+  "stop_reason": "end_turn",
+  "session_id": "88dd3f35-91e5-4044-8541-26542e9b4cc9",
+  "total_cost_usd": 0.00030690000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 656,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 351,
+   "output_tokens_details": {
+    "thinking_tokens": 218
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 656,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 351,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 656,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 656
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 351,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 656,
+    "webSearchRequests": 0,
+    "costUSD": 0.00030690000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 218,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 656,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "If the Modelfile doesn't set `temperature`, Ollama uses **0.8**, which is the default listed in its Modelfile documentation.\n\nIf the Modelfile inherits from a base model (`FROM ...`) that defines its own temperature, that base model's value applies instead. I'm working from memory and haven't checked the current source, so confirm against the Ollama docs if the exact default matters for your setup.",
+  "ttft_ms": 2860,
+  "type": "result",
+  "duration_ms": 2894,
+  "uuid": "445f00d0-6ce0-4c01-8a71-bd721b1e070c",
+  "ttft_stream_ms": 2859,
+  "time_to_request_ms": 156,
+  "first_content_frame_ms": 2859,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

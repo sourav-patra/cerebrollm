@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-12",
+ "run": 1,
+ "started_utc": "2026-10-29T16:10:21Z",
+ "seconds": 4.12,
+ "prompt_sha256": "e1200184b323a2c8814ad450516cddee19c4dbcd96f07faf83c21a3a790ea8a1",
+ "answer": "I’m not sure.",
+ "thinking_chars": 924,
+ "tokens": {
+  "input": 107,
+  "output": 244
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4357230500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:10:26.3311001Z",
+  "response": "I’m not sure.",
+  "thinking": "We need to answer: default value of --max-retries flag of promptfoo eval. We need knowledge about promptfoo eval tool. I need to recall from memory: promptfoo is a CLI tool for evaluating prompts. The eval command likely has flags like --max-retries. I need default value. Might be 3? 5? Could be 3. Let's search memory: I've seen documentation: \"promptfoo eval [options]\" includes --max-retries number of times to retry when a request fails. Default is 3? I think yes. But let's think: In many CLI tools, default retries is 3. But maybe it's 5. Let's consider typical default: 5. However, if no info, we can say we don't know. But the instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we need to answer with knowledge. I think I recall reading that default max-retries is 3. But I'm not entirely sure. Could also be 5. Let's approximate: default is 3. We'll answer: 3.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4357230500,
+  "load_duration": 13940400,
+  "prompt_eval_count": 107,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 189536000,
+  "eval_count": 244,
+  "eval_duration": 4135622000
+ }
+}

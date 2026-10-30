@@ -1,0 +1,57 @@
+=== 2026-10-28T22:34:46Z r2_wsl.py correctness qwen3:8b
+guard pull qwen3:8b exit 0 qwen3:8b digest 500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41 
+qwen3-8b-thinking-off code 1 passed False
+qwen3-8b-thinking-off code 2 passed False
+qwen3-8b-thinking-off code 3 passed True
+qwen3-8b-thinking-off code 4 passed True
+qwen3-8b-thinking-off code 5 passed True
+qwen3-8b-thinking-off code 6 passed True
+qwen3-8b-thinking-off code 7 passed True
+qwen3-8b-thinking-off code 8 passed True
+qwen3-8b-thinking-off code 9 passed True
+qwen3-8b-thinking-off code 10 passed True
+qwen3-8b-thinking-off code 11 passed True
+qwen3-8b-thinking-off code 12 passed True
+qwen3-8b-thinking-off code 13 passed True
+qwen3-8b-thinking-off code 14 passed True
+qwen3-8b-thinking-off code 15 passed True
+qwen3-8b-thinking-off code 16 passed True
+qwen3-8b-thinking-off code 17 passed True
+qwen3-8b-thinking-off code 18 passed False
+qwen3-8b-thinking-off code 19 passed True
+qwen3-8b-thinking-off code 20 passed True
+qwen3-8b-thinking-off code 21 passed True
+qwen3-8b-thinking-off code 22 passed True
+qwen3-8b-thinking-off code 23 passed False
+qwen3-8b-thinking-off code 24 passed True
+qwen3-8b-thinking-off code 25 passed True
+qwen3-8b-thinking-off code 26 passed False
+qwen3-8b-thinking-off code 27 passed True
+qwen3-8b-thinking-off code 28 passed True
+qwen3-8b-thinking-off code 29 passed True
+qwen3-8b-thinking-off code 30 passed True
+qwen3-8b-thinking-off code 31 passed True
+qwen3-8b-thinking-off code 32 passed True
+qwen3-8b-thinking-off code 33 passed False
+qwen3-8b-thinking-off code 34 passed True
+qwen3-8b-thinking-off code 35 passed True
+qwen3-8b-thinking-off code 36 passed True
+qwen3-8b-thinking-off code 37 passed True
+qwen3-8b-thinking-off code 38 passed False
+qwen3-8b-thinking-off code 39 passed True
+qwen3-8b-thinking-off code 40 passed True
+qwen3-8b-thinking-off tools 1 True
+qwen3-8b-thinking-off tools 2 True
+qwen3-8b-thinking-off tools 3 True
+qwen3-8b-thinking-off tools 4 True
+qwen3-8b-thinking-off tools 5 True
+qwen3-8b-thinking-off tools 6 True
+qwen3-8b-thinking-off tools 7 True
+qwen3-8b-thinking-off tools 8 True
+qwen3-8b-thinking-off tools 9 True
+qwen3-8b-thinking-off tools 10 True
+qwen3-8b-thinking-off tools 11 True
+qwen3-8b-thinking-off tools 12 True
+guard unload qwen3:8b exit 0 qwen3:8b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T22:36:34Z

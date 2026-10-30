@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-20",
+ "run": 2,
+ "started_utc": "2026-10-29T01:53:06Z",
+ "seconds": 7.4,
+ "prompt_file": "runs/prompts/A3/PA-20.txt",
+ "prompt_sha256": "3b49fb9497a849897658872d7fb3523498fe09b1c89ce08f3d711b0f10ab9a41",
+ "answer": "No, the end index is excluded. The docs say so directly:\n\n\"The first test has index `0`, the `start` index is included, and the `end` index is excluded:\" [promptfoo/site/docs/usage/command-line.md]\n\nSo `--filter-range 0:100` runs tests 0 through 99. The same docs give this example: \"promptfoo eval --filter-range 0:100   # tests 0 through 99\" [promptfoo/site/docs/usage/command-line.md].",
+ "tokens": {
+  "input": 3013,
+  "output": 369,
+  "thinking": 216,
+  "cache_read": 2626,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00028796000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2760,
+  "stop_reason": "end_turn",
+  "session_id": "28ea9bde-f765-4b84-964d-69dcf5c33c62",
+  "total_cost_usd": 0.00028796000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2626,
+   "output_tokens": 369,
+   "output_tokens_details": {
+    "thinking_tokens": 216
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 369,
+     "cache_read_input_tokens": 2626,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 369,
+    "cacheReadInputTokens": 2626,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00028796000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 216,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, the end index is excluded. The docs say so directly:\n\n\"The first test has index `0`, the `start` index is included, and the `end` index is excluded:\" [promptfoo/site/docs/usage/command-line.md]\n\nSo `--filter-range 0:100` runs tests 0 through 99. The same docs give this example: \"promptfoo eval --filter-range 0:100   # tests 0 through 99\" [promptfoo/site/docs/usage/command-line.md].",
+  "ttft_ms": 2845,
+  "type": "result",
+  "duration_ms": 2888,
+  "uuid": "0df10aff-8fde-4dff-a03f-152273778c40",
+  "ttft_stream_ms": 2843,
+  "time_to_request_ms": 160,
+  "first_content_frame_ms": 2844,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

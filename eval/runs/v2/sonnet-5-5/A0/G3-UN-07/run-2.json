@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:34Z",
+ "seconds": 9.0,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I don't know of an Ollama environment variable named `OLLAMA_KV_CACHE_RETENTION`, so I can't give you a default for it.\n\nThe KV cache–related settings I do know of are `OLLAMA_KV_CACHE_TYPE` (cache quantization, e.g. `f16`, `q8_0`, `q4_0`; default `f16`) and `OLLAMA_FLASH_ATTENTION`. For keeping models loaded, there's `OLLAMA_KEEP_ALIVE` (default 5 minutes). If `OLLAMA_KV_CACHE_RETENTION` was added in a newer release, I don't have reliable information on it. The Ollama docs, FAQ, or `ollama serve --help` output for your installed version would be the best place to confirm.",
+ "tokens": {
+  "input": 646,
+  "output": 265,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 644
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00523,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4921,
+  "stop_reason": "end_turn",
+  "session_id": "524ba554-881d-4f30-a6e3-24bf70c6af64",
+  "total_cost_usd": 0.00523,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 644,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 265,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 644,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 265,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 644,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 644
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 265,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 644,
+    "webSearchRequests": 0,
+    "costUSD": 0.00523,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 644,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an Ollama environment variable named `OLLAMA_KV_CACHE_RETENTION`, so I can't give you a default for it.\n\nThe KV cache–related settings I do know of are `OLLAMA_KV_CACHE_TYPE` (cache quantization, e.g. `f16`, `q8_0`, `q4_0`; default `f16`) and `OLLAMA_FLASH_ATTENTION`. For keeping models loaded, there's `OLLAMA_KEEP_ALIVE` (default 5 minutes). If `OLLAMA_KV_CACHE_RETENTION` was added in a newer release, I don't have reliable information on it. The Ollama docs, FAQ, or `ollama serve --help` output for your installed version would be the best place to confirm.",
+  "ttft_ms": 4979,
+  "type": "result",
+  "duration_ms": 5015,
+  "uuid": "5f35f94f-4b1a-4769-8c57-31e00363adb3",
+  "ttft_stream_ms": 2989,
+  "time_to_request_ms": 124,
+  "first_content_frame_ms": 2989,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

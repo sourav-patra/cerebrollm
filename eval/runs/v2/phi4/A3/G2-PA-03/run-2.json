@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 2,
+ "started_utc": "2026-10-29T17:22:09Z",
+ "seconds": 13.72,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "The Nemotron 3.5 Bolt model is a compact version of the Nemotron 3.5 Super model, designed to fit a 24 GB NVIDIA GPU for everyday agentic tasks. It has a total of 74 billion parameters, with 9 billion of those being active per token. This information is derived from the context provided in:\n\n- \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md (lines 1-14)](https://github.com/ollama/ollama/releases/tag/v0.40.5) \n\nTherefore, the Nemotron 3.5 Bolt model has 74 billion total parameters and 9 billion active parameters.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2036,
+  "output": 203
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11659814400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:22:21.7179922Z",
+  "response": "The Nemotron 3.5 Bolt model is a compact version of the Nemotron 3.5 Super model, designed to fit a 24 GB NVIDIA GPU for everyday agentic tasks. It has a total of 74 billion parameters, with 9 billion of those being active per token. This information is derived from the context provided in:\n\n- \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md (lines 1-14)](https://github.com/ollama/ollama/releases/tag/v0.40.5) \n\nTherefore, the Nemotron 3.5 Bolt model has 74 billion total parameters and 9 billion active parameters.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11659814400,
+  "load_duration": 12226100,
+  "prompt_eval_count": 2036,
+  "prompt_eval_cached_count": 106,
+  "prompt_eval_duration": 1026967000,
+  "eval_count": 203,
+  "eval_duration": 10453142000
+ }
+}

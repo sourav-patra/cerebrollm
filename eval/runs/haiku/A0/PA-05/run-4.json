@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-05",
+ "run": 4,
+ "started_utc": "2026-10-29T01:47:38Z",
+ "seconds": 7.26,
+ "prompt_file": "runs/prompts/A0/PA-05.txt",
+ "prompt_sha256": "1e7c005d83aa3053be2f1cbf3eac815e0ada8d0683ab8098a61cb12eea1b4039",
+ "answer": "By default, the Ollama server listens on **127.0.0.1 (localhost) port 11434**.\n\nThe **`OLLAMA_HOST`** environment variable changes the bind address and port. For example, `OLLAMA_HOST=0.0.0.0:11434` makes it listen on all interfaces. On Windows, you can set it under System Environment Variables or in the Ollama app's settings, then restart Ollama.",
+ "tokens": {
+  "input": 662,
+  "output": 249,
+  "thinking": 111,
+  "cache_read": 0,
+  "cache_creation": 660
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0002567,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2831,
+  "stop_reason": "end_turn",
+  "session_id": "018fec07-a076-40b3-ac3b-71fe383950e8",
+  "total_cost_usd": 0.0002567,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 660,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 249,
+   "output_tokens_details": {
+    "thinking_tokens": 111
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 660,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 249,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 660,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 660
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 249,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 660,
+    "webSearchRequests": 0,
+    "costUSD": 0.0002567,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 111,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 660,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "By default, the Ollama server listens on **127.0.0.1 (localhost) port 11434**.\n\nThe **`OLLAMA_HOST`** environment variable changes the bind address and port. For example, `OLLAMA_HOST=0.0.0.0:11434` makes it listen on all interfaces. On Windows, you can set it under System Environment Variables or in the Ollama app's settings, then restart Ollama.",
+  "ttft_ms": 2930,
+  "type": "result",
+  "duration_ms": 2945,
+  "uuid": "ff26fc24-8f37-4894-9f93-4ebd0449c3a9",
+  "ttft_stream_ms": 2929,
+  "time_to_request_ms": 151,
+  "first_content_frame_ms": 2929,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

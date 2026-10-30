@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-12",
+ "run": 2,
+ "started_utc": "2026-10-29T01:41:39Z",
+ "seconds": 7.73,
+ "prompt_file": "runs/prompts/A0/EX-12.txt",
+ "prompt_sha256": "ecf1cb0ff56bdb7139a938daeab02de0c52a80251e8fab85a71b970b5ac2fad6",
+ "answer": "The LlamaIndex OpenAI starter example needs **`OPENAI_API_KEY`** set to your OpenAI API key. LlamaIndex's OpenAI integration reads this variable by default.\n\nI haven't inspected the files in your working directory, so I can't confirm this against your specific copy of the example. If it doesn't work, check the example's README or `.env.example` file for any additional variables.",
+ "tokens": {
+  "input": 659,
+  "output": 258,
+  "thinking": 127,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00026060000000000005,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2804,
+  "stop_reason": "end_turn",
+  "session_id": "6e10a06a-e355-4eb3-b65d-c45c5a465ff4",
+  "total_cost_usd": 0.00026060000000000005,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 258,
+   "output_tokens_details": {
+    "thinking_tokens": 127
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 258,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 258,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.00026060000000000005,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 127,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The LlamaIndex OpenAI starter example needs **`OPENAI_API_KEY`** set to your OpenAI API key. LlamaIndex's OpenAI integration reads this variable by default.\n\nI haven't inspected the files in your working directory, so I can't confirm this against your specific copy of the example. If it doesn't work, check the example's README or `.env.example` file for any additional variables.",
+  "ttft_ms": 2974,
+  "type": "result",
+  "duration_ms": 2988,
+  "uuid": "8e8b3110-2d98-4356-a4dc-4782c04f9ff0",
+  "ttft_stream_ms": 2973,
+  "time_to_request_ms": 193,
+  "first_content_frame_ms": 2973,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

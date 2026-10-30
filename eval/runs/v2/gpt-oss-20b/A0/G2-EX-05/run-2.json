@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-05",
+ "run": 2,
+ "started_utc": "2026-10-29T16:17:28Z",
+ "seconds": 7.72,
+ "prompt_sha256": "f5453282a54f4164904d9cb3243c4050d7797a59152b249963801a9d37113365",
+ "answer": "I’m sorry, but I don’t have that information.",
+ "thinking_chars": 1792,
+ "tokens": {
+  "input": 110,
+  "output": 460
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8016842900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:17:35.4072142Z",
+  "response": "I’m sorry, but I don’t have that information.",
+  "thinking": "We need to answer: \"What are the three question types supported by Ollama's /v1/systemone decision-model API?\" The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we need to answer based on knowledge. I need to check if I know about Ollama's /v1/systemone decision-model API. I recall Ollama is an open-source LLM framework. There's a /v1 endpoint for Llama/Chat? I'm not sure about \"systemone decision-model API\". Could be a specific API for decision models. The question: \"What are the three question types supported by Ollama's /v1/systemone decision-model API?\" This seems like a specific feature. I don't recall details. I might guess: \"Yes/No\", \"Multiple Choice\", \"Open-ended\"? But we need to be accurate.\n\nLet's search memory: I recall some docs: Ollama's \"system\" endpoint for \"decision\" models. There might be types: \"single\", \"multiple\", \"text\"? Not sure. I can approximate: The API supports \"question\", \"context\", \"options\" maybe? But the question asks \"three question types supported\". Could be: \"Open question\", \"Closed question\", \"Conditional question\"? Hmm.\n\nMaybe I should say I do not know. That might be correct. But if we guess wrong, it's wrong. The user explicitly says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So if uncertain, say \"I do not know.\" That is safe. However, we might attempt to find clues. The \"systemone decision-model API\" might refer to \"SystemOne\" by Ollama? There's an \"Ollama API\" for LLMs. The /v1 endpoint might be for \"systemone\" which is a \"decision model\" that can handle different question types: \"Open-Ended\", \"Single-Choice\", \"Multiple-Choice\"? That is plausible. But I'm not certain.\n\nGiven the instruction, better to say \"I do not know.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8016842900,
+  "load_duration": 13930900,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181123000,
+  "eval_count": 460,
+  "eval_duration": 7805808000
+ }
+}

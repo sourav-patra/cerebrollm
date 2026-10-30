@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-10",
+ "run": 3,
+ "started_utc": "2026-10-29T01:49:24Z",
+ "seconds": 7.83,
+ "prompt_file": "runs/prompts/A0/PA-10.txt",
+ "prompt_sha256": "0747860cbca9eb996234737846beb32c4349170f7fbbbaf0288edf6b28357502",
+ "answer": "Use **`pg_relation_size()`** on the index name, wrapped in `pg_size_pretty()` for readability:\n\n```sql\nSELECT pg_size_pretty(pg_relation_size('my_vector_index'));\n```\n\npgvector's HNSW and IVFFlat indexes are ordinary Postgres index access methods, so the standard size functions work on them. `pg_relation_size()` returns the size of the main fork, which is the index data itself. To include the free space map and visibility map, use `pg_table_size()` or `pg_total_relation_size()` instead. To get the combined size of all indexes on a table, use `pg_indexes_size('my_table')`.",
+ "tokens": {
+  "input": 657,
+  "output": 438,
+  "thinking": 218,
+  "cache_read": 0,
+  "cache_creation": 655
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035020000000000006,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3236,
+  "stop_reason": "end_turn",
+  "session_id": "705910bf-0834-4d2e-91ea-efd08419272a",
+  "total_cost_usd": 0.00035020000000000006,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 655,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 438,
+   "output_tokens_details": {
+    "thinking_tokens": 218
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 655,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 438,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 655,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 655
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 438,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 655,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035020000000000006,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 218,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 655,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **`pg_relation_size()`** on the index name, wrapped in `pg_size_pretty()` for readability:\n\n```sql\nSELECT pg_size_pretty(pg_relation_size('my_vector_index'));\n```\n\npgvector's HNSW and IVFFlat indexes are ordinary Postgres index access methods, so the standard size functions work on them. `pg_relation_size()` returns the size of the main fork, which is the index data itself. To include the free space map and visibility map, use `pg_table_size()` or `pg_total_relation_size()` instead. To get the combined size of all indexes on a table, use `pg_indexes_size('my_table')`.",
+  "ttft_ms": 2840,
+  "type": "result",
+  "duration_ms": 3367,
+  "uuid": "e3686716-b5c5-43fc-8e05-2216f5a3663b",
+  "ttft_stream_ms": 2839,
+  "time_to_request_ms": 168,
+  "first_content_frame_ms": 2839,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

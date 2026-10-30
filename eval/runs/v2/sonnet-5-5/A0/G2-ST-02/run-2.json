@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-ST-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:47Z",
+ "seconds": 9.52,
+ "prompt_sha256": "2d23fc8450ae62e8c4f0b78b5a1d6b1c9851b74705f4ea1c4160f7f8992fd031",
+ "answer": "I don't know. I have no information about an Ollama feature or model called \"Flint,\" and I have no record of Ollama release notes up to version 0.40.13. I'd rather not guess at which operating systems it runs on.\n\nIf you can share the release notes text or a link, I can read them and answer. You could also check the releases page on the Ollama GitHub repository (github.com/ollama/ollama/releases), where each release lists its changes and platform notes.",
+ "tokens": {
+  "input": 652,
+  "output": 185,
+  "thinking": 44,
+  "cache_read": 0,
+  "cache_creation": 650
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004454,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4654,
+  "stop_reason": "end_turn",
+  "session_id": "6c8e0bf5-a689-456e-a8d2-0f6d78ebb523",
+  "total_cost_usd": 0.004454,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 650,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 185,
+   "output_tokens_details": {
+    "thinking_tokens": 44
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 650,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 185,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 650,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 650
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 185,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 650,
+    "webSearchRequests": 0,
+    "costUSD": 0.004454,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 44,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 650,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no information about an Ollama feature or model called \"Flint,\" and I have no record of Ollama release notes up to version 0.40.13. I'd rather not guess at which operating systems it runs on.\n\nIf you can share the release notes text or a link, I can read them and answer. You could also check the releases page on the Ollama GitHub repository (github.com/ollama/ollama/releases), where each release lists its changes and platform notes.",
+  "ttft_ms": 2987,
+  "type": "result",
+  "duration_ms": 4746,
+  "uuid": "ff0890c4-ef6e-4e6e-9075-241762a8a42f",
+  "ttft_stream_ms": 2740,
+  "time_to_request_ms": 130,
+  "first_content_frame_ms": 2741,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

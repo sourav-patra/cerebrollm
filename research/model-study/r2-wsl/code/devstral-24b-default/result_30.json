@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/36",
+  "index": 30,
+  "request": {
+    "model": "devstral:24b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef fizz_buzz(n: int):\n    \"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n    >>> fizz_buzz(50)\n    0\n    >>> fizz_buzz(78)\n    2\n    >>> fizz_buzz(79)\n    3\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "devstral:24b",
+    "created_at": "2026-10-28T21:09:54.6342047Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef fizz_buzz(n: int) -> int:\n    \"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\"\"\"\n    count = 0\n    for i in range(n):\n        if i % 11 == 0 or i % 13 == 0:\n            count += str(i).count('7')\n    return count\n\n# Test cases\nif __name__ == \"__main__\":\n    print(fizz_buzz(50))  # Output: 0\n    print(fizz_buzz(78))  # Output: 2\n    print(fizz_buzz(79))  # Output: 3\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 24512498200,
+    "load_duration": 12655700,
+    "prompt_eval_count": 1337,
+    "prompt_eval_cached_count": 1251,
+    "prompt_eval_duration": 370340000,
+    "eval_count": 160,
+    "eval_duration": 24117001000
+  },
+  "wall_seconds": 23.106351170999915,
+  "load_average_before": [
+    0.1064453125,
+    0.10205078125,
+    0.10107421875
+  ],
+  "load_average_after": [
+    0.0751953125,
+    0.09423828125,
+    0.09716796875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "0\n2\n3\n",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-devstral-24b-default-30",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\devstral-24b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_30.py"
+    ],
+    "wall_seconds": 0.7585098019990255,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-10",
+ "run": 4,
+ "started_utc": "2026-10-29T16:41:04Z",
+ "seconds": 11.22,
+ "prompt_sha256": "f96990a88fb1a5eef44b930657ec637ea126b25fe497dcf48af0b61b819ee3ce",
+ "answer": "I’m not sure. If you need the exact details, I would recommend checking the release notes for llama‑index‑core 0.14.25 or the changelog in the repository.",
+ "thinking_chars": 2663,
+ "tokens": {
+  "input": 106,
+  "output": 688
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11959210800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:41:15.678423Z",
+  "response": "I’m not sure. If you need the exact details, I would recommend checking the release notes for llama‑index‑core 0.14.25 or the changelog in the repository.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: Which two deprecated integrations did llama-index-core 0.14.25 remove?\" So we need to know about the project llama-index-core, specifically version 0.14.25, and which two deprecated integrations it removed. I need to recall or search memory. I don't have external search. I must rely on knowledge. I might not know exactly. But maybe I can guess: The llama-index project (now known as LlamaIndex). Llama-index-core likely had integrations like \"faiss\", \"weaviate\", \"pinecone\", \"elasticsearch\", \"milvus\". But deprecated? Perhaps \"faiss\" integration removed? But which two? I think they removed \"huggingface hub\" integration? Not sure.\n\nLet's think: LlamaIndex is a library for building LLM powered applications. The core package had \"llama_index.core\" etc. They likely had integrations like \"pandas\", \"numpy\", etc. But \"deprecated integrations\" maybe references to \"llama_index.core.integrations\". In v0.14.25, they might have removed \"docstore\" or \"vectorstore\" integrations that were deprecated.\n\nLet's consider the changelog for llama-index-core 0.14.25. I recall some release notes: The version 0.14.25 might have been released around early 2024. I think they removed \"llama_index.core.schema\" and \"llama_index.core.storage\" as separate modules. But the question: \"Which two deprecated integrations did llama-index-core 0.14.25 remove?\" So maybe the answer: \"The `faiss` and `weaviate` integrations were removed.\"\n\nBut I'm not sure. Let's think about LlamaIndex's integration packages: There's llama-index-embeddings-llama, llama-index-embeddings-huggingface, llama-index-embeddings-openai, llama-index-vector-stores-faiss, llama-index-vector-stores-weaviate, llama-index-vector-stores-pinecone, llama-index-vector-stores-milvus, llama-index-vector-stores-qdrant, llama-index-vector-stores-redis, llama-index-vector-stores-neo4j, llama-index-vector-stores-chroma, llama-index-vector-stores-graph-database. But \"deprecated integrations\" might refer to \"llama-index-core\" previously included some vector store integration classes like \"FAISSVectorStore\" or \"WeaviateVectorStore\" which were moved to separate packages. They might have been removed from core. Which two? Possibly \"FAISS\" and \"Weaviate\".\n\nAlternatively, maybe they removed \"Qdrant\" and \"Milvus\" integration. Hmm.\n\nLet's recall: The older llama-index-core had integration classes for \"faiss\" and \"weaviate\" that were flagged as deprecated. They were moved to separate packages. In 0.14.25 they removed them. I think that is likely.\n\nThus answer: \"FAISS and Weaviate\".\n\nI'll answer that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11959210800,
+  "load_duration": 15126800,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 191337000,
+  "eval_count": 688,
+  "eval_duration": 11732499000
+ }
+}

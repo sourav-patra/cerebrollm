@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/19",
+  "index": 39,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": true
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:34:52.1936429Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import List\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n    mapping = {\n        'zero': 0,\n        'one': 1,\n        'two': 2,\n        'three': 3,\n        'four': 4,\n        'five': 5,\n        'six': 6,\n        'seven': 7,\n        'eight': 8,\n        'nine': 9\n    }\n    \n    words = numbers.split()\n    sorted_words = sorted(words, key=lambda x: mapping[x])\n    return \" \".join(sorted_words)\n```",
+      "thinking": "*   Input: A space-delimited string of words representing numbers ('zero' to 'nine').\n    *   Output: A space-delimited string of the same words, sorted by their numerical value (smallest to largest).\n    *   Mapping:\n        *   'zero' -> 0\n        *   'one' -> 1\n        *   'two' -> 2\n        *   'three' -> 3\n        *   'four' -> 4\n        *   'five' -> 5\n        *   'six' -> 6\n        *   'seven' -> 7\n        *   'eight' -> 8\n        *   'nine' -> 9\n\n    *   Split the input string into a list of words.\n    *   Define a mapping from word to integer.\n    *   Sort the list of words based on the integer value.\n    *   Join the sorted list back into a space-delimited string.\n\n    *   `mapping = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}`\n    *   `words = numbers.split()`\n    *   `sorted_words = sorted(words, key=lambda x: mapping[x])`\n    *   `return \" \".join(sorted_words)`\n\n    *   Input: `'three one five'`\n    *   Words: `['three', 'one', 'five']`\n    *   Mapping: `{'three': 3, 'one': 1, 'five': 5}`\n    *   Sorted: `['one', 'three', 'five']`\n    *   Result: `'one three five'` (Correct)\n\n    *   Include `from typing import List`.\n    *   Ensure the function signature matches.\n    *   Provide the complete code block."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4992349200,
+    "load_duration": 14486900,
+    "prompt_eval_count": 150,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 97456000,
+    "eval_count": 687,
+    "eval_duration": 4721988000
+  },
+  "wall_seconds": 4.778793714001949,
+  "load_average_before": [
+    0.220703125,
+    0.13037109375,
+    0.24072265625
+  ],
+  "load_average_after": [
+    0.20263671875,
+    0.1279296875,
+    0.2392578125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-on-39",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-on:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_39.py"
+    ],
+    "wall_seconds": 0.6674296540004434,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

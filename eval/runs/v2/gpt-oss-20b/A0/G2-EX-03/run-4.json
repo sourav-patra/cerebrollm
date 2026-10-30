@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-03",
+ "run": 4,
+ "started_utc": "2026-10-29T16:37:54Z",
+ "seconds": 9.94,
+ "prompt_sha256": "2c755b7ce89cefac47b9aa32769a5b32145573c4a85b9d740bf03c8fb3988b31",
+ "answer": "I’m not sure what the exact context window is for Recursive’s Flint model on Ollama. I don’t have that specific detail in my knowledge base.",
+ "thinking_chars": 1650,
+ "tokens": {
+  "input": 105,
+  "output": 465
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8099608500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:38:03.1524643Z",
+  "response": "I’m not sure what the exact context window is for Recursive’s Flint model on Ollama. I don’t have that specific detail in my knowledge base.",
+  "thinking": "We need to answer: \"How large is the context window of Recursive's Flint model on Ollama?\" The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we need to provide answer based on knowledge. I need to recall if there's a \"Recursive's Flint model\" on Ollama. I'm not aware. Maybe \"Recursive\" is a company? There is a project \"Flint\" that might be a language model. The context window size might be something like 8192 tokens? But we need accurate info.\n\nLet's think: Ollama is a local LLM inference engine. There's a model \"flint\" by \"Recursive\". I recall maybe a \"flint\" model by Recursive. Could be something like \"Flint 4\" or \"Recursive Flint\" with 32k context. But I'm not certain.\n\nSearch memory: I recall reading about \"Recursive\" as a company building \"flint\" model. It's a 4-bit LLM? I think context window maybe 8192 tokens. But I'm not sure.\n\nAlternatively, maybe the context window is 4096 tokens. Or maybe it's a smaller model like 1.5B with 4096 context. But if it's a \"Recursive\" model, maybe it's a 4-bit quantized 13B model with 8192 context.\n\nLet's think of typical context windows: Llama 2 7B has 4096 context. Llama 3 has 8192. Some custom models have 32768. But \"flint\" might be a small Llama 3 base with 8192. But I need to be sure.\n\nGiven uncertainty, I can say: I do not know. But the instruction says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I could say: I don't know the exact context window. But I can provide speculation: It's likely 8192 tokens but not confirmed.\n\nI'll answer: I don't know the precise context window.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8099608500,
+  "load_duration": 14277900,
+  "prompt_eval_count": 105,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 180923000,
+  "eval_count": 465,
+  "eval_duration": 7889294000
+ }
+}

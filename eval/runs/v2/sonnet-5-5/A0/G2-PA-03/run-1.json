@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-03",
+ "run": 1,
+ "started_utc": "2026-10-29T15:42:57Z",
+ "seconds": 9.02,
+ "prompt_sha256": "98200b24f98d7ad2eb6bb7ace9cd93045ca11119a4738c7f7930ca7ec85d6b10",
+ "answer": "I don't know. I have no information about a \"Nemotron 3.5 Bolt\" model in Ollama, so I can't say how many total or active parameters it has. I also don't have any project context here that mentions it.\n\nTo find out, you could check the model's page on ollama.com/library, or run `ollama show <model-name>` after pulling it, which lists the parameter count. If it's a mixture-of-experts model, the model card usually gives the active parameter count separately.",
+ "tokens": {
+  "input": 643,
+  "output": 146,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 641
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004028,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5127,
+  "stop_reason": "end_turn",
+  "session_id": "391eef5e-115c-47e4-81a7-5542cfec2947",
+  "total_cost_usd": 0.004028,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 641,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 146,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 641,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 146,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 641,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 641
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 146,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 641,
+    "webSearchRequests": 0,
+    "costUSD": 0.004028,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 641,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no information about a \"Nemotron 3.5 Bolt\" model in Ollama, so I can't say how many total or active parameters it has. I also don't have any project context here that mentions it.\n\nTo find out, you could check the model's page on ollama.com/library, or run `ollama show <model-name>` after pulling it, which lists the parameter count. If it's a mixture-of-experts model, the model card usually gives the active parameter count separately.",
+  "ttft_ms": 5183,
+  "type": "result",
+  "duration_ms": 5204,
+  "uuid": "339d9862-fd0d-48b4-97e6-743af0c9e7ca",
+  "ttft_stream_ms": 3649,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 3649,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

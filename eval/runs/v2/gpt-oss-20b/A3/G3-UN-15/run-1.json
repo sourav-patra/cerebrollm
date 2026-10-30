@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-15",
+ "run": 1,
+ "started_utc": "2026-10-29T16:16:36Z",
+ "seconds": 10.1,
+ "prompt_sha256": "91f74cc3c7653a53e8e91b56d2c0ea621cc83f19ed7a0bbda799584df94aa639",
+ "answer": "I do not know.  \n\n\"promptfoo export eval <evalId>\" [promptfoo/site/docs/usage/command-line.md]",
+ "thinking_chars": 2238,
+ "tokens": {
+  "input": 1694,
+  "output": 578
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 10784727200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:16:46.9595128Z",
+  "response": "I do not know.  \n\n\"promptfoo export eval <evalId>\" [promptfoo/site/docs/usage/command-line.md]",
+  "thinking": "We need to answer: Which promptfoo command exports an evaluation to a Parquet file? We need to quote the line we rely on and cite its path. Let's search context. In the provided context, we have lines about export command, and output formats. The context shows \"promptfoo eval --output results.xml\" for XML. But we need Parquet. There's no mention of Parquet in the context. So we don't know. The instruction: If you do not know, say you do not know. So we should say we do not know, and quote the line that indicates absence? The instruction: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we should say we do not know. But we need to quote a line we rely on. We rely on the fact that no mention of Parquet in the context. The line might be \"promptfoo eval --output results.xml\" but that mentions XML, not Parquet. But we can say we do not know. We can quote: \"promptfoo eval --output results.xml\" [promptfoo/site/docs/configuration/outputs.md] but that is about XML. But we are saying we don't know. So we can quote that there is no mention of Parquet. However, we need to quote a line we rely on. We can quote: \"promptfoo eval --output results.xml\" [promptfoo/site/docs/configuration/outputs.md] which shows output format options but not Parquet. And we say we do not know. That might satisfy.\n\nAlternatively, we might search for Parquet in the project. But context does not show. So answer: we do not know. Provide quote. Let's choose the quote from [7] lines 204-230. We can quote: \"promptfoo eval --output results.xml\" [promptfoo/site/docs/configuration/outputs.md] but that indicates XML, not Parquet. So we say we do not know. Also we can quote that \"promptfoo export eval <evalId>\" writes JSON by default. That doesn't mention Parquet. So we can quote that. For example: \"promptfoo export eval <evalId>\" [promptfoo/site/docs/usage/command-line.md] but that writes JSON. So we can say we do not know. Provide one quote: \"promptfoo export eval <evalId>\" [promptfoo/site/docs/usage/command-line.md]. That indicates export command but not Parquet. So answer: I don't know. Provide that quote.\n\nThus final answer: I do not know. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10784727200,
+  "load_duration": 15443600,
+  "prompt_eval_count": 1694,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 732731000,
+  "eval_count": 578,
+  "eval_duration": 9996234000
+ }
+}

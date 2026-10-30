@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-09",
+ "run": 2,
+ "started_utc": "2026-10-29T01:40:37Z",
+ "seconds": 8.24,
+ "prompt_file": "runs/prompts/A0/EX-09.txt",
+ "prompt_sha256": "762e22196ddb6dbe755ba834515028fc684cab5910501ea891490248eea791df",
+ "answer": "The pgvector `<#>` operator returns the **negative inner product** between two vectors, as a `double precision` value.\n\nIt's negated so that `ORDER BY embedding <#> query` ascending returns the most similar rows first, since a larger inner product means more similar. To get the actual inner product, multiply the result by -1, for example `(a <#> b) * -1`.\n\nThis is the standard pgvector behavior as I know it. I don't have information about how your particular project uses it.",
+ "tokens": {
+  "input": 645,
+  "output": 318,
+  "thinking": 166,
+  "cache_read": 0,
+  "cache_creation": 643
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0002878,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3150,
+  "stop_reason": "end_turn",
+  "session_id": "8be91b20-630e-4fcc-a556-2fd169840477",
+  "total_cost_usd": 0.0002878,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 643,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 318,
+   "output_tokens_details": {
+    "thinking_tokens": 166
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 643,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 318,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 643,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 643
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 318,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 643,
+    "webSearchRequests": 0,
+    "costUSD": 0.0002878,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 166,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 643,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The pgvector `<#>` operator returns the **negative inner product** between two vectors, as a `double precision` value.\n\nIt's negated so that `ORDER BY embedding <#> query` ascending returns the most similar rows first, since a larger inner product means more similar. To get the actual inner product, multiply the result by -1, for example `(a <#> b) * -1`.\n\nThis is the standard pgvector behavior as I know it. I don't have information about how your particular project uses it.",
+  "ttft_ms": 2895,
+  "type": "result",
+  "duration_ms": 3316,
+  "uuid": "af868b73-c005-44a5-8cd7-1ea03a80d21d",
+  "ttft_stream_ms": 2894,
+  "time_to_request_ms": 170,
+  "first_content_frame_ms": 2894,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

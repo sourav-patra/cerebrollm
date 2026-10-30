@@ -1,0 +1,17 @@
+=== 2026-10-28T23:26:12Z r2_wsl.py speed qwen3:14b
+guard pull qwen3:14b exit 0 qwen3:14b digest bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8 
+qwen3-14b-thinking-on 8000 1 valid True [] gen_tps 15.670622131656366 prompt_tps 1824.5894616592889 gpu% 84.3
+qwen3-14b-thinking-on 8000 2 valid True [] gen_tps 15.674870849167146 prompt_tps 1860.313429967446 gpu% 84.3
+qwen3-14b-thinking-on 8000 3 valid True [] gen_tps 15.639880987836879 prompt_tps 1808.1065936118546 gpu% 84.3
+qwen3-14b-thinking-on 200 1 valid True [] gen_tps 24.991470196451505 prompt_tps 588.6025149380183 gpu% 84.3
+qwen3-14b-thinking-on 200 2 valid True [] gen_tps 24.982753604957672 prompt_tps 470.9284902222878 gpu% 84.3
+qwen3-14b-thinking-on 200 3 valid True [] gen_tps 25.024053883044022 prompt_tps 658.3519256793826 gpu% 84.3
+qwen3-14b-thinking-off 8000 1 valid False ['7950 prompt tokens came from the cache; the chat template alone is 17'] gen_tps 15.557872490107988 prompt_tps 353.42919325136256 gpu% 84.3
+qwen3-14b-thinking-off 8000 2 valid False ['7950 prompt tokens came from the cache; the chat template alone is 17'] gen_tps 15.51077653706105 prompt_tps 355.33279721718316 gpu% 84.3
+qwen3-14b-thinking-off 8000 3 valid False ['7950 prompt tokens came from the cache; the chat template alone is 17'] gen_tps 15.52155015661608 prompt_tps 360.8599863253058 gpu% 84.3
+qwen3-14b-thinking-off 200 1 valid False ['161 prompt tokens came from the cache; the chat template alone is 17'] gen_tps 25.05880498865991 prompt_tps 203.231378924906 gpu% 84.3
+qwen3-14b-thinking-off 200 2 valid False ['161 prompt tokens came from the cache; the chat template alone is 17'] gen_tps 24.99855721217652 prompt_tps 149.06228057443894 gpu% 84.3
+qwen3-14b-thinking-off 200 3 valid False ['161 prompt tokens came from the cache; the chat template alone is 17'] gen_tps 25.031303796525222 prompt_tps 150.07543265167493 gpu% 84.3
+guard unload qwen3:14b exit 0 qwen3:14b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T23:38:05Z

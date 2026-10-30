@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-04",
+ "run": 5,
+ "started_utc": "2026-10-29T01:39:06Z",
+ "seconds": 8.54,
+ "prompt_file": "runs/prompts/A3/EX-04.txt",
+ "prompt_sha256": "7217b4bdc84e8b5d6c4be165e43b370b6b7e12310f840e3834e6fbb17d388402",
+ "answer": "The Windows documentation gives the minimum as NVIDIA driver 551.61: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general hardware page lists a different figure: \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md]. It also says GPUs with compute capability 5.0 through 6.2 need more: \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nThe documents don't explain the difference between 551.61 and 550. For Windows, I'd go with 551.61 and check the newer requirement if your card has compute capability 5.0 to 6.2.",
+ "tokens": {
+  "input": 2697,
+  "output": 758,
+  "thinking": 478,
+  "cache_read": 2311,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00047911000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3777,
+  "stop_reason": "end_turn",
+  "session_id": "34b83081-e917-48ed-abea-5fb4a1dda30f",
+  "total_cost_usd": 0.00047911000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 2311,
+   "output_tokens": 758,
+   "output_tokens_details": {
+    "thinking_tokens": 478
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 758,
+     "cache_read_input_tokens": 2311,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 758,
+    "cacheReadInputTokens": 2311,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.00047911000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 478,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The Windows documentation gives the minimum as NVIDIA driver 551.61: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general hardware page lists a different figure: \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md]. It also says GPUs with compute capability 5.0 through 6.2 need more: \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nThe documents don't explain the difference between 551.61 and 550. For Windows, I'd go with 551.61 and check the newer requirement if your card has compute capability 5.0 to 6.2.",
+  "ttft_ms": 2874,
+  "type": "result",
+  "duration_ms": 3904,
+  "uuid": "f32782a8-1dc2-4444-b344-05391d1b8da4",
+  "ttft_stream_ms": 2746,
+  "time_to_request_ms": 155,
+  "first_content_frame_ms": 2747,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-11",
+ "run": 4,
+ "started_utc": "2026-10-29T01:49:54Z",
+ "seconds": 11.64,
+ "prompt_file": "runs/prompts/A0/PA-11.txt",
+ "prompt_sha256": "1531f93300e29ce48be40ac86f3125e3c2148909845be0bf0019a8f9cfc6ce2a",
+ "answer": "You can set both models on the global `Settings` object. Once they're set, LlamaIndex uses them everywhere by default and doesn't fall back to OpenAI.\n\n**1. Install the integrations**\n\n```bash\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\nThe HuggingFace embedding integration needs `sentence-transformers`, which the package normally pulls in. If it doesn't, install it separately.\n\n**2. Start Ollama and pull a model**\n\n```bash\nollama pull llama3.1\nollama serve   # usually already running as a background service\n```\n\n**3. Configure the globals**\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",  # default Ollama address\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"  # downloaded from Hugging Face on first use\n)\n```\n\nSet both `Settings.llm` and `Settings.embed_model`. LlamaIndex defaults to OpenAI for each of them, so leaving either one unset means OpenAI gets called for that part.\n\n**4. Use it normally**\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocs = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(docs)  # uses Settings.embed_model\nprint(index.as_query_engine().query(\"Summarize the documents.\"))  # uses Settings.llm\n```\n\n**Verifying that OpenAI isn't contacted**\n\n- Remove the key from your environment so any accidental call fails loudly. In PowerShell: `Remove-Item Env:OPENAI_API_KEY`. In bash: `unset OPENAI_API_KEY`.\n- Disconnect from the network after the models are downloaded, to confirm everything works offline.\n\nI'm working from memory of the LlamaIndex API, and it changes often. If an import fails, check the current docs for the integration packages. Older tutorials use `ServiceContext`, which has been replaced by `Settings`.",
+ "tokens": {
+  "input": 679,
+  "output": 1536,
+  "thinking": 743,
+  "cache_read": 0,
+  "cache_creation": 677
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0009036000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7379,
+  "stop_reason": "end_turn",
+  "session_id": "e01ad094-e5a1-4620-9275-8e6919381ccc",
+  "total_cost_usd": 0.0009036000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 677,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1536,
+   "output_tokens_details": {
+    "thinking_tokens": 743
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 677,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1536,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 677,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 677
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1536,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 677,
+    "webSearchRequests": 0,
+    "costUSD": 0.0009036000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 743,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 677,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You can set both models on the global `Settings` object. Once they're set, LlamaIndex uses them everywhere by default and doesn't fall back to OpenAI.\n\n**1. Install the integrations**\n\n```bash\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\nThe HuggingFace embedding integration needs `sentence-transformers`, which the package normally pulls in. If it doesn't, install it separately.\n\n**2. Start Ollama and pull a model**\n\n```bash\nollama pull llama3.1\nollama serve   # usually already running as a background service\n```\n\n**3. Configure the globals**\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",  # default Ollama address\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"  # downloaded from Hugging Face on first use\n)\n```\n\nSet both `Settings.llm` and `Settings.embed_model`. LlamaIndex defaults to OpenAI for each of them, so leaving either one unset means OpenAI gets called for that part.\n\n**4. Use it normally**\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocs = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(docs)  # uses Settings.embed_model\nprint(index.as_query_engine().query(\"Summarize the documents.\"))  # uses Settings.llm\n```\n\n**Verifying that OpenAI isn't contacted**\n\n- Remove the key from your environment so any accidental call fails loudly. In PowerShell: `Remove-Item Env:OPENAI_API_KEY`. In bash: `unset OPENAI_API_KEY`.\n- Disconnect from the network after the models are downloaded, to confirm everything works offline.\n\nI'm working from memory of the LlamaIndex API, and it changes often. If an import fails, check the current docs for the integration packages. Older tutorials use `ServiceContext`, which has been replaced by `Settings`.",
+  "ttft_ms": 4459,
+  "type": "result",
+  "duration_ms": 7494,
+  "uuid": "8eed5bdb-5338-4350-93d1-fc9199fc0ce1",
+  "ttft_stream_ms": 2869,
+  "time_to_request_ms": 174,
+  "first_content_frame_ms": 2869,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

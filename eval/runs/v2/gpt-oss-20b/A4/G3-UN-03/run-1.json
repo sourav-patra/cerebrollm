@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-03",
+ "run": 1,
+ "started_utc": "2026-10-30T06:07:56Z",
+ "seconds": 20.45,
+ "prompt_sha256": "3ae2f3d6acc05c3d62d8e8a5d3afaf2faedccdf03fcba9067d2cb8f3f175b357",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "pgvector/README.md",
+   "quote": "Supported types are: - `bit` - up to 64,000 dimensions",
+   "verify": "MISSING",
+   "detail": "quote not found in pgvector/README.md@file"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 1.63,
+   "rerank": 8.32,
+   "generate": 8.01,
+   "verify": 0.0,
+   "total": 17.96
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 3,
+    "rerank_score": 0.86498,
+    "path": "pgvector/README.md",
+    "line_start": 823,
+    "line_end": 829
+   },
+   {
+    "rank": 2,
+    "search_rank": 19,
+    "rerank_score": 0.77236,
+    "path": "pgvector/CHANGELOG.md",
+    "line_start": 162,
+    "line_end": 173
+   },
+   {
+    "rank": 3,
+    "search_rank": 1,
+    "rerank_score": 0.22682,
+    "path": "pgvector/README.md",
+    "line_start": 951,
+    "line_end": 960
+   },
+   {
+    "rank": 4,
+    "search_rank": 2,
+    "rerank_score": 0.19189,
+    "path": "pgvector/README.md",
+    "line_start": 334,
+    "line_end": 376
+   },
+   {
+    "rank": 5,
+    "search_rank": 8,
+    "rerank_score": 0.18755,
+    "path": "pgvector/README.md",
+    "line_start": 206,
+    "line_end": 255
+   },
+   {
+    "rank": 6,
+    "search_rank": 11,
+    "rerank_score": 0.08939,
+    "path": "pgvector/README.md",
+    "line_start": 1027,
+    "line_end": 1036
+   },
+   {
+    "rank": 7,
+    "search_rank": 6,
+    "rerank_score": 0.04776,
+    "path": "pgvector/README.md",
+    "line_start": 989,
+    "line_end": 998
+   },
+   {
+    "rank": 8,
+    "search_rank": 17,
+    "rerank_score": 0.01271,
+    "path": "pgvector/README.md",
+    "line_start": 540,
+    "line_end": 556
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

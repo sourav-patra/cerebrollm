@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-06",
+ "run": 3,
+ "started_utc": "2026-10-29T01:56:21Z",
+ "seconds": 7.66,
+ "prompt_file": "runs/prompts/A3/ST-06.txt",
+ "prompt_sha256": "9ed88010779515fd90218ac6c4eda87b554402222a364a57fd8aa351da43a3a8",
+ "answer": "The oldest Postgres major version that the current pgvector release (v0.8.7) supports is **Postgres 13**.\n\nThe README says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md]. The Docker tag list also includes `pg13-trixie` and `pg13-bookworm`, though the excerpt is cut off before the end of that list.",
+ "tokens": {
+  "input": 3083,
+  "output": 406,
+  "thinking": 281,
+  "cache_read": 2694,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00030754,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2861,
+  "stop_reason": "end_turn",
+  "session_id": "6650b369-150f-4aae-9e00-4db5e4e85d29",
+  "total_cost_usd": 0.00030754,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2694,
+   "output_tokens": 406,
+   "output_tokens_details": {
+    "thinking_tokens": 281
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 406,
+     "cache_read_input_tokens": 2694,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 406,
+    "cacheReadInputTokens": 2694,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00030754,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 281,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The oldest Postgres major version that the current pgvector release (v0.8.7) supports is **Postgres 13**.\n\nThe README says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md]. The Docker tag list also includes `pg13-trixie` and `pg13-bookworm`, though the excerpt is cut off before the end of that list.",
+  "ttft_ms": 2899,
+  "type": "result",
+  "duration_ms": 2995,
+  "uuid": "0d12a7b1-c859-49ee-a7d5-c6de864c80a1",
+  "ttft_stream_ms": 2898,
+  "time_to_request_ms": 137,
+  "first_content_frame_ms": 2898,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 5,
+ "started_utc": "2026-10-29T17:43:05Z",
+ "seconds": 10.3,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "In its testing, Ollama 0.34.1 reduced the response time for a cold `/api/tags` request on a large model library from 3.1 seconds to 294 milliseconds. \n\nThis information is found in the release notes for Ollama 0.34.1:\n\n> \"*`/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.*\" \n\n[ollama/v0.34.1.md (lines 1-15)](https://github.com/ollama/ollama/releases/tag/v0.34.1)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2301,
+  "output": 136
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8185562600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:43:15.2069527Z",
+  "response": "In its testing, Ollama 0.34.1 reduced the response time for a cold `/api/tags` request on a large model library from 3.1 seconds to 294 milliseconds. \n\nThis information is found in the release notes for Ollama 0.34.1:\n\n> \"*`/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.*\" \n\n[ollama/v0.34.1.md (lines 1-15)](https://github.com/ollama/ollama/releases/tag/v0.34.1)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8185562600,
+  "load_duration": 13765400,
+  "prompt_eval_count": 2301,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1164368000,
+  "eval_count": 136,
+  "eval_duration": 6868895000
+ }
+}

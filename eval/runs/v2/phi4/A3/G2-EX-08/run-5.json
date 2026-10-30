@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 5,
+ "started_utc": "2026-10-29T17:44:40Z",
+ "seconds": 9.63,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "The safe mode added to `promptfoo eval` in version 0.125.0 turns off inline JavaScript assertions and shared transforms. This is achieved by rejecting string-based JavaScript assertions and inline expressions handled by the shared transform helper.\n\nHere is the relevant information from the context:\n\n- \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md (lines 11-64)].\n\nAdditionally, it's noted that this option does not act as a sandbox and does not make untrusted configurations safe to run:\n\n- \":::warning Limited execution guard This option is not a sandbox and does not make untrusted configurations safe to run.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md (lines 11-64)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1883,
+  "output": 182
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10177035600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:44:51.0865396Z",
+  "response": "The safe mode added to `promptfoo eval` in version 0.125.0 turns off inline JavaScript assertions and shared transforms. This is achieved by rejecting string-based JavaScript assertions and inline expressions handled by the shared transform helper.\n\nHere is the relevant information from the context:\n\n- \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md (lines 11-64)].\n\nAdditionally, it's noted that this option does not act as a sandbox and does not make untrusted configurations safe to run:\n\n- \":::warning Limited execution guard This option is not a sandbox and does not make untrusted configurations safe to run.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md (lines 11-64)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10177035600,
+  "load_duration": 13606000,
+  "prompt_eval_count": 1883,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 955197000,
+  "eval_count": 182,
+  "eval_duration": 9020745000
+ }
+}

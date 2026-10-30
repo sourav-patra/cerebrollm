@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 1,
+ "started_utc": "2026-10-29T15:54:51Z",
+ "seconds": 7.0,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "Version 0.124.0 added support for comma-separated values that act as OR conditions in `--filter-metadata`.\n\nThe release notes say: \"support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md].\n\nThe CLI docs describe how it works: \"Filter tests by metadata substring. Commas separate OR values (`\\,` is a comma); repeated flags use AND.\" [promptfoo/site/docs/usage/command-line.md]\n\nSo a single flag can now take something like `category=math,science`. That matches tests with either value, and `\\,` stands for a literal comma. Repeating the flag still combines filters with AND.",
+ "tokens": {
+  "input": 3325,
+  "output": 212,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3323
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.015416,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2798,
+  "stop_reason": "end_turn",
+  "session_id": "a9af05f8-1be0-4c95-a9f2-dc0038781e2f",
+  "total_cost_usd": 0.015416,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3323,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 212,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3323,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 212,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3323,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3323
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 212,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3323,
+    "webSearchRequests": 0,
+    "costUSD": 0.015416,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3323,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Version 0.124.0 added support for comma-separated values that act as OR conditions in `--filter-metadata`.\n\nThe release notes say: \"support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md].\n\nThe CLI docs describe how it works: \"Filter tests by metadata substring. Commas separate OR values (`\\,` is a comma); repeated flags use AND.\" [promptfoo/site/docs/usage/command-line.md]\n\nSo a single flag can now take something like `category=math,science`. That matches tests with either value, and `\\,` stands for a literal comma. Repeating the flag still combines filters with AND.",
+  "ttft_ms": 2890,
+  "type": "result",
+  "duration_ms": 2914,
+  "uuid": "6c1659ff-a692-40d0-8676-9a75c903ed1f",
+  "ttft_stream_ms": 2820,
+  "time_to_request_ms": 130,
+  "first_content_frame_ms": 2821,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

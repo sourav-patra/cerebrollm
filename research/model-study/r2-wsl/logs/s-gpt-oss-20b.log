@@ -1,0 +1,17 @@
+=== 2026-10-28T23:17:22Z r2_wsl.py speed gpt-oss:20b
+guard pull gpt-oss:20b exit 0 gpt-oss:20b digest f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe 
+gpt-oss-20b-medium 8000 1 valid True [] gen_tps 21.946208642434108 prompt_tps 3311.1112228361512 gpu% 71.4
+gpt-oss-20b-medium 8000 2 valid True [] gen_tps 58.286150391018104 prompt_tps 3304.0789467082964 gpu% 71.4
+gpt-oss-20b-medium 8000 3 valid True [] gen_tps 58.373109515022065 prompt_tps 3289.610608005621 gpu% 71.4
+gpt-oss-20b-medium 200 1 valid True [] gen_tps 60.209651889430624 prompt_tps 368.27664941904357 gpu% 71.4
+gpt-oss-20b-medium 200 2 valid True [] gen_tps 60.24890328168245 prompt_tps 297.35915751030814 gpu% 71.4
+gpt-oss-20b-medium 200 3 valid True [] gen_tps 60.03076578153275 prompt_tps 403.36925373886885 gpu% 71.4
+gpt-oss-20b-low 8000 1 valid True [] gen_tps 58.6596006289409 prompt_tps 3279.6613686350997 gpu% 71.4
+gpt-oss-20b-low 8000 2 valid True [] gen_tps 58.41842608437492 prompt_tps 3381.528204290001 gpu% 71.4
+gpt-oss-20b-low 8000 3 valid True [] gen_tps 57.63482440177416 prompt_tps 3239.1216049779923 gpu% 71.4
+gpt-oss-20b-low 200 1 valid True [] gen_tps 60.275842045337285 prompt_tps 348.24138102581963 gpu% 71.4
+gpt-oss-20b-low 200 2 valid True [] gen_tps 60.28465661294424 prompt_tps 361.3249940203258 gpu% 71.4
+gpt-oss-20b-low 200 3 valid True [] gen_tps 60.239149423210144 prompt_tps 404.0041298199937 gpu% 71.4
+guard unload gpt-oss:20b exit 0 gpt-oss:20b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T23:26:12Z

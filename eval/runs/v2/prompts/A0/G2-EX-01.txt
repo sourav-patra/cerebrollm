@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default?

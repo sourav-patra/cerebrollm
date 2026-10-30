@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-ST-3",
+ "run": 3,
+ "started_utc": "2026-10-29T02:02:53Z",
+ "seconds": 7.63,
+ "prompt_file": "runs/prompts/A3/PR-ST-3.txt",
+ "prompt_sha256": "2139c71c10083d9249b3629d830c7e82227684621683dab60eefe4815c69bc02",
+ "answer": "Run the eval with the `-j 1` option:\n\n```bash\npromptfoo eval -j 1\n```\n\nThe docs say this \"serializes the eval's **target** calls: one provider and prompt at a time.\" [\"This serializes the eval's **target** calls: one provider and prompt at a time.\"] [promptfoo/site/docs/providers/ollama.md]\n\nThe same section lists two exceptions:\n\n- Tests marked with `options.runSerially` run as a separate group before the rest, so execution order isn't strictly sequential even at `-j 1`. [\"the evaluator runs test cases marked `options.runSerially` as a separate partition ahead of the rest, so a config using that option does not execute in strict test-case order even at `-j 1`.\"] [promptfoo/site/docs/providers/ollama.md]\n- Model-graded assertions run on a separate path. If grading grouping is disabled (by a per-eval timeout or a `{{_conversation}}` variable), up to `PROMPTFOO_ASSERTIONS_MAX_CONCURRENCY` grader calls (3 by default) can still overlap within a test case. [\"up to `PROMPTFOO_ASSERTIONS_MAX_CONCURRENCY` grader calls (3 by default) can still overlap within a single test case.\"] [promptfoo/site/docs/providers/ollama.md]\n\nI don't have information in these documents about other ways to limit concurrency, so I can't say whether there are alternatives.",
+ "tokens": {
+  "input": 3048,
+  "output": 609,
+  "thinking": 128,
+  "cache_read": 2659,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00040868999999999996,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2814,
+  "stop_reason": "end_turn",
+  "session_id": "7d3838eb-4c96-4762-b228-e6a08f446414",
+  "total_cost_usd": 0.00040868999999999996,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2659,
+   "output_tokens": 609,
+   "output_tokens_details": {
+    "thinking_tokens": 128
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 609,
+     "cache_read_input_tokens": 2659,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 609,
+    "cacheReadInputTokens": 2659,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00040868999999999996,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 128,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Run the eval with the `-j 1` option:\n\n```bash\npromptfoo eval -j 1\n```\n\nThe docs say this \"serializes the eval's **target** calls: one provider and prompt at a time.\" [\"This serializes the eval's **target** calls: one provider and prompt at a time.\"] [promptfoo/site/docs/providers/ollama.md]\n\nThe same section lists two exceptions:\n\n- Tests marked with `options.runSerially` run as a separate group before the rest, so execution order isn't strictly sequential even at `-j 1`. [\"the evaluator runs test cases marked `options.runSerially` as a separate partition ahead of the rest, so a config using that option does not execute in strict test-case order even at `-j 1`.\"] [promptfoo/site/docs/providers/ollama.md]\n- Model-graded assertions run on a separate path. If grading grouping is disabled (by a per-eval timeout or a `{{_conversation}}` variable), up to `PROMPTFOO_ASSERTIONS_MAX_CONCURRENCY` grader calls (3 by default) can still overlap within a test case. [\"up to `PROMPTFOO_ASSERTIONS_MAX_CONCURRENCY` grader calls (3 by default) can still overlap within a single test case.\"] [promptfoo/site/docs/providers/ollama.md]\n\nI don't have information in these documents about other ways to limit concurrency, so I can't say whether there are alternatives.",
+  "ttft_ms": 2924,
+  "type": "result",
+  "duration_ms": 2946,
+  "uuid": "82d924f3-3415-4be9-9685-26212af3c17e",
+  "ttft_stream_ms": 2923,
+  "time_to_request_ms": 133,
+  "first_content_frame_ms": 2923,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

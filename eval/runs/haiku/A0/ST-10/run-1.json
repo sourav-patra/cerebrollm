@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-10",
+ "run": 1,
+ "started_utc": "2026-10-29T01:57:43Z",
+ "seconds": 10.7,
+ "prompt_file": "runs/prompts/A0/ST-10.txt",
+ "prompt_sha256": "cac20d72cd8d3edb728448ab42438a2027e7e298191a84c9aef4a1af7cccd1b4",
+ "answer": "For current LlamaIndex, use the **agent workflow API**, mainly `FunctionAgent`. It's built on LlamaIndex Workflows and supports async, streaming, and multi-turn state.\n\n```python\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.core.workflow import Context\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    return a * b\n\ndef add(a: float, b: float) -> float:\n    \"\"\"Add two numbers and return the result.\"\"\"\n    return a + b\n\nagent = FunctionAgent(\n    tools=[multiply, add],  # plain functions are wrapped as tools automatically\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant. Use the tools for arithmetic.\",\n)\n\nasync def main():\n    ctx = Context(agent)  # keeps conversation state across calls\n    r1 = await agent.run(\"What is 3 times 4?\", ctx=ctx)\n    print(r1)\n    r2 = await agent.run(\"Now add 10 to that.\", ctx=ctx)\n    print(r2)\n\nasyncio.run(main())\n```\n\nKey points:\n\n- **Tools:** Write typed Python functions with docstrings, which the LLM uses to decide when to call them. For more control, wrap them with `FunctionTool.from_defaults(fn=...)`. Other tool sources include `QueryEngineTool` for RAG and LlamaHub tool specs.\n- **Agent types:** `FunctionAgent` is for LLMs with native function/tool calling. `ReActAgent` is for text-based reasoning with LLMs that lack native tool calling. `CodeActAgent` is for agents that write and execute code.\n- **Multi-agent:** `AgentWorkflow` coordinates several agents with handoffs.\n- **Deprecated:** `OpenAIAgent.from_tools()` and `ReActAgent.from_tools()` from the older `llama_index.agent` API are legacy. Avoid them in new code.\n\nI'm not certain of the exact import paths and class names as of your current version, since LlamaIndex changes often. Check the official docs (docs.llamaindex.ai) and your installed version's release notes before relying on this.",
+ "tokens": {
+  "input": 656,
+  "output": 1268,
+  "thinking": 483,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007650000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6240,
+  "stop_reason": "end_turn",
+  "session_id": "464df183-bab1-4895-889c-9a8fec2bfff1",
+  "total_cost_usd": 0.0007650000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1268,
+   "output_tokens_details": {
+    "thinking_tokens": 483
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1268,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1268,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007650000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 483,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "For current LlamaIndex, use the **agent workflow API**, mainly `FunctionAgent`. It's built on LlamaIndex Workflows and supports async, streaming, and multi-turn state.\n\n```python\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.core.workflow import Context\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    return a * b\n\ndef add(a: float, b: float) -> float:\n    \"\"\"Add two numbers and return the result.\"\"\"\n    return a + b\n\nagent = FunctionAgent(\n    tools=[multiply, add],  # plain functions are wrapped as tools automatically\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant. Use the tools for arithmetic.\",\n)\n\nasync def main():\n    ctx = Context(agent)  # keeps conversation state across calls\n    r1 = await agent.run(\"What is 3 times 4?\", ctx=ctx)\n    print(r1)\n    r2 = await agent.run(\"Now add 10 to that.\", ctx=ctx)\n    print(r2)\n\nasyncio.run(main())\n```\n\nKey points:\n\n- **Tools:** Write typed Python functions with docstrings, which the LLM uses to decide when to call them. For more control, wrap them with `FunctionTool.from_defaults(fn=...)`. Other tool sources include `QueryEngineTool` for RAG and LlamaHub tool specs.\n- **Agent types:** `FunctionAgent` is for LLMs with native function/tool calling. `ReActAgent` is for text-based reasoning with LLMs that lack native tool calling. `CodeActAgent` is for agents that write and execute code.\n- **Multi-agent:** `AgentWorkflow` coordinates several agents with handoffs.\n- **Deprecated:** `OpenAIAgent.from_tools()` and `ReActAgent.from_tools()` from the older `llama_index.agent` API are legacy. Avoid them in new code.\n\nI'm not certain of the exact import paths and class names as of your current version, since LlamaIndex changes often. Check the official docs (docs.llamaindex.ai) and your installed version's release notes before relying on this.",
+  "ttft_ms": 3385,
+  "type": "result",
+  "duration_ms": 6414,
+  "uuid": "fb4e4034-4af8-4a23-a195-203dd4dc9929",
+  "ttft_stream_ms": 3054,
+  "time_to_request_ms": 176,
+  "first_content_frame_ms": 3054,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

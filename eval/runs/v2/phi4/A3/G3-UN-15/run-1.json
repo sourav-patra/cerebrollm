@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-15",
+ "run": 1,
+ "started_utc": "2026-10-29T17:18:55Z",
+ "seconds": 7.36,
+ "prompt_sha256": "91f74cc3c7653a53e8e91b56d2c0ea621cc83f19ed7a0bbda799584df94aa639",
+ "answer": "Based on the provided context, there is no mention of a `promptfoo` command that exports an evaluation to a Parquet file. The available options for exporting are JSON and XML, as indicated in the context:\n\n- JSON export is mentioned for `promptfoo export eval <evalId>` [2].\n- XML export is mentioned in the context of a Promptfoo XML Full Export [7].\n\nSince there is no reference to Parquet file export in the provided documents, I do not know of a `promptfoo` command that exports an evaluation to a Parquet file. \n\nIf further information is needed, it might be helpful to consult the official documentation or source code for additional export options.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1628,
+  "output": 140
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8154852800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:19:03.0043776Z",
+  "response": "Based on the provided context, there is no mention of a `promptfoo` command that exports an evaluation to a Parquet file. The available options for exporting are JSON and XML, as indicated in the context:\n\n- JSON export is mentioned for `promptfoo export eval <evalId>` [2].\n- XML export is mentioned in the context of a Promptfoo XML Full Export [7].\n\nSince there is no reference to Parquet file export in the provided documents, I do not know of a `promptfoo` command that exports an evaluation to a Parquet file. \n\nIf further information is needed, it might be helpful to consult the official documentation or source code for additional export options.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8154852800,
+  "load_duration": 13004600,
+  "prompt_eval_count": 1628,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 767307000,
+  "eval_count": 140,
+  "eval_duration": 7211203000
+ }
+}

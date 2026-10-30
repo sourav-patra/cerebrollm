@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-03",
+ "run": 3,
+ "started_utc": "2026-10-29T17:26:40Z",
+ "seconds": 3.41,
+ "prompt_sha256": "98200b24f98d7ad2eb6bb7ace9cd93045ca11119a4738c7f7930ca7ec85d6b10",
+ "answer": "I do not know the specific details about the Nemotron 3.5 Bolt model in Ollama, including the number of total and active parameters it has. This information would typically be found in technical documentation or release notes provided by the developers or maintainers of the model. If you are seeking this information, I recommend checking official sources or announcements related to the model.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 57,
+  "output": 76
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3673384900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:26:44.5684493Z",
+  "response": "I do not know the specific details about the Nemotron 3.5 Bolt model in Ollama, including the number of total and active parameters it has. This information would typically be found in technical documentation or release notes provided by the developers or maintainers of the model. If you are seeking this information, I recommend checking official sources or announcements related to the model.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3673384900,
+  "load_duration": 12027300,
+  "prompt_eval_count": 57,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 217390000,
+  "eval_count": 76,
+  "eval_duration": 3420689000
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-10",
+ "run": 2,
+ "started_utc": "2026-10-29T17:23:47Z",
+ "seconds": 8.35,
+ "prompt_sha256": "d8b687abd783fb2454539937c693a008992fd01c7661361827c7c6240812e159",
+ "answer": "The two deprecated integrations that `llama-index-core` version 0.14.25 removed are the \"ipex-llm\" and \"optimum-intel IPEX\" integrations. This information is found in the release notes for version 0.14.25.\n\n\"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\" [1].\n\n[1] llama_index/v0.14.25.md (lines 58-66) > Release Notes > [2026-09-21] > llama-index-core [0.14.25]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2032,
+  "output": 146
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8985263200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:23:56.8635828Z",
+  "response": "The two deprecated integrations that `llama-index-core` version 0.14.25 removed are the \"ipex-llm\" and \"optimum-intel IPEX\" integrations. This information is found in the release notes for version 0.14.25.\n\n\"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\" [1].\n\n[1] llama_index/v0.14.25.md (lines 58-66) > Release Notes > [2026-09-21] > llama-index-core [0.14.25]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8985263200,
+  "load_duration": 13915900,
+  "prompt_eval_count": 2032,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 1010719000,
+  "eval_count": 146,
+  "eval_duration": 7810620000
+ }
+}

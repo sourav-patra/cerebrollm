@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/43",
+  "index": 36,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef pairs_sum_to_zero(l):\n    \"\"\"\n    pairs_sum_to_zero takes a list of integers as an input.\n    it returns True if there are two distinct elements in the list that\n    sum to zero, and False otherwise.\n    >>> pairs_sum_to_zero([1, 3, 5, 0])\n    False\n    >>> pairs_sum_to_zero([1, 3, -2, 1])\n    False\n    >>> pairs_sum_to_zero([1, 2, 3, 7])\n    False\n    >>> pairs_sum_to_zero([2, 4, -5, 3, 5, 7])\n    True\n    >>> pairs_sum_to_zero([1])\n    False\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "medium"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:23:34.237657Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef pairs_sum_to_zero(l):\n    \"\"\"\n    pairs_sum_to_zero takes a list of integers as an input.\n    it returns True if there are two distinct elements in the list that\n    sum to zero, and False otherwise.\n    >>> pairs_sum_to_zero([1, 3, 5, 0])\n    False\n    >>> pairs_sum_to_zero([1, 3, -2, 1])\n    False\n    >>> pairs_sum_to_zero([1, 2, 3, 7])\n    False\n    >>> pairs_sum_to_zero([2, 4, -5, 3, 5, 7])\n    True\n    >>> pairs_sum_to_zero([1])\n    False\n    \"\"\"\n    seen = set()\n    for x in l:\n        if x == 0:\n            if 0 in seen:\n                return True\n        else:\n            if -x in seen:\n                return True\n        seen.add(x)\n    return False\n```",
+      "thinking": "We need to implement function pairs_sum_to_zero(l). It should return True if there are two distinct elements that sum to zero. Distinct elements meaning indices different. Could be same value but different indices? Eg [0,0] should return True? They didn't test. But typical problem: find pair sum zero. Implementation: use set to track seen numbers. For each number x, check if -x in seen. But need to ensure distinct indices: if x==0, need at least two zeros. So we can handle separately: if x==0 and 0 in seen: return True. Else if -x in seen: return True. Add x to seen. Return False.\n\nEdge cases: list length <2 return False.\n\nComplexities: O(n). Provide imports? None needed.\n\nReturn bool.\n\nLet's implement.\n\nAlso docstring includes doctest examples. Provide function.\n\nLet's produce code block."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7235875600,
+    "load_duration": 23762100,
+    "prompt_eval_count": 243,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 201894000,
+    "eval_count": 401,
+    "eval_duration": 6990796000
+  },
+  "wall_seconds": 6.783178895000674,
+  "load_average_before": [
+    0.7783203125,
+    0.310546875,
+    0.15673828125
+  ],
+  "load_average_after": [
+    0.7158203125,
+    0.30517578125,
+    0.15576171875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-medium-36",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-medium:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_36.py"
+    ],
+    "wall_seconds": 0.6324469660012255,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

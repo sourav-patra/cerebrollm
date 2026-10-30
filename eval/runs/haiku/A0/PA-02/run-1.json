@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-02",
+ "run": 1,
+ "started_utc": "2026-10-29T01:46:25Z",
+ "seconds": 8.58,
+ "prompt_file": "runs/prompts/A0/PA-02.txt",
+ "prompt_sha256": "64b1eb6cefc0ffaf05e3cf6a29d51b69207782b1fba63cc49a31a4cce469070a",
+ "answer": "I don't know the exact figure, so I won't give you a number I can't back up. From what I recall, the Windows installer is large, roughly 1 to 2 GB, because it bundles GPU runtime libraries (CUDA and ROCm). The installed footprint is probably several GB, but I'm not confident in that estimate.\n\nYou can measure it yourself after installing and before pulling any models. In PowerShell, check the default install folder:\n\n```powershell\n\"{0:N2} GB\" -f ((Get-ChildItem \"$env:LOCALAPPDATA\\Programs\\Ollama\" -Recurse -File | Measure-Object Length -Sum).Sum / 1GB)\n```\n\nModels are stored separately, in `%USERPROFILE%\\.ollama\\models` by default, so that folder stays small until you pull a model. Check the current Ollama docs or release notes for official size requirements, since packaging may have changed since my knowledge was last updated.",
+ "tokens": {
+  "input": 660,
+  "output": 601,
+  "thinking": 293,
+  "cache_read": 0,
+  "cache_creation": 658
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004323,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3891,
+  "stop_reason": "end_turn",
+  "session_id": "29b88adb-0d5b-4c0f-a71a-9e941e89bf0c",
+  "total_cost_usd": 0.0004323,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 658,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 601,
+   "output_tokens_details": {
+    "thinking_tokens": 293
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 658,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 601,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 658,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 658
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 601,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 658,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004323,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 293,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 658,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the exact figure, so I won't give you a number I can't back up. From what I recall, the Windows installer is large, roughly 1 to 2 GB, because it bundles GPU runtime libraries (CUDA and ROCm). The installed footprint is probably several GB, but I'm not confident in that estimate.\n\nYou can measure it yourself after installing and before pulling any models. In PowerShell, check the default install folder:\n\n```powershell\n\"{0:N2} GB\" -f ((Get-ChildItem \"$env:LOCALAPPDATA\\Programs\\Ollama\" -Recurse -File | Measure-Object Length -Sum).Sum / 1GB)\n```\n\nModels are stored separately, in `%USERPROFILE%\\.ollama\\models` by default, so that folder stays small until you pull a model. Check the current Ollama docs or release notes for official size requirements, since packaging may have changed since my knowledge was last updated.",
+  "ttft_ms": 2974,
+  "type": "result",
+  "duration_ms": 4028,
+  "uuid": "a8d6c008-9494-4c01-9298-5426cf69be92",
+  "ttft_stream_ms": 2972,
+  "time_to_request_ms": 134,
+  "first_content_frame_ms": 2973,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

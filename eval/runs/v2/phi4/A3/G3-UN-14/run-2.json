@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 2,
+ "started_utc": "2026-10-29T17:26:02Z",
+ "seconds": 9.03,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I do not know the default value of `promptfoo's evaluateOptions.maxTokensPerCell` based on the provided context. The context does not contain any information or mention of `maxTokensPerCell` within the `EvaluateOptions` or any other related configuration. \n\nHere are the lines where `EvaluateOptions` is discussed, but no mention of `maxTokensPerCell` is found:\n- \"EvaluateOptions is an object that includes options for how the evaluation should be performed. It includes the maximum concurrency for API calls, whether to show a progress bar, a callback for progress updates, the number of times to repeat each test, and a delay between tests.\" [1] promptfoo/site/docs/configuration/reference.md (lines 1121-1149)\n\nSince `maxTokensPerCell` is not mentioned in the provided context, I cannot determine its default value.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1494,
+  "output": 176
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9713599800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:26:12.3711044Z",
+  "response": "I do not know the default value of `promptfoo's evaluateOptions.maxTokensPerCell` based on the provided context. The context does not contain any information or mention of `maxTokensPerCell` within the `EvaluateOptions` or any other related configuration. \n\nHere are the lines where `EvaluateOptions` is discussed, but no mention of `maxTokensPerCell` is found:\n- \"EvaluateOptions is an object that includes options for how the evaluation should be performed. It includes the maximum concurrency for API calls, whether to show a progress bar, a callback for progress updates, the number of times to repeat each test, and a delay between tests.\" [1] promptfoo/site/docs/configuration/reference.md (lines 1121-1149)\n\nSince `maxTokensPerCell` is not mentioned in the provided context, I cannot determine its default value.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9713599800,
+  "load_duration": 13343600,
+  "prompt_eval_count": 1494,
+  "prompt_eval_cached_count": 103,
+  "prompt_eval_duration": 723530000,
+  "eval_count": 176,
+  "eval_duration": 8833844000
+ }
+}

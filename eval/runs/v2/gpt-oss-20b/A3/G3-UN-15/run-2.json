@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-15",
+ "run": 2,
+ "started_utc": "2026-10-29T16:26:42Z",
+ "seconds": 10.26,
+ "prompt_sha256": "91f74cc3c7653a53e8e91b56d2c0ea621cc83f19ed7a0bbda799584df94aa639",
+ "answer": "I do not know.  \n\"Export an eval record to JSON format.\" [promptfoo/site/docs/usage/command-line.md]",
+ "thinking_chars": 2507,
+ "tokens": {
+  "input": 1694,
+  "output": 636
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11085834600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:26:52.4359376Z",
+  "response": "I do not know.  \n\"Export an eval record to JSON format.\" [promptfoo/site/docs/usage/command-line.md]",
+  "thinking": "We need to answer: \"Which promptfoo command exports an evaluation to a Parquet file?\" We need to quote the line we rely on and cite its path. Let's search context for Parquet. I didn't see Parquet in the provided context. Let's search memory: In promptfoo docs, there might be an output format for Parquet. In the context above, we saw \"Promptfoo XML Full Export\" and \"promptfoo export eval <evalId>\" etc. There might be \"promptfoo export eval --output <filepath>\" or \"promptfoo export eval <evalId> --format parquet\" or something. But the context does not contain mention of Parquet. The question likely refers to a command that exports eval to Parquet. We need to look for mention of Parquet in the context. I don't see any mention of Parquet in the provided lines. Maybe the answer is \"promptfoo export eval\" can export to Parquet? But we need a quote. There's no mention. Maybe the answer is \"promptfoo export eval <evalId> --output <filepath> --format parquet\". But we need a quote. The context might include that in the \"promptfoo export eval\" section. Let's re-read lines 544-550: \"## `promptfoo export` ... ### `promptfoo export eval <evalId>` Export an eval record to JSON format. To export the most recent, use `latest`.\" That only mentions JSON. But maybe there is a separate command \"promptfoo export eval\" that can export to Parquet? The context doesn't show. Maybe there's a \"promptfoo export eval\" that uses the `--format` flag. But not shown. The question: \"Which promptfoo command exports an evaluation to a Parquet file?\" The answer likely is \"promptfoo export eval <evalId> --output <filepath> --format parquet\". But we need to quote. But we don't have the quote. So we might respond: \"I do not know.\" But we can say we don't see mention. According to instructions: If you do not know, say you do not know. So answer: \"I do not know.\" We can cite that we didn't find relevant info. According to instruction: \"If you do not know, say you do not know.\" So we can say \"I do not know.\" And maybe mention that no mention of Parquet in context. But we need to quote the line we rely on. Since we rely on the lack of mention, we can quote a line that shows the export command only outputs JSON. For example: \"Export an eval record to JSON format.\" [promptfoo/site/docs/usage/command-line.md lines 544-550]. That shows only JSON. So we can say we do not know. So we should answer: I do not know. And we provide a quote that shows only JSON format. That shows no mention of Parquet. Let's do that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11085834600,
+  "load_duration": 14757000,
+  "prompt_eval_count": 1694,
+  "prompt_eval_cached_count": 1689,
+  "prompt_eval_duration": 53726000,
+  "eval_count": 636,
+  "eval_duration": 10957296000
+ }
+}

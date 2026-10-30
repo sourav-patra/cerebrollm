@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:16Z",
+ "seconds": 14.43,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "Ollama runs Flint on Linux, Windows, and macOS.\n\nThe newest release note I have that states Flint's OS support is v0.40.9: \"[Flint](https://ollama.com/library/flint) now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md]\n\nThis supersedes the earlier v0.40.8 note, which said Flint was macOS-only for the time being. The v0.40.12 notes mention Flint only for faster prompt processing on Apple silicon, and say nothing that changes the OS support. I have no release notes for v0.40.13, so I can't say whether anything changed there.",
+ "tokens": {
+  "input": 3086,
+  "output": 394,
+  "thinking": 186,
+  "cache_read": 2718,
+  "cache_creation": 366
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0056798,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 10517,
+  "stop_reason": "end_turn",
+  "session_id": "926a0391-c9b9-4c12-b62d-43bcaf2154c4",
+  "total_cost_usd": 0.0056798,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 366,
+   "cache_read_input_tokens": 2718,
+   "output_tokens": 394,
+   "output_tokens_details": {
+    "thinking_tokens": 186
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 366,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 394,
+     "cache_read_input_tokens": 2718,
+     "cache_creation_input_tokens": 366,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 366
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 394,
+    "cacheReadInputTokens": 2718,
+    "cacheCreationInputTokens": 366,
+    "webSearchRequests": 0,
+    "costUSD": 0.0056798,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 186,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 366,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Ollama runs Flint on Linux, Windows, and macOS.\n\nThe newest release note I have that states Flint's OS support is v0.40.9: \"[Flint](https://ollama.com/library/flint) now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md]\n\nThis supersedes the earlier v0.40.8 note, which said Flint was macOS-only for the time being. The v0.40.12 notes mention Flint only for faster prompt processing on Apple silicon, and say nothing that changes the OS support. I have no release notes for v0.40.13, so I can't say whether anything changed there.",
+  "ttft_ms": 9370,
+  "type": "result",
+  "duration_ms": 10601,
+  "uuid": "605839f6-e2c9-4a0c-bfcf-15cc40a4b673",
+  "ttft_stream_ms": 7376,
+  "time_to_request_ms": 107,
+  "first_content_frame_ms": 7377,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

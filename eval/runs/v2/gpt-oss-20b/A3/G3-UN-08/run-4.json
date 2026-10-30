@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-08",
+ "run": 4,
+ "started_utc": "2026-10-29T16:47:13Z",
+ "seconds": 9.79,
+ "prompt_sha256": "6aa67305c2d3d502e197c468c7f1133f40522aa105aede1e8c22e0c41cf5c9f1",
+ "answer": "There is no Ollama CLI flag that controls the number of parallel layer downloads for `ollama pull`. The only flags documented for the pull command are `--model`, `--insecure`, and `--stream`.\n\n> \"Parameters  \n>  - `model`: name of the model to pull  \n>  - `insecure`: (optional) allow insecure connections to the library. Only use this if you are pulling from your own library during development.  \n>  - `stream`: (optional) if `false` the response will be returned as a single response object, rather than a stream of objects\"  \n>  [ollama/docs/api.md]",
+ "thinking_chars": 1964,
+ "tokens": {
+  "input": 1659,
+  "output": 601
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 10435446000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:47:23.426191Z",
+  "response": "There is no Ollama CLI flag that controls the number of parallel layer downloads for `ollama pull`. The only flags documented for the pull command are `--model`, `--insecure`, and `--stream`.\n\n> \"Parameters  \n>  - `model`: name of the model to pull  \n>  - `insecure`: (optional) allow insecure connections to the library. Only use this if you are pulling from your own library during development.  \n>  - `stream`: (optional) if `false` the response will be returned as a single response object, rather than a stream of objects\"  \n>  [ollama/docs/api.md]",
+  "thinking": "We need to answer: Which Ollama CLI flag sets the number of parallel layer downloads for ollama pull? We need to refer to project docs. Search context for \"parallel\" or \"layers\" or \"download\" or \"pull\" flags. In the context, we have docs. Let's search manually: In [1], example of pull, no flags. In [3], Pull a Model: parameters: model, insecure, stream. No flag for parallel downloads. The question: \"Which Ollama CLI flag sets the number of parallel layer downloads for ollama pull?\" Might be a flag like `--parallel` or `-j`? But I don't recall such flag. Let's search in docs maybe. But context doesn't include. Might be a flag like `--parallel` or `-p`? Wait, there is `--parallel` maybe for CLI? Let's search the entire docs? Not available. But maybe the answer: There is no such flag; parallel downloads are not configurable. The question might be trick: The flag is not available. But maybe there is a flag `--parallel` that sets number of parallel downloads. Search context for \"parallel\". In [2] we have concurrency for requests, not for downloads. In [1] we have \"stream\" param but not parallel downloads. So answer: There is no flag to set number of parallel layer downloads for ollama pull. The docs do not mention such flag. So answer: None; not configurable. Provide quote that indicates no mention of such flag. Use a quote from [3] \"Parameters: model, insecure, stream\" etc. That shows only these. So answer: No flag exists. Provide quote.\n\nThus: \"There is no CLI flag to set the number of parallel layer downloads for ollama pull.\" Provide citation: [3] lines 1529-1541. The quote: \"Parameters: - model: name of the model to pull - insecure: (optional) allow insecure connections to the library. Only use this if you are pulling from your own library during development. - stream: (optional) if false the response will be returned as a single response object, rather than a stream of objects\". That shows only these flags. So answer accordingly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10435446000,
+  "load_duration": 13095800,
+  "prompt_eval_count": 1659,
+  "prompt_eval_cached_count": 1654,
+  "prompt_eval_duration": 56491000,
+  "eval_count": 601,
+  "eval_duration": 10306634000
+ }
+}

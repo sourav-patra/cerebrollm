@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-07",
+ "run": 3,
+ "started_utc": "2026-10-29T17:31:28Z",
+ "seconds": 12.18,
+ "prompt_sha256": "966074e791335ca871ebd5a7d82b30bbeb317f071d36667858d564446d44005d",
+ "answer": "Based on the provided context, there is no specific mention of a reranker class gaining native async support in the `llama-index-core` version 0.14.25. The closest related change in this version is the addition of native async support to `StructuredLLMRerank`, but it is not explicitly labeled as a \"reranker class\" in the context provided. Here is the relevant line:\n\n- \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\" [1] llama_index/v0.14.25.md (lines 58-66)\n\nIf you meant another specific class or detail not covered in the provided context, I do not have that information. Therefore, I cannot definitively state which reranker class gained native async support in `llama-index-core` 0.14.25 based on the given information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1429,
+  "output": 198
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10461936000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:31:39.6449569Z",
+  "response": "Based on the provided context, there is no specific mention of a reranker class gaining native async support in the `llama-index-core` version 0.14.25. The closest related change in this version is the addition of native async support to `StructuredLLMRerank`, but it is not explicitly labeled as a \"reranker class\" in the context provided. Here is the relevant line:\n\n- \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\" [1] llama_index/v0.14.25.md (lines 58-66)\n\nIf you meant another specific class or detail not covered in the provided context, I do not have that information. Therefore, I cannot definitively state which reranker class gained native async support in `llama-index-core` 0.14.25 based on the given information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10461936000,
+  "load_duration": 12999200,
+  "prompt_eval_count": 1429,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 721120000,
+  "eval_count": 198,
+  "eval_duration": 9603292000
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "model": "phi4",
+ "arm": "A4",
+ "id": "G2-PA-02",
+ "run": 2,
+ "started_utc": "2026-10-30T07:15:48Z",
+ "seconds": 25.37,
+ "prompt_sha256": "16ffb67e0b36adfc17d2cac54be5ebe292abe1f73cef589455b33a7e98730d7b",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "ollama/docs/capabilities/speech.md (lines 56-112) > Generate speech with the API",
+   "quote": "Use the OpenAI-compatible `/v1/audio/speech` endpoint.",
+   "verify": "GONE",
+   "detail": "source not found: ollama/docs/capabilities/speech.md (lines 56-112) > Generate speech with the API"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 4.64,
+   "rerank": 7.79,
+   "generate": 10.38,
+   "verify": 0.0,
+   "total": 22.81
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.99606,
+    "path": "ollama/v0.40.11.md",
+    "line_start": 1,
+    "line_end": 12
+   },
+   {
+    "rank": 2,
+    "search_rank": 2,
+    "rerank_score": 0.97964,
+    "path": "ollama/docs/capabilities/speech.md",
+    "line_start": 56,
+    "line_end": 112
+   },
+   {
+    "rank": 3,
+    "search_rank": 6,
+    "rerank_score": 0.8117,
+    "path": "ollama/docs/quickstart.md",
+    "line_start": 96,
+    "line_end": 196
+   },
+   {
+    "rank": 4,
+    "search_rank": 7,
+    "rerank_score": 0.76182,
+    "path": "ollama/docs/cloud.md",
+    "line_start": 1,
+    "line_end": 36
+   },
+   {
+    "rank": 5,
+    "search_rank": 15,
+    "rerank_score": 0.75859,
+    "path": "ollama/docs/integrations/hermes.md",
+    "line_start": 55,
+    "line_end": 83
+   },
+   {
+    "rank": 6,
+    "search_rank": 19,
+    "rerank_score": 0.7229,
+    "path": "ollama/docs/api/openai-compatibility.md",
+    "line_start": 1,
+    "line_end": 37
+   },
+   {
+    "rank": 7,
+    "search_rank": 3,
+    "rerank_score": 0.66402,
+    "path": "ollama/docs/quickstart.md",
+    "line_start": 193,
+    "line_end": 287
+   },
+   {
+    "rank": 8,
+    "search_rank": 18,
+    "rerank_score": 0.43049,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 1,
+    "line_end": 53
+   }
+  ],
+  "model": "phi4"
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-02",
+ "run": 3,
+ "started_utc": "2026-10-29T01:54:56Z",
+ "seconds": 9.47,
+ "prompt_file": "runs/prompts/A0/ST-02.txt",
+ "prompt_sha256": "72c22e8559deeceb7ba3ef06e2203cae92f9f01e8d9c7882a853670142ecd925",
+ "answer": "Based on my knowledge, Ollama sets its default context length from the GPU's available VRAM. A GPU with 32 GiB falls in the 24–48 GiB tier, which I believe defaults to **32,768 tokens (32k)**. Smaller GPUs (under 24 GiB) default to 4,096, and GPUs with 48 GiB or more default to 262,144.\n\nI'm not certain this is still current, since Ollama changes these defaults between releases. To confirm for your installed version, check the Ollama release notes or documentation, or set the context length explicitly with the `OLLAMA_CONTEXT_LENGTH` environment variable or the `num_ctx` option.",
+ "tokens": {
+  "input": 660,
+  "output": 547,
+  "thinking": 323,
+  "cache_read": 0,
+  "cache_creation": 658
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004053,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4593,
+  "stop_reason": "end_turn",
+  "session_id": "5ef3eba3-ea42-46bf-975c-a06a5bace92b",
+  "total_cost_usd": 0.0004053,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 658,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 547,
+   "output_tokens_details": {
+    "thinking_tokens": 323
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 658,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 547,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 658,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 658
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 547,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 658,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004053,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 323,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 658,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Based on my knowledge, Ollama sets its default context length from the GPU's available VRAM. A GPU with 32 GiB falls in the 24–48 GiB tier, which I believe defaults to **32,768 tokens (32k)**. Smaller GPUs (under 24 GiB) default to 4,096, and GPUs with 48 GiB or more default to 262,144.\n\nI'm not certain this is still current, since Ollama changes these defaults between releases. To confirm for your installed version, check the Ollama release notes or documentation, or set the context length explicitly with the `OLLAMA_CONTEXT_LENGTH` environment variable or the `num_ctx` option.",
+  "ttft_ms": 3746,
+  "type": "result",
+  "duration_ms": 4715,
+  "uuid": "716c8efd-4b21-45b5-a539-1b0d09a80ecd",
+  "ttft_stream_ms": 3078,
+  "time_to_request_ms": 359,
+  "first_content_frame_ms": 3078,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

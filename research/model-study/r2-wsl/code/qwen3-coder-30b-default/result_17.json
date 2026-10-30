@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/146",
+  "index": 17,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:06:30.436238Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef specialFilter(nums):\n    def is_odd_digit(digit):\n        return digit % 2 == 1\n    \n    def has_odd_first_and_last_digits(num):\n        num = abs(num)\n        last_digit = num % 10\n        first_digit = num\n        while first_digit >= 10:\n            first_digit //= 10\n        return is_odd_digit(first_digit) and is_odd_digit(last_digit)\n    \n    count = 0\n    for num in nums:\n        if num > 10 and has_odd_first_and_last_digits(num):\n            count += 1\n    return count\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3386774000,
+    "load_duration": 13293300,
+    "prompt_eval_count": 156,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 411016000,
+    "eval_count": 131,
+    "eval_duration": 2925625000
+  },
+  "wall_seconds": 3.2079204010005924,
+  "load_average_before": [
+    0.123046875,
+    0.08544921875,
+    0.02099609375
+  ],
+  "load_average_after": [
+    0.11279296875,
+    0.083984375,
+    0.0205078125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-coder-30b-default-17",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-coder-30b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_17.py"
+    ],
+    "wall_seconds": 0.7563226060010493,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

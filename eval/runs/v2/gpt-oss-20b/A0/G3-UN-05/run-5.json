@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-05",
+ "run": 5,
+ "started_utc": "2026-10-29T16:53:28Z",
+ "seconds": 8.33,
+ "prompt_sha256": "facc9609f2e09161516f6e2fc1f1ba49e1decb695137a62d66685b54806f8f7c",
+ "answer": "I’m not sure what the default value is.",
+ "thinking_chars": 2009,
+ "tokens": {
+  "input": 108,
+  "output": 497
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8882537700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:53:37.1722796Z",
+  "response": "I’m not sure what the default value is.",
+  "thinking": "The user asks: \"What is the default value of the Ollama environment variable OLLAMA_UNLOAD_TIMEOUT?\" The question refers to a project called Ollama. The user likely refers to environment variable OLLAMA_UNLOAD_TIMEOUT. We need to answer with what we know, or say we do not know.\n\nWe need to think: The question: \"What is the default value of the Ollama environment variable OLLAMA_UNLOAD_TIMEOUT?\" This might be a variable controlling timeout for unloading models. Perhaps default is 30 seconds? Or maybe 60 seconds? Let's recall: Ollama is an open-source LLM host. It has environment variables: OLLAMA_HOST, OLLAMA_PORT, OLLAMA_MODELS, OLLAMA_LOG_LEVEL, OLLAMA_LOG_FORMAT, OLLAMA_NO_ANALYTICS, OLLAMA_UNLOAD_TIMEOUT? I need to search memory: In Ollama docs, I recall OLLAMA_UNLOAD_TIMEOUT default is 30 seconds? Not sure.\n\nWe need to answer: If we don't know, say we do not know. But we might guess. But we need to be accurate.\n\nBetter to answer: I don't know. But if we can find source: The environment variable OLLAMA_UNLOAD_TIMEOUT sets the timeout in seconds for unloading models after idle. The default might be 300 seconds? Let's think: The variable might be used to unload models after some time. The default might be 60 seconds.\n\nLet's search memory: In Docker image, there is a script that starts ollama server. It may parse env vars. OLLAMA_UNLOAD_TIMEOUT might default to 60 seconds. I recall reading about a bug where model unloading didn't happen quickly. They introduced a default of 300 seconds? But not sure.\n\nWe could answer: The default value is 60 seconds. But we might be wrong.\n\nThe question: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we can answer: I don't know. But we can provide a guess or say we don't know.\n\nBetter to be safe: \"I don't know the default value.\" Or we can say \"the default value is 60 seconds\" but mention uncertain.\n\nWe should be cautious: It's better to say we don't know if uncertain.\n\nThus answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8882537700,
+  "load_duration": 12904300,
+  "prompt_eval_count": 108,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 191366000,
+  "eval_count": 497,
+  "eval_duration": 8662246000
+ }
+}

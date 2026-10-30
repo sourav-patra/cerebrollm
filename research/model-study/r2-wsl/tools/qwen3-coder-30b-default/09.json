@@ -1,0 +1,142 @@
+{
+  "id": 10,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Search the code for the text parse_header."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:08:38.3144805Z",
+    "message": {
+      "role": "assistant",
+      "content": "<function=search_code>\n<parameter=query>\nparse_header\n</parameter>\n</function>\n</tool_call>"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 665387100,
+    "load_duration": 11495100,
+    "prompt_eval_count": 560,
+    "prompt_eval_cached_count": 546,
+    "prompt_eval_duration": 132745000,
+    "eval_count": 20,
+    "eval_duration": 513238000
+  },
+  "wall_seconds": 0.6266237780000665,
+  "load_average_before": [
+    0.0859375,
+    0.09326171875,
+    0.0263671875
+  ],
+  "load_average_after": [
+    0.0859375,
+    0.09326171875,
+    0.0263671875
+  ],
+  "expected": {
+    "name": "search_code",
+    "arguments": {
+      "query": "parse_header"
+    }
+  },
+  "passed": false
+}

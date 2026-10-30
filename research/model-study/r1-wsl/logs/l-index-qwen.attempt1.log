@@ -1,0 +1,40 @@
+2026-10-28T20:11:18Z
+ live rows before swap | 13431
+
+FAILED: /api/ps still lists ['qwen3-embedding:0.6b'] after 10 s
+qwen3-embedding:0.6b unloaded; /api/ps is empty
+Traceback (most recent call last):
+  File "<repo>/research/model-study/r1_live_index.py", line 35, in <module>
+    summary = indexer.run_index(cfg)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/engine/cerebrollm/indexer.py", line 101, in run_index
+    store.swap_in(cfg)
+  File "<repo>/engine/cerebrollm/store.py", line 101, in swap_in
+    cur.execute("alter table %s rename to %s" % (cfg.next_data_table, cfg.data_table))
+psycopg2.errors.DeadlockDetected: deadlock detected
+DETAIL:  Process 35758 waits for AccessExclusiveLock on relation 101241 of database 16384; blocked by process 35755.
+Process 35755 waits for ShareLock on transaction 3686; blocked by process 35758.
+HINT:  See server log for query details.
+
+EXIT 1
+WALL_SECONDS 596
+cerebrollm status  domain=org  table=chunks
+documents 1412  chunks 13431
+tier status      documents  chunks
+T3   current          1411   13382
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1416  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-28T19:10:06+0000  mode=full  duration=709.3s  chunks embedded=13431
+embedding model: bge-m3  digest: 7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab  num_ctx: 8192
+               List of relations
+ Schema |       Name       | Type  |   Owner    
+--------+------------------+-------+------------
+ public | data_chunks      | table | cerebrollm
+ public | data_chunks_next | table | cerebrollm
+(2 rows)
+
+<withheld: text from a private document>
+

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-06",
+ "run": 1,
+ "started_utc": "2026-10-29T16:15:13Z",
+ "seconds": 4.56,
+ "prompt_sha256": "c9f4fdb460682b97dbcf6fbbea7a2d7680542f3fd6ab7249edf525b1c9919d0a",
+ "answer": "I do not know.",
+ "thinking_chars": 802,
+ "tokens": {
+  "input": 1797,
+  "output": 191
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4715347400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:15:17.4105763Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: Which Ollama environment variable sets how many model layers are downloaded concurrently during ollama pull? We have context but not a direct mention. Search context for \"layers\" or \"concurrent\". None. The question likely refers to environment variable \"OLLAMA_DOWNLOAD_CONCURRENCY\" or similar. I recall Ollama has env var OLLAMA_NUM_THREADS? Wait that's threads for inference. For download concurrency maybe \"OLLAMA_NUM_DOWNLOADS\" or \"OLLAMA_DOWNLOAD_THREADS\". I need to check if any environment variable for download concurrency is mentioned in docs. Not in context. So answer: I do not know. According to instruction: If you do not know, say you do not know. And quote the line you rely on? Actually if you don't know, just say you do not know. No quote. So answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4715347400,
+  "load_duration": 15845900,
+  "prompt_eval_count": 1797,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 755390000,
+  "eval_count": 191,
+  "eval_duration": 3891581000
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:25Z",
+ "seconds": 9.3,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I don't know the default for a `--max-retries` flag on `promptfoo eval`. The retrieved documents don't mention such a flag.\n\nThe closest material concerns provider-level `maxRetries` config, not a CLI flag:\n\n- \"Provider-level retry (scheduler): Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" [promptfoo/site/docs/configuration/rate-limits.md]\n- \"HTTP-level retry: Retries failed HTTP requests. Defaults to 4 retries, or the provider's `maxRetries` when set.\" [promptfoo/site/docs/configuration/rate-limits.md]\n\nThe docs do list `promptfoo eval --retry-errors`, which re-runs ERROR results from the latest eval, but that is a different option and has no numeric default. [promptfoo/site/docs/usage/command-line.md]\n\nTo confirm whether `--max-retries` exists, check `promptfoo eval --help` or the CLI source.",
+ "tokens": {
+  "input": 3264,
+  "output": 433,
+  "thinking": 106,
+  "cache_read": 2897,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006083700000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4955,
+  "stop_reason": "end_turn",
+  "session_id": "42083233-d310-45b1-bf4e-762f8b977cc7",
+  "total_cost_usd": 0.006083700000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 2897,
+   "output_tokens": 433,
+   "output_tokens_details": {
+    "thinking_tokens": 106
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 433,
+     "cache_read_input_tokens": 2897,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 433,
+    "cacheReadInputTokens": 2897,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.006083700000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 106,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the default for a `--max-retries` flag on `promptfoo eval`. The retrieved documents don't mention such a flag.\n\nThe closest material concerns provider-level `maxRetries` config, not a CLI flag:\n\n- \"Provider-level retry (scheduler): Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" [promptfoo/site/docs/configuration/rate-limits.md]\n- \"HTTP-level retry: Retries failed HTTP requests. Defaults to 4 retries, or the provider's `maxRetries` when set.\" [promptfoo/site/docs/configuration/rate-limits.md]\n\nThe docs do list `promptfoo eval --retry-errors`, which re-runs ERROR results from the latest eval, but that is a different option and has no numeric default. [promptfoo/site/docs/usage/command-line.md]\n\nTo confirm whether `--max-retries` exists, check `promptfoo eval --help` or the CLI source.",
+  "ttft_ms": 2894,
+  "type": "result",
+  "duration_ms": 5038,
+  "uuid": "98024a05-4200-461c-ab44-6e5f4ba212eb",
+  "ttft_stream_ms": 2459,
+  "time_to_request_ms": 104,
+  "first_content_frame_ms": 2459,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-07",
+ "run": 1,
+ "started_utc": "2026-10-29T16:13:58Z",
+ "seconds": 6.99,
+ "prompt_sha256": "966074e791335ca871ebd5a7d82b30bbeb317f071d36667858d564446d44005d",
+ "answer": "The native async support was added to the **StructuredLLMRerank** class.  \n\"feat(core): add native async support to StructuredLLMRerank\" [llama_index/v0.14.25.md].",
+ "thinking_chars": 658,
+ "tokens": {
+  "input": 1481,
+  "output": 228
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4925349900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:14:03.8904322Z",
+  "response": "The native async support was added to the **StructuredLLMRerank** class.  \n\"feat(core): add native async support to StructuredLLMRerank\" [llama_index/v0.14.25.md].",
+  "thinking": "We need to answer: Which reranker class gained native async support in llama-index-core 0.14.25? The context shows release notes for llama-index-core 0.14.25 in [1]. There is a line: \"feat(core): add native async support to StructuredLLMRerank\". So the reranker class is StructuredLLMRerank. We need to quote the line and path.\n\nQuote: \"feat(core): add native async support to StructuredLLMRerank\". Path: llama_index/v0.14.25.md. The lines 58-66 maybe contain that line. So we quote exactly: \"feat(core): add native async support to StructuredLLMRerank\". Provide citation: [llama_index/v0.14.25.md].\n\nThus answer: StructuredLLMRerank. Provide quote and path.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4925349900,
+  "load_duration": 13655000,
+  "prompt_eval_count": 1481,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 602750000,
+  "eval_count": 228,
+  "eval_duration": 4264964000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-09",
+ "run": 1,
+ "started_utc": "2026-10-29T01:40:37Z",
+ "seconds": 8.01,
+ "prompt_file": "runs/prompts/A3/EX-09.txt",
+ "prompt_sha256": "94278551aad96d370b0397c8e94a7a29047aac31d3962868e32516f6ceb66dd3",
+ "answer": "The `<#>` operator returns the negative inner product. The README notes: \"Note: `<#>` returns the negative inner product since Postgres only supports `ASC` order index scans on operators\" [pgvector/README.md].\n\nThe same table lists it as \"negative inner product\" for `<#>` [pgvector/README.md].",
+ "tokens": {
+  "input": 3521,
+  "output": 103,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3519
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007555000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2768,
+  "stop_reason": "end_turn",
+  "session_id": "a46f7fdf-5db2-49ce-a449-b1b4315e8c9f",
+  "total_cost_usd": 0.0007555000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3519,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 103,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3519,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 103,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3519,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3519
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 103,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3519,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007555000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3519,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The `<#>` operator returns the negative inner product. The README notes: \"Note: `<#>` returns the negative inner product since Postgres only supports `ASC` order index scans on operators\" [pgvector/README.md].\n\nThe same table lists it as \"negative inner product\" for `<#>` [pgvector/README.md].",
+  "ttft_ms": 2887,
+  "type": "result",
+  "duration_ms": 2904,
+  "uuid": "4ebe58f3-bb76-4da4-96e1-68c09dd0ecb2",
+  "ttft_stream_ms": 2885,
+  "time_to_request_ms": 135,
+  "first_content_frame_ms": 2885,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

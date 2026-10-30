@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 2,
+ "started_utc": "2026-10-29T17:24:22Z",
+ "seconds": 5.41,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "I do not know which version of pgvector lets `pg_upgrade` carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them. The provided context does not mention any version of pgvector supporting this feature. The relevant context only discusses HNSW index improvements and other unrelated updates.\n\nIf further details were available in the project's documentation or changelog, they might provide specific information about this capability. However, based on the provided context, no such version is identified.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1674,
+  "output": 96
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5832665900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:24:28.7017745Z",
+  "response": "I do not know which version of pgvector lets `pg_upgrade` carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them. The provided context does not mention any version of pgvector supporting this feature. The relevant context only discusses HNSW index improvements and other unrelated updates.\n\nIf further details were available in the project's documentation or changelog, they might provide specific information about this capability. However, based on the provided context, no such version is identified.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5832665900,
+  "load_duration": 13881600,
+  "prompt_eval_count": 1674,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 876798000,
+  "eval_count": 96,
+  "eval_duration": 4780711000
+ }
+}

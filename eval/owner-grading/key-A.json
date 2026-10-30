@@ -1,0 +1,168 @@
+{
+ "seed": 27,
+ "sheet": "A",
+ "model": "haiku",
+ "pool_size": 600,
+ "samples": [
+  {
+   "sample": "S01",
+   "id": "PA-19",
+   "arm": "A3",
+   "run": 2,
+   "kind": "paraphrase",
+   "code_correct": true
+  },
+  {
+   "sample": "S02",
+   "id": "ST-17",
+   "arm": "A0",
+   "run": 4,
+   "kind": "stale",
+   "code_correct": true
+  },
+  {
+   "sample": "S03",
+   "id": "ST-19",
+   "arm": "A0",
+   "run": 3,
+   "kind": "stale",
+   "code_correct": true
+  },
+  {
+   "sample": "S04",
+   "id": "ST-01",
+   "arm": "A0",
+   "run": 2,
+   "kind": "stale",
+   "code_correct": false
+  },
+  {
+   "sample": "S05",
+   "id": "EX-16",
+   "arm": "A0",
+   "run": 1,
+   "kind": "exact",
+   "code_correct": true
+  },
+  {
+   "sample": "S06",
+   "id": "EX-14",
+   "arm": "A0",
+   "run": 2,
+   "kind": "exact",
+   "code_correct": true
+  },
+  {
+   "sample": "S07",
+   "id": "ST-13",
+   "arm": "A0",
+   "run": 1,
+   "kind": "stale",
+   "code_correct": false
+  },
+  {
+   "sample": "S08",
+   "id": "ST-11",
+   "arm": "A3",
+   "run": 3,
+   "kind": "stale",
+   "code_correct": true
+  },
+  {
+   "sample": "S09",
+   "id": "EX-09",
+   "arm": "A3",
+   "run": 2,
+   "kind": "exact",
+   "code_correct": true
+  },
+  {
+   "sample": "S10",
+   "id": "ST-12",
+   "arm": "A0",
+   "run": 4,
+   "kind": "stale",
+   "code_correct": true
+  },
+  {
+   "sample": "S11",
+   "id": "EX-17",
+   "arm": "A3",
+   "run": 2,
+   "kind": "exact",
+   "code_correct": false
+  },
+  {
+   "sample": "S12",
+   "id": "PA-03",
+   "arm": "A3",
+   "run": 3,
+   "kind": "paraphrase",
+   "code_correct": true
+  },
+  {
+   "sample": "S13",
+   "id": "PA-18",
+   "arm": "A0",
+   "run": 3,
+   "kind": "paraphrase",
+   "code_correct": true
+  },
+  {
+   "sample": "S14",
+   "id": "ST-11",
+   "arm": "A0",
+   "run": 4,
+   "kind": "stale",
+   "code_correct": true
+  },
+  {
+   "sample": "S15",
+   "id": "ST-10",
+   "arm": "A0",
+   "run": 1,
+   "kind": "stale",
+   "code_correct": true
+  },
+  {
+   "sample": "S16",
+   "id": "ST-01",
+   "arm": "A3",
+   "run": 3,
+   "kind": "stale",
+   "code_correct": false
+  },
+  {
+   "sample": "S17",
+   "id": "EX-15",
+   "arm": "A0",
+   "run": 4,
+   "kind": "exact",
+   "code_correct": true
+  },
+  {
+   "sample": "S18",
+   "id": "ST-18",
+   "arm": "A3",
+   "run": 2,
+   "kind": "stale",
+   "code_correct": false
+  },
+  {
+   "sample": "S19",
+   "id": "EX-17",
+   "arm": "A0",
+   "run": 1,
+   "kind": "exact",
+   "code_correct": false
+  },
+  {
+   "sample": "S20",
+   "id": "PA-08",
+   "arm": "A3",
+   "run": 1,
+   "kind": "paraphrase",
+   "code_correct": true
+  }
+ ]
+}

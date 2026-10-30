@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-19",
+ "run": 2,
+ "started_utc": "2026-10-29T02:01:19Z",
+ "seconds": 7.36,
+ "prompt_file": "runs/prompts/A3/ST-19.txt",
+ "prompt_sha256": "290712041600c1b8e25163cdc19504194cd9f2a9602e6751b4fdcc53ce342584",
+ "answer": "The field is `label`. The reference says it controls how the prompt is displayed: \"label?: string; // How to display it in outputs and web UI\" [promptfoo/site/docs/configuration/reference.md]\n\nThe same file lists `display` as a deprecated alternative: \"display?: string; // Deprecated: use label\" [promptfoo/site/docs/configuration/reference.md].",
+ "tokens": {
+  "input": 3153,
+  "output": 341,
+  "thinking": 218,
+  "cache_read": 2764,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00027574,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2650,
+  "stop_reason": "end_turn",
+  "session_id": "213ea9d2-b78d-4768-b547-3ea50b903b62",
+  "total_cost_usd": 0.00027574,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2764,
+   "output_tokens": 341,
+   "output_tokens_details": {
+    "thinking_tokens": 218
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 341,
+     "cache_read_input_tokens": 2764,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 341,
+    "cacheReadInputTokens": 2764,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00027574,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 218,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The field is `label`. The reference says it controls how the prompt is displayed: \"label?: string; // How to display it in outputs and web UI\" [promptfoo/site/docs/configuration/reference.md]\n\nThe same file lists `display` as a deprecated alternative: \"display?: string; // Deprecated: use label\" [promptfoo/site/docs/configuration/reference.md].",
+  "ttft_ms": 2780,
+  "type": "result",
+  "duration_ms": 2800,
+  "uuid": "f2356b30-9549-477e-81f3-4564e33bd825",
+  "ttft_stream_ms": 2778,
+  "time_to_request_ms": 170,
+  "first_content_frame_ms": 2779,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

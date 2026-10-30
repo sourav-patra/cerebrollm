@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/77",
+  "index": 33,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef iscube(a):\n    '''\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    iscube(1) ==> True\n    iscube(2) ==> False\n    iscube(-1) ==> True\n    iscube(64) ==> True\n    iscube(0) ==> True\n    iscube(180) ==> False\n    '''\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 4
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:02:36.9134649Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef iscube(a):\n    '''\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    iscube(1) ==> True\n    iscube(2) ==> False\n    iscube(-1) ==> True\n    iscube(64) ==> True\n    iscube(0) ==> True\n    iscube(180) ==> False\n    '''\n    if a == 0:\n        return True\n    if a < 0:\n        # For negative numbers, check if the cube root of the absolute value is an integer\n        # and if so, the cube root itself is negative\n        return iscube(-a)\n    else:\n        # For positive numbers, find the cube root and check if it's an integer\n        # Use round to handle floating point precision issues\n        cube_root = round(a ** (1/3))\n        # Check nearby integers to handle precision issues\n        for candidate in [cube_root - 1, cube_root, cube_root + 1]:\n            if candidate >= 0 and candidate ** 3 == a:\n                return True\n        return False\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4975850200,
+    "load_duration": 12545600,
+    "prompt_eval_count": 150,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 514739000,
+    "eval_count": 278,
+    "eval_duration": 4387580000
+  },
+  "wall_seconds": 4.637995643992326,
+  "load_average_before": [
+    0.53857421875,
+    0.44091796875,
+    0.185546875
+  ],
+  "load_average_after": [
+    0.4951171875,
+    0.43359375,
+    0.18408203125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off-33",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_33.py"
+    ],
+    "wall_seconds": 0.7137884959956864,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

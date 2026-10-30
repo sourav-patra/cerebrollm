@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 4,
+ "started_utc": "2026-10-29T16:48:17Z",
+ "seconds": 12.84,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I do not know. The provided documentation does not list a `maxTokensPerCell` field in the `EvaluateOptions` interface.  \n\"interface EvaluateOptions { cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number; /** Deprecated: use maxConcurrency: 1 or -j 1 instead. */ interactiveProviders?: boolean; maxConcurrency?: number; repeat?: number; showProgressBar?: boolean; timeoutMs?: number; maxEvalTimeMs?: number; isRedteam?: boolean; silent?: boolean; abortSignal?: AbortSignal; progressCallback?: (completed: number, total: number, index: number, evalStep: RunEvalOp ... }\" [1]",
+ "thinking_chars": 2703,
+ "tokens": {
+  "input": 1545,
+  "output": 764
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 13569131200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:48:29.9892151Z",
+  "response": "I do not know. The provided documentation does not list a `maxTokensPerCell` field in the `EvaluateOptions` interface.  \n\"interface EvaluateOptions { cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number; /** Deprecated: use maxConcurrency: 1 or -j 1 instead. */ interactiveProviders?: boolean; maxConcurrency?: number; repeat?: number; showProgressBar?: boolean; timeoutMs?: number; maxEvalTimeMs?: number; isRedteam?: boolean; silent?: boolean; abortSignal?: AbortSignal; progressCallback?: (completed: number, total: number, index: number, evalStep: RunEvalOp ... }\" [1]",
+  "thinking": "We need to answer: \"What is the default value of promptfoo's evaluateOptions.maxTokensPerCell?\" We have context from docs. Search for \"maxTokensPerCell\" in context. Let's scan the provided context. There's no mention of maxTokensPerCell. The EvaluateOptions interface shows fields: cache, delay, generateSuggestions, suggestionsCount, interactiveProviders, maxConcurrency, repeat, showProgressBar, timeoutMs, maxEvalTimeMs, isRedteam, silent, abortSignal, progressCallback. No maxTokensPerCell. The question likely refers to a different configuration option maybe in a different file. The context does not mention maxTokensPerCell. So we don't know. We need to answer: \"I do not know.\" According to instructions: if you do not know, say you do not know. Quote the line you rely on and cite its path. But we don't have any line that mentions maxTokensPerCell. So we can't quote. We can say we do not know. But we might mention that none of the provided context includes maxTokensPerCell. So we can say: \"I do not know.\" Maybe we can provide evidence that no such line. We can quote a line like \"EvaluateOptions is an object that includes options for how the evaluation should be performed...\" but that doesn't mention maxTokensPerCell. But we need to quote a line we rely on. We rely on the fact that it's not mentioned. So we could quote something like: \"EvaluateOptions is an object that includes options for how the evaluation should be performed.\" [1] But that doesn't help. But the instruction: \"If you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we need to quote a line we rely on to conclude we don't know. That line would be that the provided context does not include maxTokensPerCell. We can quote the line \"EvaluateOptions is an object that includes options for how the evaluation should be performed.\" and say we don't have maxTokensPerCell. That might be acceptable. Or we can quote a line that lists fields but not maxTokensPerCell. For example: \"interface EvaluateOptions { cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number; /** Deprecated: use maxConcurrency: 1 or -j 1 instead. */ interactiveProviders?: boolean; maxConcurrency?: number; repeat?: number; showProgressBar?: boolean; timeoutMs?: number; maxEvalTimeMs?: number; isRedteam?: boolean; silent?: boolean; abortSignal?: AbortSignal; progressCallback?: (completed: number, total: number, index: number, evalStep: RunEvalOp ... }\" [1] But maybe we can quote the line that lists the fields and show that maxTokensPerCell is not there. So we can quote that. So answer: \"I do not know.\" Provide quote and path.\n\nThus answer: I do not know. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13569131200,
+  "load_duration": 14101800,
+  "prompt_eval_count": 1545,
+  "prompt_eval_cached_count": 1540,
+  "prompt_eval_duration": 55407000,
+  "eval_count": 764,
+  "eval_duration": 13430017000
+ }
+}

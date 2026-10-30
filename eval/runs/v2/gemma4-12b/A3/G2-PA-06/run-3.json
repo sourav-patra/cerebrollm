@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:27Z",
+ "seconds": 1.55,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "\"fix(anthropic): correct Opus 4.6 context window to 1M\" [llama_index/v0.14.24.md (lines 55-60)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1917,
+  "output": 44
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1634098600
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:58:29.3445499Z",
+  "response": "\"fix(anthropic): correct Opus 4.6 context window to 1M\" [llama_index/v0.14.24.md (lines 55-60)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1634098600,
+  "load_duration": 14411400,
+  "prompt_eval_count": 1917,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 920433000,
+  "eval_count": 44,
+  "eval_duration": 387443000
+ }
+}

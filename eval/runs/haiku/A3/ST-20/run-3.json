@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-20",
+ "run": 3,
+ "started_utc": "2026-10-29T02:01:46Z",
+ "seconds": 10.72,
+ "prompt_file": "runs/prompts/A3/ST-20.txt",
+ "prompt_sha256": "84b1f912f9ce382d0cfbf2d6a3cca5b7b91ebf1f4f20efd29d3edb260a451282",
+ "answer": "There's no dedicated flag for choosing a registry. You select it with the path argument and set credentials through environment variables.\n\n**MLflow:** Pass a `models:/` URI as the path. For example, \"promptfoo scan-model models:/MyModel/Latest\" [promptfoo/site/docs/model-audit/usage.md]. Set the tracking server and credentials first:\n\n- \"`MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`MLFLOW_TRACKING_USERNAME` / `MLFLOW_TRACKING_PASSWORD`: Credentials for MLflow authentication.\" [promptfoo/site/docs/model-audit/usage.md]\n\nMLflow scanning also needs the `mlflow` package: \"pip install mlflow\" [promptfoo/site/docs/model-audit/index.md].\n\n**JFrog Artifactory:** Pass the full artifact URL as the path, for example \"promptfoo scan-model \"https://your-domain.jfrog.io/artifactory/models/model.pkl\"\" [promptfoo/site/docs/model-audit/usage.md]. Set the base URL and a token:\n\n- \"`JFROG_URL`: The base URL of your JFrog Artifactory instance.\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\" [promptfoo/site/docs/model-audit/usage.md]\n\nExample setup from the same file:\n\n```bash\nexport JFROG_URL=\"https://your-domain.jfrog.io\"\nexport JFROG_API_TOKEN=\"your-api-token\"\npromptfoo scan-model \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"\n```\n\nThe context doesn't say whether these environment variables can instead be set by a CLI option or config file.",
+ "tokens": {
+  "input": 2999,
+  "output": 1443,
+  "thinking": 783,
+  "cache_read": 2610,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008252000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6265,
+  "stop_reason": "end_turn",
+  "session_id": "188b92a9-ac24-44ec-9823-5c3fe4faa5fd",
+  "total_cost_usd": 0.0008252000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2610,
+   "output_tokens": 1443,
+   "output_tokens_details": {
+    "thinking_tokens": 783
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1443,
+     "cache_read_input_tokens": 2610,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1443,
+    "cacheReadInputTokens": 2610,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008252000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 783,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "There's no dedicated flag for choosing a registry. You select it with the path argument and set credentials through environment variables.\n\n**MLflow:** Pass a `models:/` URI as the path. For example, \"promptfoo scan-model models:/MyModel/Latest\" [promptfoo/site/docs/model-audit/usage.md]. Set the tracking server and credentials first:\n\n- \"`MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`MLFLOW_TRACKING_USERNAME` / `MLFLOW_TRACKING_PASSWORD`: Credentials for MLflow authentication.\" [promptfoo/site/docs/model-audit/usage.md]\n\nMLflow scanning also needs the `mlflow` package: \"pip install mlflow\" [promptfoo/site/docs/model-audit/index.md].\n\n**JFrog Artifactory:** Pass the full artifact URL as the path, for example \"promptfoo scan-model \"https://your-domain.jfrog.io/artifactory/models/model.pkl\"\" [promptfoo/site/docs/model-audit/usage.md]. Set the base URL and a token:\n\n- \"`JFROG_URL`: The base URL of your JFrog Artifactory instance.\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\" [promptfoo/site/docs/model-audit/usage.md]\n\nExample setup from the same file:\n\n```bash\nexport JFROG_URL=\"https://your-domain.jfrog.io\"\nexport JFROG_API_TOKEN=\"your-api-token\"\npromptfoo scan-model \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"\n```\n\nThe context doesn't say whether these environment variables can instead be set by a CLI option or config file.",
+  "ttft_ms": 4298,
+  "type": "result",
+  "duration_ms": 6397,
+  "uuid": "bf9ed6b3-ce56-481d-940f-28f074115148",
+  "ttft_stream_ms": 2884,
+  "time_to_request_ms": 131,
+  "first_content_frame_ms": 2884,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

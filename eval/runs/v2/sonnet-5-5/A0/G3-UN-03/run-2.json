@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-03",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:25Z",
+ "seconds": 9.29,
+ "prompt_sha256": "c23fbb49965067fa858ff48b7b2195481f688dd3c67f98e5a9670b24dd42459c",
+ "answer": "pgvector has no type called `bitvec`, as far as I know. Its binary vectors use PostgreSQL's built-in `bit` type.\n\nFor `bit`, pgvector can build HNSW and IVFFlat indexes on vectors of up to **64,000 dimensions**. I don't know of a separate pgvector limit on unindexed `bit` columns. That limit comes from PostgreSQL itself, and I don't remember the exact figure.\n\nIf you meant a different type, such as `vector` (up to 16,000 dimensions, with indexing up to 2,000), `halfvec`, or `sparsevec`, let me know and I'll answer for that one. I haven't checked any project files here, so this comes from general knowledge of pgvector, and the limits may differ in newer versions.",
+ "tokens": {
+  "input": 637,
+  "output": 559,
+  "thinking": 304,
+  "cache_read": 0,
+  "cache_creation": 635
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.008134,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4723,
+  "stop_reason": "end_turn",
+  "session_id": "e19ce3a0-5414-4245-abdd-e7eb2e3280d3",
+  "total_cost_usd": 0.008134,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 635,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 559,
+   "output_tokens_details": {
+    "thinking_tokens": 304
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 635,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 559,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 635,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 635
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 559,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 635,
+    "webSearchRequests": 0,
+    "costUSD": 0.008134,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 304,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 635,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "pgvector has no type called `bitvec`, as far as I know. Its binary vectors use PostgreSQL's built-in `bit` type.\n\nFor `bit`, pgvector can build HNSW and IVFFlat indexes on vectors of up to **64,000 dimensions**. I don't know of a separate pgvector limit on unindexed `bit` columns. That limit comes from PostgreSQL itself, and I don't remember the exact figure.\n\nIf you meant a different type, such as `vector` (up to 16,000 dimensions, with indexing up to 2,000), `halfvec`, or `sparsevec`, let me know and I'll answer for that one. I haven't checked any project files here, so this comes from general knowledge of pgvector, and the limits may differ in newer versions.",
+  "ttft_ms": 3270,
+  "type": "result",
+  "duration_ms": 4851,
+  "uuid": "5eca1190-dad7-4f59-be96-3b2a86a88e18",
+  "ttft_stream_ms": 3082,
+  "time_to_request_ms": 127,
+  "first_content_frame_ms": 3083,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

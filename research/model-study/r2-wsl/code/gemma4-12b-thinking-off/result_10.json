@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/95",
+  "index": 10,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef check_dict_case(dict):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\n    check_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\n    check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\n    check_dict_case({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\n    check_dict_case({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:35:37.6482521Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef check_dict_case(dict_input):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False if the given dictionary is empty.\n    \"\"\"\n    if not dict_input:\n        return False\n    \n    keys = list(dict_input.keys())\n    \n    # Check if all keys are strings\n    if not all(isinstance(k, str) for k in keys):\n        return False\n    \n    all_lower = True\n    all_upper = True\n    \n    for k in keys:\n        if not (k == k.lower()):\n            all_lower = False\n        if not (k == k.upper()):\n            all_upper = False\n            \n    return all_lower or all_upper\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1651317600,
+    "load_duration": 13894800,
+    "prompt_eval_count": 230,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 127130000,
+    "eval_count": 201,
+    "eval_duration": 1451193000
+  },
+  "wall_seconds": 1.5809776110036182,
+  "load_average_before": [
+    0.32080078125,
+    0.1591796875,
+    0.24462890625
+  ],
+  "load_average_after": [
+    0.294921875,
+    0.15625,
+    0.2431640625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-off-10",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_10.py"
+    ],
+    "wall_seconds": 0.9188981119950768,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

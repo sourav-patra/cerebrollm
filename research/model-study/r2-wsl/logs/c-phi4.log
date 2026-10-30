@@ -1,0 +1,57 @@
+=== 2026-10-28T20:46:51Z r2_wsl.py correctness phi4
+guard pull phi4 exit 0 phi4 digest ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba 
+phi4-default code 1 passed False
+phi4-default code 2 passed True
+phi4-default code 3 passed True
+phi4-default code 4 passed True
+phi4-default code 5 passed True
+phi4-default code 6 passed True
+phi4-default code 7 passed True
+phi4-default code 8 passed True
+phi4-default code 9 passed True
+phi4-default code 10 passed True
+phi4-default code 11 passed True
+phi4-default code 12 passed True
+phi4-default code 13 passed True
+phi4-default code 14 passed True
+phi4-default code 15 passed True
+phi4-default code 16 passed False
+phi4-default code 17 passed True
+phi4-default code 18 passed True
+phi4-default code 19 passed True
+phi4-default code 20 passed False
+phi4-default code 21 passed True
+phi4-default code 22 passed True
+phi4-default code 23 passed True
+phi4-default code 24 passed True
+phi4-default code 25 passed True
+phi4-default code 26 passed False
+phi4-default code 27 passed True
+phi4-default code 28 passed True
+phi4-default code 29 passed True
+phi4-default code 30 passed True
+phi4-default code 31 passed True
+phi4-default code 32 passed True
+phi4-default code 33 passed True
+phi4-default code 34 passed True
+phi4-default code 35 passed True
+phi4-default code 36 passed True
+phi4-default code 37 passed True
+phi4-default code 38 passed False
+phi4-default code 39 passed True
+phi4-default code 40 passed True
+phi4-default tools 1 False
+phi4-default tools 2 False
+phi4-default tools 3 False
+phi4-default tools 4 False
+phi4-default tools 5 False
+phi4-default tools 6 False
+phi4-default tools 7 False
+phi4-default tools 8 False
+phi4-default tools 9 False
+phi4-default tools 10 False
+phi4-default tools 11 False
+phi4-default tools 12 False
+guard unload phi4 exit 0 phi4 unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T20:51:49Z

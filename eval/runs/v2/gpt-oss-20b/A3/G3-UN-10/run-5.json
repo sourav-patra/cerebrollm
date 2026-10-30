@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-10",
+ "run": 5,
+ "started_utc": "2026-10-29T16:58:37Z",
+ "seconds": 4.71,
+ "prompt_sha256": "51ac80b6e62672310139a96464ccc983ad375f80ef8674d713b62d1c5dd224bb",
+ "answer": "I do not know.",
+ "thinking_chars": 1212,
+ "tokens": {
+  "input": 1455,
+  "output": 284
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5069037500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:58:42.2039246Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" The context doesn't explicitly mention GraphRAGCommunityRetriever. Let's search context: In [6] we have llama_index/docs/api_reference/api_reference/graph_rag/cognee.md referencing GraphRag. But not GraphRAGCommunityRetriever.\n\nBut maybe GraphRAGCommunityRetriever is part of graph_rag module. It might be a class in llama_index.graph_rag.retrievers? Let's recall knowledge: LlamaIndex (now llama-index) includes GraphRAGCommunityRetriever? I'm not sure. But the question likely expects answer: GraphRAGCommunityRetriever is a class in llama_index.graph_rag.community_retriever? But we need to confirm.\n\nGiven the context, we might not have direct quote. The answer may be \"I do not know\" if no evidence. But maybe we can infer: GraphRAGCommunityRetriever likely extends GraphRagRetriever? Or extends Retriever? Let's search memory: LlamaIndex GraphRAG community retriever is part of community integration? Might be in llama_index.graph_rag.community_retriever module. Base class maybe GraphRagRetriever or BaseRetriever? Without context, we cannot quote.\n\nThus answer: I do not know. Provide that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5069037500,
+  "load_duration": 14748100,
+  "prompt_eval_count": 1455,
+  "prompt_eval_cached_count": 1450,
+  "prompt_eval_duration": 57651000,
+  "eval_count": 284,
+  "eval_duration": 4942823000
+ }
+}

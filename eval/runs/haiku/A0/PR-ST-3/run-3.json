@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-ST-3",
+ "run": 3,
+ "started_utc": "2026-10-29T02:02:53Z",
+ "seconds": 8.92,
+ "prompt_file": "runs/prompts/A0/PR-ST-3.txt",
+ "prompt_sha256": "578d0b3fdfccb2e8e727afcb0f85f14404dc0f06aaf6613f8ce9060d5c92df12",
+ "answer": "Set the concurrency to 1. Promptfoo runs evaluations in parallel up to a concurrency limit, so a limit of 1 makes it run one request at a time across all providers and test cases.\n\n**Command line:**\n\n```powershell\npromptfoo eval -j 1\n```\n\nThe long form, `--max-concurrency 1`, should be equivalent.\n\n**Config file:** if you want this to be the default for a project, I believe you can set it under `evaluateOptions` in `promptfooconfig.yaml`:\n\n```yaml\nevaluateOptions:\n  maxConcurrency: 1\n```\n\nI'm not certain of the exact key name in your version, so check `promptfoo eval --help` or the docs for your installed version. If you need to slow requests further, for example to avoid rate limits, I also recall a `delay` option under `evaluateOptions`, but I'm less sure of its details, so verify it before relying on it.",
+ "tokens": {
+  "input": 648,
+  "output": 634,
+  "thinking": 337,
+  "cache_read": 0,
+  "cache_creation": 646
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004464,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4215,
+  "stop_reason": "end_turn",
+  "session_id": "2fab02b9-639c-421d-90f4-bd9f8ac25622",
+  "total_cost_usd": 0.0004464,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 646,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 634,
+   "output_tokens_details": {
+    "thinking_tokens": 337
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 646,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 634,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 646,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 646
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 634,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 646,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004464,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 337,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 646,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Set the concurrency to 1. Promptfoo runs evaluations in parallel up to a concurrency limit, so a limit of 1 makes it run one request at a time across all providers and test cases.\n\n**Command line:**\n\n```powershell\npromptfoo eval -j 1\n```\n\nThe long form, `--max-concurrency 1`, should be equivalent.\n\n**Config file:** if you want this to be the default for a project, I believe you can set it under `evaluateOptions` in `promptfooconfig.yaml`:\n\n```yaml\nevaluateOptions:\n  maxConcurrency: 1\n```\n\nI'm not certain of the exact key name in your version, so check `promptfoo eval --help` or the docs for your installed version. If you need to slow requests further, for example to avoid rate limits, I also recall a `delay` option under `evaluateOptions`, but I'm less sure of its details, so verify it before relying on it.",
+  "ttft_ms": 3262,
+  "type": "result",
+  "duration_ms": 4341,
+  "uuid": "2c2370de-a370-4def-8878-33cf115f2d10",
+  "ttft_stream_ms": 2900,
+  "time_to_request_ms": 163,
+  "first_content_frame_ms": 2900,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

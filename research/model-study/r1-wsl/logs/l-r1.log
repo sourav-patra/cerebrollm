@@ -1,0 +1,39 @@
+PASS: 3 isolated configs change only table/model; original node IDs/text preserved; Qwen query prefix applied
+selfcheck EXIT 0
+=== bge-m3 2026-10-28T19:25:40Z
+Table data_study_d_bge_m3 13431 distinct nodes; command seconds 539.907477927
+index EXIT 0 SECONDS 563
+bge-m3 vector k 5 {'id_hit': 0.8533333333333334, 'id_mrr': 0.7335555555555555, 'text_hit': 0.8533333333333334, 'text_mrr': 0.7335555555555555}
+bge-m3 vector k 10 {'id_hit': 0.9066666666666666, 'id_mrr': 0.7411481481481481, 'text_hit': 0.9066666666666666, 'text_mrr': 0.7411481481481481}
+bge-m3 hybrid k 5 {'id_hit': 0.8933333333333333, 'id_mrr': 0.8071111111111111, 'text_hit': 0.8933333333333333, 'text_mrr': 0.8071111111111111}
+bge-m3 hybrid k 10 {'id_hit': 0.9133333333333333, 'id_mrr': 0.8124629629629629, 'text_hit': 0.9133333333333333, 'text_mrr': 0.8124629629629629}
+evaluate EXIT 0 SECONDS 298
+bge-m3 unloaded; /api/ps is empty
+unload EXIT 0
+/api/ps is empty
+check EXIT 0
+=== qwen3-embedding:0.6b 2026-10-28T19:40:01Z
+Table data_study_d_qwen_06b 13431 distinct nodes; command seconds 551.528797594
+index EXIT 0 SECONDS 579
+qwen3-embedding:0.6b vector k 5 {'id_hit': 0.9, 'id_mrr': 0.7923333333333333, 'text_hit': 0.9, 'text_mrr': 0.7923333333333333}
+qwen3-embedding:0.6b vector k 10 {'id_hit': 0.92, 'id_mrr': 0.7952962962962964, 'text_hit': 0.92, 'text_mrr': 0.7952962962962964}
+qwen3-embedding:0.6b hybrid k 5 {'id_hit': 0.9266666666666666, 'id_mrr': 0.8412222222222222, 'text_hit': 0.9266666666666666, 'text_mrr': 0.8412222222222222}
+qwen3-embedding:0.6b hybrid k 10 {'id_hit': 0.9533333333333334, 'id_mrr': 0.8458703703703704, 'text_hit': 0.9533333333333334, 'text_mrr': 0.8458703703703704}
+evaluate EXIT 0 SECONDS 283
+qwen3-embedding:0.6b unloaded; /api/ps is empty
+unload EXIT 0
+/api/ps is empty
+check EXIT 0
+=== qwen3-embedding:4b 2026-10-28T19:54:24Z
+Table data_study_d_qwen_4b 13431 distinct nodes; command seconds 540.6285101700005
+index EXIT 0 SECONDS 571
+qwen3-embedding:4b vector k 5 {'id_hit': 0.8533333333333334, 'id_mrr': 0.755, 'text_hit': 0.8533333333333334, 'text_mrr': 0.755}
+qwen3-embedding:4b vector k 10 {'id_hit': 0.88, 'id_mrr': 0.7587222222222223, 'text_hit': 0.88, 'text_mrr': 0.7587222222222223}
+qwen3-embedding:4b hybrid k 5 {'id_hit': 0.9066666666666666, 'id_mrr': 0.8073333333333333, 'text_hit': 0.9066666666666666, 'text_mrr': 0.8073333333333333}
+qwen3-embedding:4b hybrid k 10 {'id_hit': 0.9333333333333333, 'id_mrr': 0.8110238095238095, 'text_hit': 0.9333333333333333, 'text_mrr': 0.8110238095238095}
+evaluate EXIT 0 SECONDS 285
+qwen3-embedding:4b unloaded; /api/ps is empty
+unload EXIT 0
+/api/ps is empty
+check EXIT 0
+ALLDONE

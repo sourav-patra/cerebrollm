@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-14",
+ "run": 4,
+ "started_utc": "2026-10-29T01:42:27Z",
+ "seconds": 7.36,
+ "prompt_file": "runs/prompts/A0/EX-14.txt",
+ "prompt_sha256": "41f8ab777e39b2fa0dce62e95f2fb9a073bba11d476de0892b23cec5127ce5f3",
+ "answer": "The function is **`load_index_from_storage`**, imported from `llama_index.core`:\n\n```python\nfrom llama_index.core import StorageContext, load_index_from_storage\n\nstorage_context = StorageContext.from_defaults(persist_dir=\"./storage\")\nindex = load_index_from_storage(storage_context)\n```\n\nIf the storage directory holds several indexes, pass `index_id` to pick one, or `index_ids` to load several. I haven't checked your project's code, so this is based on the standard LlamaIndex API. Your version may differ.",
+ "tokens": {
+  "input": 655,
+  "output": 298,
+  "thinking": 123,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00027979999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3005,
+  "stop_reason": "end_turn",
+  "session_id": "bb07236a-af08-43d1-9923-4f7d2e5767f2",
+  "total_cost_usd": 0.00027979999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 298,
+   "output_tokens_details": {
+    "thinking_tokens": 123
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 298,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 298,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.00027979999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 123,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The function is **`load_index_from_storage`**, imported from `llama_index.core`:\n\n```python\nfrom llama_index.core import StorageContext, load_index_from_storage\n\nstorage_context = StorageContext.from_defaults(persist_dir=\"./storage\")\nindex = load_index_from_storage(storage_context)\n```\n\nIf the storage directory holds several indexes, pass `index_id` to pick one, or `index_ids` to load several. I haven't checked your project's code, so this is based on the standard LlamaIndex API. Your version may differ.",
+  "ttft_ms": 3119,
+  "type": "result",
+  "duration_ms": 3152,
+  "uuid": "c6bc3e74-8347-449a-acde-e2482ee5b1f7",
+  "ttft_stream_ms": 3118,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 3118,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

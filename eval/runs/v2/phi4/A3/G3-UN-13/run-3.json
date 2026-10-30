@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 3,
+ "started_utc": "2026-10-29T17:33:22Z",
+ "seconds": 6.69,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know which promptfoo assertion type computes BERTScore between an output and a reference based on the provided context. The context does not mention BERTScore or any assertion type related to it. \n\nThe context primarily discusses BLEU, METEOR, and various model-graded metrics, but BERTScore is not mentioned. Therefore, I cannot provide a specific assertion type for BERTScore from the given information. \n\nIf you have access to more documentation or resources, I recommend checking those for information on BERTScore. \n\n[No specific line from the context is relied upon since BERTScore is not mentioned.]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1588,
+  "output": 128
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7176887100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:33:28.1020579Z",
+  "response": "I do not know which promptfoo assertion type computes BERTScore between an output and a reference based on the provided context. The context does not mention BERTScore or any assertion type related to it. \n\nThe context primarily discusses BLEU, METEOR, and various model-graded metrics, but BERTScore is not mentioned. Therefore, I cannot provide a specific assertion type for BERTScore from the given information. \n\nIf you have access to more documentation or resources, I recommend checking those for information on BERTScore. \n\n[No specific line from the context is relied upon since BERTScore is not mentioned.]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7176887100,
+  "load_duration": 12970400,
+  "prompt_eval_count": 1588,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 806176000,
+  "eval_count": 128,
+  "eval_duration": 6211943000
+ }
+}

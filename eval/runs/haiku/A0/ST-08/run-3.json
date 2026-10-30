@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-08",
+ "run": 3,
+ "started_utc": "2026-10-29T01:57:09Z",
+ "seconds": 8.58,
+ "prompt_file": "runs/prompts/A0/ST-08.txt",
+ "prompt_sha256": "eff47a5cbc20a22f9b25a4142186b1b9028e17573226d57b8cdc164063d12ec8",
+ "answer": "In current LlamaIndex releases, the parameter is **`context_window`**. You set it on the LLM, for example `OpenAI(model=\"...\", context_window=...)`, and it's exposed as `llm.metadata.context_window`. LlamaIndex uses it to decide how much text fits in a prompt.\n\nThe older name was `max_input_size`, which lived on `PromptHelper` and was configured through `ServiceContext`. That API was removed in the 0.10 refactor, so `context_window` on the LLM replaces it. Output length is controlled separately, through `num_output` in older versions or `max_tokens` on the LLM in newer ones.\n\nI'm answering from memory and haven't checked the library source or your installed version, so verify against the docs for your release if the details matter.",
+ "tokens": {
+  "input": 659,
+  "output": 531,
+  "thinking": 280,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00039710000000000006,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3680,
+  "stop_reason": "end_turn",
+  "session_id": "a118a593-c877-4f9c-9c86-6e78e34de78e",
+  "total_cost_usd": 0.00039710000000000006,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 531,
+   "output_tokens_details": {
+    "thinking_tokens": 280
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 531,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 531,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.00039710000000000006,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 280,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In current LlamaIndex releases, the parameter is **`context_window`**. You set it on the LLM, for example `OpenAI(model=\"...\", context_window=...)`, and it's exposed as `llm.metadata.context_window`. LlamaIndex uses it to decide how much text fits in a prompt.\n\nThe older name was `max_input_size`, which lived on `PromptHelper` and was configured through `ServiceContext`. That API was removed in the 0.10 refactor, so `context_window` on the LLM replaces it. Output length is controlled separately, through `num_output` in older versions or `max_tokens` on the LLM in newer ones.\n\nI'm answering from memory and haven't checked the library source or your installed version, so verify against the docs for your release if the details matter.",
+  "ttft_ms": 2921,
+  "type": "result",
+  "duration_ms": 3805,
+  "uuid": "6d01aa19-c89e-4b1b-95d7-8c3f738e315d",
+  "ttft_stream_ms": 2920,
+  "time_to_request_ms": 128,
+  "first_content_frame_ms": 2920,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

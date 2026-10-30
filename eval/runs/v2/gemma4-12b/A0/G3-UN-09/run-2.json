@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:49Z",
+ "seconds": 0.38,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "I do not know. The provided information does not contain the specific default `separator_regex` for LlamaIndex's `TokenTextSplitter`.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 55,
+  "output": 32
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 393331000
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:56:50.3107001Z",
+  "response": "I do not know. The provided information does not contain the specific default `separator_regex` for LlamaIndex's `TokenTextSplitter`.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 393331000,
+  "load_duration": 14533400,
+  "prompt_eval_count": 55,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 66030000,
+  "eval_count": 32,
+  "eval_duration": 287322000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-EX-2",
+ "run": 2,
+ "started_utc": "2026-10-29T01:45:06Z",
+ "seconds": 10.51,
+ "prompt_file": "runs/prompts/A0/PR-EX-2.txt",
+ "prompt_sha256": "b796f18c02732acaa246be0f2b3e98d761d7a10ac691e3d24f7b37bc4eccc149",
+ "answer": "According to my knowledge of the pgvector README, the default is **1 probe** (set via `ivfflat.probes`). Raising it improves recall at the cost of query speed. I'm working from memory and can't check the current README here, so verify against the repository if the exact value matters.",
+ "tokens": {
+  "input": 655,
+  "output": 329,
+  "thinking": 241,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00029529999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2952,
+  "stop_reason": "end_turn",
+  "session_id": "cfd4496c-e967-4b3b-a688-8309c53f6ec4",
+  "total_cost_usd": 0.00029529999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 329,
+   "output_tokens_details": {
+    "thinking_tokens": 241
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 329,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 329,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.00029529999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 241,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "According to my knowledge of the pgvector README, the default is **1 probe** (set via `ivfflat.probes`). Raising it improves recall at the cost of query speed. I'm working from memory and can't check the current README here, so verify against the repository if the exact value matters.",
+  "ttft_ms": 5893,
+  "type": "result",
+  "duration_ms": 6378,
+  "uuid": "92534146-e0b1-40c9-8833-495ff32a480c",
+  "ttft_stream_ms": 4628,
+  "time_to_request_ms": 3425,
+  "first_content_frame_ms": 4628,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

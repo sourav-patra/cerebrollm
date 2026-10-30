@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-09",
+ "run": 3,
+ "started_utc": "2026-10-29T01:49:00Z",
+ "seconds": 9.26,
+ "prompt_file": "runs/prompts/A0/PA-09.txt",
+ "prompt_sha256": "f722ed625fc836a796c3355df9d382db3dcb83c814fa8ea57c968ac4dd08d5c7",
+ "answer": "I don't have details about this specific project's configuration, so I can answer only from general PostgreSQL knowledge.\n\nBy default, a single non-partitioned PostgreSQL table can be at most **32 TB**. This follows from the default 8 KB block size, since the table can have at most 2³² blocks (2³² × 8 KB = 32 TB). The limit is per table, not per database.\n\nHow many vectors fit depends on their size. Each row is stored in a heap page, and a single row must fit within a page, so very large vectors may be TOASTed. For example, a 1536-dimension `vector` (about 6 KB) fits roughly one row per page, so the table could hold on the order of 4 billion rows before hitting the block limit. Smaller vectors would allow more rows, and indexes and other overhead reduce the practical capacity.\n\nPartitioning is the usual way to exceed the single-table limit. Also, a custom build with a different block size changes the number.",
+ "tokens": {
+  "input": 667,
+  "output": 744,
+  "thinking": 438,
+  "cache_read": 0,
+  "cache_creation": 665
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005052,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4779,
+  "stop_reason": "end_turn",
+  "session_id": "eeb078ad-2eba-4e44-93b0-4f99cc8f3db1",
+  "total_cost_usd": 0.0005052,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 665,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 744,
+   "output_tokens_details": {
+    "thinking_tokens": 438
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 665,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 744,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 665,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 665
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 744,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 665,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005052,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 438,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 665,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't have details about this specific project's configuration, so I can answer only from general PostgreSQL knowledge.\n\nBy default, a single non-partitioned PostgreSQL table can be at most **32 TB**. This follows from the default 8 KB block size, since the table can have at most 2³² blocks (2³² × 8 KB = 32 TB). The limit is per table, not per database.\n\nHow many vectors fit depends on their size. Each row is stored in a heap page, and a single row must fit within a page, so very large vectors may be TOASTed. For example, a 1536-dimension `vector` (about 6 KB) fits roughly one row per page, so the table could hold on the order of 4 billion rows before hitting the block limit. Smaller vectors would allow more rows, and indexes and other overhead reduce the practical capacity.\n\nPartitioning is the usual way to exceed the single-table limit. Also, a custom build with a different block size changes the number.",
+  "ttft_ms": 3266,
+  "type": "result",
+  "duration_ms": 4910,
+  "uuid": "0aefc655-2aff-4eeb-9893-673f384f8757",
+  "ttft_stream_ms": 2825,
+  "time_to_request_ms": 180,
+  "first_content_frame_ms": 2825,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

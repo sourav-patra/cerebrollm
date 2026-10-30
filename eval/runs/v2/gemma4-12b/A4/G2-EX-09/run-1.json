@@ -1,0 +1,96 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A4",
+ "id": "G2-EX-09",
+ "run": 1,
+ "started_utc": "2026-10-29T18:08:33Z",
+ "seconds": 25.51,
+ "prompt_sha256": "ba02bf73acfce6dab51113cab909b1134e39e37fa69bcbab8afadd8b8d6b9d99",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "llama_index/v0.14.24.md (lines 69-73)",
+   "quote": "feat(google-genai): use gemini 3.7 Flash by default in lib and docs ([#22734](https://github.com/run-llama/llama_index/pull/22734))",
+   "verify": "GONE",
+   "detail": "source not found: llama_index/v0.14.24.md (lines 69-73)"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 7.02,
+   "rerank": 7.38,
+   "generate": 8.37,
+   "verify": 0.05,
+   "total": 22.82
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.9774,
+    "path": "llama_index/v0.14.24.md",
+    "line_start": 69,
+    "line_end": 73
+   },
+   {
+    "rank": 2,
+    "search_rank": 14,
+    "rerank_score": 0.67857,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 10696,
+    "line_end": 10702
+   },
+   {
+    "rank": 3,
+    "search_rank": 3,
+    "rerank_score": 0.57813,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 5333,
+    "line_end": 5339
+   },
+   {
+    "rank": 4,
+    "search_rank": 6,
+    "rerank_score": 0.515,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 3093,
+    "line_end": 3096
+   },
+   {
+    "rank": 5,
+    "search_rank": 7,
+    "rerank_score": 0.46061,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 9706,
+    "line_end": 9716
+   },
+   {
+    "rank": 6,
+    "search_rank": 10,
+    "rerank_score": 0.40385,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 10654,
+    "line_end": 10664
+   },
+   {
+    "rank": 7,
+    "search_rank": 16,
+    "rerank_score": 0.32016,
+    "path": "promptfoo/site/docs/providers/google.md",
+    "line_start": 998,
+    "line_end": 1014
+   },
+   {
+    "rank": 8,
+    "search_rank": 5,
+    "rerank_score": 0.29731,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 11784,
+    "line_end": 11791
+   }
+  ],
+  "model": "gemma4:12b"
+ }
+}

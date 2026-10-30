@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-EX-09",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:32Z",
+ "seconds": 1.42,
+ "prompt_sha256": "b45889bffc4c0532b81b685d10f4af853292432ba529109055c0dea8c106eea4",
+ "answer": "\"use gemini 3.7 Flash by default in lib and docs\" [llama_index/v0.14.24.md (lines 69-73)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1762,
+  "output": 41
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1511473100
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:55:34.5730486Z",
+  "response": "\"use gemini 3.7 Flash by default in lib and docs\" [llama_index/v0.14.24.md (lines 69-73)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1511473100,
+  "load_duration": 16739200,
+  "prompt_eval_count": 1762,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 793734000,
+  "eval_count": 41,
+  "eval_duration": 338680000
+ }
+}

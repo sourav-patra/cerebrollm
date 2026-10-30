@@ -1,0 +1,96 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A4",
+ "id": "G2-EX-07",
+ "run": 1,
+ "started_utc": "2026-10-29T18:06:55Z",
+ "seconds": 23.59,
+ "prompt_sha256": "af3ae3ea7887c5537bee325f12a14d1f1ff458e2d34a4705ac6f6511d3da6325",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "promptfoo/0.125.0.md (lines 14-25)",
+   "quote": "**assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))",
+   "verify": "GONE",
+   "detail": "source not found: promptfoo/0.125.0.md (lines 14-25)"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 3.3,
+   "rerank": 7.67,
+   "generate": 10.11,
+   "verify": 0.0,
+   "total": 21.09
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.96154,
+    "path": "promptfoo/0.125.0.md",
+    "line_start": 14,
+    "line_end": 25
+   },
+   {
+    "rank": 2,
+    "search_rank": 14,
+    "rerank_score": 0.73256,
+    "path": "promptfoo/site/docs/guides/choosing-best-gpt-model.md",
+    "line_start": 79,
+    "line_end": 124
+   },
+   {
+    "rank": 3,
+    "search_rank": 2,
+    "rerank_score": 0.61079,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 838,
+    "line_end": 849
+   },
+   {
+    "rank": 4,
+    "search_rank": 15,
+    "rerank_score": 0.54009,
+    "path": "promptfoo/0.125.0.md",
+    "line_start": 31,
+    "line_end": 42
+   },
+   {
+    "rank": 5,
+    "search_rank": 12,
+    "rerank_score": 0.48764,
+    "path": "promptfoo/0.123.0.md",
+    "line_start": 9,
+    "line_end": 23
+   },
+   {
+    "rank": 6,
+    "search_rank": 19,
+    "rerank_score": 0.45566,
+    "path": "promptfoo/site/docs/configuration/expected-outputs/deterministic.md",
+    "line_start": 1389,
+    "line_end": 1389
+   },
+   {
+    "rank": 7,
+    "search_rank": 9,
+    "rerank_score": 0.45455,
+    "path": "promptfoo/site/docs/integrations/python.md",
+    "line_start": 27,
+    "line_end": 112
+   },
+   {
+    "rank": 8,
+    "search_rank": 17,
+    "rerank_score": 0.44192,
+    "path": "promptfoo/site/docs/integrations/mocha-chai.md",
+    "line_start": 25,
+    "line_end": 114
+   }
+  ],
+  "model": "gemma4:12b"
+ }
+}

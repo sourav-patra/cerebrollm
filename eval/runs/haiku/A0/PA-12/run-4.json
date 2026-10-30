@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-12",
+ "run": 4,
+ "started_utc": "2026-10-29T01:50:21Z",
+ "seconds": 7.89,
+ "prompt_file": "runs/prompts/A0/PA-12.txt",
+ "prompt_sha256": "2bef4bd67b9f5b9d30237c327c2019a967c25ee824cb509f3ad7176d93b0c801",
+ "answer": "In the LlamaIndex node parser documentation's basic `SentenceSplitter` example, I believe the settings are `chunk_size=1024` and `chunk_overlap=20`:\n\n```python\nfrom llama_index.core.node_parser import SentenceSplitter\n\nnode_parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)\n```\n\nI'm recalling this from memory and can't check the current docs, so the exact values may have changed. The library's default overlap is different from the example's: I believe `SentenceSplitter` defaults to a chunk size of 1024 and an overlap of 200.",
+ "tokens": {
+  "input": 676,
+  "output": 595,
+  "thinking": 392,
+  "cache_read": 0,
+  "cache_creation": 674
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00043250000000000005,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3157,
+  "stop_reason": "end_turn",
+  "session_id": "9ec67d78-ecae-4834-89d6-92807fdf4d84",
+  "total_cost_usd": 0.00043250000000000005,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 674,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 595,
+   "output_tokens_details": {
+    "thinking_tokens": 392
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 674,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 595,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 674,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 674
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 595,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 674,
+    "webSearchRequests": 0,
+    "costUSD": 0.00043250000000000005,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 392,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 674,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In the LlamaIndex node parser documentation's basic `SentenceSplitter` example, I believe the settings are `chunk_size=1024` and `chunk_overlap=20`:\n\n```python\nfrom llama_index.core.node_parser import SentenceSplitter\n\nnode_parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)\n```\n\nI'm recalling this from memory and can't check the current docs, so the exact values may have changed. The library's default overlap is different from the example's: I believe `SentenceSplitter` defaults to a chunk size of 1024 and an overlap of 200.",
+  "ttft_ms": 2797,
+  "type": "result",
+  "duration_ms": 3268,
+  "uuid": "c9881701-18ef-479d-8f05-8350a25eda83",
+  "ttft_stream_ms": 2796,
+  "time_to_request_ms": 146,
+  "first_content_frame_ms": 2796,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

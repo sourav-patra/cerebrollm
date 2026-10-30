@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 1,
+ "started_utc": "2026-10-29T15:43:59Z",
+ "seconds": 9.87,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "As far as I know, LlamaIndex's `TokenTextSplitter` has no `separator_regex` parameter, so there is no default to give.\n\nIts main parameters are:\n- `chunk_size` (default 1024)\n- `chunk_overlap` (default 20)\n- `separator` (default `\" \"`, a plain string rather than a regex)\n- `backup_separators` (default `[\"\\n\"]`)\n- `tokenizer`\n- `include_metadata` and `include_prev_next_rel`\n\nYou may be thinking of one of these:\n- LlamaIndex's `SentenceSplitter` has a `secondary_chunking_regex`, which defaults to `\"[^,.;。？！]+[,.;。？！]?|[,.;。？！]\"`.\n- LangChain's `RecursiveCharacterTextSplitter` and `CharacterTextSplitter` use `separators`/`separator` and an `is_separator_regex` flag.\n\nI can't check the current source from here, so I'm going from memory. A newer release may have changed the signature. You can confirm with `help(TokenTextSplitter)` in your installed version.",
+ "tokens": {
+  "input": 639,
+  "output": 562,
+  "thinking": 197,
+  "cache_read": 0,
+  "cache_creation": 637
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.008171999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5983,
+  "stop_reason": "end_turn",
+  "session_id": "d0319244-6c97-4acc-8f4e-895d21ea2ce9",
+  "total_cost_usd": 0.008171999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 637,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 562,
+   "output_tokens_details": {
+    "thinking_tokens": 197
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 637,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 562,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 637,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 637
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 562,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 637,
+    "webSearchRequests": 0,
+    "costUSD": 0.008171999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 197,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 637,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "As far as I know, LlamaIndex's `TokenTextSplitter` has no `separator_regex` parameter, so there is no default to give.\n\nIts main parameters are:\n- `chunk_size` (default 1024)\n- `chunk_overlap` (default 20)\n- `separator` (default `\" \"`, a plain string rather than a regex)\n- `backup_separators` (default `[\"\\n\"]`)\n- `tokenizer`\n- `include_metadata` and `include_prev_next_rel`\n\nYou may be thinking of one of these:\n- LlamaIndex's `SentenceSplitter` has a `secondary_chunking_regex`, which defaults to `\"[^,.;。？！]+[,.;。？！]?|[,.;。？！]\"`.\n- LangChain's `RecursiveCharacterTextSplitter` and `CharacterTextSplitter` use `separators`/`separator` and an `is_separator_regex` flag.\n\nI can't check the current source from here, so I'm going from memory. A newer release may have changed the signature. You can confirm with `help(TokenTextSplitter)` in your installed version.",
+  "ttft_ms": 3725,
+  "type": "result",
+  "duration_ms": 6057,
+  "uuid": "e13f3949-81e9-41e9-a154-b47b5d9bcf42",
+  "ttft_stream_ms": 2603,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 2603,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

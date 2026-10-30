@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-02",
+ "run": 5,
+ "started_utc": "2026-10-29T17:42:04Z",
+ "seconds": 4.82,
+ "prompt_sha256": "60f868e3a7814623d1f9aa36fa2798b82971e32e3304cf4ebc7d143ef20c3e6b",
+ "answer": "As of my last update, I do not have specific information about which version of pgvector allows pg_upgrade to carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them. This is a detailed and specific capability that would require consulting the latest documentation or release notes from the pgvector project. If this feature has been introduced, it would typically be highlighted in the changelog or release notes of the pgvector versions following the latest major PostgreSQL upgrade. For the most accurate and up-to-date information, checking the official pgvector documentation or community forums would be recommended.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 54,
+  "output": 114
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5303694600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:42:08.1780392Z",
+  "response": "As of my last update, I do not have specific information about which version of pgvector allows pg_upgrade to carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them. This is a detailed and specific capability that would require consulting the latest documentation or release notes from the pgvector project. If this feature has been introduced, it would typically be highlighted in the changelog or release notes of the pgvector versions following the latest major PostgreSQL upgrade. For the most accurate and up-to-date information, checking the official pgvector documentation or community forums would be recommended.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5303694600,
+  "load_duration": 12418300,
+  "prompt_eval_count": 54,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 217833000,
+  "eval_count": 114,
+  "eval_duration": 5059085000
+ }
+}

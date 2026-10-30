@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 5,
+ "started_utc": "2026-10-29T16:55:07Z",
+ "seconds": 3.57,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "The speed‑up reduced a cold `/api/tags` request on a large model library to **294 ms** in testing.  \n\"3.1 s → 294 ms cold in testing.\" [1] ollama/v0.34.1.md (lines 1‑15)",
+ "thinking_chars": 447,
+ "tokens": {
+  "input": 2329,
+  "output": 210
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3786509000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:55:10.8518579Z",
+  "response": "The speed‑up reduced a cold `/api/tags` request on a large model library to **294 ms** in testing.  \n\"3.1 s → 294 ms cold in testing.\" [1] ollama/v0.34.1.md (lines 1‑15)",
+  "thinking": "We need to answer: In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up? The context lines 1-15 of [1] mention: \"`/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing)\". So answer: 294 ms. Must quote line and path. Provide quote: \"3.1 s → 294 ms cold in testing\". Path: [1] ollama/v0.34.1.md (lines 1-15). Ensure quoting exact. Provide answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3786509000,
+  "load_duration": 15934400,
+  "prompt_eval_count": 2329,
+  "prompt_eval_cached_count": 2324,
+  "prompt_eval_duration": 59106000,
+  "eval_count": 210,
+  "eval_duration": 3643404000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-09",
+ "run": 1,
+ "started_utc": "2026-10-29T01:57:26Z",
+ "seconds": 8.79,
+ "prompt_file": "runs/prompts/A3/ST-09.txt",
+ "prompt_sha256": "31d318638b3cf0b7687b578ebfbd1dcec72f676c828f9288dbbbc0a4ec6bffa9",
+ "answer": "You should use **`VectorStoreIndex`**, imported from `llama_index.core`. The docs show building it from your loaded documents with `from_documents`:\n\n\"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`:\" [llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md]\n\n```python\nfrom llama_index.core import VectorStoreIndex\n\nindex = VectorStoreIndex.from_documents(documents)\n```\n\nThe same guide notes that `from_documents` splits your Documents into chunks and parses them into `Node` objects. The indexing guide also says you can build the index from a list of Node objects directly with `VectorStoreIndex(nodes)` [llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md].",
+ "tokens": {
+  "input": 3363,
+  "output": 733,
+  "thinking": 452,
+  "cache_read": 0,
+  "cache_creation": 3361
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0010389,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4166,
+  "stop_reason": "end_turn",
+  "session_id": "efd15bd5-ab31-4b10-8f51-8abf2bf770a3",
+  "total_cost_usd": 0.0010389,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3361,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 733,
+   "output_tokens_details": {
+    "thinking_tokens": 452
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3361,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 733,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3361,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3361
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 733,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3361,
+    "webSearchRequests": 0,
+    "costUSD": 0.0010389,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 452,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3361,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You should use **`VectorStoreIndex`**, imported from `llama_index.core`. The docs show building it from your loaded documents with `from_documents`:\n\n\"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`:\" [llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md]\n\n```python\nfrom llama_index.core import VectorStoreIndex\n\nindex = VectorStoreIndex.from_documents(documents)\n```\n\nThe same guide notes that `from_documents` splits your Documents into chunks and parses them into `Node` objects. The indexing guide also says you can build the index from a list of Node objects directly with `VectorStoreIndex(nodes)` [llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md].",
+  "ttft_ms": 3290,
+  "type": "result",
+  "duration_ms": 4288,
+  "uuid": "eddc190c-a8ed-4ff1-9ce0-1b2cea36662e",
+  "ttft_stream_ms": 2775,
+  "time_to_request_ms": 156,
+  "first_content_frame_ms": 2775,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

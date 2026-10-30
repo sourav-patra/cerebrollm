@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 2,
+ "started_utc": "2026-10-29T16:23:02Z",
+ "seconds": 2.98,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "\"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]",
+ "thinking_chars": 559,
+ "tokens": {
+  "input": 2124,
+  "output": 177
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3152425100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:23:05.9382159Z",
+  "response": "\"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]",
+  "thinking": "We need to answer: \"Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default?\"\n\nFrom context [1] we saw:\n\n\"GET /api/show now advertises each model's thinking controls and default:\" So the endpoint is /api/show.\n\nThus answer: GET /api/show.\n\nWe need to quote line. In [1], first lines: \"GET /api/show now advertises each model's thinking controls and default:\" That is the line.\n\nSo quote: \"GET /api/show now advertises each model's thinking controls and default:\" and path: [ollama/v0.34.3.md].\n\nThus answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3152425100,
+  "load_duration": 14800300,
+  "prompt_eval_count": 2124,
+  "prompt_eval_cached_count": 2119,
+  "prompt_eval_duration": 56824000,
+  "eval_count": 177,
+  "eval_duration": 3024428000
+ }
+}

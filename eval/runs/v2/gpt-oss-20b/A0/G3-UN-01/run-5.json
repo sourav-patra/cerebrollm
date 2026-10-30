@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-01",
+ "run": 5,
+ "started_utc": "2026-10-29T16:52:33Z",
+ "seconds": 10.09,
+ "prompt_sha256": "6b24b53d9e74ec4a02d457527687083549c4113cc98dcf294f5d69aa8760a802",
+ "answer": "I’m not sure I know the exact value. If you need the definitive answer, check the latest pgvector documentation or source code.",
+ "thinking_chars": 1639,
+ "tokens": {
+  "input": 110,
+  "output": 468
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8255025800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:52:42.8167602Z",
+  "response": "I’m not sure I know the exact value. If you need the definitive answer, check the latest pgvector documentation or source code.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: What is the default value of pgvector's hnsw.max_scan_tuples_per_page setting?\"\n\nThey refer to pgvector, a PostgreSQL extension for vector similarity search. There's an HNSW index setting \"hnsw.max_scan_tuples_per_page\". They want the default value. I need to know the default value. I think I recall that pgvector's HNSW index has configuration parameters: max_scan_tuples_per_page, max_scan_nodes_per_page, max_scan_edges_per_page, etc. The default for max_scan_tuples_per_page might be 4 or something. I need to be sure.\n\nLet's think: In PostgreSQL, settings are in the index options. In pgvector's documentation: There are parameters like hnsw.max_scan_tuples_per_page, hnsw.max_scan_nodes_per_page, hnsw.max_scan_edges_per_page. The default values are maybe 4, 4, 4. But I'm not certain. Let's search memory: I recall reading that the default for max_scan_tuples_per_page is 4. Actually, I think it's 4. The default for max_scan_nodes_per_page is 4. But maybe it's 8? Let's check the code: In pgvector/src/hnsw.c, there's a structure with default values: #define HNSW_MAX_SCAN_TUPLES_PER_PAGE_DEFAULT 4. Yes, that seems plausible. I'm fairly sure it's 4.\n\nThus answer: 4.\n\nBut maybe I should confirm: The default values for pgvector's HNSW index are: hnsw.max_scan_tuples_per_page = 4, hnsw.max_scan_nodes_per_page = 4, hnsw.max_scan_edges_per_page = 4. So default is 4.\n\nThus answer: 4.\n\nBut the user might want the numeric value. So answer: 4. If uncertain, say I don't know. But I think it's correct.\n\nThus respond: 4.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8255025800,
+  "load_duration": 12819700,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 182400000,
+  "eval_count": 468,
+  "eval_duration": 8045009000
+ }
+}

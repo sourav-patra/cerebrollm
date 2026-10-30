@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 5,
+ "started_utc": "2026-10-29T17:45:02Z",
+ "seconds": 12.8,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "Promptfoo version 0.124.0 introduces support for comma-separated OR values in the `--filter-metadata` option. This allows users to specify multiple values for a single metadata key, with any of these values being acceptable for a test case to pass the filter.\n\nThe relevant information is found in two parts of the context:\n\n1. The feature description: \n   - \"Features: **cli:** support comma-separated OR values in --filter-metadata ([#11320](https://github.com/promptfoo/promptfoo/issues/11320)) ([b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c))\"\n\n2. The command line documentation:\n   - \"`--filter-metadata <key=value>`: Filter tests by metadata substring. Commas separate OR values (`\\,` is a comma); repeated flags use AND.\"\n\nThus, the new form of value accepted is comma-separated values for OR logic within a single metadata key. [3] promptfoo/0.124.0.md (lines 20-31) and [2] promptfoo/site/docs/usage/command-line.md (lines 117-117)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1677,
+  "output": 259
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 13812553600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:45:14.9892586Z",
+  "response": "Promptfoo version 0.124.0 introduces support for comma-separated OR values in the `--filter-metadata` option. This allows users to specify multiple values for a single metadata key, with any of these values being acceptable for a test case to pass the filter.\n\nThe relevant information is found in two parts of the context:\n\n1. The feature description: \n   - \"Features: **cli:** support comma-separated OR values in --filter-metadata ([#11320](https://github.com/promptfoo/promptfoo/issues/11320)) ([b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c))\"\n\n2. The command line documentation:\n   - \"`--filter-metadata <key=value>`: Filter tests by metadata substring. Commas separate OR values (`\\,` is a comma); repeated flags use AND.\"\n\nThus, the new form of value accepted is comma-separated values for OR logic within a single metadata key. [3] promptfoo/0.124.0.md (lines 20-31) and [2] promptfoo/site/docs/usage/command-line.md (lines 117-117)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13812553600,
+  "load_duration": 13478000,
+  "prompt_eval_count": 1677,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 872337000,
+  "eval_count": 259,
+  "eval_duration": 12761523000
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 3,
+ "started_utc": "2026-10-29T17:31:20Z",
+ "seconds": 7.87,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "The context window for Claude Opus 4.6 in `llama-index-llms-anthropic` version 0.11.10 is set to 1 million tokens. \n\nThis information is specified in the release notes under:\n\n\"fix(anthropic): correct Opus 4.6 context window to 1M\" [1] llama_index/v0.14.24.md (lines 55-60)\n\nAdditionally, it is confirmed in a different changelog entry:\n\n\"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6\" [4] llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3610-3617)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1558,
+  "output": 155
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8462359700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:31:29.1423528Z",
+  "response": "The context window for Claude Opus 4.6 in `llama-index-llms-anthropic` version 0.11.10 is set to 1 million tokens. \n\nThis information is specified in the release notes under:\n\n\"fix(anthropic): correct Opus 4.6 context window to 1M\" [1] llama_index/v0.14.24.md (lines 55-60)\n\nAdditionally, it is confirmed in a different changelog entry:\n\n\"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6\" [4] llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3610-3617)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8462359700,
+  "load_duration": 12056800,
+  "prompt_eval_count": 1558,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 742548000,
+  "eval_count": 155,
+  "eval_duration": 7557422000
+ }
+}

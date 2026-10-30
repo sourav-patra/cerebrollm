@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 5,
+ "started_utc": "2026-10-29T16:58:42Z",
+ "seconds": 4.51,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "I do not know.\n\n“ The `run` method of `IngestionPipeline` can be executed with parallel processes. ” [2]",
+ "thinking_chars": 1130,
+ "tokens": {
+  "input": 1723,
+  "output": 279
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4977150800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:58:47.2420522Z",
+  "response": "I do not know.\n\n“ The `run` method of `IngestionPipeline` can be executed with parallel processes. ” [2]",
+  "thinking": "We need to answer: \"How many documents per second can LlamaIndex's IngestionPipeline process on a single CPU core?\" We need to search context for performance metrics. The context provided doesn't contain that number. There's no mention of documents per second. The question likely expects that we don't know. We should answer that we don't know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we should say we do not know. Provide a quote that indicates lack of info. There's no quote that says \"We don't know\". But we can quote that there's no info. We can quote a statement that doesn't mention throughput. But maybe we can quote that \"The IngestionPipeline can be executed with parallel processes\" or something. But that doesn't give the number.\n\nThus we say we do not know, citing that no such info is provided. Use a quote like \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [2] That indicates parallel processing but not throughput. We can state we do not know. Provide the quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4977150800,
+  "load_duration": 14054700,
+  "prompt_eval_count": 1723,
+  "prompt_eval_cached_count": 1718,
+  "prompt_eval_duration": 56672000,
+  "eval_count": 279,
+  "eval_duration": 4837668000
+ }
+}

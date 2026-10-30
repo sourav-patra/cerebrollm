@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-20",
+ "run": 2,
+ "started_utc": "2026-10-29T02:01:40Z",
+ "seconds": 10.13,
+ "prompt_file": "runs/prompts/A3/ST-20.txt",
+ "prompt_sha256": "84b1f912f9ce382d0cfbf2d6a3cca5b7b91ebf1f4f20efd29d3edb260a451282",
+ "answer": "You don't need a separate flag. You pass the registry URI as the positional path argument to `scan-model`, and set environment variables for the server and credentials.\n\n**MLflow:** Pass a `models:/` URI and point `MLFLOW_TRACKING_URI` at your tracking server:\n\n- \"promptfoo scan-model models:/MyModel/Latest\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\" [promptfoo/site/docs/model-audit/usage.md]\n\n```bash\nexport MLFLOW_TRACKING_URI=\"https://your-mlflow-server.com\"\nexport MLFLOW_TRACKING_USERNAME=\"your-username\"\nexport MLFLOW_TRACKING_PASSWORD=\"your-password\"\npromptfoo scan-model models:/model-name/version\n```\n\n**JFrog Artifactory:** Pass the full artifact URL as the path, and set the base URL and token as environment variables:\n\n- \"promptfoo scan-model \"https://your-domain.jfrog.io/artifactory/models/model.pkl\"\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`JFROG_URL`: The base URL of your JFrog Artifactory instance.\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\" [promptfoo/site/docs/model-audit/usage.md]\n\n```bash\nexport JFROG_URL=\"https://your-domain.jfrog.io\"\nexport JFROG_API_TOKEN=\"your-api-token\"\npromptfoo scan-model \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"\n```\n\nThe provided docs don't show a dedicated option for selecting a registry, so I don't know whether one exists. For MLflow, the `models:/` path is the registry reference, and for JFrog it's the artifact URL.",
+ "tokens": {
+  "input": 2997,
+  "output": 1387,
+  "thinking": 702,
+  "cache_read": 2610,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007968000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5900,
+  "stop_reason": "end_turn",
+  "session_id": "18020278-0547-48cf-8628-befc7885a774",
+  "total_cost_usd": 0.0007968000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2610,
+   "output_tokens": 1387,
+   "output_tokens_details": {
+    "thinking_tokens": 702
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1387,
+     "cache_read_input_tokens": 2610,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1387,
+    "cacheReadInputTokens": 2610,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007968000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 702,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You don't need a separate flag. You pass the registry URI as the positional path argument to `scan-model`, and set environment variables for the server and credentials.\n\n**MLflow:** Pass a `models:/` URI and point `MLFLOW_TRACKING_URI` at your tracking server:\n\n- \"promptfoo scan-model models:/MyModel/Latest\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\" [promptfoo/site/docs/model-audit/usage.md]\n\n```bash\nexport MLFLOW_TRACKING_URI=\"https://your-mlflow-server.com\"\nexport MLFLOW_TRACKING_USERNAME=\"your-username\"\nexport MLFLOW_TRACKING_PASSWORD=\"your-password\"\npromptfoo scan-model models:/model-name/version\n```\n\n**JFrog Artifactory:** Pass the full artifact URL as the path, and set the base URL and token as environment variables:\n\n- \"promptfoo scan-model \"https://your-domain.jfrog.io/artifactory/models/model.pkl\"\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`JFROG_URL`: The base URL of your JFrog Artifactory instance.\" [promptfoo/site/docs/model-audit/usage.md]\n- \"`JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\" [promptfoo/site/docs/model-audit/usage.md]\n\n```bash\nexport JFROG_URL=\"https://your-domain.jfrog.io\"\nexport JFROG_API_TOKEN=\"your-api-token\"\npromptfoo scan-model \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"\n```\n\nThe provided docs don't show a dedicated option for selecting a registry, so I don't know whether one exists. For MLflow, the `models:/` path is the registry reference, and for JFrog it's the artifact URL.",
+  "ttft_ms": 3840,
+  "type": "result",
+  "duration_ms": 6024,
+  "uuid": "ad065965-884c-4e1f-bade-f790bd90ff45",
+  "ttft_stream_ms": 2937,
+  "time_to_request_ms": 123,
+  "first_content_frame_ms": 2937,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

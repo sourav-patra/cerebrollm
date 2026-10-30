@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 1,
+ "started_utc": "2026-10-29T17:15:11Z",
+ "seconds": 14.18,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "According to the context provided, Flint is supported on the following operating systems:\n\n1. **macOS**: Initially, Flint was supported only on macOS as per the release notes in [ollama/v0.40.8.md](#) (lines 8-21).\n\n2. **Linux and Windows**: Subsequently, Flint was extended to run on Linux and Windows as well. This update is mentioned in [ollama/v0.40.9.md](#) (lines 1-8).\n\nThe most recent context does not mention release 0.40.13, but the latest supported operating systems for Flint, up to release 0.40.9, are macOS, Linux, and Windows.\n\n- \"Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md](#) (lines 8-21)\n- \"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md](#) (lines 1-8)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1716,
+  "output": 220
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 12273292700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:15:24.5817655Z",
+  "response": "According to the context provided, Flint is supported on the following operating systems:\n\n1. **macOS**: Initially, Flint was supported only on macOS as per the release notes in [ollama/v0.40.8.md](#) (lines 8-21).\n\n2. **Linux and Windows**: Subsequently, Flint was extended to run on Linux and Windows as well. This update is mentioned in [ollama/v0.40.9.md](#) (lines 1-8).\n\nThe most recent context does not mention release 0.40.13, but the latest supported operating systems for Flint, up to release 0.40.9, are macOS, Linux, and Windows.\n\n- \"Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md](#) (lines 8-21)\n- \"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md](#) (lines 1-8)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 12273292700,
+  "load_duration": 13574900,
+  "prompt_eval_count": 1716,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 909986000,
+  "eval_count": 220,
+  "eval_duration": 11142972000
+ }
+}

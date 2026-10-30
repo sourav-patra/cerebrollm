@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/95",
+  "index": 10,
+  "request": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef check_dict_case(dict):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\n    check_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\n    check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\n    check_dict_case({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\n    check_dict_case({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:8b",
+    "created_at": "2026-10-28T22:35:18.3456686Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef check_dict_case(d):\n    if not d:\n        return False\n    keys = list(d.keys())\n    lower = all(isinstance(k, str) and k.islower() for k in keys)\n    upper = all(isinstance(k, str) and k.isupper() for k in keys)\n    return lower or upper\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 937306300,
+    "load_duration": 11189500,
+    "prompt_eval_count": 208,
+    "prompt_eval_cached_count": 28,
+    "prompt_eval_duration": 39912000,
+    "eval_count": 71,
+    "eval_duration": 863499000
+  },
+  "wall_seconds": 0.8824914109991369,
+  "load_average_before": [
+    0.53564453125,
+    0.19189453125,
+    0.0615234375
+  ],
+  "load_average_after": [
+    0.53564453125,
+    0.19189453125,
+    0.0615234375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-8b-thinking-off-10",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-8b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_10.py"
+    ],
+    "wall_seconds": 0.7265454069984116,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 5,
+ "started_utc": "2026-10-29T16:57:00Z",
+ "seconds": 5.87,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "Promptfoo 0.124.0 adds support for **comma‑separated values** as OR filters in the `--filter-metadata` option.  \n\n\"support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+ "thinking_chars": 1163,
+ "tokens": {
+  "input": 1749,
+  "output": 351
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6285479800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:57:07.1556704Z",
+  "response": "Promptfoo 0.124.0 adds support for **comma‑separated values** as OR filters in the `--filter-metadata` option.  \n\n\"support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+  "thinking": "We need to answer: What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option? We have context: in [3] it says Features: cli: support comma-separated OR values in --filter-metadata. Also [2] says: --filter-metadata <key=value> Filter tests by metadata substring. Commas separate OR values (\\, is a comma); repeated flags use AND. But new form? The question: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" Likely refers to support for comma-separated OR values. So answer: It accepts comma-separated values for OR logic within a key.\n\nWe should quote the line that says \"support comma-separated OR values in --filter-metadata\". That is from [3] lines 20-31: \"* **cli:** support comma-separated OR values in --filter-metadata\". So quote that line.\n\nAlso maybe from [2] line 117: \"Commas separate OR values\". Quote that.\n\nThus answer: It now accepts comma-separated OR values. Provide quote.\n\nLet's do: \"support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]. Also maybe \"Commas separate OR values (\\, is a comma)\" [promptfoo/site/docs/usage/command-line.md].\n\nThus answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6285479800,
+  "load_duration": 14387500,
+  "prompt_eval_count": 1749,
+  "prompt_eval_cached_count": 1744,
+  "prompt_eval_duration": 56504000,
+  "eval_count": 351,
+  "eval_duration": 6145704000
+ }
+}

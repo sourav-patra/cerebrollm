@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/70",
+  "index": 1,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "low"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:24:39.7395915Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef strange_sort_list(lst):\n    \"\"\"\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n    \"\"\"\n    if not lst:\n        return []\n\n    sorted_lst = sorted(lst)\n    result = []\n    left, right = 0, len(sorted_lst) - 1\n    turn_min = True\n    while left <= right:\n        if turn_min:\n            result.append(sorted_lst[left])\n            left += 1\n        else:\n            result.append(sorted_lst[right])\n            right -= 1\n        turn_min = not turn_min\n    return result\n```",
+      "thinking": "Implement by sorting list, then pick min, max alternately. Use two pointers."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3253381100,
+    "load_duration": 36537900,
+    "prompt_eval_count": 210,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 193913000,
+    "eval_count": 173,
+    "eval_duration": 3003729000
+  },
+  "wall_seconds": 3.054271996999887,
+  "load_average_before": [
+    0.29296875,
+    0.2607421875,
+    0.14990234375
+  ],
+  "load_average_after": [
+    0.26904296875,
+    0.25634765625,
+    0.14892578125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-low-1",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-low:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_1.py"
+    ],
+    "wall_seconds": 0.6910022709998884,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-PA-1",
+ "run": 5,
+ "started_utc": "2026-10-29T01:53:38Z",
+ "seconds": 8.93,
+ "prompt_file": "runs/prompts/A0/PR-PA-1.txt",
+ "prompt_sha256": "5ae12311882e7873939bf04bf0cd90eabbc778776782ae63aacbde435e242b54",
+ "answer": "Use Docker's `--gpus all` flag:\n\n```bash\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThis runs the official `ollama/ollama` image detached, exposes the API on port 11434, and stores models in a named volume so they persist across restarts.\n\nBefore this works, you need:\n\n- **NVIDIA drivers** installed on the host.\n- **NVIDIA Container Toolkit** installed and configured for Docker. On Linux, this is the `nvidia-container-toolkit` package, followed by `sudo nvidia-ctk runtime configure --runtime=docker` and a Docker restart.\n- **On Windows**, Docker Desktop with the WSL 2 backend and GPU support enabled. The same `--gpus all` command works from PowerShell as a single line.\n\nTo check that the container can see the GPUs, run:\n\n```bash\ndocker exec -it ollama nvidia-smi\n```\n\nTo use only specific GPUs, replace `all` with a selection such as `--gpus '\"device=0,1\"'`.\n\nI don't have details about this particular project's setup, so if it uses a docker-compose file or a custom configuration, the equivalent setting there is `deploy.resources.reservations.devices` with `driver: nvidia` and `count: all`.",
+ "tokens": {
+  "input": 657,
+  "output": 627,
+  "thinking": 185,
+  "cache_read": 0,
+  "cache_creation": 655
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004447,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4220,
+  "stop_reason": "end_turn",
+  "session_id": "06122d13-1003-430c-966f-ab1b8bcefab2",
+  "total_cost_usd": 0.0004447,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 655,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 627,
+   "output_tokens_details": {
+    "thinking_tokens": 185
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 655,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 627,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 655,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 655
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 627,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 655,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004447,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 185,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 655,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use Docker's `--gpus all` flag:\n\n```bash\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThis runs the official `ollama/ollama` image detached, exposes the API on port 11434, and stores models in a named volume so they persist across restarts.\n\nBefore this works, you need:\n\n- **NVIDIA drivers** installed on the host.\n- **NVIDIA Container Toolkit** installed and configured for Docker. On Linux, this is the `nvidia-container-toolkit` package, followed by `sudo nvidia-ctk runtime configure --runtime=docker` and a Docker restart.\n- **On Windows**, Docker Desktop with the WSL 2 backend and GPU support enabled. The same `--gpus all` command works from PowerShell as a single line.\n\nTo check that the container can see the GPUs, run:\n\n```bash\ndocker exec -it ollama nvidia-smi\n```\n\nTo use only specific GPUs, replace `all` with a selection such as `--gpus '\"device=0,1\"'`.\n\nI don't have details about this particular project's setup, so if it uses a docker-compose file or a custom configuration, the equivalent setting there is `deploy.resources.reservations.devices` with `driver: nvidia` and `count: all`.",
+  "ttft_ms": 3011,
+  "type": "result",
+  "duration_ms": 4351,
+  "uuid": "5e5a4ca3-b175-4ea0-ac6e-0a4773eba811",
+  "ttft_stream_ms": 3010,
+  "time_to_request_ms": 164,
+  "first_content_frame_ms": 3010,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

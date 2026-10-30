@@ -1,0 +1,20 @@
+[
+  {
+    "path": "sources/devstral-2505.md",
+    "url": "https://huggingface.co/mistralai/Devstral-Small-2505/raw/main/README.md",
+    "sha256": "913374e3efa53dc59913483e4f8c9a385dab15e78f802bca57a39ad9f5721df3",
+    "status": 200
+  },
+  {
+    "path": "sources/qwen3-report.html",
+    "url": "https://arxiv.org/html/2505.09388v1",
+    "sha256": "688fd71d3ed5d906c216a58ce9583a4d03b21a4515e0de329c4fb7508c1b7055",
+    "status": 200
+  },
+  {
+    "path": "sources/gpt-oss-model-card.pdf",
+    "url": "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf",
+    "sha256": "b1f834906a2cc51417ebca7828b139118edd0a449f55da1c951dbe96539c89c8",
+    "status": 200
+  }
+]

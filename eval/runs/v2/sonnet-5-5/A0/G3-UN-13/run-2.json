@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:55Z",
+ "seconds": 8.61,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "I don't know of a promptfoo assertion type that computes BERTScore, and I don't believe one is built in.\n\nHere is what I do know of that's close:\n\n- **`similar`**: cosine similarity between embeddings of the output and a reference. It's embedding-based like BERTScore, but it isn't BERTScore, because it doesn't do token-level matching with precision, recall and F1.\n- **`rouge-n`, `bleu`, `gleu`, `meteor`, `levenshtein`, `f-score`**: other reference-based text-overlap or similarity metrics.\n\nIf you need BERTScore, you could write a custom assertion with `type: python` or `type: javascript` that calls a BERTScore implementation, such as Python's `bert-score` package. I haven't checked this against your project's config or the current promptfoo docs, so verify against those before relying on it.",
+ "tokens": {
+  "input": 636,
+  "output": 463,
+  "thinking": 183,
+  "cache_read": 0,
+  "cache_creation": 634
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007169999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4482,
+  "stop_reason": "end_turn",
+  "session_id": "8b66f428-ecf5-457f-a586-d2444e6bec3b",
+  "total_cost_usd": 0.007169999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 634,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 463,
+   "output_tokens_details": {
+    "thinking_tokens": 183
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 634,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 463,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 634,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 634
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 463,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 634,
+    "webSearchRequests": 0,
+    "costUSD": 0.007169999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 183,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 634,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a promptfoo assertion type that computes BERTScore, and I don't believe one is built in.\n\nHere is what I do know of that's close:\n\n- **`similar`**: cosine similarity between embeddings of the output and a reference. It's embedding-based like BERTScore, but it isn't BERTScore, because it doesn't do token-level matching with precision, recall and F1.\n- **`rouge-n`, `bleu`, `gleu`, `meteor`, `levenshtein`, `f-score`**: other reference-based text-overlap or similarity metrics.\n\nIf you need BERTScore, you could write a custom assertion with `type: python` or `type: javascript` that calls a BERTScore implementation, such as Python's `bert-score` package. I haven't checked this against your project's config or the current promptfoo docs, so verify against those before relying on it.",
+  "ttft_ms": 2735,
+  "type": "result",
+  "duration_ms": 4566,
+  "uuid": "36567efd-c51a-4f88-8910-23e864995f4b",
+  "ttft_stream_ms": 2734,
+  "time_to_request_ms": 80,
+  "first_content_frame_ms": 2734,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

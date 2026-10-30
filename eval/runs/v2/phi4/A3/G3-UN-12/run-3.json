@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 3,
+ "started_utc": "2026-10-29T17:33:06Z",
+ "seconds": 15.34,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I do not know the default value of the `--max-retries` flag specifically for the `promptfoo eval` command based on the provided context. The context mentions retry configurations in different sections, such as \"Backoff Configuration\" related to provider-level and HTTP-level retries, but it does not specify a default for the `--max-retries` flag for the `promptfoo eval` command itself. \n\nTo find this information, you might need to consult the official documentation or source code of the project. Here are the relevant sections for retries:\n\n- The \"Backoff Configuration\" section discusses provider-level and HTTP-level retries, mentioning that defaults include up to 3 retries at the provider level and up to 4 retries for HTTP-level requests. [promptfoo/site/docs/configuration/rate-limits.md (lines 95-113)]\n\n- The \"Retry Errors\" section indicates that `--retry-errors` re-runs ERROR results but does not specify a default retry count for `promptfoo eval`. [promptfoo/site/docs/usage/command-line.md (lines 213-222)]\n\nHowever, these sections do not directly address the `--max-retries` flag for `promptfoo eval`. If you need this specific information, further investigation beyond the provided context would be necessary.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1618,
+  "output": 259
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 13667465900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:33:20.8836469Z",
+  "response": "I do not know the default value of the `--max-retries` flag specifically for the `promptfoo eval` command based on the provided context. The context mentions retry configurations in different sections, such as \"Backoff Configuration\" related to provider-level and HTTP-level retries, but it does not specify a default for the `--max-retries` flag for the `promptfoo eval` command itself. \n\nTo find this information, you might need to consult the official documentation or source code of the project. Here are the relevant sections for retries:\n\n- The \"Backoff Configuration\" section discusses provider-level and HTTP-level retries, mentioning that defaults include up to 3 retries at the provider level and up to 4 retries for HTTP-level requests. [promptfoo/site/docs/configuration/rate-limits.md (lines 95-113)]\n\n- The \"Retry Errors\" section indicates that `--retry-errors` re-runs ERROR results but does not specify a default retry count for `promptfoo eval`. [promptfoo/site/docs/usage/command-line.md (lines 213-222)]\n\nHowever, these sections do not directly address the `--max-retries` flag for `promptfoo eval`. If you need this specific information, further investigation beyond the provided context would be necessary.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13667465900,
+  "load_duration": 12061100,
+  "prompt_eval_count": 1618,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 782684000,
+  "eval_count": 259,
+  "eval_duration": 12733223000
+ }
+}

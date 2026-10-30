@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 5,
+ "started_utc": "2026-10-29T17:43:16Z",
+ "seconds": 10.14,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "Based on the provided context, the specific question types supported by Ollama's `/v1/systemone` decision-model API are not explicitly listed. The documents mention how to structure requests and the types of models available, but they do not enumerate the question types directly.\n\nThe closest relevant information is found in the context where it describes how to structure requests with questions, like so:\n\n```json\n\"questions\": {\n  \"urgent\": {\n    \"type\": \"noul\",\n    \"instructions\": \"Does this ticket need attention within the hour?\"\n  }\n}\n```\n\nHere, it uses `\"type\": \"noul\"`, but without additional context or documentation, it's unclear if \"noul\" is the only type or one of several. Since I don't have access to further details beyond the provided context, I cannot definitively list all three question types.\n\nTherefore, I do not know the three question types supported by the API based on the given information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2262,
+  "output": 196
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11262592100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:43:26.5122651Z",
+  "response": "Based on the provided context, the specific question types supported by Ollama's `/v1/systemone` decision-model API are not explicitly listed. The documents mention how to structure requests and the types of models available, but they do not enumerate the question types directly.\n\nThe closest relevant information is found in the context where it describes how to structure requests with questions, like so:\n\n```json\n\"questions\": {\n  \"urgent\": {\n    \"type\": \"noul\",\n    \"instructions\": \"Does this ticket need attention within the hour?\"\n  }\n}\n```\n\nHere, it uses `\"type\": \"noul\"`, but without additional context or documentation, it's unclear if \"noul\" is the only type or one of several. Since I don't have access to further details beyond the provided context, I cannot definitively list all three question types.\n\nTherefore, I do not know the three question types supported by the API based on the given information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11262592100,
+  "load_duration": 12727600,
+  "prompt_eval_count": 2262,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1150901000,
+  "eval_count": 196,
+  "eval_duration": 9919442000
+ }
+}

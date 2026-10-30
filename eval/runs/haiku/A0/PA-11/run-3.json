@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-11",
+ "run": 3,
+ "started_utc": "2026-10-29T01:49:47Z",
+ "seconds": 11.8,
+ "prompt_file": "runs/prompts/A0/PA-11.txt",
+ "prompt_sha256": "1531f93300e29ce48be40ac86f3125e3c2148909845be0bf0019a8f9cfc6ce2a",
+ "answer": "In LlamaIndex, the global `Settings` object sets the defaults for the whole process. Set both the LLM and the embedding model there. If you set only one, the other falls back to OpenAI.\n\n**1. Install the packages**\n\n```powershell\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\n**2. Make sure Ollama is running with a model pulled**\n\n```powershell\nollama pull llama3.1\nollama serve   # usually already running as a service after install\n```\n\n**3. Configure the globals before building any index or query engine**\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",  # Ollama's default\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"\n)\n```\n\nThen use LlamaIndex as usual, for example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)\nprint(index.as_query_engine().query(\"Summarize these documents.\"))\n```\n\n**Notes on making sure OpenAI is never contacted**\n\n- **Set both `Settings.llm` and `Settings.embed_model`.** The defaults are OpenAI-based, so any component you don't override will try to use OpenAI.\n- **Leave `OPENAI_API_KEY` unset.** If some code path still reaches for OpenAI, it will fail with a missing-key error instead of quietly making a call.\n- **Hugging Face downloads the embedding model on first use.** After it's cached, you can force offline mode so it never touches the network:\n  ```powershell\n  $env:HF_HUB_OFFLINE = \"1\"\n  ```\n- **Use `Settings`, not `ServiceContext`.** `ServiceContext` was the older global mechanism and has been deprecated in favor of `Settings`. Older tutorials that use it may still reference OpenAI defaults.\n\nI'm working from memory of the LlamaIndex API, so check the current docs if an import path or class name doesn't match your installed version.",
+ "tokens": {
+  "input": 678,
+  "output": 1486,
+  "thinking": 673,
+  "cache_read": 0,
+  "cache_creation": 676
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008784,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7474,
+  "stop_reason": "end_turn",
+  "session_id": "871c36f4-c0ed-4107-9fc5-f7555e4493b8",
+  "total_cost_usd": 0.0008784,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 676,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1486,
+   "output_tokens_details": {
+    "thinking_tokens": 673
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 676,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1486,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 676,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 676
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1486,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 676,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008784,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 673,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 676,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In LlamaIndex, the global `Settings` object sets the defaults for the whole process. Set both the LLM and the embedding model there. If you set only one, the other falls back to OpenAI.\n\n**1. Install the packages**\n\n```powershell\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\n**2. Make sure Ollama is running with a model pulled**\n\n```powershell\nollama pull llama3.1\nollama serve   # usually already running as a service after install\n```\n\n**3. Configure the globals before building any index or query engine**\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",  # Ollama's default\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"\n)\n```\n\nThen use LlamaIndex as usual, for example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)\nprint(index.as_query_engine().query(\"Summarize these documents.\"))\n```\n\n**Notes on making sure OpenAI is never contacted**\n\n- **Set both `Settings.llm` and `Settings.embed_model`.** The defaults are OpenAI-based, so any component you don't override will try to use OpenAI.\n- **Leave `OPENAI_API_KEY` unset.** If some code path still reaches for OpenAI, it will fail with a missing-key error instead of quietly making a call.\n- **Hugging Face downloads the embedding model on first use.** After it's cached, you can force offline mode so it never touches the network:\n  ```powershell\n  $env:HF_HUB_OFFLINE = \"1\"\n  ```\n- **Use `Settings`, not `ServiceContext`.** `ServiceContext` was the older global mechanism and has been deprecated in favor of `Settings`. Older tutorials that use it may still reference OpenAI defaults.\n\nI'm working from memory of the LlamaIndex API, so check the current docs if an import path or class name doesn't match your installed version.",
+  "ttft_ms": 4189,
+  "type": "result",
+  "duration_ms": 7593,
+  "uuid": "1a6f8d39-68b1-49d3-8a8e-7e0b925e4f77",
+  "ttft_stream_ms": 2960,
+  "time_to_request_ms": 150,
+  "first_content_frame_ms": 2960,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

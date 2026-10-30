@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/58",
+  "index": 29,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": true
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:31:03.5347547Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n\n    \"\"\"\n    return sorted(list(set(l1) & set(l2)))\n```",
+      "thinking": "*   Input: Two lists `l1` and `l2`.\n    *   Output: A sorted list of unique elements that are present in both lists.\n    *   Example 1: `common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])` -> `[1, 5, 653]`\n    *   Example 2: `common([5, 3, 2, 8], [3, 2])` -> `[2, 3]`\n\n    *   Find the intersection of the two lists.\n    *   Ensure the elements in the intersection are unique.\n    *   Sort the resulting list.\n\n    *   Convert both lists to sets to find the intersection efficiently.\n    *   Use the `&` operator or `.intersection()` method.\n    *   Convert the resulting set back to a list.\n    *   Sort the list.\n\n    ```python\n    def common(l1: list, l2: list):\n        set1 = set(l1)\n        set2 = set(l2)\n        intersection = set1.intersection(set2)\n        return sorted(list(intersection))\n    ```\n\n    *   Example 1: `set1 = {1, 4, 3, 34, 653, 2, 5}`, `set2 = {5, 7, 1, 9, 653, 121}`. Intersection: `{1, 5, 653}`. Sorted: `[1, 5, 653]`. Correct.\n    *   Example 2: `set1 = {5, 3, 2, 8}`, `set2 = {3, 2}`. Intersection: `{3, 2}`. Sorted: `[2, 3]`. Correct.\n\n    *   One Python code block.\n    *   No explanations.\n    *   Include imports if needed (none needed for basic sets/sorting)."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4813157700,
+    "load_duration": 19073700,
+    "prompt_eval_count": 166,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 107114000,
+    "eval_count": 628,
+    "eval_duration": 4525842000
+  },
+  "wall_seconds": 4.600483122005244,
+  "load_average_before": [
+    0.0732421875,
+    0.18505859375,
+    0.29443359375
+  ],
+  "load_average_after": [
+    0.06689453125,
+    0.181640625,
+    0.29248046875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-on-29",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-on:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_29.py"
+    ],
+    "wall_seconds": 0.6833341030069278,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

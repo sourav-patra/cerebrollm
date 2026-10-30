@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-08",
+ "run": 2,
+ "started_utc": "2026-10-29T17:20:37Z",
+ "seconds": 3.55,
+ "prompt_sha256": "4c2ac3f2b8c5d0cd55b591290e0e5a02e298352e9e6ed8584c109b3fc7e96c68",
+ "answer": "I do not know which Ollama CLI flag sets the number of parallel layer downloads for the `ollama pull` command. This specific detail may not be widely documented or may vary depending on the version or specific implementation of the Ollama tool. For the most accurate information, I recommend consulting the official Ollama documentation or reaching out to their support or community forums.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 52,
+  "output": 77
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3840952700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:20:39.6411094Z",
+  "response": "I do not know which Ollama CLI flag sets the number of parallel layer downloads for the `ollama pull` command. This specific detail may not be widely documented or may vary depending on the version or specific implementation of the Ollama tool. For the most accurate information, I recommend consulting the official Ollama documentation or reaching out to their support or community forums.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3840952700,
+  "load_duration": 13140200,
+  "prompt_eval_count": 52,
+  "prompt_eval_cached_count": 31,
+  "prompt_eval_duration": 225432000,
+  "eval_count": 77,
+  "eval_duration": 3580075000
+ }
+}

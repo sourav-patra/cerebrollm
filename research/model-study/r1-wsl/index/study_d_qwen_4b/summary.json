@@ -1,0 +1,42 @@
+{
+  "model": "qwen3-embedding:4b",
+  "chunks": 13431,
+  "duration_seconds": 526.7264853490251,
+  "chunks_per_minute": 1529.9401537897083,
+  "within_60_minutes": true,
+  "timing": "sum of sequential embedding-and-insert batches; excludes operator pauses between bounded commands",
+  "memory": {
+    "api": {
+      "models": [
+        {
+          "name": "qwen3-embedding:4b",
+          "model": "qwen3-embedding:4b",
+          "size": 4055294279,
+          "digest": "df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "qwen3",
+            "families": [
+              "qwen3"
+            ],
+            "parameter_size": "4.0B",
+            "quantization_level": "Q4_K_M"
+          },
+          "expires_at": "2026-10-29T01:48:51.2024176+05:30",
+          "size_vram": 4055294279,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    "command": [
+      "ollama.exe",
+      "ps"
+    ],
+    "stdout": "NAME                  ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL               \nqwen3-embedding:4b    df5bd2e3c74c    4.1 GB    100% GPU     8192       llamacpp    14 minutes from now    \n",
+    "stderr": "",
+    "exit": 0
+  },
+  "query_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:"
+}

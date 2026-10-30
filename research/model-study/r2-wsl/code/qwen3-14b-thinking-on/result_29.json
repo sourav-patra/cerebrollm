@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/58",
+  "index": 29,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": true
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:10:06.6430956Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n    \"\"\"\n    return sorted(set(l1) & set(l2))\n```",
+      "thinking": "Okay, I need to implement the common function that returns sorted unique common elements between two lists. Let me think about how to approach this.\n\nFirst, the function takes two lists, l1 and l2. The goal is to find elements that are present in both lists, but the result should have unique elements (no duplicates) and sorted in ascending order.\n\nHmm, so the steps I need to do are: find the intersection of the two lists, remove duplicates from that intersection, and then sort the result.\n\nWait, but how do I find the common elements? One way is to convert both lists to sets and then take the intersection. Sets automatically handle uniqueness, so that's helpful. Then, converting the result back to a list and sorting it.\n\nWait, but sets in Python are unordered. So after getting the intersection as a set, I need to sort the elements.\n\nSo the plan is:\n\n1. Convert both lists to sets.\n2. Find the intersection of the two sets.\n3. Convert the resulting set to a list.\n4. Sort the list in ascending order.\n5. Return the sorted list.\n\nLet me test this logic with the examples given.\n\nFirst example: l1 is [1,4,3,34,653,2,5], l2 is [5,7,1,5,9,653,121]. The common elements are 1, 5, 653. The set intersection would be {1,5,653}, sorted becomes [1,5,653], which matches the example.\n\nSecond example: l1 is [5,3,2,8], l2 is [3,2]. The intersection is {2,3}, sorted is [2,3], which is correct.\n\nSo the steps seem solid.\n\nNow, implementing this in Python.\n\nThe function would look like:\n\ndef common(l1: list, l2: list):\n    # convert both lists to sets\n    set1 = set(l1)\n    set2 = set(l2)\n    # find intersection\n    common_set = set1 & set2\n    # convert to list and sort\n    return sorted(list(common_set))\n\nWait, but the order in the example is ascending. The sorted function will handle that.\n\nBut wait, in Python, the set intersection can be done with the & operator, or using the .intersection() method. Both should work.\n\nTesting with the sample inputs.\n\nAnother thing to consider: what if the lists have duplicate elements? For example, if l1 is [1, 1, 2], l2 is [1, 2, 2]. The intersection would be {1, 2}, sorted as [1,2], which is correct.\n\nSo the code should handle that.\n\nSo the code seems straightforward. Let me check the doctests.\n\nThe first doctest: common([1,4,3,34,653,2,5], [5,7,1,5,9,653,121]) returns [1,5,653]. The code would convert l1 to a set, which is {1,2,3,4,5,34,653}, and l2's set is {5,7,1,9,653,121}. The intersection is {1,5,653}, sorted gives [1,5,653], which matches.\n\nThe second doctest: [5,3,2,8] and [3,2]. The intersection is {2,3}, sorted is [2,3], correct.\n\nSo the code should work.\n\nBut wait, the function is supposed to return a list. The code returns sorted(list(common_set)), which is a list. So that's correct.\n\nI think that's all. So the code is as written above. Now, the user wants the complete executable function with any needed imports. But in this case, there are no imports needed. The code uses built-in functions.\n\nSo the final code is:\n\ndef common(l1: list, l2: list):\n    \"\"\"Return sorted unique common elements for two lists.\n    >>> common([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common([5, 3, 2, 8], [3, 2])\n    [2, 3]\n    \"\"\"\n    return sorted(set(l1) & set(l2))\n\nWait, but wait. What if the lists are empty? Well, the code should handle that. Also, the code is concise. But perhaps converting to sets and using the & operator is the same as using .intersection().\n\nYes. So this code should work.\n\nBut let me test with the sample inputs.\n\nSample 1: set(l1) is {1,2,3,4,5,34,653}, set(l2) is {1,5,7,9,653,121}. The intersection is {1,5,653}, sorted gives [1,5,653]. Correct.\n\nSample 2: set(l1) is {2,3,5,8}, set(l2) is {2,3}. Intersection is {2,3}, sorted is [2,3]. Correct.\n\nYes. So the code is correct. So the function can be written as such.\n\nBut wait, the doctest uses the example with [5,7,1,5,9,653,121], which has duplicates. But when converted to a set, duplicates are removed. So that's handled.\n\nTherefore, the code is correct.\n"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 56436640700,
+    "load_duration": 12660200,
+    "prompt_eval_count": 152,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 104272000,
+    "eval_count": 1368,
+    "eval_duration": 56129984000
+  },
+  "wall_seconds": 52.88354411799992,
+  "load_average_before": [
+    0.12548828125,
+    0.11669921875,
+    0.04296875
+  ],
+  "load_average_after": [
+    0.04833984375,
+    0.09521484375,
+    0.03759765625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-on-29",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-on:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_29.py"
+    ],
+    "wall_seconds": 0.6851854209999146,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

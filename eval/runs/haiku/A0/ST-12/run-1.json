@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-12",
+ "run": 1,
+ "started_utc": "2026-10-29T01:58:35Z",
+ "seconds": 11.34,
+ "prompt_file": "runs/prompts/A0/ST-12.txt",
+ "prompt_sha256": "7ae00a655640bdbe80f6bf71fad0b0945932dcb03dc2ac6608e84d91b5625d4d",
+ "answer": "You can count tokens with `TokenCountingHandler`, a callback handler that tallies LLM and embedding usage. This is based on my knowledge of LlamaIndex's `llama-index-core` package, so check the current docs if an import fails, since the API may have changed.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode,\n    verbose=False,\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# ... build indexes and run queries/embeddings as usual ...\n\nprint(\"Embedding tokens:\", token_counter.total_embedding_token_count)\nprint(\"LLM prompt tokens:\", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"LLM total tokens:\", token_counter.total_llm_token_count)\n\ntoken_counter.reset_counts()  # zero the counters before the next run\n```\n\nNotes:\n\n- **Tokenizer:** The handler estimates counts with the tokenizer you pass in. The default is tiktoken's gpt-3.5-turbo encoding, which is only an approximation for other models. Pass a matching tokenizer (for example, a Hugging Face tokenizer's `encode`) if you use a different model.\n- **Scope:** Setting `Settings.callback_manager` applies to components created afterward. You can also pass a `callback_manager` to a specific LLM, embedding model, or index.\n- **Per-call detail:** I believe the handler also keeps per-event lists (such as `llm_token_counts` and `embedding_token_counts`) if you need counts per call rather than totals. I'm less certain of the exact attribute names, so confirm them in the source.",
+ "tokens": {
+  "input": 655,
+  "output": 1297,
+  "thinking": 655,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007793,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6923,
+  "stop_reason": "end_turn",
+  "session_id": "8aa71c8d-de23-4a2c-8b5a-ff5e67f0d1de",
+  "total_cost_usd": 0.0007793,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1297,
+   "output_tokens_details": {
+    "thinking_tokens": 655
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1297,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1297,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007793,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 655,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You can count tokens with `TokenCountingHandler`, a callback handler that tallies LLM and embedding usage. This is based on my knowledge of LlamaIndex's `llama-index-core` package, so check the current docs if an import fails, since the API may have changed.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode,\n    verbose=False,\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# ... build indexes and run queries/embeddings as usual ...\n\nprint(\"Embedding tokens:\", token_counter.total_embedding_token_count)\nprint(\"LLM prompt tokens:\", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"LLM total tokens:\", token_counter.total_llm_token_count)\n\ntoken_counter.reset_counts()  # zero the counters before the next run\n```\n\nNotes:\n\n- **Tokenizer:** The handler estimates counts with the tokenizer you pass in. The default is tiktoken's gpt-3.5-turbo encoding, which is only an approximation for other models. Pass a matching tokenizer (for example, a Hugging Face tokenizer's `encode`) if you use a different model.\n- **Scope:** Setting `Settings.callback_manager` applies to components created afterward. You can also pass a `callback_manager` to a specific LLM, embedding model, or index.\n- **Per-call detail:** I believe the handler also keeps per-event lists (such as `llm_token_counts` and `embedding_token_counts`) if you need counts per call rather than totals. I'm less certain of the exact attribute names, so confirm them in the source.",
+  "ttft_ms": 4470,
+  "type": "result",
+  "duration_ms": 7044,
+  "uuid": "fb8c5025-b074-4b0b-b2c2-85791ca9d6eb",
+  "ttft_stream_ms": 2800,
+  "time_to_request_ms": 165,
+  "first_content_frame_ms": 2800,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

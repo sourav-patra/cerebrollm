@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:12Z",
+ "seconds": 10.59,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "pgvector doesn't guarantee any specific replication lag for HNSW index updates on a streaming replica, and I don't know of any such guarantee in its documentation.\n\nWhat I do know in general terms:\n\n- pgvector's HNSW indexes are regular PostgreSQL index access methods, and their changes are written to the WAL like other index changes. Replicas get them through normal WAL replay.\n- Because of that, lag on a replica is governed by standard PostgreSQL streaming replication behavior: network throughput, replay speed on the standby, long-running queries causing replay conflicts, and so on. It isn't something pgvector itself controls or promises.\n- HNSW inserts can be comparatively write-heavy (a single insert may touch multiple pages), so heavy ingestion can increase WAL volume and may contribute to replay lag. That is a practical consideration, not a guarantee.\n\nI have no project-specific information beyond that, and nothing in this working directory that I've looked at. If you need actual numbers, you'd want to measure on your own setup, for example with `pg_stat_replication` (`write_lag`, `flush_lag`, `replay_lag`) on the primary, or by comparing `pg_last_wal_replay_lsn()` on the replica. If you want synchronous guarantees, PostgreSQL's `synchronous_commit = remote_apply` is the relevant mechanism, not anything in pgvector.",
+ "tokens": {
+  "input": 640,
+  "output": 462,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 638
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007176,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6669,
+  "stop_reason": "end_turn",
+  "session_id": "3df19035-0143-4c73-a70b-b947d85fd60c",
+  "total_cost_usd": 0.007176,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 638,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 462,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 638,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 462,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 638,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 638
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 462,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 638,
+    "webSearchRequests": 0,
+    "costUSD": 0.007176,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 638,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "pgvector doesn't guarantee any specific replication lag for HNSW index updates on a streaming replica, and I don't know of any such guarantee in its documentation.\n\nWhat I do know in general terms:\n\n- pgvector's HNSW indexes are regular PostgreSQL index access methods, and their changes are written to the WAL like other index changes. Replicas get them through normal WAL replay.\n- Because of that, lag on a replica is governed by standard PostgreSQL streaming replication behavior: network throughput, replay speed on the standby, long-running queries causing replay conflicts, and so on. It isn't something pgvector itself controls or promises.\n- HNSW inserts can be comparatively write-heavy (a single insert may touch multiple pages), so heavy ingestion can increase WAL volume and may contribute to replay lag. That is a practical consideration, not a guarantee.\n\nI have no project-specific information beyond that, and nothing in this working directory that I've looked at. If you need actual numbers, you'd want to measure on your own setup, for example with `pg_stat_replication` (`write_lag`, `flush_lag`, `replay_lag`) on the primary, or by comparing `pg_last_wal_replay_lsn()` on the replica. If you want synchronous guarantees, PostgreSQL's `synchronous_commit = remote_apply` is the relevant mechanism, not anything in pgvector.",
+  "ttft_ms": 6736,
+  "type": "result",
+  "duration_ms": 6756,
+  "uuid": "5f8a253f-14f9-4ff3-b103-2344536e143e",
+  "ttft_stream_ms": 2832,
+  "time_to_request_ms": 108,
+  "first_content_frame_ms": 2832,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

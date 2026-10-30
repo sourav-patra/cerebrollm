@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 2,
+ "started_utc": "2026-10-29T17:21:30Z",
+ "seconds": 19.63,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "Based on the provided context, Ollama's `/v1/systemone` decision-model API supports three question types:\n\n1. **noul** - This type is mentioned in both context [1] and context [4]. For example, in context [1] under the Nimble model, the question type \"noul\" is used for asking questions like \"Does this ticket need attention within the hour?\"\n\n2. **Instructions for the question type** - Although not explicitly named as a type, the context implies that the questions include instructions, which guide the decision-making process. This is evident in the JSON payloads where `\"instructions\"` is a key associated with question types.\n\n3. **Multimodal inputs** - In context [4], Clef decision models support multimodal requests, which can include images alongside text. While not explicitly named as a type, this implies a type of question that considers both text and images for decision-making.\n\nTherefore, the three question types supported by the API are \"noul,\" instruction-based questions, and multimodal inputs. \n\nThe relevant lines from the context are:\n\n- \"noul\" type: `\"type\": \"noul\",` [1] and [4]\n- Instructions: `\"instructions\": \"Does this ticket need attention within the hour?\"` [1] and [3]\n- Multimodal inputs: Requests can include images alongside text. [4]\n\n\"noul\": [1], [4]  \nInstructions: [1], [3]  \nMultimodal inputs: [4]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2262,
+  "output": 314
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 17891034300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:21:49.3121Z",
+  "response": "Based on the provided context, Ollama's `/v1/systemone` decision-model API supports three question types:\n\n1. **noul** - This type is mentioned in both context [1] and context [4]. For example, in context [1] under the Nimble model, the question type \"noul\" is used for asking questions like \"Does this ticket need attention within the hour?\"\n\n2. **Instructions for the question type** - Although not explicitly named as a type, the context implies that the questions include instructions, which guide the decision-making process. This is evident in the JSON payloads where `\"instructions\"` is a key associated with question types.\n\n3. **Multimodal inputs** - In context [4], Clef decision models support multimodal requests, which can include images alongside text. While not explicitly named as a type, this implies a type of question that considers both text and images for decision-making.\n\nTherefore, the three question types supported by the API are \"noul,\" instruction-based questions, and multimodal inputs. \n\nThe relevant lines from the context are:\n\n- \"noul\" type: `\"type\": \"noul\",` [1] and [4]\n- Instructions: `\"instructions\": \"Does this ticket need attention within the hour?\"` [1] and [3]\n- Multimodal inputs: Requests can include images alongside text. [4]\n\n\"noul\": [1], [4]  \nInstructions: [1], [3]  \nMultimodal inputs: [4]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 17891034300,
+  "load_duration": 13824500,
+  "prompt_eval_count": 2262,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1163660000,
+  "eval_count": 314,
+  "eval_duration": 16459051000
+ }
+}

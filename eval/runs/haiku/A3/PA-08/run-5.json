@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-08",
+ "run": 5,
+ "started_utc": "2026-10-29T01:48:51Z",
+ "seconds": 7.34,
+ "prompt_file": "runs/prompts/A3/PA-08.txt",
+ "prompt_sha256": "a6843c03a42d052be6124e6ac229ffc74ba8b03d2b8b81faf49b9b1caad90c49",
+ "answer": "The SQL statement is:\n\n\"ALTER EXTENSION vector UPDATE;\" [pgvector/README.md]\n\nThe README says to first install the latest version using the same method as the original installation, then run this in each database you want to upgrade. You can check the current version with `SELECT extversion FROM pg_extension WHERE extname = 'vector';`, which the same section also shows [pgvector/README.md].",
+ "tokens": {
+  "input": 3528,
+  "output": 383,
+  "thinking": 253,
+  "cache_read": 3139,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00030049,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2708,
+  "stop_reason": "end_turn",
+  "session_id": "5f37d15b-1223-45a8-bb57-5a4f9a62c47f",
+  "total_cost_usd": 0.00030049,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 3139,
+   "output_tokens": 383,
+   "output_tokens_details": {
+    "thinking_tokens": 253
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 383,
+     "cache_read_input_tokens": 3139,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 383,
+    "cacheReadInputTokens": 3139,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00030049,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 253,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The SQL statement is:\n\n\"ALTER EXTENSION vector UPDATE;\" [pgvector/README.md]\n\nThe README says to first install the latest version using the same method as the original installation, then run this in each database you want to upgrade. You can check the current version with `SELECT extversion FROM pg_extension WHERE extname = 'vector';`, which the same section also shows [pgvector/README.md].",
+  "ttft_ms": 2802,
+  "type": "result",
+  "duration_ms": 2820,
+  "uuid": "eba7b8e5-0230-4ff2-a7e2-433edfad9440",
+  "ttft_stream_ms": 2801,
+  "time_to_request_ms": 140,
+  "first_content_frame_ms": 2802,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

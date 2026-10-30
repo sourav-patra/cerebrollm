@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 2,
+ "started_utc": "2026-10-29T15:55:52Z",
+ "seconds": 7.09,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "Release 0.34.3 extended the `GET /api/show` endpoint.\n\nThe release notes say: \"`GET /api/show` now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]\n\nThe example in those notes shows a `thinking` object with `values` and `default` fields. The Ollama thinking docs describe the same object, saying that \"`default` is used when `think` is not set.\" [ollama/docs/capabilities/thinking.md]\n\nThe release notes call it a `GET` request, but their curl example sends a JSON body with `-d`, which makes curl use POST. The docs example also uses `-d`. I can't tell from this context which HTTP method the endpoint actually accepts.",
+ "tokens": {
+  "input": 3727,
+  "output": 230,
+  "thinking": 0,
+  "cache_read": 3360,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0040999999999999995,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2774,
+  "stop_reason": "end_turn",
+  "session_id": "0f7a3a72-c675-4ecc-a8e8-c9ac7e6765ed",
+  "total_cost_usd": 0.0040999999999999995,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 3360,
+   "output_tokens": 230,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 230,
+     "cache_read_input_tokens": 3360,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 230,
+    "cacheReadInputTokens": 3360,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0040999999999999995,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Release 0.34.3 extended the `GET /api/show` endpoint.\n\nThe release notes say: \"`GET /api/show` now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md]\n\nThe example in those notes shows a `thinking` object with `values` and `default` fields. The Ollama thinking docs describe the same object, saying that \"`default` is used when `think` is not set.\" [ollama/docs/capabilities/thinking.md]\n\nThe release notes call it a `GET` request, but their curl example sends a JSON body with `-d`, which makes curl use POST. The docs example also uses `-d`. I can't tell from this context which HTTP method the endpoint actually accepts.",
+  "ttft_ms": 2843,
+  "type": "result",
+  "duration_ms": 2865,
+  "uuid": "6f0ec253-acb3-4cec-a9f2-26149abac299",
+  "ttft_stream_ms": 2588,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 2588,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-08",
+ "run": 2,
+ "started_utc": "2026-10-29T01:57:09Z",
+ "seconds": 8.01,
+ "prompt_file": "runs/prompts/A3/ST-08.txt",
+ "prompt_sha256": "d987c44c736028132f6efae0732bac816d38152135ea6d802175b6f3f09e8c30",
+ "answer": "The parameter is `context_window` on `Settings`. The settings doc describes it as the maximum input size to the LLM: \"# maximum input size to the LLM\" and \"Settings.context_window = 4096\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. The deprecated-terms page says the older `max_input_size` parameter \"has since been replaced with `context_window`\" [llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md].",
+ "tokens": {
+  "input": 3325,
+  "output": 481,
+  "thinking": 309,
+  "cache_read": 2937,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00034727,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3154,
+  "stop_reason": "end_turn",
+  "session_id": "a4e9f34c-ebf5-4aea-8ccc-50c830a6b823",
+  "total_cost_usd": 0.00034727,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2937,
+   "output_tokens": 481,
+   "output_tokens_details": {
+    "thinking_tokens": 309
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 481,
+     "cache_read_input_tokens": 2937,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 481,
+    "cacheReadInputTokens": 2937,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00034727,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 309,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The parameter is `context_window` on `Settings`. The settings doc describes it as the maximum input size to the LLM: \"# maximum input size to the LLM\" and \"Settings.context_window = 4096\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]. The deprecated-terms page says the older `max_input_size` parameter \"has since been replaced with `context_window`\" [llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md].",
+  "ttft_ms": 2943,
+  "type": "result",
+  "duration_ms": 3302,
+  "uuid": "184fc744-9a19-47b5-8cb1-74f736dc6ec6",
+  "ttft_stream_ms": 2942,
+  "time_to_request_ms": 151,
+  "first_content_frame_ms": 2942,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

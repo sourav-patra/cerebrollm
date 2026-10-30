@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-01",
+ "run": 4,
+ "started_utc": "2026-10-29T17:34:49Z",
+ "seconds": 3.04,
+ "prompt_sha256": "6b24b53d9e74ec4a02d457527687083549c4113cc98dcf294f5d69aa8760a802",
+ "answer": "I do not know the default value of the `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. This information might be specific to the version of the `pgvector` extension you are using, and it would be best to consult the official documentation or release notes for the most accurate and up-to-date details.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 69
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3281945100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:34:53.1472108Z",
+  "response": "I do not know the default value of the `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. This information might be specific to the version of the `pgvector` extension you are using, and it would be best to consult the official documentation or release notes for the most accurate and up-to-date details.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3281945100,
+  "load_duration": 12394100,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 217704000,
+  "eval_count": 69,
+  "eval_duration": 3036052000
+ }
+}

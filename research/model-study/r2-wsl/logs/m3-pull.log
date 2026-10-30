@@ -1,0 +1,4 @@
+qwen3.6:35b-a3b-coding-mtp-q4_K_M digest 6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649
+pull qwen3.6:35b-a3b-coding-mtp-q4_K_M exit 0 seconds 1083
+glm-4.7-flash:q4_K_M digest 4475827791a269b02c8ec49b1c3bc1abb5846bacf3fae015b75d33986322d8f6
+pull glm-4.7-flash:q4_K_M exit 0 seconds 811

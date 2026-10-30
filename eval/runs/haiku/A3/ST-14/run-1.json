@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-14",
+ "run": 1,
+ "started_utc": "2026-10-29T01:59:29Z",
+ "seconds": 7.45,
+ "prompt_file": "runs/prompts/A3/ST-14.txt",
+ "prompt_sha256": "7cc9de512d59dd083a1b691917a0e5585e91dea718d4eb242f17a0312a6f078f",
+ "answer": "The strategy is `jailbreak-templates`. It \"applies a library of static jailbreak templates\" in promptfoo, and the docs describe it as a strategy that \"tests LLM resistance to known jailbreak techniques using a curated library of static templates from 2022-2023 era attacks\" [1].\n\nIt applies **67 static jailbreak templates** to your test cases, including Skeleton Key, DAN, Developer Mode, and OPPO [2].\n\nThe older name, `prompt-injection`, still works but is deprecated. Its page says to replace it with `jailbreak-templates` in your configuration [3].",
+ "tokens": {
+  "input": 3013,
+  "output": 198,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3011
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007014,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2621,
+  "stop_reason": "end_turn",
+  "session_id": "803f5dc6-0ea8-41c8-9322-f7f71abb2224",
+  "total_cost_usd": 0.0007014,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3011,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 198,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3011,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 198,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3011,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3011
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 198,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3011,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007014,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3011,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The strategy is `jailbreak-templates`. It \"applies a library of static jailbreak templates\" in promptfoo, and the docs describe it as a strategy that \"tests LLM resistance to known jailbreak techniques using a curated library of static templates from 2022-2023 era attacks\" [1].\n\nIt applies **67 static jailbreak templates** to your test cases, including Skeleton Key, DAN, Developer Mode, and OPPO [2].\n\nThe older name, `prompt-injection`, still works but is deprecated. Its page says to replace it with `jailbreak-templates` in your configuration [3].",
+  "ttft_ms": 2695,
+  "type": "result",
+  "duration_ms": 2712,
+  "uuid": "c4560203-1b9d-489e-aa7e-24cef9885fe8",
+  "ttft_stream_ms": 2693,
+  "time_to_request_ms": 120,
+  "first_content_frame_ms": 2693,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

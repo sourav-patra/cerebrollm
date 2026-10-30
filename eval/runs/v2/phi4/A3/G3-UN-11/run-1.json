@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 1,
+ "started_utc": "2026-10-29T17:18:24Z",
+ "seconds": 7.22,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "I do not know the answer to the question regarding how many documents per second LlamaIndex's IngestionPipeline can process on a single CPU core. The provided context does not include any specific performance metrics or benchmarks related to processing speed on a single CPU core. \n\nThe relevant sections discuss parallel processing and async support, but they do not provide specific figures for processing speed on a single core. \n\n- \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [2] \n- \"The `IngestionPipeline` also has support for async operation.\" [4]\n\nThese sections indicate support for parallel and asynchronous processing but do not provide the specific information requested.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1690,
+  "output": 143
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8008748500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:18:31.8297039Z",
+  "response": "I do not know the answer to the question regarding how many documents per second LlamaIndex's IngestionPipeline can process on a single CPU core. The provided context does not include any specific performance metrics or benchmarks related to processing speed on a single CPU core. \n\nThe relevant sections discuss parallel processing and async support, but they do not provide specific figures for processing speed on a single core. \n\n- \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [2] \n- \"The `IngestionPipeline` also has support for async operation.\" [4]\n\nThese sections indicate support for parallel and asynchronous processing but do not provide the specific information requested.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8008748500,
+  "load_duration": 13332000,
+  "prompt_eval_count": 1690,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 858240000,
+  "eval_count": 143,
+  "eval_duration": 7023733000
+ }
+}

@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/85",
+  "index": 8,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:35:32.8169995Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n    total = 0\n    for i in range(1, len(lst), 2):\n        if lst[i] % 2 == 0:\n            total += lst[i]\n    return total\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 880533900,
+    "load_duration": 12698300,
+    "prompt_eval_count": 93,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 75690000,
+    "eval_count": 108,
+    "eval_duration": 748628000
+  },
+  "wall_seconds": 0.8444561840005917,
+  "load_average_before": [
+    0.32080078125,
+    0.1591796875,
+    0.24462890625
+  ],
+  "load_average_after": [
+    0.32080078125,
+    0.1591796875,
+    0.24462890625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-off-8",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_8.py"
+    ],
+    "wall_seconds": 0.7227234730016789,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

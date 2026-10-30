@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:33Z",
+ "seconds": 9.58,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "I don't know. The retrieved documents don't say which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them.\n\nThe closest material doesn't answer it:\n\n- The changelog's 0.6.0 entry only says \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\" [pgvector/CHANGELOG.md]. It doesn't mention pg_upgrade or index rebuilds.\n- The Upgrading section covers updating the extension within a database: \"ALTER EXTENSION vector UPDATE;\" [pgvector/README.md]. It says nothing about major PostgreSQL version upgrades.\n\nThe README's 0.6.0 notes or the full changelog might cover this, but they aren't in the retrieved context.",
+ "tokens": {
+  "input": 3171,
+  "output": 473,
+  "thinking": 188,
+  "cache_read": 2803,
+  "cache_creation": 366
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006478299999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5759,
+  "stop_reason": "end_turn",
+  "session_id": "b3c79042-74af-4115-a42e-84fa72b77f81",
+  "total_cost_usd": 0.006478299999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 366,
+   "cache_read_input_tokens": 2803,
+   "output_tokens": 473,
+   "output_tokens_details": {
+    "thinking_tokens": 188
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 366,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 473,
+     "cache_read_input_tokens": 2803,
+     "cache_creation_input_tokens": 366,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 366
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 473,
+    "cacheReadInputTokens": 2803,
+    "cacheCreationInputTokens": 366,
+    "webSearchRequests": 0,
+    "costUSD": 0.006478299999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 188,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 366,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved documents don't say which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them.\n\nThe closest material doesn't answer it:\n\n- The changelog's 0.6.0 entry only says \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\" [pgvector/CHANGELOG.md]. It doesn't mention pg_upgrade or index rebuilds.\n- The Upgrading section covers updating the extension within a database: \"ALTER EXTENSION vector UPDATE;\" [pgvector/README.md]. It says nothing about major PostgreSQL version upgrades.\n\nThe README's 0.6.0 notes or the full changelog might cover this, but they aren't in the retrieved context.",
+  "ttft_ms": 3991,
+  "type": "result",
+  "duration_ms": 5843,
+  "uuid": "5a16289a-cd42-4d6c-a15b-e7c5daca8d95",
+  "ttft_stream_ms": 2475,
+  "time_to_request_ms": 119,
+  "first_content_frame_ms": 2475,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

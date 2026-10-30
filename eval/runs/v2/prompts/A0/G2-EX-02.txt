@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: Since Ollama 0.35.1, how many web searches can a model that uses web search perform per response?

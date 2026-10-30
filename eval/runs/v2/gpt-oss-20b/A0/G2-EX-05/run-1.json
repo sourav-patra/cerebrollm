@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-05",
+ "run": 1,
+ "started_utc": "2026-10-29T16:03:36Z",
+ "seconds": 13.05,
+ "prompt_sha256": "f5453282a54f4164904d9cb3243c4050d7797a59152b249963801a9d37113365",
+ "answer": "I’m not aware of any official documentation that lists the question types for the `/v1/systemone decision-model` endpoint. If you’re referring to a particular feature set that was announced recently, I don’t have that information.",
+ "thinking_chars": 2639,
+ "tokens": {
+  "input": 110,
+  "output": 676
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11723178100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:03:48.477485Z",
+  "response": "I’m not aware of any official documentation that lists the question types for the `/v1/systemone decision-model` endpoint. If you’re referring to a particular feature set that was announced recently, I don’t have that information.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: What are the three question types supported by Ollama's /v1/systemone decision-model API?\"\n\nThey want an answer: presumably about Ollama's API. I need to know what \"systemone decision-model\" is. Maybe it's a particular API endpoint in Ollama. I recall that Ollama is an open-source LLM hosting platform, providing a local inference API. There's an endpoint /v1/chat/completions, etc. But \"systemone decision-model\" is not familiar. Could be a custom endpoint for some \"decision-model\" with systemone. The question: \"What are the three question types supported by Ollama's /v1/systemone decision-model API?\" So the answer likely: \"Yes, it's a decision model that supports three types of questions: yes/no, multiple-choice, and open-ended.\" But we need to be sure.\n\nLet me think: The \"systemone decision-model\" might refer to a specific model. But I've not seen that. Could be \"Decision Model\" from \"systemone\" which is a product. I'm not certain. It might be that the API supports \"classification\", \"question-answer\", and \"summarization\" or something. But the question is likely from some documentation or knowledge base. Without external info, I must answer based on knowledge. But I'm ChatGPT offline, no internet. I need to decide if I know.\n\nI recall reading about \"Ollama\" in some docs. They have a \"decision model\" that can answer \"Yes/No\" questions or \"Multiple choice\" or \"Free text.\" But I'm not fully sure.\n\nGiven the question, maybe the correct answer is: \"The three question types supported are: 'yes/no' (binary), 'multiple-choice' (selecting from options), and 'open-ended' (free response).\" I'd answer that.\n\nBut could be something else: Maybe \"Single choice,\" \"Multiple choice,\" \"Free text.\" However, \"systemone decision-model API\" might be for \"decision-making\" tasks, perhaps supporting \"binary\", \"multi-class classification\", and \"regression.\" But that seems less likely.\n\nLet's consider that the \"decision-model\" might be a prompt that asks for a decision. The question types could be \"Yes/No\", \"Yes/No/Unknown\", \"Yes/No/Maybe\". But no.\n\nAlternatively, maybe the answer is: \"The API supports three question types: 'text', 'image', and 'audio'.\" But that seems improbable.\n\nGiven the typical usage, I think the answer is \"Yes/No, multiple choice, and free text.\" So I'll answer that. If uncertain, I could say \"I don't know.\" But we can give an educated guess.\n\nThus: The three question types supported are: 1) Binary (yes/no) questions, 2) Multiple-choice questions, and 3) Open-ended (free-form) questions.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11723178100,
+  "load_duration": 13560400,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181507000,
+  "eval_count": 676,
+  "eval_duration": 11507699000
+ }
+}

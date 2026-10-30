@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 4,
+ "started_utc": "2026-10-29T16:42:28Z",
+ "seconds": 8.96,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "I’m not aware of any special replication‑lag guarantee that pgvector provides for HNSW index updates on a streaming replica. The updates are written to the WAL and replayed on the replica like any other change, so the lag is whatever the normal streaming‑replication lag is. If you need a precise guarantee, you might need to consult the latest pgvector documentation or source code.",
+ "thinking_chars": 2188,
+ "tokens": {
+  "input": 108,
+  "output": 555
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9520913300
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:42:37.1073418Z",
+  "response": "I’m not aware of any special replication‑lag guarantee that pgvector provides for HNSW index updates on a streaming replica. The updates are written to the WAL and replayed on the replica like any other change, so the lag is whatever the normal streaming‑replication lag is. If you need a precise guarantee, you might need to consult the latest pgvector documentation or source code.",
+  "thinking": "We need to answer a question: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we need to know about the pgvector project and its replication lag guarantee for HNSW index updates on a streaming replica. We need to recall if there's a known guarantee. I don't recall reading about replication lag guarantee. Maybe the answer is that there's no guarantee; replication lag can be variable. Maybe the guarantee is that the index updates are applied asynchronously, so no guarantee. Or maybe it's guaranteed to be zero? Let's think.\n\npgvector is a Postgres extension for vector operations. HNSW index updates on a streaming replica: replication is asynchronous; index updates are applied as part of WAL replay. There might be a guarantee that HNSW index updates are replayed in order and no more than the replication lag of the replica. But it's not a guarantee that it's zero. So maybe the answer: \"It doesn't guarantee any replication lag; updates are applied as part of WAL replay, so the lag is the same as normal replication.\" Or maybe the answer: \"pgvector guarantees zero replication lag for HNSW index updates on a streaming replica.\" That seems unlikely.\n\nLet's search memory: I think I saw a note that HNSW index updates are not replicated, but they are. Actually, HNSW index changes are stored in the WAL. But the replication lag is the same as usual replication. There's no special guarantee. So I would answer: \"pgvector does not provide a special replication lag guarantee for HNSW index updates; they are replicated via WAL as part of normal streaming replication, so the lag is whatever the replication lag is.\"\n\nThus I'd answer: \"I don't know.\" But perhaps the user expects a known answer: \"Zero replication lag.\" But I'd lean that there's no guarantee.\n\nI'll respond: \"I don't know.\" But the user explicitly says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I should say I don't know. But I can provide context: I don't recall any guarantee. So I can answer: \"I do not know.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9520913300,
+  "load_duration": 13493000,
+  "prompt_eval_count": 108,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 186319000,
+  "eval_count": 555,
+  "eval_duration": 9302146000
+ }
+}

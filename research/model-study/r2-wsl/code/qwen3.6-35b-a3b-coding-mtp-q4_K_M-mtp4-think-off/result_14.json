@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/61",
+  "index": 14,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 4
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:01:11.1463194Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    count = 0\n    for char in brackets:\n        if char == '(':\n            count += 1\n        elif char == ')':\n            count -= 1\n        # If count goes negative, we have a closing bracket without a matching opening one\n        if count < 0:\n            return False\n    # If count is not zero, we have unmatched opening brackets\n    return count == 0\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3158668200,
+    "load_duration": 21103800,
+    "prompt_eval_count": 130,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 500530000,
+    "eval_count": 188,
+    "eval_duration": 2565539000
+  },
+  "wall_seconds": 2.9492661569966003,
+  "load_average_before": [
+    1.18017578125,
+    0.498046875,
+    0.18017578125
+  ],
+  "load_average_after": [
+    1.08544921875,
+    0.48974609375,
+    0.17919921875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off-14",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_14.py"
+    ],
+    "wall_seconds": 0.7699265609990107,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-ST-01",
+ "run": 4,
+ "started_utc": "2026-10-29T15:59:13Z",
+ "seconds": 1.35,
+ "prompt_sha256": "81d26abcb7033fa7bba12bc14a95f9752c646ac8715241271d65aa32300e5b5d",
+ "answer": "\"Muse Glimmer is now available on all platforms.\" [ollama/v0.32.8.md (lines 1-38)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1945,
+  "output": 34
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1422859000
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:59:13.7745531Z",
+  "response": "\"Muse Glimmer is now available on all platforms.\" [ollama/v0.32.8.md (lines 1-38)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1422859000,
+  "load_duration": 12923500,
+  "prompt_eval_count": 1945,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 869125000,
+  "eval_count": 34,
+  "eval_duration": 254163000
+ }
+}

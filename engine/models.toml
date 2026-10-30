@@ -1,0 +1,135 @@
+# Allowed local models (issue #9). Read by research/model-study/model_guard.py; nothing else may be pulled.
+# Licence rule: Apache-2.0 or MIT only. A model with another licence stays listed with allowed = false and a reason.
+# num_ctx caps: 8192 for role "embedding", 16384 for role "chat" (the guard rejects a larger value).
+# Sizes are not stored: the guard reads the current manifest at registry.ollama.ai before every pull and applies the floor to it.
+# digest: full sha256 shown by /api/tags; empty until the guard records it after a pull. Never edit by hand.
+
+[host]
+# Disk holding the Ollama model store (C:\Users\<user>\.ollama\models); the Ubuntu path is the Windows C: mount.
+disk_path = "/mnt/c"
+disk_path_windows = "C:\\"
+floor_gb = 8  # a pull may never leave less free space than this (GiB)
+
+[models."bge-m3"]
+role = "embedding"
+licence = "MIT"
+licence_source = "registry licence layer (MIT License text), checked 2026-10-29; /api/show on the installed model returns the same text"
+allowed = true
+num_ctx = 8192
+digest = "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+
+[models."qwen3-embedding:0.6b"]
+role = "embedding"
+licence = "Apache-2.0"
+licence_source = "research/model-study/sources/qwen-embedding-0.6b.md (license: apache-2.0)"
+allowed = true
+num_ctx = 8192
+digest = "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d"
+
+[models."qwen3-embedding:4b"]
+role = "embedding"
+licence = "Apache-2.0"
+licence_source = "research/model-study/sources/qwen-embedding-4b.md (license: apache-2.0)"
+allowed = true
+num_ctx = 8192
+digest = "df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907"
+
+[models."phi4"]
+role = "chat"
+licence = "MIT"
+licence_source = "research/model-study/sources/phi4.md (license: mit)"
+allowed = true
+num_ctx = 16384
+digest = "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba"
+
+[models."devstral:24b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "research/model-study/sources/devstral-2505.md (license: apache-2.0); registry licence layer is the Apache License 2.0 text"
+allowed = true
+num_ctx = 16384
+digest = "9bd74193e93935e9d8564d88607b220a9d341c4a36b748cffcbd9ad4f47a9ca9"
+
+[models."gpt-oss:20b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "research/model-study/sources/gpt-oss-20b.md (license: apache-2.0); registry licence layer is the Apache License 2.0 text"
+allowed = true
+num_ctx = 16384
+digest = "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe"
+
+[models."qwen3:14b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "research/model-study/sources/qwen3-14b.md (license: apache-2.0); registry licence layer is the Apache License 2.0 text"
+allowed = true
+num_ctx = 16384
+digest = "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+
+[models."qwen3:8b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "research/model-study/sources/qwen3-8b.md (license: apache-2.0); registry licence layer is the Apache License 2.0 text"
+allowed = true
+num_ctx = 16384
+digest = "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+
+[models."qwen3-coder:30b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "registry licence layer (Apache License 2.0 text), checked 2026-10-29; no copy in research/model-study/sources/"
+allowed = true
+num_ctx = 16384
+digest = "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca"
+
+[models."qwen3:30b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "registry licence layer (Apache License 2.0 text), checked 2026-10-29; no copy in research/model-study/sources/"
+allowed = true
+num_ctx = 16384
+digest = "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226"
+
+[models."gemma4:12b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "registry licence layer sha256:0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594 is the Apache License 2.0 text, checked 2026-10-29 (development step M2)"
+allowed = true
+num_ctx = 16384
+digest = "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b"
+
+[models."nemotron-3.5-lightning"]
+role = "chat"
+licence = "NVIDIA-Open-Model-License"
+licence_source = "registry licence layer sha256:215a3316f0f10bebc2c8d5b6426d1c6ad06e162187df10e043bafed246894d9a is the NVIDIA Open Model License Agreement (last modified 2025-10-24), checked 2026-10-29 (development step M2)"
+allowed = false
+reason = "licence is not Apache-2.0 or MIT; the guard refuses the pull and this lane may not widen the licence rule"
+num_ctx = 16384
+digest = ""
+
+[models."qwen3.6:35b-a3b-coding-mtp-q4_K_M"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "registry licence layer sha256:5f3a3c817e78f5b8a4ad2d2c458a3e4b2cce470d6c12642c4eeb12cb8a9bf51d is the Apache License 2.0 text (11,357 bytes), checked 2026-10-29 (lane M3); manifest sha256:6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649"
+allowed = true
+num_ctx = 16384
+digest = "6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649"
+
+[models."glm-4.7-flash:q4_K_M"]
+role = "chat"
+licence = "MIT"
+licence_source = "registry licence layer sha256:b1bca6ec8117a09783df643e500e7331c5d6ea79fe4ba4d29d9a256c2f794a83 is the MIT License text (1,068 bytes), checked 2026-10-29 (lane M3); manifest sha256:4475827791a269b02c8ec49b1c3bc1abb5846bacf3fae015b75d33986322d8f6"
+allowed = true
+num_ctx = 16384
+digest = "4475827791a269b02c8ec49b1c3bc1abb5846bacf3fae015b75d33986322d8f6"
+
+# Reranker for `cerebrollm ask` and the MCP search option `rerank` (lane N7). Not an Ollama model: a cross-encoder run by
+# sentence-transformers from a local folder, fetched once from Hugging Face at the pinned revision (files and sha256 in
+# eval/runs/retrieval/n7-evidence/bge-reranker-v2-m3.sha256). The model guard does not read this section.
+[reranker."BAAI/bge-reranker-v2-m3"]
+licence = "Apache-2.0"
+licence_source = "Hugging Face model card metadata license: apache-2.0 (api/models/BAAI/bge-reranker-v2-m3), checked 2026-10-29"
+revision = "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e"
+local_dir = "~/.cerebrollm/models/bge-reranker-v2-m3"
+model_sha256 = "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286"   # model.safetensors, equals the Hugging Face LFS oid
+max_length = 1024   # tokens per (query, chunk) pair; chunks are at most 800 tokens

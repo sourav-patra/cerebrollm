@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 1,
+ "started_utc": "2026-10-29T17:13:03Z",
+ "seconds": 3.12,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_KV_CACHE_RETENTION`. This information might be specific to the Ollama project documentation or configuration files, which are not part of my training data. For accurate details, I recommend consulting the official documentation or source code of the Ollama project.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 54,
+  "output": 69
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3313199700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:13:05.7151747Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_KV_CACHE_RETENTION`. This information might be specific to the Ollama project documentation or configuration files, which are not part of my training data. For accurate details, I recommend consulting the official documentation or source code of the Ollama project.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3313199700,
+  "load_duration": 12856600,
+  "prompt_eval_count": 54,
+  "prompt_eval_cached_count": 42,
+  "prompt_eval_duration": 158954000,
+  "eval_count": 69,
+  "eval_duration": 3122118000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-18",
+ "run": 4,
+ "started_utc": "2026-10-29T02:01:06Z",
+ "seconds": 8.72,
+ "prompt_file": "runs/prompts/A0/ST-18.txt",
+ "prompt_sha256": "bc30c240b8baf94275007b942372b4d9dbc326bd0382f0290c4558c29d4d5c0b",
+ "answer": "I believe promptfoo has a dedicated **IBM watsonx.ai** provider, which is the natural choice for IBM-hosted models such as Granite. I'm not certain of the exact provider ID, environment variable names, or config fields, so check the current promptfoo providers documentation before relying on them.\n\nIf the watsonx provider doesn't fit your setup, you may be able to reach IBM-hosted models through a generic OpenAI-compatible provider if your endpoint exposes that API. I don't know whether that works for your specific deployment.",
+ "tokens": {
+  "input": 655,
+  "output": 501,
+  "thinking": 325,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003813,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3621,
+  "stop_reason": "end_turn",
+  "session_id": "3cc436df-b3a1-48c0-948f-3cf83fd871cf",
+  "total_cost_usd": 0.0003813,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 501,
+   "output_tokens_details": {
+    "thinking_tokens": 325
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 501,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 501,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003813,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 325,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I believe promptfoo has a dedicated **IBM watsonx.ai** provider, which is the natural choice for IBM-hosted models such as Granite. I'm not certain of the exact provider ID, environment variable names, or config fields, so check the current promptfoo providers documentation before relying on them.\n\nIf the watsonx provider doesn't fit your setup, you may be able to reach IBM-hosted models through a generic OpenAI-compatible provider if your endpoint exposes that API. I don't know whether that works for your specific deployment.",
+  "ttft_ms": 2968,
+  "type": "result",
+  "duration_ms": 3745,
+  "uuid": "222d67fe-4b22-41f3-bc59-e8d513b7369b",
+  "ttft_stream_ms": 2856,
+  "time_to_request_ms": 155,
+  "first_content_frame_ms": 2857,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

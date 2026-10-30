@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-PA-3",
+ "run": 3,
+ "started_utc": "2026-10-29T01:54:12Z",
+ "seconds": 7.36,
+ "prompt_file": "runs/prompts/A0/PR-PA-3.txt",
+ "prompt_sha256": "74f3ef6827c5802263d688f9af1cf5ed262163b46c3f23e7f42854ae6d383b24",
+ "answer": "I don't know. I don't have the starter example's source in this conversation, so I can't see the value it sets for the Ollama timeout.\n\nIf you share the file that constructs the `Ollama` LLM, or its path, I can point to the exact line. In general, LlamaIndex's Ollama integration takes a `request_timeout` argument, but I'm not certain of its default or whether this example overrides it.",
+ "tokens": {
+  "input": 662,
+  "output": 334,
+  "thinking": 207,
+  "cache_read": 0,
+  "cache_creation": 660
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0002992,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2889,
+  "stop_reason": "end_turn",
+  "session_id": "45a3fc5f-7302-4785-87ad-439752483ac9",
+  "total_cost_usd": 0.0002992,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 660,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 334,
+   "output_tokens_details": {
+    "thinking_tokens": 207
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 660,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 334,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 660,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 660
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 334,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 660,
+    "webSearchRequests": 0,
+    "costUSD": 0.0002992,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 207,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 660,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I don't have the starter example's source in this conversation, so I can't see the value it sets for the Ollama timeout.\n\nIf you share the file that constructs the `Ollama` LLM, or its path, I can point to the exact line. In general, LlamaIndex's Ollama integration takes a `request_timeout` argument, but I'm not certain of its default or whether this example overrides it.",
+  "ttft_ms": 3002,
+  "type": "result",
+  "duration_ms": 3026,
+  "uuid": "cf56f79d-27b6-4ee3-a301-1bc21572e056",
+  "ttft_stream_ms": 3000,
+  "time_to_request_ms": 269,
+  "first_content_frame_ms": 3001,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

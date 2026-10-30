@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/19",
+  "index": 39,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": true
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:27:52.5885493Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import List\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n    number_map = {\n        'zero': 0,\n        'one': 1,\n        'two': 2,\n        'three': 3,\n        'four': 4,\n        'five': 5,\n        'six': 6,\n        'seven': 7,\n        'eight': 8,\n        'nine': 9\n    }\n    words = numbers.split()\n    sorted_words = sorted(words, key=lambda word: number_map[word])\n    return ' '.join(sorted_words)\n```",
+      "thinking": "Okay, I need to implement this Python function called sort_numbers. The input is a string of number words like 'three one five', and I have to return them sorted numerically. Let's see.\n\nFirst, I should think about how to map these words to their corresponding numbers. Like 'zero' is 0, 'one' is 1, and so on up to 'nine' which is 9. So maybe I can create a dictionary that maps each word to its numerical value.\n\nOnce I have that dictionary, I can split the input string into individual words. Then, sort them based on their numerical values. The key for the sort would be the value from the dictionary. After sorting, I need to join them back into a string with spaces.\n\nWait, let me outline the steps:\n\n1. Create a mapping from number words to their integer values.\n2. Split the input string into a list of words.\n3. Sort the list using the mapping as the key for each word.\n4. Join the sorted list into a string and return it.\n\nLet me think about the dictionary. The keys are the words, and the values are the numbers. So the dictionary would be something like:\n\nnumber_words = {\n    'zero': 0,\n    'one': 1,\n    'two': 2,\n    'three': 3,\n    'four': 4,\n    'five': 5,\n    'six': 6,\n    'seven': 7,\n    'eight': 8,\n    'nine': 9\n}\n\nYes. Then, when sorting, each word is looked up in this dictionary to get its numerical value, which determines the order.\n\nSo for the example input 'three one five', splitting gives ['three', 'one', 'five']. Sorting with the keys would order them as 'one' (1), 'three' (3), 'five' (5), resulting in 'one three five'.\n\nNow, how to implement this in Python. The function takes a string, splits into list, sorts using the dictionary values, then joins.\n\nSo the code would be:\n\ndef sort_numbers(numbers: str) -> str:\n    number_map = {\n        'zero': 0,\n        'one': 1,\n        'two': 2,\n        'three': 3,\n        'four': 4,\n        'five': 5,\n        'six': 6,\n        'seven': 7,\n        'eight': 8,\n        'nine': 9\n    }\n    words = numbers.split()\n    # Sort the words based on their numerical value\n    sorted_words = sorted(words, key=lambda word: number_map[word])\n    return ' '.join(sorted_words)\n\nWait, but what if there are invalid words? The problem says that the input is valid, so we don't need to handle that. So this should work.\n\nTesting the example: 'three one five' becomes ['three', 'one', 'five']. Sorted with the key, the order is one (1), three (3), five (5). So the output is 'one three five', which matches the example.\n\nI think that's all. The code should handle all cases as per the problem statement.\n"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 35896094000,
+    "load_duration": 21041700,
+    "prompt_eval_count": 134,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 97246000,
+    "eval_count": 878,
+    "eval_duration": 35627846000
+  },
+  "wall_seconds": 33.538650734999464,
+  "load_average_before": [
+    0.0,
+    0.01318359375,
+    0.0
+  ],
+  "load_average_after": [
+    0.0615234375,
+    0.02685546875,
+    0.00390625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-on-39",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-on:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_39.py"
+    ],
+    "wall_seconds": 0.7263178039993363,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

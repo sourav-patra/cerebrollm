@@ -1,0 +1,89 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-06",
+ "run": 2,
+ "started_utc": "2026-10-30T06:22:23Z",
+ "seconds": 37.48,
+ "prompt_sha256": "dc3d2b1a61239c25ad18ec6f1bc06c32847e54d35388704228e4c1ec9533dba4",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 0.8,
+   "rerank": 9.84,
+   "generate": 24.43,
+   "verify": 0.0,
+   "total": 35.07
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 2,
+    "rerank_score": 0.77249,
+    "path": "ollama/docs/faq.md",
+    "line_start": 324,
+    "line_end": 338
+   },
+   {
+    "rank": 2,
+    "search_rank": 7,
+    "rerank_score": 0.66566,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 1,
+    "line_end": 53
+   },
+   {
+    "rank": 3,
+    "search_rank": 3,
+    "rerank_score": 0.35069,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 402,
+    "line_end": 444
+   },
+   {
+    "rank": 4,
+    "search_rank": 9,
+    "rerank_score": 0.29958,
+    "path": "ollama/docs/faq.md",
+    "line_start": 289,
+    "line_end": 318
+   },
+   {
+    "rank": 5,
+    "search_rank": 5,
+    "rerank_score": 0.24474,
+    "path": "ollama/docs/windows.md",
+    "line_start": 39,
+    "line_end": 51
+   },
+   {
+    "rank": 6,
+    "search_rank": 6,
+    "rerank_score": 0.22305,
+    "path": "ollama/docs/faq.md",
+    "line_start": 129,
+    "line_end": 136
+   },
+   {
+    "rank": 7,
+    "search_rank": 1,
+    "rerank_score": 0.21534,
+    "path": "ollama/docs/api.md",
+    "line_start": 1543,
+    "line_end": 1599
+   },
+   {
+    "rank": 8,
+    "search_rank": 16,
+    "rerank_score": 0.19814,
+    "path": "ollama/docs/quickstart.md",
+    "line_start": 193,
+    "line_end": 287
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

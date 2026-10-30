@@ -1,0 +1,86 @@
+{
+  "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+  "mode": "mtp4-think-off",
+  "num_ctx": 8192,
+  "run": 1,
+  "target_prompt_tokens": 7592,
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793299308.3105261,
+    "loadavg": [
+      0.01416015625,
+      0.2861328125,
+      0.470703125
+    ],
+    "win_cpu_pct": 21.9,
+    "gpu_util_pct": 7,
+    "gpu_mem_mib": 1081,
+    "ollama_ps": [
+      "qwen3.6:35b-a3b-coding-mtp-q4_K_M"
+    ]
+  },
+  "ollama_ps_before": "NAME                                 ID              SIZE     PROCESSOR    CONTEXT    RUNNER      UNTIL               \nqwen3.6:35b-a3b-coding-mtp-q4_K_M    6f7983cafbe2    22 GB    100% CPU     8192       llamacpp    14 minutes from now    \n",
+  "ollama_ps_after": "NAME                                 ID              SIZE     PROCESSOR    CONTEXT    RUNNER      UNTIL               \nqwen3.6:35b-a3b-coding-mtp-q4_K_M    6f7983cafbe2    22 GB    100% CPU     8192       llamacpp    14 minutes from now    \n",
+  "ps_api": [
+    {
+      "name": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+      "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+      "size": 22489952416,
+      "digest": "6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35moe",
+        "families": [
+          "qwen35moe"
+        ],
+        "parameter_size": "35.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-30T00:28:53.1617366+05:30",
+      "size_vram": 0,
+      "context_length": 8192,
+      "runner": "llamacpp"
+    }
+  ],
+  "gpu_pct": 0.0,
+  "memory_during_request": {
+    "samples": 50,
+    "min_free_mb": 972.0,
+    "min_available_mb": 995.0,
+    "max_pages_per_sec": 123358.5,
+    "median_pages_per_sec": 15677.8,
+    "longest_paging_run_samples": 50,
+    "sustained_paging": true,
+    "free_ok": false
+  },
+  "ttft_seconds": 83.31567221799924,
+  "wall_seconds": 108.44736754600308,
+  "final": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T18:43:53.1606746Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 117941138600,
+    "load_duration": 29997300,
+    "prompt_eval_count": 7330,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 90632978000,
+    "eval_count": 256,
+    "eval_duration": 27136033000
+  },
+  "prompt_tps": 80.87563888720506,
+  "generation_tps": 9.433950791554535,
+  "request_options": {
+    "temperature": 0,
+    "seed": 27,
+    "num_ctx": 8192,
+    "num_predict": 256,
+    "draft_num_predict": 4
+  }
+}

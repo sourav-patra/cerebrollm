@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-10",
+ "run": 4,
+ "started_utc": "2026-10-29T16:43:27Z",
+ "seconds": 12.79,
+ "prompt_sha256": "f858bb3557149a1d503d6b3fb8d5c981d06bfa01ad5a503c151be74811859b19",
+ "answer": "I’m not aware of any “GraphRAGCommunityRetriever” class in the public LlamaIndex API, so I don’t know.",
+ "thinking_chars": 2935,
+ "tokens": {
+  "input": 110,
+  "output": 653
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11325662600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:43:40.2062386Z",
+  "response": "I’m not aware of any “GraphRAGCommunityRetriever” class in the public LlamaIndex API, so I don’t know.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" We need to answer: Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\n\nWe need to recall that LlamaIndex is a library for building LLM retrieval pipelines. GraphRAGCommunityRetriever is likely a class in LlamaIndex that implements a community-based graph retrieval for RAG. The question: \"Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" That could be answered as: GraphRAGCommunityRetriever is a class in LlamaIndex that extends the BaseRetriever (or BaseGraphRetriever) class. But let's think.\n\nGraphRAGCommunityRetriever: It might be in llama_index.retrievers.community_retriever. The base class could be BaseRetriever or BaseGraphRetriever.\n\nI need to recall from LlamaIndex documentation: There is a GraphRetriever that extends BaseRetriever. GraphRetriever uses a graph index. There is also a GraphRAGCommunityRetriever that extends BaseRetriever? Let's search memory: LlamaIndex 0.9 or 0.10 had a community retrieval approach. The class GraphRAGCommunityRetriever likely extends BaseRetriever or BaseGraphRetriever. The base class for retrievers is BaseRetriever. But there is also BaseRetriever for retrieval. But GraphRetriever might extend BaseRetriever and use a graph. GraphRAGCommunityRetriever may extend BaseGraphRetriever. Let's check.\n\nI recall that LlamaIndex has a base class for retrieval: BaseRetriever. The community retriever might extend BaseRetriever. But maybe it's BaseRetriever. However, the question seems to ask \"Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" So answer: GraphRAGCommunityRetriever is a class in llama_index.retrievers.community_retriever module that extends BaseRetriever.\n\nBut maybe it's BaseGraphRetriever. Let's look up memory: In LlamaIndex, there's BaseRetriever, and then there's BaseGraphRetriever in graph module. GraphRetriever extends BaseRetriever. GraphRAGCommunityRetriever might extend BaseRetriever. But the community retriever might be a subclass of BaseRetriever.\n\nAlternatively, GraphRAGCommunityRetriever extends BaseRetriever and uses a graph index. So answer: GraphRAGCommunityRetriever is a subclass of BaseRetriever.\n\nThus answer: GraphRAGCommunityRetriever is a LlamaIndex class that extends BaseRetriever. Alternatively, if it's BaseGraphRetriever, I might mention that. But likely BaseRetriever.\n\nLet's phrase: The GraphRAGCommunityRetriever is a subclass of BaseRetriever in LlamaIndex. So answer: It's a LlamaIndex class that extends BaseRetriever.\n\nIf uncertain: I don't know. But I'm fairly certain.\n\nThus: GraphRAGCommunityRetriever is a LlamaIndex class in the community_retriever module that extends BaseRetriever.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11325662600,
+  "load_duration": 13377600,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181786000,
+  "eval_count": 653,
+  "eval_duration": 11112709000
+ }
+}

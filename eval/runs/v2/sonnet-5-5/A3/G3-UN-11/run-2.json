@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:21Z",
+ "seconds": 7.22,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "I don't know. The retrieved documents don't give any throughput figure for `IngestionPipeline`, such as documents per second on a single CPU core. Throughput would depend on which transformations you use (splitters, extractors, embedding models) and on your hardware.\n\nThe closest thing the documents say is about parallelism:\n\n\"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]\n\nTo use it, you set `num_workers` in `pipeline.run(documents=[...], num_workers=4)`. This is a way to scale across processes, not a benchmark. To get a real number, you would need to time your own pipeline on a sample of your data.",
+ "tokens": {
+  "input": 3392,
+  "output": 251,
+  "thinking": 0,
+  "cache_read": 3024,
+  "cache_creation": 366
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0042804,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2980,
+  "stop_reason": "end_turn",
+  "session_id": "d0666147-8e56-4dd6-8c5b-1337dcaf51d4",
+  "total_cost_usd": 0.0042804,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 366,
+   "cache_read_input_tokens": 3024,
+   "output_tokens": 251,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 366,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 251,
+     "cache_read_input_tokens": 3024,
+     "cache_creation_input_tokens": 366,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 366
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 251,
+    "cacheReadInputTokens": 3024,
+    "cacheCreationInputTokens": 366,
+    "webSearchRequests": 0,
+    "costUSD": 0.0042804,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 366,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved documents don't give any throughput figure for `IngestionPipeline`, such as documents per second on a single CPU core. Throughput would depend on which transformations you use (splitters, extractors, embedding models) and on your hardware.\n\nThe closest thing the documents say is about parallelism:\n\n\"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]\n\nTo use it, you set `num_workers` in `pipeline.run(documents=[...], num_workers=4)`. This is a way to scale across processes, not a benchmark. To get a real number, you would need to time your own pipeline on a sample of your data.",
+  "ttft_ms": 3048,
+  "type": "result",
+  "duration_ms": 3069,
+  "uuid": "69c2c244-3686-433d-b171-dda477bd1516",
+  "ttft_stream_ms": 2715,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 2715,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

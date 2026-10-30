@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/21",
+  "index": 35,
+  "request": {
+    "model": "devstral:24b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    \"\"\" Given list of numbers (of at least two elements), apply a linear transform to that list,\n    such that the smallest number will become 0 and the largest will become 1\n    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "devstral:24b",
+    "created_at": "2026-10-28T21:12:32.6339817Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import List\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    \"\"\" Given list of numbers (of at least two elements), apply a linear transform to that list,\n    such that the smallest number will become 0 and the largest will become 1\n    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n    if len(numbers) < 2:\n        raise ValueError(\"List must contain at least two elements\")\n\n    min_val = min(numbers)\n    max_val = max(numbers)\n\n    if min_val == max_val:\n        return [0.0] * len(numbers)\n\n    return [(num - min_val) / (max_val - min_val) for num in numbers]\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 31446578700,
+    "load_duration": 36196600,
+    "prompt_eval_count": 1373,
+    "prompt_eval_cached_count": 1254,
+    "prompt_eval_duration": 408559000,
+    "eval_count": 207,
+    "eval_duration": 30979468000
+  },
+  "wall_seconds": 29.541697804999785,
+  "load_average_before": [
+    0.01904296875,
+    0.0703125,
+    0.0849609375
+  ],
+  "load_average_after": [
+    0.01025390625,
+    0.0615234375,
+    0.08203125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-devstral-24b-default-35",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\devstral-24b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_35.py"
+    ],
+    "wall_seconds": 0.7588187549990835,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

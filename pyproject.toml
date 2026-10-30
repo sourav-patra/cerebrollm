@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cerebrollm"
+version = "0.1.0"
+description = "Local retrieval over your own authoritative documents. Every answer carries a quote that a check confirms, or says it is not in the sources."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "sourav-patra" }]
+keywords = ["rag", "retrieval", "pgvector", "ollama", "mcp", "citations"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Indexing",
+]
+# Lower bounds are the versions the 0.1.0 measurements ran on (engine/requirements.txt pins the full set).
+dependencies = [
+    "llama-index-core>=0.14.25,<0.15",
+    "llama-index-vector-stores-postgres>=0.9,<0.10",
+    "llama-index-embeddings-ollama>=0.10,<0.11",
+    "mcp>=2.3,<3",
+    "psycopg2-binary>=2.9",
+    "asyncpg>=0.32",
+    "sqlalchemy>=2.0",
+    "httpx>=0.28",
+    "ollama>=0.6",
+]
+
+[project.optional-dependencies]
+# The cross-encoder that `cerebrollm ask` and the MCP `rerank` option use. Without it, `ask --no-rerank` still works.
+rerank = ["sentence-transformers>=6.2,<7", "torch>=2.15"]
+test = ["pytest>=9"]
+
+[project.scripts]
+cerebrollm = "cerebrollm.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sourav-patra/cerebrollm"
+Source = "https://github.com/sourav-patra/cerebrollm"
+Changelog = "https://github.com/sourav-patra/cerebrollm/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "engine" }
+
+[tool.setuptools.packages.find]
+where = ["engine"]
+include = ["cerebrollm*"]
+
+# Default configuration and the model allow-list: config.data_file() reads them from <prefix>/share/cerebrollm in a wheel.
+[tool.setuptools.data-files]
+"share/cerebrollm" = ["engine/cerebrollm.toml", "engine/models.toml"]

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-ST-2",
+ "run": 1,
+ "started_utc": "2026-10-29T02:02:21Z",
+ "seconds": 8.65,
+ "prompt_file": "runs/prompts/A3/PR-ST-2.txt",
+ "prompt_sha256": "f9ce1bfad36cb3a66f12ea1b29a01770317e5a74182e565091cd9df714d86225",
+ "answer": "The provided context doesn't say which parameter is deprecated upstream, so I can't confirm that claim from these documents. It also doesn't give a general recommendation about which sampling parameters to prefer.\n\nThe Ollama docs show a sample config with these sampling-related settings:\n\n- \"num_predict: 1024\" [promptfoo/site/docs/providers/ollama.md]\n- \"temperature: 0.7\" [promptfoo/site/docs/providers/ollama.md]\n- \"top_p: 0.9\" [promptfoo/site/docs/providers/ollama.md]\n\nThe docs present these as examples and link to Ollama's parameter reference for what each one does, so that reference is the place to check whether any of them is deprecated.",
+ "tokens": {
+  "input": 3566,
+  "output": 680,
+  "thinking": 445,
+  "cache_read": 0,
+  "cache_creation": 3564
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0010530000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3987,
+  "stop_reason": "end_turn",
+  "session_id": "e6bd4d84-184f-43f8-836a-a5b5d9c3e413",
+  "total_cost_usd": 0.0010530000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3564,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 680,
+   "output_tokens_details": {
+    "thinking_tokens": 445
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3564,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 680,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3564,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3564
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 680,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3564,
+    "webSearchRequests": 0,
+    "costUSD": 0.0010530000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 445,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3564,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided context doesn't say which parameter is deprecated upstream, so I can't confirm that claim from these documents. It also doesn't give a general recommendation about which sampling parameters to prefer.\n\nThe Ollama docs show a sample config with these sampling-related settings:\n\n- \"num_predict: 1024\" [promptfoo/site/docs/providers/ollama.md]\n- \"temperature: 0.7\" [promptfoo/site/docs/providers/ollama.md]\n- \"top_p: 0.9\" [promptfoo/site/docs/providers/ollama.md]\n\nThe docs present these as examples and link to Ollama's parameter reference for what each one does, so that reference is the place to check whether any of them is deprecated.",
+  "ttft_ms": 3082,
+  "type": "result",
+  "duration_ms": 4123,
+  "uuid": "a50e1284-e759-4305-a1b5-7c6aee75c4bd",
+  "ttft_stream_ms": 2976,
+  "time_to_request_ms": 168,
+  "first_content_frame_ms": 2976,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

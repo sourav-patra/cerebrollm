@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-EX-02",
+ "run": 1,
+ "started_utc": "2026-10-30T06:00:02Z",
+ "seconds": 24.09,
+ "prompt_sha256": "9840fed9a2850450f946bfad9b4d5d703c3b1deb405bec69a3d3673581f51f28",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "ollama/v0.35.1.md",
+   "quote": "Models using web search can now perform up to ten searches per response, up from three.",
+   "verify": "MISSING",
+   "detail": "quote not found in ollama/v0.35.1.md@file"
+  }
+ ],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 3.49,
+   "rerank": 11.76,
+   "generate": 6.11,
+   "verify": 0.0,
+   "total": 21.36
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 2,
+    "rerank_score": 0.99696,
+    "path": "ollama/v0.35.1.md",
+    "line_start": 38,
+    "line_end": 44
+   },
+   {
+    "rank": 2,
+    "search_rank": 3,
+    "rerank_score": 0.96195,
+    "path": "ollama/docs/integrations/chatgpt.md",
+    "line_start": 29,
+    "line_end": 34
+   },
+   {
+    "rank": 3,
+    "search_rank": 1,
+    "rerank_score": 0.67757,
+    "path": "ollama/docs/capabilities/web-search.md",
+    "line_start": 234,
+    "line_end": 299
+   },
+   {
+    "rank": 4,
+    "search_rank": 18,
+    "rerank_score": 0.28895,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 69,
+    "line_end": 120
+   },
+   {
+    "rank": 5,
+    "search_rank": 17,
+    "rerank_score": 0.1832,
+    "path": "ollama/v0.35.0.md",
+    "line_start": 1,
+    "line_end": 69
+   },
+   {
+    "rank": 6,
+    "search_rank": 11,
+    "rerank_score": 0.18001,
+    "path": "promptfoo/site/docs/providers/meta.md",
+    "line_start": 74,
+    "line_end": 87
+   },
+   {
+    "rank": 7,
+    "search_rank": 6,
+    "rerank_score": 0.12978,
+    "path": "ollama/docs/capabilities/web-search.md",
+    "line_start": 1,
+    "line_end": 7
+   },
+   {
+    "rank": 8,
+    "search_rank": 4,
+    "rerank_score": 0.12519,
+    "path": "promptfoo/site/docs/providers/openai.md",
+    "line_start": 705,
+    "line_end": 754
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

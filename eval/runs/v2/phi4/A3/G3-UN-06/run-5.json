@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-06",
+ "run": 5,
+ "started_utc": "2026-10-29T17:46:27Z",
+ "seconds": 5.26,
+ "prompt_sha256": "c9f4fdb460682b97dbcf6fbbea7a2d7680542f3fd6ab7249edf525b1c9919d0a",
+ "answer": "I do not know the answer to this question based on the provided context. There is no mention or reference to an Ollama environment variable that specifically sets how many model layers are downloaded concurrently during an `ollama pull`. The context does not include information about such a configuration option.\n\nIf this information exists, it might be found in other parts of the project's documentation not included here. You may want to consult the complete documentation or source code for further details.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1772,
+  "output": 94
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5642485900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:46:33.2386356Z",
+  "response": "I do not know the answer to this question based on the provided context. There is no mention or reference to an Ollama environment variable that specifically sets how many model layers are downloaded concurrently during an `ollama pull`. The context does not include information about such a configuration option.\n\nIf this information exists, it might be found in other parts of the project's documentation not included here. You may want to consult the complete documentation or source code for further details.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5642485900,
+  "load_duration": 12395100,
+  "prompt_eval_count": 1772,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 897138000,
+  "eval_count": 94,
+  "eval_duration": 4610354000
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-05",
+ "run": 5,
+ "started_utc": "2026-10-29T17:41:42Z",
+ "seconds": 3.51,
+ "prompt_sha256": "0029e8b4caf8e96161381415b24b55a425803651c47c409acbb58c0159ac97f0",
+ "answer": "I do not have specific information about promptfoo 0.124.0 or the new form of value it accepts for the `--filter-metadata` option. If this information is part of a recent update or change, it would typically be found in the release notes or documentation provided by the developers of promptfoo. Checking those resources would be the best way to obtain accurate and detailed information about this update.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 55,
+  "output": 82
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3896709500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:41:46.2693887Z",
+  "response": "I do not have specific information about promptfoo 0.124.0 or the new form of value it accepts for the `--filter-metadata` option. If this information is part of a recent update or change, it would typically be found in the release notes or documentation provided by the developers of promptfoo. Checking those resources would be the best way to obtain accurate and detailed information about this update.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3896709500,
+  "load_duration": 12278000,
+  "prompt_eval_count": 55,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 220616000,
+  "eval_count": 82,
+  "eval_duration": 3638152000
+ }
+}

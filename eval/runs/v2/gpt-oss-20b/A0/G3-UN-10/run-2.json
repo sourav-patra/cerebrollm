@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-10",
+ "run": 2,
+ "started_utc": "2026-10-29T16:22:19Z",
+ "seconds": 7.16,
+ "prompt_sha256": "f858bb3557149a1d503d6b3fb8d5c981d06bfa01ad5a503c151be74811859b19",
+ "answer": "I’m not aware of a class named `GraphRAGCommunityRetriever` in the core LlamaIndex codebase, so I can’t give a definitive answer. If it exists in a fork or an extension, it would almost certainly derive from LlamaIndex’s generic retrieval base class (`BaseRetriever`), but I don’t have any specific documentation or source to confirm that.",
+ "thinking_chars": 1625,
+ "tokens": {
+  "input": 110,
+  "output": 429
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7611557200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:22:26.6312518Z",
+  "response": "I’m not aware of a class named `GraphRAGCommunityRetriever` in the core LlamaIndex codebase, so I can’t give a definitive answer. If it exists in a fork or an extension, it would almost certainly derive from LlamaIndex’s generic retrieval base class (`BaseRetriever`), but I don’t have any specific documentation or source to confirm that.",
+  "thinking": "We need to answer: \"Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" They want to know the LlamaIndex class that is the GraphRAGCommunityRetriever and what base class it extends. So we need to answer: The GraphRAGCommunityRetriever is a class in LlamaIndex. It extends some base class. We need to recall LlamaIndex library. The question: \"Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" So I think the answer: GraphRAGCommunityRetriever is part of the LlamaIndex library; it extends the BaseRetriever class. Or maybe extends the BaseGraphRetriever? Let's think.\n\nGraphRAGCommunityRetriever is part of LlamaIndex's graph-based retrieval. It might extend the BaseRetriever or the BaseGraphRetriever. Let's search memory: GraphRAGCommunityRetriever likely extends BaseRetriever. LlamaIndex has a BaseRetriever that defines methods like retrieve(query). Many retriever classes extend BaseRetriever. GraphRAGCommunityRetriever is a community retrieval for graph rag. So I think it extends BaseRetriever.\n\nThus answer: GraphRAGCommunityRetriever is a class in LlamaIndex, subclass of BaseRetriever. Alternatively, it extends BaseRetriever or BaseGraphRetriever. I think BaseRetriever.\n\nThus answer: GraphRAGCommunityRetriever is a LlamaIndex class that inherits from BaseRetriever. If not known, say you do not know. But I think it's known.\n\nAnswer: GraphRAGCommunityRetriever is a LlamaIndex class that extends BaseRetriever.\n\nAlternatively, mention that it inherits from BaseRetriever and implements Graph retrieval logic. So answer that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7611557200,
+  "load_duration": 13885600,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 182111000,
+  "eval_count": 429,
+  "eval_duration": 7398953000
+ }
+}

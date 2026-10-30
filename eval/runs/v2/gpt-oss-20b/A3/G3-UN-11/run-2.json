@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 2,
+ "started_utc": "2026-10-29T16:26:15Z",
+ "seconds": 5.84,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "I don’t have that information in the project documentation.  \nThe docs describe how to run the pipeline and how to enable parallelism, but they do not provide any benchmark or throughput figures for a single CPU core.  \n\n> “The `run` method of `IngestionPipeline` can be executed with parallel processes.”  \n>  [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]",
+ "thinking_chars": 1149,
+ "tokens": {
+  "input": 1723,
+  "output": 347
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6113030200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:26:20.8670411Z",
+  "response": "I don’t have that information in the project documentation.  \nThe docs describe how to run the pipeline and how to enable parallelism, but they do not provide any benchmark or throughput figures for a single CPU core.  \n\n> “The `run` method of `IngestionPipeline` can be executed with parallel processes.”  \n>  [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]",
+  "thinking": "We need to answer: \"How many documents per second can LlamaIndex's IngestionPipeline process on a single CPU core?\" We must answer from known project docs. Search context for documents per second. None provided. We need to see if any performance stats exist. The context doesn't mention speed. Likely unknown. So we must say we do not know. Provide quote that indicates no info. The quote: maybe \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" That doesn't give speed. There's no mention of throughput. So answer: I do not know. Provide quote that shows no mention of docs per second. For example: \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [2] But that doesn't address speed. Alternatively pick something like \"The simplest usage is to instantiate an `IngestionPipeline` like so:\" [6]. But better to say we don't know. Provide quote that indicates no info: \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [2] Also maybe \"Parallel Processing\" section indicates using num_workers but no throughput. So answer: I do not know.\n\nLet's respond.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6113030200,
+  "load_duration": 13361700,
+  "prompt_eval_count": 1723,
+  "prompt_eval_cached_count": 1718,
+  "prompt_eval_duration": 55413000,
+  "eval_count": 347,
+  "eval_duration": 5989753000
+ }
+}

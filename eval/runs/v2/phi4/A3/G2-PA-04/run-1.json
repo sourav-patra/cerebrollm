@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-04",
+ "run": 1,
+ "started_utc": "2026-10-29T17:16:10Z",
+ "seconds": 14.4,
+ "prompt_sha256": "2b6ea5b6a72d2ad13b704409d81766cc1c5235ae5c9d1fab5a0268c71b6e8199",
+ "answer": "Promptfoo 0.123.0 uses the Responses API by default for GPT-5.6 and newer models. This is indicated by the breaking changes mentioned in the release notes, specifically under the section that states the default behavior for these models.\n\nFrom the context provided:\n\n- The release notes in [6] mention a breaking change: \"default GPT-5.6+ to Responses\" ([#10803](https://github.com/promptfoo/promptfoo/issues/10803)).\n- The documentation in [4] reinforces this by stating: \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"\n\nTherefore, the default API used is the Responses API. \n\nReferences:\n- \"default GPT-5.6+ to Responses.\" [promptfoo/0.123.0.md](https://github.com/promptfoo/promptfoo/compare/0.122.2...0.123.0) (2026-09-10) [6]\n- \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\" [promptfoo/site/docs/providers/openai.md](example/guide.md) [4]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2063,
+  "output": 283
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 15673563100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:16:26.3299681Z",
+  "response": "Promptfoo 0.123.0 uses the Responses API by default for GPT-5.6 and newer models. This is indicated by the breaking changes mentioned in the release notes, specifically under the section that states the default behavior for these models.\n\nFrom the context provided:\n\n- The release notes in [6] mention a breaking change: \"default GPT-5.6+ to Responses\" ([#10803](https://github.com/promptfoo/promptfoo/issues/10803)).\n- The documentation in [4] reinforces this by stating: \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"\n\nTherefore, the default API used is the Responses API. \n\nReferences:\n- \"default GPT-5.6+ to Responses.\" [promptfoo/0.123.0.md](https://github.com/promptfoo/promptfoo/compare/0.122.2...0.123.0) (2026-09-10) [6]\n- \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\" [promptfoo/site/docs/providers/openai.md](example/guide.md) [4]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 15673563100,
+  "load_duration": 14668400,
+  "prompt_eval_count": 2063,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 1035682000,
+  "eval_count": 283,
+  "eval_duration": 14317290000
+ }
+}

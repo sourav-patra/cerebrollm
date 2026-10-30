@@ -1,0 +1,11 @@
+=== 2026-10-29T00:08:48Z r2_wsl.py speed qwen3-coder:30b
+guard pull qwen3-coder:30b exit 0 qwen3-coder:30b digest 06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca 
+qwen3-coder-30b-default 8000 1 valid True [] gen_tps 42.25331655524555 prompt_tps 1584.2101828595478 gpu% 51.3
+qwen3-coder-30b-default 8000 2 valid True [] gen_tps 42.01519998332522 prompt_tps 1581.7204056190978 gpu% 51.3
+qwen3-coder-30b-default 8000 3 valid True [] gen_tps 41.659858968358684 prompt_tps 1561.6900822414505 gpu% 51.3
+qwen3-coder-30b-default 200 1 valid True [] gen_tps 40.79217121749016 prompt_tps 374.20997504640013 gpu% 51.3
+qwen3-coder-30b-default 200 2 valid True [] gen_tps 42.12872497742986 prompt_tps 313.38928145664596 gpu% 51.3
+qwen3-coder-30b-default 200 3 valid True [] gen_tps 42.29829784049014 prompt_tps 317.0455812767856 gpu% 51.3
+guard unload qwen3-coder:30b exit 0 qwen3-coder:30b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-29T00:13:29Z

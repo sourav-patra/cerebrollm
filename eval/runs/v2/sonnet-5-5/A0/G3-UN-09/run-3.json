@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:27Z",
+ "seconds": 15.54,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "As far as I know, LlamaIndex's `TokenTextSplitter` has no `separator_regex` parameter, so there is no default to give.\n\nIts splitting options are:\n- `separator`, default `\" \"` (a single space)\n- `backup_separators`, default `[\"\\n\"]`\n- `chunk_size`, default 1024\n- `chunk_overlap`, default 20\n\nYou may be thinking of one of these:\n- LlamaIndex's `SentenceSplitter`, which has a `secondary_chunking_regex` parameter. Its default is `\"[^,.;。？！]+[,.;。？！]?|[,.;。？！]\"`.\n- LangChain's text splitters, which use `is_separator_regex` and `separators`.\n\nThis is from memory of the library, not from this project's files. I haven't checked the version you have installed, so confirm against its source if it matters.",
+ "tokens": {
+  "input": 639,
+  "output": 544,
+  "thinking": 263,
+  "cache_read": 0,
+  "cache_creation": 637
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007991999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 11707,
+  "stop_reason": "end_turn",
+  "session_id": "b5f8edd7-4840-47b3-b4b2-10177cb2579b",
+  "total_cost_usd": 0.007991999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 637,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 544,
+   "output_tokens_details": {
+    "thinking_tokens": 263
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 637,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 544,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 637,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 637
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 544,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 637,
+    "webSearchRequests": 0,
+    "costUSD": 0.007991999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 263,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 637,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "As far as I know, LlamaIndex's `TokenTextSplitter` has no `separator_regex` parameter, so there is no default to give.\n\nIts splitting options are:\n- `separator`, default `\" \"` (a single space)\n- `backup_separators`, default `[\"\\n\"]`\n- `chunk_size`, default 1024\n- `chunk_overlap`, default 20\n\nYou may be thinking of one of these:\n- LlamaIndex's `SentenceSplitter`, which has a `secondary_chunking_regex` parameter. Its default is `\"[^,.;。？！]+[,.;。？！]?|[,.;。？！]\"`.\n- LangChain's text splitters, which use `is_separator_regex` and `separators`.\n\nThis is from memory of the library, not from this project's files. I haven't checked the version you have installed, so confirm against its source if it matters.",
+  "ttft_ms": 9700,
+  "type": "result",
+  "duration_ms": 11788,
+  "uuid": "17dcb907-b435-4bb1-970e-52fafff09280",
+  "ttft_stream_ms": 7441,
+  "time_to_request_ms": 100,
+  "first_content_frame_ms": 7441,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

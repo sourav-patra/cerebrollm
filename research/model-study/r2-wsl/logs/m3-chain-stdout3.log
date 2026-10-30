@@ -1,0 +1,3 @@
+2026-10-29T18:36:18+00:00 qwen-ctx-4: waiting for the GPU lock (at most 23022 s)
+2026-10-29T18:43:57+00:00 qwen-ctx-4: exit 0
+2026-10-29T18:43:57+00:00 qwen-ctx-0: waiting for the GPU lock (at most 22563 s)

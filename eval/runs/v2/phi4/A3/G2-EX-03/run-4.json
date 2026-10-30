@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-03",
+ "run": 4,
+ "started_utc": "2026-10-29T17:35:52Z",
+ "seconds": 4.71,
+ "prompt_sha256": "db75b1c050dbf2852df8783d1fd5d7792e27408e214d188243cff0240c6cf5a4",
+ "answer": "The context window of Recursive's Flint model on Ollama is approximately 262,000 tokens. This is supported by the line: \n\n\"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" \n\n[ollama/v0.40.8.md (lines 8-21)] [ollama/v0.40.8.md](#)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1758,
+  "output": 86
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5223380500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:35:57.4413002Z",
+  "response": "The context window of Recursive's Flint model on Ollama is approximately 262,000 tokens. This is supported by the line: \n\n\"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" \n\n[ollama/v0.40.8.md (lines 8-21)] [ollama/v0.40.8.md](#)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5223380500,
+  "load_duration": 13314400,
+  "prompt_eval_count": 1758,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 882431000,
+  "eval_count": 86,
+  "eval_duration": 4207220999
+ }
+}

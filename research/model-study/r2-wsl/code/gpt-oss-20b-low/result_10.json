@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/95",
+  "index": 10,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef check_dict_case(dict):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\n    check_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\n    check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\n    check_dict_case({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\n    check_dict_case({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "low"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:25:18.9263025Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef check_dict_case(d):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False if the given dictionary is empty.\n    \"\"\"\n    if not d:\n        return False\n\n    # Ensure all keys are strings\n    if not all(isinstance(k, str) for k in d.keys()):\n        return False\n\n    # Check if all keys are lower case\n    if all(k.islower() for k in d.keys()):\n        return True\n\n    # Check if all keys are upper case\n    if all(k.isupper() for k in d.keys()):\n        return True\n\n    return False\n```",
+      "thinking": "Implement check_dict_case. Need to check all keys are strings and all lower or all upper. Empty dict returns False. Also if any key not string return False. Return True if all lower or all upper. Let's code."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3795686000,
+    "load_duration": 13356200,
+    "prompt_eval_count": 255,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 193627000,
+    "eval_count": 207,
+    "eval_duration": 3568087000
+  },
+  "wall_seconds": 3.574431994000406,
+  "load_average_before": [
+    0.2421875,
+    0.24755859375,
+    0.14892578125
+  ],
+  "load_average_after": [
+    0.22265625,
+    0.2431640625,
+    0.14794921875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-low-10",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-low:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_10.py"
+    ],
+    "wall_seconds": 0.8046065830003499,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

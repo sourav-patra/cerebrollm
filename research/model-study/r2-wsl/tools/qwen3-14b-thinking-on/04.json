@@ -1,0 +1,158 @@
+{
+  "id": 5,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Overwrite src/version.py so that it contains exactly this text: VERSION = \"2.1.0\""
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": true,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:28:23.9753607Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "Okay, the user wants me to overwrite the src/version.py file with the exact text \"VERSION = '2.1.0'\". Let me check the available tools. There's a write_file function that takes a path and content. That's exactly what I need here. I should call write_file with the path set to \"src/version.py\" and the content as \"VERSION = '2.1.0'\". I don't need to read the file first because the user specified to replace any existing content. So the correct tool call is write_file with those arguments.\n",
+      "tool_calls": [
+        {
+          "id": "call_9dkk3o4b",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "path": "src/version.py",
+              "content": "VERSION = \"2.1.0\""
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 6466091000,
+    "load_duration": 11508100,
+    "prompt_eval_count": 350,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 178141000,
+    "eval_count": 157,
+    "eval_duration": 6270286000
+  },
+  "wall_seconds": 6.081578172999798,
+  "load_average_before": [
+    0.0390625,
+    0.0244140625,
+    0.00146484375
+  ],
+  "load_average_after": [
+    0.03564453125,
+    0.02392578125,
+    0.0009765625
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "src/version.py",
+      "content": "VERSION = \"2.1.0\""
+    }
+  },
+  "passed": true
+}

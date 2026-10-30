@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-08",
+ "run": 4,
+ "started_utc": "2026-10-29T16:40:17Z",
+ "seconds": 11.45,
+ "prompt_sha256": "b411a6fb69c2354af49cdcea218c3db8945d222685dc2218b23d5dcb151d6f97",
+ "answer": "Promptfoo’s “safe‑mode” flag (added in v 0.125.0) simply disables the actual calls to the LLM – it turns off the model‑call step so that `promptfoo eval` will not hit an external API while running.",
+ "thinking_chars": 2154,
+ "tokens": {
+  "input": 110,
+  "output": 543
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9424366100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:40:27.3938684Z",
+  "response": "Promptfoo’s “safe‑mode” flag (added in v 0.125.0) simply disables the actual calls to the LLM – it turns off the model‑call step so that `promptfoo eval` will not hit an external API while running.",
+  "thinking": "We need to answer: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So the question asks about a feature called \"safe mode\" added to eval in promptfoo version 0.125.0, and what does it turn off. We need to know about promptfoo, a tool for evaluating prompts. The safe mode probably turns off certain features to avoid misuse or security issues.\n\nWe need to answer based on knowledge. I need to recall if I have knowledge about promptfoo and its safe mode. Promptfoo is a CLI for evaluating prompts. The safe mode might turn off the \"chat\" or \"function calling\" or \"injection\" or \"model calls\"? Actually safe mode likely turns off the ability to call the LLM or maybe turn off the 'eval' command? Let's research from memory: I recall reading about promptfoo's safe mode: it disables the ability to call the model, to avoid accidentally making calls to the LLM during evaluation. It might also disable the ability to send API keys or something.\n\nAlternatively, safe mode might turn off the ability to run the evaluation script or to use certain features like \"streaming\" or \"function calling\". The question specifically: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So the answer: It turns off the ability to make calls to the model (like disabling the call to the LLM). Or it turns off the use of the prompt injection detection? Let me think.\n\nPromptfoo eval command runs tests against models. The safe mode might disable \"eval\" from actually contacting the model, making it run in a safe environment. The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So the answer: It turns off the model calls, essentially disabling any actual calls to the LLM. So safe mode disables the \"model\" component.\n\nAlternatively, safe mode might turn off \"function calling\" or \"chat\" or \"embedding\" usage. But likely it's model calls. Let's answer: It turns off the model calls, preventing any calls to the LLM during eval. This ensures safe usage without sending data to an external service. So answer: It turns off the ability to call the model, effectively disabling calls to the LLM.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9424366100,
+  "load_duration": 13482800,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181091000,
+  "eval_count": 543,
+  "eval_duration": 9212752000
+ }
+}

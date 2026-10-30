@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 2,
+ "started_utc": "2026-10-29T17:23:14Z",
+ "seconds": 13.59,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "The safe mode that `promptfoo 0.125.0` added to `eval` turns off inline JavaScript assertions and shared transforms. This is specified in the context provided:\n\n- **Option `--safe-mode`**: \"Reject inline JavaScript assertions and shared transforms.\" [Limited guard, not a sandbox](/docs/configuration/expected-outputs/javascript#restrict-inline-assertions-and-transforms).\n\nThis information is found in the following document:\n\n- \"Command line\" section of `promptfoo/site/docs/usage/command-line.md` [1].\n\nFurthermore, the documentation explains that when using safe mode, these expressions should be moved into reviewed `file://` scripts, and it notes that this mode is not a sandbox, meaning it does not make untrusted configurations entirely safe to run. \n\n- \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [2].\n\nThis mode restricts certain potentially unsafe JavaScript operations by rejecting them, but it does not provide full security isolation.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1883,
+  "output": 223
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 12506077200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:23:26.3546124Z",
+  "response": "The safe mode that `promptfoo 0.125.0` added to `eval` turns off inline JavaScript assertions and shared transforms. This is specified in the context provided:\n\n- **Option `--safe-mode`**: \"Reject inline JavaScript assertions and shared transforms.\" [Limited guard, not a sandbox](/docs/configuration/expected-outputs/javascript#restrict-inline-assertions-and-transforms).\n\nThis information is found in the following document:\n\n- \"Command line\" section of `promptfoo/site/docs/usage/command-line.md` [1].\n\nFurthermore, the documentation explains that when using safe mode, these expressions should be moved into reviewed `file://` scripts, and it notes that this mode is not a sandbox, meaning it does not make untrusted configurations entirely safe to run. \n\n- \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [2].\n\nThis mode restricts certain potentially unsafe JavaScript operations by rejecting them, but it does not provide full security isolation.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 12506077200,
+  "load_duration": 13425000,
+  "prompt_eval_count": 1883,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 943963000,
+  "eval_count": 223,
+  "eval_duration": 11376192000
+ }
+}

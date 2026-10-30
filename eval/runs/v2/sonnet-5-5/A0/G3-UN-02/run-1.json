@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-02",
+ "run": 1,
+ "started_utc": "2026-10-29T15:43:37Z",
+ "seconds": 9.49,
+ "prompt_sha256": "60f868e3a7814623d1f9aa36fa2798b82971e32e3304cf4ebc7d143ef20c3e6b",
+ "answer": "I don't know of a specific pgvector version that added this, so I can't name one.\n\n- HNSW indexes first appeared in pgvector 0.5.0.\n- In general, `pg_upgrade` copies or links index files rather than rebuilding them, as long as the extension is installed in the new cluster and the on-disk format is compatible. I'm not aware of a pgvector release note saying HNSW needed a particular version for this.\n- Version-to-version upgrades of pgvector itself (`ALTER EXTENSION vector UPDATE`) are a separate matter. Some releases have changed the index format or required a reindex, so check the changelog for the versions you're moving between.\n\nI also haven't seen anything in this working directory that would tell me more. For a definitive answer, check pgvector's `CHANGELOG.md` and the upgrade notes in its README, or test the upgrade on a copy of your data.",
+ "tokens": {
+  "input": 656,
+  "output": 612,
+  "thinking": 321,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00874,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5775,
+  "stop_reason": "end_turn",
+  "session_id": "9faa39b3-4f3d-4ca8-bb08-b8fe70cae8b5",
+  "total_cost_usd": 0.00874,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 612,
+   "output_tokens_details": {
+    "thinking_tokens": 321
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 612,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 612,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.00874,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 321,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a specific pgvector version that added this, so I can't name one.\n\n- HNSW indexes first appeared in pgvector 0.5.0.\n- In general, `pg_upgrade` copies or links index files rather than rebuilding them, as long as the extension is installed in the new cluster and the on-disk format is compatible. I'm not aware of a pgvector release note saying HNSW needed a particular version for this.\n- Version-to-version upgrades of pgvector itself (`ALTER EXTENSION vector UPDATE`) are a separate matter. Some releases have changed the index format or required a reindex, so check the changelog for the versions you're moving between.\n\nI also haven't seen anything in this working directory that would tell me more. For a definitive answer, check pgvector's `CHANGELOG.md` and the upgrade notes in its README, or test the upgrade on a copy of your data.",
+  "ttft_ms": 3796,
+  "type": "result",
+  "duration_ms": 5863,
+  "uuid": "e56bf1ca-4d22-4559-b190-84c8191e99ed",
+  "ttft_stream_ms": 2657,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 2658,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

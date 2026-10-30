@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-14",
+ "run": 1,
+ "started_utc": "2026-10-29T01:42:17Z",
+ "seconds": 8.95,
+ "prompt_file": "runs/prompts/A3/EX-14.txt",
+ "prompt_sha256": "b5d952250ef9458e1615db8c452479b50f773343f214e106c776a707091edb91",
+ "answer": "The function is `load_index_from_storage`. You rebuild the storage context from the persist directory, then pass it in: \"index = load_index_from_storage(storage_context)\" [llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md].\n\nThe same function is listed among the loading helpers, with a comment marking it as the single-index loader: \"# load a single index\" [llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md]. The other two helpers there, `load_indices_from_storage` and `load_graph_from_storage`, cover other cases.",
+ "tokens": {
+  "input": 3342,
+  "output": 553,
+  "thinking": 355,
+  "cache_read": 0,
+  "cache_creation": 3340
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0009447000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4308,
+  "stop_reason": "end_turn",
+  "session_id": "39c72bcd-0542-4c92-8db8-fd5f603dab56",
+  "total_cost_usd": 0.0009447000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3340,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 553,
+   "output_tokens_details": {
+    "thinking_tokens": 355
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3340,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 553,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3340,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3340
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 553,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3340,
+    "webSearchRequests": 0,
+    "costUSD": 0.0009447000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 355,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3340,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The function is `load_index_from_storage`. You rebuild the storage context from the persist directory, then pass it in: \"index = load_index_from_storage(storage_context)\" [llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md].\n\nThe same function is listed among the loading helpers, with a comment marking it as the single-index loader: \"# load a single index\" [llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md]. The other two helpers there, `load_indices_from_storage` and `load_graph_from_storage`, cover other cases.",
+  "ttft_ms": 3856,
+  "type": "result",
+  "duration_ms": 4462,
+  "uuid": "6b3da610-ac49-4cf8-b29d-c9b504f73c50",
+  "ttft_stream_ms": 2854,
+  "time_to_request_ms": 153,
+  "first_content_frame_ms": 2854,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

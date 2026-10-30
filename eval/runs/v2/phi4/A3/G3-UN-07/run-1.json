@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-07",
+ "run": 1,
+ "started_utc": "2026-10-29T17:17:56Z",
+ "seconds": 4.67,
+ "prompt_sha256": "dbdfd668dc693024eaf55238eb69d2a3c8e309f8350f53a3767d1d06f0d0b83e",
+ "answer": "Based on the provided context, there is no mention of an environment variable named `OLLAMA_KV_CACHE_RETENTION`. The context does discuss `OLLAMA_KV_CACHE_TYPE`, which is related to quantization, but it does not specify a variable related to cache retention.\n\nTherefore, I do not know the default value of the environment variable `OLLAMA_KV_CACHE_RETENTION` based on the given information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1504,
+  "output": 84
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5184342500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:18:01.3274918Z",
+  "response": "Based on the provided context, there is no mention of an environment variable named `OLLAMA_KV_CACHE_RETENTION`. The context does discuss `OLLAMA_KV_CACHE_TYPE`, which is related to quantization, but it does not specify a variable related to cache retention.\n\nTherefore, I do not know the default value of the environment variable `OLLAMA_KV_CACHE_RETENTION` based on the given information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5184342500,
+  "load_duration": 15578200,
+  "prompt_eval_count": 1504,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 707807000,
+  "eval_count": 84,
+  "eval_duration": 4313337000
+ }
+}

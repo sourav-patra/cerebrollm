@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-06",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:51Z",
+ "seconds": 12.86,
+ "prompt_sha256": "0a19284e9beaa8302543432ec33147546b121487da9b33c3fca9eef83ebee43d",
+ "answer": "I don't know. I have no reliable information about what context window llama-index-llms-anthropic 0.11.10 sets for Claude Opus 4.6, and I haven't seen that package's source in this project. Guessing a number would risk giving you a wrong value.\n\nTo find out, you could check the package's model table directly. After installing that version, look at the `ANTHROPIC_MODELS` dictionary (in `llama_index/llms/anthropic/utils.py`) for the `claude-opus-4-6` entry. Or I can do that for you here, if you'd like me to install the package into a fresh directory and inspect it.",
+ "tokens": {
+  "input": 646,
+  "output": 199,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 644
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00457,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8958,
+  "stop_reason": "end_turn",
+  "session_id": "83c5b697-fe37-4eff-a32b-482139250af8",
+  "total_cost_usd": 0.00457,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 644,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 199,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 644,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 199,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 644,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 644
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 199,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 644,
+    "webSearchRequests": 0,
+    "costUSD": 0.00457,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 644,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable information about what context window llama-index-llms-anthropic 0.11.10 sets for Claude Opus 4.6, and I haven't seen that package's source in this project. Guessing a number would risk giving you a wrong value.\n\nTo find out, you could check the package's model table directly. After installing that version, look at the `ANTHROPIC_MODELS` dictionary (in `llama_index/llms/anthropic/utils.py`) for the `claude-opus-4-6` entry. Or I can do that for you here, if you'd like me to install the package into a fresh directory and inspect it.",
+  "ttft_ms": 9023,
+  "type": "result",
+  "duration_ms": 9044,
+  "uuid": "c29300ca-46f0-4e20-868e-973c910349b0",
+  "ttft_stream_ms": 6929,
+  "time_to_request_ms": 117,
+  "first_content_frame_ms": 6929,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

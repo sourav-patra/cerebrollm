@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-EX-10",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:34Z",
+ "seconds": 1.84,
+ "prompt_sha256": "d8b687abd783fb2454539937c693a008992fd01c7661361827c7c6240812e159",
+ "answer": "\"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\" [llama_index/v0.14.25.md (lines 58-66)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2545,
+  "output": 71
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1930497700
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:55:36.5371875Z",
+  "response": "\"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\" [llama_index/v0.14.25.md (lines 58-66)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1930497700,
+  "load_duration": 14406500,
+  "prompt_eval_count": 2545,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 1077727000,
+  "eval_count": 71,
+  "eval_duration": 567081000
+ }
+}

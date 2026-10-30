@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-16",
+ "run": 2,
+ "started_utc": "2026-10-29T01:51:35Z",
+ "seconds": 9.75,
+ "prompt_file": "runs/prompts/A0/PA-16.txt",
+ "prompt_sha256": "8377aa47fd54091bb908204d986022ffa121803fd2c95c4b854ab96454aff3c8",
+ "answer": "Promptfoo has a flag for this. Run the original eval again with `--filter-errors-only` and the ID of the earlier run:\n\n```powershell\npromptfoo eval --filter-errors-only <evalId>\n```\n\nTo find the ID, run `promptfoo list evals`, or open the eval in the web viewer with `promptfoo view`.\n\nThe filter selects only the test cases that errored in that run, so network failures and rate-limit errors get retried while passing and failing cases are skipped. Results from the new run go into a new eval.\n\nThere is also a `--filter-failing <evalId>` flag, which targets assertion failures instead of errors. I'm less sure of the exact behavior of the newer `promptfoo retry` and `--resume` commands, so check `promptfoo eval --help` for your installed version. If your version doesn't have these flags, the errored test cases can still be re-run by filtering the test suite manually, but I don't know the exact steps for that.",
+ "tokens": {
+  "input": 666,
+  "output": 889,
+  "thinking": 581,
+  "cache_read": 0,
+  "cache_creation": 664
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005775,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5017,
+  "stop_reason": "end_turn",
+  "session_id": "dc8e5629-8925-4301-944b-9ebfe3efd030",
+  "total_cost_usd": 0.0005775,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 664,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 889,
+   "output_tokens_details": {
+    "thinking_tokens": 581
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 664,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 889,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 664,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 664
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 889,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 664,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005775,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 581,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 664,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Promptfoo has a flag for this. Run the original eval again with `--filter-errors-only` and the ID of the earlier run:\n\n```powershell\npromptfoo eval --filter-errors-only <evalId>\n```\n\nTo find the ID, run `promptfoo list evals`, or open the eval in the web viewer with `promptfoo view`.\n\nThe filter selects only the test cases that errored in that run, so network failures and rate-limit errors get retried while passing and failing cases are skipped. Results from the new run go into a new eval.\n\nThere is also a `--filter-failing <evalId>` flag, which targets assertion failures instead of errors. I'm less sure of the exact behavior of the newer `promptfoo retry` and `--resume` commands, so check `promptfoo eval --help` for your installed version. If your version doesn't have these flags, the errored test cases can still be re-run by filtering the test suite manually, but I don't know the exact steps for that.",
+  "ttft_ms": 3675,
+  "type": "result",
+  "duration_ms": 5153,
+  "uuid": "731cecd6-4666-4db1-a665-3af809dc0a1b",
+  "ttft_stream_ms": 2941,
+  "time_to_request_ms": 213,
+  "first_content_frame_ms": 2941,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

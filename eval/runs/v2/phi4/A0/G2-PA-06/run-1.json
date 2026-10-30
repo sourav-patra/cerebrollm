@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-06",
+ "run": 1,
+ "started_utc": "2026-10-29T17:12:34Z",
+ "seconds": 5.04,
+ "prompt_sha256": "0a19284e9beaa8302543432ec33147546b121487da9b33c3fca9eef83ebee43d",
+ "answer": "I do not know the specific context window that `llama-index-llms-anthropic 0.11.10` sets for Claude Opus 4.6. The context window for a language model like Claude Opus would typically refer to the maximum number of tokens or words it can consider at one time, but this information would depend on the specific implementation details of both the model and the interface provided by `llama-index-llms-anthropic`. You may need to refer to the documentation for that specific version or contact the developers for precise details.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 61,
+  "output": 116
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5418383400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:12:39.2420621Z",
+  "response": "I do not know the specific context window that `llama-index-llms-anthropic 0.11.10` sets for Claude Opus 4.6. The context window for a language model like Claude Opus would typically refer to the maximum number of tokens or words it can consider at one time, but this information would depend on the specific implementation details of both the model and the interface provided by `llama-index-llms-anthropic`. You may need to refer to the documentation for that specific version or contact the developers for precise details.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5418383400,
+  "load_duration": 14120100,
+  "prompt_eval_count": 61,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 99648000,
+  "eval_count": 116,
+  "eval_duration": 5288700000
+ }
+}

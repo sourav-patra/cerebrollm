@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-09",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:39Z",
+ "seconds": 6.71,
+ "prompt_sha256": "b45889bffc4c0532b81b685d10f4af853292432ba529109055c0dea8c106eea4",
+ "answer": "According to the release notes, version 0.10.0 of `llama-index-llms-google-genai` uses Gemini 3.7 Flash by default:\n\n\"feat(google-genai): use gemini 3.7 Flash by default in lib and docs ([#22734](https://github.com/run-llama/llama_index/pull/22734))\" [llama_index/v0.14.24.md]",
+ "tokens": {
+  "input": 2507,
+  "output": 123,
+  "thinking": 0,
+  "cache_read": 2140,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.002908,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2557,
+  "stop_reason": "end_turn",
+  "session_id": "d51874e3-efdf-43b5-a6b7-5a3f3917b546",
+  "total_cost_usd": 0.002908,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 2140,
+   "output_tokens": 123,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 123,
+     "cache_read_input_tokens": 2140,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 123,
+    "cacheReadInputTokens": 2140,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.002908,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "According to the release notes, version 0.10.0 of `llama-index-llms-google-genai` uses Gemini 3.7 Flash by default:\n\n\"feat(google-genai): use gemini 3.7 Flash by default in lib and docs ([#22734](https://github.com/run-llama/llama_index/pull/22734))\" [llama_index/v0.14.24.md]",
+  "ttft_ms": 2630,
+  "type": "result",
+  "duration_ms": 2644,
+  "uuid": "d08ab29d-860b-48c6-95ed-e3de932b7068",
+  "ttft_stream_ms": 2628,
+  "time_to_request_ms": 112,
+  "first_content_frame_ms": 2628,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

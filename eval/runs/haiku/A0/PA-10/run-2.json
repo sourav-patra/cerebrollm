@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-10",
+ "run": 2,
+ "started_utc": "2026-10-29T01:49:18Z",
+ "seconds": 8.98,
+ "prompt_file": "runs/prompts/A0/PA-10.txt",
+ "prompt_sha256": "0747860cbca9eb996234737846beb32c4349170f7fbbbaf0288edf6b28357502",
+ "answer": "Use **`pg_relation_size()`**, which is a built-in PostgreSQL function, not something pgvector provides. pgvector indexes (HNSW and IVFFlat) are normal index access methods, so it works on them.\n\n```sql\nSELECT pg_size_pretty(pg_relation_size('my_vector_index'));\n```\n\nRelated functions:\n\n- `pg_indexes_size('my_table')` returns the combined size of all indexes on a table.\n- `pg_total_relation_size('my_vector_index')` includes the index's TOAST and free space map overhead, though for an index this is usually close to `pg_relation_size`.",
+ "tokens": {
+  "input": 658,
+  "output": 441,
+  "thinking": 234,
+  "cache_read": 0,
+  "cache_creation": 656
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035190000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4298,
+  "stop_reason": "end_turn",
+  "session_id": "4c81d258-9668-486e-9fbf-8843d00a1020",
+  "total_cost_usd": 0.00035190000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 656,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 441,
+   "output_tokens_details": {
+    "thinking_tokens": 234
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 656,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 441,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 656,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 656
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 441,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 656,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035190000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 234,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 656,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **`pg_relation_size()`**, which is a built-in PostgreSQL function, not something pgvector provides. pgvector indexes (HNSW and IVFFlat) are normal index access methods, so it works on them.\n\n```sql\nSELECT pg_size_pretty(pg_relation_size('my_vector_index'));\n```\n\nRelated functions:\n\n- `pg_indexes_size('my_table')` returns the combined size of all indexes on a table.\n- `pg_total_relation_size('my_vector_index')` includes the index's TOAST and free space map overhead, though for an index this is usually close to `pg_relation_size`.",
+  "ttft_ms": 3526,
+  "type": "result",
+  "duration_ms": 4426,
+  "uuid": "f64255df-444c-4149-8c89-35084d39bdc7",
+  "ttft_stream_ms": 2840,
+  "time_to_request_ms": 156,
+  "first_content_frame_ms": 2840,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

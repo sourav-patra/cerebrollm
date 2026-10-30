@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: How do I tell promptfoo scan-model which registry URI to use for JFrog or MLflow?

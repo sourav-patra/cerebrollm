@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:17Z",
+ "seconds": 7.64,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "The 0.11.10 release of `llama-index-llms-anthropic` sets Claude Opus 4.6’s context window to **1 million tokens**.  \n\"fix(anthropic): correct Opus 4.6 context window to 1M\" [llama_index/v0.14.24.md]",
+ "thinking_chars": 830,
+ "tokens": {
+  "input": 1609,
+  "output": 335
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5839656900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:46:24.4735122Z",
+  "response": "The 0.11.10 release of `llama-index-llms-anthropic` sets Claude Opus 4.6’s context window to **1 million tokens**.  \n\"fix(anthropic): correct Opus 4.6 context window to 1M\" [llama_index/v0.14.24.md]",
+  "thinking": "We need to answer: \"What context window does llama-index-llms-anthropic 0.11.10 set for Claude Opus 4.6?\" We have context from the docs: [1] shows release notes for 0.11.10. But the release notes mention \"feat(anthropic): Add support for Claude Sonnet 5\" and \"Fix/sonnet 5 function calling\", \"feat(anthropic, bedrock-converse): add Claude Opus 5 to model allowlists\", \"fix(anthropic): correct Opus 4.6 context window to 1M\". That indicates the context window is 1M tokens. But let's verify. The release note line: \"fix(anthropic): correct Opus 4.6 context window to 1M\". That indicates that at 0.11.10, context window for Claude Opus 4.6 is set to 1M.\n\nWe should quote the line: \"fix(anthropic): correct Opus 4.6 context window to 1M\". Path: llama_index/v0.14.24.md (lines 55-60). So answer: 1 million tokens. Let's provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5839656900,
+  "load_duration": 14306700,
+  "prompt_eval_count": 1609,
+  "prompt_eval_cached_count": 1604,
+  "prompt_eval_duration": 58410000,
+  "eval_count": 335,
+  "eval_duration": 5710364000
+ }
+}

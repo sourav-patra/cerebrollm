@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 1,
+ "started_utc": "2026-10-29T16:16:25Z",
+ "seconds": 10.49,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I do not know the default value of `promptfoo`'s `evaluateOptions.maxTokensPerCell`.  \nThe `EvaluateOptions` interface shown in the documentation does not list a `maxTokensPerCell` property, so the default value is not specified there.  \n\n\"cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number;\" [promptfoo/site/docs/configuration/reference.md]",
+ "thinking_chars": 2121,
+ "tokens": {
+  "input": 1545,
+  "output": 559
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11492600100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:16:36.129781Z",
+  "response": "I do not know the default value of `promptfoo`'s `evaluateOptions.maxTokensPerCell`.  \nThe `EvaluateOptions` interface shown in the documentation does not list a `maxTokensPerCell` property, so the default value is not specified there.  \n\n\"cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number;\" [promptfoo/site/docs/configuration/reference.md]",
+  "thinking": "We need to answer: default value of promptfoo's evaluateOptions.maxTokensPerCell. The context provided includes evaluateOptions definition but not maxTokensPerCell. We should search context. In provided context lines we saw EvaluateOptions interface but not maxTokensPerCell. So likely not in context. The question asks default value of evaluateOptions.maxTokensPerCell. We don't have that info. According to instruction: if you do not know, say you do not know. And quote line you rely on. Since we don't have that info, we say we do not know. Provide quote that shows lack of info? We can quote the EvaluateOptions snippet showing that property not present. But that may be insufficient. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we should say: I do not know the default value. Provide quote that shows EvaluateOptions doesn't include maxTokensPerCell. That indicates not present. But maybe default is defined elsewhere. But we have no evidence. So we answer: I do not know. Provide quote from context that EvaluateOptions interface doesn't include that property. Use path [1] lines 1121-1149. The quote: \"interface EvaluateOptions {\".\n\nWe need to quote a line that shows no maxTokensPerCell property. Perhaps we can quote \"interface EvaluateOptions {\" [1] lines 1121-1122. That shows start but not property. But we can also quote that the interface includes various properties but not maxTokensPerCell. Let's quote a line that lists properties: \"cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number;\". That shows property list but not maxTokensPerCell. So we can quote that.\n\nThus answer: I do not know.\n\nBut to satisfy requirement, we need to quote a line. Let's quote: \"interface EvaluateOptions {\" [1] lines 1121-1122. Or the property list line. Let's quote: \"cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number;\". That shows property list but not maxTokensPerCell. Provide path. So answer: I do not know.\n\nLet's produce final.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11492600100,
+  "load_duration": 15603900,
+  "prompt_eval_count": 1545,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 712960000,
+  "eval_count": 559,
+  "eval_duration": 10699404000
+ }
+}

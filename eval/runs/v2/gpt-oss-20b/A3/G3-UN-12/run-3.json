@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 3,
+ "started_utc": "2026-10-29T16:36:55Z",
+ "seconds": 11.1,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I don’t have a specific value for the `--max-retries` flag in the promptfoo eval command in the provided documentation. The docs describe retry behaviour in the provider configuration, e.g.:\n\n\"Defaults to 4 retries, or the provider's maxRetries when set.\" [promptfoo/site/docs/configuration/rate-limits.md]",
+ "thinking_chars": 2523,
+ "tokens": {
+  "input": 1681,
+  "output": 671
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11617863500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:37:06.3894678Z",
+  "response": "I don’t have a specific value for the `--max-retries` flag in the promptfoo eval command in the provided documentation. The docs describe retry behaviour in the provider configuration, e.g.:\n\n\"Defaults to 4 retries, or the provider's maxRetries when set.\" [promptfoo/site/docs/configuration/rate-limits.md]",
+  "thinking": "We need to answer question: \"What is the default value of the --max-retries flag of promptfoo eval?\" We need to search context for mention of --max-retries flag. The context includes docs about provider config maxRetries, but not command-line flag. Let's search lines: [3] includes maxRetries in provider config. But question refers to default value of the --max-retries flag of promptfoo eval. Might be a command-line option. Let's check context [6] includes commandLineOptions but no max-retries. Maybe elsewhere in docs. Let's review context [1], [2], [4], [5], [8]. None mention max-retries.\n\nThe docs may mention --max-retries flag in promptfoo eval. But not in context. The answer might be that default value is 4 (HTTP-level retry default). But question asks for default value of flag. Could be default 0? Wait, provider-level retry default is 3. HTTP-level default is 4. But the flag --max-retries maybe controls overall retries for eval? I need to check actual docs. Since we cannot search beyond given context, we should respond \"I don't know\" if not present. But we can infer from context: the default for HTTP-level retry is 4. But that's not a command-line flag. The flag may be set to provider's maxRetries. But default might be 4. The question: \"What is the default value of the --max-retries flag of promptfoo eval?\" That implies there is a flag. The default might be 3 or 4. Let's search within context for \"max-retries\". Not found. So we cannot find explicit. We could say we don't know. According to instruction: If you do not know, say you do not know. So answer: \"I do not know.\" But we should cite that there is no mention. So we can quote \"No mention of --max-retries flag\" but we need to quote a line. We can quote a line that indicates default values for retries: In [3], \"Defaults to 4 retries, or the provider's maxRetries when set.\" That might be relevant. But not exactly flag. But we can still cite that.\n\nThus answer: \"I don't know\" but we can provide inference that default is 4? But the question specifically asks default value of flag. Without evidence, we should say we don't know. Provide quote showing no mention.\n\nWe could quote [3] lines: \"Defaults to 4 retries, or the provider's maxRetries when set.\" That's about HTTP-level retry. That might be the default. But not flag.\n\nThus answer: \"I do not know the default value of --max-retries flag; the docs do not specify it directly.\" Provide quote from [3] about default of HTTP-level retry. So answer with that.\n\nLet's produce answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11617863500,
+  "load_duration": 14467000,
+  "prompt_eval_count": 1681,
+  "prompt_eval_cached_count": 1676,
+  "prompt_eval_duration": 58259000,
+  "eval_count": 671,
+  "eval_duration": 11484351000
+ }
+}

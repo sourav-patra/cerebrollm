@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-20",
+ "run": 4,
+ "started_utc": "2026-10-29T02:01:47Z",
+ "seconds": 8.41,
+ "prompt_file": "runs/prompts/A0/ST-20.txt",
+ "prompt_sha256": "03dd648efe96c9315753cce88dd72fe0c989d3d530491d9ce4af8de790d5b16f",
+ "answer": "I don't know this. I'm not certain `promptfoo scan-model` exists in the form you describe, and I don't know whether it accepts JFrog or MLflow registry URIs or what flag or URI format it would use. I'd rather not guess at flag names or URI syntax, since a wrong one could scan the wrong model or fail silently.\n\nTo find the answer:\n\n1. Run `promptfoo scan-model --help` (or `promptfoo --help` to list subcommands) to see the accepted options.\n2. Check the promptfoo documentation and its GitHub repository, including the CLI reference and any changelog entries about model scanning.\n3. Search the repo's issues for \"scan-model\" and \"mlflow\" or \"jfrog.\"\n\nIf you paste the help output or the relevant docs section here, I can help you interpret the options and build the command.",
+ "tokens": {
+  "input": 664,
+  "output": 536,
+  "thinking": 268,
+  "cache_read": 0,
+  "cache_creation": 662
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00040060000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3662,
+  "stop_reason": "end_turn",
+  "session_id": "b30edca1-905e-49d9-b2a5-8a7775a666f4",
+  "total_cost_usd": 0.00040060000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 662,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 536,
+   "output_tokens_details": {
+    "thinking_tokens": 268
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 662,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 536,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 662,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 662
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 536,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 662,
+    "webSearchRequests": 0,
+    "costUSD": 0.00040060000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 268,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 662,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know this. I'm not certain `promptfoo scan-model` exists in the form you describe, and I don't know whether it accepts JFrog or MLflow registry URIs or what flag or URI format it would use. I'd rather not guess at flag names or URI syntax, since a wrong one could scan the wrong model or fail silently.\n\nTo find the answer:\n\n1. Run `promptfoo scan-model --help` (or `promptfoo --help` to list subcommands) to see the accepted options.\n2. Check the promptfoo documentation and its GitHub repository, including the CLI reference and any changelog entries about model scanning.\n3. Search the repo's issues for \"scan-model\" and \"mlflow\" or \"jfrog.\"\n\nIf you paste the help output or the relevant docs section here, I can help you interpret the options and build the command.",
+  "ttft_ms": 2796,
+  "type": "result",
+  "duration_ms": 3774,
+  "uuid": "7b95dc09-996c-4a84-94f9-d484c56fe950",
+  "ttft_stream_ms": 2795,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 2795,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

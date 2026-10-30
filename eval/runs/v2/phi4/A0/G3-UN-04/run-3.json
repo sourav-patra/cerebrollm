@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 3,
+ "started_utc": "2026-10-29T17:27:42Z",
+ "seconds": 4.87,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "I do not know the specific replication lag that pgvector guarantees for HNSW index updates on a streaming replica. pgvector is an extension for PostgreSQL that provides support for vector operations and indexing, including HNSW (Hierarchical Navigable Small World) indexes. However, replication lag can depend on various factors such as the configuration of the PostgreSQL setup, network conditions, and the nature of the data being replicated. For precise guarantees, it would be best to consult pgvector's official documentation or reach out to the maintainers directly.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 109
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5237454100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:27:47.3346299Z",
+  "response": "I do not know the specific replication lag that pgvector guarantees for HNSW index updates on a streaming replica. pgvector is an extension for PostgreSQL that provides support for vector operations and indexing, including HNSW (Hierarchical Navigable Small World) indexes. However, replication lag can depend on various factors such as the configuration of the PostgreSQL setup, network conditions, and the nature of the data being replicated. For precise guarantees, it would be best to consult pgvector's official documentation or reach out to the maintainers directly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5237454100,
+  "load_duration": 18441300,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 215109000,
+  "eval_count": 109,
+  "eval_duration": 4990228000
+ }
+}

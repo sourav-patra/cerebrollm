@@ -1,0 +1,109 @@
+=== 2026-10-28T21:15:43Z r2_wsl.py correctness gpt-oss:20b
+guard pull gpt-oss:20b exit 0 gpt-oss:20b digest f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe 
+gpt-oss-20b-medium code 1 passed True
+gpt-oss-20b-medium code 2 passed True
+gpt-oss-20b-medium code 3 passed True
+gpt-oss-20b-medium code 4 passed True
+gpt-oss-20b-medium code 5 passed True
+gpt-oss-20b-medium code 6 passed True
+gpt-oss-20b-medium code 7 passed True
+gpt-oss-20b-medium code 8 passed True
+gpt-oss-20b-medium code 9 passed True
+gpt-oss-20b-medium code 10 passed True
+gpt-oss-20b-medium code 11 passed True
+gpt-oss-20b-medium code 12 passed False
+gpt-oss-20b-medium code 13 passed True
+gpt-oss-20b-medium code 14 passed True
+gpt-oss-20b-medium code 15 passed True
+gpt-oss-20b-medium code 16 passed True
+gpt-oss-20b-medium code 17 passed True
+gpt-oss-20b-medium code 18 passed True
+gpt-oss-20b-medium code 19 passed True
+gpt-oss-20b-medium code 20 passed True
+gpt-oss-20b-medium code 21 passed True
+gpt-oss-20b-medium code 22 passed True
+gpt-oss-20b-medium code 23 passed True
+gpt-oss-20b-medium code 24 passed True
+gpt-oss-20b-medium code 25 passed True
+gpt-oss-20b-medium code 26 passed True
+gpt-oss-20b-medium code 27 passed True
+gpt-oss-20b-medium code 28 passed True
+gpt-oss-20b-medium code 29 passed True
+gpt-oss-20b-medium code 30 passed True
+gpt-oss-20b-medium code 31 passed True
+gpt-oss-20b-medium code 32 passed True
+gpt-oss-20b-medium code 33 passed True
+gpt-oss-20b-medium code 34 passed True
+gpt-oss-20b-medium code 35 passed True
+gpt-oss-20b-medium code 36 passed True
+gpt-oss-20b-medium code 37 passed True
+gpt-oss-20b-medium code 38 passed True
+gpt-oss-20b-medium code 39 passed True
+gpt-oss-20b-medium code 40 passed True
+gpt-oss-20b-medium tools 1 True
+gpt-oss-20b-medium tools 2 True
+gpt-oss-20b-medium tools 3 True
+gpt-oss-20b-medium tools 4 True
+gpt-oss-20b-medium tools 5 True
+gpt-oss-20b-medium tools 6 True
+gpt-oss-20b-medium tools 7 True
+gpt-oss-20b-medium tools 8 True
+gpt-oss-20b-medium tools 9 True
+gpt-oss-20b-medium tools 10 True
+gpt-oss-20b-medium tools 11 True
+gpt-oss-20b-medium tools 12 True
+gpt-oss-20b-low code 1 passed True
+gpt-oss-20b-low code 2 passed True
+gpt-oss-20b-low code 3 passed True
+gpt-oss-20b-low code 4 passed True
+gpt-oss-20b-low code 5 passed True
+gpt-oss-20b-low code 6 passed True
+gpt-oss-20b-low code 7 passed True
+gpt-oss-20b-low code 8 passed True
+gpt-oss-20b-low code 9 passed True
+gpt-oss-20b-low code 10 passed True
+gpt-oss-20b-low code 11 passed True
+gpt-oss-20b-low code 12 passed False
+gpt-oss-20b-low code 13 passed True
+gpt-oss-20b-low code 14 passed True
+gpt-oss-20b-low code 15 passed True
+gpt-oss-20b-low code 16 passed True
+gpt-oss-20b-low code 17 passed True
+gpt-oss-20b-low code 18 passed True
+gpt-oss-20b-low code 19 passed True
+gpt-oss-20b-low code 20 passed True
+gpt-oss-20b-low code 21 passed True
+gpt-oss-20b-low code 22 passed True
+gpt-oss-20b-low code 23 passed True
+gpt-oss-20b-low code 24 passed True
+gpt-oss-20b-low code 25 passed True
+gpt-oss-20b-low code 26 passed True
+gpt-oss-20b-low code 27 passed True
+gpt-oss-20b-low code 28 passed True
+gpt-oss-20b-low code 29 passed True
+gpt-oss-20b-low code 30 passed True
+gpt-oss-20b-low code 31 passed True
+gpt-oss-20b-low code 32 passed True
+gpt-oss-20b-low code 33 passed True
+gpt-oss-20b-low code 34 passed False
+gpt-oss-20b-low code 35 passed True
+gpt-oss-20b-low code 36 passed True
+gpt-oss-20b-low code 37 passed True
+gpt-oss-20b-low code 38 passed True
+gpt-oss-20b-low code 39 passed True
+gpt-oss-20b-low code 40 passed True
+gpt-oss-20b-low tools 1 True
+gpt-oss-20b-low tools 2 True
+gpt-oss-20b-low tools 3 True
+gpt-oss-20b-low tools 4 True
+gpt-oss-20b-low tools 5 True
+gpt-oss-20b-low tools 6 True
+gpt-oss-20b-low tools 7 True
+gpt-oss-20b-low tools 8 True
+gpt-oss-20b-low tools 9 True
+gpt-oss-20b-low tools 10 True
+gpt-oss-20b-low tools 11 True
+gpt-oss-20b-low tools 12 True
+guard unload gpt-oss:20b exit 0 gpt-oss:20b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T21:28:12Z

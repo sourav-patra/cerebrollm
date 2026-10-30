@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-07",
+ "run": 3,
+ "started_utc": "2026-10-29T01:48:19Z",
+ "seconds": 7.47,
+ "prompt_file": "runs/prompts/A3/PA-07.txt",
+ "prompt_sha256": "c181072e903ebf0d3d0740aec0f40f6732d0eec70bc519931ba1a87ccfc87acc",
+ "answer": "A pgvector `vector` with N dimensions takes **4N + 8 bytes** of storage. The README says: \"Each vector takes `4 * dimensions + 8` bytes of storage.\" [pgvector/README.md]",
+ "tokens": {
+  "input": 2811,
+  "output": 180,
+  "thinking": 106,
+  "cache_read": 2423,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00019163000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2764,
+  "stop_reason": "end_turn",
+  "session_id": "6581b57c-f9a7-4928-9b41-0f80d8945f8c",
+  "total_cost_usd": 0.00019163000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2423,
+   "output_tokens": 180,
+   "output_tokens_details": {
+    "thinking_tokens": 106
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 180,
+     "cache_read_input_tokens": 2423,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 180,
+    "cacheReadInputTokens": 2423,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00019163000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 106,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "A pgvector `vector` with N dimensions takes **4N + 8 bytes** of storage. The README says: \"Each vector takes `4 * dimensions + 8` bytes of storage.\" [pgvector/README.md]",
+  "ttft_ms": 2867,
+  "type": "result",
+  "duration_ms": 2880,
+  "uuid": "afc535c5-0e1e-45de-9bdf-8521d9467ca3",
+  "ttft_stream_ms": 2866,
+  "time_to_request_ms": 151,
+  "first_content_frame_ms": 2866,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

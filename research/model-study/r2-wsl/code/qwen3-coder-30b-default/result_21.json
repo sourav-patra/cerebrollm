@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/13",
+  "index": 21,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:06:53.0866514Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n    while b:\n        a, b = b, a % b\n    return abs(a)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 2298103000,
+    "load_duration": 11439300,
+    "prompt_eval_count": 99,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 352901000,
+    "eval_count": 91,
+    "eval_duration": 1909801000
+  },
+  "wall_seconds": 2.0702312419998634,
+  "load_average_before": [
+    0.08740234375,
+    0.07958984375,
+    0.01904296875
+  ],
+  "load_average_after": [
+    0.080078125,
+    0.078125,
+    0.0185546875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-coder-30b-default-21",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-coder-30b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_21.py"
+    ],
+    "wall_seconds": 0.6649358399990888,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

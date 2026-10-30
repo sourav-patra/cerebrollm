@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-07",
+ "run": 5,
+ "started_utc": "2026-10-29T01:56:51Z",
+ "seconds": 9.53,
+ "prompt_file": "runs/prompts/A0/ST-07.txt",
+ "prompt_sha256": "8b1b1d0f40bdd6745bb587c8c9c179c6302aedcd0d36d1051cd542e3ab658d6b",
+ "answer": "In current LlamaIndex (the `llama-index-core` 0.10+ API), you configure both models globally through the `Settings` object in `llama_index.core`. It replaces the older `ServiceContext`, which has been removed.\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.openai import OpenAI\nfrom llama_index.embeddings.openai import OpenAIEmbedding\n\nSettings.llm = OpenAI(model=\"gpt-4o-mini\", temperature=0.1)\nSettings.embed_model = OpenAIEmbedding(model=\"text-embedding-3-small\")\n```\n\nInstall the integration packages you use, for example:\n\n```bash\npip install llama-index-core llama-index-llms-openai llama-index-embeddings-openai\n```\n\nSet the values before you build indexes or query engines, because components read `Settings` when they are created. Any component can also take its own `llm=` or `embed_model=` argument, which overrides the global setting for that component only.\n\nFor local models, swap in other integrations. For example:\n\n```python\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3.1\", request_timeout=120.0)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nOther global options on `Settings` include `chunk_size`, `chunk_overlap`, `context_window`, `num_output`, and `callback_manager`.\n\nI can't see your project files, so I can't check how your code is set up. I also may not know about changes made after my training data, so check the current LlamaIndex docs if an import path or class name fails.",
+ "tokens": {
+  "input": 658,
+  "output": 1049,
+  "thinking": 477,
+  "cache_read": 0,
+  "cache_creation": 656
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0006559000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5171,
+  "stop_reason": "end_turn",
+  "session_id": "5b81ba01-2c9c-498d-aa73-ece898674756",
+  "total_cost_usd": 0.0006559000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 656,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1049,
+   "output_tokens_details": {
+    "thinking_tokens": 477
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 656,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1049,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 656,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 656
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1049,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 656,
+    "webSearchRequests": 0,
+    "costUSD": 0.0006559000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 477,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 656,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In current LlamaIndex (the `llama-index-core` 0.10+ API), you configure both models globally through the `Settings` object in `llama_index.core`. It replaces the older `ServiceContext`, which has been removed.\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.openai import OpenAI\nfrom llama_index.embeddings.openai import OpenAIEmbedding\n\nSettings.llm = OpenAI(model=\"gpt-4o-mini\", temperature=0.1)\nSettings.embed_model = OpenAIEmbedding(model=\"text-embedding-3-small\")\n```\n\nInstall the integration packages you use, for example:\n\n```bash\npip install llama-index-core llama-index-llms-openai llama-index-embeddings-openai\n```\n\nSet the values before you build indexes or query engines, because components read `Settings` when they are created. Any component can also take its own `llm=` or `embed_model=` argument, which overrides the global setting for that component only.\n\nFor local models, swap in other integrations. For example:\n\n```python\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3.1\", request_timeout=120.0)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nOther global options on `Settings` include `chunk_size`, `chunk_overlap`, `context_window`, `num_output`, and `callback_manager`.\n\nI can't see your project files, so I can't check how your code is set up. I also may not know about changes made after my training data, so check the current LlamaIndex docs if an import path or class name fails.",
+  "ttft_ms": 3080,
+  "type": "result",
+  "duration_ms": 5294,
+  "uuid": "d603262b-f408-4f4b-b5e9-6309afbc5f47",
+  "ttft_stream_ms": 2904,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2904,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

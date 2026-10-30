@@ -1,0 +1,97 @@
+{
+  "model": "devstral:24b",
+  "mode": "default",
+  "length": 200,
+  "run": 2,
+  "calibration": {
+    "repetitions": 1,
+    "length": 200,
+    "prompt_tokens": 1262,
+    "template_overhead_tokens": 1226
+  },
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793229344.2499523,
+    "loadavg": [
+      0.0361328125,
+      0.0478515625,
+      0.0087890625
+    ],
+    "win_cpu_pct": 18.6,
+    "gpu_util_pct": 9,
+    "gpu_mem_mib": 11392,
+    "ollama_ps": [
+      "devstral:24b"
+    ]
+  },
+  "load_average_after": [
+    0.015625,
+    0.0390625,
+    0.00439453125
+  ],
+  "ttft_seconds": 0.5022609539992118,
+  "first_visible_content_seconds": 0.5022609539992118,
+  "wall_seconds": 36.59933335799906,
+  "events": 257,
+  "final": {
+    "model": "devstral:24b",
+    "created_at": "2026-10-28T23:16:28.1971661Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 39199951100,
+    "load_duration": 12133300,
+    "prompt_eval_count": 1262,
+    "prompt_eval_cached_count": 1224,
+    "prompt_eval_duration": 508816000,
+    "eval_count": 256,
+    "eval_duration": 38666052000
+  },
+  "prompt_tps": 74.68318606333133,
+  "generation_tps": 6.620794902981044,
+  "ps_api": [
+    {
+      "name": "devstral:24b",
+      "model": "devstral:24b",
+      "size": 17432450169,
+      "digest": "9bd74193e93935e9d8564d88607b220a9d341c4a36b748cffcbd9ad4f47a9ca9",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "23.6B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-29T05:01:28.1976709+05:30",
+      "size_vram": 10138387742,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    }
+  ],
+  "ps_cli": "NAME            ID              SIZE     PROCESSOR          CONTEXT    RUNNER      UNTIL               \ndevstral:24b    9bd74193e939    17 GB    42%/58% CPU/GPU    16384      llamacpp    14 minutes from now    \n",
+  "gpu_pct": 58.2,
+  "request": {
+    "model": "devstral:24b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Performance measurement run 2. Read the following data.\nriver\nWrite a detailed explanation of binary search, including Python examples and complexity. Continue for at least 500 words."
+      }
+    ],
+    "stream": true,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 256
+    }
+  }
+}

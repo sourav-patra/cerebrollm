@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-EX-4",
+ "run": 4,
+ "started_utc": "2026-10-29T01:45:57Z",
+ "seconds": 7.66,
+ "prompt_file": "runs/prompts/A0/PR-EX-4.txt",
+ "prompt_sha256": "2bdb981fd7652c603bda76b9b8f71234ff90ccf46add571297ec1570ab4a0f6c",
+ "answer": "The flag is `--resume <evalId>`, for example `promptfoo eval --resume <evalId>`. It continues an interrupted or incomplete eval from its saved state, so you need the ID of the original run.\n\nPromptfoo also has `--retry-errors`, which re-runs only the tests that ended in an error. That's useful for failed tests but isn't the same as resuming a paused run.\n\nI'm not fully certain of these details, and CLI flags can change between versions, so check `promptfoo eval --help` for your installed version.",
+ "tokens": {
+  "input": 657,
+  "output": 453,
+  "thinking": 282,
+  "cache_read": 0,
+  "cache_creation": 655
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003577,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3066,
+  "stop_reason": "end_turn",
+  "session_id": "2c7b7787-2cf4-448d-b241-183f4fc392ac",
+  "total_cost_usd": 0.0003577,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 655,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 453,
+   "output_tokens_details": {
+    "thinking_tokens": 282
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 655,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 453,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 655,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 655
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 453,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 655,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003577,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 282,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 655,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The flag is `--resume <evalId>`, for example `promptfoo eval --resume <evalId>`. It continues an interrupted or incomplete eval from its saved state, so you need the ID of the original run.\n\nPromptfoo also has `--retry-errors`, which re-runs only the tests that ended in an error. That's useful for failed tests but isn't the same as resuming a paused run.\n\nI'm not fully certain of these details, and CLI flags can change between versions, so check `promptfoo eval --help` for your installed version.",
+  "ttft_ms": 2901,
+  "type": "result",
+  "duration_ms": 3185,
+  "uuid": "596080cc-b028-4e57-80e2-d38c4308e1a6",
+  "ttft_stream_ms": 2900,
+  "time_to_request_ms": 149,
+  "first_content_frame_ms": 2900,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

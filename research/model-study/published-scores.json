@@ -1,0 +1,11 @@
+{
+  "status": "reported, not checked here",
+  "candidates": [
+    {"model":"devstral:24b","benchmark":"SWE-bench Verified","score_percent":46.8,"scaffold":"OpenHands","version":"Devstral Small 2505; the Ollama 24b page reports 46.8, not the later 2507 model's 53.6","url":"https://mistral.ai/news/devstral/"},
+    {"model":"gpt-oss:20b","benchmark":"SWE-bench Verified","score_percent":{"low":37.4,"medium":53.2,"high":60.7},"source_location":"Model card Table 3, page labeled 10, PDF page index 10","url":"https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf"},
+    {"model":"qwen3:14b","benchmark":"BFCL v3 (tool use, not repository patch solving)","score_percent":{"thinking-on":70.4,"thinking-off":61.5},"additional_benchmark":"LiveCodeBench v5 (single-problem coding)","additional_score_percent":{"thinking-on":63.5,"thinking-off":29.0},"source_location":"Qwen3 Technical Report Tables 15 and 16","url":"https://arxiv.org/html/2505.09388v1"},
+    {"model":"qwen3:8b","benchmark":"BFCL v3 (tool use, not repository patch solving)","score_percent":{"thinking-on":68.1,"thinking-off":60.2},"additional_benchmark":"LiveCodeBench v5 (single-problem coding)","additional_score_percent":{"thinking-on":57.5,"thinking-off":22.8},"source_location":"Qwen3 Technical Report Tables 17 and 18","url":"https://arxiv.org/html/2505.09388v1"},
+    {"model":"phi4","benchmark":"HumanEval (single-function coding, not agentic coding)","score_percent":82.6,"agentic_score":null,"limitation":"The Microsoft phi-4 model card inspected here reports HumanEval but supplies no agentic-coding score. Qwen's BFCL evaluation of phi-4 is not Microsoft's vendor score and is not substituted.","url":"https://huggingface.co/microsoft/phi-4"}
+  ],
+  "limitation":"Reported scores use different benchmarks, model precision and scaffolds. They are not the local selection scores."
+}

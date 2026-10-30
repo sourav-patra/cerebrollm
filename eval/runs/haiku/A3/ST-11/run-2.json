@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-11",
+ "run": 2,
+ "started_utc": "2026-10-29T01:58:17Z",
+ "seconds": 8.12,
+ "prompt_file": "runs/prompts/A3/ST-11.txt",
+ "prompt_sha256": "4585c0cab7d69f7d23a207e896ab3d5c9dee598ebbec56ac0e34a9dfb12cd9da",
+ "answer": "You should use **Workflows**. The docs describe them as \"a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls\" [\"A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\" [llama_index/docs/src/content/docs/framework/getting_started/concepts.md]].\n\nThe agent docs also say you can \"build your own agentic workflows from scratch,\" which is covered in the \"Building Workflows\" section [\"you can either [build your own agentic workflows from scratch](/python/llamaagents/workflows), covered in the \"Building Workflows\" section\" [llama_index/docs/src/content/docs/framework/understanding/agent/index.md]]. The context also notes that workflows can maintain state [\"workflows can maintain state, which is important for building more complex applications.\" [llama_index/docs/src/content/docs/framework/understanding/index.md]].\n\nThe context doesn't show the Workflows API itself, such as its step or event classes, so for code examples you'd need to check the Workflows section of the docs.",
+ "tokens": {
+  "input": 3394,
+  "output": 655,
+  "thinking": 285,
+  "cache_read": 3005,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00043515,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3109,
+  "stop_reason": "end_turn",
+  "session_id": "a82e1589-a50c-4c56-8add-10f806866121",
+  "total_cost_usd": 0.00043515,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 3005,
+   "output_tokens": 655,
+   "output_tokens_details": {
+    "thinking_tokens": 285
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 655,
+     "cache_read_input_tokens": 3005,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 655,
+    "cacheReadInputTokens": 3005,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00043515,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 285,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You should use **Workflows**. The docs describe them as \"a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls\" [\"A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\" [llama_index/docs/src/content/docs/framework/getting_started/concepts.md]].\n\nThe agent docs also say you can \"build your own agentic workflows from scratch,\" which is covered in the \"Building Workflows\" section [\"you can either [build your own agentic workflows from scratch](/python/llamaagents/workflows), covered in the \"Building Workflows\" section\" [llama_index/docs/src/content/docs/framework/understanding/agent/index.md]]. The context also notes that workflows can maintain state [\"workflows can maintain state, which is important for building more complex applications.\" [llama_index/docs/src/content/docs/framework/understanding/index.md]].\n\nThe context doesn't show the Workflows API itself, such as its step or event classes, so for code examples you'd need to check the Workflows section of the docs.",
+  "ttft_ms": 2787,
+  "type": "result",
+  "duration_ms": 3228,
+  "uuid": "58a837ca-6356-4c43-bcf9-6547b099ec20",
+  "ttft_stream_ms": 2786,
+  "time_to_request_ms": 121,
+  "first_content_frame_ms": 2786,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

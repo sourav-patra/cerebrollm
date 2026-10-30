@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 4,
+ "started_utc": "2026-10-29T17:40:40Z",
+ "seconds": 4.3,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I do not know the default value of `promptfoo's evaluateOptions.maxTokensPerCell` based on the provided context. The sections in the context do not mention `maxTokensPerCell` or provide information related to this specific setting. [1] promptfoo/site/docs/configuration/reference.md (lines 1121-1149) > Reference > Evaluation inputs > EvaluateOptions.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1494,
+  "output": 77
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4583794700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:40:46.5219056Z",
+  "response": "I do not know the default value of `promptfoo's evaluateOptions.maxTokensPerCell` based on the provided context. The sections in the context do not mention `maxTokensPerCell` or provide information related to this specific setting. [1] promptfoo/site/docs/configuration/reference.md (lines 1121-1149) > Reference > Evaluation inputs > EvaluateOptions.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4583794700,
+  "load_duration": 14587700,
+  "prompt_eval_count": 1494,
+  "prompt_eval_cached_count": 103,
+  "prompt_eval_duration": 719758000,
+  "eval_count": 77,
+  "eval_duration": 3704365000
+ }
+}

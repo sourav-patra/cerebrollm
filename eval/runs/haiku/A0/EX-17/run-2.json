@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-17",
+ "run": 2,
+ "started_utc": "2026-10-29T01:43:27Z",
+ "seconds": 8.16,
+ "prompt_file": "runs/prompts/A0/EX-17.txt",
+ "prompt_sha256": "26ef3f9a9a3a9ce3696bdc2ec23e7beacb9054d83ee250a8ad1ec0c9d3be3e25",
+ "answer": "I believe it's **`PROMPTFOO_PASS_RATE_THRESHOLD`**. Promptfoo's docs describe it alongside the CLI flag `--pass-rate-threshold`, which sets the minimum percentage of passing tests needed for `promptfoo eval` to exit successfully. I'm not certain of the default value or the exact behavior, so check the current promptfoo documentation or run `promptfoo eval --help` to confirm.",
+ "tokens": {
+  "input": 665,
+  "output": 513,
+  "thinking": 361,
+  "cache_read": 0,
+  "cache_creation": 663
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003893,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3165,
+  "stop_reason": "end_turn",
+  "session_id": "c4d6245d-2b99-4c6c-947e-14348821313a",
+  "total_cost_usd": 0.0003893,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 663,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 513,
+   "output_tokens_details": {
+    "thinking_tokens": 361
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 663,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 513,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 663,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 663
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 513,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 663,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003893,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 361,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 663,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I believe it's **`PROMPTFOO_PASS_RATE_THRESHOLD`**. Promptfoo's docs describe it alongside the CLI flag `--pass-rate-threshold`, which sets the minimum percentage of passing tests needed for `promptfoo eval` to exit successfully. I'm not certain of the default value or the exact behavior, so check the current promptfoo documentation or run `promptfoo eval --help` to confirm.",
+  "ttft_ms": 3179,
+  "type": "result",
+  "duration_ms": 3341,
+  "uuid": "c0918a07-2cd0-4ea3-8b0c-30dc5f75955c",
+  "ttft_stream_ms": 3178,
+  "time_to_request_ms": 245,
+  "first_content_frame_ms": 3178,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 1,
+ "started_utc": "2026-10-29T16:11:00Z",
+ "seconds": 13.94,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "The release notes state that the cold‑start time for `/api/tags` dropped to **294 ms** in testing.  \n\"\\\"/api/tags\\\" is much faster on large model libraries (3.1 s → 294 ms cold in testing)\" [ollama/v0.34.1.md].",
+ "thinking_chars": 796,
+ "tokens": {
+  "input": 2329,
+  "output": 304
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 12589394400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:11:13.9545708Z",
+  "response": "The release notes state that the cold‑start time for `/api/tags` dropped to **294 ms** in testing.  \n\"\\\"/api/tags\\\" is much faster on large model libraries (3.1 s → 294 ms cold in testing)\" [ollama/v0.34.1.md].",
+  "thinking": "We need to answer: \"In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up?\" The context includes a release note for v0.34.1. In that release note, there is a bullet: `\"/api/tags\" is much faster on large model libraries (3.1 s → 294 ms cold in testing)`. That seems to answer the question. The question asks: \"In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up?\" According to the bullet, it took 294 ms. Provide quote: \"3.1 s → 294 ms cold in testing\". Or \"294 ms cold in testing\". So we should quote the line: `\"/api/tags\" is much faster on large model libraries (3.1 s → 294 ms cold in testing)`. And path: [ollama/v0.34.1.md]. So answer: 294 ms.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 12589394400,
+  "load_duration": 14345100,
+  "prompt_eval_count": 2329,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 2388385000,
+  "eval_count": 304,
+  "eval_duration": 10137113000
+ }
+}

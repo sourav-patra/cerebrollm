@@ -1,0 +1,11 @@
+=== 2026-10-28T23:07:08Z r2_wsl.py speed devstral:24b
+guard pull devstral:24b exit 0 devstral:24b digest 9bd74193e93935e9d8564d88607b220a9d341c4a36b748cffcbd9ad4f47a9ca9 
+devstral-24b-default 8000 1 valid True [] gen_tps 4.292521165524797 prompt_tps 841.647879215674 gpu% 58.2
+devstral-24b-default 8000 2 valid True [] gen_tps 4.345725997154839 prompt_tps 825.3562145715846 gpu% 58.2
+devstral-24b-default 8000 3 valid True [] gen_tps 4.329559361294608 prompt_tps 836.4379638745543 gpu% 58.2
+devstral-24b-default 200 1 valid True [] gen_tps 6.67464356099743 prompt_tps 66.06960606866718 gpu% 58.2
+devstral-24b-default 200 2 valid True [] gen_tps 6.620794902981044 prompt_tps 74.68318606333133 gpu% 58.2
+devstral-24b-default 200 3 valid True [] gen_tps 6.670610839039073 prompt_tps 85.62724208173346 gpu% 58.2
+guard unload devstral:24b exit 0 devstral:24b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-28T23:17:22Z

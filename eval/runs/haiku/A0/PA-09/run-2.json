@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-09",
+ "run": 2,
+ "started_utc": "2026-10-29T01:48:58Z",
+ "seconds": 10.08,
+ "prompt_file": "runs/prompts/A0/PA-09.txt",
+ "prompt_sha256": "f722ed625fc836a796c3355df9d382db3dcb83c814fa8ea57c968ac4dd08d5c7",
+ "answer": "Based on general PostgreSQL knowledge, not any specific project documentation (I don't have that here), a single non-partitioned table is limited to **32 TB** with the default 8 kB block size. PostgreSQL addresses table blocks with a 32-bit block number, so the maximum is 2³² blocks × 8 kB = 32 TB. A custom build with a larger block size (up to 32 kB) raises the limit to 128 TB.\n\nThat limit caps how many vectors the table can hold. The number of rows isn't separately capped. For example, a 1536-dimension `float4` vector takes about 6 kB, so each row is roughly one vector, and a 32 TB table could hold billions of them. Other limits may apply, such as the vector type's maximum dimension count in extensions like pgvector, but I'm not certain of the exact figures for your setup.",
+ "tokens": {
+  "input": 666,
+  "output": 798,
+  "thinking": 520,
+  "cache_read": 0,
+  "cache_creation": 664
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.000532,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5800,
+  "stop_reason": "end_turn",
+  "session_id": "a2cf440f-d343-4b9f-a305-75ce5dd195b1",
+  "total_cost_usd": 0.000532,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 664,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 798,
+   "output_tokens_details": {
+    "thinking_tokens": 520
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 664,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 798,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 664,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 664
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 798,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 664,
+    "webSearchRequests": 0,
+    "costUSD": 0.000532,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 520,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 664,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Based on general PostgreSQL knowledge, not any specific project documentation (I don't have that here), a single non-partitioned table is limited to **32 TB** with the default 8 kB block size. PostgreSQL addresses table blocks with a 32-bit block number, so the maximum is 2³² blocks × 8 kB = 32 TB. A custom build with a larger block size (up to 32 kB) raises the limit to 128 TB.\n\nThat limit caps how many vectors the table can hold. The number of rows isn't separately capped. For example, a 1536-dimension `float4` vector takes about 6 kB, so each row is roughly one vector, and a 32 TB table could hold billions of them. Other limits may apply, such as the vector type's maximum dimension count in extensions like pgvector, but I'm not certain of the exact figures for your setup.",
+  "ttft_ms": 4552,
+  "type": "result",
+  "duration_ms": 5926,
+  "uuid": "9145be34-8c41-4063-820d-43dea52aee8d",
+  "ttft_stream_ms": 2878,
+  "time_to_request_ms": 161,
+  "first_content_frame_ms": 2878,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

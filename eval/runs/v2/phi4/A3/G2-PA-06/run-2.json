@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 2,
+ "started_utc": "2026-10-29T17:23:55Z",
+ "seconds": 15.26,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "The context window for Claude Opus 4.6 in `llama-index-llms-anthropic` version 0.11.10 is set to 1 million tokens. This is specified in the release notes:\n\n\"fix(anthropic): correct Opus 4.6 context window to 1M.\"  \n[\"llama_index/v0.14.24.md\" (lines 55-60) > Release Notes > [2026-08-19] > llama-index-llms-anthropic [0.11.10]].\n\nAdditionally, it is mentioned in another entry that the context window size was set to 1M for both Opus 4.6 and Sonnet 4.6, which further supports this information:\n\n\"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6.\"  \n[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\" (lines 3610-3617) > [2026-03-16] > llama-index-llms-bedrock-converse [0.14.2]].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1558,
+  "output": 238
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 13092004700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:24:10.0057002Z",
+  "response": "The context window for Claude Opus 4.6 in `llama-index-llms-anthropic` version 0.11.10 is set to 1 million tokens. This is specified in the release notes:\n\n\"fix(anthropic): correct Opus 4.6 context window to 1M.\"  \n[\"llama_index/v0.14.24.md\" (lines 55-60) > Release Notes > [2026-08-19] > llama-index-llms-anthropic [0.11.10]].\n\nAdditionally, it is mentioned in another entry that the context window size was set to 1M for both Opus 4.6 and Sonnet 4.6, which further supports this information:\n\n\"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6.\"  \n[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\" (lines 3610-3617) > [2026-03-16] > llama-index-llms-bedrock-converse [0.14.2]].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13092004700,
+  "load_duration": 13408800,
+  "prompt_eval_count": 1558,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 766129000,
+  "eval_count": 238,
+  "eval_duration": 12116227000
+ }
+}

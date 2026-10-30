@@ -1,0 +1,89 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-08",
+ "run": 2,
+ "started_utc": "2026-10-30T06:23:16Z",
+ "seconds": 19.47,
+ "prompt_sha256": "d9ce559119795a2a2e3090bef420dcdbe3c4c7bfadf5dc902b79b708f47a3ddb",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 0.79,
+   "rerank": 9.8,
+   "generate": 6.54,
+   "verify": 0.0,
+   "total": 17.14
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 2,
+    "rerank_score": 0.40672,
+    "path": "ollama/docs/faq.md",
+    "line_start": 324,
+    "line_end": 338
+   },
+   {
+    "rank": 2,
+    "search_rank": 5,
+    "rerank_score": 0.28268,
+    "path": "ollama/docs/integrations/copilot-cli.md",
+    "line_start": 33,
+    "line_end": 55
+   },
+   {
+    "rank": 3,
+    "search_rank": 1,
+    "rerank_score": 0.18894,
+    "path": "ollama/docs/api.md",
+    "line_start": 1543,
+    "line_end": 1599
+   },
+   {
+    "rank": 4,
+    "search_rank": 10,
+    "rerank_score": 0.17569,
+    "path": "ollama/docs/quickstart.md",
+    "line_start": 193,
+    "line_end": 287
+   },
+   {
+    "rank": 5,
+    "search_rank": 8,
+    "rerank_score": 0.124,
+    "path": "llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md",
+    "line_start": 16,
+    "line_end": 39
+   },
+   {
+    "rank": 6,
+    "search_rank": 13,
+    "rerank_score": 0.09587,
+    "path": "ollama/docs/integrations/cline-cli.md",
+    "line_start": 72,
+    "line_end": 98
+   },
+   {
+    "rank": 7,
+    "search_rank": 18,
+    "rerank_score": 0.08804,
+    "path": "ollama/docs/integrations/copilot-cli.md",
+    "line_start": 57,
+    "line_end": 82
+   },
+   {
+    "rank": 8,
+    "search_rank": 9,
+    "rerank_score": 0.07725,
+    "path": "ollama/docs/api/openai-compatibility.md",
+    "line_start": 414,
+    "line_end": 422
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

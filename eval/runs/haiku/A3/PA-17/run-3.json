@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-17",
+ "run": 3,
+ "started_utc": "2026-10-29T01:52:04Z",
+ "seconds": 7.3,
+ "prompt_file": "runs/prompts/A3/PA-17.txt",
+ "prompt_sha256": "e4917b23648fc8391c07aafadf9bd37eba487984eda27a6967d79aa7fb074a29",
+ "answer": "Use the `--no-write` flag with `promptfoo eval`. The docs describe it as: \"Do not write results to promptfoo directory\" [promptfoo/site/docs/usage/command-line.md]\n\nThe context doesn't include a full example, but the command would look like this:\n\n```bash\npromptfoo eval --no-write\n```",
+ "tokens": {
+  "input": 3583,
+  "output": 399,
+  "thinking": 293,
+  "cache_read": 3196,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00030866,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2620,
+  "stop_reason": "end_turn",
+  "session_id": "8b01dccb-6996-4375-8625-876935c88429",
+  "total_cost_usd": 0.00030866,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 3196,
+   "output_tokens": 399,
+   "output_tokens_details": {
+    "thinking_tokens": 293
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 399,
+     "cache_read_input_tokens": 3196,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 399,
+    "cacheReadInputTokens": 3196,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00030866,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 293,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use the `--no-write` flag with `promptfoo eval`. The docs describe it as: \"Do not write results to promptfoo directory\" [promptfoo/site/docs/usage/command-line.md]\n\nThe context doesn't include a full example, but the command would look like this:\n\n```bash\npromptfoo eval --no-write\n```",
+  "ttft_ms": 2714,
+  "type": "result",
+  "duration_ms": 2732,
+  "uuid": "a1ef0acb-f728-435a-ac76-8d866b367508",
+  "ttft_stream_ms": 2712,
+  "time_to_request_ms": 110,
+  "first_content_frame_ms": 2713,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

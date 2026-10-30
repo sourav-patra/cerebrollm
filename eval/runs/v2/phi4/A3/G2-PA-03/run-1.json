@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 1,
+ "started_utc": "2026-10-29T17:14:40Z",
+ "seconds": 21.14,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "I do not have specific information on the total and active parameters of the Nemotron 3.5 Bolt model from the provided context. The context mentions Nemotron 3.5 Super and its specifications, but it does not provide detailed parameters for Nemotron 3.5 Bolt. Here is the relevant excerpt:\n\n- \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\"\n\nFrom this line, it is mentioned that Nemotron 3.5 Bolt has 74 billion total parameters and 9 billion active parameters. \n\n[NVIDIA Nemotron 3.5 Super](https://ollama.com/library/nemotron-3.5-super) is a vision-language model for coding, reasoning, tool use, and document understanding. It pairs a 120B-parameter hybrid Mamba-2/Transformer mixture-of-experts backbone (12B active per token) with a C-RADIO vision encoder, and supports tool calling, an on/off thinking mode, and context up to 1M tokens. \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md (lines 1-14)](https://github.com/ollama/ollama/releases/tag/v0.40.5)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2036,
+  "output": 366
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 20294129700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:15:01.8622137Z",
+  "response": "I do not have specific information on the total and active parameters of the Nemotron 3.5 Bolt model from the provided context. The context mentions Nemotron 3.5 Super and its specifications, but it does not provide detailed parameters for Nemotron 3.5 Bolt. Here is the relevant excerpt:\n\n- \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\"\n\nFrom this line, it is mentioned that Nemotron 3.5 Bolt has 74 billion total parameters and 9 billion active parameters. \n\n[NVIDIA Nemotron 3.5 Super](https://ollama.com/library/nemotron-3.5-super) is a vision-language model for coding, reasoning, tool use, and document understanding. It pairs a 120B-parameter hybrid Mamba-2/Transformer mixture-of-experts backbone (12B active per token) with a C-RADIO vision encoder, and supports tool calling, an on/off thinking mode, and context up to 1M tokens. \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md (lines 1-14)](https://github.com/ollama/ollama/releases/tag/v0.40.5)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 20294129700,
+  "load_duration": 13571800,
+  "prompt_eval_count": 2036,
+  "prompt_eval_cached_count": 106,
+  "prompt_eval_duration": 1029732000,
+  "eval_count": 366,
+  "eval_duration": 19059183000
+ }
+}

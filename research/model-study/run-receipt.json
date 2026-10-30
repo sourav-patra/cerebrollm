@@ -1,0 +1,403 @@
+{
+  "status": "correctness_in_progress",
+  "time": "2026-10-27T10:02:04.284977+00:00",
+  "attempt": 2,
+  "work_order": "development step D",
+  "authority": "27 Oct attempt-2 instructions; a routing pick supplied by the orchestrator, not a pick executed by this session",
+  "execution_identity": "Codex primary agent /root; exact runtime model and effort are not exposed",
+  "cerebrollm_revision": "5e059f3f45d6cb664dd7e06d6c56cc0ae6495071",
+  "selection_questions": 150,
+  "progress": [
+    {
+      "model": "phi4",
+      "mode": "default",
+      "code_completed": 40,
+      "code_errors": 0,
+      "code_passed": 33,
+      "tools_completed": 12,
+      "tools_passed": 0,
+      "quality_complete": true,
+      "code_pass_percent": 82.5,
+      "combined": 41.25,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    },
+    {
+      "model": "devstral:24b",
+      "mode": "default",
+      "code_completed": 0,
+      "code_errors": 0,
+      "code_passed": 0,
+      "tools_completed": 0,
+      "tools_passed": 0,
+      "quality_complete": false,
+      "code_pass_percent": null,
+      "combined": null,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    },
+    {
+      "model": "gpt-oss:20b",
+      "mode": "medium",
+      "code_completed": 0,
+      "code_errors": 0,
+      "code_passed": 0,
+      "tools_completed": 0,
+      "tools_passed": 0,
+      "quality_complete": false,
+      "code_pass_percent": null,
+      "combined": null,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    },
+    {
+      "model": "gpt-oss:20b",
+      "mode": "low",
+      "code_completed": 0,
+      "code_errors": 0,
+      "code_passed": 0,
+      "tools_completed": 0,
+      "tools_passed": 0,
+      "quality_complete": false,
+      "code_pass_percent": null,
+      "combined": null,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "thinking-on",
+      "code_completed": 0,
+      "code_errors": 0,
+      "code_passed": 0,
+      "tools_completed": 0,
+      "tools_passed": 0,
+      "quality_complete": false,
+      "code_pass_percent": null,
+      "combined": null,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "thinking-off",
+      "code_completed": 0,
+      "code_errors": 0,
+      "code_passed": 0,
+      "tools_completed": 0,
+      "tools_passed": 0,
+      "quality_complete": false,
+      "code_pass_percent": null,
+      "combined": null,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    },
+    {
+      "model": "qwen3:8b",
+      "mode": "thinking-off",
+      "code_completed": 0,
+      "code_errors": 0,
+      "code_passed": 0,
+      "tools_completed": 0,
+      "tools_passed": 0,
+      "quality_complete": false,
+      "code_pass_percent": null,
+      "combined": null,
+      "one_minute_load_range": null,
+      "valid_speed_runs": 0
+    }
+  ],
+  "retrieval": [
+    {
+      "model": "bge-m3",
+      "table": "study_d_bge_m3",
+      "index": {
+        "model": "bge-m3",
+        "chunks": 5091,
+        "duration_seconds": 323.10467676166445,
+        "chunks_per_minute": 945.3902155223834,
+        "within_60_minutes": true,
+        "timing": "sum of sequential embedding-and-insert batches; excludes operator pauses between bounded commands",
+        "memory": {
+          "api": {
+            "models": [
+              {
+                "name": "bge-m3:latest",
+                "model": "bge-m3:latest",
+                "size": 1301811200,
+                "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "bert",
+                  "families": [
+                    "bert"
+                  ],
+                  "parameter_size": "566.70M",
+                  "quantization_level": "F16"
+                },
+                "expires_at": "2026-10-27T14:19:53.173531+05:30",
+                "size_vram": 1301811200,
+                "context_length": 262144
+              }
+            ]
+          },
+          "command": [
+            "/Applications/Ollama.app/Contents/Resources/ollama",
+            "ps"
+          ],
+          "stdout": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nbge-m3:latest    790764642607    1.3 GB    100% GPU     262144     14 minutes from now    \n",
+          "stderr": "",
+          "exit": 0
+        },
+        "query_prefix": ""
+      },
+      "index_progress": {
+        "chunks": 5091,
+        "duration_seconds": 323.10467676166445,
+        "next_start": 5091
+      },
+      "modes": {
+        "vector": {
+          "completed_5": 150,
+          "completed_10": 150,
+          "hit_at_5": 0.5066666666666667,
+          "hit_at_10": 0.5533333333333333,
+          "mrr_at_10": 0.3851455026455027
+        },
+        "hybrid": {
+          "completed_5": 150,
+          "completed_10": 150,
+          "hit_at_5": 0.68,
+          "hit_at_10": 0.7466666666666667,
+          "mrr_at_10": 0.5382195767195768
+        }
+      }
+    },
+    {
+      "model": "qwen3-embedding:0.6b",
+      "table": "study_d_qwen_06b",
+      "index": {
+        "model": "qwen3-embedding:0.6b",
+        "chunks": 5091,
+        "duration_seconds": 443.5675737452693,
+        "chunks_per_minute": 688.6436657685413,
+        "within_60_minutes": true,
+        "timing": "sum of sequential embedding-and-insert batches; excludes operator pauses between bounded commands",
+        "memory": {
+          "api": {
+            "models": [
+              {
+                "name": "qwen3-embedding:0.6b",
+                "model": "qwen3-embedding:0.6b",
+                "size": 5716046496,
+                "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen3",
+                  "families": [
+                    "qwen3"
+                  ],
+                  "parameter_size": "595.78M",
+                  "quantization_level": "Q8_0"
+                },
+                "expires_at": "2026-10-27T14:47:31.629826+05:30",
+                "size_vram": 5716046496,
+                "context_length": 262144
+              }
+            ]
+          },
+          "command": [
+            "/Applications/Ollama.app/Contents/Resources/ollama",
+            "ps"
+          ],
+          "stdout": "NAME                    ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3-embedding:0.6b    ac6da0dfba84    5.7 GB    100% GPU     262144     14 minutes from now    \n",
+          "stderr": "",
+          "exit": 0
+        },
+        "query_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:"
+      },
+      "index_progress": {
+        "chunks": 5091,
+        "duration_seconds": 443.5675737452693,
+        "next_start": 5091
+      },
+      "modes": {
+        "vector": {
+          "completed_5": 150,
+          "completed_10": 150,
+          "hit_at_5": 0.58,
+          "hit_at_10": 0.6733333333333333,
+          "mrr_at_10": 0.4831402116402116
+        },
+        "hybrid": {
+          "completed_5": 150,
+          "completed_10": 150,
+          "hit_at_5": 0.6933333333333334,
+          "hit_at_10": 0.7466666666666667,
+          "mrr_at_10": 0.5868121693121693
+        }
+      }
+    },
+    {
+      "model": "qwen3-embedding:4b",
+      "table": "study_d_qwen_4b",
+      "index": null,
+      "index_progress": {
+        "chunks": 2688,
+        "duration_seconds": 1982.2530102513265,
+        "next_start": 2688
+      },
+      "modes": {
+        "vector": {
+          "completed_5": 0,
+          "completed_10": 0,
+          "hit_at_5": null,
+          "hit_at_10": null,
+          "mrr_at_10": null
+        },
+        "hybrid": {
+          "completed_5": 0,
+          "completed_10": 0,
+          "hit_at_5": null,
+          "hit_at_10": null,
+          "mrr_at_10": null
+        }
+      }
+    }
+  ],
+  "r1_complete": false,
+  "quality_complete": false,
+  "provisional_R1": null,
+  "chosen": {
+    "R1": null,
+    "R2a": null,
+    "R2b": null
+  },
+  "finalists": {
+    "R2a": [],
+    "R2b": []
+  },
+  "best_code_pass_percent": null,
+  "models_on_disk": {
+    "models": [
+      {
+        "name": "qwen3-embedding:4b",
+        "model": "qwen3-embedding:4b",
+        "modified_at": "2026-10-27T14:50:42.048071564+05:30",
+        "size": 2496704041,
+        "digest": "df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "4.0B",
+          "quantization_level": "Q4_K_M"
+        }
+      },
+      {
+        "name": "qwen3-embedding:0.6b",
+        "model": "qwen3-embedding:0.6b",
+        "modified_at": "2026-10-27T14:24:20.517388026+05:30",
+        "size": 639150858,
+        "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "595.78M",
+          "quantization_level": "Q8_0"
+        }
+      },
+      {
+        "name": "phi4:latest",
+        "model": "phi4:latest",
+        "modified_at": "2026-10-26T13:14:28.082471312+05:30",
+        "size": 9053116391,
+        "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "phi3",
+          "families": [
+            "phi3"
+          ],
+          "parameter_size": "14.7B",
+          "quantization_level": "Q4_K_M"
+        }
+      },
+      {
+        "name": "bge-m3:latest",
+        "model": "bge-m3:latest",
+        "modified_at": "2026-10-26T12:58:46.911313263+05:30",
+        "size": 1157672605,
+        "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "bert",
+          "families": [
+            "bert"
+          ],
+          "parameter_size": "566.70M",
+          "quantization_level": "F16"
+        }
+      },
+      {
+        "name": "gpt-oss:120b-cloud",
+        "model": "gpt-oss:120b-cloud",
+        "remote_model": "gpt-oss:120b",
+        "remote_host": "https://ollama.com",
+        "modified_at": "2026-10-25T18:19:27.506138884+05:30",
+        "size": 307,
+        "digest": "81d43346217fbd601a0fbc8bfe2299c1eff96644e46d44d3cfa2e338699e7de6",
+        "details": {
+          "parent_model": "",
+          "format": "",
+          "family": "",
+          "families": null,
+          "parameter_size": "117B",
+          "quantization_level": "MXFP4"
+        }
+      }
+    ]
+  },
+  "free_bytes": 18016751616,
+  "load_average": [
+    37.619140625,
+    37.31494140625,
+    34.396484375
+  ],
+  "routing": "No external reporting tool was used: its default destinations lie outside the sole authorized output folder. Local fallback: current Codex session; local run record only.",
+  "capture": "No external capture; the local run record is preserved inside the authorized output folder.",
+  "source_checks": {
+    "live_table": "data_chunks",
+    "rows": 30533,
+    "full_live_digest": "b5573c66e746ab65a1be98db220b2d9b",
+    "source_hashes_match_preflight": true,
+    "source_hashes": {
+      "cerebrollm.toml": "6b15317da53957fd46a5d14e646d22beea97162f8eab9c37e55c739cdba14598",
+      "cerebrollm/__init__.py": "b3d2195304f36b014480289089c6b89247f83a101a1d8c4122911c00d8b3fa1c",
+      "cerebrollm/__main__.py": "13a1a5b340cdcfc1902b62be90e508c7c71886000d5bf087e7854aadf09fb35e",
+      "cerebrollm/cli.py": "ef74902826a373007fcd8a8d245393a544439644cbae407f39462f762d8b4c56",
+      "cerebrollm/config.py": "5b0165cba0acb2ce3ab6e9a561a1d7489c9901498b372706604b0880b12eccd5",
+      "cerebrollm/corpus.py": "981428beb2834f5d695854b1e1103ca9a35b78cd3dcd1329f133609725300f5b",
+      "cerebrollm/glue.py": "1f962978a2c06f4245f1fd1cc8277291c308d39c23303be3ae4665e0a3fdb7a6",
+      "cerebrollm/indexer.py": "7b37ff6794a47749af3df0427606867ac6a9c0d523c867b06656413a5e225dd6",
+      "cerebrollm/rules.py": "24654d6bf38215ab95a5674889767497b879886a4cbfe79a6a5c76ac9b8d9015",
+      "cerebrollm/search.py": "d476e250a0f366f72a5e28800682094b8e9799a549bc9756296e5fea065f1126",
+      "cerebrollm/status.py": "e996665d16df78cdc1b645b4b9f9eba445dfde1080df89cbdf8ad77bd5000de8",
+      "cerebrollm/store.py": "155534b11bef4de400714b2691fd95381bc032919da35ff45de734af1b532299",
+      "cerebrollm/verify.py": "9a33b5751ca0925906e7aeeebdb1b559bf39b9e700329b1b06b93ddd873f73cb"
+    },
+    "live_table_matches_before": true
+  },
+  "speed_status": "Deferred until owner restart and second session tonight; zero speed runs in attempt 2"
+}

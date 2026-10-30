@@ -1,0 +1,57 @@
+=== 2026-10-29T00:13:29Z r2_wsl.py correctness qwen3:30b
+guard pull qwen3:30b exit 0 qwen3:30b digest ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226 
+qwen3-30b-thinking-off code 1 passed False
+qwen3-30b-thinking-off code 2 passed False
+qwen3-30b-thinking-off code 3 passed False
+qwen3-30b-thinking-off code 4 passed False
+qwen3-30b-thinking-off code 5 passed False
+qwen3-30b-thinking-off code 6 passed False
+qwen3-30b-thinking-off code 7 passed False
+qwen3-30b-thinking-off code 8 passed False
+qwen3-30b-thinking-off code 9 passed False
+qwen3-30b-thinking-off code 10 passed False
+qwen3-30b-thinking-off code 11 passed True
+qwen3-30b-thinking-off code 12 passed False
+qwen3-30b-thinking-off code 13 passed False
+qwen3-30b-thinking-off code 14 passed False
+qwen3-30b-thinking-off code 15 passed False
+qwen3-30b-thinking-off code 16 passed False
+qwen3-30b-thinking-off code 17 passed False
+qwen3-30b-thinking-off code 18 ERROR HTTPStatusError("Server error '500 Internal Server Error' for url 'http://127.0.0.1:11434/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500")
+qwen3-30b-thinking-off code 19 passed False
+qwen3-30b-thinking-off code 20 passed False
+qwen3-30b-thinking-off code 21 passed False
+qwen3-30b-thinking-off code 22 passed False
+qwen3-30b-thinking-off code 23 passed True
+qwen3-30b-thinking-off code 24 passed False
+qwen3-30b-thinking-off code 25 passed False
+qwen3-30b-thinking-off code 26 passed False
+qwen3-30b-thinking-off code 27 passed False
+qwen3-30b-thinking-off code 28 passed False
+qwen3-30b-thinking-off code 29 passed False
+qwen3-30b-thinking-off code 30 passed False
+qwen3-30b-thinking-off code 31 passed False
+qwen3-30b-thinking-off code 32 passed False
+qwen3-30b-thinking-off code 33 passed False
+qwen3-30b-thinking-off code 34 passed False
+qwen3-30b-thinking-off code 35 passed False
+qwen3-30b-thinking-off code 36 passed False
+qwen3-30b-thinking-off code 37 passed False
+qwen3-30b-thinking-off code 38 passed False
+qwen3-30b-thinking-off code 39 passed False
+qwen3-30b-thinking-off code 40 passed False
+qwen3-30b-thinking-off tools 1 True
+qwen3-30b-thinking-off tools 2 True
+qwen3-30b-thinking-off tools 3 True
+qwen3-30b-thinking-off tools 4 True
+qwen3-30b-thinking-off tools 5 True
+qwen3-30b-thinking-off tools 6 True
+qwen3-30b-thinking-off tools 7 True
+qwen3-30b-thinking-off tools 8 True
+qwen3-30b-thinking-off tools 9 True
+qwen3-30b-thinking-off tools 10 True
+qwen3-30b-thinking-off tools 11 True
+qwen3-30b-thinking-off tools 12 True
+guard unload qwen3:30b exit 0 qwen3:30b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+=== exit 0 2026-10-29T01:07:20Z

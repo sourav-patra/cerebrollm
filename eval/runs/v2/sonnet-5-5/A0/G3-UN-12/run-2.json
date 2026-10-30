@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-12",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:53Z",
+ "seconds": 8.56,
+ "prompt_sha256": "e1200184b323a2c8814ad450516cddee19c4dbcd96f07faf83c21a3a790ea8a1",
+ "answer": "I don't know of a `--max-retries` flag on `promptfoo eval`, so I can't give you a default for it. I can't confirm it exists, and I don't want to guess a value.\n\nThese are the related options I do know of:\n- `--retry-errors` re-runs only the test cases that previously ended in an error.\n- `--max-concurrency` sets how many evals run in parallel. I believe its default is 4.\n- `--delay` sets a delay in milliseconds between API calls.\n- `--repeat` runs each test case multiple times.\n- Internally, HTTP requests have their own retry and backoff behavior, which can be tuned through environment variables such as `PROMPTFOO_REQUEST_BACKOFF_MS`. I'm not certain of the exact names or defaults.\n\nTo check, run `promptfoo eval --help` to see the flags in your installed version. I can also run it here if you'd like.",
+ "tokens": {
+  "input": 632,
+  "output": 503,
+  "thinking": 211,
+  "cache_read": 0,
+  "cache_creation": 630
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007554,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4348,
+  "stop_reason": "end_turn",
+  "session_id": "8bf11c2b-bd0f-4dfb-bd82-5d34d1e46061",
+  "total_cost_usd": 0.007554,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 630,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 503,
+   "output_tokens_details": {
+    "thinking_tokens": 211
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 630,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 503,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 630,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 630
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 503,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 630,
+    "webSearchRequests": 0,
+    "costUSD": 0.007554,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 211,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 630,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a `--max-retries` flag on `promptfoo eval`, so I can't give you a default for it. I can't confirm it exists, and I don't want to guess a value.\n\nThese are the related options I do know of:\n- `--retry-errors` re-runs only the test cases that previously ended in an error.\n- `--max-concurrency` sets how many evals run in parallel. I believe its default is 4.\n- `--delay` sets a delay in milliseconds between API calls.\n- `--repeat` runs each test case multiple times.\n- Internally, HTTP requests have their own retry and backoff behavior, which can be tuned through environment variables such as `PROMPTFOO_REQUEST_BACKOFF_MS`. I'm not certain of the exact names or defaults.\n\nTo check, run `promptfoo eval --help` to see the flags in your installed version. I can also run it here if you'd like.",
+  "ttft_ms": 3033,
+  "type": "result",
+  "duration_ms": 4427,
+  "uuid": "309bd6cf-a7b8-479d-a24a-2092062bc8cd",
+  "ttft_stream_ms": 3031,
+  "time_to_request_ms": 98,
+  "first_content_frame_ms": 3032,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

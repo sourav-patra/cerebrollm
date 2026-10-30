@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-03",
+ "run": 1,
+ "started_utc": "2026-10-29T01:46:49Z",
+ "seconds": 7.57,
+ "prompt_file": "runs/prompts/A3/PA-03.txt",
+ "prompt_sha256": "b7e2c1b37564fbdfed3f32ca8a71eb6a75f983aa43bf9a4fbf577048d217fe5f",
+ "answer": "Use `ollama ls` to list the models you have downloaded, and `ollama ps` to see the models currently loaded into memory.\n\nFor `ollama ps`, the docs say: \"Use the `ollama ps` command to see what models are currently loaded into memory.\" [ollama/docs/faq.md]\n\nFor `ollama ls`, the docs list it under the heading \"### List models\" with the command `ollama ls`, next to the \"Download a model\" and \"Remove a model\" sections [ollama/docs/cli.md]. The docs don't explicitly say it shows downloaded models, so that part is my inference from the context.",
+ "tokens": {
+  "input": 3080,
+  "output": 545,
+  "thinking": 350,
+  "cache_read": 0,
+  "cache_creation": 3078
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008883000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2865,
+  "stop_reason": "end_turn",
+  "session_id": "68ce671f-222b-4e5d-ba06-7e43724cf6cf",
+  "total_cost_usd": 0.0008883000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3078,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 545,
+   "output_tokens_details": {
+    "thinking_tokens": 350
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3078,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 545,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3078,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3078
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 545,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3078,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008883000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 350,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3078,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use `ollama ls` to list the models you have downloaded, and `ollama ps` to see the models currently loaded into memory.\n\nFor `ollama ps`, the docs say: \"Use the `ollama ps` command to see what models are currently loaded into memory.\" [ollama/docs/faq.md]\n\nFor `ollama ls`, the docs list it under the heading \"### List models\" with the command `ollama ls`, next to the \"Download a model\" and \"Remove a model\" sections [ollama/docs/cli.md]. The docs don't explicitly say it shows downloaded models, so that part is my inference from the context.",
+  "ttft_ms": 2923,
+  "type": "result",
+  "duration_ms": 3023,
+  "uuid": "0f756f80-48a7-4572-8a70-149ad30b9eb8",
+  "ttft_stream_ms": 2922,
+  "time_to_request_ms": 158,
+  "first_content_frame_ms": 2922,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

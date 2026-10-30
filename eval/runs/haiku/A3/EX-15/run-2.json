@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-15",
+ "run": 2,
+ "started_utc": "2026-10-29T01:42:43Z",
+ "seconds": 8.77,
+ "prompt_file": "runs/prompts/A3/EX-15.txt",
+ "prompt_sha256": "1c0df9e2ed632ab20400fe6a4b191b505c2e01df32792b619627bd781d914746",
+ "answer": "The two attributes are `context_window` (maximum input size to the LLM) and `num_output` (tokens reserved for text generation).\n\n\"Settings.context_window = 4096\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\n\"Settings.num_output = 256\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nThe document says these are usually set automatically from the LLM's attributes, but they can be overridden manually.",
+ "tokens": {
+  "input": 3304,
+  "output": 385,
+  "thinking": 211,
+  "cache_read": 2915,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00029925,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3207,
+  "stop_reason": "end_turn",
+  "session_id": "916450cb-b138-4674-a488-1376cde5163e",
+  "total_cost_usd": 0.00029925,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2915,
+   "output_tokens": 385,
+   "output_tokens_details": {
+    "thinking_tokens": 211
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 385,
+     "cache_read_input_tokens": 2915,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 385,
+    "cacheReadInputTokens": 2915,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00029925,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 211,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The two attributes are `context_window` (maximum input size to the LLM) and `num_output` (tokens reserved for text generation).\n\n\"Settings.context_window = 4096\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\n\"Settings.num_output = 256\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nThe document says these are usually set automatically from the LLM's attributes, but they can be overridden manually.",
+  "ttft_ms": 3326,
+  "type": "result",
+  "duration_ms": 3349,
+  "uuid": "306f35d4-8578-4f00-8df8-de53d53ff6f3",
+  "ttft_stream_ms": 3324,
+  "time_to_request_ms": 140,
+  "first_content_frame_ms": 3324,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,110 @@
+1793251203
+guard pull gemma4:12b exit 0 gemma4:12b digest 6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b 
+gemma4-12b-thinking-on code 1 passed False
+gemma4-12b-thinking-on code 2 passed True
+gemma4-12b-thinking-on code 3 passed True
+gemma4-12b-thinking-on code 4 passed True
+gemma4-12b-thinking-on code 5 passed False
+gemma4-12b-thinking-on code 6 passed True
+gemma4-12b-thinking-on code 7 passed False
+gemma4-12b-thinking-on code 8 passed True
+gemma4-12b-thinking-on code 9 passed True
+gemma4-12b-thinking-on code 10 passed False
+gemma4-12b-thinking-on code 11 passed False
+gemma4-12b-thinking-on code 12 passed False
+gemma4-12b-thinking-on code 13 passed False
+gemma4-12b-thinking-on code 14 passed True
+gemma4-12b-thinking-on code 15 passed True
+gemma4-12b-thinking-on code 16 passed False
+gemma4-12b-thinking-on code 17 passed True
+gemma4-12b-thinking-on code 18 passed True
+gemma4-12b-thinking-on code 19 passed True
+gemma4-12b-thinking-on code 20 passed False
+gemma4-12b-thinking-on code 21 passed True
+gemma4-12b-thinking-on code 22 passed True
+gemma4-12b-thinking-on code 23 passed True
+gemma4-12b-thinking-on code 24 passed True
+gemma4-12b-thinking-on code 25 passed True
+gemma4-12b-thinking-on code 26 passed False
+gemma4-12b-thinking-on code 27 passed False
+gemma4-12b-thinking-on code 28 passed True
+gemma4-12b-thinking-on code 29 passed False
+gemma4-12b-thinking-on code 30 passed True
+gemma4-12b-thinking-on code 31 passed True
+gemma4-12b-thinking-on code 32 passed True
+gemma4-12b-thinking-on code 33 passed False
+gemma4-12b-thinking-on code 34 passed False
+gemma4-12b-thinking-on code 35 passed False
+gemma4-12b-thinking-on code 36 passed True
+gemma4-12b-thinking-on code 37 passed True
+gemma4-12b-thinking-on code 38 passed False
+gemma4-12b-thinking-on code 39 passed True
+gemma4-12b-thinking-on code 40 passed True
+gemma4-12b-thinking-on tools 1 True
+gemma4-12b-thinking-on tools 2 True
+gemma4-12b-thinking-on tools 3 True
+gemma4-12b-thinking-on tools 4 True
+gemma4-12b-thinking-on tools 5 True
+gemma4-12b-thinking-on tools 6 True
+gemma4-12b-thinking-on tools 7 True
+gemma4-12b-thinking-on tools 8 True
+gemma4-12b-thinking-on tools 9 True
+gemma4-12b-thinking-on tools 10 True
+gemma4-12b-thinking-on tools 11 True
+gemma4-12b-thinking-on tools 12 True
+gemma4-12b-thinking-off code 1 passed True
+gemma4-12b-thinking-off code 2 passed True
+gemma4-12b-thinking-off code 3 passed True
+gemma4-12b-thinking-off code 4 passed True
+gemma4-12b-thinking-off code 5 passed True
+gemma4-12b-thinking-off code 6 passed True
+gemma4-12b-thinking-off code 7 passed True
+gemma4-12b-thinking-off code 8 passed True
+gemma4-12b-thinking-off code 9 passed True
+gemma4-12b-thinking-off code 10 passed True
+gemma4-12b-thinking-off code 11 passed True
+gemma4-12b-thinking-off code 12 passed False
+gemma4-12b-thinking-off code 13 passed True
+gemma4-12b-thinking-off code 14 passed True
+gemma4-12b-thinking-off code 15 passed True
+gemma4-12b-thinking-off code 16 passed True
+gemma4-12b-thinking-off code 17 passed True
+gemma4-12b-thinking-off code 18 passed True
+gemma4-12b-thinking-off code 19 passed True
+gemma4-12b-thinking-off code 20 passed True
+gemma4-12b-thinking-off code 21 passed True
+gemma4-12b-thinking-off code 22 passed True
+gemma4-12b-thinking-off code 23 passed True
+gemma4-12b-thinking-off code 24 passed True
+gemma4-12b-thinking-off code 25 passed True
+gemma4-12b-thinking-off code 26 passed True
+gemma4-12b-thinking-off code 27 passed True
+gemma4-12b-thinking-off code 28 passed True
+gemma4-12b-thinking-off code 29 passed True
+gemma4-12b-thinking-off code 30 passed True
+gemma4-12b-thinking-off code 31 passed True
+gemma4-12b-thinking-off code 32 passed True
+gemma4-12b-thinking-off code 33 passed True
+gemma4-12b-thinking-off code 34 passed True
+gemma4-12b-thinking-off code 35 passed True
+gemma4-12b-thinking-off code 36 passed True
+gemma4-12b-thinking-off code 37 passed True
+gemma4-12b-thinking-off code 38 passed True
+gemma4-12b-thinking-off code 39 passed True
+gemma4-12b-thinking-off code 40 passed True
+gemma4-12b-thinking-off tools 1 True
+gemma4-12b-thinking-off tools 2 True
+gemma4-12b-thinking-off tools 3 True
+gemma4-12b-thinking-off tools 4 True
+gemma4-12b-thinking-off tools 5 True
+gemma4-12b-thinking-off tools 6 True
+gemma4-12b-thinking-off tools 7 True
+gemma4-12b-thinking-off tools 8 True
+gemma4-12b-thinking-off tools 9 True
+gemma4-12b-thinking-off tools 10 True
+gemma4-12b-thinking-off tools 11 True
+gemma4-12b-thinking-off tools 12 True
+guard unload gemma4:12b exit 0 gemma4:12b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+exit 0
+1793252230

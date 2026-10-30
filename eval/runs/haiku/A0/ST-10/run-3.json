@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-10",
+ "run": 3,
+ "started_utc": "2026-10-29T01:57:54Z",
+ "seconds": 11.54,
+ "prompt_file": "runs/prompts/A0/ST-10.txt",
+ "prompt_sha256": "cac20d72cd8d3edb728448ab42438a2027e7e298191a84c9aef4a1af7cccd1b4",
+ "answer": "For current LlamaIndex, use the **agent workflow classes** in `llama_index.core.agent.workflow`. The main one is **`FunctionAgent`**, which uses the LLM's native function-calling API. Use **`ReActAgent`** instead if your model doesn't support function calling. Older classes like `OpenAIAgent`, `AgentRunner`, and `from_tools()` are legacy, so avoid them in new code.\n\nInstall the core package and an LLM integration, for example:\n\n```bash\npip install llama-index llama-index-llms-openai\n```\n\nMinimal example:\n\n```python\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.core.tools import FunctionTool\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the product.\"\"\"\n    return a * b\n\nagent = FunctionAgent(\n    tools=[FunctionTool.from_defaults(fn=multiply)],\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant.\",\n)\n\nasync def main():\n    response = await agent.run(\"What is 3 times 7?\")\n    print(str(response))\n\nasyncio.run(main())\n```\n\nNotes:\n- Write clear docstrings and type hints on tool functions, since the LLM uses them to decide when and how to call each tool.\n- For multiple cooperating agents, use `AgentWorkflow`, which is also in the same module.\n- To keep conversation state, pass a memory object such as `ChatMemoryBuffer` to `agent.run(..., memory=memory)`.\n\nI'm not certain of the exact details of the latest release, since LlamaIndex changes quickly and my knowledge may be out of date. Check the current LlamaIndex docs on agents and workflows to confirm class names and signatures before you rely on them.",
+ "tokens": {
+  "input": 654,
+  "output": 1379,
+  "thinking": 742,
+  "cache_read": 0,
+  "cache_creation": 652
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008201,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6983,
+  "stop_reason": "end_turn",
+  "session_id": "c29ae48b-db0a-4868-b931-d6173faaebb0",
+  "total_cost_usd": 0.0008201,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 652,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1379,
+   "output_tokens_details": {
+    "thinking_tokens": 742
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 652,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1379,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 652,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 652
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1379,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 652,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008201,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 742,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 652,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "For current LlamaIndex, use the **agent workflow classes** in `llama_index.core.agent.workflow`. The main one is **`FunctionAgent`**, which uses the LLM's native function-calling API. Use **`ReActAgent`** instead if your model doesn't support function calling. Older classes like `OpenAIAgent`, `AgentRunner`, and `from_tools()` are legacy, so avoid them in new code.\n\nInstall the core package and an LLM integration, for example:\n\n```bash\npip install llama-index llama-index-llms-openai\n```\n\nMinimal example:\n\n```python\nimport asyncio\nfrom llama_index.core.agent.workflow import FunctionAgent\nfrom llama_index.core.tools import FunctionTool\nfrom llama_index.llms.openai import OpenAI\n\ndef multiply(a: float, b: float) -> float:\n    \"\"\"Multiply two numbers and return the product.\"\"\"\n    return a * b\n\nagent = FunctionAgent(\n    tools=[FunctionTool.from_defaults(fn=multiply)],\n    llm=OpenAI(model=\"gpt-4o-mini\"),\n    system_prompt=\"You are a helpful math assistant.\",\n)\n\nasync def main():\n    response = await agent.run(\"What is 3 times 7?\")\n    print(str(response))\n\nasyncio.run(main())\n```\n\nNotes:\n- Write clear docstrings and type hints on tool functions, since the LLM uses them to decide when and how to call each tool.\n- For multiple cooperating agents, use `AgentWorkflow`, which is also in the same module.\n- To keep conversation state, pass a memory object such as `ChatMemoryBuffer` to `agent.run(..., memory=memory)`.\n\nI'm not certain of the exact details of the latest release, since LlamaIndex changes quickly and my knowledge may be out of date. Check the current LlamaIndex docs on agents and workflows to confirm class names and signatures before you rely on them.",
+  "ttft_ms": 4598,
+  "type": "result",
+  "duration_ms": 7154,
+  "uuid": "5a676d01-48e0-4768-99d9-55596cf93a24",
+  "ttft_stream_ms": 2989,
+  "time_to_request_ms": 169,
+  "first_content_frame_ms": 2989,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

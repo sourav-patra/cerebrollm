@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-07",
+ "run": 2,
+ "started_utc": "2026-10-29T16:25:50Z",
+ "seconds": 3.86,
+ "prompt_sha256": "dbdfd668dc693024eaf55238eb69d2a3c8e309f8350f53a3767d1d06f0d0b83e",
+ "answer": "I do not know.",
+ "thinking_chars": 893,
+ "tokens": {
+  "input": 1546,
+  "output": 232
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4104754500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:25:54.6629098Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION? We need to check if the context provides information. Let's search context for OLLAMA_KV_CACHE_RETENTION. The context references OLLAMA_KV_CACHE_TYPE in [1], but not OLLAMA_KV_CACHE_RETENTION. The question: \"What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION?\" The context does not mention OLLAMA_KV_CACHE_RETENTION. So we must say we don't know. According to instructions: \"If you do not know, say you do not know.\" And quote lines that rely on. But we don't have any quote about this variable. So we must say we do not know. And maybe we could mention the lines that mention other env vars. But we need to answer with \"I do not know.\" According to instructions: \"If you do not know, say you do not know.\" So final answer: \"I do not know.\" No quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4104754500,
+  "load_duration": 14855300,
+  "prompt_eval_count": 1546,
+  "prompt_eval_cached_count": 1541,
+  "prompt_eval_duration": 58047000,
+  "eval_count": 232,
+  "eval_duration": 3972053000
+ }
+}

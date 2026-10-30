@@ -1,0 +1,155 @@
+{
+  "id": 11,
+  "request": {
+    "model": "qwen3:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Search the code for the string TODO."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": false,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:30b",
+    "created_at": "2026-10-29T01:07:05.3794027Z",
+    "message": {
+      "role": "assistant",
+      "content": "Okay, the user wants me to search the code for the string \"TODO\". Let me check the available tools. There's a function called search_code that takes a query parameter. The description says it searches for a text string and returns matching lines. So I need to call search_code with the query \"TODO\".\n\nWait, the parameters for search_code require a \"query\" string. The user specified \"TODO\", so the query should be \"TODO\". I should make sure to pass that exactly. Let me confirm the function's required arguments. The tool's schema shows [query] with type string. So the arguments should be {\"query\": \"TODO\"}.\n\nNo other tools are needed here. The other functions are for reading files, writing, running tests, but the user just wants to search for a string. So the correct tool call is search_code with query \"TODO\".\n</think>\n\n",
+      "tool_calls": [
+        {
+          "id": "call_kyoems3k",
+          "function": {
+            "index": 0,
+            "name": "search_code",
+            "arguments": {
+              "query": "TODO"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5237749000,
+    "load_duration": 13955100,
+    "prompt_eval_count": 336,
+    "prompt_eval_cached_count": 326,
+    "prompt_eval_duration": 142145000,
+    "eval_count": 199,
+    "eval_duration": 5073402000
+  },
+  "wall_seconds": 5.218312275999779,
+  "load_average_before": [
+    0.0224609375,
+    0.04931640625,
+    0.001953125
+  ],
+  "load_average_after": [
+    0.0205078125,
+    0.04833984375,
+    0.00146484375
+  ],
+  "expected": {
+    "name": "search_code",
+    "arguments": {
+      "query": "TODO"
+    }
+  },
+  "passed": true
+}

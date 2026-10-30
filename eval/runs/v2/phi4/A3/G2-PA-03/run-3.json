@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 3,
+ "started_utc": "2026-10-29T17:29:32Z",
+ "seconds": 7.34,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "I do not have the specific information on the total and active parameters of the Nemotron 3.5 Bolt model from the provided context. The context mentions the Nemotron 3.5 Super model with 120B total parameters and 12B active per token, but it does not provide details on the Nemotron 3.5 Bolt model's parameters. \n\nTo find this information, you would need to refer to the official documentation or resources from Ollama or the relevant project page. As of the information provided in the context, I do not know the total and active parameters of the Nemotron 3.5 Bolt model.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2036,
+  "output": 130
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7898467800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:29:40.5014098Z",
+  "response": "I do not have the specific information on the total and active parameters of the Nemotron 3.5 Bolt model from the provided context. The context mentions the Nemotron 3.5 Super model with 120B total parameters and 12B active per token, but it does not provide details on the Nemotron 3.5 Bolt model's parameters. \n\nTo find this information, you would need to refer to the official documentation or resources from Ollama or the relevant project page. As of the information provided in the context, I do not know the total and active parameters of the Nemotron 3.5 Bolt model.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7898467800,
+  "load_duration": 14464800,
+  "prompt_eval_count": 2036,
+  "prompt_eval_cached_count": 106,
+  "prompt_eval_duration": 1039963000,
+  "eval_count": 130,
+  "eval_duration": 6685155000
+ }
+}

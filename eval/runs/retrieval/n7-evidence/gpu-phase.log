@@ -1,0 +1,6 @@
+lock taken 2026-10-29T17:08:19+00:00
+smoke1 rc=0
+smoke2 rc=0
+measure rc=1
+suite rc=0
+lock released 2026-10-29T17:11:16+00:00

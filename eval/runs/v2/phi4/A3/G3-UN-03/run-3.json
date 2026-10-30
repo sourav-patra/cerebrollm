@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-03",
+ "run": 3,
+ "started_utc": "2026-10-29T17:31:54Z",
+ "seconds": 7.29,
+ "prompt_sha256": "ea1c0621f7cf79de8af3f668c6d57ad0ac7fab228bd8a07e61bee258a07b2ea9",
+ "answer": "I do not know the maximum number of dimensions that pgvector supports specifically for the \"bitvec\" type. The context provided does mention storage details for the \"bit\" type but does not specify a maximum number of dimensions. Here is the relevant quote:\n\n\"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the [Postgres docs](https://www.postgresql.org/docs/current/datatype-bit.html) for more info.\" [pgvector/README.md (lines 1027-1036)].\n\nIf you need specific information about dimension limitations for the \"bit\" type, it would be best to refer to the Postgres documentation as suggested in the quote.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1629,
+  "output": 142
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7837305000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:32:02.3256168Z",
+  "response": "I do not know the maximum number of dimensions that pgvector supports specifically for the \"bitvec\" type. The context provided does mention storage details for the \"bit\" type but does not specify a maximum number of dimensions. Here is the relevant quote:\n\n\"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the [Postgres docs](https://www.postgresql.org/docs/current/datatype-bit.html) for more info.\" [pgvector/README.md (lines 1027-1036)].\n\nIf you need specific information about dimension limitations for the \"bit\" type, it would be best to refer to the Postgres documentation as suggested in the quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7837305000,
+  "load_duration": 11969600,
+  "prompt_eval_count": 1629,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 770759000,
+  "eval_count": 142,
+  "eval_duration": 6921652000
+ }
+}

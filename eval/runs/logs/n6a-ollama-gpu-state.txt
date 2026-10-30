@@ -1,0 +1,15 @@
+# Ollama GPU state after the 0.40.13 upgrade (captured 2026-10-29T19:07:39Z; user and path text removed)
+## server.log lines containing 'inference compute' (start of the current server, then earlier server logs)
+-- server.log
+time=2026-10-30T00:05:34.279+05:30 level=INFO source=types.go:50 msg="inference compute" id=cpu library=cpu compute="" name=cpu description=cpu libdirs=ollama driver="" pci_id="" type="" total="31.8 GiB" available="12.5 GiB"
+-- server-1.log
+time=2026-10-30T00:04:48.162+05:30 level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=CUDA compute=8.9 name=CUDA0 description="NVIDIA GeForce RTX 4070 SUPER" libdirs=ollama,cuda_v13 driver=13.5 pci_id=0
+-- server-2.log
+time=2026-10-30T00:04:29.722+05:30 level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=Vulkan compute=0.0 name=Vulkan0 description="NVIDIA GeForce RTX 4070 SUPER" libdirs=ollama,vulkan driver=0.0 pci_id=
+## server.log: vram line
+time=2026-10-30T00:05:34.279+05:30 level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="0 B" default_num_ctx=4096
+## ollama --version
+ollama version is 0.40.13
+## ollama ps (nothing loaded at capture; the earlier '100% CPU' reading of loaded models is not saved: UNVERIFIED as a file)
+NAME    ID    SIZE    PROCESSOR    CONTEXT    RUNNER    UNTIL 
+## /api/ps size_vram per model

@@ -1,0 +1,3727 @@
+{
+"[\"./transforms/guardrail-response.mjs\", \"Suppose an application returns a guardrail decision as `allow`, `block`, or `error`. Configure a file-based response transform.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: ./transforms/guardrail-response.mjs"
+},
+"[\"./transforms/guardrail-response.mjs\", \"Use `transformResponse` when the A2A response needs to be reshaped before promptfoo evaluates it.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: ./transforms/guardrail-response.mjs"
+},
+"[\"./transforms/guardrail-response.mjs\", \"transformResponse: file://./transforms/guardrail-response.mjs\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: ./transforms/guardrail-response.mjs"
+},
+"[\"BAAI/bge-small-en-v1.5\", \"Settings.embed_model = HuggingFaceEmbedding(\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: BAAI/bge-small-en-v1.5"
+},
+"[\"BAAI/bge-small-en-v1.5\", \"Settings.embed_model = HuggingFaceEmbedding(model_name=\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: BAAI/bge-small-en-v1.5"
+},
+"[\"BAAI/bge-small-en-v1.5\", \"The easiest way to use a local model is by using `HuggingFaceEmbedding` from `llama-index-embeddings-huggingface`... `Settings.embed_model = HuggingFaceEmbedding(model_name=\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: BAAI/bge-small-en-v1.5"
+},
+"[\"BAAI/bge-small-en-v1.5\", \"llama3.3\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: BAAI/bge-small-en-v1.5"
+},
+"[\"BAAI/bge-small-en-v1.5\", \"model_name=\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: BAAI/bge-small-en-v1.5"
+},
+"[\"BAAI/bge-small-en-v1.5\", \"text-embedding-3-small\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: BAAI/bge-small-en-v1.5"
+},
+"[\"cerebrollm/START.md\", \"Keep at least 8 GB of free disk before any pull.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  cerebrollm/START.md@file sha256 fa915a0334d6"
+},
+"[\"example/guide.md\", \"Set the port to 8080.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: example/guide.md"
+},
+"[\"github.com/run-llama/llama_index/blob/main/docs/src/content/docs/framework/CHANGELOG.md\", \"[1] llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3594-3600)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: github.com/run-llama/llama_index/blob/main/docs/src/content/docs/framework/CHANGELOG.md"
+},
+"[\"github.com/run-llama/llama_index/blob/main/docs/src/content/docs/framework/CHANGELOG.md\", \"[5] llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3554-3560)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: github.com/run-llama/llama_index/blob/main/docs/src/content/docs/framework/CHANGELOG.md"
+},
+"[\"github.com/run-llama/llama_index/blob/main/docs/src/content/docs/framework/CHANGELOG.md\", \"[7] llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 4098-4104)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: github.com/run-llama/llama_index/blob/main/docs/src/content/docs/framework/CHANGELOG.md"
+},
+"[\"llama_index/docs/api_reference/api_reference/callbacks/token_counter.md\", \"- TokenCountingHandler\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/api_reference/api_reference/callbacks/token_counter.md@file sha256 1c6af772711e"
+},
+"[\"llama_index/docs/api_reference/api_reference/callbacks/token_counter.md\", \"members: - TokenCountingHandler\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/api_reference/api_reference/callbacks/token_counter.md@file sha256 1c6af772711e"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"Dropped python3.8 support\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/CHANGELOG.md@file sha256 030d5e16f263"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"Dropped python3.8 support, Unpinned numpy (#16973)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/CHANGELOG.md@file sha256 030d5e16f263"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"Dropped python3.8 support...\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"chore: deprecate python 3.9 once and for all ([#20956](https://github.com/run-llama/llama_index/pull/20956))\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/CHANGELOG.md@file sha256 030d5e16f263"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"chore: deprecate python 3.9 once and for all ([#20956](https://github.com/run-llama/llama_index/pull/20956)).\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"chore: deprecate python 3.9 once and for all\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/CHANGELOG.md@file sha256 030d5e16f263"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"chore: deprecate python 3.9 once and for all.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"deprecate\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/CHANGELOG.md@file sha256 030d5e16f263"
+},
+"[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"line I found refers to Python 3.8, not 3.9:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"> # maximum input size to the LLM\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"A few specific arguments/values are used during querying, to ensure that the input prompts to the LLM have enough room to generate a certain number of tokens. Typically these are automatically configured using attributes from the LLM, but they can be overridden in special cases.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"Set the parameter `Settings.context_window` to configure the maximum input size for the model. The `max_input_size` parameter has been deprecated in favor of `context_window`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"Settings.context_window = 4096\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"The `max_input_size` parameter for the prompt helper has since been replaced with `context_window`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file sha256 152056d8b45b"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"\\\"A few specific arguments/values are used during querying, to ensure that the input prompts to the LLM have enough room to generate a certain number of tokens. Typically these are automatically configured using attributes from the LLM, but they can be overridden in special cases.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"\\\"The `max_input_size` parameter for the prompt helper has since been replaced with `context_window`.\\\" [\\\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\\\" (lines 34-43)].\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"```python\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"from llama_index.core import Settings\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md\", \"has since been replaced with `context_window`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/changes/deprecated_terms.md@file sha256 152056d8b45b"
+},
+"[\"llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md\", \"../../examples/data/paul_graham\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md\", \"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md\", \"To use the Vector Store Index, pass it the list of Documents you created during the loading stage:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/community/integrations/vector_stores.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file sha256 fc415ca68d3e"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"Building Workflows\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"Stateful workflows\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"[**Workflows**](/python/framework/llamaagents/workflows): A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls. Workflows can be used to implement any agentic application.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file sha256 fc415ca68d3e"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file sha256 fc415ca68d3e"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"build your own agentic workflows from scratch\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"build your own agentic workflows from scratch,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/concepts.md\", \"can maintain state,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/concepts.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/faq.md\", \", request_timeout=60.0,\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/faq.md@file sha256 8031a506848c"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/faq.md\", \"I want to use a different LLM\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/faq.md@file sha256 8031a506848c"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"**NOTE:** `llama-index-core` comes pre-bundled with NLTK and tiktoken files to avoid downloads and network calls at runtime.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"- `llama-index-core`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"- `llama-index-embeddings-openai`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"- `llama-index-llms-openai`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"- `llama-index-readers-file`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"In order to use this, you must have an OPENAI_API_KEY set up as an environment variable.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"In order to use this, you must have an `OPENAI_API_KEY` set up as an environment variable.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/installation.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"Quickstart Installation from Pip\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"This is a starter bundle of packages, containing - `llama-index-core` - `llama-index-llms-openai` - `llama-index-embeddings-openai` - `llama-index-readers-file`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/installation.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"This is a starter bundle of packages, containing\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"You must have an `OPENAI_API_KEY` set up as an environment variable.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/installation.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"\\\"This is a starter bundle of packages, containing - `llama-index-core` - `llama-index-llms-openai` - `llama-index-embeddings-openai` - `llama-index-readers-file`.\\\" [llama_index/docs/src/content/docs/framework/getting_started/installation.md (lines 13-28)]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/installation.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"`llama-index-core`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"`llama-index-embeddings-openai`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"`llama-index-llms-openai`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/installation.md\", \"`llama-index-readers-file`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/installation.md@file sha256 9aecc62d4701"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example.md\", \"Make sure your API key is available to your code by setting it as an environment variable.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/starter_example.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example.md\", \"Make sure your API key is available to your code by setting it as an environment variable:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/starter_example.md@file sha256 b6d71aa9ad12"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example.md\", \"Set your OpenAI API key\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/starter_example.md@file sha256 b6d71aa9ad12"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example.md\", \"[3] llama_index/docs/src/content/docs/framework/getting_started/starter_example.md\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/starter_example.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example.md\", \"llama_index/docs/src/content/docs/framework/getting_started/starter_example.md (lines 20-39)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/starter_example.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md\", \"We will use [`BAAI/bge-base-en-v1.5`](https://huggingface.co/BAAI/bge-base-en-v1.5) as our embedding model and `llama3.1 8B` served through `Ollama`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md@file sha256 1e154af6911c"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md\", \"[4] llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md\", \"llama3.1 8B served through `Ollama`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"Creating an agent\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"To create an agent in LlamaIndex, it takes only a few lines of code.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"To create an agent in LlamaIndex, it takes only a few lines of code:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file sha256 056cf55a9a4d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"Useful for multiplying two numbers.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file sha256 056cf55a9a4d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"Using existing tools\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"You are a helpful assistant that can multiply t [...]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"You are a helpful assistant that can multiply two numbers.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file sha256 056cf55a9a4d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"agent = FunctionAgent(\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file sha256 056cf55a9a4d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"from llama_index.core.agent.workflow import FunctionAgent\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file sha256 056cf55a9a4d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md\", \"gpt-4o-mini\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md@file sha256 056cf55a9a4d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/tools.md\", \"the tool selected (and the arguments written for that tool) rely strongly on the **tool name** and **description** of the tools purpose and arguments\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/tools.md@file sha256 1a492472decc"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/tools.md\", \"the tool selected (and the arguments written for that tool) rely strongly on the **tool name** and **description**\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/tools.md@file sha256 1a492472decc"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md\", \"[7] llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md\", \"../../examples/data/paul_graham\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md@file sha256 a5ace436ec3d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md\", \"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md@file sha256 a5ace436ec3d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md\", \"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md@file sha256 a5ace436ec3d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md\", \"from llama_index.core import VectorStoreIndex\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md@file sha256 a5ace436ec3d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md\", \"from llama_index.core import VectorStoreIndex, SimpleDirectoryReader\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/indexing/vector_store_index.md@file sha256 a5ace436ec3d"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/index.md\", \"Standalone Usage\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/index.md@file sha256 8c32d3317f92"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/index.md\", \"node_parser = SentenceSplitter(chunk_size=1024, chunk_overlap=20)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/index.md@file sha256 8c32d3317f92"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"```python\\\\nfrom llama_index.core.node_parser import SentenceSplitter\\\\n\\\\nsplitter = SentenceSplitter(\\\\n    chunk_size=1024,\\\\n    chunk_overlap=20,\\\\n)\\\\n```\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"chunk_overlap=20,\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file sha256 e8f51b9726bb"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"chunk_size=1024,\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file sha256 e8f51b9726bb"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"# changing the global default\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"BAAI/bge-base-en\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"Embedding models will be specified in the `Settings` object.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"HuggingFaceBgeEmbeddings(model_name=\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"Local Embedding Models\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"Settings.embed_model = HuggingFaceBgeEmbeddings(model_name=\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"Settings.embed_model = OpenAIEmbedding()\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"Starter Example with Local Models,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"The easiest way to use a local model is by using [`HuggingFaceEmbedding`](https://docs.llamaindex.ai/en/stable/api_reference/embeddings/huggingface/#llama_index.embeddings.huggingface.HuggingFaceEmbedding) from `llama-index-embeddings-huggingface`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"The example below shows how to set a current OpenAI model explicitly.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"The most common usage for an embedding model will be setting it in the global `Settings` object, and then using it to construct an index and query.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"The most common usage for an embedding model will be setting it in the global `Settings` object.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"Usage Pattern\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"We recommend doing this for new projects\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"We recommend doing this for new projects.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"[1] llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md (lines 64-89) > Getting Started\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"`OpenAIEmbedding`'s default of `text-embedding-ada-002`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"changing the global default `Settings.embed_model = OpenAIEmbedding()`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"embedding models will be specified in the `Settings` object\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"llama3.3\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"sentence-transformers/all-MiniLM-L6-v2\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"text-embedding-3-sma\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"text-embedding-3-small\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md\", \"text-embedding-ada-002\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md@file sha256 25b1346ec63f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms.md\", \"By default, LlamaIndex uses a global tokenizer for all token counting. This defaults to `cl100k` from tiktoken\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/llms.md@file sha256 4c062d1ad5a8"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms.md\", \"By default, LlamaIndex uses a global tokenizer for all token counting.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/llms.md@file sha256 4c062d1ad5a8"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms.md\", \"If you change the LLM, you may need to update this tokenizer to ensure accurate token counts, chunking, and prompting.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/llms.md@file sha256 4c062d1ad5a8"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms.md\", \"you may need to update this tokenizer to ensure accurate token counts\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/llms.md@file sha256 4c062d1ad5a8"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md\", \"`HuggingFaceEmbedding`... which runs any [Sentence Transformers](https://sbert.net/) model locally\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md\", \"`llama-index-llms-ollama`: Ollama (llama3, mistral, qwen, etc.).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md@file sha256 8a6808b68461"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md\", \"llama-index-llms-ollama\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md@file sha256 8a6808b68461"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md\", \"runs any [Sentence Transformers] model locally\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/index.md\", \"- [TokenCountingHandler](/python/examples/observability/tokencountinghandler) -> Flexible token counting for prompt, completion, and embedding token usage.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/index.md@file sha256 dfa8474db123"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/index.md\", \"[TokenCountingHandler](/python/examples/observability/tokencountinghandler) -> Flexible token counting for prompt, completion, and embedding token usage.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/index.md@file sha256 dfa8474db123"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md\", \"Going forward, token counting as moved into a callback.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md@file sha256 5128ef3f2c2e"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md\", \"Previously, token counting was kept track of on the `llm_predictor` and `embed_model` objects directly, and optionally printed to the console. This implementation used a static tokenizer for token counting (gpt-2), and the `last_token_usage` and `total_token_usage` attributes were not always kept track of properly.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md@file sha256 5128ef3f2c2e"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md\", \"The existing token counting implementation has been **deprecated**.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md@file sha256 5128ef3f2c2e"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md\", \"Token counting as moved into a callback. Using the `TokenCountingHandler` callback, you now have more options for how tokens are counted, the lifetime of the token counts, and even creating separate token counters for different indexes.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md\", \"has been **deprecated**.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md@file sha256 5128ef3f2c2e"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"# load a single index\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"<persist_dir>\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Here is an example of a Composable Graph: ... load index: `index = load_index_from_storage(storage_context)`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Here is an example of a Composable Graph: `graph.root_index.storage_context.persist(persist_dir=\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Here is an example of loading an index with the default graph store:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Here's an example of saving/loading an index with the default graph store: `index = load_index_from_storage(storage_context)`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Later, load the index: `index = load_index_from_storage(storage_context)`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Later, load the index: `index = load_index_from_storage(storage_context, ...)`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Persisting & Loading Data\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Persisting to disk\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"The simplest way to store your indexed data is to use the built-in `.persist()` method of every Index, which writes all the data to disk at the location specified.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"This will persist data to disk, under the specified `persist_dir` (or `./storage` by default).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"Usage would look something like the following to build a new index / reload an existing one: `index = load_index_from_storage(storage_context, ...)`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"We can then load specific indices from the `StorageContext` through some convenience functions below.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"You can then avoid re-loading and re-indexing your data by loading the persisted index like this:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"[1] llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"llama_index\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"load_index_from_storage\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"persist()\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md\", \"storage_context.persist(persist_dir=\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/storing/save_load.md@file sha256 f36dbae5c9de"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md\", \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md@file sha256 775ecea51d80"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md\", \"Configuring the global settings means you are change the default for EVERY module in LlamaIndex.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md@file sha256 775ecea51d80"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md\", \"from llama_index.llms.ollama import Ollama\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md@file sha256 775ecea51d80"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md\", \"if you aren't using OpenAI, an example config might look like:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/service_context_migration.md@file sha256 775ecea51d80"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"# maximum input size to the LLM\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"A few specific arguments/values are used during querying, to ensure that the input prompts to the LLM have enough room to generate a certain number of tokens.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Configuring Settings\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"If you just want to change the chunk size or chunk overlap without changing the default splitter, this is also possible:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Local configurations (transformations, LLMs, embedding models) can be passed directly into the interfaces that make use of them.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Node Parser / Text Splitter\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"SentenceSplitter\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Settings.callback_manager = CallbackManager([token_counter])\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Settings.chunk_size = 512\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Settings.context_window = 4096\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Settings.num_output = 256\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Standalone Usage\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"The `Settings` is a simple singleton object that lives throughout your application. Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"The `Settings` is a simple singleton object that lives throughout your application.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Typically these are automatically configured using attributes from the LLM, but they can be overridden in special cases.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"You can set a global callback manager, which can be used to observe and consume events generated throughout the llama-index code\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"You can set a global callback manager, which can be used to observe and consume events generated throughout the llama-index code.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"[1] llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md (lines 98-120) > Prompt Helper Arguments\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"[4] llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md (lines 1-11) > Configuring Settings\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"\\\"A few specific arguments/values are used during querying, to ensure that the input prompts to the LLM have enough room to generate a certain number of tokens.\\\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md (lines 98-120)]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"\\\"Typically these are automatically configured using attributes from the LLM, but they can be overridden in special cases.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"a simple singleton object that lives throughout your application. Whenever a particular component is not provided, the `Settings` object is used to provide it as a global default.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"can be used to observe and consume events generated throughout the llama-index code\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"is a simple singleton object that lives throughout your application\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"maximum input size to the LLM\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"maximum input size to the LLM,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"number of tokens reserved for text generation.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"simple singleton object that lives throughout your application\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file sha256 0980a735dc4f"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"text-davinci-003\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md\", \"your-api-key\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/optimizing/basic_strategies/basic_strategies.md\", \"Changing either of these parameters will change the embeddings that are calculated. A smaller chunk size means the embeddings are more precise, while a larger chunk size means that the embeddings may be more general, but can miss fine-grained details.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/optimizing/basic_strategies/basic_strategies.md@file sha256 52e6bcb2b152"
+},
+"[\"llama_index/docs/src/content/docs/framework/optimizing/basic_strategies/basic_strategies.md\", \"Chunk Sizes\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/optimizing/basic_strategies/basic_strategies.md@file sha256 52e6bcb2b152"
+},
+"[\"llama_index/docs/src/content/docs/framework/optimizing/basic_strategies/basic_strategies.md\", \"If you just want to change the chunk size or chunk overlap without changing the default splitter, this is also possible:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/optimizing/basic_strategies/basic_strategies.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"Building Workflows\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"Building an agent\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"Useful for multiplying two numbers.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"You are a helpful assistant that can multiply two numbers.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"given a set of tools, which can be anything from arbitrary functions up to full LlamaIndex query engines\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"gpt-4o-mini\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"pre-built agentic workflows like `FunctionAgent`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"section\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"you can either [build your own agentic workflows from scratch](/python/llamaagents/workflows), covered in the\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/agent/index.md\", \"you can use our pre-built agentic workflows like `FunctionAgent`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/agent/index.md@file sha256 ee2e201a312d"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"Currently supported callbacks are as follows: - [TokenCountingHandler](/python/examples/observability/tokencountinghandler) -> Flexible token counting for prompt, completion, and embedding token usage.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"Modules,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"This allows you to estimate your costs during 1) index construction, and 2) index querying, before any respective LLM calls are made.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file sha256 6e6e5ff1c490"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"Tokens are counted using the `TokenCountingHandler` callback\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file sha256 6e6e5ff1c490"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"Tokens are counted using the `TokenCountingHandler` callback.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file sha256 6e6e5ff1c490"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"Usage Pattern\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file sha256 6e6e5ff1c490"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"Usage Pattern,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md\", \"gpt-3.5-turbo\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md@file sha256 6e6e5ff1c490"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \").encode)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"Estimating LLM and Embedding Token Counts,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"In order to measure LLM and Embedding token counts, you'll need to\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"Settings.embed_model = embed_mode...\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"Settings.llm = llm\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"Token Counting - Migration Guide\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"Usage Pattern\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"callback_manager = CallbackManager([token_counter])\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"embed_model = MockEmbedding(embed_dim=1536)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"from llama_index.core.callbacks import CallbackManager, TokenCountingHandler\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"gpt-3.5-turbo\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"llm = MockLLM(max_tokens=256)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"token_counter = TokenCountingHandler(\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file sha256 4de5bee2ed27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md\", \"token_counter = TokenCountingHandler(tokenizer=tiktoken.encoding_for_model(\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"**[Stateful workflows](/python/llamaagents/workflows/managing_state)**: workflows can maintain state, which is important for building more complex applications.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/index.md@file sha256 e6bc1ff148f6"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"Workflows can be traced and debugged using various integrations like Arize Phoenix, OpenTelemetry, and more.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"Workflows can maintain state, which is important for building more complex applications.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"[**Workflows**](/python/framework/llamaagents/workflows): A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls. Workflows can be used to implement any agentic application.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"\\\"[**Workflows**](/python/framework/llamaagents/workflows): A Workflow in LlamaIndex is a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls. Workflows can be used to implement any agentic application.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"build your own agentic workflows from scratch\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/index.md\", \"workflows can maintain state, which is important for building more complex applications.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/index.md@file sha256 e6bc1ff148f6"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"A fully-local stack looks like:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/privacy.md@file sha256 52e559f712d2"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"HuggingFaceEmbedding, which runs any Sentence Transformers model on your own hardware\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/privacy.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"LLM: a local runtime such as llama.cpp, vLLM, Hugging Face Transformers, or Ollama.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/privacy.md@file sha256 52e559f712d2"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"[...] the default in-memory `SimpleVectorStore`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/privacy.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"`HuggingFaceEmbedding`, which runs any [Sentence Transformers](https://sbert.net/) model on your own hardware.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/privacy.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"a cross-encoder that runs locally, no API key required\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/privacy.md@file sha256 52e559f712d2"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"llm = Ollama(model=\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/privacy.md@file sha256 52e559f712d2"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/privacy.md\", \"runs any Sentence Transformers model on your own hardware\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/privacy.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md\", \"TEMPORARY - save to disk\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md@file sha256 ad5eab0e0d95"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md\", \"llama_index\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md@file sha256 ad5eab0e0d95"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"../../examples/data/paul_graham\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"Loading data into the index\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"The simplest way to use a Vector Store is to load a set of documents and build an index from them using `from_documents`:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"To use the Vector Store Index, pass it the list of Documents you created during the loading stage:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file sha256 c80f3f12a7c0"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"Using Vector Store Index\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file sha256 c80f3f12a7c0"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"VectorStoreIndex.from_documents(documents)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file sha256 c80f3f12a7c0"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"build an index over a list of Node objects directly\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file sha256 c80f3f12a7c0"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"from llama_index.core import VectorStoreIndex\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file sha256 c80f3f12a7c0"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md\", \"index = VectorStoreIndex.from_documents(documents)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/indexing/index.md@file sha256 c80f3f12a7c0"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md\", \"<persist_dir>\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md@file sha256 7c752bd0dc27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md\", \"[2] llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md\", \"from llama_index.core import StorageContext, load_index_from_storage\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md@file sha256 7c752bd0dc27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md\", \"index = load_index_from_storage(storage_context)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/rag/storing/index.md@file sha256 7c752bd0dc27"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \", request_timeout=60.0, ...)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \", request_timeout=60.0, context_window=8000,)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"Using a local LLM\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file sha256 b8de2021b7e9"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"[1] llama_index/docs/src/content/docs/framework/understanding/using_llms.md (lines 153-168) > Using a local LLM.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"from llama_index.llms.ollama import Ollama\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file sha256 b8de2021b7e9"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"if you have [Ollama] installed and running\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"if you have [Ollama](https://github.com/ollama/ollama) installed and running\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file sha256 b8de2021b7e9"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"llama3.3\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file sha256 b8de2021b7e9"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"llm = Ollama(model=\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file"
+},
+"[\"llama_index/docs/src/content/docs/framework/understanding/using_llms.md\", \"request_timeout=60.0,\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/understanding/using_llms.md@file sha256 b8de2021b7e9"
+},
+"[\"llama_index/docs/src/content/docs/framework/use_cases/agents.md\", \"Building a ReAct agent workflow\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/use_cases/agents.md@file sha256 4896cc649817"
+},
+"[\"llama_index/docs/src/content/docs/framework/use_cases/agents.md\", \"LlamaIndex Workflows allow you to build very custom, agentic workflows through a core event-driven orchestration foundation.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  llama_index/docs/src/content/docs/framework/use_cases/agents.md@file sha256 4896cc649817"
+},
+"[\"llonce_models/llms.md\", \"a callable function, that takes a string, and returns a list.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: llonce_models/llms.md"
+},
+"[\"llonce_models/llms.md\", \"gpt-3.5-turbo\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: llonce_models/llms.md"
+},
+"[\"ollama.com/docs/faq.md\", \"ollama/docs/faq.md (lines 183-187)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: ollama.com/docs/faq.md"
+},
+"[\"ollama/docs/api.md\", \"Examples\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"GET /api/ps\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"Generate Embeddings\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"Here is an article about llamas...\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"List Running Models\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"List Running Models,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/api.md@file"
+},
+"[\"ollama/docs/api.md\", \"List models that are currently loaded into memory.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"[5] ollama/docs/api.md (lines 1763-1804) > API > List Running Models\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/api.md@file"
+},
+"[\"ollama/docs/api.md\", \"[List Running Models](#list-running-models)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/api.md\", \"` instead of `\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/api.md@file"
+},
+"[\"ollama/docs/api.md\", \"curl http://localhost:11434/api/embeddings -d '{\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Content-Type: application/json\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"First sentence\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Generate a batch of embeddings\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Generate embeddings directly from the command line.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/capabilities/embeddings.md@file"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Generate embeddings directly from the command line:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Generate embeddings\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Hello world\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Pass an array of strings to `input`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Second sentence\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"The quick brown fox jumps over the lazy dog.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"Third sentence\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"`: Specifies the model to use for generating embeddings. For example, you can use `\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/capabilities/embeddings.md@file"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"`: The name of the embedding model you want to use, such as `\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/capabilities/embeddings.md@file"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"`: The text string for which you want to generate embeddings, such as `\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/capabilities/embeddings.md@file"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"curl -X POST http://localhost:11434/api/embed \\\\\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/capabilities/embeddings.md\", \"embeddinggemma\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/capabilities/embeddings.md@file sha256 3b10ccca6020"
+},
+"[\"ollama/docs/cli.md\", \"### Download a model\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+},
+"[\"ollama/docs/cli.md\", \"### List models\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+},
+"[\"ollama/docs/cli.md\", \"Download a model\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+},
+"[\"ollama/docs/cli.md\", \"List models\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+},
+"[\"ollama/docs/cli.md\", \"Remove a model\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+},
+"[\"ollama/docs/cli.md\", \"ollama ls\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+},
+"[\"ollama/docs/context-length.md\", \"- 24-48 GiB VRAM: 32k context\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"24-48 GiB VRAM: 32k context\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"< 24 GiB VRAM\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"< 24 GiB VRAM: 4k context\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"OLLAMA_CONTEXT_LENGTH=64000 ollama serve\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"Ollama defaults to the following context lengths based on VRAM: - 24-48 GiB VRAM: 32k context.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/context-length.md@file"
+},
+"[\"ollama/docs/context-length.md\", \"Ollama defaults to the following context lengths based on VRAM: - < 24 GiB VRAM: 4k context\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"Ollama defaults to the following context lengths based on VRAM: - < 24 GiB VRAM: 4k context.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/context-length.md@file"
+},
+"[\"ollama/docs/context-length.md\", \"Ollama defaults to the following context lengths based on VRAM: 24-48 GiB VRAM: 32k context.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/context-length.md@file"
+},
+"[\"ollama/docs/context-length.md\", \"Ollama defaults to the following context lengths based on VRAM:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"Tasks which require large context like web search, agents, and coding tools should be set to at least 64000 tokens.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+},
+"[\"ollama/docs/context-length.md\", \"[...](#cli) If editing the context length for Ollama is not possible, the context length can also be updated when serving Ollama. `OLLAMA_CONTEXT_LENGTH=64000 ollama serve`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/context-length.md@file"
+},
+"[\"ollama/docs/context-length.md\", \"less than 24 GiB VRAM,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/context-length.md@file"
+},
+"[\"ollama/docs/docker.md\", \"Configure Docker to use Nvidia driver\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"Configure Docker to use Nvidia driver.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/docker.md@file"
+},
+"[\"ollama/docs/docker.md\", \"Install the [NVIDIA Container Toolkit]\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"Install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"Nvidia GPU\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"Start the container\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"sudo nvidia-ctk runtime configure --runtime=docker\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/docker.md\", \"sudo systemctl restart docker\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/docker.md@file sha256 394dd57c4dc3"
+},
+"[\"ollama/docs/faq.md\", \"### List models\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+},
+"[\"ollama/docs/faq.md\", \"127.0.0.1 port 11434 by default.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"By default models are kept in memory for 5 minutes before being unloaded.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"By default, Ollama uses a context window size of 4096 tokens\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"By default, Ollama uses a context window size of 4096 tokens. This can be overridden with the `OLLAMA_CONTEXT_LENGTH` environment variable. For example, to set the default context window to 8K, use:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"By default, Ollama uses a context window size of 4096 tokens. This can be overridden with the `OLLAMA_CONTEXT_LENGTH` environment variable.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"By default, Ollama uses a context window size of 4096 tokens.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"Change the bind address with the `OLLAMA_HOST` environment variable.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"GPU acceleration is available in Docker on Linux or Windows (with WSL2)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+},
+"[\"ollama/docs/faq.md\", \"How can I expose Ollama on my network?\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"How can I tell if my model was loaded onto the GPU?\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"If a different directory needs to be used, set the environment variable `OLLAMA_MODELS` to the chosen directory.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"If there is insufficient available memory to load a new model request while one or more models are already loaded, all new requests will be queued until the new model can be loaded.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"OLLAMA_CONTEXT_LENGTH=8192 ollama serve\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"Ollama binds 127.0.0.1 port 11434 by default. Change the bind address with the `OLLAMA_HOST` environment variable.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"Ollama binds 127.0.0.1 port 11434 by default.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"The Ollama Docker container can be configured with GPU acceleration in Linux or Windows (with WSL2).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"This can be overridden with the `OLLAMA_CONTEXT_LENGTH` environment variable. For example, to set the default context window to 8K, use:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"Use the `ollama ps` command to see what models are currently loaded into memory.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"Where are models stored?\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"\\\"This can be overridden with the `OLLAMA_CONTEXT_LENGTH` environment variable. For example, to set the default context window to 8K, use:\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+},
+"[\"ollama/docs/faq.md\", \"by default\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+},
+"[\"ollama/docs/faq.md\", \"ollama/docs/faq.md (lines 15-49)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+},
+"[\"ollama/docs/gpu.md\", \"If you have multiple NVIDIA GPUs in your system and want to limit Ollama to use a subset, you can set `CUDA_VISIBLE_DEVICES` to a comma separated list of GPUs.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/gpu.md@file sha256 c0e73ade4fa9"
+},
+"[\"ollama/docs/gpu.md\", \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/gpu.md@file sha256 c0e73ade4fa9"
+},
+"[\"ollama/docs/gpu.md\", \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/gpu.md@file sha256 c0e73ade4fa9"
+},
+"[\"ollama/docs/gpu.md\", \"[https://developer.nvidia.com/cuda-gpus](https://developer.nvidia.com/cuda-gpus)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/gpu.md@file sha256 c0e73ade4fa9"
+},
+"[\"ollama/docs/gpu.md\", \"you can set `CUDA_VISIBLE_DEVICES` to a comma separated list of GPUs\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/gpu.md@file sha256 c0e73ade4fa9"
+},
+"[\"ollama/docs/integrations/vscode.md\", \"Run `ollama list` and confirm that models are available.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/integrations/vscode.md@file sha256 0a89fdc1f980"
+},
+"[\"ollama/docs/integrations/vscode.md\", \"[2] ollama/docs/integrations/vscode.md (lines 49-58) > Troubleshooting\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/integrations/vscode.md@file"
+},
+"[\"ollama/docs/modelfile.md\", \"# sets the temperature to 1 [higher is more creative, lower is more coherent]\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/modelfile.md@file sha256 ffc9a0e50ceb"
+},
+"[\"ollama/docs/modelfile.md\", \"PARAMETER temperature 1\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/modelfile.md@file sha256 ffc9a0e50ceb"
+},
+"[\"ollama/docs/modelfile.md\", \"[5] ollama/docs/modelfile.md (lines 151-151) > Instructions > PARAMETER > Valid Parameters and Values\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/modelfile.md@file"
+},
+"[\"ollama/docs/modelfile.md\", \"[6] ollama/docs/modelfile.md (lines 38-38) > Format\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/modelfile.md@file"
+},
+"[\"ollama/docs/modelfile.md\", \"sets the temperature to 1 [higher is more creative, lower is more coherent]\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/modelfile.md@file sha256 ffc9a0e50ceb"
+},
+"[\"ollama/docs/troubleshooting.md\", \"If you are using a container, is the container runtime working? Try `docker run --gpus all ubuntu nvidia-smi` - if this doesn't work, Ollama won't be able to see your NVIDIA GPU.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/troubleshooting.md@file sha256 d87bf025cb0a"
+},
+"[\"ollama/docs/troubleshooting.md\", \"Try `docker run --gpus all ubuntu nvidia-smi` - if this doesn't work, Ollama won't be able to see your NVIDIA GPU.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/troubleshooting.md@file sha256 d87bf025cb0a"
+},
+"[\"ollama/docs/troubleshooting.md\", \"docker run --gpus all ubuntu nvidia-smi\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/troubleshooting.md@file sha256 d87bf025cb0a"
+},
+"[\"ollama/docs/windows.md\", \"Changing Model Location\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"Edit or create a new variable for your user account for `OLLAMA_MODELS` where you want the models stored\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"Filesystem Requirements\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"If Ollama is already running, Quit the tray application and relaunch it from the Start menu, or a new terminal started after you saved the environment variables.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"Ollama on Windows stores files in a few different locations. You can view them in the explorer window by hitting `<Ctrl>+R` and type in: - `explorer %LOCALAPPDATA%\\\\Ollama` contains logs, and downloaded updates - _app.log_ contains most recent logs from the GUI application - _server.log_ contains the most recent server logs - _upgrade.log_ contains log output for upgrades.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/windows.md@file"
+},
+"[\"ollama/docs/windows.md\", \"Ollama on Windows stores files in a few different locations. You can view them in the explorer window by hitting `<Ctrl>+R` and type in: `explorer %LOCALAPPDATA%\\\\Ollama` contains logs, and downloaded updates - _server.log_ contains the most recent server logs.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/windows.md@file"
+},
+"[\"ollama/docs/windows.md\", \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/windows.md@file"
+},
+"[\"ollama/docs/windows.md\", \"Ollama uses unicode characters for progress indication, which may render as unknown squares in some older terminal fonts in Windows 10. If you see this, try changing your terminal font settings. NVIDIA 551.61 or newer Drivers if you have an NVIDIA card.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/windows.md@file"
+},
+"[\"ollama/docs/windows.md\", \"System Requirements\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"The Ollama install does not require Administrator, and installs in your home directory by default. You'll need at least 4GB of space for the binary install.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"To change where Ollama stores the downloaded models instead of using your home directory, set the environment variable `OLLAMA_MODELS` in your user account.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"You'll need at least 4GB of space for the binary install.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"[...] set the environment variable `OLLAMA_MODELS` in your user account.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/windows.md@file"
+},
+"[\"ollama/docs/windows.md\", \"_server.log_ contains the most recent server logs\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"`explorer %LOCALAPPDATA%\\\\Ollama` contains logs, and downloaded updates\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"can be tens to hundreds of GB in size\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"server.log contains the most recent server logs.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in ollama/docs/windows.md@file"
+},
+"[\"ollama/docs/windows.md\", \"set the environment variable `OLLAMA_MODELS` in your user account.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/docs/windows.md\", \"you'll need additional space for storing the Large Language models, which can be tens to hundreds of GB in size.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  ollama/docs/windows.md@file sha256 2dd781e58983"
+},
+"[\"ollama/site/docs/providers/ollama.md\", \"providers\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: ollama/site/docs/providers/ollama.md"
+},
+"[\"pgvector/CHANGELOG.md\", \"0.6.0 (2024-01-29)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"Added Docker tags for each supported version of Postgres\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"Changed storage for vector from `extended` to `external`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"Changed storage for vector from `extended` to `external`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+},
+"[\"pgvector/CHANGELOG.md\", \"Compile and install the extension (supports Postgres 13+).\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+},
+"[\"pgvector/CHANGELOG.md\", \"Dropped support for Postgres 11\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"Dropped support for Postgres 11.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+},
+"[\"pgvector/CHANGELOG.md\", \"Increased max dimensions for vector from 1024 to 16000\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"Other options are...\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+},
+"[\"pgvector/CHANGELOG.md\", \"extended\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"external\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+},
+"[\"pgvector/CHANGELOG.md\", \"external.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+},
+"[\"pgvector/CHANGELOG.md\", \"pgvector/CHANGELOG.md (lines 102-116) > 0.6.0 (2024-01-29)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+},
+"[\"pgvector/README.md\", \"**A non-partitioned table has a limit of 32 TB by default in Postgres.**\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"- `pg17-bookworm`, `0.8.7-pg17-bookworm`, `pg17`, `0.8.7-pg17`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"0.8.7-pg17\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"0.8.7-pg17-bookworm\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"1 by default\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"<#> | negative inner product\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"A non-partitioned table has a limit of 32 TB by default in Postgres. A partitioned table can have thousands of partitions of that size.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"A non-partitioned table has a limit of 32 TB by default in Postgres.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"ALTER EXTENSION vector UPDATE.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"ALTER EXTENSION vector UPDATE;\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"CREATE INDEX ON items USING hnsw ((embedding::halfvec(3)) halfvec_l2_ops);\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Compile and install the extension (supports Postgres 13+)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Do indexes need to fit into memory? No, but like other index types, you\\u2019ll likely see better performance if they do. You can get the size of an index with:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Do indexes need to fit into memory?\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Each vector takes \\\\( 4 \\\\times \\\\text{dimensions} + 8 \\\\) bytes of storage.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Each vector takes `4 * dimensions + 8` bytes of storage\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Each vector takes `4 * dimensions + 8` bytes of storage. Each element is a single-precision floating-point number (like the `real` type in Postgres), and all elements must be finite (no `NaN`, `Infinity` or `-Infinity`). Vectors can have up to 16,000 dimensions.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Each vector takes `4 * dimensions + 8` bytes of storage.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Enabling [iterative index scans](#iterative-index-scans) can help address this.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Frequently Asked Questions\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Halfvec Type\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Index Options\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Index vectors at half precision for smaller indexes\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Is replication supported?\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Iterative Index Scans\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Iterative index scans can use strict or relaxed ordering.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"No, but like other index types, you'll likely see better performance if they do. You can get the size of an index with:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Note: Use `halfvec_l2_ops` for `halfvec` and `sparsevec_l2_ops` for `sparsevec` (and similar with the other distance functions).\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Note: `<#>` returns the negative inner product since Postgres only supports `ASC` order index scans on operators\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Note: `<#>` returns the negative inner product since Postgres only supports `ASC` order index scans on operators.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Query Options\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Quote from the context: `ef_construction` - the size of the dynamic candidate list for constructing the graph (64 by default)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Reference\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Results are limited by the size of the dynamic candidate list (`hnsw.ef_search`), which is 40 by default.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"SELECT extversion FROM pg_extension WHERE extname = 'vector';\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"SELECT pg_size_pretty(pg_relation_size('index_name'));\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"SET hnsw.iterative_scan = relaxed_order;\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"SET hnsw.iterative_scan = strict_order;\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"SET ivfflat.iterative_scan = relaxed_order;\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Specify HNSW parameters - `ef_construction` - the size of the dynamic candidate list for constructing the graph (64 by default)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Specify HNSW parameters: `ef_construction` - the size of the dynamic candidate list for constructing the graph (64 by default)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Specify the max number of tuples to visit (20,000 by default)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Specify the number of probes (1 by default)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Specify the size of the dynamic candidate list for search (40 by default)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Specify the size of the dynamic candidate list for search (40 by default).\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Supported tags are: `pg17-bookworm`, `0.8.7-pg17-bookworm`, `pg17`, `0.8.7-pg17`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Supports Postgres 13+\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"Then in each database you want to upgrade, run:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Upgrading\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Vector Operators\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Vector Type\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"Vectors can have up to 16,000 dimensions.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"What if I want to index vectors with more than 2,000 dimensions? You can use [half-precision vectors](#half-precision-vectors) or [half-precision indexing](#half-precision-indexing) to index up to 4,000 dimensions or [binary quantization](#binary-quantization) to index up to 64,000 dimensions.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"What if I want to index vectors with more than 2,000 dimensions?\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"With approximate indexes, queries with filtering can return less results since filtering is applied *after* the index is scanned. Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"You can get the size of an index with:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"You can only create indexes on rows with the same number of dimensions ...\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"You can only create indexes on rows with the same number of dimensions,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"You can use `vector` as the type (instead of `vector(n)`).\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"You can use half-precision vectors or half-precision indexing to index up to 4,000 dimensions or binary quantization to index up to 64,000 dimensions.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"You can use half-precision vectors or half-precision indexing to index up to 4,000 dimensions\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"[Install](#installation) the latest version (use the same method as the original installation). Then in each database you want to upgrade, run:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"\\\"Each vector takes \\\\( 4 \\\\times \\\\text{dimensions} + 8 \\\\) bytes of storage.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"\\\"Each vector takes `4 * dimensions + 8` bytes of storage. Each element is a single-precision floating-point number (like the `real` type in Postgres), and all elements must be finite (no `NaN`, `Infinity` or `-Infinity`). Vectors can have up to 16,000 dimensions.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"\\\"With approximate indexes, queries with filtering can return less results since filtering is applied *after* the index is scanned. Starting with 0.8.0, you can enable iterative index scans, which will automatically scan more of the index until enough results are found (or it reaches `hnsw.max_scan_tuples` or `ivfflat.max_probes`).\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"`<#>` returns the negative inner product since Postgres only supports `ASC` order index scans on operators\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"`ef_construction` - the size of the dynamic candidate list for constructing the graph (64 by default)\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"`pg17-bookworm`, `0.8.7-pg17-bookworm`, `pg17`, `0.8.7-pg17`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"docker pull pgvector/pgvector:pg18-trixie\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"ef_construction - the size of the dynamic candidate list for constructing the graph (64 by default)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"in each database you want to upgrade\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"iterative index scans.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"negative inner product\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"pg14-bookworm,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pg14-trixie\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"pg17-bookworm\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"pgvector > HNSW > Query Options\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pgvector/README.md (lines 18-34) > pgvector > Installation > Linux and Mac\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pgvector/README.md (lines 257-268) > pgvector > HNSW > Index Options\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pgvector/README.md (lines 257-268)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pgvector/README.md (lines 270-287) > pgvector > HNSW > Query Options\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pgvector/README.md (lines 518-538) > pgvector > Iterative Index Scans > Iterative Scan Options > HNSW\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"pgvector/README.md (lines 518-538) > pgvector > Iterative Index Scans > Iterative Scan Options > HNSW.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"pgvector/README.md\", \"queries with filtering can return less results since filtering is applied *after* the index is scanned.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"to index up to 4,000 dimensions\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+},
+"[\"pgvector/README.md\", \"vectors with more than 2,000 dimensions,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in pgvector/README.md@file"
+},
+"[\"promptfoo/site/docs/configuration/expected-outputs/guardrails.md\", \"Configure a file-based response transform:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/guardrails.md@file sha256 5e43f26dd150"
+},
+"[\"promptfoo/site/docs/configuration/expected-outputs/guardrails.md\", \"Suppose an application returns a guardrail decision as `allow`, `block`, or `error`. Configure a file-based response transform:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/guardrails.md@file sha256 5e43f26dd150"
+},
+"[\"promptfoo/site/docs/configuration/expected-outputs/guardrails.md\", \"Suppose an application returns a guardrail decision as `allow`, `block`, or `error`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/guardrails.md@file sha256 5e43f26dd150"
+},
+"[\"promptfoo/site/docs/configuration/expected-outputs/guardrails.md\", \"transformResponse: file://./transforms/guardrail-response.mjs\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/guardrails.md@file sha256 5e43f26dd150"
+},
+"[\"promptfoo/site/docs/configuration/expected-outputs/guardrails.md\", \"transformResponse: |\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/guardrails.md@file"
+},
+"[\"promptfoo/site/docs/configuration/guide.md\", \"Use `options.transform` to change the provider output before assertions run. The transform receives the output (for example, a string or object) and a context with `vars`, `prompt`, and optional provider `metadata`. Return the value to pass to assertions, either directly or as a promise.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/guide.md@file sha256 4e34f7e83152"
+},
+"[\"promptfoo/site/docs/configuration/guide.md\", \"Use `options.transform` to change the provider output before assertions run.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/guide.md@file sha256 4e34f7e83152"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"A `Prompt` is what it sounds like. When specifying a prompt object in a static config, it should look like this:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"Deprecated: use label\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"How to display it in outputs and web UI\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"Label: How to display it in outputs and web UI\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"Run test cases in a zero-based `start:end` range. The end index is exclusive.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"\\\"A `Prompt` is what it sounds like. When specifying a prompt object in a static config, it should look like this:\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"display?: string; // Deprecated: use label\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"filterSampleSeed: 42 # Repeat the same random sample\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"filterSampleSeed: 42 # Repeat the same random sample.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"is described as\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"label: string; // How to display it in outputs and web UI\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/configuration/reference.md\", \"label?: string; // How to display it in outputs and web UI\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+},
+"[\"promptfoo/site/docs/contributing.md\", \"Python provider\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/contributing.md@file"
+},
+"[\"promptfoo/site/docs/getting-started.md\", \"Promptfoo supports 60+ providers including OpenAI, Anthropic, Google, and many others:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/getting-started.md@file sha256 77f908459663"
+},
+"[\"promptfoo/site/docs/getting-started.md\", \"supports 60+ providers including OpenAI, Anthropic, Google, and many others:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/getting-started.md@file sha256 77f908459663"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"In your terminal, you launched: `promptfoo view`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"Quick Start: Try it today,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"Start a browser UI for visualization of results.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"Step 7: Explore Results in the Web Viewer,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"Step 8: Explore Results in the Web Viewer,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"This started a local server [...] and prompted: `Open URL in browser? (y/N):`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"This started a local server... and prompted: `Open URL in browser? (y/N):`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"`promptfoo view` - Start a browser UI for visualization of results.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-crewai.md\", \"`promptfoo view`,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-crewai.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-langgraph.md\", \"In your terminal, you launched: `npx promptfoo view`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-langgraph.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-langgraph.md\", \"In your terminal, you launched: `npx promptfoo view`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-langgraph.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-langgraph.md\", \"View the results in an interactive web interface: `npx promptfoo view`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-langgraph.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"> [\\\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\\\" (lines 128-144)]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-llm-temperature.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"Choosing the right temperature for your LLM > Evaluating randomness\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-llm-temperature.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"The `eval` command has a parameter, `repeat`, which runs each test multiple times: `promptfoo eval --repeat 3`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-llm-temperature.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"The `eval` command has a parameter, `repeat`, which runs each test multiple times:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-llm-temperature.md@file sha256 fbe35f5d9f10"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"The above command runs the LLM three times for each test case\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-llm-temperature.md@file sha256 fbe35f5d9f10"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"The above command runs the LLM three times for each test case, helping you get a more complete sample of how it performs at a given temperature.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-llm-temperature.md@file sha256 fbe35f5d9f10"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"The above command runs the LLM three times for each test case, helping you get a more complete sample of how it performs at a given temperature.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-llm-temperature.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"\\\"The `eval` command has a parameter, `repeat`, which runs each test multiple times:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-llm-temperature.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"`repeat`, which runs each test multiple times:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-llm-temperature.md@file sha256 fbe35f5d9f10"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"promptfoo eval --repeat 3\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-llm-temperature.md@file sha256 fbe35f5d9f10"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"promptfoo/site/docs/guides/evaluate-llm-temperature.md (lines 128-144)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-llm-temperature.md@file"
+},
+"[\"promptfoo/site/docs/guides/evaluate-llm-temperature.md\", \"runs the LLM three times for each test case\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-llm-temperature.md@file sha256 fbe35f5d9f10"
+},
+"[\"promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md\", \"--filter-metadata app=libreoffice_calc --max-concurrency 1 \\\\\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md@file sha256 2fa27f837b11"
+},
+"[\"promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md\", \"--max-concurrency 1\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md@file sha256 2fa27f837b11"
+},
+"[\"promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md\", \"promptfoo eval -c promptfooconfig.yaml --no-cache --filter-metadata app=libreoffice_calc --max-concurrency 1\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md@file"
+},
+"[\"promptfoo/site/docs/guides/factuality-eval.md\", \"View the results in an interactive web interface: `npx promptfoo view`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/factuality-eval.md@file"
+},
+"[\"promptfoo/site/docs/guides/factuality-eval.md\", \"`npx promptfoo view` - View the results in an interactive web interface.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/guides/factuality-eval.md@file"
+},
+"[\"promptfoo/site/docs/integrations/aws-codecommit.md\", \"${PASS_RATE} < 95\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/aws-codecommit.md@file sha256 fe59055ad936"
+},
+"[\"promptfoo/site/docs/integrations/aws-codecommit.md\", \"If you want a custom pass-rate threshold instead of `--fail-on-error`, write the JSON output and check the stats in a second command:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/aws-codecommit.md@file sha256 fe59055ad936"
+},
+"[\"promptfoo/site/docs/integrations/aws-codecommit.md\", \"Quality gate failed: ${PASS_RATE}% < 95%\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/aws-codecommit.md@file sha256 fe59055ad936"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"# Fail on any test failures\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"$PASS_RATE < 95\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"--fail-on-error\"]": {
+"exit": 2,
+"ok": false,
+"stdout": ""
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"Fail on any test failures\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"Quality gate failed: Pass rate ${PASS_RATE}% < 95%\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"if (( $(echo\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"npx promptfoo@latest eval --fail-on-error\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/ci-cd.md\", \"| bc -l) )); then\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/ci-cd.md@file sha256 1189b32eca6a"
+},
+"[\"promptfoo/site/docs/integrations/gitlab-ci.md\", \"Evaluation had failures\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/gitlab-ci.md@file sha256 4cb7f7f871e4"
+},
+"[\"promptfoo/site/docs/integrations/gitlab-ci.md\", \"\\\\n        exit 1\\\\n      fi\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/integrations/gitlab-ci.md@file"
+},
+"[\"promptfoo/site/docs/integrations/gitlab-ci.md\", \"exit 1 fi\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/gitlab-ci.md@file sha256 4cb7f7f871e4"
+},
+"[\"promptfoo/site/docs/integrations/gitlab-ci.md\", \"if jq -e '.results.stats.failures > 0' output.json; then echo\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/gitlab-ci.md@file sha256 4cb7f7f871e4"
+},
+"[\"promptfoo/site/docs/integrations/gitlab-ci.md\", \"if jq -e '.results.stats.failures > 0' output.json; then\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/integrations/gitlab-ci.md@file sha256 4cb7f7f871e4"
+},
+"[\"promptfoo/site/docs/integrations/gitlab-ci.md\", \"if jq -e '.results.stats.failures > 0' output.json; then\\\\n        echo \\\\\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/integrations/gitlab-ci.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/index.md\", \"pip install mlflow\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/index.md@file sha256 33091e5e95c8"
+},
+"[\"promptfoo/site/docs/model-audit/index.md\", \"promptfoo scan-model models:/MyModel/1\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/index.md@file sha256 33091e5e95c8"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"- `JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"- `JFROG_URL`: The base URL of your JFrog Artifactory instance.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"- `MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"Scan models from MLflow or JFrog Artifactory.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[1] promptfoo/site/docs/model-audit/usage.md (lines 152-162)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[2] promptfoo/site/docs/model-audit/usage.md (lines 64-75)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[6] promptfoo/site/docs/model-audit/usage.md (lines 52-62)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[Authentication and Configuration](#authentication-and-configuration)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[MLflow Registry](#mlflow-model-registry)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[Model Registries (MLflow, JFrog)](#model-registries-mlflow-jfrog)\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"[promptfoo/site/docs/model-audit/usage.md] You also need\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/model-audit/usage.md@file"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"`JFROG_API_TOKEN` or `JFROG_ACCESS_TOKEN`: Your API or access token.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"`JFROG_URL`: The base URL of your JFrog Artifactory instance.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"`MLFLOW_TRACKING_URI`: The URI of your MLflow tracking server.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"`MLFLOW_TRACKING_USERNAME` / `MLFLOW_TRACKING_PASSWORD`: Credentials for MLflow authentication.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"https://your-domain.jfrog.io\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"https://your-domain.jfrog.io/artifactory/models/model.pkl\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"https://your-mlflow-server.com\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"promptfoo scan-model models:/MyModel/Latest\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"promptfoo scan-model models:/model-name/version\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"your-api-token\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"your-password\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/model-audit/usage.md\", \"your-username\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/model-audit/usage.md@file sha256 8a8553e2dd04"
+},
+"[\"promptfoo/site/docs/providers/a2a.md\", \"Use `transformResponse` when the A2A response needs to be reshaped before promptfoo evaluates it.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/a2a.md@file sha256 d9bcfc64f919"
+},
+"[\"promptfoo/site/docs/providers/a2a.md\", \"matching the HTTP provider convention\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/a2a.md@file sha256 d9bcfc64f919"
+},
+"[\"promptfoo/site/docs/providers/a2a.md\", \"transformResponse\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/a2a.md@file sha256 d9bcfc64f919"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"1. Set `isReasoningModel: true`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"DeepSeek Models\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"For `azure:chat`, Azure OpenAI reasoning models like `o1`, `o3`, `o3-mini`, and `o4-mini` operate differently from standard models with specific requirements: [...] They accept a `reasoning_effort` parameter ('low', 'medium', 'high').\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/azure.md@file"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"Set `isReasoningModel: true`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"`isReasoningModel: true` is missing\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"`isReasoningModel: true` is missing.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"because `isReasoningModel: true` is missing\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"commonly means Promptfoo is not treating it as a reasoning model because `isReasoningModel: true` is missing\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"ignores `isReasoningModel`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"ignores `isReasoningModel`, `max_completion_tokens`, and `reasoning_effort`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"promptfoo auto-detects `MAI-Thinking-1` and `MAI-DS-R1` as reasoning models by name\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"providers\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/azure.md\", \"this commonly means Promptfoo is not treating it as a reasoning model because `isReasoningModel: true` is missing\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/azure.md@file sha256 409415a242c9"
+},
+"[\"promptfoo/site/docs/providers/jfrog.md\", \"This is different from **JFrog Artifactory**, which is supported in [ModelAudit]\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/jfrog.md@file sha256 7183d9a89e23"
+},
+"[\"promptfoo/site/docs/providers/jfrog.md\", \"This is different from **JFrog Artifactory**, which is supported in [ModelAudit](/docs/model-audit/usage#jfrog-artifactory) for scanning models stored in artifact repositories.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/jfrog.md@file sha256 7183d9a89e23"
+},
+"[\"promptfoo/site/docs/providers/moonshot.md\", \"Kimi pins `temperature` (`1.0` with thinking on), `top_p`, `n`, and the penalties to fixed values\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/moonshot.md@file sha256 3106caf893e3"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"By default, promptfoo evaluates all providers concurrently for each prompt. However, you can run evals serially using the `-j 1` option\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"By default, promptfoo evaluates all providers concurrently for each prompt. However, you can run evals serially using the `-j 1` option.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"Evaluating models serially\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"How long Ollama keeps the model loaded after the request\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"However, you can run evals serially using the `-j 1` option\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"If running Ollama directly, set `OLLAMA_HOST=0.0.0.0:11434` before starting the server.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"See Ollama's [parameter reference](https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#parameter) for what each one does\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"This serializes the eval's **target** calls: one provider and prompt at a time.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"You can run evals serially using the `-j 1` option:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"[2] promptfoo/site/docs/providers/ollama.md (lines 53-67) > Ollama\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"[promptfoo/site/docs/providers/ollama.md (lines 402-444)].\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"\\\"By default, promptfoo evaluates all providers concurrently for each prompt. However, you can run evals serially using the `-j 1` option.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"`num_predict: 1024`, `temperature: 0.7`, `top_p: 0.9`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"`showThinking` is a promptfoo-side rendering option and i[s]...\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/providers/ollama.md@file"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"a config using that option does not execute in strict test-case order even at `-j 1`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"for what each one does:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"keep_alive: '5m'\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"num_predict: 1024\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"recent Ollama versions emit `thinking` for these models **by default**,\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"serializes the eval's **target** calls: one provider and prompt at a time\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"serializes the eval's **target** calls: one provider and prompt at a time.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"so a config using that option does not execute in strict test-case order even at `-j 1`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"temperature: 0.7\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"the evaluator runs test cases marked `options.runSerially` as a separate partition ahead of the rest, so a config using that option does not execute in strict test-case order even at `-j 1`\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"the evaluator runs test cases marked `options.runSerially` as a separate partition ahead of the rest, so a config using that option does not execute in strict test-case order even at `-j 1`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"top_p: 0.9\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"up to `PROMPTFOO_ASSERTIONS_MAX_CONCURRENCY` grader calls (3 by default) can still overlap within a single test case\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"up to `PROMPTFOO_ASSERTIONS_MAX_CONCURRENCY` grader calls (3 by default) can still overlap within a single test case.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/ollama.md\", \"you can run evals serially using the `-j 1` option\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/ollama.md@file sha256 12b0328e44a0"
+},
+"[\"promptfoo/site/docs/providers/openai.md\", \"Reasoning tokens count toward the output limit and billing, even though they are not the visible answer. Leave enough room for both reasoning and the final output.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+},
+"[\"promptfoo/site/docs/providers/python.md\", \"Integrating proprietary or local models\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/python.md@file sha256 7d8b4f252e61"
+},
+"[\"promptfoo/site/docs/providers/python.md\", \"The Python provider enables you to create custom evaluation logic using Python scripts. This allows you to integrate Promptfoo with any Python-based model, API, or custom logic.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/python.md@file sha256 7d8b4f252e61"
+},
+"[\"promptfoo/site/docs/providers/python.md\", \"The Python provider enables you to create custom evaluation logic using Python scripts.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/providers/python.md@file sha256 7d8b4f252e61"
+},
+"[\"promptfoo/site/docs/red-team/configuration.md\", \"For example, to send a customized HTTP request, use a [HTTP Provider](/docs/providers/http/):\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/configuration.md@file sha256 795f46bbb72a"
+},
+"[\"promptfoo/site/docs/red-team/configuration.md\", \"For example, to send a customized HTTP request, use a [HTTP Provider].\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/configuration.md@file"
+},
+"[\"promptfoo/site/docs/red-team/configuration.md\", \"You can reference it like this:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/configuration.md@file"
+},
+"[\"promptfoo/site/docs/red-team/configuration.md\", \"transformResponse: 'json.output'\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/configuration.md@file sha256 795f46bbb72a"
+},
+"[\"promptfoo/site/docs/red-team/quickstart.md\", \"For llamafile, vLLM, and Text Generation WebUI, keep the `openai:chat:` prefix, enter the server's model name, and set `apiBaseUrl` including `/v1`.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/quickstart.md@file sha256 cd79ffc0ea92"
+},
+"[\"promptfoo/site/docs/red-team/strategies/index.md\", \"67 static jailbreak templates.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/index.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/index.md\", \"Static strategies [...] include `jailbreak-templates` wraps the payload in known jailbreak templates like DAN or Skeleton Key.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/index.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/index.md\", \"Static strategies are low-resource usage, but they are also easy to detect and often patched in the foundation models. For example, the `jailbreak-templates` wraps the payload in known jailbreak templates like DAN or Skeleton Key.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/index.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/index.md\", \"jailbreak-templates\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/index.md@file sha256 e3de15568639"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"**67 static jailbreak templates** to your test cases.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"Jailbreak Templates Strategy\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"Jailbreak Templates Strategy.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"Jailbreak Templates.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"Test LLM resistance to known jailbreak techniques using a curated library of static templates from 2022-2023 era attacks.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"Test LLM resistance to known jailbreak techniques using a curated library of static templates\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"The Jailbreak Templates strategy tests LLM resistance to known jailbreak techniques using a curated library of static templates from 2022-2023 era attacks.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"The old name `prompt-injection` still works but is deprecated.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"This strategy applies **67 static jailbreak templates** to your test cases.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"This strategy was previously named `prompt-injection`. The name was changed to better reflect what it does: apply static jailbreak templates. The old name `prompt-injection` still works but is deprecated.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"This strategy was previously named `prompt-injection`. The name was changed to better reflect what it does: apply static jailbreak templates.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"applies **67 static jailbreak templates** to your test cases.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file sha256 ed6e4c8d2a5a"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"applies a library of static jailbreak templates\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/jailbreak-templates.md\", \"jailbreak-templates.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/jailbreak-templates.md@file"
+},
+"[\"promptfoo/site/docs/red-team/strategies/prompt-injection.md\", \"The name 'prompt-injection' was misleading because this strategy only applies static jailbreak templates [...]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/red-team/strategies/prompt-injection.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"By default the `eval` command will read the `promptfooconfig.yaml` configuration file in your current directory. But, if you're looking to override certain parameters you can supply optional arguments:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"By default the `eval` command will read the `promptfooconfig.yaml` configuration file in your current directory.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Cannot be used together with `--resume` or `--no-write` flags.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Command line > `promptfoo eval`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Command line > `promptfoo redteam run`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Do not write results to promptfoo directory\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Do not write results to promptfoo directory.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Evaluation had failures\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Filtering options,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"If the retry fails, your original ERROR results are preserved. Old ERROR results are only removed after the retry succeeds.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"If the retry fails, your original ERROR results are preserved.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"In your terminal, you launched: `npx promptfoo view`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Maximum number of concurrent API calls\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Maximum number of concurrent evals\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Numeric seed used to make `--filter-sample` select the same tests on repeated runs\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Numeric seed used to make `--filter-sample` select the same tests on repeated runs.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Old ERROR results are only removed after the retry succeeds.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"On resume, promptfoo reuses the original run's effective runtime options...\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Only run a random sample of N tests\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Only run tests whose zero-based index is in the range. The end index is exclusive.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Option                               | Description                                                                                                                                                                           |\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Option: `--filter-sample-seed <number>` Description: Numeric seed used to make `--filter-sample` select the same tests on repeated runs.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Resume a paused/incomplete eval. If `evalId` is omitted, resumes latest\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Retry all ERROR results from a specific eval. This command finds test cases that resulted in errors (e.g., from network issues, rate limits, or API failures) and re-runs only those test cases. The results are updated in place in the original eval.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Retry all ERROR results from a specific eval. This command finds test cases that resulted in errors (e.g., from network issues, rate limits, or API failures) and re-runs only those test cases.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Retry all ERROR results from a specific eval.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Start a browser UI for visualization of results.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"The end index is exclusive.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"The first test has index `0`, the `start` index is included, and the `end` index is excluded\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"The first test has index `0`, the `start` index is included, and the `end` index is excluded:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"The results are updated in place in the original eval.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"The retry errors feature automatically finds ERROR results from the latest eval and re-runs only those test cases. This is useful when evals fail due to temporary network issues, rate limits, or API errors.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"The retry errors feature automatically finds ERROR results from the latest eval and re-runs only those test cases.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Unlike `--filter-errors-only` which creates a new eval, `promptfoo retry` updates the original eval in place. Use `retry` when you want to fix errors in an existing eval without creating duplicates.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Use `--resume [evalId]` to resume a paused/incomplete eval. If `evalId` is omitted, resumes latest.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"Use `retry` when you want to fix errors in an existing eval without creating duplicates.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"[...] Maximum number of concurrent API calls\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"[1] promptfoo/site/docs/usage/command-line.md (lines 129-129) > Command line > `promptfoo eval`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"[1] promptfoo/site/docs/usage/command-line.md (lines 203-211) > Command line > `promptfoo optimize` > Pause and Resume\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"[5] promptfoo/site/docs/usage/command-line.md (lines 130-130) > Command line > `promptfoo eval`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"\\\"By default the `eval` command will read the `promptfooconfig.yaml` configuration file in your current directory.\\\" [1] promptfoo/site/docs/usage/command-line.md (lines 100-102) > Command line > `promptfoo eval`.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"\\\"By default the `eval` command will read the `promptfooconfig.yaml` configuration file in your current directory.\\\"\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"\\\"Do not write results to promptfoo directory\\\" [promptfoo/site/docs/usage/command-line.md (lines 129-129)].\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"\\\"Numeric seed used to make `--filter-sample` select the same tests on repeated runs.\\\" [1]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`--no-write`                         | Do not write results to promptfoo directory                                                                                                                                           |\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`--resume [evalId]` - Resume a paused/incomplete eval. If `evalId` is omitted, resumes latest.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`-j, --max-concurrency <number>` ... Maximum number of concurrent API calls\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo eval --resume            # resumes the latest eval`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo eval --resume <evalId>   # resumes a specific eval`\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo eval --resume <evalId>` resumes a specific eval\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo eval --resume` # resumes the latest eval\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo eval --resume` resumes the latest eval\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo view` - Start a browser UI for visualization of results.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"concurrent evals\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"finds test cases that resulted in errors (e.g., from network issues, rate limits, or API failures) and re-runs only those test cases. The results are updated in place in the original eval.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"promptfoo eval --filter-range 0:100   # tests 0 through 99\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"promptfoo eval --filter-range 0:100 # tests 0 through 99\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"promptfoo eval --resume            # resumes the latest eval\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"promptfoo eval --resume <evalId>   # resumes a specific eval\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"resumes the latest eval\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"retries all ERROR results from the latest eval\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"tests 0 through 99\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+},
+"[\"promptfoo/site/docs/usage/command-line.md\", \"your original ERROR results are preserved,\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"// Transform the output before assertions\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/node-package.md@file sha256 3e8f6732b6c0"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"Reference > Test Case\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/node-package.md@file"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"Set the `options.transform` to modify the provider output before assertions run.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/node-package.md@file"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"Transform functions\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/node-package.md@file sha256 3e8f6732b6c0"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"Transform the output before assertions\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/node-package.md@file sha256 3e8f6732b6c0"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"Using the node package > Usage > Transform functions\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "MISSING  quote not found in promptfoo/site/docs/usage/node-package.md@file"
+},
+"[\"promptfoo/site/docs/usage/node-package.md\", \"When using the node package, you can pass JavaScript functions directly as `transform`, `transformVars`, or `contextTransform` values \\u2014 instead of string expressions or `file://` references.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/node-package.md@file sha256 3e8f6732b6c0"
+},
+"[\"promptfoo/site/docs/usage/prompt-optimization.md\", \"Optimization targets exactly one resolved prompt/provider pair.\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/prompt-optimization.md@file sha256 0aadf587be60"
+},
+"[\"promptfoo/site/docs/usage/web-ui.md\", \"After [running an eval](/docs/getting-started), view results in your browser:\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/web-ui.md@file sha256 61c7ebc44ed1"
+},
+"[\"promptfoo/site/docs/usage/web-ui.md\", \"npx promptfoo@latest view\"]": {
+"exit": 0,
+"ok": true,
+"stdout": "OK  promptfoo/site/docs/usage/web-ui.md@file sha256 61c7ebc44ed1"
+},
+"[\"www.postgresql.org/docs/current/queries-with.html\", \"With relaxed ordering, you can use a [materialized CTE](https://www.postgresql.org/docs/current/queries-with.html#QUERIES-WITH-CTE-MATERIALIZATI[...]\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: www.postgresql.org/docs/current/queries-with.html"
+},
+"[\"www.postgresql.org/docs/current/queries-with.html\", \"iterative index scans.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: www.postgresql.org/docs/current/queries-with.html"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"Scan from JFrog Artifactory\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"Scan from MLflow\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"[promptfoo/site/docs/model-audit/usage.md]. Set the base URL and token as environment variables.\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"at its\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"https://your-domain.jfrog.io/artifactory/models/model.pkl\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"https://your-mlflow-server.com\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"promptfoo scan-model\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/models/model.pkl\", \"your-username\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/models/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/repo/model.pkl\", \"[promptfoo/site/docs/model-audit/usage.md]. Set the base URL and token first:\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/repo/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/repo/model.pkl\", \"https://your-domain.jfrog.io/artifactory/repo/model.pkl\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/repo/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/repo/model.pkl\", \"promptfoo scan-model\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/repo/model.pkl"
+},
+"[\"your-domain.jfrog.io/artifactory/repo/model.pkl\", \"your-api-token\"]": {
+"exit": 1,
+"ok": false,
+"stdout": "GONE  source not found: your-domain.jfrog.io/artifactory/repo/model.pkl"
+}
+}

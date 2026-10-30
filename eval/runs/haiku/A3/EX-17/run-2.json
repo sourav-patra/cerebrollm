@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-17",
+ "run": 2,
+ "started_utc": "2026-10-29T01:43:28Z",
+ "seconds": 10.18,
+ "prompt_file": "runs/prompts/A3/EX-17.txt",
+ "prompt_sha256": "9d17afe56a2dd54b70f48b900a0ccdd1ec453d7645c2e0263c4e1c8c4d6fccb8",
+ "answer": "I don't know of an environment variable that sets a pass-rate threshold. The excerpts I have don't show one.\n\n- The environment variables table in `command-line.md` is truncated in every excerpt, so I can't check its contents.\n- The quality-gate examples hardcode the 95% threshold in shell logic rather than reading it from an environment variable. For example: \"if (( $(echo \"$PASS_RATE < 95\" | bc -l) )); then\" [promptfoo/site/docs/integrations/ci-cd.md]\n- The only built-in failure option shown is a flag, not a threshold: \"Fail on any test failures\" [promptfoo/site/docs/integrations/ci-cd.md], which corresponds to `npx promptfoo@latest eval --fail-on-error`.\n\nThe full environment variables table or the `promptfoo eval` reference in the docs may list such a variable, but I can't confirm that from these excerpts.",
+ "tokens": {
+  "input": 2853,
+  "output": 749,
+  "thinking": 447,
+  "cache_read": 2467,
+  "cache_creation": 384
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00047617000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4864,
+  "stop_reason": "end_turn",
+  "session_id": "62e0a083-15bf-4595-a240-77c3f3430bae",
+  "total_cost_usd": 0.00047617000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 384,
+   "cache_read_input_tokens": 2467,
+   "output_tokens": 749,
+   "output_tokens_details": {
+    "thinking_tokens": 447
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 384,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 749,
+     "cache_read_input_tokens": 2467,
+     "cache_creation_input_tokens": 384,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 384
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 749,
+    "cacheReadInputTokens": 2467,
+    "cacheCreationInputTokens": 384,
+    "webSearchRequests": 0,
+    "costUSD": 0.00047617000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 447,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 384,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an environment variable that sets a pass-rate threshold. The excerpts I have don't show one.\n\n- The environment variables table in `command-line.md` is truncated in every excerpt, so I can't check its contents.\n- The quality-gate examples hardcode the 95% threshold in shell logic rather than reading it from an environment variable. For example: \"if (( $(echo \"$PASS_RATE < 95\" | bc -l) )); then\" [promptfoo/site/docs/integrations/ci-cd.md]\n- The only built-in failure option shown is a flag, not a threshold: \"Fail on any test failures\" [promptfoo/site/docs/integrations/ci-cd.md], which corresponds to `npx promptfoo@latest eval --fail-on-error`.\n\nThe full environment variables table or the `promptfoo eval` reference in the docs may list such a variable, but I can't confirm that from these excerpts.",
+  "ttft_ms": 3686,
+  "type": "result",
+  "duration_ms": 5004,
+  "uuid": "7c9ddd92-e1de-4000-b59a-64bf30d58e78",
+  "ttft_stream_ms": 2963,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 2963,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

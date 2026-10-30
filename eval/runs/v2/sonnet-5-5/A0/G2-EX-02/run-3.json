@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-02",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:09Z",
+ "seconds": 7.18,
+ "prompt_sha256": "3dbacc6b4ebf250bab5fdef51e63d95042f22336f4ba5630c473b91551bebdd0",
+ "answer": "I don't know. I have no information about Ollama 0.35.1 or a limit on web searches per response in that release, and nothing in this working directory or the context I was given covers it. I'd rather not guess at a number.\n\nThe Ollama release notes for v0.35.1 on GitHub (github.com/ollama/ollama/releases) or the web search section of the Ollama docs should state the limit. If you paste the relevant release notes or docs text here, I can help interpret it.",
+ "tokens": {
+  "input": 640,
+  "output": 212,
+  "thinking": 62,
+  "cache_read": 0,
+  "cache_creation": 638
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004676,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3041,
+  "stop_reason": "end_turn",
+  "session_id": "94e8eaa4-cb62-4fef-b271-01cee645589c",
+  "total_cost_usd": 0.004676,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 638,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 212,
+   "output_tokens_details": {
+    "thinking_tokens": 62
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 638,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 212,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 638,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 638
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 212,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 638,
+    "webSearchRequests": 0,
+    "costUSD": 0.004676,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 62,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 638,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no information about Ollama 0.35.1 or a limit on web searches per response in that release, and nothing in this working directory or the context I was given covers it. I'd rather not guess at a number.\n\nThe Ollama release notes for v0.35.1 on GitHub (github.com/ollama/ollama/releases) or the web search section of the Ollama docs should state the limit. If you paste the relevant release notes or docs text here, I can help interpret it.",
+  "ttft_ms": 2599,
+  "type": "result",
+  "duration_ms": 3120,
+  "uuid": "018a9215-284f-45d8-bb81-bf01505d23bf",
+  "ttft_stream_ms": 2597,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 2598,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

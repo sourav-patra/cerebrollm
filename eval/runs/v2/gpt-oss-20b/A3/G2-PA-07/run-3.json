@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-07",
+ "run": 3,
+ "started_utc": "2026-10-29T16:35:28Z",
+ "seconds": 4.95,
+ "prompt_sha256": "966074e791335ca871ebd5a7d82b30bbeb317f071d36667858d564446d44005d",
+ "answer": "The reranker class that gained native async support in llama‑index‑core 0.14.25 is **StructuredLLMRerank**.\n\n> \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\"  \n> [1] llama_index/v0.14.25.md",
+ "thinking_chars": 759,
+ "tokens": {
+  "input": 1481,
+  "output": 311
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5403308400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:35:33.3604222Z",
+  "response": "The reranker class that gained native async support in llama‑index‑core 0.14.25 is **StructuredLLMRerank**.\n\n> \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\"  \n> [1] llama_index/v0.14.25.md",
+  "thinking": "We need to answer: Which reranker class gained native async support in llama-index-core 0.14.25? The context includes release notes of llama-index-core [0.14.25] lines. Let's examine line 58-66: \n- \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\"\n\nThus the reranker class is StructuredLLMRerank. So answer: StructuredLLMRerank. Need to quote line and path. The line is from [1] llama_index/v0.14.25.md lines 58-66. The quote: \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\". Path: [1] llama_index/v0.14.25.md. Let's ensure quoting. The line is exactly that. So answer: StructuredLLMRerank. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5403308400,
+  "load_duration": 15250600,
+  "prompt_eval_count": 1481,
+  "prompt_eval_cached_count": 1476,
+  "prompt_eval_duration": 56792000,
+  "eval_count": 311,
+  "eval_duration": 5279434000
+ }
+}

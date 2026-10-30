@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-18",
+ "run": 2,
+ "started_utc": "2026-10-29T02:00:56Z",
+ "seconds": 8.85,
+ "prompt_file": "runs/prompts/A0/ST-18.txt",
+ "prompt_sha256": "bc30c240b8baf94275007b942372b4d9dbc326bd0382f0290c4558c29d4d5c0b",
+ "answer": "I believe promptfoo has a dedicated IBM watsonx.ai provider, used with a `watsonx:<model-id>` style ID. I'm not certain of the exact provider ID, the environment variable names, or the required credentials, so check the current promptfoo provider docs before you configure it.\n\nIf you're using IBM Granite models or other IBM-hosted models that expose an OpenAI-compatible API, you could instead point promptfoo's generic OpenAI-compatible provider at that endpoint. I'm not sure whether that suits your setup, since it depends on how the models are hosted.\n\nIf you tell me how the models are hosted (watsonx.ai, Red Hat OpenShift AI, a self-hosted server, or something else), I can help you narrow it down, though I'd still confirm the details against the promptfoo docs.",
+ "tokens": {
+  "input": 652,
+  "output": 588,
+  "thinking": 319,
+  "cache_read": 0,
+  "cache_creation": 650
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004242,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4199,
+  "stop_reason": "end_turn",
+  "session_id": "a786f9cb-8768-4b56-9c8c-985641de005a",
+  "total_cost_usd": 0.0004242,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 650,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 588,
+   "output_tokens_details": {
+    "thinking_tokens": 319
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 650,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 588,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 650,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 650
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 588,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 650,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004242,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 319,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 650,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I believe promptfoo has a dedicated IBM watsonx.ai provider, used with a `watsonx:<model-id>` style ID. I'm not certain of the exact provider ID, the environment variable names, or the required credentials, so check the current promptfoo provider docs before you configure it.\n\nIf you're using IBM Granite models or other IBM-hosted models that expose an OpenAI-compatible API, you could instead point promptfoo's generic OpenAI-compatible provider at that endpoint. I'm not sure whether that suits your setup, since it depends on how the models are hosted.\n\nIf you tell me how the models are hosted (watsonx.ai, Red Hat OpenShift AI, a self-hosted server, or something else), I can help you narrow it down, though I'd still confirm the details against the promptfoo docs.",
+  "ttft_ms": 3023,
+  "type": "result",
+  "duration_ms": 4330,
+  "uuid": "2b131720-99f0-43f6-888d-adfd6a86b2e0",
+  "ttft_stream_ms": 2970,
+  "time_to_request_ms": 171,
+  "first_content_frame_ms": 2970,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

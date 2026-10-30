@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-04",
+ "run": 4,
+ "started_utc": "2026-10-29T17:37:59Z",
+ "seconds": 6.45,
+ "prompt_sha256": "2b6ea5b6a72d2ad13b704409d81766cc1c5235ae5c9d1fab5a0268c71b6e8199",
+ "answer": "Promptfoo 0.123.0 uses the Responses API by default for GPT-5.6 and newer models. This change is noted as a breaking change in the release notes.\n\nThis is supported by the following quote from the context:\n\n* **providers:** default GPT-5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))\n\n[\"providers: default GPT-5.6+ to Responses.\" [7] promptfoo/0.123.0.md (lines 9-23)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2063,
+  "output": 117
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7036521800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:38:04.9793847Z",
+  "response": "Promptfoo 0.123.0 uses the Responses API by default for GPT-5.6 and newer models. This change is noted as a breaking change in the release notes.\n\nThis is supported by the following quote from the context:\n\n* **providers:** default GPT-5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))\n\n[\"providers: default GPT-5.6+ to Responses.\" [7] promptfoo/0.123.0.md (lines 9-23)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7036521800,
+  "load_duration": 12854300,
+  "prompt_eval_count": 2063,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 1016739000,
+  "eval_count": 117,
+  "eval_duration": 5850264000
+ }
+}

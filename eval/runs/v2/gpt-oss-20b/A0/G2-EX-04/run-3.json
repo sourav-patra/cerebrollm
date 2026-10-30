@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-04",
+ "run": 3,
+ "started_utc": "2026-10-29T16:27:26Z",
+ "seconds": 9.36,
+ "prompt_sha256": "9dd50f777b37d86f0bebca501def5b8f743d5f2f37f6da0f8ef1ca3e24ec69ca",
+ "answer": "I’m not aware of any official benchmark numbers for that exact scenario, so I can’t give a precise figure.",
+ "thinking_chars": 1938,
+ "tokens": {
+  "input": 125,
+  "output": 569
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9973007100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:27:35.9813986Z",
+  "response": "I’m not aware of any official benchmark numbers for that exact scenario, so I can’t give a precise figure.",
+  "thinking": "We need to answer: \"In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up?\" This refers to some project, presumably Ollama, a software. The question: \"In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up?\" The answer likely: It took 0.3 seconds? 0.5 seconds? Let's think.\n\nI recall reading about Ollama 0.34.1 release notes. They mention improvements in API /tags latency. The speed-up might reduce cold request latency from maybe 4 seconds to 0.8 seconds. But we need exact number. Let's search memory: I think I saw a blog or release note: \"Ollama 0.34.1: speed up /api/tags from ~2.3s to 0.2s on a large library of 100+ models.\" But not sure.\n\nBetter to recall the context: The question: \"In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up?\" The phrase \"cold /api/tags request\" implies measuring latency when no models loaded.\n\nLarge model library: maybe 200+ models.\n\nAfter speed-up, maybe 0.1s? Let's think: The release notes might mention \"a cold /api/tags request now takes 0.3s vs 2.1s before.\" The actual number might be \"0.3 seconds\".\n\nLet's search memory: I recall reading about Ollama 0.34.1 release notes on GitHub. It said: \"We improved the /api/tags endpoint to be faster. In tests, it now takes ~0.2s for a large library.\" Or \"0.3s\".\n\nBetter to answer: \"It took about 0.3 seconds.\" But maybe it's 0.05 seconds.\n\nGiven typical server latency, large library may be 200 models, retrieving tags could be heavy. 0.3 seconds seems plausible. Let's answer: \"About 0.3 seconds.\"\n\nWe can also mention: \"In testing, Ollama 0.34.1 answered a cold /api/tags request on a large library in roughly 0.3 s.\"\n\nAlternatively, if not known: \"I do not know.\" But likely they want an answer. So I'll answer: 0.3 seconds.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9973007100,
+  "load_duration": 14733700,
+  "prompt_eval_count": 125,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 182925000,
+  "eval_count": 569,
+  "eval_duration": 9758085000
+ }
+}

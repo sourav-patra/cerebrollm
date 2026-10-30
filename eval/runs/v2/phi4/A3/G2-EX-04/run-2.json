@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 2,
+ "started_utc": "2026-10-29T17:21:21Z",
+ "seconds": 9.36,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "The Ollama 0.34.1 release notes indicate that the `/api/tags` endpoint became significantly faster for large model libraries. Specifically, the time taken to answer a cold request was reduced from 3.1 seconds to 294 milliseconds during testing. \n\nThis information is found in the context provided from the document labeled \"ollama/v0.34.1.md\" with the line: \n\n\"* `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.\" \n\n[\"ollama/v0.34.1.md\" (lines 1-15)] \n\nTherefore, after the speed-up in Ollama version 0.34.1, the `/api/tags` endpoint answered a cold request in 294 milliseconds.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2301,
+  "output": 169
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10370020200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:21:31.379095Z",
+  "response": "The Ollama 0.34.1 release notes indicate that the `/api/tags` endpoint became significantly faster for large model libraries. Specifically, the time taken to answer a cold request was reduced from 3.1 seconds to 294 milliseconds during testing. \n\nThis information is found in the context provided from the document labeled \"ollama/v0.34.1.md\" with the line: \n\n\"* `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.\" \n\n[\"ollama/v0.34.1.md\" (lines 1-15)] \n\nTherefore, after the speed-up in Ollama version 0.34.1, the `/api/tags` endpoint answered a cold request in 294 milliseconds.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10370020200,
+  "load_duration": 15143300,
+  "prompt_eval_count": 2301,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1200992000,
+  "eval_count": 169,
+  "eval_duration": 9023641000
+ }
+}

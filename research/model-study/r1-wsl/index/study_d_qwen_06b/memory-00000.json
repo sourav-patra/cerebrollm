@@ -1,0 +1,33 @@
+{
+  "api": {
+    "models": [
+      {
+        "name": "qwen3-embedding:0.6b",
+        "model": "qwen3-embedding:0.6b",
+        "size": 1715396935,
+        "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "595.78M",
+          "quantization_level": "Q8_0"
+        },
+        "expires_at": "2026-10-29T01:34:35.8756871+05:30",
+        "size_vram": 1715396935,
+        "context_length": 8192,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "command": [
+    "ollama.exe",
+    "ps"
+  ],
+  "stdout": "NAME                    ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL               \nqwen3-embedding:0.6b    ac6da0dfba84    1.7 GB    100% GPU     8192       llamacpp    14 minutes from now    \n",
+  "stderr": "",
+  "exit": 0
+}

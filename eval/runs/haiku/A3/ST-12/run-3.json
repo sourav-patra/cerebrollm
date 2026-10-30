@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-12",
+ "run": 3,
+ "started_utc": "2026-10-29T01:58:46Z",
+ "seconds": 11.75,
+ "prompt_file": "runs/prompts/A3/ST-12.txt",
+ "prompt_sha256": "28daf9c92948063d398f0009aa0b4b5a7e32fb85dc9b3b30b59d56951af1ecc3",
+ "answer": "The provided docs describe a callback-based approach, but they don't show how to read the final counts, so I can't give you a complete, verified recipe.\n\n1. **Set up mock models** so no real API calls are made. \"llm = MockLLM(max_tokens=256)\" and \"embed_model = MockEmbedding(embed_dim=1536)\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\n2. **Create a `TokenCountingHandler`** with a tokenizer and wrap it in a callback manager. The docs show \"token_counter = TokenCountingHandler(tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode)\" and \"callback_manager = CallbackManager([token_counter])\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\n3. **Register the models globally** with \"Settings.llm = llm\" and \"Settings.embed_model = embed_mode...\" (the excerpt is cut off). [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\nThe excerpt doesn't show how the callback manager gets attached to the global settings, so check the full example notebook linked from the docs.\n\nSome points from the docs:\n\n- Token counting moved into a callback: \"Going forward, token counting as moved into a callback.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]\n- The older approach, which tracked counts on the `llm_predictor` and `embed_model` objects, is deprecated: \"The existing token counting implementation has been **deprecated**.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]\n- Token predictors can estimate usage before any calls are made, and counting uses the `TokenCountingHandler` callback: \"Tokens are counted using the `TokenCountingHandler` callback.\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md]\n- The tokenizer used for counting defaults to tiktoken's `cl100k`, and you can change it: \"By default, LlamaIndex uses a global tokenizer for all token counting.\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms.md]\n\nI don't know the exact attribute names for reading the totals from the handler (for example, LLM versus embedding token counts) from these documents. The migration guide likely covers them, but the excerpt I have doesn't include that part. I'd check the `TokenCountingHandler` API reference or the example notebook for the current names, since I can't confirm them from this context.",
+ "tokens": {
+  "input": 3293,
+  "output": 1695,
+  "thinking": 756,
+  "cache_read": 2904,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00095414,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7401,
+  "stop_reason": "end_turn",
+  "session_id": "bef6f91f-2dd8-4ec1-9508-cd687295bab8",
+  "total_cost_usd": 0.00095414,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2904,
+   "output_tokens": 1695,
+   "output_tokens_details": {
+    "thinking_tokens": 756
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1695,
+     "cache_read_input_tokens": 2904,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1695,
+    "cacheReadInputTokens": 2904,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00095414,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 756,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided docs describe a callback-based approach, but they don't show how to read the final counts, so I can't give you a complete, verified recipe.\n\n1. **Set up mock models** so no real API calls are made. \"llm = MockLLM(max_tokens=256)\" and \"embed_model = MockEmbedding(embed_dim=1536)\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\n2. **Create a `TokenCountingHandler`** with a tokenizer and wrap it in a callback manager. The docs show \"token_counter = TokenCountingHandler(tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode)\" and \"callback_manager = CallbackManager([token_counter])\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\n3. **Register the models globally** with \"Settings.llm = llm\" and \"Settings.embed_model = embed_mode...\" (the excerpt is cut off). [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\nThe excerpt doesn't show how the callback manager gets attached to the global settings, so check the full example notebook linked from the docs.\n\nSome points from the docs:\n\n- Token counting moved into a callback: \"Going forward, token counting as moved into a callback.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]\n- The older approach, which tracked counts on the `llm_predictor` and `embed_model` objects, is deprecated: \"The existing token counting implementation has been **deprecated**.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]\n- Token predictors can estimate usage before any calls are made, and counting uses the `TokenCountingHandler` callback: \"Tokens are counted using the `TokenCountingHandler` callback.\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md]\n- The tokenizer used for counting defaults to tiktoken's `cl100k`, and you can change it: \"By default, LlamaIndex uses a global tokenizer for all token counting.\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms.md]\n\nI don't know the exact attribute names for reading the totals from the handler (for example, LLM versus embedding token counts) from these documents. The migration guide likely covers them, but the excerpt I have doesn't include that part. I'd check the `TokenCountingHandler` API reference or the example notebook for the current names, since I can't confirm them from this context.",
+  "ttft_ms": 3952,
+  "type": "result",
+  "duration_ms": 7545,
+  "uuid": "de002c87-3c0f-46ce-a5d2-088c397cc991",
+  "ttft_stream_ms": 2924,
+  "time_to_request_ms": 173,
+  "first_content_frame_ms": 2924,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

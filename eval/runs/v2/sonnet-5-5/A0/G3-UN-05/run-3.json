@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-05",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:13Z",
+ "seconds": 7.86,
+ "prompt_sha256": "facc9609f2e09161516f6e2fc1f1ba49e1decb695137a62d66685b54806f8f7c",
+ "answer": "I don't know of an Ollama environment variable called `OLLAMA_UNLOAD_TIMEOUT`, so I can't give a default for it. It may not exist, or it may be something newer or more obscure than what I know.\n\nThe closest setting I know of is `OLLAMA_KEEP_ALIVE`, which controls how long a model stays loaded in memory after a request. Its default is `5m` (5 minutes). You can also set it per request with the `keep_alive` parameter in the API.\n\nIf you saw `OLLAMA_UNLOAD_TIMEOUT` in some documentation or code, tell me where and I can help interpret it. You can also check the output of `ollama serve`, which logs the server config it picked up, or the `envconfig` package in the Ollama source.",
+ "tokens": {
+  "input": 648,
+  "output": 374,
+  "thinking": 121,
+  "cache_read": 0,
+  "cache_creation": 646
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006328,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3704,
+  "stop_reason": "end_turn",
+  "session_id": "104c6c64-defe-411f-a6d2-13cbd67b3994",
+  "total_cost_usd": 0.006328,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 646,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 374,
+   "output_tokens_details": {
+    "thinking_tokens": 121
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 646,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 374,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 646,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 646
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 374,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 646,
+    "webSearchRequests": 0,
+    "costUSD": 0.006328,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 121,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 646,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an Ollama environment variable called `OLLAMA_UNLOAD_TIMEOUT`, so I can't give a default for it. It may not exist, or it may be something newer or more obscure than what I know.\n\nThe closest setting I know of is `OLLAMA_KEEP_ALIVE`, which controls how long a model stays loaded in memory after a request. Its default is `5m` (5 minutes). You can also set it per request with the `keep_alive` parameter in the API.\n\nIf you saw `OLLAMA_UNLOAD_TIMEOUT` in some documentation or code, tell me where and I can help interpret it. You can also check the output of `ollama serve`, which logs the server config it picked up, or the `envconfig` package in the Ollama source.",
+  "ttft_ms": 2555,
+  "type": "result",
+  "duration_ms": 3812,
+  "uuid": "a6dd7553-de62-4d3b-accd-d9ffb1b8a894",
+  "ttft_stream_ms": 2554,
+  "time_to_request_ms": 106,
+  "first_content_frame_ms": 2555,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/163",
+  "index": 25,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:36:23.480953Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n    start = min(a, b)\n    end = max(a, b)\n    \n    result = []\n    for num in range(start, end + 1):\n        # Check if the number is a single digit and even\n        if 0 <= num <= 9 and num % 2 == 0:\n            result.append(num)\n            \n    return sorted(result)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1621166000,
+    "load_duration": 11662800,
+    "prompt_eval_count": 151,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 96733000,
+    "eval_count": 208,
+    "eval_duration": 1416836000
+  },
+  "wall_seconds": 1.5532641879981384,
+  "load_average_before": [
+    0.4443359375,
+    0.2138671875,
+    0.25927734375
+  ],
+  "load_average_after": [
+    0.4443359375,
+    0.2138671875,
+    0.25927734375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-off-25",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_25.py"
+    ],
+    "wall_seconds": 0.7156624400013243,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

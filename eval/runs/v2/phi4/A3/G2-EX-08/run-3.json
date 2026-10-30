@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 3,
+ "started_utc": "2026-10-29T17:30:37Z",
+ "seconds": 10.07,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "The safe mode added to `promptfoo eval` in version 0.125.0 turns off inline JavaScript assertions and shared transforms. This is achieved using the `--safe-mode` option or by setting the environment variable `PROMPTFOO_SAFE_MODE=true`. These settings reject string-based JavaScript assertions and inline expressions that are handled by the shared transform helper. \n\nSpecifically, the documentation states:\n\n\"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" \n\n[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\" (lines 11-64)] \n\nHowever, it's important to note that this mode is a limited guard and not a sandbox, meaning it does not make untrusted configurations completely safe to run. \n\n[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\" (lines 11-64)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1883,
+  "output": 194
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10840806200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:30:48.0503866Z",
+  "response": "The safe mode added to `promptfoo eval` in version 0.125.0 turns off inline JavaScript assertions and shared transforms. This is achieved using the `--safe-mode` option or by setting the environment variable `PROMPTFOO_SAFE_MODE=true`. These settings reject string-based JavaScript assertions and inline expressions that are handled by the shared transform helper. \n\nSpecifically, the documentation states:\n\n\"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" \n\n[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\" (lines 11-64)] \n\nHowever, it's important to note that this mode is a limited guard and not a sandbox, meaning it does not make untrusted configurations completely safe to run. \n\n[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\" (lines 11-64)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10840806200,
+  "load_duration": 14530700,
+  "prompt_eval_count": 1883,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 973470000,
+  "eval_count": 194,
+  "eval_duration": 9675256000
+ }
+}

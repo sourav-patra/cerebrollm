@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-11",
+ "run": 1,
+ "started_utc": "2026-10-29T01:49:37Z",
+ "seconds": 14.08,
+ "prompt_file": "runs/prompts/A3/PA-11.txt",
+ "prompt_sha256": "ec9bb6ba7eb92266c121c87311a1186a7ba6b010020facaeefebe60727d5f216",
+ "answer": "The retrieved docs cover the pieces but not a complete global setup, so I can't give you a fully verified snippet.\n\n**What the docs support:**\n\n- The global pattern for embeddings is to set it on `Settings`: \"# changing the global default\" followed by `Settings.embed_model = OpenAIEmbedding()` [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. You would swap in a Hugging Face embedding class in that same place.\n- For the HF side, the docs say \"`HuggingFaceEmbedding`, which runs any [Sentence Transformers](https://sbert.net/) model on your own hardware.\" [llama_index/docs/src/content/docs/framework/understanding/privacy.md]. The retrieved excerpts don't show its import path or constructor.\n- For Ollama, the docs show \"from llama_index.llms.ollama import Ollama\" and `model=\"llama3.3\",` with `context_window=8000` [llama_index/docs/src/content/docs/framework/understanding/using_llms.md].\n\n**Putting it together** (the `Settings.llm` assignment is my inference from the `Settings.embed_model` pattern, not a quoted line):\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding  # import path from general knowledge, not the retrieved docs\n\nSettings.llm = Ollama(model=\"llama3.3\", request_timeout=60.0, context_window=8000)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")  # example model name\n```\n\nSet both before you build any index or query engine, so nothing falls back to a default.\n\n**What I don't know from these docs:**\n\n- Whether LlamaIndex contacts OpenAI when `Settings.llm` or `Settings.embed_model` is unset. Setting both explicitly should avoid that, but I can't confirm the default behavior from the excerpts.\n- The exact `HuggingFaceEmbedding` import path and constructor arguments. Check the embeddings local-models section the docs point to.",
+ "tokens": {
+  "input": 3407,
+  "output": 1862,
+  "thinking": 1134,
+  "cache_read": 0,
+  "cache_creation": 3405
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0016122,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 9679,
+  "stop_reason": "end_turn",
+  "session_id": "db8888bc-7abe-4bb2-a8df-fef21487d196",
+  "total_cost_usd": 0.0016122,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3405,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1862,
+   "output_tokens_details": {
+    "thinking_tokens": 1134
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3405,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1862,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3405,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3405
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1862,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3405,
+    "webSearchRequests": 0,
+    "costUSD": 0.0016122,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1134,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3405,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The retrieved docs cover the pieces but not a complete global setup, so I can't give you a fully verified snippet.\n\n**What the docs support:**\n\n- The global pattern for embeddings is to set it on `Settings`: \"# changing the global default\" followed by `Settings.embed_model = OpenAIEmbedding()` [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. You would swap in a Hugging Face embedding class in that same place.\n- For the HF side, the docs say \"`HuggingFaceEmbedding`, which runs any [Sentence Transformers](https://sbert.net/) model on your own hardware.\" [llama_index/docs/src/content/docs/framework/understanding/privacy.md]. The retrieved excerpts don't show its import path or constructor.\n- For Ollama, the docs show \"from llama_index.llms.ollama import Ollama\" and `model=\"llama3.3\",` with `context_window=8000` [llama_index/docs/src/content/docs/framework/understanding/using_llms.md].\n\n**Putting it together** (the `Settings.llm` assignment is my inference from the `Settings.embed_model` pattern, not a quoted line):\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding  # import path from general knowledge, not the retrieved docs\n\nSettings.llm = Ollama(model=\"llama3.3\", request_timeout=60.0, context_window=8000)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")  # example model name\n```\n\nSet both before you build any index or query engine, so nothing falls back to a default.\n\n**What I don't know from these docs:**\n\n- Whether LlamaIndex contacts OpenAI when `Settings.llm` or `Settings.embed_model` is unset. Setting both explicitly should avoid that, but I can't confirm the default behavior from the excerpts.\n- The exact `HuggingFaceEmbedding` import path and constructor arguments. Check the embeddings local-models section the docs point to.",
+  "ttft_ms": 6907,
+  "type": "result",
+  "duration_ms": 9788,
+  "uuid": "7d46278e-6dd4-4999-bd23-f1d5b0dfd5be",
+  "ttft_stream_ms": 2997,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2998,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-03",
+ "run": 3,
+ "started_utc": "2026-10-29T01:38:39Z",
+ "seconds": 8.22,
+ "prompt_file": "runs/prompts/A3/EX-03.txt",
+ "prompt_sha256": "ca22c376bc50f167ac779c9f8f437df0697e727771499a152e46d3195e0924af",
+ "answer": "The default is 5 minutes. The FAQ says: \"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nThe FAQ also says `keep_alive` on `/api/generate` and `/api/chat` controls how long a model stays in memory, but the excerpt doesn't explicitly state that 5 minutes is the API parameter's default value. The 5-minute figure is the general default for keeping models loaded.",
+ "tokens": {
+  "input": 3346,
+  "output": 462,
+  "thinking": 310,
+  "cache_read": 2957,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00033817,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2847,
+  "stop_reason": "end_turn",
+  "session_id": "9c5d5e53-3b72-4c87-a2dd-5556d92313af",
+  "total_cost_usd": 0.00033817,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2957,
+   "output_tokens": 462,
+   "output_tokens_details": {
+    "thinking_tokens": 310
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 462,
+     "cache_read_input_tokens": 2957,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 462,
+    "cacheReadInputTokens": 2957,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00033817,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 310,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The default is 5 minutes. The FAQ says: \"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nThe FAQ also says `keep_alive` on `/api/generate` and `/api/chat` controls how long a model stays in memory, but the excerpt doesn't explicitly state that 5 minutes is the API parameter's default value. The 5-minute figure is the general default for keeping models loaded.",
+  "ttft_ms": 2933,
+  "type": "result",
+  "duration_ms": 3017,
+  "uuid": "7d66a904-54b6-4886-9926-a733cbaa02d3",
+  "ttft_stream_ms": 2932,
+  "time_to_request_ms": 191,
+  "first_content_frame_ms": 2932,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

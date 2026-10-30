@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-08",
+ "run": 3,
+ "started_utc": "2026-10-29T17:32:34Z",
+ "seconds": 4.68,
+ "prompt_sha256": "6aa67305c2d3d502e197c468c7f1133f40522aa105aede1e8c22e0c41cf5c9f1",
+ "answer": "I do not know which Ollama CLI flag sets the number of parallel layer downloads for `ollama pull`. The provided documentation does not mention any specific flag for configuring the number of parallel downloads when pulling a model. The relevant sections discuss how models are pulled and managed, but they do not detail any settings for parallel download layers. [ollama/docs/api.md (lines 1529-1541)][3].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1621,
+  "output": 85
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5025424400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:32:40.1052951Z",
+  "response": "I do not know which Ollama CLI flag sets the number of parallel layer downloads for `ollama pull`. The provided documentation does not mention any specific flag for configuring the number of parallel downloads when pulling a model. The relevant sections discuss how models are pulled and managed, but they do not detail any settings for parallel download layers. [ollama/docs/api.md (lines 1529-1541)][3].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5025424400,
+  "load_duration": 12659200,
+  "prompt_eval_count": 1621,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 764274000,
+  "eval_count": 85,
+  "eval_duration": 4115169000
+ }
+}

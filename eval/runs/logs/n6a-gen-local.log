@@ -1,0 +1,66 @@
+== 2026-10-29T15:54:10Z waiting for lock: gen gemma4-12b A0,A3
+== 2026-10-29T15:54:45Z lock held: gen gemma4-12b
+gemma4-12b: 350 calls to do
+20/350 elapsed 13s
+40/350 elapsed 26s
+60/350 elapsed 62s
+80/350 elapsed 75s
+100/350 elapsed 124s
+120/350 elapsed 153s
+140/350 elapsed 181s
+160/350 elapsed 186s
+180/350 elapsed 198s
+200/350 elapsed 232s
+220/350 elapsed 246s
+240/350 elapsed 251s
+260/350 elapsed 279s
+280/350 elapsed 306s
+300/350 elapsed 310s
+320/350 elapsed 321s
+340/350 elapsed 355s
+done gemma4-12b 350 calls in 368s
+== 2026-10-29T16:00:54Z lock released
+== 2026-10-29T16:00:54Z waiting for lock: gen gpt-oss-20b A0,A3
+== 2026-10-29T16:02:38Z lock held: gen gpt-oss-20b
+gpt-oss-20b: 350 calls to do
+20/350 elapsed 258s
+40/350 elapsed 559s
+60/350 elapsed 754s
+80/350 elapsed 968s
+100/350 elapsed 1187s
+120/350 elapsed 1336s
+140/350 elapsed 1453s
+160/350 elapsed 1741s
+180/350 elapsed 1887s
+200/350 elapsed 2019s
+220/350 elapsed 2209s
+240/350 elapsed 2461s
+260/350 elapsed 2608s
+280/350 elapsed 2758s
+300/350 elapsed 2994s
+320/350 elapsed 3184s
+340/350 elapsed 3325s
+done gpt-oss-20b 350 calls in 3402s
+== 2026-10-29T16:59:22Z lock released
+== 2026-10-29T16:59:22Z waiting for lock: gen phi4 A0,A3
+== 2026-10-29T17:11:16Z lock held: gen phi4
+phi4: 350 calls to do
+20/350 elapsed 85s
+40/350 elapsed 190s
+60/350 elapsed 392s
+80/350 elapsed 499s
+100/350 elapsed 569s
+120/350 elapsed 740s
+140/350 elapsed 904s
+160/350 elapsed 973s
+180/350 elapsed 1074s
+200/350 elapsed 1263s
+220/350 elapsed 1378s
+240/350 elapsed 1444s
+260/350 elapsed 1609s
+280/350 elapsed 1778s
+300/350 elapsed 1843s
+320/350 elapsed 1930s
+340/350 elapsed 2110s
+done phi4 350 calls in 2183s
+== 2026-10-29T17:47:39Z lock released

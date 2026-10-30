@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-PA-04",
+ "run": 1,
+ "started_utc": "2026-10-30T06:04:51Z",
+ "seconds": 18.98,
+ "prompt_sha256": "ab3c06308e413566ae57d8a520f4cb7097ad7a42dbff26e45dad8927225375bc",
+ "answer": "\"These IDs default to Responses.\" [promptfoo/site/docs/providers/openai.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "promptfoo/site/docs/providers/openai.md",
+   "quote": "These IDs default to Responses.",
+   "verify": "OK",
+   "detail": "promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 0.97,
+   "rerank": 8.29,
+   "generate": 7.1,
+   "verify": 0.3,
+   "total": 16.66
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 7,
+    "rerank_score": 0.9945,
+    "path": "promptfoo/site/docs/providers/aws-bedrock.md",
+    "line_start": 1183,
+    "line_end": 1222
+   },
+   {
+    "rank": 2,
+    "search_rank": 4,
+    "rerank_score": 0.98319,
+    "path": "promptfoo/site/docs/providers/openai.md",
+    "line_start": 78,
+    "line_end": 80
+   },
+   {
+    "rank": 3,
+    "search_rank": 13,
+    "rerank_score": 0.98142,
+    "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+    "line_start": 100,
+    "line_end": 128
+   },
+   {
+    "rank": 4,
+    "search_rank": 5,
+    "rerank_score": 0.97751,
+    "path": "promptfoo/site/docs/providers/openai.md",
+    "line_start": 408,
+    "line_end": 430
+   },
+   {
+    "rank": 5,
+    "search_rank": 15,
+    "rerank_score": 0.96338,
+    "path": "promptfoo/site/docs/providers/aws-bedrock.md",
+    "line_start": 1339,
+    "line_end": 1381
+   },
+   {
+    "rank": 6,
+    "search_rank": 2,
+    "rerank_score": 0.96272,
+    "path": "promptfoo/site/docs/providers/openai-codex-sdk.md",
+    "line_start": 271,
+    "line_end": 293
+   },
+   {
+    "rank": 7,
+    "search_rank": 1,
+    "rerank_score": 0.93013,
+    "path": "promptfoo/site/docs/providers/openai.md",
+    "line_start": 138,
+    "line_end": 151
+   },
+   {
+    "rank": 8,
+    "search_rank": 3,
+    "rerank_score": 0.91237,
+    "path": "promptfoo/site/docs/providers/openai.md",
+    "line_start": 175,
+    "line_end": 183
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

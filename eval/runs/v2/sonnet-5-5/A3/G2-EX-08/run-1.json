@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 1,
+ "started_utc": "2026-10-29T15:54:46Z",
+ "seconds": 13.19,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "Safe mode rejects inline JavaScript. It does not turn off JavaScript in general, and the retrieved context doesn't show that it was added in 0.125.0.\n\n- The CLI option reference says: \"Reject inline JavaScript assertions and shared transforms.\" [promptfoo/site/docs/usage/command-line.md]\n- The JavaScript assertions doc gives more detail: \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n- Rejected assertions and transforms fail visibly: \"Rejected assertions fail with an explanatory reason; rejected transforms produce an error.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n- Some JavaScript still works. The same doc says \"JavaScript function values passed through the Node API remain supported.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md] It also says to move rejected expressions into reviewed `file://` scripts.\n- It is not a sandbox. The doc warns: \"This option is not a sandbox and does not make untrusted configurations safe to run.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md] The text is cut off after \"File callbacks, programmatic functions, executable providers, config modules, [...]\", so I can't list everything else it leaves enabled.\n\nThe 0.125.0 changelog excerpts I have (Features and part of Bug Fixes) don't mention safe mode. The docs describe the feature, but I can't confirm from this context which release introduced it.",
+ "tokens": {
+  "input": 3561,
+  "output": 830,
+  "thinking": 245,
+  "cache_read": 0,
+  "cache_creation": 3559
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.02254,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8956,
+  "stop_reason": "end_turn",
+  "session_id": "95b3a6bd-4a2c-49ff-8d67-8f60aeb3dfa2",
+  "total_cost_usd": 0.02254,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3559,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 830,
+   "output_tokens_details": {
+    "thinking_tokens": 245
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3559,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 830,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3559,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3559
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 830,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3559,
+    "webSearchRequests": 0,
+    "costUSD": 0.02254,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 245,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3559,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Safe mode rejects inline JavaScript. It does not turn off JavaScript in general, and the retrieved context doesn't show that it was added in 0.125.0.\n\n- The CLI option reference says: \"Reject inline JavaScript assertions and shared transforms.\" [promptfoo/site/docs/usage/command-line.md]\n- The JavaScript assertions doc gives more detail: \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n- Rejected assertions and transforms fail visibly: \"Rejected assertions fail with an explanatory reason; rejected transforms produce an error.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]\n- Some JavaScript still works. The same doc says \"JavaScript function values passed through the Node API remain supported.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md] It also says to move rejected expressions into reviewed `file://` scripts.\n- It is not a sandbox. The doc warns: \"This option is not a sandbox and does not make untrusted configurations safe to run.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md] The text is cut off after \"File callbacks, programmatic functions, executable providers, config modules, [...]\", so I can't list everything else it leaves enabled.\n\nThe 0.125.0 changelog excerpts I have (Features and part of Bug Fixes) don't mention safe mode. The docs describe the feature, but I can't confirm from this context which release introduced it.",
+  "ttft_ms": 5568,
+  "type": "result",
+  "duration_ms": 9055,
+  "uuid": "6202b2e6-3b96-4392-aca6-b7b3d6704ea5",
+  "ttft_stream_ms": 3899,
+  "time_to_request_ms": 129,
+  "first_content_frame_ms": 3899,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-11",
+ "run": 3,
+ "started_utc": "2026-10-29T01:41:20Z",
+ "seconds": 10.79,
+ "prompt_file": "runs/prompts/A0/EX-11.txt",
+ "prompt_sha256": "12184bbc2859c9595555ca7491af0eaceb7ff4a95637554262b529644fdf347a",
+ "answer": "The starter bundle, as I recall it from the LlamaIndex install docs, is:\n\n1. `llama-index-core`\n2. `llama-index-readers-file`\n3. `llama-index-llms-openai`\n4. `llama-index-embeddings-openai`\n\nI'm not fully certain of this list. The `llama-index` meta-package has changed across releases, and I may be out of date. To confirm for your installed version, run `pip show llama-index` or inspect the package's `Requires-Dist` metadata, or check the current LlamaIndex installation docs.",
+ "tokens": {
+  "input": 654,
+  "output": 1239,
+  "thinking": 1058,
+  "cache_read": 0,
+  "cache_creation": 652
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007501000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6292,
+  "stop_reason": "end_turn",
+  "session_id": "aea5c11d-9007-45ab-9f20-dc36845d84c0",
+  "total_cost_usd": 0.0007501000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 652,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1239,
+   "output_tokens_details": {
+    "thinking_tokens": 1058
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 652,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1239,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 652,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 652
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1239,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 652,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007501000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1058,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 652,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The starter bundle, as I recall it from the LlamaIndex install docs, is:\n\n1. `llama-index-core`\n2. `llama-index-readers-file`\n3. `llama-index-llms-openai`\n4. `llama-index-embeddings-openai`\n\nI'm not fully certain of this list. The `llama-index` meta-package has changed across releases, and I may be out of date. To confirm for your installed version, run `pip show llama-index` or inspect the package's `Requires-Dist` metadata, or check the current LlamaIndex installation docs.",
+  "ttft_ms": 5654,
+  "type": "result",
+  "duration_ms": 6440,
+  "uuid": "19b166c7-e90b-4a93-8ed7-4f0380cbed1f",
+  "ttft_stream_ms": 3283,
+  "time_to_request_ms": 177,
+  "first_content_frame_ms": 3283,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

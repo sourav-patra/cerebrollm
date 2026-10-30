@@ -1,0 +1,158 @@
+{
+  "id": 4,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Create the file hello.txt containing exactly the text: hello world"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": true,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:34:55.382211Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "The user wants to create a file named `hello.txt` with the content \"hello world\". I should use the `write_file` tool for this.",
+      "tool_calls": [
+        {
+          "id": "call_hfxb61ye",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "content": "hello world",
+              "path": "hello.txt"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 645220700,
+    "load_duration": 12997200,
+    "prompt_eval_count": 300,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 162064000,
+    "eval_count": 61,
+    "eval_duration": 462922000
+  },
+  "wall_seconds": 0.6197898340033134,
+  "load_average_before": [
+    0.20263671875,
+    0.1279296875,
+    0.2392578125
+  ],
+  "load_average_after": [
+    0.18603515625,
+    0.12548828125,
+    0.23779296875
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "hello.txt",
+      "content": "hello world"
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:43Z",
+ "seconds": 11.43,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "As far as I know, LlamaIndex's `TokenTextSplitter` has no `separator_regex` parameter, so it has no default for one.\n\nIt takes a plain-string `separator`, which defaults to `\" \"` (a single space). It also has `backup_separators`, which defaults to `[\"\\n\"]`. The other main parameters are `chunk_size` (default 1024) and `chunk_overlap` (default 20).\n\nYou may be thinking of `SentenceSplitter`, which has a regex-based `secondary_chunking_regex`. Its default is `\"[^,.;。？！]+[,.;。？！]?|[,.;。？！]\"`. Other libraries, such as LangChain's text splitters, use similar regex-based separator options.\n\nI haven't checked this against the source for your installed version. If you need to be certain, check the class signature with `help(TokenTextSplitter)`.",
+ "tokens": {
+  "input": 638,
+  "output": 536,
+  "thinking": 250,
+  "cache_read": 0,
+  "cache_creation": 636
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007908,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7480,
+  "stop_reason": "end_turn",
+  "session_id": "6b7fa3f5-1bfd-4e50-9e27-b771f626d917",
+  "total_cost_usd": 0.007908,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 636,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 536,
+   "output_tokens_details": {
+    "thinking_tokens": 250
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 636,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 536,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 636,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 636
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 536,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 636,
+    "webSearchRequests": 0,
+    "costUSD": 0.007908,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 250,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 636,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "As far as I know, LlamaIndex's `TokenTextSplitter` has no `separator_regex` parameter, so it has no default for one.\n\nIt takes a plain-string `separator`, which defaults to `\" \"` (a single space). It also has `backup_separators`, which defaults to `[\"\\n\"]`. The other main parameters are `chunk_size` (default 1024) and `chunk_overlap` (default 20).\n\nYou may be thinking of `SentenceSplitter`, which has a regex-based `secondary_chunking_regex`. Its default is `\"[^,.;。？！]+[,.;。？！]?|[,.;。？！]\"`. Other libraries, such as LangChain's text splitters, use similar regex-based separator options.\n\nI haven't checked this against the source for your installed version. If you need to be certain, check the class signature with `help(TokenTextSplitter)`.",
+  "ttft_ms": 5467,
+  "type": "result",
+  "duration_ms": 7574,
+  "uuid": "c791dc16-22d1-48f7-8bd3-0bcef763fe79",
+  "ttft_stream_ms": 3628,
+  "time_to_request_ms": 131,
+  "first_content_frame_ms": 3628,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 2,
+ "started_utc": "2026-10-29T17:22:32Z",
+ "seconds": 7.26,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "According to the context provided, Flint is supported on the following operating systems:\n\n- MacOS: Initially supported in v0.40.8. (\"Note: Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md (lines 8-21)])\n- Linux and Windows: Support added in v0.40.9. (\"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)])\n\nThere is no mention of support for Flint beyond these versions (up to v0.40.12) in the context provided.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1716,
+  "output": 138
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8038149500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:22:40.5792643Z",
+  "response": "According to the context provided, Flint is supported on the following operating systems:\n\n- MacOS: Initially supported in v0.40.8. (\"Note: Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md (lines 8-21)])\n- Linux and Windows: Support added in v0.40.9. (\"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)])\n\nThere is no mention of support for Flint beyond these versions (up to v0.40.12) in the context provided.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8038149500,
+  "load_duration": 12688600,
+  "prompt_eval_count": 1716,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 904179000,
+  "eval_count": 138,
+  "eval_duration": 6956098000
+ }
+}

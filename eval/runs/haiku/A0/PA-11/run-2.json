@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-11",
+ "run": 2,
+ "started_utc": "2026-10-29T01:49:40Z",
+ "seconds": 13.05,
+ "prompt_file": "runs/prompts/A0/PA-11.txt",
+ "prompt_sha256": "1531f93300e29ce48be40ac86f3125e3c2148909845be0bf0019a8f9cfc6ce2a",
+ "answer": "You can set both models once on the global `Settings` object in `llama_index.core`. Any index, query engine, or pipeline that doesn't receive an explicit model will then use these instead of the OpenAI defaults.\n\n**1. Install the integrations** (package names for the 0.10+ `llama_index.core` API):\n\n```powershell\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\n**2. Make sure Ollama is running and has a model:**\n\n```powershell\nollama pull llama3.1\n```\n\nOllama serves on `http://localhost:11434` by default.\n\n**3. Configure the globals** (put this at the start of your app, before building any index):\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"\n)\n```\n\nAny later code that uses `Settings.llm` or `Settings.embed_model` will use these. For example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)   # uses the HF embedder\nprint(index.as_query_engine().query(\"Summarize the documents.\"))  # uses Ollama\n```\n\n**Making sure OpenAI is never contacted**\n\n- Setting both `Settings.llm` and `Settings.embed_model` replaces the OpenAI defaults, so the main risk is gone.\n- As a safety net, don't set `OPENAI_API_KEY` in your environment. Then any accidental OpenAI call fails loudly instead of silently billing you. You can check with `echo $env:OPENAI_API_KEY` in PowerShell, which should print nothing.\n- Pass models explicitly to components that accept them, so a future change to `Settings` can't reintroduce a default.\n- I'm not certain about every corner of the library. Some helpers, such as the default tokenizer, may download files from the internet, though that isn't an OpenAI API call. If you need a strictly offline setup, check which components you use and whether they make network requests.\n\nIf you're on an older LlamaIndex version (before 0.10), the imports and `ServiceContext` usage differ, so tell me your version and I can adjust the code.",
+ "tokens": {
+  "input": 678,
+  "output": 1594,
+  "thinking": 723,
+  "cache_read": 0,
+  "cache_creation": 676
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0009324,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8375,
+  "stop_reason": "end_turn",
+  "session_id": "4a51190d-7b56-4941-93ad-098be30b28cf",
+  "total_cost_usd": 0.0009324,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 676,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1594,
+   "output_tokens_details": {
+    "thinking_tokens": 723
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 676,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1594,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 676,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 676
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1594,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 676,
+    "webSearchRequests": 0,
+    "costUSD": 0.0009324,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 723,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 676,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You can set both models once on the global `Settings` object in `llama_index.core`. Any index, query engine, or pipeline that doesn't receive an explicit model will then use these instead of the OpenAI defaults.\n\n**1. Install the integrations** (package names for the 0.10+ `llama_index.core` API):\n\n```powershell\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\n**2. Make sure Ollama is running and has a model:**\n\n```powershell\nollama pull llama3.1\n```\n\nOllama serves on `http://localhost:11434` by default.\n\n**3. Configure the globals** (put this at the start of your app, before building any index):\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"\n)\n```\n\nAny later code that uses `Settings.llm` or `Settings.embed_model` will use these. For example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)   # uses the HF embedder\nprint(index.as_query_engine().query(\"Summarize the documents.\"))  # uses Ollama\n```\n\n**Making sure OpenAI is never contacted**\n\n- Setting both `Settings.llm` and `Settings.embed_model` replaces the OpenAI defaults, so the main risk is gone.\n- As a safety net, don't set `OPENAI_API_KEY` in your environment. Then any accidental OpenAI call fails loudly instead of silently billing you. You can check with `echo $env:OPENAI_API_KEY` in PowerShell, which should print nothing.\n- Pass models explicitly to components that accept them, so a future change to `Settings` can't reintroduce a default.\n- I'm not certain about every corner of the library. Some helpers, such as the default tokenizer, may download files from the internet, though that isn't an OpenAI API call. If you need a strictly offline setup, check which components you use and whether they make network requests.\n\nIf you're on an older LlamaIndex version (before 0.10), the imports and `ServiceContext` usage differ, so tell me your version and I can adjust the code.",
+  "ttft_ms": 4724,
+  "type": "result",
+  "duration_ms": 8495,
+  "uuid": "36573125-7182-4daa-bfda-4be63188a9a1",
+  "ttft_stream_ms": 2849,
+  "time_to_request_ms": 169,
+  "first_content_frame_ms": 2849,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

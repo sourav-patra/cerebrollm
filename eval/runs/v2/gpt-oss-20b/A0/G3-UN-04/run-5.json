@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-04",
+ "run": 5,
+ "started_utc": "2026-10-29T16:53:21Z",
+ "seconds": 7.63,
+ "prompt_sha256": "d9783f071d36b8d84a6ee7baa7446eaf7ed886ed53768a90a5edc763751554e2",
+ "answer": "I’m not aware of any special replication‑lag guarantee beyond what PostgreSQL itself provides.  \n`pgvector` writes HNSW index updates to the WAL, so the updates are streamed to replicas just like any other write. In practice that means the index changes are applied on the replica with the same latency as the normal streaming‑replication delay – there is no extra lag introduced by the extension.",
+ "thinking_chars": 1915,
+ "tokens": {
+  "input": 108,
+  "output": 458
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8129666700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:53:28.250666Z",
+  "response": "I’m not aware of any special replication‑lag guarantee beyond what PostgreSQL itself provides.  \n`pgvector` writes HNSW index updates to the WAL, so the updates are streamed to replicas just like any other write. In practice that means the index changes are applied on the replica with the same latency as the normal streaming‑replication delay – there is no extra lag introduced by the extension.",
+  "thinking": "We need to answer: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" They ask about a project pgvector. It has HNSW index updates. The question: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" The answer likely is: pgvector guarantees zero replication lag for HNSW index updates on a streaming replica, because the index updates are written to WAL and applied immediately. Or maybe it's \"pgvector guarantees that HNSW index updates are applied within the replication delay of the underlying Postgres streaming replication, typically within a few milliseconds.\" But the question is likely from a specific project docs. Let's recall: pgvector is a PostgreSQL extension for vector similarity search. It uses HNSW index. It likely uses WAL for index updates. The docs might mention that index updates are WAL-logged, ensuring replication. The replication lag is effectively the same as the underlying replication delay; no additional lag is introduced. So the guarantee is that updates are replicated immediately, with zero replication lag. But I'm not entirely sure. Let's search memory: In pgvector docs, there's a section about replication. They mention that the extension is WAL-logged, so replication is fully supported. The HNSW index updates are stored in the WAL and thus streamed to replicas. There is no additional replication lag beyond the replication delay. So the guarantee is that HNSW index updates are replicated with no additional lag. So answer: zero replication lag, same as underlying replication. Alternatively, they might guarantee \"no replication lag for index updates on streaming replicas\". I'll answer that.\n\nThus: pgvector guarantees that HNSW index updates are WAL-logged and replicated immediately, so there's effectively no additional replication lag beyond the normal PostgreSQL replication delay.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8129666700,
+  "load_duration": 13904900,
+  "prompt_eval_count": 108,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 187893000,
+  "eval_count": 458,
+  "eval_duration": 7909506000
+ }
+}

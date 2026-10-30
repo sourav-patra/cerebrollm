@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 1,
+ "started_utc": "2026-10-29T16:13:18Z",
+ "seconds": 5.88,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "The release added the two ROUGE‑based assertion types:\n\n\"**assertions:** add rouge-l and rouge-s assertion types\" [promptfoo/0.125.0.md].",
+ "thinking_chars": 746,
+ "tokens": {
+  "input": 2235,
+  "output": 257
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6172113000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:13:24.6152482Z",
+  "response": "The release added the two ROUGE‑based assertion types:\n\n\"**assertions:** add rouge-l and rouge-s assertion types\" [promptfoo/0.125.0.md].",
+  "thinking": "We need to answer: Which two ROUGE-based assertion types did promptfoo 0.125.0 add?\n\nWe need to find in the context: promptfoo/0.125.0.md lines 14-25 mention features: \"assertions: add rouge-l and rouge-s assertion types\". So the two types: rouge-l and rouge-s. We need to quote the line. The quote: \"assertions: add rouge-l and rouge-s assertion types\". The path: [0.125.0.md]. We need to show line. The context snippet line: [1] shows that. The line: \"* **assertions:** add rouge-l and rouge-s assertion types ([#10256](...))\". So quote: \"assertions: add rouge-l and rouge-s assertion types\". Path: [promptfoo/0.125.0.md]. In the snippet it's inside [1] line 14-25. So answer: rouge-l and rouge-s.\n\nWe need to say answer, quoting line and path.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6172113000,
+  "load_duration": 17684400,
+  "prompt_eval_count": 2235,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 1134444000,
+  "eval_count": 257,
+  "eval_duration": 4948999000
+ }
+}

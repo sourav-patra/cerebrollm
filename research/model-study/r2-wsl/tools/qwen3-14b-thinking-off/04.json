@@ -1,0 +1,157 @@
+{
+  "id": 5,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Overwrite src/version.py so that it contains exactly this text: VERSION = \"2.1.0\""
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": false,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:34:30.2991568Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_0exuyydp",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "content": "VERSION = \"2.1.0\"",
+              "path": "src/version.py"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1511451600,
+    "load_duration": 11564500,
+    "prompt_eval_count": 356,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 84815000,
+    "eval_count": 36,
+    "eval_duration": 1408434000
+  },
+  "wall_seconds": 1.4274156709998351,
+  "load_average_before": [
+    0.09130859375,
+    0.091796875,
+    0.02734375
+  ],
+  "load_average_after": [
+    0.09130859375,
+    0.091796875,
+    0.02734375
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "src/version.py",
+      "content": "VERSION = \"2.1.0\""
+    }
+  },
+  "passed": true
+}

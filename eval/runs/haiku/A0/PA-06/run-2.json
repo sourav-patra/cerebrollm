@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-06",
+ "run": 2,
+ "started_utc": "2026-10-29T01:47:51Z",
+ "seconds": 9.05,
+ "prompt_file": "runs/prompts/A0/PA-06.txt",
+ "prompt_sha256": "34422d74e405239a6b2b02b869a33468d7e3ebb79a720bb33ea045f26ef765e0",
+ "answer": "The feature is **iterative index scans**, added in pgvector 0.8.0. Without it, an HNSW index returns only about `hnsw.ef_search` candidates (default 40), and a `WHERE` filter applied after the index scan can discard most of them. With iterative scans enabled, the index keeps scanning until it has enough rows that pass the filter.\n\n```sql\n-- Per session or transaction\nSET hnsw.iterative_scan = strict_order;   -- or relaxed_order\nSET hnsw.max_scan_tuples = 20000;         -- optional cap on how far it scans (default 20000)\n\nSELECT *\nFROM items\nWHERE category = 'books'\nORDER BY embedding <-> '[...]'\nLIMIT 10;\n```\n\n- **`strict_order`** returns results in exact distance order.\n- **`relaxed_order`** can return rows slightly out of order, but it is usually faster. You can sort the results yourself in an outer query to fix the order.\n- For IVFFlat indexes, the equivalent setting is `ivfflat.iterative_scan`, and it works by probing more lists.\n\nCheck your pgvector version with `SELECT extversion FROM pg_extension WHERE extname = 'vector';`. This setting requires 0.8.0 or later. I'm working from memory here, so confirm the setting names and defaults against the pgvector README for your version.",
+ "tokens": {
+  "input": 688,
+  "output": 800,
+  "thinking": 344,
+  "cache_read": 0,
+  "cache_creation": 686
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005374,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4336,
+  "stop_reason": "end_turn",
+  "session_id": "7c81a47e-7ed0-45e5-bf5f-b3eac8ed67b5",
+  "total_cost_usd": 0.0005374,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 686,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 800,
+   "output_tokens_details": {
+    "thinking_tokens": 344
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 686,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 800,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 686,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 686
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 800,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 686,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005374,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 344,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 686,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The feature is **iterative index scans**, added in pgvector 0.8.0. Without it, an HNSW index returns only about `hnsw.ef_search` candidates (default 40), and a `WHERE` filter applied after the index scan can discard most of them. With iterative scans enabled, the index keeps scanning until it has enough rows that pass the filter.\n\n```sql\n-- Per session or transaction\nSET hnsw.iterative_scan = strict_order;   -- or relaxed_order\nSET hnsw.max_scan_tuples = 20000;         -- optional cap on how far it scans (default 20000)\n\nSELECT *\nFROM items\nWHERE category = 'books'\nORDER BY embedding <-> '[...]'\nLIMIT 10;\n```\n\n- **`strict_order`** returns results in exact distance order.\n- **`relaxed_order`** can return rows slightly out of order, but it is usually faster. You can sort the results yourself in an outer query to fix the order.\n- For IVFFlat indexes, the equivalent setting is `ivfflat.iterative_scan`, and it works by probing more lists.\n\nCheck your pgvector version with `SELECT extversion FROM pg_extension WHERE extname = 'vector';`. This setting requires 0.8.0 or later. I'm working from memory here, so confirm the setting names and defaults against the pgvector README for your version.",
+  "ttft_ms": 2830,
+  "type": "result",
+  "duration_ms": 4453,
+  "uuid": "d0924d61-8a45-4214-aee0-4cabdebfb95e",
+  "ttft_stream_ms": 2828,
+  "time_to_request_ms": 118,
+  "first_content_frame_ms": 2828,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

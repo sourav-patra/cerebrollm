@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-PA-05",
+ "run": 4,
+ "started_utc": "2026-10-29T16:40:35Z",
+ "seconds": 5.58,
+ "prompt_sha256": "0029e8b4caf8e96161381415b24b55a425803651c47c409acbb58c0159ac97f0",
+ "answer": "I’m not aware of a specific change to the `--filter-metadata` option in promptfoo 0.124.0, so I can’t give a definitive answer.",
+ "thinking_chars": 1255,
+ "tokens": {
+  "input": 113,
+  "output": 353
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6140095600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:40:41.790134Z",
+  "response": "I’m not aware of a specific change to the `--filter-metadata` option in promptfoo 0.124.0, so I can’t give a definitive answer.",
+  "thinking": "We need to answer: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" So apparently promptfoo is a tool. The question: new form of value accepted for the --filter-metadata option in version 0.124.0. We need to know from the project. I don't know. Let's think: maybe it's a new JSON format? Maybe the new form is a JSON array of key-value pairs? Let's consider promptfoo release notes. I'm not sure. I could search memory: promptfoo is a tool for evaluating LLM prompts. The --filter-metadata option maybe filters results based on metadata. In earlier versions, perhaps it accepted a string like \"key=value\" or \"key1=value1,key2=value2\". Now maybe it accepts a JSON object. So answer: It now accepts a JSON-formatted string. The new form is a JSON string, e.g. '{\"model\":\"gpt-4\",\"temperature\":0.7}'. Alternatively, maybe it's a YAML file path. But likely JSON.\n\nI recall reading that promptfoo 0.124.0 introduced ability to filter by metadata using a JSON array: e.g. --filter-metadata '{\"key\":\"value\"}'. Actually, maybe the new form is a JSON array of regex patterns. But the question: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" Could be a JSON string. Let's answer that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6140095600,
+  "load_duration": 16276700,
+  "prompt_eval_count": 113,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 185353000,
+  "eval_count": 353,
+  "eval_duration": 5923775000
+ }
+}

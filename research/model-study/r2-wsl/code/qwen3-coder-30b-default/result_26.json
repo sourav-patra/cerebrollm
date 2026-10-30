@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/154",
+  "index": 26,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef cycpattern_check(a , b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:07:20.8205484Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef cycpattern_check(a, b):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word\n    cycpattern_check(\"abcd\",\"abd\") => False\n    cycpattern_check(\"hello\",\"ell\") => True\n    cycpattern_check(\"whassup\",\"psus\") => False\n    cycpattern_check(\"abab\",\"baa\") => True\n    cycpattern_check(\"efef\",\"eeff\") => False\n    cycpattern_check(\"himenss\",\"simen\") => True\n\n    \"\"\"\n    if not b:\n        return True\n    if len(b) > len(a):\n        return False\n    \n    # Create a string that contains all rotations of b\n    # by concatenating b with itself\n    doubled_b = b + b\n    \n    # Check if a is a substring of the doubled string\n    # and also check if any rotation of b exists in a\n    for i in range(len(b)):\n        rotation = doubled_b[i:i+len(b)]\n        if rotation in a:\n            return True\n    \n    return False\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 6099519300,
+    "load_duration": 11252400,
+    "prompt_eval_count": 156,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 403102000,
+    "eval_count": 238,
+    "eval_duration": 5664811000
+  },
+  "wall_seconds": 5.5901977389985404,
+  "load_average_before": [
+    0.2041015625,
+    0.10546875,
+    0.02783203125
+  ],
+  "load_average_after": [
+    0.1875,
+    0.103515625,
+    0.02734375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-coder-30b-default-26",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-coder-30b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_26.py"
+    ],
+    "wall_seconds": 0.7184546179996687,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

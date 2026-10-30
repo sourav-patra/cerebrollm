@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-ST-03",
+ "run": 3,
+ "started_utc": "2026-10-29T17:30:00Z",
+ "seconds": 9.84,
+ "prompt_sha256": "aab6defc0af8fafa4ccd956a58f3b5e5d66d048dabc1508496819de684ce22c8",
+ "answer": "According to the newest Ollama release notes up to version 0.40.13, the LFM3 models run on Linux, Windows, and Apple silicon. This is mentioned in the context of the release notes for version 0.40.13:\n\n\"**LFM3 on Linux and Windows**: Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" \n\n[\"ollama/v0.40.13.md (lines 1-11)\"][https://github.com/ollama/ollama/releases/tag/v0.40.13]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1997,
+  "output": 184
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10585912500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:30:10.623602Z",
+  "response": "According to the newest Ollama release notes up to version 0.40.13, the LFM3 models run on Linux, Windows, and Apple silicon. This is mentioned in the context of the release notes for version 0.40.13:\n\n\"**LFM3 on Linux and Windows**: Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" \n\n[\"ollama/v0.40.13.md (lines 1-11)\"][https://github.com/ollama/ollama/releases/tag/v0.40.13]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10585912500,
+  "load_duration": 14222600,
+  "prompt_eval_count": 1997,
+  "prompt_eval_cached_count": 106,
+  "prompt_eval_duration": 1004481000,
+  "eval_count": 184,
+  "eval_duration": 9395016000
+ }
+}

@@ -1,0 +1,156 @@
+{
+  "id": 8,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "I just edited tests/test_io.py. Check that its tests pass."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": true,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:28:49.9373729Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "Okay, the user mentioned they edited tests/test_io.py and want to check if the tests pass. Let me see which tool to use here.\n\nLooking at the available functions, there's 'run_tests' which takes a path to a test file and runs the tests. That's exactly what's needed here. The user provided the file path as tests/test_io.py, so I should call run_tests with that path.\n\nI don't need to use read_file or write_file because the request is about running tests, not reading or writing content. Search_code isn't relevant here either since there's no mention of searching for text in the codebase.\n\nSo the correct function to call is run_tests with the argument path set to \"tests/test_io.py\".\n",
+      "tool_calls": [
+        {
+          "id": "call_a105uteo",
+          "function": {
+            "index": 0,
+            "name": "run_tests",
+            "arguments": {
+              "path": "tests/test_io.py"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7366840500,
+    "load_duration": 11058500,
+    "prompt_eval_count": 342,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 176596000,
+    "eval_count": 178,
+    "eval_duration": 7172616000
+  },
+  "wall_seconds": 6.9277973730004305,
+  "load_average_before": [
+    0.02734375,
+    0.0224609375,
+    0.0
+  ],
+  "load_average_after": [
+    0.0224609375,
+    0.021484375,
+    0.0
+  ],
+  "expected": {
+    "name": "run_tests",
+    "arguments": {
+      "path": "tests/test_io.py"
+    }
+  },
+  "passed": true
+}

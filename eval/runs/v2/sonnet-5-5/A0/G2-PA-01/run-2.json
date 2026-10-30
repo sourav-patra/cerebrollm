@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-01",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:37Z",
+ "seconds": 8.43,
+ "prompt_sha256": "ce77502f4f23f8787a3d35465a8564633550340ae180e063b908ad49cdc78b45",
+ "answer": "I don't know of an Ollama 0.32.10 change to the default repeat penalty, so I can't confirm what models without their own setting get from that version on.\n\nWhat I do know is that Ollama's built-in default for `repeat_penalty` has historically been 1.1, with `repeat_last_n` at 64. A model's Modelfile `PARAMETER` lines or a per-request `options` value override it. I can't say whether 0.32.10 changed this, and I'm not certain 1.1 still applies there.\n\nTo check, look at the 0.32.10 release notes on the Ollama GitHub releases page. You can also look at `DefaultOptions()` in `api/types.go` in the source. I can look through a local checkout if you point me to one.",
+ "tokens": {
+  "input": 643,
+  "output": 353,
+  "thinking": 116,
+  "cache_read": 0,
+  "cache_creation": 641
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006098,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4237,
+  "stop_reason": "end_turn",
+  "session_id": "32918f95-940c-445b-a7de-e2c90197460d",
+  "total_cost_usd": 0.006098,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 641,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 353,
+   "output_tokens_details": {
+    "thinking_tokens": 116
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 641,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 353,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 641,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 641
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 353,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 641,
+    "webSearchRequests": 0,
+    "costUSD": 0.006098,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 116,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 641,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an Ollama 0.32.10 change to the default repeat penalty, so I can't confirm what models without their own setting get from that version on.\n\nWhat I do know is that Ollama's built-in default for `repeat_penalty` has historically been 1.1, with `repeat_last_n` at 64. A model's Modelfile `PARAMETER` lines or a per-request `options` value override it. I can't say whether 0.32.10 changed this, and I'm not certain 1.1 still applies there.\n\nTo check, look at the 0.32.10 release notes on the Ollama GitHub releases page. You can also look at `DefaultOptions()` in `api/types.go` in the source. I can look through a local checkout if you point me to one.",
+  "ttft_ms": 2820,
+  "type": "result",
+  "duration_ms": 4333,
+  "uuid": "1a66e3de-d6f6-4714-a8cd-2e9ea5c94dec",
+  "ttft_stream_ms": 2819,
+  "time_to_request_ms": 128,
+  "first_content_frame_ms": 2819,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

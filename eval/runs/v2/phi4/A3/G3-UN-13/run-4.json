@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 4,
+ "started_utc": "2026-10-29T17:40:33Z",
+ "seconds": 7.48,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know the answer to the question based on the provided context. The documents mention metrics like BLEU, METEOR, and model-graded metrics, but there is no mention of an assertion type that computes BERTScore between an output and a reference.\n\nRelevant lines from the context:\n- \"BLEU (Bilingual Evaluation Understudy) is a **precision-oriented** metric originally designed for evaluating machine translation.\" [1]\n- \"METEOR can evaluate against multiple reference texts, using the best-matching reference for scoring.\" [4]\n- \"promptfoo supports several types of model-graded assertions\" [7]\n\nNone of these mention BERTScore. [1], [4], [7]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1588,
+  "output": 147
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8149022000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:40:41.8912973Z",
+  "response": "I do not know the answer to the question based on the provided context. The documents mention metrics like BLEU, METEOR, and model-graded metrics, but there is no mention of an assertion type that computes BERTScore between an output and a reference.\n\nRelevant lines from the context:\n- \"BLEU (Bilingual Evaluation Understudy) is a **precision-oriented** metric originally designed for evaluating machine translation.\" [1]\n- \"METEOR can evaluate against multiple reference texts, using the best-matching reference for scoring.\" [4]\n- \"promptfoo supports several types of model-graded assertions\" [7]\n\nNone of these mention BERTScore. [1], [4], [7]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8149022000,
+  "load_duration": 13406400,
+  "prompt_eval_count": 1588,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 811273000,
+  "eval_count": 147,
+  "eval_duration": 7173899000
+ }
+}

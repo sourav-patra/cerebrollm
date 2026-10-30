@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-14",
+ "run": 5,
+ "started_utc": "2026-10-29T01:51:10Z",
+ "seconds": 8.74,
+ "prompt_file": "runs/prompts/A3/PA-14.txt",
+ "prompt_sha256": "b79abfa84060f79c2b3b37ab6581317df9accf1a649c3cd59ed4cc2f532decc4",
+ "answer": "The provided context doesn't include the LlamaIndex OpenAI starter example, so I can't say which Hugging Face model it configures.\n\nThe context does show two Hugging Face embedding models in other sections, neither of them the starter example:\n\n- In the Local Embedding Models section: \"Settings.embed_model = HuggingFaceEmbedding(\" with \"model_name=\"BAAI/bge-small-en-v1.5\"\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n- In the LangChain Integrations section: \"Settings.embed_model = HuggingFaceBgeEmbeddings(model_name=\"BAAI/bge-base-en\")\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\nThe installation page links to a \"Starter Example with Local Models,\" but the context doesn't include that page's contents [llama_index/docs/src/content/docs/framework/getting_started/installation.md]. The starter example you're asking about would need to be checked directly.",
+ "tokens": {
+  "input": 3426,
+  "output": 789,
+  "thinking": 447,
+  "cache_read": 3038,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00050228,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4255,
+  "stop_reason": "end_turn",
+  "session_id": "0a0f8d86-e145-4b86-a108-5c327019e591",
+  "total_cost_usd": 0.00050228,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 3038,
+   "output_tokens": 789,
+   "output_tokens_details": {
+    "thinking_tokens": 447
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 789,
+     "cache_read_input_tokens": 3038,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 789,
+    "cacheReadInputTokens": 3038,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00050228,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 447,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided context doesn't include the LlamaIndex OpenAI starter example, so I can't say which Hugging Face model it configures.\n\nThe context does show two Hugging Face embedding models in other sections, neither of them the starter example:\n\n- In the Local Embedding Models section: \"Settings.embed_model = HuggingFaceEmbedding(\" with \"model_name=\"BAAI/bge-small-en-v1.5\"\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n- In the LangChain Integrations section: \"Settings.embed_model = HuggingFaceBgeEmbeddings(model_name=\"BAAI/bge-base-en\")\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]\n\nThe installation page links to a \"Starter Example with Local Models,\" but the context doesn't include that page's contents [llama_index/docs/src/content/docs/framework/getting_started/installation.md]. The starter example you're asking about would need to be checked directly.",
+  "ttft_ms": 3016,
+  "type": "result",
+  "duration_ms": 4338,
+  "uuid": "5a254889-aa54-44f7-b16f-9157e81137f3",
+  "ttft_stream_ms": 2797,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 2797,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-12",
+ "run": 4,
+ "started_utc": "2026-10-29T01:58:56Z",
+ "seconds": 12.41,
+ "prompt_file": "runs/prompts/A3/ST-12.txt",
+ "prompt_sha256": "28daf9c92948063d398f0009aa0b4b5a7e32fb85dc9b3b30b59d56951af1ecc3",
+ "answer": "To count LLM and embedding tokens, the docs use the `TokenCountingHandler` callback. The old token-counting approach is deprecated.\n\n1. **Set up mock models.** The docs say that \"In order to measure LLM and Embedding token counts, you'll need to\" set up `MockLLM` and `MockEmbedding` objects [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]. The example uses `llm = MockLLM(max_tokens=256)` and `embed_model = MockEmbedding(embed_dim=1536)` [same file].\n\n2. **Create the handler and callback manager.** The example passes a tokenizer to the handler: `token_counter = TokenCountingHandler(tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode)`, then wraps it with `callback_manager = CallbackManager([token_counter])` [same file]. The tokenizer only needs to be \"a callable function, that takes a string, and returns a list.\" [llonce_models/llms.md: llama_index/docs/src/content/docs/framework/module_guides/models/llms.md]\n\n3. **Register them globally.** The example sets `Settings.llm = llm` [usage_pattern.md]. The snippet is cut off before the rest of this step, so I can't confirm the exact line for attaching the callback manager to `Settings`.\n\nThe migration guide explains the change: \"Going forward, token counting as moved into a callback.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]. It also says the old implementation \"has been **deprecated**.\" [same file]\n\nI don't know from this context how to read the totals from the handler after a run, such as the attribute names for the LLM and embedding counts. The usage-pattern page points to an example notebook for the full setup [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md], which is the place to check those details.",
+ "tokens": {
+  "input": 3293,
+  "output": 1766,
+  "thinking": 1092,
+  "cache_read": 2904,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00098964,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8049,
+  "stop_reason": "end_turn",
+  "session_id": "e5e05607-cb1a-4a52-b2d0-f91dac0a5827",
+  "total_cost_usd": 0.00098964,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2904,
+   "output_tokens": 1766,
+   "output_tokens_details": {
+    "thinking_tokens": 1092
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1766,
+     "cache_read_input_tokens": 2904,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1766,
+    "cacheReadInputTokens": 2904,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00098964,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1092,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To count LLM and embedding tokens, the docs use the `TokenCountingHandler` callback. The old token-counting approach is deprecated.\n\n1. **Set up mock models.** The docs say that \"In order to measure LLM and Embedding token counts, you'll need to\" set up `MockLLM` and `MockEmbedding` objects [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]. The example uses `llm = MockLLM(max_tokens=256)` and `embed_model = MockEmbedding(embed_dim=1536)` [same file].\n\n2. **Create the handler and callback manager.** The example passes a tokenizer to the handler: `token_counter = TokenCountingHandler(tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode)`, then wraps it with `callback_manager = CallbackManager([token_counter])` [same file]. The tokenizer only needs to be \"a callable function, that takes a string, and returns a list.\" [llonce_models/llms.md: llama_index/docs/src/content/docs/framework/module_guides/models/llms.md]\n\n3. **Register them globally.** The example sets `Settings.llm = llm` [usage_pattern.md]. The snippet is cut off before the rest of this step, so I can't confirm the exact line for attaching the callback manager to `Settings`.\n\nThe migration guide explains the change: \"Going forward, token counting as moved into a callback.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]. It also says the old implementation \"has been **deprecated**.\" [same file]\n\nI don't know from this context how to read the totals from the handler after a run, such as the attribute names for the LLM and embedding counts. The usage-pattern page points to an example notebook for the full setup [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/index.md], which is the place to check those details.",
+  "ttft_ms": 5713,
+  "type": "result",
+  "duration_ms": 8161,
+  "uuid": "fc7458fd-dbda-4013-900f-4d312b6856ae",
+  "ttft_stream_ms": 3046,
+  "time_to_request_ms": 148,
+  "first_content_frame_ms": 3046,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

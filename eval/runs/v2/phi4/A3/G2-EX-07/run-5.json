@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 5,
+ "started_utc": "2026-10-29T17:44:31Z",
+ "seconds": 8.36,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "Promptfoo 0.125.0 added two ROUGE-based assertion types: `rouge-l` and `rouge-s`. This information can be found in the context provided:\n\n* \"add provider-only environment overrides\"\n* \"add rouge-l and rouge-s assertion types\" [1]\n\nThus, the two ROUGE-based assertion types added are:\n\n- `rouge-l`\n- `rouge-s`\n\nThese are mentioned in the features section of the release notes for version 0.125.0. [1 promptfoo/0.125.0.md (lines 14-25)](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) (2026-10-23) > Features",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2180,
+  "output": 158
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9247452300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:44:40.8645401Z",
+  "response": "Promptfoo 0.125.0 added two ROUGE-based assertion types: `rouge-l` and `rouge-s`. This information can be found in the context provided:\n\n* \"add provider-only environment overrides\"\n* \"add rouge-l and rouge-s assertion types\" [1]\n\nThus, the two ROUGE-based assertion types added are:\n\n- `rouge-l`\n- `rouge-s`\n\nThese are mentioned in the features section of the release notes for version 0.125.0. [1 promptfoo/0.125.0.md (lines 14-25)](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) (2026-10-23) > Features",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9247452300,
+  "load_duration": 13964700,
+  "prompt_eval_count": 2180,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 1126629000,
+  "eval_count": 158,
+  "eval_duration": 7953788000
+ }
+}

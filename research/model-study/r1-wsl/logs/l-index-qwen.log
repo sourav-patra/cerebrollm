@@ -1,0 +1,55 @@
+2026-10-28T20:21:44Z
+ live rows before swap | 13431
+
+FAILED: /api/ps still lists ['qwen3-embedding:0.6b'] after 10 s
+qwen3-embedding:0.6b unloaded; /api/ps is empty
+{
+  "mode": "full",
+  "duration_s": 583.2,
+  "documents": 1412,
+  "chunks_embedded": 13431,
+  "chunks_located": 13431,
+  "chunks_per_min": 1382,
+  "skipped_rule": {},
+  "skipped_secret": [
+    "notes:promptfoo/site/docs/providers/slack.md",
+    "notes:promptfoo/site/docs/providers/http.md"
+  ],
+  "no_rule": 0,
+  "files_seen": 1416,
+  "duplicates_collapsed": 2,
+  "backoff_seconds": 0.0,
+  "pace_max_texts_per_second": 25,
+  "wall_seconds": 583.5
+}
+EXIT 0
+WALL_SECONDS 598
+cerebrollm status  domain=org  table=chunks
+documents 1412  chunks 13431
+tier status      documents  chunks
+T3   current          1411   13382
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1416  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-28T20:31:41+0000  mode=full  duration=583.2s  chunks embedded=13431
+embedding model: qwen3-embedding:0.6b  digest: ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d  num_ctx: 8192
+             List of relations
+ Schema |    Name     | Type  |   Owner    
+--------+-------------+-------+------------
+ public | data_chunks | table | cerebrollm
+(1 row)
+
+#1 score=0.0307 T3 current cerebrollm/START.md L33-43@file cerebrollm | Start on a new machine > 3. Ollama and the first model sha=fa915a0334d6
+## 3. Ollama and the first model
+
+Install Ollama. Pull only the live embedding model now; the study models come later, one at a time (issue #9):
+
+```sh
+ollama pull bge-m3
+```
+
+Keep at least 8 GB of free disk before any pull. Never call a model whose name ends in `-cloud`: it sends data off the machine.
+
+Check: `ollama list` shows `bge-m3`. If a 4B Qwen model is already installed, note whether it is `qwen3-embedding:4b` (a study candidate for issue #10) or a chat model such as `qwen3:4b` (not a study candidate).

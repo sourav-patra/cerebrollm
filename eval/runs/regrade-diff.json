@@ -1,0 +1,489 @@
+{
+ "by_model_arm": {
+  "haiku/A0": {
+   "changed": 9,
+   "disclaimer_records": 67,
+   "fail_to_pass": 0,
+   "new_correct": 280,
+   "old_correct": 289,
+   "pass_to_fail": 9,
+   "records": 350,
+   "scored_changed": 9
+  },
+  "haiku/A3": {
+   "changed": 5,
+   "disclaimer_records": 76,
+   "fail_to_pass": 0,
+   "new_correct": 287,
+   "old_correct": 292,
+   "pass_to_fail": 5,
+   "records": 350,
+   "scored_changed": 5
+  },
+  "phi4/A0": {
+   "changed": 23,
+   "disclaimer_records": 182,
+   "fail_to_pass": 0,
+   "new_correct": 27,
+   "old_correct": 50,
+   "pass_to_fail": 23,
+   "records": 350,
+   "scored_changed": 23
+  },
+  "phi4/A1": {
+   "changed": 1,
+   "disclaimer_records": 38,
+   "fail_to_pass": 0,
+   "new_correct": 247,
+   "old_correct": 248,
+   "pass_to_fail": 1,
+   "records": 350,
+   "scored_changed": 1
+  },
+  "phi4/A2": {
+   "changed": 3,
+   "disclaimer_records": 22,
+   "fail_to_pass": 0,
+   "new_correct": 277,
+   "old_correct": 280,
+   "pass_to_fail": 3,
+   "records": 350,
+   "scored_changed": 3
+  },
+  "phi4/A3": {
+   "changed": 6,
+   "disclaimer_records": 31,
+   "fail_to_pass": 0,
+   "new_correct": 285,
+   "old_correct": 291,
+   "pass_to_fail": 6,
+   "records": 350,
+   "scored_changed": 6
+  }
+ },
+ "changed_records": [
+  [
+   "haiku",
+   "A0",
+   "EX-17",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-17",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-17",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-19",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-19",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-19",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-19",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "EX-19",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A0",
+   "PA-16",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A3",
+   "EX-17",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A3",
+   "EX-17",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A3",
+   "EX-17",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A3",
+   "EX-17",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "haiku",
+   "A3",
+   "EX-17",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-01",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-01",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-01",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-01",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-01",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-02",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-02",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-02",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-14",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-14",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-14",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-17",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-17",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-17",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-17",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "EX-17",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "PA-10",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "PA-13",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "PA-13",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "PA-13",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "PA-13",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "PA-13",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A0",
+   "ST-15",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A1",
+   "PA-10",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A2",
+   "EX-17",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A2",
+   "EX-17",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A2",
+   "EX-17",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A3",
+   "EX-06",
+   1,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A3",
+   "EX-06",
+   5,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A3",
+   "EX-17",
+   2,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A3",
+   "EX-17",
+   3,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A3",
+   "EX-17",
+   4,
+   "scored",
+   true,
+   false
+  ],
+  [
+   "phi4",
+   "A3",
+   "EX-17",
+   5,
+   "scored",
+   true,
+   false
+  ]
+ ]
+}

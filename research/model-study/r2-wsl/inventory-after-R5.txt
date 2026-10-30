@@ -1,0 +1,20 @@
+Inventory after ruling R-5 removals
+Taken: 2026-10-29T06:52:43+05:30 (Windows, read-only commands; no model loaded)
+
+$ ollama list
+NAME                    ID              SIZE      MODIFIED    
+gpt-oss:20b             f38aa0c53da5    13 GB     4 hours ago    
+qwen3-embedding:0.6b    ac6da0dfba84    639 MB    6 hours ago    
+phi4:latest             ac896e5b8b34    9.1 GB    6 hours ago    
+bge-m3:latest           790764642607    1.2 GB    7 hours ago    
+kimi-k3:cloud           630e737485bd    -         2 days ago     
+qwen3.5:9b              56671c2ab938    6.6 GB    3 days ago     
+
+$ ollama ps
+NAME                    ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+qwen3-embedding:0.6b    ac6da0dfba84    1.7 GB    100% GPU     8192       llamacpp    3 minutes from now    
+
+$ df -B1 /c (free bytes on C:)
+free_bytes 374762713088 used_bytes 624277504000 size_bytes 999040217088
+
+Note: the before-removal inventory and the per-rm exit codes were not saved as files; they rest on the builder session log only.

@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-02",
+ "run": 4,
+ "started_utc": "2026-10-29T15:59:07Z",
+ "seconds": 1.81,
+ "prompt_sha256": "6313660d1f260ef897c26ddf6e354ac3a22e43ef4d770c6c48c8b2c3e4f95811",
+ "answer": "\"Use the OpenAI-compatible /v1/audio/speech endpoint:\" [ollama/docs/capabilities/speech.md (lines 56-112)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2199,
+  "output": 37
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1896183200
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:59:09.8326994Z",
+  "response": "\"Use the OpenAI-compatible /v1/audio/speech endpoint:\" [ollama/docs/capabilities/speech.md (lines 56-112)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1896183200,
+  "load_duration": 15427000,
+  "prompt_eval_count": 2199,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 1039174000,
+  "eval_count": 37,
+  "eval_duration": 379338000
+ }
+}

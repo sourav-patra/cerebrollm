@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-07",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:25Z",
+ "seconds": 3.0,
+ "prompt_sha256": "966074e791335ca871ebd5a7d82b30bbeb317f071d36667858d564446d44005d",
+ "answer": "\"feat(core): add native async support to StructuredLLMRerank.\" [llama_index/v0.14.25.md]",
+ "thinking_chars": 527,
+ "tokens": {
+  "input": 1481,
+  "output": 180
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3182700600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:46:27.7060113Z",
+  "response": "\"feat(core): add native async support to StructuredLLMRerank.\" [llama_index/v0.14.25.md]",
+  "thinking": "We need to answer: Which reranker class gained native async support in llama-index-core 0.14.25? We need to refer to context. Look at line 58-66 from context [1]. It lists changes for llama-index-core 0.14.25: \"- feat(core): add native async support to StructuredLLMRerank\". So the reranker class is StructuredLLMRerank. That is the answer. Need to quote line and path. The quote is: \"feat(core): add native async support to StructuredLLMRerank\". Path: [1] which is llama_index/v0.14.25.md. Lines 58-66. Provide quote and path.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3182700600,
+  "load_duration": 14053900,
+  "prompt_eval_count": 1481,
+  "prompt_eval_cached_count": 1476,
+  "prompt_eval_duration": 54958000,
+  "eval_count": 180,
+  "eval_duration": 3062474000
+ }
+}

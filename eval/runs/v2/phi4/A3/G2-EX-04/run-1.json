@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 1,
+ "started_utc": "2026-10-29T17:13:55Z",
+ "seconds": 9.42,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "In the context provided for Ollama version 0.34.1, it is mentioned that the `/api/tags` endpoint became significantly faster for large model libraries. Specifically, the time it took to answer a cold request was reduced to 294 milliseconds. \n\nHere is the relevant quote: \"Runaway repeat token detection now requires 100 repeat tokens for reduced false positives (e.g. OCR); `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.\" [ollama/v0.34.1.md (lines 1-15)].\n\nTherefore, after the speed-up in version 0.34.1, Ollama took 294 milliseconds to answer a cold `/api/tags` request on a large model library.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2301,
+  "output": 169
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10266441400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:14:05.2313315Z",
+  "response": "In the context provided for Ollama version 0.34.1, it is mentioned that the `/api/tags` endpoint became significantly faster for large model libraries. Specifically, the time it took to answer a cold request was reduced to 294 milliseconds. \n\nHere is the relevant quote: \"Runaway repeat token detection now requires 100 repeat tokens for reduced false positives (e.g. OCR); `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing), and model capabilities are now reported consistently.\" [ollama/v0.34.1.md (lines 1-15)].\n\nTherefore, after the speed-up in version 0.34.1, Ollama took 294 milliseconds to answer a cold `/api/tags` request on a large model library.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10266441400,
+  "load_duration": 13480100,
+  "prompt_eval_count": 2301,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1195251000,
+  "eval_count": 169,
+  "eval_duration": 8877520000
+ }
+}

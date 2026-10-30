@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-04",
+ "run": 4,
+ "started_utc": "2026-10-29T17:39:21Z",
+ "seconds": 6.83,
+ "prompt_sha256": "d7d8fbac53fff77aabef414bb850210a10a62dab90fdb5a939e34cdf882699f1",
+ "answer": "Based on the provided context, there is no specific mention of replication lag guarantees for HNSW index updates on a streaming replica in the pgvector project documentation. The only relevant information regarding replication is found in [2] pgvector/README.md (lines 823-829), which states that pgvector uses the write-ahead log (WAL) for replication, allowing for replication and point-in-time recovery. However, it does not specify any particular replication lag guarantees for HNSW index updates or any other operations.\n\nTherefore, I do not know the replication lag guarantees for HNSW index updates on a streaming replica based on the given context.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1848,
+  "output": 131
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7568953800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:39:28.9641479Z",
+  "response": "Based on the provided context, there is no specific mention of replication lag guarantees for HNSW index updates on a streaming replica in the pgvector project documentation. The only relevant information regarding replication is found in [2] pgvector/README.md (lines 823-829), which states that pgvector uses the write-ahead log (WAL) for replication, allowing for replication and point-in-time recovery. However, it does not specify any particular replication lag guarantees for HNSW index updates or any other operations.\n\nTherefore, I do not know the replication lag guarantees for HNSW index updates on a streaming replica based on the given context.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7568953800,
+  "load_duration": 12559300,
+  "prompt_eval_count": 1848,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 944618000,
+  "eval_count": 131,
+  "eval_duration": 6472670000
+ }
+}

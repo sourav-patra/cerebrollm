@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-13",
+ "run": 3,
+ "started_utc": "2026-10-29T01:50:38Z",
+ "seconds": 9.34,
+ "prompt_file": "runs/prompts/A0/PA-13.txt",
+ "prompt_sha256": "ead2d8f821e2d1c995ccad56f17fc15a3b48783f6a52a1a3e93d83d2c2fb9b97",
+ "answer": "Use `Settings.chunk_size` from `llama_index.core`. It sets the chunk size used by the default sentence splitter, so you don't have to replace the splitter itself:\n\n```python\nfrom llama_index.core import Settings\n\nSettings.chunk_size = 512\nSettings.chunk_overlap = 20  # optional: overlap is controlled the same way\n```\n\nIf you've already assigned a custom `Settings.node_parser` (or the older `Settings.text_splitter`), that object takes precedence and this setting won't affect it. Beyond that, I'm not certain of the exact internals in every LlamaIndex version, so check the docs for your installed release if the behavior differs.",
+ "tokens": {
+  "input": 668,
+  "output": 830,
+  "thinking": 610,
+  "cache_read": 0,
+  "cache_creation": 666
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005484,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4447,
+  "stop_reason": "end_turn",
+  "session_id": "46aef5c4-af16-4780-b057-32956b0a0867",
+  "total_cost_usd": 0.0005484,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 666,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 830,
+   "output_tokens_details": {
+    "thinking_tokens": 610
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 666,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 830,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 666,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 666
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 830,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 666,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005484,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 610,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 666,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use `Settings.chunk_size` from `llama_index.core`. It sets the chunk size used by the default sentence splitter, so you don't have to replace the splitter itself:\n\n```python\nfrom llama_index.core import Settings\n\nSettings.chunk_size = 512\nSettings.chunk_overlap = 20  # optional: overlap is controlled the same way\n```\n\nIf you've already assigned a custom `Settings.node_parser` (or the older `Settings.text_splitter`), that object takes precedence and this setting won't affect it. Beyond that, I'm not certain of the exact internals in every LlamaIndex version, so check the docs for your installed release if the behavior differs.",
+  "ttft_ms": 3666,
+  "type": "result",
+  "duration_ms": 4578,
+  "uuid": "9253e8b7-3c45-4207-abc9-84b35f3c41ca",
+  "ttft_stream_ms": 2750,
+  "time_to_request_ms": 179,
+  "first_content_frame_ms": 2751,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

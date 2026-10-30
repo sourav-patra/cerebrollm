@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-12",
+ "run": 4,
+ "started_utc": "2026-10-29T01:58:48Z",
+ "seconds": 10.75,
+ "prompt_file": "runs/prompts/A0/ST-12.txt",
+ "prompt_sha256": "7ae00a655640bdbe80f6bf71fad0b0945932dcb03dc2ac6608e84d91b5625d4d",
+ "answer": "In LlamaIndex, you count tokens with `TokenCountingHandler`, a callback handler that tallies LLM and embedding tokens as they run. This is from my knowledge of the API, and I can't confirm details against the latest release, so check the docs if something doesn't match.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# ... build an index, run queries, call embeddings, etc. ...\n\nprint(\"LLM prompt tokens:    \", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"LLM total tokens:     \", token_counter.total_llm_token_count)\nprint(\"Embedding tokens:     \", token_counter.total_embedding_token_count)\n\ntoken_counter.reset_counts()  # clear counts before the next measurement\n```\n\nNotes:\n\n- **Tokenizer:** The handler needs a function that turns a string into tokens. The example uses tiktoken's encoder for an OpenAI model. For other models, pass that model's tokenizer. If you don't pass one, I believe it falls back to a default, so counts may not match your provider's billing.\n- **Per-call detail:** The handler also keeps per-event lists, such as `llm_token_counts` and `embedding_token_counts`, which you can inspect to see the count for each call.\n- **Dependencies:** You need `llama-index-core` and `tiktoken` installed.\n- **Setting the callback:** Setting `Settings.callback_manager` applies the handler globally. You can also pass a `CallbackManager` to individual components instead.\n- **Counts are estimates:** These are local tokenizer counts, not usage figures reported by the API. If you need exact billing numbers, compare them with the provider's usage data in the response.",
+ "tokens": {
+  "input": 655,
+  "output": 1330,
+  "thinking": 636,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007958,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6379,
+  "stop_reason": "end_turn",
+  "session_id": "ae5715dd-ef39-480d-a3d7-dfac1af56539",
+  "total_cost_usd": 0.0007958,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1330,
+   "output_tokens_details": {
+    "thinking_tokens": 636
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1330,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1330,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007958,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 636,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In LlamaIndex, you count tokens with `TokenCountingHandler`, a callback handler that tallies LLM and embedding tokens as they run. This is from my knowledge of the API, and I can't confirm details against the latest release, so check the docs if something doesn't match.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# ... build an index, run queries, call embeddings, etc. ...\n\nprint(\"LLM prompt tokens:    \", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"LLM total tokens:     \", token_counter.total_llm_token_count)\nprint(\"Embedding tokens:     \", token_counter.total_embedding_token_count)\n\ntoken_counter.reset_counts()  # clear counts before the next measurement\n```\n\nNotes:\n\n- **Tokenizer:** The handler needs a function that turns a string into tokens. The example uses tiktoken's encoder for an OpenAI model. For other models, pass that model's tokenizer. If you don't pass one, I believe it falls back to a default, so counts may not match your provider's billing.\n- **Per-call detail:** The handler also keeps per-event lists, such as `llm_token_counts` and `embedding_token_counts`, which you can inspect to see the count for each call.\n- **Dependencies:** You need `llama-index-core` and `tiktoken` installed.\n- **Setting the callback:** Setting `Settings.callback_manager` applies the handler globally. You can also pass a `CallbackManager` to individual components instead.\n- **Counts are estimates:** These are local tokenizer counts, not usage figures reported by the API. If you need exact billing numbers, compare them with the provider's usage data in the response.",
+  "ttft_ms": 3554,
+  "type": "result",
+  "duration_ms": 6504,
+  "uuid": "7a31b6eb-63ff-45d1-ada2-6a76a05b7a40",
+  "ttft_stream_ms": 2824,
+  "time_to_request_ms": 128,
+  "first_content_frame_ms": 2824,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

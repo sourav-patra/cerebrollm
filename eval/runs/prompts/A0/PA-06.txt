@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: A filtered nearest-neighbour query on a pgvector approximate index returns fewer rows than my LIMIT. What feature makes the index keep scanning until enough rows are found?

@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: What is the minimum NVIDIA driver version that Ollama on Windows requires?

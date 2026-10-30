@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 1,
+ "started_utc": "2026-10-29T16:16:14Z",
+ "seconds": 11.54,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know.",
+ "thinking_chars": 1815,
+ "tokens": {
+  "input": 1662,
+  "output": 463
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9726353000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:16:24.5854322Z",
+  "response": "I do not know.",
+  "thinking": "We need to find which promptfoo assertion type computes BERTScore between an output and a reference. We have context docs about deterministic metrics: BLEU, ROUGE, METEOR. BERTScore is a metric for semantic similarity. Where is BERTScore referenced? Not in context. Search context: not present. Might be in other docs not provided. The question: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" We need answer: likely \"bertscore\" assertion type. But confirm via docs. In deterministic metrics, there is BERTScore? Search: not in provided snippet. But maybe in other parts: maybe \"bert-score\" or \"bertscore\". Let's think.\n\nPromptfoo's assertion types include: contains, not-contains, equals, not-equals, regex, json-schema, llm-rubric, agent-rubric, search-rubric, not-guardrails, meteor, rouge, bleu, etc. BERTScore might be \"bertscore\". I recall reading about BERTScore in promptfoo? Might exist. Let's search in memory: In promptfoo docs, there is deterministic metric \"bertscore\" that uses BERTScore. The assertion type might be \"bertscore\". So answer: \"bertscore\". Provide quote? We need to quote the line we rely on. But we don't have the snippet. Maybe we can say \"I do not know\" but better to answer with guess. We might say \"bertscore\". But we need citation path.\n\nWe don't have path. We could say \"I do not know.\" But question expects answer. Might be trick: they want \"bertscore\" assertion type. Let's answer that.\n\nSince we don't have a quote, we can say we do not know. But maybe we can rely on general knowledge. But guidelines say: If you do not know, say you do not know. So we should say we do not know. But we can guess but it's not safe. So answer: \"I do not know.\" However, we could search context for \"bertscore\" but not present. So safe: say I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9726353000,
+  "load_duration": 12965200,
+  "prompt_eval_count": 1662,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 762631000,
+  "eval_count": 463,
+  "eval_duration": 8897385000
+ }
+}

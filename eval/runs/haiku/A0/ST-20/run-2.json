@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-20",
+ "run": 2,
+ "started_utc": "2026-10-29T02:01:38Z",
+ "seconds": 8.24,
+ "prompt_file": "runs/prompts/A0/ST-20.txt",
+ "prompt_sha256": "03dd648efe96c9315753cce88dd72fe0c989d3d530491d9ce4af8de790d5b16f",
+ "answer": "I don't know the exact options that `promptfoo scan-model` uses to set a JFrog or MLflow registry URI, so I can't give you a flag or config key without risking a wrong answer.\n\nTo find it:\n\n- Run `promptfoo scan-model --help` in your terminal. This lists the flags your installed version supports.\n- Check the promptfoo documentation for the model scanning feature.\n- Look at the promptfoo source or changelog for the version you have installed, since the supported registries may depend on the version.\n\nIf you paste the help output or the relevant docs section here, I can help you work out the right command for your setup.",
+ "tokens": {
+  "input": 661,
+  "output": 368,
+  "thinking": 173,
+  "cache_read": 0,
+  "cache_creation": 659
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.000316,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3279,
+  "stop_reason": "end_turn",
+  "session_id": "9187df10-2d53-4a3b-bf05-efc3d036baa1",
+  "total_cost_usd": 0.000316,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 659,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 368,
+   "output_tokens_details": {
+    "thinking_tokens": 173
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 659,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 368,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 659,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 659
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 368,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 659,
+    "webSearchRequests": 0,
+    "costUSD": 0.000316,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 173,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 659,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the exact options that `promptfoo scan-model` uses to set a JFrog or MLflow registry URI, so I can't give you a flag or config key without risking a wrong answer.\n\nTo find it:\n\n- Run `promptfoo scan-model --help` in your terminal. This lists the flags your installed version supports.\n- Check the promptfoo documentation for the model scanning feature.\n- Look at the promptfoo source or changelog for the version you have installed, since the supported registries may depend on the version.\n\nIf you paste the help output or the relevant docs section here, I can help you work out the right command for your setup.",
+  "ttft_ms": 3063,
+  "type": "result",
+  "duration_ms": 3489,
+  "uuid": "145f31c1-d817-4cbd-8baf-d2e5bed90570",
+  "ttft_stream_ms": 3062,
+  "time_to_request_ms": 216,
+  "first_content_frame_ms": 3062,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

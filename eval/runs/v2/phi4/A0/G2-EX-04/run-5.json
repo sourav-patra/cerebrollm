@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-04",
+ "run": 5,
+ "started_utc": "2026-10-29T17:41:04Z",
+ "seconds": 2.31,
+ "prompt_sha256": "9dd50f777b37d86f0bebca501def5b8f743d5f2f37f6da0f8ef1ca3e24ec69ca",
+ "answer": "I do not know the specific duration it took for Ollama 0.34.1 to answer a cold `/api/tags` request on a large model library after the speed-up. This information would depend on specific testing conditions and results that are not provided here.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 68,
+  "output": 55
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2566651000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:41:06.8372811Z",
+  "response": "I do not know the specific duration it took for Ollama 0.34.1 to answer a cold `/api/tags` request on a large model library after the speed-up. This information would depend on specific testing conditions and results that are not provided here.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2566651000,
+  "load_duration": 12032700,
+  "prompt_eval_count": 68,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 99054000,
+  "eval_count": 55,
+  "eval_duration": 2438154000
+ }
+}

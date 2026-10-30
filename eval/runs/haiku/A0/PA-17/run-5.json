@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-17",
+ "run": 5,
+ "started_utc": "2026-10-29T01:52:12Z",
+ "seconds": 9.61,
+ "prompt_file": "runs/prompts/A0/PA-17.txt",
+ "prompt_sha256": "0b727d7eb81ef9321a681ceaa4861e106e84e277214e2cfb8d36e4df76a91b69",
+ "answer": "Use the `--no-write` flag:\n\n```powershell\nnpx promptfoo eval --no-write\n```\n\nThis tells promptfoo not to save the eval run to its results database. Results still print to the console. Add `--output results.json` (or `.csv`, `.html`, etc.) if you want a file, and point it at a path outside the promptfoo directory.\n\nOther options, as far as I know:\n\n- **Move the promptfoo data directory.** By default promptfoo keeps its data (the results database and cache) in your home directory under `.promptfoo`. To relocate it, set `PROMPTFOO_CONFIG_DIR` before running:\n  ```powershell\n  $env:PROMPTFOO_CONFIG_DIR = \"D:\\promptfoo-data\"\n  npx promptfoo eval\n  ```\n- **Disable the cache.** If the cache files are what you're seeing, `--no-cache` turns off cache reads and writes.\n\nI'm not certain whether a `.promptfoo` folder inside your project would come from these settings or from another cause in your setup. Check the promptfoo docs or run `npx promptfoo --help` and `npx promptfoo eval --help` to confirm the flags for your installed version.",
+ "tokens": {
+  "input": 658,
+  "output": 923,
+  "thinking": 528,
+  "cache_read": 0,
+  "cache_creation": 656
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005929,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5165,
+  "stop_reason": "end_turn",
+  "session_id": "a088d92f-6900-4c30-bcf4-28e0c0f50e64",
+  "total_cost_usd": 0.0005929,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 656,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 923,
+   "output_tokens_details": {
+    "thinking_tokens": 528
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 656,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 923,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 656,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 656
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 923,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 656,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005929,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 528,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 656,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use the `--no-write` flag:\n\n```powershell\nnpx promptfoo eval --no-write\n```\n\nThis tells promptfoo not to save the eval run to its results database. Results still print to the console. Add `--output results.json` (or `.csv`, `.html`, etc.) if you want a file, and point it at a path outside the promptfoo directory.\n\nOther options, as far as I know:\n\n- **Move the promptfoo data directory.** By default promptfoo keeps its data (the results database and cache) in your home directory under `.promptfoo`. To relocate it, set `PROMPTFOO_CONFIG_DIR` before running:\n  ```powershell\n  $env:PROMPTFOO_CONFIG_DIR = \"D:\\promptfoo-data\"\n  npx promptfoo eval\n  ```\n- **Disable the cache.** If the cache files are what you're seeing, `--no-cache` turns off cache reads and writes.\n\nI'm not certain whether a `.promptfoo` folder inside your project would come from these settings or from another cause in your setup. Check the promptfoo docs or run `npx promptfoo --help` and `npx promptfoo eval --help` to confirm the flags for your installed version.",
+  "ttft_ms": 3472,
+  "type": "result",
+  "duration_ms": 5311,
+  "uuid": "0ce7241d-5693-405d-b615-c81159aa4fd0",
+  "ttft_stream_ms": 3111,
+  "time_to_request_ms": 185,
+  "first_content_frame_ms": 3111,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

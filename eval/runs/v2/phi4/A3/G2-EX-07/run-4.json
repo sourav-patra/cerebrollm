@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 4,
+ "started_utc": "2026-10-29T17:37:27Z",
+ "seconds": 15.82,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "Promptfoo version 0.125.0 added two ROUGE-based assertion types: `rouge-l` and `rouge-s`. This information is found in the context at the following lines:\n\n1. \"**assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\"\n\n   - [promptfoo/0.125.0.md](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) (2026-10-23) > Features [1]\n\n2. \"**assertions:** filter trace spans by attributes ([#10648](https://github.com/promptfoo/promptfoo/issues/10648)) ([faf08b4](https://github.com/promptfoo/promptfoo/commit/faf08b45e17675a89b42c016589eae848964bb2c))\"\n\n   - [promptfoo/0.125.0.md](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) (2026-10-23) > Features [1] (continuation) \n\nTherefore, the two assertion types added are \"rouge-l\" and \"rouge-s\".",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2180,
+  "output": 319
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 17543263900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:37:43.7141234Z",
+  "response": "Promptfoo version 0.125.0 added two ROUGE-based assertion types: `rouge-l` and `rouge-s`. This information is found in the context at the following lines:\n\n1. \"**assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\"\n\n   - [promptfoo/0.125.0.md](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) (2026-10-23) > Features [1]\n\n2. \"**assertions:** filter trace spans by attributes ([#10648](https://github.com/promptfoo/promptfoo/issues/10648)) ([faf08b4](https://github.com/promptfoo/promptfoo/commit/faf08b45e17675a89b42c016589eae848964bb2c))\"\n\n   - [promptfoo/0.125.0.md](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) (2026-10-23) > Features [1] (continuation) \n\nTherefore, the two assertion types added are \"rouge-l\" and \"rouge-s\".",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 17543263900,
+  "load_duration": 12043100,
+  "prompt_eval_count": 2180,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 1133790000,
+  "eval_count": 319,
+  "eval_duration": 16255984000
+ }
+}

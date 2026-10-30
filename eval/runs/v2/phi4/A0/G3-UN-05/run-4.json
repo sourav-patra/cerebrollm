@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-05",
+ "run": 4,
+ "started_utc": "2026-10-29T17:35:05Z",
+ "seconds": 2.84,
+ "prompt_sha256": "facc9609f2e09161516f6e2fc1f1ba49e1decb695137a62d66685b54806f8f7c",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. Environment variable defaults are often specific to the software or library in question and may not be publicly documented. It would be best to consult the official Ollama documentation or configuration files for this information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 52,
+  "output": 61
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2933118900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:35:06.6942614Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. Environment variable defaults are often specific to the software or library in question and may not be publicly documented. It would be best to consult the official Ollama documentation or configuration files for this information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2933118900,
+  "load_duration": 12528800,
+  "prompt_eval_count": 52,
+  "prompt_eval_cached_count": 30,
+  "prompt_eval_duration": 214106000,
+  "eval_count": 61,
+  "eval_duration": 2683327000
+ }
+}

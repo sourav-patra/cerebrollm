@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 3,
+ "started_utc": "2026-10-29T17:28:23Z",
+ "seconds": 10.92,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "The Ollama API endpoint extended in release 0.34.3 to advertise each model's thinking controls and default is the `/api/show` endpoint. The context states:\n\n`GET /api/show` now advertises each model's thinking controls and default.\n\nYou can find this information in the context from the file [1] ollama/v0.34.3.md:\n\n\"Available in the CLI with:\n```\nollama show gemma4\n```\n\n```\n    thinking\n        levels     false, true\n        default    true\n```\n\nAvailable in the API with:\n```sh \ncurl http://localhost:11434/api/show -d '{\"model\": \"glm-5.3-flash:cloud\"}'\n```\n\n```json\n{\n  \"thinking\": {\n    \"values\": [\"low\", \"high\", \"max\"],\n    \"default\": \"max\"\n  }\n}\n```\" [ollama/v0.34.3.md (lines 1-41)].\n\n",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2084,
+  "output": 204
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11747188400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:28:35.2251251Z",
+  "response": "The Ollama API endpoint extended in release 0.34.3 to advertise each model's thinking controls and default is the `/api/show` endpoint. The context states:\n\n`GET /api/show` now advertises each model's thinking controls and default.\n\nYou can find this information in the context from the file [1] ollama/v0.34.3.md:\n\n\"Available in the CLI with:\n```\nollama show gemma4\n```\n\n```\n    thinking\n        levels     false, true\n        default    true\n```\n\nAvailable in the API with:\n```sh \ncurl http://localhost:11434/api/show -d '{\"model\": \"glm-5.3-flash:cloud\"}'\n```\n\n```json\n{\n  \"thinking\": {\n    \"values\": [\"low\", \"high\", \"max\"],\n    \"default\": \"max\"\n  }\n}\n```\" [ollama/v0.34.3.md (lines 1-41)].\n\n",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11747188400,
+  "load_duration": 12938300,
+  "prompt_eval_count": 2084,
+  "prompt_eval_cached_count": 24,
+  "prompt_eval_duration": 1232994000,
+  "eval_count": 204,
+  "eval_duration": 10475861000
+ }
+}

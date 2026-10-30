@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 4,
+ "started_utc": "2026-10-29T17:35:37Z",
+ "seconds": 10.31,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "Release 0.34.3 extended the `GET /api/show` endpoint to advertise each model's thinking controls and default settings. This information is available both through the CLI and via an API call, as described in the context from [1] ollama/v0.34.3.md (lines 1-41):\n\n\"GET /api/show now advertises each model's thinking controls and default:\n\nAvailable in the CLI with:\n```\nollama show gemma4\n```\n\n```\n    thinking\n        levels     false, true\n        default    true\n```\n\nAvailable in the API with:\n```sh \ncurl http://localhost:11434/api/show -d '{\"model\": \"glm-5.3-flash:cloud\"}'\n```\"\n\n[\"ollama/v0.34.3.md (lines 1-41)\"][https://github.com/ollama/ollama/releases/tag/v0.34.3]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2084,
+  "output": 193
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10941941500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:35:47.5470752Z",
+  "response": "Release 0.34.3 extended the `GET /api/show` endpoint to advertise each model's thinking controls and default settings. This information is available both through the CLI and via an API call, as described in the context from [1] ollama/v0.34.3.md (lines 1-41):\n\n\"GET /api/show now advertises each model's thinking controls and default:\n\nAvailable in the CLI with:\n```\nollama show gemma4\n```\n\n```\n    thinking\n        levels     false, true\n        default    true\n```\n\nAvailable in the API with:\n```sh \ncurl http://localhost:11434/api/show -d '{\"model\": \"glm-5.3-flash:cloud\"}'\n```\"\n\n[\"ollama/v0.34.3.md (lines 1-41)\"][https://github.com/ollama/ollama/releases/tag/v0.34.3]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10941941500,
+  "load_duration": 14983400,
+  "prompt_eval_count": 2084,
+  "prompt_eval_cached_count": 24,
+  "prompt_eval_duration": 1212706000,
+  "eval_count": 193,
+  "eval_duration": 9690426000
+ }
+}

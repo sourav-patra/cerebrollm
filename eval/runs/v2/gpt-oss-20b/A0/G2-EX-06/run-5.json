@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-06",
+ "run": 5,
+ "started_utc": "2026-10-29T16:50:39Z",
+ "seconds": 18.89,
+ "prompt_sha256": "76eeb457029140d225af9863f4ff3e13b0a7dccc8497126a58581f184707e600",
+ "answer": "I’m not sure about that.",
+ "thinking_chars": 3985,
+ "tokens": {
+  "input": 107,
+  "output": 1052
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 17848273800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:50:57.0357091Z",
+  "response": "I’m not sure about that.",
+  "thinking": "The user asks: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" This is about a project named promptfoo, version 0.122.0. They want to know which Node.js major version it stopped supporting.\n\nWe need to find the answer from what I know. I might not know. Let's recall: promptfoo is a tool to run prompts. I don't recall the specific details. It's likely that promptfoo 0.122.0 stopped supporting Node.js 18 or Node.js 16. But we need to be accurate. Let's try to recall: Promptfoo's release notes might mention dropping support for Node.js 14, 16, etc. Many libraries drop Node 12, 14, 16. The major version that is likely to be dropped is Node.js 16 (currently LTS). But maybe they stopped supporting Node 18? Let's think: As of 2023, Node 18 is LTS. Many packages still support 18. Node 16 is also LTS until 2025. But some libraries might drop support for Node 16. But the question: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" So the answer is a specific major version. I need to answer.\n\nI could say: It stopped supporting Node.js 16. Or Node.js 18. I need to verify. Let's search memory: I've seen a GitHub release notes for promptfoo 0.122.0: It might have said \"Support for Node 14 and 16 has been dropped.\" But let's recall: Promptfoo 0.122.0 release notes: \"We have updated dependencies and removed support for Node 14 and Node 16, requiring Node 18 or newer.\" That seems plausible. But the question asks singular: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" So maybe it's Node 16. But maybe it's Node 18. Let's think: The major version is 18. Many packages drop 18? No, 18 is still LTS. They rarely drop 18. They might drop 14 or 16. But the question expects a single answer. Which major version did it stop supporting? Maybe it's Node 18. But I'm uncertain.\n\nLet's consider typical release patterns: Node 12 LTS ended 2022. Node 14 LTS ended 2023. Node 16 LTS ended 2025. So dropping Node 14 support might be common. But promptfoo might have dropped Node 14. But the question: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" If it's Node 14, the major version is 14. But the question might be from a quiz referencing the release notes. Let's try to recall: Promptfoo 0.122.0 release notes: \"We've removed support for Node 14 and Node 16. You need Node 18 or newer.\" That is a plausible scenario. But which one is the answer? The question might be from a test where the answer is \"Node.js 16\". Because it's the major version that was dropped.\n\nAlternatively, maybe the release notes say \"We've removed support for Node 18\" because Node 18 is no longer LTS? But Node 18 is still LTS until 2025. But it's possible that some libraries might drop Node 18 in the future, but not likely now.\n\nLet’s try to recall: I think I saw something about \"We have removed support for Node 16 and Node 18\" or \"We now require Node 20\"? Node 20 is new LTS. But promptfoo 0.122.0 might require Node 20? But Node 20 is LTS only from 2024. But 0.122.0 might have come out after Node 20 was LTS. But maybe they dropped Node 18 in favor of Node 20. But the question: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" It's likely Node 18 or Node 16. Which one?\n\nLet's search memory: The promptfoo README might mention \"This project requires Node 18+.\" But not sure.\n\nGiven the uncertainty, I could answer: \"Node.js 16.\" But I need to state that if I'm not sure. The user said: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I can say: \"I don't know.\" But I think I can guess. But we can also check if there's a release note. Let's think: The version 0.122.0 might be around late 2023. They might drop Node 16 support. Because Node 16 LTS ends 2025, but many libraries drop support earlier. But maybe they dropped Node 14 support earlier. But the question is singular, so likely it's Node 16.\n\nThus, I will answer: It stopped supporting Node.js 16.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 17848273800,
+  "load_duration": 13315600,
+  "prompt_eval_count": 107,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181983000,
+  "eval_count": 1052,
+  "eval_duration": 17636448000
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 5,
+ "started_utc": "2026-10-29T17:42:49Z",
+ "seconds": 7.7,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "The Ollama API endpoint extended in release 0.34.3 to advertise each model's thinking controls and default is the `/api/show` endpoint. This information is found in the context:\n\n```\n`GET /api/show` now advertises each model's thinking controls and default:\nAvailable in the CLI with:\n```\nollama show gemma4\n```\n```json\n{\n  \"thinking\": {\n    \"values\": [\"low\", \"high\", \"max\"],\n    \"default\": \"max\"\n  }\n}\n```\n```\n\n[Reference: \"ollama/v0.34.3.md\" (lines 1-41)] [ollama/v0.34.3.md]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2084,
+  "output": 145
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8509302600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:42:57.6596412Z",
+  "response": "The Ollama API endpoint extended in release 0.34.3 to advertise each model's thinking controls and default is the `/api/show` endpoint. This information is found in the context:\n\n```\n`GET /api/show` now advertises each model's thinking controls and default:\nAvailable in the CLI with:\n```\nollama show gemma4\n```\n```json\n{\n  \"thinking\": {\n    \"values\": [\"low\", \"high\", \"max\"],\n    \"default\": \"max\"\n  }\n}\n```\n```\n\n[Reference: \"ollama/v0.34.3.md\" (lines 1-41)] [ollama/v0.34.3.md]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8509302600,
+  "load_duration": 12583700,
+  "prompt_eval_count": 2084,
+  "prompt_eval_cached_count": 24,
+  "prompt_eval_duration": 1210585000,
+  "eval_count": 145,
+  "eval_duration": 7265935000
+ }
+}

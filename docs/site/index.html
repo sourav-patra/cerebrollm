@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cerebrollm: answers from your own documents, with the quote checked</title>
+<meta name="description" content="cerebrollm is a local retrieval tool. Each answer carries a quote that a check confirms against the source file, or the tool says it is not in the sources.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>cerebrollm</h1>
+<p class="lede">Ask a question of your own Markdown documents. You get an answer with a quote that the tool has re-read in the source file, or the words <code>Not in the sources.</code></p>
+
+<div class="status"><strong>Status:</strong> version 0.1.0, early research. The aim of at least 90% right outcomes with under 2% confidently wrong runs is not yet met by local models; the measured results are below.</div>
+
+<h2>What it does</h2>
+<p>cerebrollm runs on your machine. It indexes a folder of Markdown files in a local PostgreSQL database. For a question it finds the best passages (keyword and vector search, then a reranker), asks a local model to quote the one line it relies on, and checks that quote against the source file and the sha256 recorded at indexing time. It prints the answer only when a quote is confirmed. It also serves the same search and check to a cloud model through a read-only MCP server.</p>
+<p>It is for people who run local models, or who let a cloud model read their documents, and who need every answer traced to a file.</p>
+
+<figure>
+<img src="ask-flow.svg" alt="Flow chart of cerebrollm ask. A question goes through search for 20 passages, rerank to 8, generate with a local model and verify of each citation against the source file. A gate then asks whether any citation verified OK. Yes prints the answer and the verify codes. No prints exactly Not in the sources. Empty answers and searches with no passages also abstain. A failure in search, rerank or generation prints an error and exits 2.">
+<figcaption>Figure: the five steps of <code>cerebrollm ask</code> and its output gate, checked against <code>engine/cerebrollm/answer.py</code>. It leaves out indexing and the MCP server.</figcaption>
+</figure>
+
+<h2>Measured results</h2>
+<p>One machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER 12 GB), public documentation as the corpus. Source files are paths in the repository.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Question</th><th>Result</th><th>Source file</th><th>State</th></tr></thead>
+<tbody>
+<tr><td>Does the top 8 hold a line that answers the question? (60 questions)</td><td>Default search 45/60; search top 20 then rerank 46/60; any of the top 20 48/60</td><td><code>eval/runs/retrieval/R-summary.md</code></td><td>measured</td></tr>
+<tr><td>Does retrieval help a small local model (<code>phi4</code>)?</td><td>Without retrieval 1/60; with it 47/60 (46 questions gained, 0 lost)</td><td><code>eval/RESULTS.md</code></td><td>measured</td></tr>
+<tr><td>Does retrieval help a strong hosted model (Claude Haiku)?</td><td>47/60 without, 48/60 with: no effect shown</td><td><code>eval/RESULTS.md</code></td><td>measured</td></tr>
+<tr><td>How often does a citation verify?</td><td>Haiku 347 of 350 answers; <code>phi4</code> 184 of 350</td><td><code>eval/RESULTS.md</code></td><td>measured</td></tr>
+<tr><td>Which embedding model? (150 questions)</td><td><code>qwen3-embedding:0.6b</code>, hybrid hit@5 0.927 against 0.907 and 0.893</td><td><code>research/model-study/RESULTS.md</code></td><td>measured</td></tr>
+<tr><td>Which generator fits a 12 GB card?</td><td><code>gpt-oss:20b</code> at effort medium: code 39/40, tools 12/12, 46.2 tokens/s</td><td><code>research/model-study/RESULTS.md</code></td><td>measured, one machine</td></tr>
+<tr><td>Does <code>ask</code> reach 90% right outcomes with under 2% confidently wrong runs?</td><td>Not met by any local model; met only by Claude Sonnet 5.5 with plain search (table below)</td><td><code>eval/RESULTS-v2.md</code></td><td>measured</td></tr>
+<tr><td>Qwen3.6 with multi-token prediction on and off, 8,000-token prompt</td><td>On: code 37/40, tools 12/12, 52.9 tokens/s, 41.3% on the GPU. Off: code 36/40, tools 12/12, 51.3 tokens/s, 43.9% on the GPU</td><td><code>research/model-study/r2-wsl/r2-table-M3.md</code></td><td>measured, one machine; context ladder not measured yet</td></tr>
+</tbody>
+</table>
+</div>
+<h3>v2 evaluation: 35 public items</h3>
+<p>20 answerable questions on public release notes dated after 2026-06 and 15 unanswerable questions. An item counts as right when more than half of its runs are right: a correct answer, or "not in the sources" for an unanswerable question. A run is confidently wrong when it answers an answerable item wrongly or answers an unanswerable one. Plain search is the top 8 of the default search with the citation instruction; <code>ask</code> is <code>cerebrollm ask</code>.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Model</th><th>Plain search: right outcome of 35, confidently wrong runs</th><th><code>ask</code>: right outcome of 35, confidently wrong runs</th></tr></thead>
+<tbody>
+<tr><td>Claude Sonnet 5.5 (hosted)</td><td>34 (97.1%), 0 of 105</td><td>not run</td></tr>
+<tr><td><code>gemma4:12b</code></td><td>33 (94.3%), 4 of 175 (2.3%)</td><td>22 (62.9%), 0 of 105</td></tr>
+<tr><td><code>gpt-oss:20b</code></td><td>32 (91.4%), 17 of 175 (9.7%)</td><td>28 (80.0%), 7 of 104 (6.7%)</td></tr>
+<tr><td><code>phi4</code></td><td>31 (88.6%), 10 of 175 (5.7%)</td><td>21 (60.0%), 0 of 105</td></tr>
+</tbody>
+</table>
+</div>
+<p>The aim is at least 90% right outcomes and under 2% confidently wrong runs. Only Claude Sonnet 5.5 with plain search meets it. <code>ask</code> removes most confidently wrong runs and gives up right outcomes in exchange. With 35 items, even zero confidently wrong items bounds the rate only below 8.6% (rule of three, 3 of 35), so this set cannot show a rate under 2%. Grader: <code>gpt-oss:20b</code>, checked against <code>gemma4:12b</code> on 454 answers (432 agree). Source: <code>eval/RESULTS-v2.md</code>. Fifty raw records that quote private documents are withheld; the scores are as committed.</p>
+<p>The answer-quality grades come from a model grader that agreed with a person on 19/20 and 20/20 of 40 answers; its error on the other answers is not measured.</p>
+
+<h2>Install</h2>
+<p>Tested on Ubuntu 24.04, native or under WSL2. Step 1 needs Ollama running at <code>127.0.0.1:11434</code>.</p>
+<ol>
+<li>Clone: <pre><code>git clone https://github.com/sourav-patra/cerebrollm &amp;&amp; cd cerebrollm</code></pre></li>
+<li>System packages, once, with sudo: <pre><code>sudo bash engine/setup/root-ubuntu.sh</code></pre> Check: <code>/usr/lib/postgresql/16/bin/postgres --version</code> prints 16.x.</li>
+<li>Virtual environment and the socket-only database: <pre><code>bash engine/setup/user.sh</code></pre> Check: the last line is <code>USER SETUP DONE</code>.</li>
+<li>Models: <pre><code>ollama pull qwen3-embedding:0.6b
+ollama pull gpt-oss:20b</code></pre> Check: <code>ollama list</code> shows both.</li>
+<li>Index your notes and ask. The README lists the configuration rule your folder needs and the one-time reranker download: <pre><code>engine/bin/cerebrollm index
+engine/bin/cerebrollm ask "a question your notes answer"</code></pre></li>
+</ol>
+<p>With <code>pip install cerebrollm</code> you get the same commands without the clone; steps 1, 3 and 4 still apply.</p>
+
+<h2>Limits</h2>
+<ul>
+<li>The top 8 misses 14 to 15 of 60 questions on the public corpus.</li>
+<li>All speeds come from one machine. Other hardware is not measured.</li>
+<li>The v2 evaluation has 35 items: it cannot show a confidently wrong rate under 8.6%.</li>
+<li>The gate does not check that a verified quote answers the question; a relevance check is the first item proposed for 0.2.</li>
+<li>The gate needs one verified citation; other text the model writes is printed unchecked.</li>
+<li>Only Linux is tested.</li>
+</ul>
+
+<footer>
+<p>MIT licence. Source and full README: <a href="https://github.com/sourav-patra/cerebrollm">github.com/sourav-patra/cerebrollm</a>. Skipped or not checked: the first index and ask on a fresh machine, and the Qwen3.6 context ladder.</p>
+</footer>
+</main>
+</body>
+</html>

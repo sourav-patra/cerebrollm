@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-05",
+ "run": 2,
+ "started_utc": "2026-10-29T01:55:56Z",
+ "seconds": 8.07,
+ "prompt_file": "runs/prompts/A3/ST-05.txt",
+ "prompt_sha256": "f9537204567721efdf4528e0a961ae4744df3d47cafe8c9b51b07f6efa6fcec6",
+ "answer": "pgvector uses the `external` storage mode for the `vector` type. The changelog entry for 0.6.0 says:\n\n\"Changed storage for vector from `extended` to `external`\" [pgvector/CHANGELOG.md]\n\nThe provided context doesn't include release notes after 0.6.0, so I can't confirm whether a later release changed this setting.",
+ "tokens": {
+  "input": 3245,
+  "output": 470,
+  "thinking": 355,
+  "cache_read": 2858,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00034078000000000005,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3430,
+  "stop_reason": "end_turn",
+  "session_id": "64aebbdb-5a1c-415e-81fb-02732d0253ee",
+  "total_cost_usd": 0.00034078000000000005,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2858,
+   "output_tokens": 470,
+   "output_tokens_details": {
+    "thinking_tokens": 355
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 470,
+     "cache_read_input_tokens": 2858,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 470,
+    "cacheReadInputTokens": 2858,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00034078000000000005,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 355,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "pgvector uses the `external` storage mode for the `vector` type. The changelog entry for 0.6.0 says:\n\n\"Changed storage for vector from `extended` to `external`\" [pgvector/CHANGELOG.md]\n\nThe provided context doesn't include release notes after 0.6.0, so I can't confirm whether a later release changed this setting.",
+  "ttft_ms": 3078,
+  "type": "result",
+  "duration_ms": 3566,
+  "uuid": "a7d75584-64b0-4232-8296-3021f6d164a5",
+  "ttft_stream_ms": 2892,
+  "time_to_request_ms": 134,
+  "first_content_frame_ms": 2892,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

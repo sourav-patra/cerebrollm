@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-06",
+ "run": 4,
+ "started_utc": "2026-10-29T01:56:25Z",
+ "seconds": 7.91,
+ "prompt_file": "runs/prompts/A3/ST-06.txt",
+ "prompt_sha256": "9ed88010779515fd90218ac6c4eda87b554402222a364a57fd8aa351da43a3a8",
+ "answer": "The oldest Postgres major version supported by the current pgvector release (0.8.7, per the README's install commands) is **Postgres 13**. The README says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md (lines 18-34) > pgvector > Installation > Linux and Mac].\n\nThe Docker tag list also includes `pg13-trixie` and `0.8.7-pg13-trixie` [pgvector/README.md (lines 1150-1189) > pgvector > Additional Installation Methods > Docker], though that list is cut off in the retrieved text.",
+ "tokens": {
+  "input": 3082,
+  "output": 504,
+  "thinking": 307,
+  "cache_read": 2694,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00035634,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3306,
+  "stop_reason": "end_turn",
+  "session_id": "e0d8ddc9-5366-4783-af00-d31ca2656a01",
+  "total_cost_usd": 0.00035634,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2694,
+   "output_tokens": 504,
+   "output_tokens_details": {
+    "thinking_tokens": 307
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 504,
+     "cache_read_input_tokens": 2694,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 504,
+    "cacheReadInputTokens": 2694,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00035634,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 307,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The oldest Postgres major version supported by the current pgvector release (0.8.7, per the README's install commands) is **Postgres 13**. The README says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md (lines 18-34) > pgvector > Installation > Linux and Mac].\n\nThe Docker tag list also includes `pg13-trixie` and `0.8.7-pg13-trixie` [pgvector/README.md (lines 1150-1189) > pgvector > Additional Installation Methods > Docker], though that list is cut off in the retrieved text.",
+  "ttft_ms": 2945,
+  "type": "result",
+  "duration_ms": 3402,
+  "uuid": "3c684ab2-802e-4b8b-8adc-ace727b2bc91",
+  "ttft_stream_ms": 2943,
+  "time_to_request_ms": 125,
+  "first_content_frame_ms": 2944,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

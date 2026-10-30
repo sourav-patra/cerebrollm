@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 3,
+ "started_utc": "2026-10-29T16:35:07Z",
+ "seconds": 6.12,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+ "thinking_chars": 838,
+ "tokens": {
+  "input": 1749,
+  "output": 240
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4218964500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:35:12.0575238Z",
+  "response": "\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+  "thinking": "We need to answer: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" We need to quote a line from context that indicates the new form. Let's search context: In [1], there's mention of comma-separated OR values. In [3], features: \"cli: support comma-separated OR values in --filter-metadata\". That indicates new form: comma-separated OR values. The question: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" The answer: It accepts comma-separated OR values. We need to quote the line and path. Likely from [3] lines 20-31: \"cli: support comma-separated OR values in --filter-metadata\". So answer: It accepts comma-separated OR values.\n\nWe should quote: \"cli: support comma-separated OR values in --filter-metadata\". Path: [promptfoo/0.124.0.md]. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4218964500,
+  "load_duration": 12693700,
+  "prompt_eval_count": 1749,
+  "prompt_eval_cached_count": 1744,
+  "prompt_eval_duration": 54474000,
+  "eval_count": 240,
+  "eval_duration": 4089332000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-03",
+ "run": 5,
+ "started_utc": "2026-10-29T16:57:45Z",
+ "seconds": 9.6,
+ "prompt_sha256": "ea1c0621f7cf79de8af3f668c6d57ad0ac7fab228bd8a07e61bee258a07b2ea9",
+ "answer": "I do not know.",
+ "thinking_chars": 1702,
+ "tokens": {
+  "input": 1698,
+  "output": 438
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7711656300
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:57:53.9845527Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: maximum number of dimensions pgvector supports for bitvec type. The context includes a section \"Bit Type\" line: \"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the [Postgres docs](https://www.postgresql.org/docs/current/datatype-bit.html) for more info.\" But not dimension limit. We might need to look elsewhere. In README maybe earlier. Let's search context for bit. There's mention of bit type index. But maximum dims? The README might have earlier info on vector types. Let's check context lines 1-10 maybe. But not provided. However, we can infer from Postgres bit type documentation: In PostgreSQL, bit and varbit types have a maximum length. For bit(n), max n is 1048575? Actually for bit(n) the maximum bit length is 1048575 (1,048,575). But is that the limit for bitvec? The project may impose its own. In the README, maybe earlier mention of bit type. Let's check context [1] line 1-10? Not provided. But we can search for \"bit\" in context. In [1] we have \"Bit\". But no dimension limit. In [4], added support for indexing bit type. But no limit. In [7], only vector. So maybe answer: uses Postgres bit type, so maximum dims is same as Postgres bit type, 1,048,575 bits. We must quote the line. But we don't have that line in context. We need to check if the context includes that limit. It does not. So we must say we don't know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we must answer we don't know. Also need to quote the line we rely on. We rely on none. So say \"I do not know.\" But maybe we can infer from Postgres docs. But not a project-specific quote. So answer that we don't know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7711656300,
+  "load_duration": 16119200,
+  "prompt_eval_count": 1698,
+  "prompt_eval_cached_count": 1693,
+  "prompt_eval_duration": 56482000,
+  "eval_count": 438,
+  "eval_duration": 7571356000
+ }
+}

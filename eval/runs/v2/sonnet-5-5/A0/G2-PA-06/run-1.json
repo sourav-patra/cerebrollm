@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-06",
+ "run": 1,
+ "started_utc": "2026-10-29T15:43:29Z",
+ "seconds": 8.6,
+ "prompt_sha256": "0a19284e9beaa8302543432ec33147546b121487da9b33c3fca9eef83ebee43d",
+ "answer": "I don't know. I have no reliable knowledge of what `llama-index-llms-anthropic` 0.11.10 sets as the context window for Claude Opus 4.6. That value comes from the package's model-to-context-size mapping (in `utils.py`), and I can't recall its contents for that version.\n\nTo check, download that exact version into a new, empty directory (`pip download llama-index-llms-anthropic==0.11.10 --no-deps`), unpack it, and look at the model context-size dictionary in `llama_index/llms/anthropic/utils.py`. I can do that for you if you'd like.",
+ "tokens": {
+  "input": 647,
+  "output": 296,
+  "thinking": 100,
+  "cache_read": 0,
+  "cache_creation": 645
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.005544,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4152,
+  "stop_reason": "end_turn",
+  "session_id": "871822dd-cd3b-4c6b-ab6a-c30466d8939e",
+  "total_cost_usd": 0.005544,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 645,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 296,
+   "output_tokens_details": {
+    "thinking_tokens": 100
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 645,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 296,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 645,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 645
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 296,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 645,
+    "webSearchRequests": 0,
+    "costUSD": 0.005544,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 100,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 645,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable knowledge of what `llama-index-llms-anthropic` 0.11.10 sets as the context window for Claude Opus 4.6. That value comes from the package's model-to-context-size mapping (in `utils.py`), and I can't recall its contents for that version.\n\nTo check, download that exact version into a new, empty directory (`pip download llama-index-llms-anthropic==0.11.10 --no-deps`), unpack it, and look at the model context-size dictionary in `llama_index/llms/anthropic/utils.py`. I can do that for you if you'd like.",
+  "ttft_ms": 2678,
+  "type": "result",
+  "duration_ms": 4239,
+  "uuid": "fa1aa145-5376-4a8d-b7dc-0bdccf4afaf2",
+  "ttft_stream_ms": 2677,
+  "time_to_request_ms": 110,
+  "first_content_frame_ms": 2677,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

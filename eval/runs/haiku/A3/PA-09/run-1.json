@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-09",
+ "run": 1,
+ "started_utc": "2026-10-29T01:48:53Z",
+ "seconds": 7.38,
+ "prompt_file": "runs/prompts/A3/PA-09.txt",
+ "prompt_sha256": "34c980f0d1b77322277b0d357c9d5bd328f8da7c3aaef534b9680b82d3f32481",
+ "answer": "A non-partitioned Postgres table has a default limit of 32 TB. \"A non-partitioned table has a limit of 32 TB by default in Postgres.\" [pgvector/README.md]\n\nThe README doesn't give a vector count for that limit. It only says that a partitioned table can have thousands of partitions of that size.",
+ "tokens": {
+  "input": 2889,
+  "output": 184,
+  "thinking": 81,
+  "cache_read": 0,
+  "cache_creation": 2887
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0006695999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2655,
+  "stop_reason": "end_turn",
+  "session_id": "0908d273-358c-45c7-8cd8-5fd504f59175",
+  "total_cost_usd": 0.0006695999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2887,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 184,
+   "output_tokens_details": {
+    "thinking_tokens": 81
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2887,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 184,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2887,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2887
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 184,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2887,
+    "webSearchRequests": 0,
+    "costUSD": 0.0006695999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 81,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2887,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "A non-partitioned Postgres table has a default limit of 32 TB. \"A non-partitioned table has a limit of 32 TB by default in Postgres.\" [pgvector/README.md]\n\nThe README doesn't give a vector count for that limit. It only says that a partitioned table can have thousands of partitions of that size.",
+  "ttft_ms": 2765,
+  "type": "result",
+  "duration_ms": 2785,
+  "uuid": "470a6a93-b42e-4d90-aaa5-13c78e72589c",
+  "ttft_stream_ms": 2764,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2764,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

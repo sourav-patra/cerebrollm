@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-11",
+ "run": 4,
+ "started_utc": "2026-10-29T16:43:40Z",
+ "seconds": 3.29,
+ "prompt_sha256": "9f5bda78bb4125983cfd7e2a07f526b896cb1d75c5d3852ef1cc273d280c3640",
+ "answer": "I’m not aware of any published benchmark that specifies exactly how many documents per second LlamaIndex’s IngestionPipeline can process on a single CPU core.",
+ "thinking_chars": 649,
+ "tokens": {
+  "input": 110,
+  "output": 193
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3490868400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:43:43.7436459Z",
+  "response": "I’m not aware of any published benchmark that specifies exactly how many documents per second LlamaIndex’s IngestionPipeline can process on a single CPU core.",
+  "thinking": "We need to answer: \"How many documents per second can LlamaIndex's IngestionPipeline process on a single CPU core?\" The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I need to provide an answer. I must rely on knowledge about LlamaIndex's IngestionPipeline and its performance. I have no real knowledge of specific benchmark numbers. I should say I do not know. The user might want a number. But the instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I should say I do not know. That is presumably the safe answer.\n\nThus: \"I do not know.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3490868400,
+  "load_duration": 13723500,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 182242000,
+  "eval_count": 193,
+  "eval_duration": 3272304000
+ }
+}

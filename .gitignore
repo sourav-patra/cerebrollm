@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+dist/
+build/
+*.egg-info/
+.promptfoo*/
+.obsidian/
+.venv/

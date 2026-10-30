@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:23Z",
+ "seconds": 2.15,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "\"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260)) ([26b725b](https://github.com/promptfoo/promptfoo/commit/26b725bd9496351ef269380c9fd83b9c2c338a0e))\" [promptfoo/0.122.0.md].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2098,
+  "output": 114
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 2294905900
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:55:25.567726Z",
+  "response": "\"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260)) ([26b725b](https://github.com/promptfoo/promptfoo/commit/26b725bd9496351ef269380c9fd83b9c2c338a0e))\" [promptfoo/0.122.0.md].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2294905900,
+  "load_duration": 17810100,
+  "prompt_eval_count": 2098,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 973343000,
+  "eval_count": 114,
+  "eval_duration": 883966000
+ }
+}

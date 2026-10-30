@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-09",
+ "run": 2,
+ "started_utc": "2026-10-29T17:25:18Z",
+ "seconds": 10.3,
+ "prompt_sha256": "33a2e37033519f45139e844295bea3f485cce58529b79198feb005d00dc1f617",
+ "answer": "I do not know the default value of the `separator_regex` for LlamaIndex's `TokenTextSplitter`. The provided context mentions a `separator` parameter set to a space character in an example, but it does not specify whether this is a default or configurable value, nor does it mention a `separator_regex`.\n\nHere is the relevant information I found: \n\n\"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts.\n\n```python\nfrom llama_index.core.node_parser import TokenTextSplitter\n\nsplitter = TokenTextSplitter(\n    chunk_size=1024,\n    chunk_overlap=20,\n    separator=\" \",\n)\nnodes = splitter.get_nodes_from_documents(documents)\n```\n[1] llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md (lines 182-195) > Text-Splitters > TokenTextSplitter\" \n\nNo specific mention of `separator_regex` is available in the context provided.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1588,
+  "output": 202
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11064457900
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:25:28.2990302Z",
+  "response": "I do not know the default value of the `separator_regex` for LlamaIndex's `TokenTextSplitter`. The provided context mentions a `separator` parameter set to a space character in an example, but it does not specify whether this is a default or configurable value, nor does it mention a `separator_regex`.\n\nHere is the relevant information I found: \n\n\"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts.\n\n```python\nfrom llama_index.core.node_parser import TokenTextSplitter\n\nsplitter = TokenTextSplitter(\n    chunk_size=1024,\n    chunk_overlap=20,\n    separator=\" \",\n)\nnodes = splitter.get_nodes_from_documents(documents)\n```\n[1] llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md (lines 182-195) > Text-Splitters > TokenTextSplitter\" \n\nNo specific mention of `separator_regex` is available in the context provided.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11064457900,
+  "load_duration": 13824800,
+  "prompt_eval_count": 1588,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 774840000,
+  "eval_count": 202,
+  "eval_duration": 10128576000
+ }
+}

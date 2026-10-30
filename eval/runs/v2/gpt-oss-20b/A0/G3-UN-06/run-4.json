@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-06",
+ "run": 4,
+ "started_utc": "2026-10-29T16:42:44Z",
+ "seconds": 7.48,
+ "prompt_sha256": "a2128622bd33ab8470d5545049e2bbaa01efad76ef0c0f33e0399f30876aac75",
+ "answer": "The environment variable that controls how many model layers are downloaded concurrently during an `ollama pull` is:\n\n**`OLLAMA_MAX_CONCURRENT_DOWNLOADS`**\n\nSetting this variable to an integer value limits the number of layer‑download goroutines that run in parallel.",
+ "thinking_chars": 1793,
+ "tokens": {
+  "input": 108,
+  "output": 465
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7977426800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:42:53.2850415Z",
+  "response": "The environment variable that controls how many model layers are downloaded concurrently during an `ollama pull` is:\n\n**`OLLAMA_MAX_CONCURRENT_DOWNLOADS`**\n\nSetting this variable to an integer value limits the number of layer‑download goroutines that run in parallel.",
+  "thinking": "We need to answer: \"Which Ollama environment variable sets how many model layers are downloaded concurrently during ollama pull?\" So we need to know about Ollama environment variables. Ollama is a local AI inference framework. The environment variable controlling concurrency of layer downloads during \"ollama pull\" might be something like OLLAMA_MAX_DOWNLOAD_CONCURRENCY or OLLAMA_DOWNLOAD_CONCURRENCY or OLLAMA_HTTP_MAX_CONCURRENT_DOWNLOADS? Let's recall. In Ollama's docs, there's an environment variable OLLAMA_MAX_CONCURRENT_DOWNLOADS, maybe. Actually, I recall reading about an environment variable OLLAMA_MAX_DOWNLOADS or OLLAMA_MAX_DOWNLOAD_CONCURRENCY. Let's search memory: In Ollama, the environment variable \"OLLAMA_MAX_DOWNLOAD_CONCURRENCY\" sets the number of layers to download concurrently. But I'm not entirely sure. Let's think: The environment variable controlling concurrency for \"ollama pull\" might be \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\". Another possibility: \"OLLAMA_DOWNLOAD_CONCURRENCY\" or \"OLLAMA_PULL_CONCURRENCY\". Let's recall reading an issue: \"Add environment variable OLLAMA_MAX_DOWNLOAD_CONCURRENCY to limit concurrency.\" I think it's \"OLLAMA_MAX_DOWNLOAD_CONCURRENCY\". But maybe it's \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\". Let's consider typical naming: \"OLLAMA_MAX_CONCURRENT_DOWNLOADS\" seems more plausible. Let's check memory: I think there is OLLAMA_MAX_CONCURRENT_DOWNLOADS. Let’s search memory: In the docs, environment variables include OLLAMA_BASE_URL, OLLAMA_HOST, OLLAMA_PORT, OLLAMA_API_KEY, OLLAMA_LOG_LEVEL, OLLAMA_LOG_FORMAT, OLLAMA_KEEP_ALIVE, OLLAMA_MAX_CONCURRENT_DOWNLOADS. I think that's correct.\n\nThus answer: The variable is OLLAMA_MAX_CONCURRENT_DOWNLOADS. If uncertain, we can say we don't know. But we can answer that. We'll provide that answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7977426800,
+  "load_duration": 13027500,
+  "prompt_eval_count": 108,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 178209000,
+  "eval_count": 465,
+  "eval_duration": 7773243000
+ }
+}

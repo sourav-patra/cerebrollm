@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 5,
+ "started_utc": "2026-10-29T16:00:32Z",
+ "seconds": 1.62,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "\"fix(anthropic): correct Opus 4.6 context window to 1M ([#22555](https://github.com/run-llama/llama_index/pull/22555))\" [llama_index/v0.14.24.md (lines 55-60)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1917,
+  "output": 74
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1710420000
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T16:00:33.7224345Z",
+  "response": "\"fix(anthropic): correct Opus 4.6 context window to 1M ([#22555](https://github.com/run-llama/llama_index/pull/22555))\" [llama_index/v0.14.24.md (lines 55-60)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1710420000,
+  "load_duration": 14074100,
+  "prompt_eval_count": 1917,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 859852000,
+  "eval_count": 74,
+  "eval_duration": 553008000
+ }
+}

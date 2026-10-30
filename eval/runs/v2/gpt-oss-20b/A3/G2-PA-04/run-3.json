@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-04",
+ "run": 3,
+ "started_utc": "2026-10-29T16:34:59Z",
+ "seconds": 7.42,
+ "prompt_sha256": "2b6ea5b6a72d2ad13b704409d81766cc1c5235ae5c9d1fab5a0268c71b6e8199",
+ "answer": "Promptfoo 0.123.0 defaults to the **OpenAI Responses API** for all GPT‑5.6 and newer models.\n\n> \"* **providers:** default GPT‑5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))*\" [promptfoo/0.123.0.md]\n\nThe provider documentation also notes that these model IDs “default to Responses”:\n\n> “For GPT‑5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.” [promptfoo/site/docs/providers/openai.md]",
+ "thinking_chars": 1071,
+ "tokens": {
+  "input": 2085,
+  "output": 449
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7810442600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:35:07.79088Z",
+  "response": "Promptfoo 0.123.0 defaults to the **OpenAI Responses API** for all GPT‑5.6 and newer models.\n\n> \"* **providers:** default GPT‑5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))*\" [promptfoo/0.123.0.md]\n\nThe provider documentation also notes that these model IDs “default to Responses”:\n\n> “For GPT‑5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.” [promptfoo/site/docs/providers/openai.md]",
+  "thinking": "We need to answer: \"Which OpenAI API does promptfoo 0.123.0 use by default for GPT-5.6 and newer models?\" The context indicates that provider default GPT-5.6+ use Responses. There's a breaking change: \"* **providers:** default GPT-5.6+ to Responses ([#10803](...))\". So answer: The Responses API. Quote lines: maybe from context [7] or [4] or [5]. Let's find the relevant quote: In [7], there's \"providers: default GPT-5.6+ to Responses\". That is the line. Also [4] says \"For GPT-5.6 and newer models, use openai:<model>, such as openai:gpt-6-luna. These IDs default to Responses.\" That also indicates default to Responses. So answer: Promptfoo 0.123.0 uses the OpenAI Responses API by default for GPT-5.6 and newer models. Provide quote: from [7] or [4]. Use the [7] line: \"* **providers:** default GPT-5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))\". That is the answer. Provide path: [promptfoo/0.123.0.md]. Also maybe include [4] line: \"These IDs default to Responses.\" Path: [promptfoo/site/docs/providers/openai.md]. Provide both.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7810442600,
+  "load_duration": 14012100,
+  "prompt_eval_count": 2085,
+  "prompt_eval_cached_count": 2080,
+  "prompt_eval_duration": 57838000,
+  "eval_count": 449,
+  "eval_duration": 7668023000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-13",
+ "run": 4,
+ "started_utc": "2026-10-29T01:50:42Z",
+ "seconds": 7.7,
+ "prompt_file": "runs/prompts/A3/PA-13.txt",
+ "prompt_sha256": "b6eb3849d78412659875b2cb878e24f8d5ff6fd87f315e338648a396755a1423",
+ "answer": "The attribute is `Settings.chunk_size`. The docs say: \"If you just want to change the chunk size or chunk overlap without changing the default splitter, this is also possible:\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nThe example in that file sets it like this:\n\n```python\nfrom llama_index.core import Settings\n\nSettings.chunk_size = 512\n```\n\nThe same example also shows `Settings.chunk_overlap = 20` for overlap.",
+ "tokens": {
+  "input": 3301,
+  "output": 428,
+  "thinking": 263,
+  "cache_read": 2914,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00032034,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2917,
+  "stop_reason": "end_turn",
+  "session_id": "800bbcb0-3e16-4bea-a14b-1db0ece33689",
+  "total_cost_usd": 0.00032034,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2914,
+   "output_tokens": 428,
+   "output_tokens_details": {
+    "thinking_tokens": 263
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 428,
+     "cache_read_input_tokens": 2914,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 428,
+    "cacheReadInputTokens": 2914,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00032034,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 263,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The attribute is `Settings.chunk_size`. The docs say: \"If you just want to change the chunk size or chunk overlap without changing the default splitter, this is also possible:\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nThe example in that file sets it like this:\n\n```python\nfrom llama_index.core import Settings\n\nSettings.chunk_size = 512\n```\n\nThe same example also shows `Settings.chunk_overlap = 20` for overlap.",
+  "ttft_ms": 3029,
+  "type": "result",
+  "duration_ms": 3048,
+  "uuid": "002a6ca5-7c25-4459-b10d-26561d705dc8",
+  "ttft_stream_ms": 3028,
+  "time_to_request_ms": 159,
+  "first_content_frame_ms": 3028,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

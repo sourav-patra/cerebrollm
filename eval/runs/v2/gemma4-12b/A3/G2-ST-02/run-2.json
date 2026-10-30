@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:08Z",
+ "seconds": 1.5,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "Ollama can run Flint on Linux, Windows, and macOS.\n\n\"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1891,
+  "output": 49
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1570871200
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:57:09.3753414Z",
+  "response": "Ollama can run Flint on Linux, Windows, and macOS.\n\n\"Flint now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md (lines 1-8)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1570871200,
+  "load_duration": 19134200,
+  "prompt_eval_count": 1891,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 830962000,
+  "eval_count": 49,
+  "eval_duration": 424364000
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "error": "HTTPStatusError(\"Server error '500 Internal Server Error' for url 'http://127.0.0.1:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\")",
+  "index": 17,
+  "task_id": "HumanEval/146",
+  "load_average": [
+    0.15771484375,
+    0.07666015625,
+    0.015625
+  ],
+  "passed": false
+}

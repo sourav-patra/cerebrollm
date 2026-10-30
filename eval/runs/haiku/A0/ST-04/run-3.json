@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-04",
+ "run": 3,
+ "started_utc": "2026-10-29T01:55:38Z",
+ "seconds": 7.81,
+ "prompt_file": "runs/prompts/A0/ST-04.txt",
+ "prompt_sha256": "5f5d4229fa849465965d259590d7415efd3ddb6341a4ac1aaa6bac5ce87171f9",
+ "answer": "pgvector can build an HNSW index on a plain `vector` column with up to **2,000 dimensions**. Columns with more dimensions can still be stored (the `vector` type itself allows up to 16,000), but they can't be indexed directly. For higher-dimensional embeddings, pgvector supports indexing `halfvec` expressions up to 4,000 dimensions. I'm recalling these limits from memory, so check the pgvector README for your installed version.",
+ "tokens": {
+  "input": 665,
+  "output": 429,
+  "thinking": 279,
+  "cache_read": 0,
+  "cache_creation": 663
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00034730000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3057,
+  "stop_reason": "end_turn",
+  "session_id": "e3712cbd-99c9-4546-8a92-abe0efba5879",
+  "total_cost_usd": 0.00034730000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 663,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 429,
+   "output_tokens_details": {
+    "thinking_tokens": 279
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 663,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 429,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 663,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 663
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 429,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 663,
+    "webSearchRequests": 0,
+    "costUSD": 0.00034730000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 279,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 663,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "pgvector can build an HNSW index on a plain `vector` column with up to **2,000 dimensions**. Columns with more dimensions can still be stored (the `vector` type itself allows up to 16,000), but they can't be indexed directly. For higher-dimensional embeddings, pgvector supports indexing `halfvec` expressions up to 4,000 dimensions. I'm recalling these limits from memory, so check the pgvector README for your installed version.",
+  "ttft_ms": 2749,
+  "type": "result",
+  "duration_ms": 3181,
+  "uuid": "7d76eac5-353b-4a4c-9b16-205e22c30536",
+  "ttft_stream_ms": 2748,
+  "time_to_request_ms": 159,
+  "first_content_frame_ms": 2749,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

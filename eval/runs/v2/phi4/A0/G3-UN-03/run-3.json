@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-03",
+ "run": 3,
+ "started_utc": "2026-10-29T17:27:39Z",
+ "seconds": 3.45,
+ "prompt_sha256": "c23fbb49965067fa858ff48b7b2195481f688dd3c67f98e5a9670b24dd42459c",
+ "answer": "I do not know the maximum number of dimensions that pgvector supports for the `bitvec` type. The pgvector extension is designed to handle vector data types in PostgreSQL, but specific details about the `bitvec` type and its dimensional limits are not within my current knowledge. For precise information, it would be best to consult the official pgvector documentation or relevant resources.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 49,
+  "output": 76
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3703898400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:27:42.0547342Z",
+  "response": "I do not know the maximum number of dimensions that pgvector supports for the `bitvec` type. The pgvector extension is designed to handle vector data types in PostgreSQL, but specific details about the `bitvec` type and its dimensional limits are not within my current knowledge. For precise information, it would be best to consult the official pgvector documentation or relevant resources.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3703898400,
+  "load_duration": 14531700,
+  "prompt_eval_count": 49,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 221019000,
+  "eval_count": 76,
+  "eval_duration": 3450848000
+ }
+}

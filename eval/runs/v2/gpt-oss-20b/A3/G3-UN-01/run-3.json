@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-01",
+ "run": 3,
+ "started_utc": "2026-10-29T16:35:33Z",
+ "seconds": 4.64,
+ "prompt_sha256": "8d36acc17d80b55b637bc1eb276b47450f693cfc08efce7585ec3adf0f9b16dc",
+ "answer": "I do not know.",
+ "thinking_chars": 1080,
+ "tokens": {
+  "input": 1693,
+  "output": 285
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4980275600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:35:38.3853394Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the default value of pgvector's hnsw.max_scan_tuples_per_page setting?\" We need to refer to project docs. In context, we have lines about hnsw.max_scan_tuples (20,000 default). But question asks about hnsw.max_scan_tuples_per_page setting. We need to search context. None provided. We need to rely on our knowledge. I know that pgvector has a setting hnsw.max_scan_tuples_per_page? I recall reading that hnsw.max_scan_tuples is default 20000. But max_scan_tuples_per_page maybe default 0? Let's search memory. In pgvector docs, I think there is a setting hnsw.max_scan_tuples_per_page with default 200? Not sure. Let's approximate: The setting controls the max number of tuples per page to scan? Perhaps default is 200. But we need to provide quote. Since we don't have a quote, we must say we do not know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we should respond: \"I do not know.\" And maybe we can cite that we didn't find it. But we should not fabricate. So answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4980275600,
+  "load_duration": 13707300,
+  "prompt_eval_count": 1693,
+  "prompt_eval_cached_count": 1688,
+  "prompt_eval_duration": 55916000,
+  "eval_count": 285,
+  "eval_duration": 4856796000
+ }
+}

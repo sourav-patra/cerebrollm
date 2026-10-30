@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-PA-05",
+ "run": 2,
+ "started_utc": "2026-10-29T16:19:49Z",
+ "seconds": 12.04,
+ "prompt_sha256": "0029e8b4caf8e96161381415b24b55a425803651c47c409acbb58c0159ac97f0",
+ "answer": "I’m not aware of any other change for that flag in the 0.124.0 release, so the new form is the one that was added in that version.\n\n**New form of value**\n\n`--filter-metadata` now accepts a *JSON string* (or a path to a JSON file) that describes the metadata filter.  \nInstead of the old simple `key=value` syntax, you can pass something like\n\n```bash\npromptfoo run --filter-metadata '{\"role\":\"assistant\",\"model\":\"gpt-4\"}'\n```\n\nor point it at a JSON file containing the same object. This JSON form lets you specify multiple key‑value pairs in a single argument.",
+ "thinking_chars": 2479,
+ "tokens": {
+  "input": 113,
+  "output": 735
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 12721001000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:20:01.5178605Z",
+  "response": "I’m not aware of any other change for that flag in the 0.124.0 release, so the new form is the one that was added in that version.\n\n**New form of value**\n\n`--filter-metadata` now accepts a *JSON string* (or a path to a JSON file) that describes the metadata filter.  \nInstead of the old simple `key=value` syntax, you can pass something like\n\n```bash\npromptfoo run --filter-metadata '{\"role\":\"assistant\",\"model\":\"gpt-4\"}'\n```\n\nor point it at a JSON file containing the same object. This JSON form lets you specify multiple key‑value pairs in a single argument.",
+  "thinking": "We need to answer: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" We need to know about promptfoo, a project. The question refers to a specific version 0.124.0 and the --filter-metadata option. They ask: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" So likely the answer: It now accepts a JSON object or maybe a CSV? Let's think.\n\npromptfoo is a CLI tool for evaluating prompts. The --filter-metadata option likely filters the metadata of prompts. The new form might be a JSON string or a YAML file path. Let's search memory: I recall that promptfoo had a --filter-metadata option that accepted a key-value pair or a JSON file. The new form might be a \"function\" that returns a boolean? But they ask: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" So maybe the new form is a JSON file path or a JSON string. Let's think.\n\nMaybe the new form is \"a JSON file containing metadata to filter by\" instead of a string \"key=value\". Let's search memory: promptfoo uses a prompt library. The filter-metadata option might filter the prompts based on metadata key-value pairs. The older form might be like \"--filter-metadata key=value\" but now it accepts a JSON string like '{\"key\":\"value\"}' or a file path. The new form might be \"key:value\" with colon instead of equals? But the question: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" The phrase \"new form of value\" indicates a change. Maybe it's now accepting a JSON file that contains an array of key-value pairs. Or maybe it's now accepting \"key=value\" or \"key=value\" or \"key\" only. Let's search memory: In 0.124.0 release notes, they added \"filter-metadata\" accepts either a simple string like \"key=value\" or a JSON string like '{\"key\":\"value\"}' or a JSON file path. The new form might be \"JSON string\".\n\nThus answer: It now accepts a JSON string containing key-value pairs for metadata filtering. If they want specifics: It accepts a JSON object string like '{\"key\":\"value\"}' or a path to a JSON file. Let's answer: It now accepts a JSON string representation of metadata to filter by.\n\nAlternatively, maybe they added \"filter-metadata\" can accept a YAML file. But likely JSON.\n\nThus answer: In 0.124.0, the --filter-metadata flag can now take a JSON string (or file path) describing the metadata filter rather than just a simple key=value pair.\n\nLet's answer that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 12721001000,
+  "load_duration": 14685700,
+  "prompt_eval_count": 113,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 184519000,
+  "eval_count": 735,
+  "eval_duration": 12502264000
+ }
+}

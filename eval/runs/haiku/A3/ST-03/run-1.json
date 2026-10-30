@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-03",
+ "run": 1,
+ "started_utc": "2026-10-29T01:55:09Z",
+ "seconds": 8.26,
+ "prompt_file": "runs/prompts/A3/ST-03.txt",
+ "prompt_sha256": "91edcb54a4059cec7bde31d687e200572b089731a9785610e6e12f5dfbbc8c02",
+ "answer": "The maximum is **16,000 dimensions** for a `vector` column. The README states: \"Vectors can have up to 16,000 dimensions.\" [pgvector/README.md (lines 951-960)]\n\nThe 0.4.0 changelog also records the increase from 1024 to 16000: \"Increased max dimensions for vector from 1024 to 16000\" [pgvector/CHANGELOG.md (lines 162-173)].\n\nThis limit applies to the column itself. Indexing is more restrictive. The FAQ asks about indexing vectors with more than 2,000 dimensions, which implies a 2,000-dimension index limit for standard vectors, and it mentions half-precision and binary quantization as ways to go higher: \"You can use half-precision vectors or half-precision indexing to index up to 4,000 dimensions or binary quantization to index up to 64,000 dimensions.\" [pgvector/README.md (lines 823-829)]. The retrieved text doesn't state the 2,000 figure explicitly, so I'm inferring it from that FAQ.",
+ "tokens": {
+  "input": 3148,
+  "output": 597,
+  "thinking": 253,
+  "cache_read": 0,
+  "cache_creation": 3146
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0009279,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3534,
+  "stop_reason": "end_turn",
+  "session_id": "518bf416-f1c8-45a0-9f06-4cdc4383fcc5",
+  "total_cost_usd": 0.0009279,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3146,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 597,
+   "output_tokens_details": {
+    "thinking_tokens": 253
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3146,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 597,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3146,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3146
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 597,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3146,
+    "webSearchRequests": 0,
+    "costUSD": 0.0009279,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 253,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3146,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The maximum is **16,000 dimensions** for a `vector` column. The README states: \"Vectors can have up to 16,000 dimensions.\" [pgvector/README.md (lines 951-960)]\n\nThe 0.4.0 changelog also records the increase from 1024 to 16000: \"Increased max dimensions for vector from 1024 to 16000\" [pgvector/CHANGELOG.md (lines 162-173)].\n\nThis limit applies to the column itself. Indexing is more restrictive. The FAQ asks about indexing vectors with more than 2,000 dimensions, which implies a 2,000-dimension index limit for standard vectors, and it mentions half-precision and binary quantization as ways to go higher: \"You can use half-precision vectors or half-precision indexing to index up to 4,000 dimensions or binary quantization to index up to 64,000 dimensions.\" [pgvector/README.md (lines 823-829)]. The retrieved text doesn't state the 2,000 figure explicitly, so I'm inferring it from that FAQ.",
+  "ttft_ms": 2936,
+  "type": "result",
+  "duration_ms": 3657,
+  "uuid": "5052e073-6a52-4acb-9a0b-ff3560024120",
+  "ttft_stream_ms": 2935,
+  "time_to_request_ms": 155,
+  "first_content_frame_ms": 2936,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

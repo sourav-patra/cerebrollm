@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 1,
+ "started_utc": "2026-10-29T16:10:25Z",
+ "seconds": 5.0,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "I’m not familiar with the specific details of every promptfoo assertion type. However, based on the available documentation and typical naming conventions, the assertion that computes BERTScore between an output and a reference is called **`bertScore`**. If you need the exact syntax or additional options, you should refer to the official promptfoo documentation.",
+ "thinking_chars": 902,
+ "tokens": {
+  "input": 106,
+  "output": 298
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5272589800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:10:31.6408235Z",
+  "response": "I’m not familiar with the specific details of every promptfoo assertion type. However, based on the available documentation and typical naming conventions, the assertion that computes BERTScore between an output and a reference is called **`bertScore`**. If you need the exact syntax or additional options, you should refer to the official promptfoo documentation.",
+  "thinking": "We need to answer: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" So this refers to promptfoo, a tool for evaluating LLM prompts. Promptfoo has assertion types like \"exact\", \"contains\", \"regex\", \"levenshtein\", \"similarity\", \"embeddingSimilarity\", \"custom\", \"bertScore\"? I'm not sure. I need to recall. Promptfoo is an open-source evaluation framework. It has built-in assertions: \"exact\", \"contains\", \"regex\", \"json\", \"csv\", \"image\", \"imageSimilarity\", \"text\", \"embeddingSimilarity\". I recall \"bertScore\" might be an assertion type. Let me think: There is \"bertScore\" assertion type. It likely computes BERTScore. So the answer: \"bertScore\". But confirm: In promptfoo, the assertion type for BERTScore is \"bertScore\". So answer: The assertion type \"bertScore\". Alternatively, maybe \"bert_score\". But likely \"bertScore\". So answer: The \"bertScore\" assertion type.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5272589800,
+  "load_duration": 12888700,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181864000,
+  "eval_count": 298,
+  "eval_duration": 5064550000
+ }
+}

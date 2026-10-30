@@ -1,0 +1,94 @@
+# Results v2: 35 public items across models and arms (development step N6a)
+
+Source of every figure: `eval/runs/v2/summary.json` (made by `python3 eval/run_v2.py report` from the records under `eval/runs/v2/<model>/<arm>/` and the grades in `eval/runs/v2/judge/`). Grader: `gpt-oss:20b` thinking medium (rubric `eval/judge.py` for the 20 answerable items, `eval/judge_v2.py` `RUBRIC_UN` for the 15 unanswerable items). Classes are defined in `eval/GRADING-v2.md`. 'Majority' means more than half of the runs of an item.
+
+## Per model and arm
+
+| Model | Arm | Runs | Correct (of 20, majority) | Correct (run level) | Abstained correctly (of 15, majority) | Right outcome (of 35, majority) | Confidently wrong items (majority) | Confidently wrong (runs) | Abstained wrong (runs) | Empty (runs) | Aim 90% / under 2% |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| gpt-oss-20b | A0 | 175 | 3 (15.0%) | 15/100 (15.0%) | 3 (20.0%) | 6 (17.1%) | 28 | 122/175 (69.7%) | 15 | 1 | not met |
+| gpt-oss-20b | A3 | 175 | 19 (95.0%) | 92/100 (92.0%) | 13 (86.7%) | 32 (91.4%) | 3 | 17/175 (9.7%) | 4 | 0 | not met |
+| gpt-oss-20b | A4 | 104 | 15 (75.0%) | 43/59 (72.9%) | 13 (86.7%) | 28 (80.0%) | 2 | 7/104 (6.7%) | 16 | 0 | not met |
+| gemma4-12b | A0 | 175 | 0 (0.0%) | 0/100 (0.0%) | 15 (100.0%) | 15 (42.9%) | 0 | 0/175 (0.0%) | 100 | 0 | not met |
+| gemma4-12b | A3 | 175 | 18 (90.0%) | 91/100 (91.0%) | 15 (100.0%) | 33 (94.3%) | 1 | 4/175 (2.3%) | 5 | 0 | not met |
+| gemma4-12b | A4 | 105 | 7 (35.0%) | 21/60 (35.0%) | 15 (100.0%) | 22 (62.9%) | 0 | 0/105 (0.0%) | 39 | 0 | not met |
+| phi4 | A0 | 175 | 0 (0.0%) | 0/100 (0.0%) | 15 (100.0%) | 15 (42.9%) | 4 | 28/175 (16.0%) | 72 | 0 | not met |
+| phi4 | A3 | 175 | 17 (85.0%) | 86/100 (86.0%) | 14 (93.3%) | 31 (88.6%) | 2 | 10/175 (5.7%) | 7 | 0 | not met |
+| phi4 | A4 | 105 | 6 (30.0%) | 18/60 (30.0%) | 15 (100.0%) | 21 (60.0%) | 0 | 0/105 (0.0%) | 42 | 0 | not met |
+| sonnet-5-5 | A0 | 105 | 0 (0.0%) | 0/60 (0.0%) | 15 (100.0%) | 15 (42.9%) | 0 | 3/105 (2.9%) | 60 | 0 | not met |
+| sonnet-5-5 | A3 | 105 | 19 (95.0%) | 57/60 (95.0%) | 15 (100.0%) | 34 (97.1%) | 0 | 0/105 (0.0%) | 3 | 0 | met |
+
+Aim: right outcome at least 90 percent of the 35 items (majority) and confidently wrong under 2 percent of runs. Confidently wrong: a wrong answer to an answerable item, or any answer to an unanswerable item.
+
+## Majority correct by kind
+
+| Model | Arm | exact (of 10) | paraphrase (of 7) | stale (of 3) | unanswerable (of 15) |
+|---|---|---|---|---|---|
+| gpt-oss-20b | A0 | 0 | 0 | 3 | 3 |
+| gpt-oss-20b | A3 | 9 | 7 | 3 | 13 |
+| gpt-oss-20b | A4 | 7 | 7 | 1 | 13 |
+| gemma4-12b | A0 | 0 | 0 | 0 | 15 |
+| gemma4-12b | A3 | 8 | 7 | 3 | 15 |
+| gemma4-12b | A4 | 2 | 3 | 2 | 15 |
+| phi4 | A0 | 0 | 0 | 0 | 15 |
+| phi4 | A3 | 9 | 5 | 3 | 14 |
+| phi4 | A4 | 2 | 4 | 0 | 15 |
+| sonnet-5-5 | A0 | 0 | 0 | 0 | 15 |
+| sonnet-5-5 | A3 | 9 | 7 | 3 | 15 |
+
+## Retrieval and citations (arm A3)
+
+Top-8 default search holds every quoted line for 20 of 20 answerable items (`eval/runs/v2/retrieval/A3/`). Not-hit items: none.
+
+| Model | A3 answers | With a verified citation | Share |
+|---|---|---|---|
+| gpt-oss-20b | 175 | 60 | 34.3% |
+| gemma4-12b | 175 | 79 | 45.1% |
+| phi4 | 175 | 77 | 44.0% |
+| sonnet-5-5 | 105 | 101 | 96.2% |
+
+## Time (sum of per-call seconds in the records)
+
+| Model | Arm | Calls | Total | Mean per call |
+|---|---|---|---|---|
+| gpt-oss-20b | A0 | 175 | 33.8 min | 11.6 s |
+| gpt-oss-20b | A3 | 175 | 22.7 min | 7.8 s |
+| gpt-oss-20b | A4 | 104 | 42.4 min | 24.5 s |
+| gemma4-12b | A0 | 175 | 1.4 min | 0.5 s |
+| gemma4-12b | A3 | 175 | 4.5 min | 1.5 s |
+| gemma4-12b | A4 | 105 | 44.3 min | 25.3 s |
+| phi4 | A0 | 175 | 10.0 min | 3.4 s |
+| phi4 | A3 | 175 | 26.2 min | 9.0 s |
+| phi4 | A4 | 105 | 49.1 min | 28.0 s |
+| sonnet-5-5 | A0 | 105 | 15.6 min | 8.9 s |
+| sonnet-5-5 | A3 | 105 | 15.6 min | 8.9 s |
+
+## Grader cross-check (gpt-oss:20b answers graded by gpt-oss:20b and by gemma4:12b thinking off)
+
+Same verdict on 432 of 454 answers (95.2%); Cohen's kappa on Y/N 0.899.
+- arm A0, answerable items: 89 of 100 the same
+- arm A0, unanswerable items: 71 of 75 the same
+- arm A3, answerable items: 100 of 100 the same
+- arm A3, unanswerable items: 69 of 75 the same
+- arm A4, answerable items: 59 of 59 the same
+- arm A4, unanswerable items: 44 of 45 the same
+
+Disagreements: 22 (listed in `eval/runs/v2/summary.json` under `judge_disagreements`).
+
+## Keyword grade against the model grade (answerable items, GRADING.md section 1)
+
+| Model | Arm | Answers | Both Y | Keyword Y, model N | Keyword N, model Y |
+|---|---|---|---|---|---|
+| gpt-oss-20b | A0 | 100 | 12 | 7 | 3 |
+| gpt-oss-20b | A3 | 100 | 86 | 1 | 6 |
+| gpt-oss-20b | A4 | 59 | 43 | 0 | 0 |
+| gemma4-12b | A0 | 100 | 0 | 0 | 0 |
+| gemma4-12b | A3 | 100 | 91 | 4 | 0 |
+| gemma4-12b | A4 | 60 | 21 | 0 | 0 |
+| phi4 | A0 | 100 | 0 | 3 | 0 |
+| phi4 | A3 | 100 | 82 | 7 | 4 |
+| phi4 | A4 | 60 | 18 | 0 | 0 |
+| sonnet-5-5 | A0 | 60 | 0 | 10 | 0 |
+| sonnet-5-5 | A3 | 60 | 49 | 0 | 8 |
+
+Grader replies that did not parse (recorded as error): 0.

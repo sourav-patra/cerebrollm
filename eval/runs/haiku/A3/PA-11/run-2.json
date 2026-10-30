@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-11",
+ "run": 2,
+ "started_utc": "2026-10-29T01:49:41Z",
+ "seconds": 14.91,
+ "prompt_file": "runs/prompts/A3/PA-11.txt",
+ "prompt_sha256": "ec9bb6ba7eb92266c121c87311a1186a7ba6b010020facaeefebe60727d5f216",
+ "answer": "The project docs show the two pieces, but not a complete global setup that guarantees OpenAI is never contacted.\n\n**Ollama LLM:** The docs show the Ollama integration package and how to instantiate it. \"`llama-index-llms-ollama`: Ollama (llama3, mistral, qwen, etc.).\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md]\n\n\"from llama_index.llms.ollama import Ollama\" [llama_index/docs/src/content/docs/framework/understanding/using_llms.md]\n\nThe example there is `Ollama(model=\"llama3.3\", request_timeout=60.0, context_window=8000)`, and it assumes Ollama is installed and running.\n\n**Hugging Face embeddings:** The docs name `HuggingFaceEmbedding` as the local embedding option, which \"runs any [Sentence Transformers] model locally\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md]. The excerpts don't include its import path or the package name to install, so check the embeddings module guide for those.\n\n**Global setting:** The docs show that embedding models are set globally through `Settings`: \"# changing the global default\" followed by \"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The same pattern applies to the LLM with `Settings.llm`, though the excerpts don't show that line explicitly.\n\nPutting this together (the `HuggingFaceEmbedding` import and arguments are from general LlamaIndex usage, not the excerpts):\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3.3\", request_timeout=60.0, context_window=8000)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nPull the Ollama model first, and make sure the same `Settings` assignments run before you build any index or query engine.\n\n**Confirming OpenAI is never contacted:** The excerpts don't say explicitly that setting these two `Settings` fields is enough to rule out every OpenAI call. From general knowledge, the defaults for `Settings.llm` and `Settings.embed_model` are OpenAI, so overriding both should cover the usual paths. To verify, run without `OPENAI_API_KEY` set, or block outbound traffic to api.openai.com. The privacy guide's fully-local stack also uses a local vector store, which \"[...] the default in-memory `SimpleVectorStore`\" covers [llama_index/docs/src/content/docs/framework/understanding/privacy.md].",
+ "tokens": {
+  "input": 3408,
+  "output": 2284,
+  "thinking": 1333,
+  "cache_read": 3020,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0012495999999999998,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 10353,
+  "stop_reason": "end_turn",
+  "session_id": "63a8c613-c2c0-40d6-8b93-a96b4255a2bc",
+  "total_cost_usd": 0.0012495999999999998,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 3020,
+   "output_tokens": 2284,
+   "output_tokens_details": {
+    "thinking_tokens": 1333
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 2284,
+     "cache_read_input_tokens": 3020,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 2284,
+    "cacheReadInputTokens": 3020,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.0012495999999999998,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 1333,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The project docs show the two pieces, but not a complete global setup that guarantees OpenAI is never contacted.\n\n**Ollama LLM:** The docs show the Ollama integration package and how to instantiate it. \"`llama-index-llms-ollama`: Ollama (llama3, mistral, qwen, etc.).\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md]\n\n\"from llama_index.llms.ollama import Ollama\" [llama_index/docs/src/content/docs/framework/understanding/using_llms.md]\n\nThe example there is `Ollama(model=\"llama3.3\", request_timeout=60.0, context_window=8000)`, and it assumes Ollama is installed and running.\n\n**Hugging Face embeddings:** The docs name `HuggingFaceEmbedding` as the local embedding option, which \"runs any [Sentence Transformers] model locally\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms/local.md]. The excerpts don't include its import path or the package name to install, so check the embeddings module guide for those.\n\n**Global setting:** The docs show that embedding models are set globally through `Settings`: \"# changing the global default\" followed by \"Settings.embed_model = OpenAIEmbedding()\" [llama_index/docs/src/content/docs/framework/module_guides/models/embeddings.md]. The same pattern applies to the LLM with `Settings.llm`, though the excerpts don't show that line explicitly.\n\nPutting this together (the `HuggingFaceEmbedding` import and arguments are from general LlamaIndex usage, not the excerpts):\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3.3\", request_timeout=60.0, context_window=8000)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nPull the Ollama model first, and make sure the same `Settings` assignments run before you build any index or query engine.\n\n**Confirming OpenAI is never contacted:** The excerpts don't say explicitly that setting these two `Settings` fields is enough to rule out every OpenAI call. From general knowledge, the defaults for `Settings.llm` and `Settings.embed_model` are OpenAI, so overriding both should cover the usual paths. To verify, run without `OPENAI_API_KEY` set, or block outbound traffic to api.openai.com. The privacy guide's fully-local stack also uses a local vector store, which \"[...] the default in-memory `SimpleVectorStore`\" covers [llama_index/docs/src/content/docs/framework/understanding/privacy.md].",
+  "ttft_ms": 6908,
+  "type": "result",
+  "duration_ms": 10496,
+  "uuid": "0c485ea9-04f7-48b6-bb62-13d6ac1ef8df",
+  "ttft_stream_ms": 2810,
+  "time_to_request_ms": 171,
+  "first_content_frame_ms": 2810,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-03",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:04Z",
+ "seconds": 9.44,
+ "prompt_sha256": "c23fbb49965067fa858ff48b7b2195481f688dd3c67f98e5a9670b24dd42459c",
+ "answer": "pgvector has no type called `bitvec`. Binary vectors use PostgreSQL's built-in `bit` type, so I'm assuming that's what you mean.\n\n- **Indexing:** HNSW and IVFFlat indexes on `bit` columns support up to 64,000 dimensions.\n- **Storage:** I don't know of a separate, documented storage limit for `bit` in pgvector. PostgreSQL's own `bit(n)` limit is much larger, but I haven't verified the exact figure.\n\nFor comparison, the other types are limited as follows:\n\n| Type | Max dimensions | Max indexed |\n|---|---|---|\n| `vector` | 16,000 | 2,000 |\n| `halfvec` | 16,000 | 4,000 |\n| `sparsevec` | 16,000 non-zero elements | 1,000 non-zero elements |\n| `bit` | not documented | 64,000 |\n\nI haven't looked at any files in your working directory, so this comes from my general knowledge of pgvector. If you saw `bitvec` in a specific library or codebase, tell me where and I can help work out what it refers to.",
+ "tokens": {
+  "input": 636,
+  "output": 654,
+  "thinking": 284,
+  "cache_read": 0,
+  "cache_creation": 634
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00908,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5476,
+  "stop_reason": "end_turn",
+  "session_id": "526fd9b7-0f26-463a-a4bc-e022f4a45d8b",
+  "total_cost_usd": 0.00908,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 634,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 654,
+   "output_tokens_details": {
+    "thinking_tokens": 284
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 634,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 654,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 634,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 634
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 654,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 634,
+    "webSearchRequests": 0,
+    "costUSD": 0.00908,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 284,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 634,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "pgvector has no type called `bitvec`. Binary vectors use PostgreSQL's built-in `bit` type, so I'm assuming that's what you mean.\n\n- **Indexing:** HNSW and IVFFlat indexes on `bit` columns support up to 64,000 dimensions.\n- **Storage:** I don't know of a separate, documented storage limit for `bit` in pgvector. PostgreSQL's own `bit(n)` limit is much larger, but I haven't verified the exact figure.\n\nFor comparison, the other types are limited as follows:\n\n| Type | Max dimensions | Max indexed |\n|---|---|---|\n| `vector` | 16,000 | 2,000 |\n| `halfvec` | 16,000 | 4,000 |\n| `sparsevec` | 16,000 non-zero elements | 1,000 non-zero elements |\n| `bit` | not documented | 64,000 |\n\nI haven't looked at any files in your working directory, so this comes from my general knowledge of pgvector. If you saw `bitvec` in a specific library or codebase, tell me where and I can help work out what it refers to.",
+  "ttft_ms": 3068,
+  "type": "result",
+  "duration_ms": 5567,
+  "uuid": "8b849a23-6aee-4dff-bc01-c2c0c5de44d8",
+  "ttft_stream_ms": 2789,
+  "time_to_request_ms": 118,
+  "first_content_frame_ms": 2789,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

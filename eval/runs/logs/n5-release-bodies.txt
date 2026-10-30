@@ -1,0 +1,22 @@
+# python3 eval/verify_v2_sources.py, run 2026-10-29T10:23:22Z: each saved release note compared with a fresh fetch of the same release (body with CRLF turned into LF, and the Published date)
+OK   llama_index/v0.14.24.md
+OK   llama_index/v0.14.25.md
+OK   ollama/v0.32.10.md
+OK   ollama/v0.32.7.md
+OK   ollama/v0.32.8.md
+OK   ollama/v0.34.1.md
+OK   ollama/v0.34.3.md
+OK   ollama/v0.35.0.md
+OK   ollama/v0.35.1.md
+OK   ollama/v0.40.11.md
+OK   ollama/v0.40.12.md
+OK   ollama/v0.40.13.md
+OK   ollama/v0.40.4.md
+OK   ollama/v0.40.5.md
+OK   ollama/v0.40.8.md
+OK   ollama/v0.40.9.md
+OK   promptfoo/0.122.0.md
+OK   promptfoo/0.123.0.md
+OK   promptfoo/0.124.0.md
+OK   promptfoo/0.125.0.md
+20 files checked, 0 differ

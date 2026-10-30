@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-04",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:39Z",
+ "seconds": 10.11,
+ "prompt_sha256": "14fdc993daeb14fc601114caf128b618448037451bb731a2a9ad691d09d3a328",
+ "answer": "I don't know. I have no reliable information about promptfoo 0.123.0 or which OpenAI API (Chat Completions or Responses) it uses by default for GPT-5.6 and newer models. I'd rather not guess, since the answer depends on that release's code and changelog.\n\nThe working directory is an empty temp folder with no promptfoo checkout, so I have nothing local to check either. To confirm, you could:\n\n- Read the 0.123.0 release notes on the promptfoo GitHub releases page.\n- Check the OpenAI provider docs at promptfoo.dev (`providers/openai`).\n- Search the source under `src/providers/openai/` for how the provider chooses between `openai:chat:` and `openai:responses:` for a given model name.\n\nIf you point me to a promptfoo checkout or paste the relevant changelog or docs section, I can help you work out the answer.",
+ "tokens": {
+  "input": 646,
+  "output": 367,
+  "thinking": 82,
+  "cache_read": 0,
+  "cache_creation": 644
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00625,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6150,
+  "stop_reason": "end_turn",
+  "session_id": "1586bde9-c0ad-4c81-90c8-406384988d10",
+  "total_cost_usd": 0.00625,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 644,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 367,
+   "output_tokens_details": {
+    "thinking_tokens": 82
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 644,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 367,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 644,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 644
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 367,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 644,
+    "webSearchRequests": 0,
+    "costUSD": 0.00625,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 82,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 644,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable information about promptfoo 0.123.0 or which OpenAI API (Chat Completions or Responses) it uses by default for GPT-5.6 and newer models. I'd rather not guess, since the answer depends on that release's code and changelog.\n\nThe working directory is an empty temp folder with no promptfoo checkout, so I have nothing local to check either. To confirm, you could:\n\n- Read the 0.123.0 release notes on the promptfoo GitHub releases page.\n- Check the OpenAI provider docs at promptfoo.dev (`providers/openai`).\n- Search the source under `src/providers/openai/` for how the provider chooses between `openai:chat:` and `openai:responses:` for a given model name.\n\nIf you point me to a promptfoo checkout or paste the relevant changelog or docs section, I can help you work out the answer.",
+  "ttft_ms": 3673,
+  "type": "result",
+  "duration_ms": 6239,
+  "uuid": "518e4c66-ab07-4cd0-8585-da5d6bd944cf",
+  "ttft_stream_ms": 3101,
+  "time_to_request_ms": 110,
+  "first_content_frame_ms": 3101,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

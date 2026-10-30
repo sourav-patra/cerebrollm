@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-PA-05",
+ "run": 1,
+ "started_utc": "2026-10-30T06:05:10Z",
+ "seconds": 23.72,
+ "prompt_sha256": "e86354d3a23944eb7163fb82ad1bb0dae06c2b7a4f414bd659b79b7a317e7237",
+ "answer": "\"support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "promptfoo/0.124.0.md",
+   "quote": "support comma-separated OR values in --filter-metadata",
+   "verify": "OK",
+   "detail": "promptfoo/0.124.0.md@file sha256 2bf16cedc8ea"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 0.84,
+   "rerank": 9.0,
+   "generate": 11.05,
+   "verify": 0.28,
+   "total": 21.17
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 9,
+    "rerank_score": 0.86219,
+    "path": "promptfoo/0.124.0.md",
+    "line_start": 20,
+    "line_end": 31
+   },
+   {
+    "rank": 2,
+    "search_rank": 1,
+    "rerank_score": 0.6257,
+    "path": "promptfoo/site/docs/configuration/test-cases.md",
+    "line_start": 368,
+    "line_end": 412
+   },
+   {
+    "rank": 3,
+    "search_rank": 12,
+    "rerank_score": 0.61582,
+    "path": "promptfoo/site/docs/guides/llm-as-a-judge.md",
+    "line_start": 1020,
+    "line_end": 1075
+   },
+   {
+    "rank": 4,
+    "search_rank": 3,
+    "rerank_score": 0.5873,
+    "path": "promptfoo/site/docs/guides/evaluate-osworld-with-inspect.md",
+    "line_start": 283,
+    "line_end": 328
+   },
+   {
+    "rank": 5,
+    "search_rank": 17,
+    "rerank_score": 0.50044,
+    "path": "promptfoo/0.125.0.md",
+    "line_start": 87,
+    "line_end": 96
+   },
+   {
+    "rank": 6,
+    "search_rank": 10,
+    "rerank_score": 0.45375,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 491,
+    "line_end": 542
+   },
+   {
+    "rank": 7,
+    "search_rank": 7,
+    "rerank_score": 0.43469,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 151,
+    "line_end": 172
+   },
+   {
+    "rank": 8,
+    "search_rank": 18,
+    "rerank_score": 0.43116,
+    "path": "promptfoo/site/docs/tracing.md",
+    "line_start": 306,
+    "line_end": 362
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

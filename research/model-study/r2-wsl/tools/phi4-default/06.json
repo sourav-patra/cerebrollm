@@ -1,0 +1,11 @@
+{
+  "id": 7,
+  "error": "{\"error\":\"registry.ollama.ai/library/phi4:latest does not support tools\"}",
+  "status": 400,
+  "passed": false,
+  "load_average": [
+    0.41064453125,
+    0.2255859375,
+    0.1533203125
+  ]
+}

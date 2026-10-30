@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-20",
+ "run": 2,
+ "started_utc": "2026-10-29T01:44:30Z",
+ "seconds": 7.73,
+ "prompt_file": "runs/prompts/A3/EX-20.txt",
+ "prompt_sha256": "3bcc604503a54287e2c8aae4ae240bed833fd0d2cddceaeb17dc5266f9087975",
+ "answer": "The flag is `--repeat`. The guide says: \"The `eval` command has a parameter, `repeat`, which runs each test multiple times:\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md]. It gives the example `promptfoo eval --repeat 3`, which \"runs the LLM three times for each test case\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md].",
+ "tokens": {
+  "input": 3329,
+  "output": 143,
+  "thinking": 0,
+  "cache_read": 2942,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00017812,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2946,
+  "stop_reason": "end_turn",
+  "session_id": "1fbdb0e1-0413-4e83-8218-7cdf495520b3",
+  "total_cost_usd": 0.00017812,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2942,
+   "output_tokens": 143,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 143,
+     "cache_read_input_tokens": 2942,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 143,
+    "cacheReadInputTokens": 2942,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00017812,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The flag is `--repeat`. The guide says: \"The `eval` command has a parameter, `repeat`, which runs each test multiple times:\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md]. It gives the example `promptfoo eval --repeat 3`, which \"runs the LLM three times for each test case\" [promptfoo/site/docs/guides/evaluate-llm-temperature.md].",
+  "ttft_ms": 3042,
+  "type": "result",
+  "duration_ms": 3059,
+  "uuid": "1f7e6974-1c1d-40d7-b9ee-34e49efe8873",
+  "ttft_stream_ms": 3040,
+  "time_to_request_ms": 290,
+  "first_content_frame_ms": 3040,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

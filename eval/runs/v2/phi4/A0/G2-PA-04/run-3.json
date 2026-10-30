@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-04",
+ "run": 3,
+ "started_utc": "2026-10-29T17:27:08Z",
+ "seconds": 4.55,
+ "prompt_sha256": "14fdc993daeb14fc601114caf128b618448037451bb731a2a9ad691d09d3a328",
+ "answer": "I do not know which OpenAI API promptfoo 0.123.0 uses by default for GPT-5.6 and newer models. The specifics of third-party integrations or defaults for particular software versions are not within my knowledge base, especially if they pertain to updates or releases after my last training data in October 2023. For the most accurate information, it would be best to consult the documentation or release notes for promptfoo 0.123.0 or the project's official resources.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 60,
+  "output": 104
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4896734800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:27:12.997077Z",
+  "response": "I do not know which OpenAI API promptfoo 0.123.0 uses by default for GPT-5.6 and newer models. The specifics of third-party integrations or defaults for particular software versions are not within my knowledge base, especially if they pertain to updates or releases after my last training data in October 2023. For the most accurate information, it would be best to consult the documentation or release notes for promptfoo 0.123.0 or the project's official resources.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4896734800,
+  "load_duration": 12389800,
+  "prompt_eval_count": 60,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 98337000,
+  "eval_count": 104,
+  "eval_duration": 4771081000
+ }
+}

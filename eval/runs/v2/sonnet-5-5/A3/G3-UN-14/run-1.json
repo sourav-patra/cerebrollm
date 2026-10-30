@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:43Z",
+ "seconds": 9.05,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I don't know. The retrieved context doesn't mention an `evaluateOptions.maxTokensPerCell` option, so I can't give a default for it.\n\nThe `EvaluateOptions` interface shown in the context lists these fields: `cache`, `delay`, `generateSuggestions`, `suggestionsCount`, `interactiveProviders`, `maxConcurrency`, `repeat`, `showProgressBar`, `timeoutMs`, `maxEvalTimeMs`, `isRedteam`, `silent`, `abortSignal`, and `progressCallback`. The snippet is truncated, so I can't rule out more fields after that. Still, nothing I can see names `maxTokensPerCell`.\n\nThe closest related setting is the CLI option `--table-cell-max-length <number>`, described as \"Truncate console table cells to this length\" [promptfoo/site/docs/usage/command-line.md]. That option controls console table cell truncation and no default is given in the visible text. It isn't the same thing as `maxTokensPerCell`, and I wouldn't assume they're related.\n\nIf you can point me to where you saw `maxTokensPerCell`, or share the full `EvaluateOptions` section, I can take another look.",
+ "tokens": {
+  "input": 3188,
+  "output": 403,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3186
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.016778,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5424,
+  "stop_reason": "end_turn",
+  "session_id": "3b72ff78-677d-442c-ad32-c38f0e493f2f",
+  "total_cost_usd": 0.016778,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3186,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 403,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3186,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 403,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3186,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3186
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 403,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3186,
+    "webSearchRequests": 0,
+    "costUSD": 0.016778,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3186,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved context doesn't mention an `evaluateOptions.maxTokensPerCell` option, so I can't give a default for it.\n\nThe `EvaluateOptions` interface shown in the context lists these fields: `cache`, `delay`, `generateSuggestions`, `suggestionsCount`, `interactiveProviders`, `maxConcurrency`, `repeat`, `showProgressBar`, `timeoutMs`, `maxEvalTimeMs`, `isRedteam`, `silent`, `abortSignal`, and `progressCallback`. The snippet is truncated, so I can't rule out more fields after that. Still, nothing I can see names `maxTokensPerCell`.\n\nThe closest related setting is the CLI option `--table-cell-max-length <number>`, described as \"Truncate console table cells to this length\" [promptfoo/site/docs/usage/command-line.md]. That option controls console table cell truncation and no default is given in the visible text. It isn't the same thing as `maxTokensPerCell`, and I wouldn't assume they're related.\n\nIf you can point me to where you saw `maxTokensPerCell`, or share the full `EvaluateOptions` section, I can take another look.",
+  "ttft_ms": 5479,
+  "type": "result",
+  "duration_ms": 5503,
+  "uuid": "683a48cd-0c1e-42eb-a75d-a691a63e208d",
+  "ttft_stream_ms": 2638,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 2638,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

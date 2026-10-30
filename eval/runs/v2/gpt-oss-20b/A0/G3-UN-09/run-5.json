@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 5,
+ "started_utc": "2026-10-29T16:54:01Z",
+ "seconds": 14.39,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "I’m not sure about the exact value. If you need the precise default, you’ll have to check the library’s source or documentation.",
+ "thinking_chars": 3351,
+ "tokens": {
+  "input": 105,
+  "output": 875
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 15344464600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:54:16.5947246Z",
+  "response": "I’m not sure about the exact value. If you need the precise default, you’ll have to check the library’s source or documentation.",
+  "thinking": "We need to answer: \"What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" If I don't know, say I don't know. I need to know from LlamaIndex (now known as LlamaIndex? The new name is LlamaIndex? Actually LlamaIndex is a library for building LLM applications. TokenTextSplitter likely splits text into tokens using regex. The default separator_regex might be something like r\"(?<!\\w)[.!?]\\s+|(?<=\\n)\" or something. Let’s search memory. I recall that in the LlamaIndex library, there's a TextSplitter class, and TokenTextSplitter is a subclass. The default separator_regex might be something like r\"\\n{2,}\" or r\"\\n\" or maybe r\"(?<!\\w)[.!?]\\s+\" for sentence boundaries. But I need to recall. LlamaIndex's TextSplitter: In the library, there's a TextSplitter base class. TokenTextSplitter splits text by tokens. The separator_regex might be used to split on newline or punctuation. The default separator_regex is likely r\"(?<!\\w)(?:[.?!])\\s+|\\n+\"? But I need to be accurate.\n\nLet's think: In LlamaIndex's code, maybe in llama_index/text_splitter/token_text_splitter.py. The default separator_regex might be r\"\\n+\". But maybe it's r\"\\n+\".\n\nAlternatively, maybe they use regex for newline or period. The default separator_regex might be r\"\\n+\".\n\nI think the default is r\"\\n+\". But I'm not sure. Let's consider the code: In LlamaIndex, there's a TextSplitter class with parameters: chunk_size, chunk_overlap, separators: list of separators. The TokenTextSplitter might have a default separator_regex that splits on newline or maybe on double newlines. But \"separator_regex\" suggests a regex string. The default might be r\"\\n+\".\n\nAlternatively, maybe it's r\"\\n{2,}\". But \"separator_regex\" might be used to split on paragraph boundaries. Let's check memory: I recall reading the docs: \"TokenTextSplitter\" splits text into chunks of tokens. It uses a separator regex to split on punctuation. The default separator regex is something like r\"\\n+|(?<=[.!?])\\s+\".\n\nI can search memory: I think the default separator regex is something like r\"\\n+\" for newlines. But I need to be confident.\n\nLet's consider the actual LlamaIndex library. The TextSplitter class has a \"separators\" parameter. The TokenTextSplitter inherits and sets default separators. But \"separator_regex\" might be used in the base class to split. In the TokenTextSplitter, they might set \"separator_regex\" = r\"\\n+\"? However, the question: \"What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" So answer: It's r\"\\n+\"? Or r\"\\n{2,}\"? Or r\"\\n+|(?<=[.!?])\\s+\"?\n\nLet's search memory: In LlamaIndex v0.8.0, the TokenTextSplitter had a default separator regex: r\"(?<!\\w)(?:[.?!])\\s+|\\n+\". Actually, maybe it's r\"\\n+\". But I think it's r\"\\n+\". But I'm uncertain.\n\nAlternatively, maybe the default separator regex is r\"\\n{2,}\". But no.\n\nLet's consider the actual code snippet: In llama_index/text_splitter/token_text_splitter.py:\n\nclass TokenTextSplitter(TextSplitter):\n    def __init__(self, ...):\n        super().__init__(... , separator_regex=r\"\\n+\")\n\nThus the default separator_regex is r\"\\n+\". That is plausible.\n\nBut I'm not entirely sure. Let's check memory: In LlamaIndex's older docs, the default separator_regex for TokenTextSplitter is r\"\\n+\". Yes, I think that is correct.\n\nThus answer: r\"\\n+\".\n\nIf uncertain, I can say: \"The default separator_regex is r'\\n+'.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 15344464600,
+  "load_duration": 13761300,
+  "prompt_eval_count": 105,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 184247000,
+  "eval_count": 875,
+  "eval_duration": 15131486000
+ }
+}

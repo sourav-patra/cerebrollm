@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-05",
+ "run": 3,
+ "started_utc": "2026-10-29T01:39:23Z",
+ "seconds": 8.22,
+ "prompt_file": "runs/prompts/A3/EX-05.txt",
+ "prompt_sha256": "9ffc8a3520ce8acb69ca39d315ef9eb856369d0ef266ea3d3d9d2613afd04b39",
+ "answer": "The retrieved documents don't give a default for `OLLAMA_MAX_LOADED_MODELS`, either with GPUs or for CPU inference, and they don't mention the variable at all. I don't know the default from this context.\n\nThe closest passage is the concurrency section, which says: \"If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time.\" [ollama/docs/faq.md]\n\nThat passage describes loading depending on available memory, not a fixed limit, so it doesn't answer the question. The official Ollama environment variable reference would be the place to confirm the default.",
+ "tokens": {
+  "input": 3319,
+  "output": 470,
+  "thinking": 258,
+  "cache_read": 2932,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00034152,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3077,
+  "stop_reason": "end_turn",
+  "session_id": "dc5a113c-6082-4d9e-869d-f34f916dceba",
+  "total_cost_usd": 0.00034152,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2932,
+   "output_tokens": 470,
+   "output_tokens_details": {
+    "thinking_tokens": 258
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 470,
+     "cache_read_input_tokens": 2932,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 470,
+    "cacheReadInputTokens": 2932,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00034152,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 258,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The retrieved documents don't give a default for `OLLAMA_MAX_LOADED_MODELS`, either with GPUs or for CPU inference, and they don't mention the variable at all. I don't know the default from this context.\n\nThe closest passage is the concurrency section, which says: \"If your system has sufficient available memory (system memory when using CPU inference, or VRAM for GPU inference) then multiple models can be loaded at the same time.\" [ollama/docs/faq.md]\n\nThat passage describes loading depending on available memory, not a fixed limit, so it doesn't answer the question. The official Ollama environment variable reference would be the place to confirm the default.",
+  "ttft_ms": 2879,
+  "type": "result",
+  "duration_ms": 3209,
+  "uuid": "0827ac69-b470-41f3-8a1c-3365ecc438b9",
+  "ttft_stream_ms": 2878,
+  "time_to_request_ms": 158,
+  "first_content_frame_ms": 2878,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

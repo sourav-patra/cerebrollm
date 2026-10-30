@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 5,
+ "started_utc": "2026-10-29T17:47:22Z",
+ "seconds": 6.07,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know which promptfoo assertion type computes BERTScore between an output and a reference. The provided context does not mention BERTScore or its association with any assertion types in promptfoo. \n\nRelevant context:\n- BLEU, METEOR, and other metrics are mentioned, but not BERTScore.\n- There is no direct reference to BERTScore in any of the provided excerpts from the project's documents. \n\nTherefore, I cannot provide a definitive answer based on the available information. [No specific path was found related to BERTScore]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1588,
+  "output": 115
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 6525010600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:47:28.3840198Z",
+  "response": "I do not know which promptfoo assertion type computes BERTScore between an output and a reference. The provided context does not mention BERTScore or its association with any assertion types in promptfoo. \n\nRelevant context:\n- BLEU, METEOR, and other metrics are mentioned, but not BERTScore.\n- There is no direct reference to BERTScore in any of the provided excerpts from the project's documents. \n\nTherefore, I cannot provide a definitive answer based on the available information. [No specific path was found related to BERTScore]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6525010600,
+  "load_duration": 12746400,
+  "prompt_eval_count": 1588,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 771138000,
+  "eval_count": 115,
+  "eval_duration": 5607754000
+ }
+}

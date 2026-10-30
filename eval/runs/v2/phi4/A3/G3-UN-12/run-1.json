@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 1,
+ "started_utc": "2026-10-29T17:18:31Z",
+ "seconds": 8.58,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I do not know the default value of the `--max-retries` flag for `promptfoo eval`. The provided context does not specify this value directly for the `eval` command. It does mention default retry settings in the context of provider-level and HTTP-level retries under \"Backoff Configuration\" for providers, but not specifically for `eval`.\n\n- \"Provider-level retry\" has a default of 3 retries.\n- \"HTTP-level retry\" has a default of 4 retries.\n- These defaults pertain to the context of provider configurations, not directly to the `eval` command.\n\nTherefore, without specific information on the `eval` command defaults, I cannot provide a precise answer. [3] promptfoo/site/docs/configuration/rate-limits.md (lines 95-113) > Rate Limits > Configuration > Backoff Configuration.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1618,
+  "output": 170
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9363820700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:18:41.2361929Z",
+  "response": "I do not know the default value of the `--max-retries` flag for `promptfoo eval`. The provided context does not specify this value directly for the `eval` command. It does mention default retry settings in the context of provider-level and HTTP-level retries under \"Backoff Configuration\" for providers, but not specifically for `eval`.\n\n- \"Provider-level retry\" has a default of 3 retries.\n- \"HTTP-level retry\" has a default of 4 retries.\n- These defaults pertain to the context of provider configurations, not directly to the `eval` command.\n\nTherefore, without specific information on the `eval` command defaults, I cannot provide a precise answer. [3] promptfoo/site/docs/configuration/rate-limits.md (lines 95-113) > Rate Limits > Configuration > Backoff Configuration.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9363820700,
+  "load_duration": 12868900,
+  "prompt_eval_count": 1618,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 772459000,
+  "eval_count": 170,
+  "eval_duration": 8391242000
+ }
+}

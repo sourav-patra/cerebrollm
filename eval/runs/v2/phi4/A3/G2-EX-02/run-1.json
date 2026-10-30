@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-02",
+ "run": 1,
+ "started_utc": "2026-10-29T17:13:45Z",
+ "seconds": 4.88,
+ "prompt_sha256": "73be9dfb45008cb75564d567ccea5273c6a04906a34b660f2587f48b8ac9e9aa",
+ "answer": "Since Ollama 0.35.1, models using web search can perform up to ten searches per response. \n\nThis information is found in the following quote: \n\n*\"Models using web search can now perform up to ten searches per response, up from three\"* [ollama/v0.35.1.md (lines 38-44)](ollama/v0.35.1.md).",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1583,
+  "output": 83
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5237915500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:13:49.5916147Z",
+  "response": "Since Ollama 0.35.1, models using web search can perform up to ten searches per response. \n\nThis information is found in the following quote: \n\n*\"Models using web search can now perform up to ten searches per response, up from three\"* [ollama/v0.35.1.md (lines 38-44)](ollama/v0.35.1.md).",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5237915500,
+  "load_duration": 13401100,
+  "prompt_eval_count": 1583,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 775092000,
+  "eval_count": 83,
+  "eval_duration": 4211367000
+ }
+}

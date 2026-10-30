@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-06",
+ "run": 5,
+ "started_utc": "2026-10-29T01:56:28Z",
+ "seconds": 7.72,
+ "prompt_file": "runs/prompts/A3/ST-06.txt",
+ "prompt_sha256": "9ed88010779515fd90218ac6c4eda87b554402222a364a57fd8aa351da43a3a8",
+ "answer": "The oldest supported Postgres major version is **13**.\n\nThe installation section says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md]. The current release is 0.8.7, as the install command shows: \"git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git\" [pgvector/README.md].",
+ "tokens": {
+  "input": 3083,
+  "output": 375,
+  "thinking": 257,
+  "cache_read": 2694,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00029204000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2840,
+  "stop_reason": "end_turn",
+  "session_id": "addf2311-f69e-4ac5-a939-0d2664ea6527",
+  "total_cost_usd": 0.00029204000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2694,
+   "output_tokens": 375,
+   "output_tokens_details": {
+    "thinking_tokens": 257
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 375,
+     "cache_read_input_tokens": 2694,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 375,
+    "cacheReadInputTokens": 2694,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00029204000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 257,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The oldest supported Postgres major version is **13**.\n\nThe installation section says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md]. The current release is 0.8.7, as the install command shows: \"git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git\" [pgvector/README.md].",
+  "ttft_ms": 2828,
+  "type": "result",
+  "duration_ms": 2942,
+  "uuid": "0632603e-8a53-42c4-82f5-f87dd3444645",
+  "ttft_stream_ms": 2827,
+  "time_to_request_ms": 127,
+  "first_content_frame_ms": 2827,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

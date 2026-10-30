@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-12",
+ "run": 3,
+ "started_utc": "2026-10-29T01:58:46Z",
+ "seconds": 10.66,
+ "prompt_file": "runs/prompts/A0/ST-12.txt",
+ "prompt_sha256": "7ae00a655640bdbe80f6bf71fad0b0945932dcb03dc2ac6608e84d91b5625d4d",
+ "answer": "In LlamaIndex, you count tokens with the `TokenCountingHandler` callback. I'm fairly confident this is still the approach, but I can't verify the current release, so check the docs if an attribute name doesn't match.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-4o\").encode,  # match your model's tokenizer\n    verbose=False,\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# ... build indexes, run queries, call embeddings or the LLM ...\n\nprint(\"Embedding tokens:\", token_counter.total_embedding_token_count)\nprint(\"LLM prompt tokens:\", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"Total LLM tokens:\", token_counter.total_llm_token_count)\n\ntoken_counter.reset_counts()  # zero the counters before the next measurement\n```\n\nNotes:\n- Install `tiktoken` separately (`pip install tiktoken`). It's only needed if you use the OpenAI-style tokenizer shown above.\n- Set the callback manager before you build indexes or run queries. Settings are global, so this covers components that don't get their own callback manager. You can also pass a `CallbackManager` to individual components.\n- Use the tokenizer that matches your model. Otherwise the counts will be approximate.\n- Per-call details are available in the handler's event lists (for example `llm_token_counts` and `embedding_token_counts`), but I'm less certain of their exact names and fields in the current version.",
+ "tokens": {
+  "input": 653,
+  "output": 1277,
+  "thinking": 688,
+  "cache_read": 0,
+  "cache_creation": 651
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007689,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6250,
+  "stop_reason": "end_turn",
+  "session_id": "2fe305ec-5cf6-412f-931d-53263ebf4d34",
+  "total_cost_usd": 0.0007689,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 651,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1277,
+   "output_tokens_details": {
+    "thinking_tokens": 688
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 651,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1277,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 651,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 651
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1277,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 651,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007689,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 688,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 651,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In LlamaIndex, you count tokens with the `TokenCountingHandler` callback. I'm fairly confident this is still the approach, but I can't verify the current release, so check the docs if an attribute name doesn't match.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-4o\").encode,  # match your model's tokenizer\n    verbose=False,\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# ... build indexes, run queries, call embeddings or the LLM ...\n\nprint(\"Embedding tokens:\", token_counter.total_embedding_token_count)\nprint(\"LLM prompt tokens:\", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"Total LLM tokens:\", token_counter.total_llm_token_count)\n\ntoken_counter.reset_counts()  # zero the counters before the next measurement\n```\n\nNotes:\n- Install `tiktoken` separately (`pip install tiktoken`). It's only needed if you use the OpenAI-style tokenizer shown above.\n- Set the callback manager before you build indexes or run queries. Settings are global, so this covers components that don't get their own callback manager. You can also pass a `CallbackManager` to individual components.\n- Use the tokenizer that matches your model. Otherwise the counts will be approximate.\n- Per-call details are available in the handler's event lists (for example `llm_token_counts` and `embedding_token_counts`), but I'm less certain of their exact names and fields in the current version.",
+  "ttft_ms": 4052,
+  "type": "result",
+  "duration_ms": 6383,
+  "uuid": "37922e8c-0ca0-40c2-b3d5-22aee91ab7e3",
+  "ttft_stream_ms": 2883,
+  "time_to_request_ms": 135,
+  "first_content_frame_ms": 2883,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

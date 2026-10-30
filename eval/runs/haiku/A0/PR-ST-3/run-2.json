@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-ST-3",
+ "run": 2,
+ "started_utc": "2026-10-29T02:02:46Z",
+ "seconds": 7.99,
+ "prompt_file": "runs/prompts/A0/PR-ST-3.txt",
+ "prompt_sha256": "578d0b3fdfccb2e8e727afcb0f85f14404dc0f06aaf6613f8ce9060d5c92df12",
+ "answer": "Set the concurrency limit to 1. Promptfoo runs evaluations in parallel by default, and this setting caps how many run at once.\n\n**On the command line:**\n\n```bash\npromptfoo eval -j 1\n```\n\n(`--max-concurrency 1` is the long form.)\n\n**In your config file** (e.g. `promptfooconfig.yaml`):\n\n```yaml\nevaluateOptions:\n  maxConcurrency: 1\n```\n\nThis limits concurrency across all test cases and providers, so requests run sequentially. I don't know of a setting that serializes only a specific provider while leaving the others parallel. If you need that, check the promptfoo docs or source for per-provider options, since I can't confirm one exists.",
+ "tokens": {
+  "input": 649,
+  "output": 579,
+  "thinking": 346,
+  "cache_read": 0,
+  "cache_creation": 647
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004191,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3314,
+  "stop_reason": "end_turn",
+  "session_id": "948eb293-b77c-4c3c-8455-c1ec34f556c1",
+  "total_cost_usd": 0.0004191,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 647,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 579,
+   "output_tokens_details": {
+    "thinking_tokens": 346
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 647,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 579,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 647,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 647
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 579,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 647,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004191,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 346,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 647,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Set the concurrency limit to 1. Promptfoo runs evaluations in parallel by default, and this setting caps how many run at once.\n\n**On the command line:**\n\n```bash\npromptfoo eval -j 1\n```\n\n(`--max-concurrency 1` is the long form.)\n\n**In your config file** (e.g. `promptfooconfig.yaml`):\n\n```yaml\nevaluateOptions:\n  maxConcurrency: 1\n```\n\nThis limits concurrency across all test cases and providers, so requests run sequentially. I don't know of a setting that serializes only a specific provider while leaving the others parallel. If you need that, check the promptfoo docs or source for per-provider options, since I can't confirm one exists.",
+  "ttft_ms": 2941,
+  "type": "result",
+  "duration_ms": 3441,
+  "uuid": "86b23887-0d2b-4fe9-9ae9-eb9752748545",
+  "ttft_stream_ms": 2940,
+  "time_to_request_ms": 129,
+  "first_content_frame_ms": 2940,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

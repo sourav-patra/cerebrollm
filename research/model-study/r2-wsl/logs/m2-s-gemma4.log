@@ -1,0 +1,18 @@
+1793252230
+guard pull gemma4:12b exit 0 gemma4:12b digest 6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b 
+gemma4-12b-thinking-on 8000 1 valid True [] gen_tps 99.37606581801059 prompt_tps 2555.6551556499676 gpu% 100.0
+gemma4-12b-thinking-on 8000 2 valid True [] gen_tps 105.72658114928099 prompt_tps 2469.395586032752 gpu% 100.0
+gemma4-12b-thinking-on 8000 3 valid True [] gen_tps 106.61193920454167 prompt_tps 2647.3992619793985 gpu% 100.0
+gemma4-12b-thinking-on 200 1 valid True [] gen_tps 119.1899552665199 prompt_tps 537.7738863486504 gpu% 100.0
+gemma4-12b-thinking-on 200 2 valid True [] gen_tps 119.80957765251853 prompt_tps 636.7612849138773 gpu% 100.0
+gemma4-12b-thinking-on 200 3 valid True [] gen_tps 118.32175382419607 prompt_tps 681.154608404558 gpu% 100.0
+gemma4-12b-thinking-off 8000 1 valid True [] gen_tps 103.34857455671133 prompt_tps 2501.8863677757286 gpu% 100.0
+gemma4-12b-thinking-off 8000 2 valid True [] gen_tps 97.73148427401159 prompt_tps 2558.532727483726 gpu% 100.0
+gemma4-12b-thinking-off 8000 3 valid True [] gen_tps 100.30781962146335 prompt_tps 2545.0550642003773 gpu% 100.0
+gemma4-12b-thinking-off 200 1 valid True [] gen_tps 105.56052432242306 prompt_tps 472.11538690809726 gpu% 100.0
+gemma4-12b-thinking-off 200 2 valid True [] gen_tps 106.8579869875356 prompt_tps 655.1865627192228 gpu% 100.0
+gemma4-12b-thinking-off 200 3 valid True [] gen_tps 106.09112232803707 prompt_tps 633.2615850089712 gpu% 100.0
+guard unload gemma4:12b exit 0 gemma4:12b unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+exit 0
+1793252878

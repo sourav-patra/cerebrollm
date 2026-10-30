@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 2,
+ "started_utc": "2026-10-29T17:22:49Z",
+ "seconds": 15.84,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "Promptfoo version 0.122.0 stopped supporting Node.js version 20. This information is found in the context provided from the release notes:\n\n- \"drop Node.js 20 support\" [promptfoo/0.122.0.md (lines 29-31)].\n\nTherefore, Node.js major version 20 was the version that promptfoo 0.122.0 ceased to support. \n\nReference: \"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260)) ([26b725b](https://github.com/promptfoo/promptfoo/commit/26b725bd9496351ef269380c9fd83b9c2c338a0e))\" [promptfoo/0.122.0.md (lines 29-31)].\n\nAdditionally, this breaking change is highlighted in the \"BREAKING CHANGES\" section of the same document:\n\n- \"⚠ BREAKING CHANGES: drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\" [promptfoo/0.122.0.md (lines 9-23)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1777,
+  "output": 249
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 13858915600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:23:04.1052585Z",
+  "response": "Promptfoo version 0.122.0 stopped supporting Node.js version 20. This information is found in the context provided from the release notes:\n\n- \"drop Node.js 20 support\" [promptfoo/0.122.0.md (lines 29-31)].\n\nTherefore, Node.js major version 20 was the version that promptfoo 0.122.0 ceased to support. \n\nReference: \"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260)) ([26b725b](https://github.com/promptfoo/promptfoo/commit/26b725bd9496351ef269380c9fd83b9c2c338a0e))\" [promptfoo/0.122.0.md (lines 29-31)].\n\nAdditionally, this breaking change is highlighted in the \"BREAKING CHANGES\" section of the same document:\n\n- \"⚠ BREAKING CHANGES: drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\" [promptfoo/0.122.0.md (lines 9-23)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13858915600,
+  "load_duration": 12499800,
+  "prompt_eval_count": 1777,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 927024000,
+  "eval_count": 249,
+  "eval_duration": 12753917000
+ }
+}

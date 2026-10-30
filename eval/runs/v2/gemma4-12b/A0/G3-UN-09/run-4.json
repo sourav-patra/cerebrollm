@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 4,
+ "started_utc": "2026-10-29T15:58:56Z",
+ "seconds": 0.35,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "I do not know. The specific project details or source code for LlamaIndex's `TokenTextSplitter` are not provided in the context.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 55,
+  "output": 32
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 363393000
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:58:56.6334954Z",
+  "response": "I do not know. The specific project details or source code for LlamaIndex's `TokenTextSplitter` are not provided in the context.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 363393000,
+  "load_duration": 15465700,
+  "prompt_eval_count": 55,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 65032000,
+  "eval_count": 32,
+  "eval_duration": 259968000
+ }
+}

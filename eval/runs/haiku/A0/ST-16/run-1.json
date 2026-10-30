@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-16",
+ "run": 1,
+ "started_utc": "2026-10-29T02:00:10Z",
+ "seconds": 7.62,
+ "prompt_file": "runs/prompts/A0/ST-16.txt",
+ "prompt_sha256": "7807a4fe91d9341367cac8b5c7cdfd6b68cbfa9f5a21a10e208cb42524fb0544",
+ "answer": "The field is **`transformResponse`**. It takes a JavaScript expression or function (or a `file://` path to a script) that receives the raw API response and returns the output promptfoo should use. Older promptfoo versions called this `responseParser`, but I'm not certain of the exact version where the rename happened.\n\nThe related `transformRequest` field works the same way for the outgoing request.",
+ "tokens": {
+  "input": 654,
+  "output": 423,
+  "thinking": 302,
+  "cache_read": 0,
+  "cache_creation": 652
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003421,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2974,
+  "stop_reason": "end_turn",
+  "session_id": "4dd444af-c4e4-4589-8e01-c0856e56f2dc",
+  "total_cost_usd": 0.0003421,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 652,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 423,
+   "output_tokens_details": {
+    "thinking_tokens": 302
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 652,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 423,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 652,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 652
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 423,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 652,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003421,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 302,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 652,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The field is **`transformResponse`**. It takes a JavaScript expression or function (or a `file://` path to a script) that receives the raw API response and returns the output promptfoo should use. Older promptfoo versions called this `responseParser`, but I'm not certain of the exact version where the rename happened.\n\nThe related `transformRequest` field works the same way for the outgoing request.",
+  "ttft_ms": 2918,
+  "type": "result",
+  "duration_ms": 3096,
+  "uuid": "d17e2f5f-9374-4ba4-b194-046640df1e2d",
+  "ttft_stream_ms": 2917,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 2917,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

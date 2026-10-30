@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 4,
+ "started_utc": "2026-10-29T17:36:03Z",
+ "seconds": 19.49,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "The project's context mentions two specific question types supported by Ollama's `/v1/systemone` decision-model API: `noul` and `multimodal`. However, it does not explicitly list a third question type. Based on the information provided:\n\n1. **`noul`**: This type is referenced in the context, for example, in the following snippet:\n   ```json\n   \"urgent\": {\n     \"type\": \"noul\",\n     \"instructions\": \"Does this ticket need attention within the hour?\"\n   }\n   ```\n   [ollama/v0.35.0.md](https://github.com/ollama/ollama/releases/tag/v0.35.0) [lines 1-69]\n\n2. **`multimodal`**: This type is inferred from the context discussing Clef and Clef Flash models, which support multimodal requests, including images and text:\n   ```\n   Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it.\n   ```\n   [ollama/v0.35.1.md](https://github.com/ollama/ollama/releases/tag/v0.35.1) [lines 1-37]\n\nSince the context does not specify a third question type, I do not have sufficient information to identify it. Therefore, I can only confirm the two mentioned types based on the provided documents. If there is a third type, it is not included in the context given.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2262,
+  "output": 321
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 17778387300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:36:22.4503169Z",
+  "response": "The project's context mentions two specific question types supported by Ollama's `/v1/systemone` decision-model API: `noul` and `multimodal`. However, it does not explicitly list a third question type. Based on the information provided:\n\n1. **`noul`**: This type is referenced in the context, for example, in the following snippet:\n   ```json\n   \"urgent\": {\n     \"type\": \"noul\",\n     \"instructions\": \"Does this ticket need attention within the hour?\"\n   }\n   ```\n   [ollama/v0.35.0.md](https://github.com/ollama/ollama/releases/tag/v0.35.0) [lines 1-69]\n\n2. **`multimodal`**: This type is inferred from the context discussing Clef and Clef Flash models, which support multimodal requests, including images and text:\n   ```\n   Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it.\n   ```\n   [ollama/v0.35.1.md](https://github.com/ollama/ollama/releases/tag/v0.35.1) [lines 1-37]\n\nSince the context does not specify a third question type, I do not have sufficient information to identify it. Therefore, I can only confirm the two mentioned types based on the provided documents. If there is a third type, it is not included in the context given.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 17778387300,
+  "load_duration": 13381400,
+  "prompt_eval_count": 2262,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1167363000,
+  "eval_count": 321,
+  "eval_duration": 16398092000
+ }
+}

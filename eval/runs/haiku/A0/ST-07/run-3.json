@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-07",
+ "run": 3,
+ "started_utc": "2026-10-29T01:56:41Z",
+ "seconds": 10.13,
+ "prompt_file": "runs/prompts/A0/ST-07.txt",
+ "prompt_sha256": "8b1b1d0f40bdd6745bb587c8c9c179c6302aedcd0d36d1051cd542e3ab658d6b",
+ "answer": "In current LlamaIndex (0.10 and later), you set global defaults through the `Settings` object in `llama_index.core`:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.openai import OpenAI\nfrom llama_index.embeddings.openai import OpenAIEmbedding\n\nSettings.llm = OpenAI(model=\"gpt-4o-mini\", temperature=0.1)\nSettings.embed_model = OpenAIEmbedding(model=\"text-embedding-3-small\")\n```\n\nIntegrations are separate packages, so install the ones you use, for example:\n\n```\npip install llama-index-llms-openai llama-index-embeddings-openai\n```\n\nSome other options from memory:\n\n- **Local models:** You can swap in integrations such as `llama-index-llms-ollama` (`Ollama(model=\"llama3.1\")`) or `llama-index-embeddings-huggingface` (`HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")`).\n- **Other settings:** `Settings` also holds `chunk_size`, `chunk_overlap`, `node_parser`, `context_window`, `num_output`, `callback_manager`, and `tokenizer`.\n- **Precedence:** Components passed explicitly to an index, query engine, or retriever override the global `Settings`.\n- **Deprecated API:** `ServiceContext` and `set_global_service_context()` were the pre-0.10 approach and are deprecated, so use `Settings` instead.\n\nIf you use the OpenAI defaults, set your key first. On Windows PowerShell:\n\n```powershell\n$env:OPENAI_API_KEY = \"sk-...\"\n```\n\nI'm working from memory and my knowledge may be out of date, so check the LlamaIndex docs for your installed version if an import path or class name doesn't match.",
+ "tokens": {
+  "input": 659,
+  "output": 1156,
+  "thinking": 547,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007096,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6021,
+  "stop_reason": "end_turn",
+  "session_id": "6fc0ffae-eef0-4b2f-9ecc-d5370b322b27",
+  "total_cost_usd": 0.0007096,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1156,
+   "output_tokens_details": {
+    "thinking_tokens": 547
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1156,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1156,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007096,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 547,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In current LlamaIndex (0.10 and later), you set global defaults through the `Settings` object in `llama_index.core`:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.openai import OpenAI\nfrom llama_index.embeddings.openai import OpenAIEmbedding\n\nSettings.llm = OpenAI(model=\"gpt-4o-mini\", temperature=0.1)\nSettings.embed_model = OpenAIEmbedding(model=\"text-embedding-3-small\")\n```\n\nIntegrations are separate packages, so install the ones you use, for example:\n\n```\npip install llama-index-llms-openai llama-index-embeddings-openai\n```\n\nSome other options from memory:\n\n- **Local models:** You can swap in integrations such as `llama-index-llms-ollama` (`Ollama(model=\"llama3.1\")`) or `llama-index-embeddings-huggingface` (`HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")`).\n- **Other settings:** `Settings` also holds `chunk_size`, `chunk_overlap`, `node_parser`, `context_window`, `num_output`, `callback_manager`, and `tokenizer`.\n- **Precedence:** Components passed explicitly to an index, query engine, or retriever override the global `Settings`.\n- **Deprecated API:** `ServiceContext` and `set_global_service_context()` were the pre-0.10 approach and are deprecated, so use `Settings` instead.\n\nIf you use the OpenAI defaults, set your key first. On Windows PowerShell:\n\n```powershell\n$env:OPENAI_API_KEY = \"sk-...\"\n```\n\nI'm working from memory and my knowledge may be out of date, so check the LlamaIndex docs for your installed version if an import path or class name doesn't match.",
+  "ttft_ms": 3625,
+  "type": "result",
+  "duration_ms": 6131,
+  "uuid": "97a719ba-d902-492e-9951-0327a24bb1a0",
+  "ttft_stream_ms": 2906,
+  "time_to_request_ms": 145,
+  "first_content_frame_ms": 2906,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

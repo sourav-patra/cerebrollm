@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 3,
+ "started_utc": "2026-10-29T16:33:55Z",
+ "seconds": 10.77,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "The three question types supported by Ollama’s `/v1/systemone` decision‑model API are:\n\n* **Yes/no questions**  \n* **Label classification**  \n* **Rubric scoring**\n\n> \"Decision models can now be used directly from the terminal with `ollama run` — ask yes/no questions, classify text into labels, or score against a rubric:\"  \n> [ollama/v0.40.4.md]",
+ "thinking_chars": 1739,
+ "tokens": {
+  "input": 2301,
+  "output": 521
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9132870400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:34:05.343536Z",
+  "response": "The three question types supported by Ollama’s `/v1/systemone` decision‑model API are:\n\n* **Yes/no questions**  \n* **Label classification**  \n* **Rubric scoring**\n\n> \"Decision models can now be used directly from the terminal with `ollama run` — ask yes/no questions, classify text into labels, or score against a rubric:\"  \n> [ollama/v0.40.4.md]",
+  "thinking": "We need to answer: \"What are the three question types supported by Ollama's /v1/systemone decision-model API?\" We need to find in context where question types are listed. Let's search context: In [1] snippet of v0.35.0.md lines 1-69: there is mention \"Send context and one or more questions:\" but didn't show types. In [2] v0.40.4.md lines 1-24: \"Decision models can now be used directly from the terminal with `ollama run` — ask yes/no questions, classify text into labels, or score against a rubric:\" That's likely the three types: yes/no questions, classification, scoring.\n\nBut confirm from docs: In decision models, question types maybe \"noul\", \"label\", \"score\" etc. Let's search more: In [3] documentation: there's a snippet for clef: In the example, question has \"type\": \"noul\". That indicates a type name. Another type might be \"label\" or \"score\". In [1] we saw \"questions\": { ... } but not types. In [2] there might be description. Let's read [2] snippet lines 1-24: \"Decision models can now be used directly from the terminal with `ollama run` — ask yes/no questions, classify text into labels, or score against a rubric:\" This is likely the answer.\n\nThus the three question types: yes/no questions, classification into labels, scoring against a rubric. Provide quote.\n\nWe need to quote the line. The quote from [2] lines 1-24 includes the phrase. Let's capture the exact line: \"Decision models can now be used directly from the terminal with `ollama run` — ask yes/no questions, classify text into labels, or score against a rubric:\" That is the line.\n\nLet's produce answer: The three question types are yes/no questions, label classification, and rubric scoring.\n\nWe need to cite path: [2] ollama/v0.40.4.md. Provide the quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9132870400,
+  "load_duration": 17847700,
+  "prompt_eval_count": 2301,
+  "prompt_eval_cached_count": 2296,
+  "prompt_eval_duration": 57489000,
+  "eval_count": 521,
+  "eval_duration": 8974368000
+ }
+}

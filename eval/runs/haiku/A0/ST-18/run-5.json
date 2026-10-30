@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-18",
+ "run": 5,
+ "started_utc": "2026-10-29T02:01:08Z",
+ "seconds": 8.72,
+ "prompt_file": "runs/prompts/A0/ST-18.txt",
+ "prompt_sha256": "bc30c240b8baf94275007b942372b4d9dbc326bd0382f0290c4558c29d4d5c0b",
+ "answer": "For IBM-hosted models on watsonx.ai, I believe promptfoo has a dedicated **`watsonx`** provider, used as `watsonx:<model-id>` in your config. It typically needs your watsonx project ID and credentials, such as an API key or bearer token, set as environment variables. I'm not certain of the exact variable names or supported auth types, so check the current promptfoo provider docs before relying on them.\n\nIf you're using IBM Granite models in other ways, these may fit better:\n- **Locally via Ollama:** use the `ollama:` provider.\n- **Via Hugging Face Inference:** use the `huggingface:` provider.\n- **Via an OpenAI-compatible endpoint:** use the `openai:` provider with a custom `apiBaseUrl`.\n\nIf you tell me where the models are hosted and how you're authenticating, I can suggest a more specific config.",
+ "tokens": {
+  "input": 654,
+  "output": 647,
+  "thinking": 356,
+  "cache_read": 0,
+  "cache_creation": 652
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00045410000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3976,
+  "stop_reason": "end_turn",
+  "session_id": "46d8053f-15fe-4ae5-ba7f-c7e4cab46799",
+  "total_cost_usd": 0.00045410000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 652,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 647,
+   "output_tokens_details": {
+    "thinking_tokens": 356
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 652,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 647,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 652,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 652
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 647,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 652,
+    "webSearchRequests": 0,
+    "costUSD": 0.00045410000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 356,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 652,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "For IBM-hosted models on watsonx.ai, I believe promptfoo has a dedicated **`watsonx`** provider, used as `watsonx:<model-id>` in your config. It typically needs your watsonx project ID and credentials, such as an API key or bearer token, set as environment variables. I'm not certain of the exact variable names or supported auth types, so check the current promptfoo provider docs before relying on them.\n\nIf you're using IBM Granite models in other ways, these may fit better:\n- **Locally via Ollama:** use the `ollama:` provider.\n- **Via Hugging Face Inference:** use the `huggingface:` provider.\n- **Via an OpenAI-compatible endpoint:** use the `openai:` provider with a custom `apiBaseUrl`.\n\nIf you tell me where the models are hosted and how you're authenticating, I can suggest a more specific config.",
+  "ttft_ms": 2947,
+  "type": "result",
+  "duration_ms": 4124,
+  "uuid": "2e39459d-2eec-40df-aeb0-57b9e5f0bfd1",
+  "ttft_stream_ms": 2946,
+  "time_to_request_ms": 174,
+  "first_content_frame_ms": 2946,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

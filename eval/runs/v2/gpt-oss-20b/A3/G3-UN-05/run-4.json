@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-05",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:58Z",
+ "seconds": 6.92,
+ "prompt_sha256": "24b4f0a37bcdab2f151d071b7668e6d0bfd5e8d71c91b1bd324da97df9d05009",
+ "answer": "The default unload timeout is **5 minutes** (300 seconds).  \n“By default models are kept in memory for 5 minutes before being unloaded.” [ollama/docs/faq.md]",
+ "thinking_chars": 1575,
+ "tokens": {
+  "input": 1617,
+  "output": 422
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7361047600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:47:05.0353192Z",
+  "response": "The default unload timeout is **5 minutes** (300 seconds).  \n“By default models are kept in memory for 5 minutes before being unloaded.” [ollama/docs/faq.md]",
+  "thinking": "We need to answer: What is the default value of the Ollama environment variable OLLAMA_UNLOAD_TIMEOUT? We have context from ollama/docs/faq.md lines 289-318 about keep_alive and unload. It mentions default models are kept in memory for 5 minutes before being unloaded. That likely corresponds to OLLAMA_UNLOAD_TIMEOUT default is 5 minutes. Let's find a line that states default unload timeout. In context [1], it says: \"By default models are kept in memory for 5 minutes before being unloaded.\" That indicates default unload timeout is 5 minutes. But the variable OLLAMA_UNLOAD_TIMEOUT is not explicitly mentioned. Need to confirm if any doc references OLLAMA_UNLOAD_TIMEOUT. None of the provided context includes that variable. We must quote the line that indicates default unload time. The question: \"What is the default value of the Ollama environment variable OLLAMA_UNLOAD_TIMEOUT?\" The answer: 5 minutes (or 300 seconds). But we need to quote the line that says default is 5 minutes. That is: \"By default models are kept in memory for 5 minutes before being unloaded.\" That is from [1] lines 289-318. So we should quote that.\n\nThus answer: The default unload timeout is 5 minutes. Quote: \"By default models are kept in memory for 5 minutes before being unloaded.\" [ollama/docs/faq.md]\n\nWe need to use the path from context: [1] ollama/docs/faq.md. We should include exact path: [ollama/docs/faq.md]. But context shows [1] ollama/docs/faq.md (lines 289-318). So path: [ollama/docs/faq.md].\n\nThus final answer: The default value is 5 minutes (300 seconds). Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7361047600,
+  "load_duration": 13401100,
+  "prompt_eval_count": 1617,
+  "prompt_eval_cached_count": 1612,
+  "prompt_eval_duration": 58016000,
+  "eval_count": 422,
+  "eval_duration": 7235497000
+ }
+}

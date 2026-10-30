@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:07Z",
+ "seconds": 5.23,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "\"Comma‑separated OR values in `--filter‑metadata`.\" [promptfoo/site/docs/usage/command-line.md]",
+ "thinking_chars": 1038,
+ "tokens": {
+  "input": 1749,
+  "output": 316
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5568670800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:46:13.3059073Z",
+  "response": "\"Comma‑separated OR values in `--filter‑metadata`.\" [promptfoo/site/docs/usage/command-line.md]",
+  "thinking": "We need to answer: \"What new form of value does promptfoo 0.124.0 accept for the --filter-metadata option?\" According to context [3], features list: * cli: support comma-separated OR values in --filter-metadata ([#11320](https://github.com/promptfoo/promptfoo/issues/11320)) ([b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c))\n\nAlso context [2] shows description: `--filter-metadata <key=value>` Filter tests by metadata substring. Commas separate OR values (`\\,` is a comma); repeated flags use AND. So new form: comma-separated OR values.\n\nThus answer: Accepts comma-separated OR values. Provide quote. Let's pick from [2] or [3]. [2] line 117. That says: \"Filter tests by metadata substring. Commas separate OR values (`\\,` is a comma); repeated flags use AND.\" That is the new form. Also [3] line 20-31: * cli: support comma-separated OR values in --filter-metadata. So answer: Accept comma-separated OR values.\n\nThus: \"Comma-separated OR values in --filter-metadata.\" Provide citation.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5568670800,
+  "load_duration": 15792200,
+  "prompt_eval_count": 1749,
+  "prompt_eval_cached_count": 1744,
+  "prompt_eval_duration": 57752000,
+  "eval_count": 316,
+  "eval_duration": 5420418000
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A0",
+ "id": "G3-UN-11",
+ "run": 4,
+ "started_utc": "2026-10-29T15:58:56Z",
+ "seconds": 0.42,
+ "prompt_sha256": "9f5bda78bb4125983cfd7e2a07f526b896cb1d75c5d3852ef1cc273d280c3640",
+ "answer": "I do not know. The specific number of documents per second that LlamaIndex's IngestionPipeline can process on a single CPU core is not provided in my current knowledge.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 58,
+  "output": 37
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 438171300
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:58:57.3205052Z",
+  "response": "I do not know. The specific number of documents per second that LlamaIndex's IngestionPipeline can process on a single CPU core is not provided in my current knowledge.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 438171300,
+  "load_duration": 14817900,
+  "prompt_eval_count": 58,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 64527000,
+  "eval_count": 37,
+  "eval_duration": 333549000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-PA-07",
+ "run": 2,
+ "started_utc": "2026-10-29T16:20:49Z",
+ "seconds": 11.65,
+ "prompt_sha256": "24255e1886d61d7264d37c09ec8fa0df7ca5290b3436d3592af4bb6e4467f6ac",
+ "answer": "I’m not sure about the exact class name. If you’re looking for the reranker that got native async support in the 0.14.25 release of **llama‑index‑core**, it was the **BaseReranker** class (the core reranker base that other rerankers inherit from).",
+ "thinking_chars": 1994,
+ "tokens": {
+  "input": 109,
+  "output": 589
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 10221329000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:21:00.1299301Z",
+  "response": "I’m not sure about the exact class name. If you’re looking for the reranker that got native async support in the 0.14.25 release of **llama‑index‑core**, it was the **BaseReranker** class (the core reranker base that other rerankers inherit from).",
+  "thinking": "We need to answer: \"Which reranker class gained native async support in llama-index-core 0.14.25?\" We need to know from what we know about this project. Likely llama-index is a library, and in version 0.14.25, a reranker class got native async support. Which class? Let's think.\n\nLlama-index (now known as llama-index, formerly llama-parse?). Reranker classes maybe like \"ChatReranker\", \"DocumentReranker\", \"EmbeddingReranker\", \"SimilarityReranker\", \"Ranker\". The question: \"Which reranker class gained native async support in llama-index-core 0.14.25?\" So likely a particular reranker class. The answer: \"Native async support was added to the BaseReranker class\" or \"Native async support was added to the Reranker class\" or \"Native async support was added to the DocumentReranker class\".\n\nLet's search memory: In llama-index, there's a module \"rerank\". The reranker classes: \"BaseReranker\" and \"OpenAIAssistantReranker\"? Actually there is \"BaseReranker\" in 'llama_index.core.retrievers.reranker'. The class that had async support? Maybe \"SimilarityScoreReranker\" or \"EmbeddingReranker\". I recall that in version 0.14.25, there was a commit adding async support to \"BaseReranker\" and \"Reranker\" classes. But maybe it's the \"Reranker\" class. But the question: \"Which reranker class gained native async support in llama-index-core 0.14.25?\" So answer: \"BaseReranker\". But let's confirm.\n\nAlternatively, maybe it's \"LLMPredictor\" or \"LLMRouter\". But the question specifically about reranker class. The project is \"llama-index-core\". The 0.14.25 release notes might mention \"Added native async support for Reranker classes\". Which one? The class name might be \"BaseReranker\". I think the answer: \"The BaseReranker class gained native async support\".\n\nThus answer: \"BaseReranker\".\n\nBut maybe they refer to \"Reranker\" (the interface). However, \"BaseReranker\" is the base class. Let's answer that.\n\nIf uncertain, say I don't know. But I think it's BaseReranker.\n\nThus answer: \"The BaseReranker class\".",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10221329000,
+  "load_duration": 13382300,
+  "prompt_eval_count": 109,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 186314000,
+  "eval_count": 589,
+  "eval_duration": 10005882000
+ }
+}

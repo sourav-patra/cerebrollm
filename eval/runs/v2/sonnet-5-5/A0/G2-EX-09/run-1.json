@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-09",
+ "run": 1,
+ "started_utc": "2026-10-29T15:43:23Z",
+ "seconds": 9.84,
+ "prompt_sha256": "34975ce8536b6c6eee0b1e986c2f4109d2e07c9cde02d358439f50cc242fc68d",
+ "answer": "I don't know for certain what the default is in `llama-index-llms-google-genai` 0.10.0, and I haven't verified it against that release.\n\nWhat I recall is less specific:\n- Earlier versions of the package defaulted to a Gemini 1.5 Flash model (`models/gemini-1.5-flash`).\n- Later docs examples commonly use `gemini-2.0-flash`, but that may be an example choice rather than the class default.\n\nThe library default and the docs examples can also differ, so I can't give you a reliable answer for either one at 0.10.0.\n\nTo check, you can run this in PowerShell:\n\n```powershell\npip download llama-index-llms-google-genai==0.10.0 --no-deps -d .\\pkg\n```\n\nThen extract the wheel into its own empty directory and look at the `GoogleGenAI` class's `model` parameter default in `llama_index/llms/google_genai/base.py`. You can also look at the `__init__` signature in a Python session after installing it:\n\n```powershell\npython -I -c \"import inspect; from llama_index.llms.google_genai import GoogleGenAI; print(inspect.signature(GoogleGenAI.__init__))\"\n```\n\nIf you share the source or the docs page, I can read the default out of it.",
+ "tokens": {
+  "input": 648,
+  "output": 613,
+  "thinking": 207,
+  "cache_read": 0,
+  "cache_creation": 646
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.008718,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6081,
+  "stop_reason": "end_turn",
+  "session_id": "90991c56-ab4c-4709-9df2-bc5f002a40d4",
+  "total_cost_usd": 0.008718,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 646,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 613,
+   "output_tokens_details": {
+    "thinking_tokens": 207
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 646,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 613,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 646,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 646
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 613,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 646,
+    "webSearchRequests": 0,
+    "costUSD": 0.008718,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 207,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 646,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know for certain what the default is in `llama-index-llms-google-genai` 0.10.0, and I haven't verified it against that release.\n\nWhat I recall is less specific:\n- Earlier versions of the package defaulted to a Gemini 1.5 Flash model (`models/gemini-1.5-flash`).\n- Later docs examples commonly use `gemini-2.0-flash`, but that may be an example choice rather than the class default.\n\nThe library default and the docs examples can also differ, so I can't give you a reliable answer for either one at 0.10.0.\n\nTo check, you can run this in PowerShell:\n\n```powershell\npip download llama-index-llms-google-genai==0.10.0 --no-deps -d .\\pkg\n```\n\nThen extract the wheel into its own empty directory and look at the `GoogleGenAI` class's `model` parameter default in `llama_index/llms/google_genai/base.py`. You can also look at the `__init__` signature in a Python session after installing it:\n\n```powershell\npython -I -c \"import inspect; from llama_index.llms.google_genai import GoogleGenAI; print(inspect.signature(GoogleGenAI.__init__))\"\n```\n\nIf you share the source or the docs page, I can read the default out of it.",
+  "ttft_ms": 3240,
+  "type": "result",
+  "duration_ms": 6157,
+  "uuid": "2ca1e648-6e70-4e3f-816b-ce1100636632",
+  "ttft_stream_ms": 2638,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 2638,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

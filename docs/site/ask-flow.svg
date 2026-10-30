@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 590" width="900" height="590" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <title id="t">cerebrollm ask: search, rerank, generate, verify, abstain</title>
+  <desc id="d">A question goes through five steps left to right: search for 20 passages, rerank to 8, generate an answer with a local model, extract each quoted citation and verify it against the source file. A gate then asks whether any citation verified OK. Yes prints the answer with the verify codes. No prints exactly "Not in the sources." The same abstention happens when search returns nothing, when the answer is empty, or when the answer is the abstention phrase itself. A failure in search, rerank or generation prints an error and exits 2 without an answer.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f2933"/>
+    </marker>
+  </defs>
+  <rect width="900" height="590" fill="#ffffff"/>
+  <g stroke="#1f2933" stroke-width="2" fill="#f1f5f9">
+    <rect x="20" y="70" width="140" height="70" rx="6"/>
+    <rect x="200" y="70" width="140" height="70" rx="6"/>
+    <rect x="380" y="70" width="140" height="70" rx="6"/>
+    <rect x="560" y="70" width="140" height="70" rx="6"/>
+    <rect x="740" y="70" width="140" height="70" rx="6"/>
+  </g>
+  <g font-size="15" fill="#1f2933" text-anchor="middle" font-weight="700">
+    <text x="90" y="98">1 Question</text>
+    <text x="270" y="98">2 Search</text>
+    <text x="450" y="98">3 Rerank</text>
+    <text x="630" y="98">4 Generate</text>
+    <text x="810" y="98">5 Verify</text>
+  </g>
+  <g font-size="12" fill="#1f2933" text-anchor="middle">
+    <text x="90" y="118">cerebrollm ask</text>
+    <text x="270" y="118">top 20, hybrid,</text>
+    <text x="270" y="132">tier and status rules</text>
+    <text x="450" y="118">cross-encoder keeps 8</text>
+    <text x="450" y="132">(--no-rerank: first 8)</text>
+    <text x="630" y="118">local model, Ollama</text>
+    <text x="630" y="132">quote one line, cite path</text>
+    <text x="810" y="118">re-read the source file</text>
+    <text x="810" y="132">per citation</text>
+  </g>
+  <g stroke="#1f2933" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <path d="M160 105 H198"/>
+    <path d="M340 105 H378"/>
+    <path d="M520 105 H558"/>
+    <path d="M700 105 H738"/>
+    <path d="M810 140 V198"/>
+  </g>
+  <g stroke="#1f2933" stroke-width="2" fill="#fef3c7">
+    <path d="M810 200 L895 245 L810 290 L725 245 Z"/>
+  </g>
+  <g font-size="14" fill="#1f2933" text-anchor="middle" font-weight="700">
+    <text x="810" y="241">Any citation</text>
+    <text x="810" y="259">verified OK?</text>
+  </g>
+  <g stroke="#1f2933" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <path d="M725 245 H590 V338"/>
+    <path d="M810 290 V338"/>
+  </g>
+  <g font-size="13" fill="#1f2933" font-weight="700">
+    <text x="640" y="236">yes</text>
+    <text x="820" y="318">no</text>
+  </g>
+  <g stroke="#1f2933" stroke-width="2">
+    <rect x="450" y="340" width="280" height="66" rx="6" fill="#dcfce7"/>
+    <rect x="740" y="340" width="140" height="66" rx="6" fill="#e5e7eb"/>
+  </g>
+  <g font-size="14" fill="#1f2933" text-anchor="middle">
+    <text x="590" y="366" font-weight="700">Print the answer</text>
+    <text x="590" y="386" font-size="12">then one line per citation: code, path</text>
+    <text x="810" y="366" font-weight="700">Print exactly</text>
+    <text x="810" y="386" font-size="12">Not in the sources.</text>
+  </g>
+  <g stroke="#1f2933" stroke-width="2" fill="#ffffff" stroke-dasharray="6 4">
+    <rect x="20" y="440" width="440" height="84" rx="6"/>
+    <rect x="20" y="540" width="860" height="38" rx="6"/>
+  </g>
+  <g font-size="13" fill="#1f2933">
+    <text x="34" y="464" font-weight="700">Also abstains, with the same output:</text>
+    <text x="34" y="484">search returned no passages (the generator is not called)</text>
+    <text x="34" y="502">the answer is empty, or is the abstention phrase itself</text>
+    <text x="34" y="565"><tspan font-weight="700">Failure</tspan> in search, rerank or generation: error on stderr, exit 2, no answer printed.</text>
+  </g>
+  <path d="M460 482 H810 V408" stroke="#1f2933" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ar)"/>
+  <g font-size="12" fill="#1f2933">
+    <text x="20" y="30" font-size="15" font-weight="700">What the ask command does with one question</text>
+    <text x="20" y="50">OK: the quote is in the source file and the file still matches its indexed sha256. Any other verify code does not count.</text>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/61",
+  "index": 14,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": true
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T21:48:57.6536521Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    balance = 0\n    for char in brackets:\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n            if balance < 0:\n                return False\n    return balance == 0\n```",
+      "thinking": "Okay, I need to implement the correct_bracketing function. Let's think about how to approach this. The function should check if every opening bracket has a corresponding closing bracket. So, for example, if the string is \"(()\", there's an extra opening bracket, so it should return False. Similarly, if it starts with a closing bracket like \")(()\", that's invalid.\n\nHmm, the classic way to solve bracket matching is using a stack. Let me think: for each character in the string, if it's an '(', push it onto the stack. If it's a ')', check if there's a corresponding '(' in the stack. If there is, pop the stack. If not, return False. At the end, the stack should be empty for it to be valid.\n\nWait, but maybe there's a simpler way. Let me think about the balance. We can track the balance as we iterate through the string. Every time we see '(', we add 1 to the balance. For ')', subtract 1. But if at any point the balance becomes negative, that means there's a closing bracket without a matching opening one, so return False. At the end, if the balance is zero, return True; else, False.\n\nYes, that seems manageable. Let's outline the steps:\n\nInitialize a balance variable to 0.\n\nLoop through each character in the brackets string:\n\n- If the character is '(', increment balance by 1.\n- If it's ')', decrement balance by 1.\n- If balance ever becomes negative during the loop, return False.\n\nAfter processing all characters, check if balance is zero. If yes, return True; else, False.\n\nLet me test this logic against the examples.\n\nFirst example: correct_bracketing(\"(\") \u2192 balance starts at 0. After processing '(', balance is 1. Loop ends. Balance is 1, not zero \u2192 return False. Correct.\n\nSecond example: \"()\" \u2192 balance goes 1 then 0. Ends at 0 \u2192 True. Correct.\n\nThird example: \"(()())\". Let's walk through:\n\nCharacter '(', balance 1.\n'(', balance 2.\n')', balance 1.\n'(', balance 2.\n')', 1.\n')', 0. Ends at 0 \u2192 True. Correct.\n\nFourth example: \")(()\". First character is ')', balance becomes -1. So return False. Correct.\n\nYes, this logic seems to handle all cases.\n\nNow, implement this in Python.\n\nThe function will take a string, loop through each character, track balance. Let's code that.\n\nSo:\n\ndef correct_bracketing(brackets: str):\n    balance = 0\n    for char in brackets:\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n            if balance < 0:\n                return False\n    return balance == 0\n\nWait, but what if the string contains characters other than '(' and ')'? The problem statement says that brackets is a string of \"(\" and \")\", so we don't need to handle other characters. So the code is safe.\n\nTesting the sample cases:\n\nFor the first sample input \"(\", the loop runs once, balance is 1. After loop, return 1 == 0 \u2192 False. Correct.\n\nFor \"()\", balance goes 1 then 0. Return True.\n\nFor \"(()())\", balance goes 1, 2, 1, 2, 1, 0. Returns True.\n\nFor \")(()\", first character is ')', balance becomes -1 \u2192 return False. Correct.\n\nYes, this should work.\n\nSo the code is straightforward. No imports needed. The function is implemented as described.\n"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 37081028300,
+    "load_duration": 13010800,
+    "prompt_eval_count": 118,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 91705000,
+    "eval_count": 909,
+    "eval_duration": 36849552000
+  },
+  "wall_seconds": 34.78207297299923,
+  "load_average_before": [
+    0.0,
+    0.01611328125,
+    0.04345703125
+  ],
+  "load_average_after": [
+    0.0,
+    0.0126953125,
+    0.0400390625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-on-14",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-on:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_14.py"
+    ],
+    "wall_seconds": 0.751623231000849,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-01",
+ "run": 2,
+ "started_utc": "2026-10-29T01:54:29Z",
+ "seconds": 8.64,
+ "prompt_file": "runs/prompts/A0/ST-01.txt",
+ "prompt_sha256": "05d409d97727430effc01d20d299f18a218dd481edafa6a20c8ae4133d70f6ea",
+ "answer": "Use **`POST /api/embed`** on your Ollama server (default `http://localhost:11434`).\n\n**Input:**\n- `model` (required): the name of an embedding model, such as `nomic-embed-text`. It must be pulled first.\n- `input` (required): a string, or an array of strings for batch embedding.\n- Optional fields include `truncate` (whether to cut inputs that exceed the context length, default true), `options` (model parameters), and `keep_alive` (how long the model stays loaded).\n\n**Output:** a JSON object with `model` and `embeddings`, which is an array of vectors, one per input string, in the same order as the input.\n\nExample request:\n```json\n{\n  \"model\": \"nomic-embed-text\",\n  \"input\": [\"first text\", \"second text\"]\n}\n```\n\nThe older **`POST /api/embeddings`** endpoint takes a single `prompt` string and returns one vector in `embedding`. I believe it is deprecated in favor of `/api/embed`, so prefer the newer one. Ollama also exposes an OpenAI-compatible `/v1/embeddings` endpoint.\n\nI'm not certain of the exact field names and defaults in the latest Ollama release, so check the API docs in the Ollama repository if something doesn't match.",
+ "tokens": {
+  "input": 662,
+  "output": 651,
+  "thinking": 243,
+  "cache_read": 0,
+  "cache_creation": 660
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004577,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4005,
+  "stop_reason": "end_turn",
+  "session_id": "f3457485-b006-4f89-8c20-faa66ac3750c",
+  "total_cost_usd": 0.0004577,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 660,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 651,
+   "output_tokens_details": {
+    "thinking_tokens": 243
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 660,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 651,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 660,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 660
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 651,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 660,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004577,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 243,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 660,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **`POST /api/embed`** on your Ollama server (default `http://localhost:11434`).\n\n**Input:**\n- `model` (required): the name of an embedding model, such as `nomic-embed-text`. It must be pulled first.\n- `input` (required): a string, or an array of strings for batch embedding.\n- Optional fields include `truncate` (whether to cut inputs that exceed the context length, default true), `options` (model parameters), and `keep_alive` (how long the model stays loaded).\n\n**Output:** a JSON object with `model` and `embeddings`, which is an array of vectors, one per input string, in the same order as the input.\n\nExample request:\n```json\n{\n  \"model\": \"nomic-embed-text\",\n  \"input\": [\"first text\", \"second text\"]\n}\n```\n\nThe older **`POST /api/embeddings`** endpoint takes a single `prompt` string and returns one vector in `embedding`. I believe it is deprecated in favor of `/api/embed`, so prefer the newer one. Ollama also exposes an OpenAI-compatible `/v1/embeddings` endpoint.\n\nI'm not certain of the exact field names and defaults in the latest Ollama release, so check the API docs in the Ollama repository if something doesn't match.",
+  "ttft_ms": 2825,
+  "type": "result",
+  "duration_ms": 4139,
+  "uuid": "384f4d0a-96e8-44ac-a330-32fc5c41ae8d",
+  "ttft_stream_ms": 2824,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 2824,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

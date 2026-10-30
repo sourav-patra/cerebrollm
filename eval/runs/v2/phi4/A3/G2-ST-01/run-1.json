@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-ST-01",
+ "run": 1,
+ "started_utc": "2026-10-29T17:15:01Z",
+ "seconds": 9.56,
+ "prompt_sha256": "81d26abcb7033fa7bba12bc14a95f9752c646ac8715241271d65aa32300e5b5d",
+ "answer": "Based on the context provided, the latest information regarding the platforms on which Ollama can run Muse Glimmer comes from the release notes of version 0.32.8. The specific line states:\n\n- \"Add Muse Glimmer support for NVIDIA, AMD, and additional platforms.\" \n\nThis indicates that, as of version 0.32.8, Muse Glimmer is supported on NVIDIA, AMD, and additional unspecified platforms. There is no mention of any updates beyond version 0.32.8 in the provided context.\n\nTherefore, according to the newest release notes that cover Muse Glimmer (up to 0.32.8), Ollama can run Muse Glimmer on Apple Silicon, NVIDIA, AMD, and additional platforms.\n\n[7] ollama/v0.32.8.md (lines 40-43) > What's Changed",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1797,
+  "output": 180
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10344806500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:15:12.2568556Z",
+  "response": "Based on the context provided, the latest information regarding the platforms on which Ollama can run Muse Glimmer comes from the release notes of version 0.32.8. The specific line states:\n\n- \"Add Muse Glimmer support for NVIDIA, AMD, and additional platforms.\" \n\nThis indicates that, as of version 0.32.8, Muse Glimmer is supported on NVIDIA, AMD, and additional unspecified platforms. There is no mention of any updates beyond version 0.32.8 in the provided context.\n\nTherefore, according to the newest release notes that cover Muse Glimmer (up to 0.32.8), Ollama can run Muse Glimmer on Apple Silicon, NVIDIA, AMD, and additional platforms.\n\n[7] ollama/v0.32.8.md (lines 40-43) > What's Changed",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10344806500,
+  "load_duration": 12743600,
+  "prompt_eval_count": 1797,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 928217000,
+  "eval_count": 180,
+  "eval_duration": 9148346000
+ }
+}

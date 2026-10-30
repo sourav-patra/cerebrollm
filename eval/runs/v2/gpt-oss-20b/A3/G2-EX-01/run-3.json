@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 3,
+ "started_utc": "2026-10-29T16:33:40Z",
+ "seconds": 2.99,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "\"GET /api/show\" now advertises each model's thinking controls and default. [ollama/v0.34.3.md]",
+ "thinking_chars": 581,
+ "tokens": {
+  "input": 2124,
+  "output": 188
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3301529800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:33:43.1577289Z",
+  "response": "\"GET /api/show\" now advertises each model's thinking controls and default. [ollama/v0.34.3.md]",
+  "thinking": "We need answer: which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default? Looking at context [1] \"What's Changed\". It says: \"`GET /api/show` now advertises each model's thinking controls and default:\" So answer: GET /api/show. Need quote. Provide line. Path: ollama/v0.34.3.md. Let's find quote. Lines 1-41. The line: \"`GET /api/show` now advertises each model's thinking controls and default:\" We'll quote that. Provide as requested: \"GET /api/show\" now advertises each model's thinking controls and default. [ollama/v0.34.3.md].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3301529800,
+  "load_duration": 14308700,
+  "prompt_eval_count": 2124,
+  "prompt_eval_cached_count": 2119,
+  "prompt_eval_duration": 57302000,
+  "eval_count": 188,
+  "eval_duration": 3181251000
+ }
+}

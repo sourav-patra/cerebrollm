@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/85",
+  "index": 8,
+  "request": {
+    "model": "devstral:24b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "devstral:24b",
+    "created_at": "2026-10-28T20:57:02.6566439Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2\n    \"\"\"\n    return sum(x for x in lst if x % 2 == 0 and lst.index(x) % 2 != 0)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 12532937200,
+    "load_duration": 10280500,
+    "prompt_eval_count": 1303,
+    "prompt_eval_cached_count": 1251,
+    "prompt_eval_duration": 384541000,
+    "eval_count": 83,
+    "eval_duration": 12125050000
+  },
+  "wall_seconds": 11.819045146999997,
+  "load_average_before": [
+    0.75927734375,
+    0.27685546875,
+    0.16796875
+  ],
+  "load_average_after": [
+    0.64208984375,
+    0.26708984375,
+    0.166015625
+  ],
+  "test": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/w/test_8.py\", line 20, in <module>\n    check(add)\n    ~~~~~^^^^^\n  File \"/w/test_8.py\", line 15, in check\n    assert candidate([4, 4, 6, 8]) == 12\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-devstral-24b-default-8",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\devstral-24b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_8.py"
+    ],
+    "wall_seconds": 0.7789692759997706,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": false
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 2,
+ "started_utc": "2026-10-29T16:25:24Z",
+ "seconds": 10.85,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "I do not know.",
+ "thinking_chars": 2158,
+ "tokens": {
+  "input": 1753,
+  "output": 520
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9251075900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:25:34.2348799Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: Which pgvector version allows pg_upgrade to carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them? The question refers to pg_upgrade carrying HNSW indexes across a major PostgreSQL upgrade without rebuilding. We need to find a line in the context that mentions this. Let's search context for \"pg_upgrade\" or \"carry\" or \"HNSW indexes across\". We have context lines but none mention pg_upgrade. The changelog might mention \"carry HNSW indexes across major PostgreSQL upgrade\". Let's examine change logs lines 1-7 and 102-116. Lines 1-7: 0.9.0 (unreleased). Not relevant. Lines 102-116: 0.6.0. Not mention. Search context for \"pg_upgrade\". None. Could be in README or elsewhere not provided. But question: Which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them? Might refer to a known issue that earlier versions required rebuild; a later version fixed. Possibly 0.8.0? But we need to rely on provided context. There's no mention of pg_upgrade. Maybe the answer is not in context; we must say we don't know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So we must say we do not know, because context doesn't contain info. We can say \"I do not know\". But we need to quote a line we rely on. Since we rely on the fact that context does not mention it. But we can't quote a line saying \"pg_upgrade does not carry HNSW indexes\". There is no such line. We can quote that nothing is present. But we need to quote a line we rely on. We might quote that there's no mention. But we can quote a line like \"Added support for parallel index builds for HNSW\" from changelog. But that doesn't answer question. We can say \"I do not know\". Provide no quote. But instructions say if you don't know, say you do not know. We don't need to quote any line then. Just say I do not know. But maybe we can quote a line from context that indicates absence? Could quote \"Added support for parallel index builds for HNSW\" but that doesn't answer. The safe answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9251075900,
+  "load_duration": 21656300,
+  "prompt_eval_count": 1753,
+  "prompt_eval_cached_count": 1748,
+  "prompt_eval_duration": 57292000,
+  "eval_count": 520,
+  "eval_duration": 9082676000
+ }
+}

@@ -1,0 +1,97 @@
+{
+  "model": "qwen3-coder:30b",
+  "mode": "default",
+  "length": 200,
+  "run": 3,
+  "calibration": {
+    "repetitions": 134,
+    "length": 200,
+    "prompt_tokens": 202,
+    "template_overhead_tokens": 9
+  },
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793232795.47818,
+    "loadavg": [
+      0.0048828125,
+      0.0419921875,
+      0.00732421875
+    ],
+    "win_cpu_pct": 12.9,
+    "gpu_util_pct": 6,
+    "gpu_mem_mib": 11576,
+    "ollama_ps": [
+      "qwen3-coder:30b"
+    ]
+  },
+  "load_average_after": [
+    0.00390625,
+    0.0400390625,
+    0.00634765625
+  ],
+  "ttft_seconds": 0.607552207999106,
+  "first_visible_content_seconds": 0.607552207999106,
+  "wall_seconds": 6.206834878998052,
+  "events": 229,
+  "final": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:13:27.8107749Z",
+    "message": {
+      "role": "assistant",
+      "content": "\n           "
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 6709256800,
+    "load_duration": 12540200,
+    "prompt_eval_count": 202,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 627670000,
+    "eval_count": 256,
+    "eval_duration": 6052253000
+  },
+  "prompt_tps": 317.0455812767856,
+  "generation_tps": 42.29829784049014,
+  "ps_api": [
+    {
+      "name": "qwen3-coder:30b",
+      "model": "qwen3-coder:30b",
+      "size": 20440374310,
+      "digest": "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3moe",
+        "families": [
+          "qwen3moe"
+        ],
+        "parameter_size": "30.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-29T05:58:27.8107749+05:30",
+      "size_vram": 10495658556,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    }
+  ],
+  "ps_cli": "NAME               ID              SIZE     PROCESSOR          CONTEXT    RUNNER      UNTIL               \nqwen3-coder:30b    06c1097efce0    20 GB    49%/51% CPU/GPU    16384      llamacpp    14 minutes from now    \n",
+  "gpu_pct": 51.3,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Performance measurement run 3. Read the following data.\nriver meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember\nWrite a detailed explanation of binary search, including Python examples and complexity. Continue for at least 500 words."
+      }
+    ],
+    "stream": true,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 256
+    }
+  }
+}

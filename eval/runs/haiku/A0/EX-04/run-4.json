@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-04",
+ "run": 4,
+ "started_utc": "2026-10-29T01:39:05Z",
+ "seconds": 8.66,
+ "prompt_file": "runs/prompts/A0/EX-04.txt",
+ "prompt_sha256": "361d5e08739e4f7dd7c1e2ac0b7f1d9e28836a521297c0889c8a034ba9681f97",
+ "answer": "Based on what I know, Ollama's documentation lists **driver version 531 or newer** as the minimum for NVIDIA GPUs, along with compute capability 5.0 or higher. I'm not certain this is still current as of late 2026. Newer Ollama releases may bundle newer CUDA runtimes that require newer drivers, so check the official Ollama GPU documentation or release notes for the version you're running.",
+ "tokens": {
+  "input": 656,
+  "output": 610,
+  "thinking": 475,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00043599999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3595,
+  "stop_reason": "end_turn",
+  "session_id": "be76e69f-c9bc-4d0e-8375-e82197252ba0",
+  "total_cost_usd": 0.00043599999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 610,
+   "output_tokens_details": {
+    "thinking_tokens": 475
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 610,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 610,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.00043599999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 475,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Based on what I know, Ollama's documentation lists **driver version 531 or newer** as the minimum for NVIDIA GPUs, along with compute capability 5.0 or higher. I'm not certain this is still current as of late 2026. Newer Ollama releases may bundle newer CUDA runtimes that require newer drivers, so check the official Ollama GPU documentation or release notes for the version you're running.",
+  "ttft_ms": 3162,
+  "type": "result",
+  "duration_ms": 3767,
+  "uuid": "cf3291ae-6327-4a24-9470-180c47d6b6c6",
+  "ttft_stream_ms": 2826,
+  "time_to_request_ms": 170,
+  "first_content_frame_ms": 2826,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

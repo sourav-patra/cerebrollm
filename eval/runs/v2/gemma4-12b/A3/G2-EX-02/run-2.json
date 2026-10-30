@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-EX-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:52Z",
+ "seconds": 3.36,
+ "prompt_sha256": "73be9dfb45008cb75564d567ccea5273c6a04906a34b660f2587f48b8ac9e9aa",
+ "answer": "Models using web search can now perform up to ten searches per response, up from three. [ollama/v0.35.1.md (lines 38-44)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1785,
+  "output": 41
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1468818200
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:56:54.6534412Z",
+  "response": "Models using web search can now perform up to ten searches per response, up from three. [ollama/v0.35.1.md (lines 38-44)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1468818200,
+  "load_duration": 15318500,
+  "prompt_eval_count": 1785,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 758944000,
+  "eval_count": 41,
+  "eval_duration": 335382000
+ }
+}

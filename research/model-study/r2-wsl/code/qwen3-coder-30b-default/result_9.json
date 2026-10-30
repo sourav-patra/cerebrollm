@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/64",
+  "index": 9,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\nFIX = \"\"\"\nAdd more test cases.\n\"\"\"\n\ndef vowels_count(s):\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count(\"abcde\")\n    2\n    >>> vowels_count(\"ACEDY\")\n    3\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:05:42.9880558Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef vowels_count(s):\n    \"\"\"Write a function vowels_count which takes a string representing\n    a word as input and returns the number of vowels in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> vowels_count(\"abcde\")\n    2\n    >>> vowels_count(\"ACEDY\")\n    3\n    \"\"\"\n    if not s:\n        return 0\n    \n    vowels = set('aeiou')\n    count = 0\n    s = s.lower()\n    \n    # Count regular vowels\n    for char in s:\n        if char in vowels:\n            count += 1\n    \n    # Check if 'y' is at the end\n    if s.endswith('y'):\n        count += 1\n    \n    return count\n\n# Test cases\nif __name__ == \"__main__\":\n    print(vowels_count(\"abcde\"))    # Expected: 2\n    print(vowels_count(\"ACEDY\"))    # Expected: 3\n    print(vowels_count(\"happy\"))    # Expected: 2\n    print(vowels_count(\"gym\"))      # Expected: 1\n    print(vowels_count(\"yellow\"))   # Expected: 2\n    print(vowels_count(\"rhythm\"))   # Expected: 0\n    print(vowels_count(\"fly\"))      # Expected: 1\n    print(vowels_count(\"\"))         # Expected: 0\n    print(vowels_count(\"aeiou\"))    # Expected: 5\n    print(vowels_count(\"bcdfg\"))    # Expected: 0\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 9702793200,
+    "load_duration": 33868900,
+    "prompt_eval_count": 153,
+    "prompt_eval_cached_count": 28,
+    "prompt_eval_duration": 420844000,
+    "eval_count": 378,
+    "eval_duration": 9225485000
+  },
+  "wall_seconds": 8.80200108200006,
+  "load_average_before": [
+    0.18310546875,
+    0.0859375,
+    0.02001953125
+  ],
+  "load_average_after": [
+    0.154296875,
+    0.0830078125,
+    0.01904296875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "2\n3\n2\n0\n2\n0\n1\n0\n5\n0\n",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-coder-30b-default-9",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-coder-30b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_9.py"
+    ],
+    "wall_seconds": 0.8321045499978936,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

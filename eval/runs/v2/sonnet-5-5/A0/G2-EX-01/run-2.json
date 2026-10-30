@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-01",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:23Z",
+ "seconds": 7.29,
+ "prompt_sha256": "cd5beccda834537ed90607bebba8f323798037e5af9bfbced1755b5de537a08b",
+ "answer": "I don't know. I have no reliable information about Ollama release 0.34.3 or which API endpoint it extended to report each model's thinking controls and default. The working directory doesn't appear to hold anything related to the project, so I have nothing local to check either.\n\nMy guess would be `/api/show`, which returns per-model details and capabilities. But that is only a guess, and `/api/tags` is also plausible. The Ollama release notes for v0.34.3 on GitHub, or the API docs in the repo, should settle it. If you paste the release notes here, I can help interpret them.",
+ "tokens": {
+  "input": 647,
+  "output": 257,
+  "thinking": 73,
+  "cache_read": 0,
+  "cache_creation": 645
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.005154000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3318,
+  "stop_reason": "end_turn",
+  "session_id": "cc60ddd9-5e46-4ff3-ae76-2d6c26b5b5a8",
+  "total_cost_usd": 0.005154000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 645,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 257,
+   "output_tokens_details": {
+    "thinking_tokens": 73
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 645,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 257,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 645,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 645
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 257,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 645,
+    "webSearchRequests": 0,
+    "costUSD": 0.005154000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 73,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 645,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable information about Ollama release 0.34.3 or which API endpoint it extended to report each model's thinking controls and default. The working directory doesn't appear to hold anything related to the project, so I have nothing local to check either.\n\nMy guess would be `/api/show`, which returns per-model details and capabilities. But that is only a guess, and `/api/tags` is also plausible. The Ollama release notes for v0.34.3 on GitHub, or the API docs in the repo, should settle it. If you paste the release notes here, I can help interpret them.",
+  "ttft_ms": 2512,
+  "type": "result",
+  "duration_ms": 3403,
+  "uuid": "0d92f133-6852-4a70-b72c-6943436db6d2",
+  "ttft_stream_ms": 2512,
+  "time_to_request_ms": 107,
+  "first_content_frame_ms": 2512,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

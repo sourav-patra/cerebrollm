@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-11",
+ "run": 1,
+ "started_utc": "2026-10-29T01:49:35Z",
+ "seconds": 11.44,
+ "prompt_file": "runs/prompts/A0/PA-11.txt",
+ "prompt_sha256": "1531f93300e29ce48be40ac86f3125e3c2148909845be0bf0019a8f9cfc6ce2a",
+ "answer": "LlamaIndex uses a global `Settings` object. If you set both `Settings.llm` and `Settings.embed_model` before building anything, OpenAI is never used. Otherwise, LlamaIndex falls back to OpenAI defaults.\n\n**1. Install the packages** (PowerShell):\n\n```powershell\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\n**2. Prepare Ollama:**\n\n```powershell\nollama pull llama3.1\nollama serve   # if it isn't already running as a service\n```\n\n**3. Configure the global settings** before creating any index, query engine, or other component:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",  # default; shown for clarity\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"  # downloaded from Hugging Face on first use\n)\n```\n\nThen use LlamaIndex as usual, for example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocs = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(docs)\nprint(index.as_query_engine().query(\"Summarize the documents.\"))\n```\n\n**Notes:**\n\n- If you skip `Settings.embed_model`, LlamaIndex uses OpenAI embeddings, which will fail without a key or contact OpenAI. Setting it explicitly prevents this.\n- As a safety measure, make sure `OPENAI_API_KEY` isn't set in your environment. Any code path that still reaches for OpenAI will then fail instead of silently calling it.\n- Pass per-object settings only if you need them. Components built with an explicit `llm=` or `embed_model=` argument ignore the global setting.\n- I'm not certain of the exact behavior in every LlamaIndex release, so check the current docs if an import path or class name doesn't match your installed version.",
+ "tokens": {
+  "input": 679,
+  "output": 1511,
+  "thinking": 754,
+  "cache_read": 0,
+  "cache_creation": 677
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0008911,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6905,
+  "stop_reason": "end_turn",
+  "session_id": "dff4a02a-1ee7-4a6c-b6f5-b6369d3e1ccb",
+  "total_cost_usd": 0.0008911,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 677,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1511,
+   "output_tokens_details": {
+    "thinking_tokens": 754
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 677,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1511,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 677,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 677
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1511,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 677,
+    "webSearchRequests": 0,
+    "costUSD": 0.0008911,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 754,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 677,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "LlamaIndex uses a global `Settings` object. If you set both `Settings.llm` and `Settings.embed_model` before building anything, OpenAI is never used. Otherwise, LlamaIndex falls back to OpenAI defaults.\n\n**1. Install the packages** (PowerShell):\n\n```powershell\npip install llama-index-core llama-index-llms-ollama llama-index-embeddings-huggingface\n```\n\n**2. Prepare Ollama:**\n\n```powershell\nollama pull llama3.1\nollama serve   # if it isn't already running as a service\n```\n\n**3. Configure the global settings** before creating any index, query engine, or other component:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(\n    model=\"llama3.1\",\n    base_url=\"http://localhost:11434\",  # default; shown for clarity\n    request_timeout=120.0,\n)\n\nSettings.embed_model = HuggingFaceEmbedding(\n    model_name=\"BAAI/bge-small-en-v1.5\"  # downloaded from Hugging Face on first use\n)\n```\n\nThen use LlamaIndex as usual, for example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocs = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(docs)\nprint(index.as_query_engine().query(\"Summarize the documents.\"))\n```\n\n**Notes:**\n\n- If you skip `Settings.embed_model`, LlamaIndex uses OpenAI embeddings, which will fail without a key or contact OpenAI. Setting it explicitly prevents this.\n- As a safety measure, make sure `OPENAI_API_KEY` isn't set in your environment. Any code path that still reaches for OpenAI will then fail instead of silently calling it.\n- Pass per-object settings only if you need them. Components built with an explicit `llm=` or `embed_model=` argument ignore the global setting.\n- I'm not certain of the exact behavior in every LlamaIndex release, so check the current docs if an import path or class name doesn't match your installed version.",
+  "ttft_ms": 4144,
+  "type": "result",
+  "duration_ms": 7022,
+  "uuid": "9e1ab0bc-9db6-4b14-ae44-0b6bbb0e8156",
+  "ttft_stream_ms": 2817,
+  "time_to_request_ms": 115,
+  "first_content_frame_ms": 2817,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

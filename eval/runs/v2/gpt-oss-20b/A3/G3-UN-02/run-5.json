@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 5,
+ "started_utc": "2026-10-29T16:57:34Z",
+ "seconds": 10.55,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "I do not know.",
+ "thinking_chars": 2436,
+ "tokens": {
+  "input": 1753,
+  "output": 635
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11225793000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:57:46.2097792Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: Which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them? We need to quote line that says something about pg_upgrade carrying HNSW indexes across major upgrade.\n\nWe need to search context for pg_upgrade. In provided context, we have a section [1] with changelog 0.6.0, notes: \"If upgrading with Postgres 12 or Docker, see these notes.\" Not about pg_upgrade. [2] Docker. [3] HNSW. [4] Upgrading, but not about pg_upgrade. [5] Indexing progress. [6] Querying. [7] History. [8] 0.9.0 notes.\n\nWe don't see mention of pg_upgrade. So maybe not in context. The question: \"Which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them?\" This refers to pgvector version that supports carrying HNSW indexes across major Postgres upgrade using pg_upgrade. That would be a known feature. In 0.7? Let's recall: In pgvector 0.7.0? I know that HNSW indexes were added earlier. But pg_upgrade support maybe added in 0.8.0? Wait.\n\nLet's search memory: I recall reading that pgvector 0.8.0 added support for carrying HNSW indexes across major Postgres upgrades via pg_upgrade, requiring the same pgvector version on both old and new. But I'm not sure.\n\nLet's examine context again: [1] 0.6.0 notes: \"If upgrading with Postgres 12 or Docker, see these notes.\" Not about pg_upgrade.\n\n[8] 0.9.0 notes: \"Added asynchronous I/O for HNSW indexes, Added vector_dims function for sparsevec, Improved performance of HNSW inserts with sparsevec, Improved amvalidate for indexes, Dropped support for Postgres 13 and 14.\" Not about pg_upgrade.\n\nWe don't have context lines about pg_upgrade. So answer might be: \"pgvector 0.6.0\" or \"0.7.0\" or \"0.8.0\"? But we need to provide quote and path.\n\nMaybe the answer is not in provided context, so we should say we do not know. The instruction says: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" Since no line about pg_upgrade, we cannot answer with a quote. So we should say we do not know. But we could also say we don't know from the provided context. Provide statement: \"I do not know.\" But we must cite if we have quote. Since we don't, we just say we don't know. According to instructions: \"If you do not know, say you do not know.\" So answer: \"I do not know.\" Provide no quote. That is acceptable.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11225793000,
+  "load_duration": 14195800,
+  "prompt_eval_count": 1753,
+  "prompt_eval_cached_count": 1748,
+  "prompt_eval_duration": 56783000,
+  "eval_count": 635,
+  "eval_duration": 11096048000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 5,
+ "started_utc": "2026-10-29T16:53:45Z",
+ "seconds": 8.53,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I’m not sure what the default value for `OLLAMA_KV_CACHE_RETENTION` is.",
+ "thinking_chars": 1422,
+ "tokens": {
+  "input": 110,
+  "output": 381
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6813512000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:53:52.7405062Z",
+  "response": "I’m not sure what the default value for `OLLAMA_KV_CACHE_RETENTION` is.",
+  "thinking": "The user asks: \"What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION?\" They want the default value. I need to know about Ollama and its env var OLLAMA_KV_CACHE_RETENTION. I might not know this. Let's recall: Ollama is an open-source LLM inference engine. The environment variable OLLAMA_KV_CACHE_RETENTION likely refers to retention of key-value cache. I don't have up-to-date knowledge. There's a variable OLLAMA_KV_CACHE_RETENTION that might default to something like \"1h\" or \"24h\" or \"0\" meaning no retention. I can search memory: In Ollama docs, environment variables include OLLAMA_HOST, OLLAMA_PORT, OLLAMA_KEEP_ALIVE, OLLAMA_KV_CACHE, OLLAMA_KV_CACHE_RETENTION maybe. I think retention is in seconds? The default might be 60 seconds? Or maybe default is 86400 seconds (24 hours). Actually, retention could be in minutes or seconds? Let's think: The key-value cache retention likely controls how long cached embeddings are kept. The default might be 60 minutes. But maybe the default is \"60m\" or \"1h\". Or default is \"0\" meaning no retention? The variable likely sets retention of KV cache entries in seconds. I might not know.\n\nBetter to answer: I do not know. The user asked: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I can say I do not know. Or I can guess. But they want the default value. I don't know. So answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6813512000,
+  "load_duration": 13761100,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 183983000,
+  "eval_count": 381,
+  "eval_duration": 6599799000
+ }
+}

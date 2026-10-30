@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-06",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:43Z",
+ "seconds": 6.76,
+ "prompt_sha256": "c9f4fdb460682b97dbcf6fbbea7a2d7680542f3fd6ab7249edf525b1c9919d0a",
+ "answer": "I do not know. The retrieved documents don't name an Ollama environment variable that controls how many layers are downloaded concurrently during `ollama pull`.\n\nThe closest material is the pull API example in [1], which says \"The number of files to be downloaded depends on the number of layers specified in the manifest.\" [ollama/docs/api.md]. That describes how the download count is determined, not a setting to change it.\n\nThe other environment variables in the context cover different things: `OLLAMA_MODELS` for where models are stored [ollama/docs/windows.md], `HTTPS_PROXY` for proxying pulls [ollama/docs/faq.md], and `OLLAMA_NO_CLOUD` for disabling cloud features [ollama/docs/faq.md]. None of them set download concurrency.",
+ "tokens": {
+  "input": 3219,
+  "output": 256,
+  "thinking": 0,
+  "cache_read": 2853,
+  "cache_creation": 364
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0043053,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2480,
+  "stop_reason": "end_turn",
+  "session_id": "896fca86-eedc-4f0f-a3bc-0df1d93fa122",
+  "total_cost_usd": 0.0043053,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 364,
+   "cache_read_input_tokens": 2853,
+   "output_tokens": 256,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 364,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 256,
+     "cache_read_input_tokens": 2853,
+     "cache_creation_input_tokens": 364,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 364
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 256,
+    "cacheReadInputTokens": 2853,
+    "cacheCreationInputTokens": 364,
+    "webSearchRequests": 0,
+    "costUSD": 0.0043053,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 364,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I do not know. The retrieved documents don't name an Ollama environment variable that controls how many layers are downloaded concurrently during `ollama pull`.\n\nThe closest material is the pull API example in [1], which says \"The number of files to be downloaded depends on the number of layers specified in the manifest.\" [ollama/docs/api.md]. That describes how the download count is determined, not a setting to change it.\n\nThe other environment variables in the context cover different things: `OLLAMA_MODELS` for where models are stored [ollama/docs/windows.md], `HTTPS_PROXY` for proxying pulls [ollama/docs/faq.md], and `OLLAMA_NO_CLOUD` for disabling cloud features [ollama/docs/faq.md]. None of them set download concurrency.",
+  "ttft_ms": 2586,
+  "type": "result",
+  "duration_ms": 2603,
+  "uuid": "9a7b8392-9c4b-415e-aeb6-70d2dc774c06",
+  "ttft_stream_ms": 2583,
+  "time_to_request_ms": 134,
+  "first_content_frame_ms": 2583,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-ST-03",
+ "run": 4,
+ "started_utc": "2026-10-29T17:34:15Z",
+ "seconds": 4.43,
+ "prompt_sha256": "41cca5e544c4e7ef4b7cd832c11ab2125d03517e230d4085ffb31bd573297f71",
+ "answer": "I do not have access to specific release notes or the ability to look up the newest information. However, LFM3 models, such as those associated with Ollama, typically run on platforms that support machine learning frameworks like TensorFlow or PyTorch. This often includes systems running on CPUs, GPUs, and TPUs, and they are commonly deployed on Linux, Windows, and macOS environments. For the most accurate and updated information, you should refer to the official Ollama release notes or documentation.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 68,
+  "output": 102
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4763603100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:34:20.3519056Z",
+  "response": "I do not have access to specific release notes or the ability to look up the newest information. However, LFM3 models, such as those associated with Ollama, typically run on platforms that support machine learning frameworks like TensorFlow or PyTorch. This often includes systems running on CPUs, GPUs, and TPUs, and they are commonly deployed on Linux, Windows, and macOS environments. For the most accurate and updated information, you should refer to the official Ollama release notes or documentation.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4763603100,
+  "load_duration": 13326000,
+  "prompt_eval_count": 68,
+  "prompt_eval_cached_count": 38,
+  "prompt_eval_duration": 218854000,
+  "eval_count": 102,
+  "eval_duration": 4516100000
+ }
+}

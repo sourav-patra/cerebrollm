@@ -1,0 +1,24 @@
+2026-10-29T01:35:56Z
+Cache is disabled.
+Starting evaluation eval-CmI-2026-10-29T01:36:00
+Running 1400 test cases (up to 1 at a time)...
+Skipping table output because there are more than 500 tests.
+✓ Eval complete (ID: eval-CmI-2026-10-29T01:36:00)
+
+» View results: promptfoo view
+» Share with your team: https://promptfoo.app
+» Feedback: https://promptfoo.dev/feedback
+
+
+Repeat stability:
+  280 repeated groups; 0 unstable
+
+Results:
+  ✓ 1,400 passed (100%)
+  0 failed (0%)
+  0 errors (0%)
+Duration: 3h 24m 55s (concurrency: 1)
+
+Writing output to runs/promptfoo-local.json, runs/promptfoo-local.html
+exit 0
+2026-10-29T05:00:57Z

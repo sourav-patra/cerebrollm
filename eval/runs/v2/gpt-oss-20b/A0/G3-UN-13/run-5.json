@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 5,
+ "started_utc": "2026-10-29T16:54:40Z",
+ "seconds": 3.42,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "The assertion type is called **`bertscore`**. It computes the BERTScore similarity between an LLM output and a reference text.",
+ "thinking_chars": 683,
+ "tokens": {
+  "input": 106,
+  "output": 207
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3642997800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:54:43.8704138Z",
+  "response": "The assertion type is called **`bertscore`**. It computes the BERTScore similarity between an LLM output and a reference text.",
+  "thinking": "We need to answer: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" The user says \"Answer from what you know about this project; if you do not know, say you do not know.\"\n\nWe need to know about promptfoo: a tool for evaluating LLM prompts. It has assertion types like \"exact\", \"regex\", \"contains\", \"similarity\", etc. The BERTScore assertion type likely is called \"bertscore\". So answer: the \"bertscore\" assertion type. But confirm: In promptfoo, assertion types include \"bertscore\" to compute BERTScore. So answer: the \"bertscore\" assertion type.\n\nThus answer: The \"bertscore\" assertion type. If uncertain, say I don't know. But I'm fairly sure.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3642997800,
+  "load_duration": 13794700,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 56542000,
+  "eval_count": 207,
+  "eval_duration": 3550219000
+ }
+}

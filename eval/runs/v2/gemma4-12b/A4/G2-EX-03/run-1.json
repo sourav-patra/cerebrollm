@@ -1,0 +1,96 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A4",
+ "id": "G2-EX-03",
+ "run": 1,
+ "started_utc": "2026-10-29T18:01:33Z",
+ "seconds": 24.87,
+ "prompt_sha256": "5bcef212ebf026d21a94575649a2635af7b377e4ae60a164f216d5590ff72ade",
+ "answer": "\"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" [ollama/v0.40.8.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "ollama/v0.40.8.md",
+   "quote": "Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.",
+   "verify": "OK",
+   "detail": "ollama/v0.40.8.md@file sha256 82e2766f1f70"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 6.7,
+   "rerank": 7.67,
+   "generate": 7.9,
+   "verify": 0.26,
+   "total": 22.54
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.99736,
+    "path": "ollama/v0.40.8.md",
+    "line_start": 8,
+    "line_end": 21
+   },
+   {
+    "rank": 2,
+    "search_rank": 3,
+    "rerank_score": 0.9207,
+    "path": "ollama/docs/faq.md",
+    "line_start": 15,
+    "line_end": 49
+   },
+   {
+    "rank": 3,
+    "search_rank": 11,
+    "rerank_score": 0.80918,
+    "path": "ollama/docs/capabilities/decision.md",
+    "line_start": 160,
+    "line_end": 197
+   },
+   {
+    "rank": 4,
+    "search_rank": 7,
+    "rerank_score": 0.79882,
+    "path": "ollama/docs/context-length.md",
+    "line_start": 1,
+    "line_end": 14
+   },
+   {
+    "rank": 5,
+    "search_rank": 15,
+    "rerank_score": 0.75013,
+    "path": "ollama/docs/integrations/opencode.md",
+    "line_start": 71,
+    "line_end": 85
+   },
+   {
+    "rank": 6,
+    "search_rank": 2,
+    "rerank_score": 0.7469,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 327,
+    "line_end": 361
+   },
+   {
+    "rank": 7,
+    "search_rank": 9,
+    "rerank_score": 0.70837,
+    "path": "ollama/docs/integrations/codex.md",
+    "line_start": 14,
+    "line_end": 42
+   },
+   {
+    "rank": 8,
+    "search_rank": 14,
+    "rerank_score": 0.67853,
+    "path": "ollama/docs/integrations/openclaw.md",
+    "line_start": 7,
+    "line_end": 23
+   }
+  ],
+  "model": "gemma4:12b"
+ }
+}

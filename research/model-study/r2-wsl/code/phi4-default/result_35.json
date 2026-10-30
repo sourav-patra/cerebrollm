@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/21",
+  "index": 35,
+  "request": {
+    "model": "phi4",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    \"\"\" Given list of numbers (of at least two elements), apply a linear transform to that list,\n    such that the smallest number will become 0 and the largest will become 1\n    >>> rescale_to_unit([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "phi4",
+    "created_at": "2026-10-28T20:51:16.0390092Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import List\n\ndef rescale_to_unit(numbers: List[float]) -> List[float]:\n    if len(numbers) < 2:\n        raise ValueError(\"The list must contain at least two elements.\")\n    \n    min_num = min(numbers)\n    max_num = max(numbers)\n    \n    if min_num == max_num:\n        return [0.0] * len(numbers)\n    \n    return [(num - min_num) / (max_num - min_num) for num in numbers]\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4893167500,
+    "load_duration": 11588800,
+    "prompt_eval_count": 152,
+    "prompt_eval_cached_count": 33,
+    "prompt_eval_duration": 135205000,
+    "eval_count": 103,
+    "eval_duration": 4724170000
+  },
+  "wall_seconds": 4.618946415999744,
+  "load_average_before": [
+    0.2822265625,
+    0.19580078125,
+    0.142578125
+  ],
+  "load_average_after": [
+    0.25927734375,
+    0.1923828125,
+    0.1416015625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-phi4-default-35",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\phi4-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_35.py"
+    ],
+    "wall_seconds": 0.7030008189994987,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 620" width="1130" height="620" role="img" aria-labelledby="t1 d1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+  <title id="t1">cerebrollm components and trust boundary</title>
+  <desc id="d1">Components of cerebrollm 0.1.0 on the user's machine and the MCP host outside it. The indexer reads the registered Markdown roots and writes chunks to Postgres with pgvector, using a local embedding model. Search reads the store and feeds rerank. The ask pipeline calls search, rerank, a local generator and verify. The MCP server offers search and verify to a host outside the machine. Verify re-reads the source files.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+  <rect width="1130" height="620" fill="#ffffff"/>
+
+  <!-- trust zones -->
+  <rect x="10" y="20" width="920" height="590" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="24" y="44" font-size="15" font-weight="bold" fill="#0f172a">Your machine: everything the engine reads and writes</text>
+  <rect x="960" y="215" width="160" height="190" rx="10" fill="#fff7ed" stroke="#9a3412" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="1040" y="243" font-size="14" font-weight="bold" fill="#7c2d12" text-anchor="middle">Outside cerebrollm</text>
+  <text x="1040" y="268" font-size="13" fill="#7c2d12" text-anchor="middle">MCP host and the</text>
+  <text x="1040" y="286" font-size="13" fill="#7c2d12" text-anchor="middle">model it runs</text>
+  <text x="1040" y="304" font-size="13" fill="#7c2d12" text-anchor="middle">(may be a cloud</text>
+  <text x="1040" y="322" font-size="13" fill="#7c2d12" text-anchor="middle">service)</text>
+  <text x="1040" y="352" font-size="12" fill="#7c2d12" text-anchor="middle">receives tool results</text>
+  <text x="1040" y="370" font-size="12" fill="#7c2d12" text-anchor="middle">you allow it to call</text>
+
+  <!-- left column -->
+  <rect x="30" y="110" width="190" height="80" rx="6" fill="#ecfccb" stroke="#365314" stroke-width="1.5"/>
+  <text x="125" y="136" font-size="14" font-weight="bold" fill="#14210a" text-anchor="middle">Registered roots</text>
+  <text x="125" y="156" font-size="12" fill="#14210a" text-anchor="middle">Markdown files you choose</text>
+  <text x="125" y="174" font-size="12" fill="#14210a" text-anchor="middle">read only, never written</text>
+
+  <rect x="30" y="300" width="190" height="100" rx="6" fill="#e0f2fe" stroke="#075985" stroke-width="1.5"/>
+  <text x="125" y="326" font-size="14" font-weight="bold" fill="#082f49" text-anchor="middle">verify</text>
+  <text x="125" y="345" font-size="12" fill="#082f49" text-anchor="middle">verify.py</text>
+  <text x="125" y="364" font-size="12" fill="#082f49" text-anchor="middle">re-reads the file, checks the</text>
+  <text x="125" y="382" font-size="12" fill="#082f49" text-anchor="middle">quote and the indexed sha256</text>
+
+  <rect x="30" y="470" width="190" height="80" rx="6" fill="#f3e8ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <text x="125" y="496" font-size="14" font-weight="bold" fill="#3b0764" text-anchor="middle">Ollama: generator</text>
+  <text x="125" y="516" font-size="12" fill="#3b0764" text-anchor="middle">gpt-oss:20b by default</text>
+  <text x="125" y="534" font-size="12" fill="#3b0764" text-anchor="middle">allow-listed, never -cloud</text>
+
+  <!-- middle column -->
+  <rect x="280" y="70" width="200" height="110" rx="6" fill="#e0f2fe" stroke="#075985" stroke-width="1.5"/>
+  <text x="380" y="96" font-size="14" font-weight="bold" fill="#082f49" text-anchor="middle">Indexer</text>
+  <text x="380" y="115" font-size="12" fill="#082f49" text-anchor="middle">corpus.py rules.py</text>
+  <text x="380" y="132" font-size="12" fill="#082f49" text-anchor="middle">glue.py indexer.py</text>
+  <text x="380" y="151" font-size="12" fill="#082f49" text-anchor="middle">tiers, never-index list,</text>
+  <text x="380" y="168" font-size="12" fill="#082f49" text-anchor="middle">secret scan, chunking</text>
+
+  <rect x="280" y="230" width="200" height="90" rx="6" fill="#fef9c3" stroke="#854d0e" stroke-width="1.5"/>
+  <text x="380" y="256" font-size="14" font-weight="bold" fill="#422006" text-anchor="middle">Postgres + pgvector</text>
+  <text x="380" y="275" font-size="12" fill="#422006" text-anchor="middle">table data_chunks (store.py)</text>
+  <text x="380" y="293" font-size="12" fill="#422006" text-anchor="middle">vector and keyword columns</text>
+  <text x="380" y="311" font-size="12" fill="#422006" text-anchor="middle">rebuild into a new table, swap</text>
+
+  <rect x="280" y="370" width="200" height="120" rx="6" fill="#e0f2fe" stroke="#075985" stroke-width="2.5"/>
+  <text x="380" y="396" font-size="14" font-weight="bold" fill="#082f49" text-anchor="middle">ask pipeline</text>
+  <text x="380" y="415" font-size="12" fill="#082f49" text-anchor="middle">answer.py</text>
+  <text x="380" y="434" font-size="12" fill="#082f49" text-anchor="middle">prompt, citation parser,</text>
+  <text x="380" y="452" font-size="12" fill="#082f49" text-anchor="middle">gate: print the answer</text>
+  <text x="380" y="470" font-size="12" fill="#082f49" text-anchor="middle">or abstain</text>
+
+  <!-- right column -->
+  <rect x="540" y="70" width="190" height="90" rx="6" fill="#f3e8ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <text x="635" y="96" font-size="14" font-weight="bold" fill="#3b0764" text-anchor="middle">Ollama: embedding</text>
+  <text x="635" y="116" font-size="12" fill="#3b0764" text-anchor="middle">qwen3-embedding:0.6b</text>
+  <text x="635" y="134" font-size="12" fill="#3b0764" text-anchor="middle">1024 dimensions</text>
+
+  <rect x="540" y="230" width="190" height="90" rx="6" fill="#e0f2fe" stroke="#075985" stroke-width="1.5"/>
+  <text x="635" y="256" font-size="14" font-weight="bold" fill="#082f49" text-anchor="middle">Search</text>
+  <text x="635" y="275" font-size="12" fill="#082f49" text-anchor="middle">search.py</text>
+  <text x="635" y="293" font-size="12" fill="#082f49" text-anchor="middle">vector + keyword, fused,</text>
+  <text x="635" y="311" font-size="12" fill="#082f49" text-anchor="middle">tier and recency boost</text>
+
+  <rect x="540" y="370" width="190" height="90" rx="6" fill="#e0f2fe" stroke="#075985" stroke-width="1.5"/>
+  <text x="635" y="396" font-size="14" font-weight="bold" fill="#082f49" text-anchor="middle">Rerank</text>
+  <text x="635" y="415" font-size="12" fill="#082f49" text-anchor="middle">rerank.py</text>
+  <text x="635" y="433" font-size="12" fill="#082f49" text-anchor="middle">local cross-encoder,</text>
+  <text x="635" y="451" font-size="12" fill="#082f49" text-anchor="middle">top 20 to top 8</text>
+
+  <!-- MCP server -->
+  <rect x="770" y="245" width="140" height="120" rx="6" fill="#e0f2fe" stroke="#075985" stroke-width="2.5"/>
+  <text x="840" y="271" font-size="14" font-weight="bold" fill="#082f49" text-anchor="middle">MCP server</text>
+  <text x="840" y="290" font-size="12" fill="#082f49" text-anchor="middle">mcp_server.py</text>
+  <text x="840" y="309" font-size="12" fill="#082f49" text-anchor="middle">tools: search,</text>
+  <text x="840" y="327" font-size="12" fill="#082f49" text-anchor="middle">verify</text>
+  <text x="840" y="347" font-size="12" fill="#082f49" text-anchor="middle">read-only, stdio</text>
+
+  <!-- arrows -->
+  <g stroke="#1f2937" stroke-width="1.8" fill="none" marker-end="url(#a)">
+    <line x1="220" y1="140" x2="278" y2="125"/>
+    <line x1="480" y1="115" x2="538" y2="115"/>
+    <line x1="380" y1="180" x2="380" y2="228"/>
+    <line x1="538" y1="275" x2="482" y2="275"/>
+    <line x1="635" y1="228" x2="635" y2="162"/>
+    <line x1="635" y1="320" x2="635" y2="368"/>
+    <line x1="538" y1="415" x2="482" y2="415"/>
+    <line x1="278" y1="385" x2="222" y2="365"/>
+    <line x1="125" y1="298" x2="125" y2="192"/>
+    <line x1="278" y1="470" x2="222" y2="500"/>
+    <line x1="480" y1="385" x2="560" y2="322"/>
+    <line x1="768" y1="285" x2="732" y2="285"/>
+  </g>
+  <line x1="802" y1="367" x2="728" y2="410" stroke="#1f2937" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a)"/>
+  <line x1="958" y1="305" x2="912" y2="305" stroke="#1f2937" stroke-width="1.8" marker-start="url(#a)" marker-end="url(#a)"/>
+
+  <!-- arrow labels -->
+  <g font-size="11" fill="#111827">
+    <text x="224" y="132">read</text>
+    <text x="494" y="106">chunks</text>
+    <text x="388" y="208">rows</text>
+    <text x="496" y="266">query</text>
+    <text x="644" y="198">query vector</text>
+    <text x="644" y="350">top 20</text>
+    <text x="496" y="406">top 8</text>
+    <text x="226" y="356">citations</text>
+    <text x="134" y="250">re-read file</text>
+    <text x="226" y="516">prompt, text</text>
+    <text x="486" y="360">search</text>
+    <text x="744" y="276">calls</text>
+    <text x="778" y="394">rerank=true</text>
+    <text x="920" y="296">stdio</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12" fill="#111827">
+    <line x1="40" y1="582" x2="90" y2="582" stroke="#1f2937" stroke-width="1.8" marker-end="url(#a)"/>
+    <text x="98" y="586">call or data flow, current in 0.1.0</text>
+    <line x1="330" y1="582" x2="380" y2="582" stroke="#1f2937" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a)"/>
+    <text x="388" y="586">optional path</text>
+    <rect x="500" y="572" width="22" height="14" rx="3" fill="#e0f2fe" stroke="#075985" stroke-width="2.5"/>
+    <text x="530" y="586">entry point a user or host starts</text>
+  </g>
+</svg>

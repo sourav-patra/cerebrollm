@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-15",
+ "run": 3,
+ "started_utc": "2026-10-29T15:59:13Z",
+ "seconds": 7.55,
+ "prompt_sha256": "91f74cc3c7653a53e8e91b56d2c0ea621cc83f19ed7a0bbda799584df94aa639",
+ "answer": "I don't know of any promptfoo command that exports an evaluation to Parquet. The retrieved documents never mention Parquet.\n\nThe closest documented option is JSON export: \"Export an eval record to JSON format. To export the most recent, use `latest`.\" [promptfoo/site/docs/usage/command-line.md]\n\nIt's run as `promptfoo export eval <evalId>`, with `-o, --output <filepath>` to write to a file: \"File to write. Writes to stdout by default.\" [promptfoo/site/docs/usage/command-line.md]\n\nThe docs also show an XML output from `promptfoo eval --output results.xml`: \"Full eval data for XML-only consumers\" [promptfoo/site/docs/configuration/outputs.md]. None of these is Parquet. To check whether Parquet is supported, see the [output formats](/docs/configuration/outputs) page in full.",
+ "tokens": {
+  "input": 3202,
+  "output": 332,
+  "thinking": 44,
+  "cache_read": 2835,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0050675,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3514,
+  "stop_reason": "end_turn",
+  "session_id": "9f90e26c-ca55-4c8b-9c53-c328d35f9892",
+  "total_cost_usd": 0.0050675,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 2835,
+   "output_tokens": 332,
+   "output_tokens_details": {
+    "thinking_tokens": 44
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 332,
+     "cache_read_input_tokens": 2835,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 332,
+    "cacheReadInputTokens": 2835,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0050675,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 44,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of any promptfoo command that exports an evaluation to Parquet. The retrieved documents never mention Parquet.\n\nThe closest documented option is JSON export: \"Export an eval record to JSON format. To export the most recent, use `latest`.\" [promptfoo/site/docs/usage/command-line.md]\n\nIt's run as `promptfoo export eval <evalId>`, with `-o, --output <filepath>` to write to a file: \"File to write. Writes to stdout by default.\" [promptfoo/site/docs/usage/command-line.md]\n\nThe docs also show an XML output from `promptfoo eval --output results.xml`: \"Full eval data for XML-only consumers\" [promptfoo/site/docs/configuration/outputs.md]. None of these is Parquet. To check whether Parquet is supported, see the [output formats](/docs/configuration/outputs) page in full.",
+  "ttft_ms": 2575,
+  "type": "result",
+  "duration_ms": 3603,
+  "uuid": "3e85c3d8-405e-4df6-acb9-ed6085c0588d",
+  "ttft_stream_ms": 2575,
+  "time_to_request_ms": 117,
+  "first_content_frame_ms": 2575,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

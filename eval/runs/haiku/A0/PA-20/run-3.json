@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-20",
+ "run": 3,
+ "started_utc": "2026-10-29T01:53:08Z",
+ "seconds": 7.47,
+ "prompt_file": "runs/prompts/A0/PA-20.txt",
+ "prompt_sha256": "978088df6c18de7eb3c578df8f5019ca48d355e28984e0c7df110c121650a072",
+ "answer": "I don't know for certain. I'm not confident promptfoo has a range filter with slice semantics, so I can't say whether its end index is inclusive.\n\nIf you tell me the flag or config option name, I can reason about it, but I'd still be guessing about its exact behavior. To get a definitive answer, check the promptfoo CLI reference for the filter options, or test it directly: run with a small range (for example, indices 0 to 3) and see whether the item at the end index appears in the results.",
+ "tokens": {
+  "input": 655,
+  "output": 354,
+  "thinking": 200,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003078,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2971,
+  "stop_reason": "end_turn",
+  "session_id": "180b6d9f-d57e-4961-9926-b0b7b96c1788",
+  "total_cost_usd": 0.0003078,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 354,
+   "output_tokens_details": {
+    "thinking_tokens": 200
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 354,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 354,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003078,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 200,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know for certain. I'm not confident promptfoo has a range filter with slice semantics, so I can't say whether its end index is inclusive.\n\nIf you tell me the flag or config option name, I can reason about it, but I'd still be guessing about its exact behavior. To get a definitive answer, check the promptfoo CLI reference for the filter options, or test it directly: run with a small range (for example, indices 0 to 3) and see whether the item at the end index appears in the results.",
+  "ttft_ms": 2779,
+  "type": "result",
+  "duration_ms": 3141,
+  "uuid": "490c84b0-ee60-431f-993d-1a164aa5e55e",
+  "ttft_stream_ms": 2778,
+  "time_to_request_ms": 165,
+  "first_content_frame_ms": 2778,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

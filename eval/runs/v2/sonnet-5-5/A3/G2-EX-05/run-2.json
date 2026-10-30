@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:07Z",
+ "seconds": 8.09,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "I don't know the three question types. The retrieved documents don't list them.\n\nThe only API type that appears is `noul`, in the request example: `\"type\": \"noul\"` [ollama/docs/capabilities/decision.md]. That example is for the cloud model Clef.\n\nThe nearest hint is in the CLI release notes: \"ask yes/no questions, classify text into labels, or score against a rubric\" [ollama/v0.40.4.md]. That describes three kinds of CLI use, not the API's `type` values. I can't confirm they map to the three question types you're asking about.\n\nThe decision capability docs (`ollama/docs/capabilities/decision.md`) would likely answer this, but only the cloud section was retrieved.",
+ "tokens": {
+  "input": 3823,
+  "output": 377,
+  "thinking": 148,
+  "cache_read": 3456,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0055796000000000005,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3860,
+  "stop_reason": "end_turn",
+  "session_id": "5b153cb1-4c22-4a05-9319-f1b65beeb7ae",
+  "total_cost_usd": 0.0055796000000000005,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 3456,
+   "output_tokens": 377,
+   "output_tokens_details": {
+    "thinking_tokens": 148
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 377,
+     "cache_read_input_tokens": 3456,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 377,
+    "cacheReadInputTokens": 3456,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0055796000000000005,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 148,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the three question types. The retrieved documents don't list them.\n\nThe only API type that appears is `noul`, in the request example: `\"type\": \"noul\"` [ollama/docs/capabilities/decision.md]. That example is for the cloud model Clef.\n\nThe nearest hint is in the CLI release notes: \"ask yes/no questions, classify text into labels, or score against a rubric\" [ollama/v0.40.4.md]. That describes three kinds of CLI use, not the API's `type` values. I can't confirm they map to the three question types you're asking about.\n\nThe decision capability docs (`ollama/docs/capabilities/decision.md`) would likely answer this, but only the cloud section was retrieved.",
+  "ttft_ms": 2629,
+  "type": "result",
+  "duration_ms": 3954,
+  "uuid": "8ec46940-a694-4893-b77d-c389cab9b024",
+  "ttft_stream_ms": 2628,
+  "time_to_request_ms": 88,
+  "first_content_frame_ms": 2628,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

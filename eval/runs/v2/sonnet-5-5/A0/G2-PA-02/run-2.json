@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-02",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:38Z",
+ "seconds": 9.09,
+ "prompt_sha256": "c3002e2433a5a2b9964fc9bb872a6614607a339b77a62baa074f4a4fe3c1130f",
+ "answer": "I don't know. Nothing in my context describes this project, and I haven't looked at any files in the working directory, so I can't say which endpoint it uses.\n\nOpenAI's own API uses `POST /v1/audio/speech` for text-to-speech, and OpenAI-compatible servers usually copy that path. As far as I know, though, Ollama's OpenAI-compatible API covers chat completions, completions, embeddings, and models, not speech generation. I can't confirm that Ollama on macOS serves audio or streams it through that endpoint. If this project does, it is probably through a wrapper or a separate TTS server.\n\nIf you point me to the repo, docs, or config, I can check what it actually exposes.",
+ "tokens": {
+  "input": 648,
+  "output": 450,
+  "thinking": 222,
+  "cache_read": 0,
+  "cache_creation": 646
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007087999999999999,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5010,
+  "stop_reason": "end_turn",
+  "session_id": "9869167d-d0a0-4f40-a44f-4997d3e3a183",
+  "total_cost_usd": 0.007087999999999999,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 646,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 450,
+   "output_tokens_details": {
+    "thinking_tokens": 222
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 646,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 450,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 646,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 646
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 450,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 646,
+    "webSearchRequests": 0,
+    "costUSD": 0.007087999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 222,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 646,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. Nothing in my context describes this project, and I haven't looked at any files in the working directory, so I can't say which endpoint it uses.\n\nOpenAI's own API uses `POST /v1/audio/speech` for text-to-speech, and OpenAI-compatible servers usually copy that path. As far as I know, though, Ollama's OpenAI-compatible API covers chat completions, completions, embeddings, and models, not speech generation. I can't confirm that Ollama on macOS serves audio or streams it through that endpoint. If this project does, it is probably through a wrapper or a separate TTS server.\n\nIf you point me to the repo, docs, or config, I can check what it actually exposes.",
+  "ttft_ms": 3340,
+  "type": "result",
+  "duration_ms": 5095,
+  "uuid": "57e45285-78d0-4154-98ab-8a53f4fee647",
+  "ttft_stream_ms": 2717,
+  "time_to_request_ms": 110,
+  "first_content_frame_ms": 2717,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

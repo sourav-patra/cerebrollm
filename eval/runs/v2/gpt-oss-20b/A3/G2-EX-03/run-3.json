@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-03",
+ "run": 3,
+ "started_utc": "2026-10-29T16:33:46Z",
+ "seconds": 4.08,
+ "prompt_sha256": "db75b1c050dbf2852df8783d1fd5d7792e27408e214d188243cff0240c6cf5a4",
+ "answer": "The Flint model on Ollama supports a 262 K‑token context window.  \n\"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" [ollama/v0.40.8.md]",
+ "thinking_chars": 668,
+ "tokens": {
+  "input": 1795,
+  "output": 233
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4309091900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:33:50.8633043Z",
+  "response": "The Flint model on Ollama supports a 262 K‑token context window.  \n\"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" [ollama/v0.40.8.md]",
+  "thinking": "We need to answer: \"How large is the context window of Recursive's Flint model on Ollama?\" We must use provided context. Which lines mention context window of Flint? In [1] description: Flint has a 262K-token context window. Let's verify. In [1] lines: \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" So answer: 262K tokens. Provide quote and path. Path: ollama/v0.40.8.md (lines 8-21). Provide the line. The quote: \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" Provide path: [ollama/v0.40.8.md]. That should answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4309091900,
+  "load_duration": 14449600,
+  "prompt_eval_count": 1795,
+  "prompt_eval_cached_count": 1790,
+  "prompt_eval_duration": 59508000,
+  "eval_count": 233,
+  "eval_duration": 4176627999
+ }
+}

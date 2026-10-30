@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-12",
+ "run": 5,
+ "started_utc": "2026-10-29T01:41:51Z",
+ "seconds": 7.55,
+ "prompt_file": "runs/prompts/A3/EX-12.txt",
+ "prompt_sha256": "821a067f203919dcfe77bed5476a482c5bdf2961ff89a5b64c94b4aad642adb5",
+ "answer": "The starter example requires the `OPENAI_API_KEY` environment variable. The starter example docs say: \"Make sure your API key is available to your code by setting it as an environment variable:\" [llama_index/docs/src/content/docs/framework/getting_started/starter_example.md]. The same docs show the command `export OPENAI_API_KEY=XXXXX` for MacOS/Linux and `set OPENAI_API_KEY=XXXXX` for Windows.",
+ "tokens": {
+  "input": 3718,
+  "output": 321,
+  "thinking": 167,
+  "cache_read": 3331,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00027101,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2654,
+  "stop_reason": "end_turn",
+  "session_id": "0c19d514-ead7-4441-aeea-c20a09cb7dac",
+  "total_cost_usd": 0.00027101,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 3331,
+   "output_tokens": 321,
+   "output_tokens_details": {
+    "thinking_tokens": 167
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 321,
+     "cache_read_input_tokens": 3331,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 321,
+    "cacheReadInputTokens": 3331,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00027101,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 167,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The starter example requires the `OPENAI_API_KEY` environment variable. The starter example docs say: \"Make sure your API key is available to your code by setting it as an environment variable:\" [llama_index/docs/src/content/docs/framework/getting_started/starter_example.md]. The same docs show the command `export OPENAI_API_KEY=XXXXX` for MacOS/Linux and `set OPENAI_API_KEY=XXXXX` for Windows.",
+  "ttft_ms": 2804,
+  "type": "result",
+  "duration_ms": 2816,
+  "uuid": "1a32e314-0796-40ef-9bce-a8e0dfdbd81f",
+  "ttft_stream_ms": 2803,
+  "time_to_request_ms": 162,
+  "first_content_frame_ms": 2803,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

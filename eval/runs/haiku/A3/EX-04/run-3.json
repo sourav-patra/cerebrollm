@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-04",
+ "run": 3,
+ "started_utc": "2026-10-29T01:38:57Z",
+ "seconds": 8.95,
+ "prompt_file": "runs/prompts/A3/EX-04.txt",
+ "prompt_sha256": "7217b4bdc84e8b5d6c4be165e43b370b6b7e12310f840e3834e6fbb17d388402",
+ "answer": "The Windows documentation gives **551.61** as the minimum NVIDIA driver version: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general hardware support page gives different numbers. It says \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md] It also says \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nI can't tell from these documents which requirement is current, so the Windows-specific figure is the most direct answer. If you have an older card with compute capability 5.0 through 6.2, the gpu.md page indicates you need driver 570 or newer.",
+ "tokens": {
+  "input": 2699,
+  "output": 772,
+  "thinking": 496,
+  "cache_read": 2311,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00048651,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4267,
+  "stop_reason": "end_turn",
+  "session_id": "a4d55a85-1ad7-4bd5-8094-4355ab363278",
+  "total_cost_usd": 0.00048651,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2311,
+   "output_tokens": 772,
+   "output_tokens_details": {
+    "thinking_tokens": 496
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 772,
+     "cache_read_input_tokens": 2311,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 772,
+    "cacheReadInputTokens": 2311,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00048651,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 496,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The Windows documentation gives **551.61** as the minimum NVIDIA driver version: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general hardware support page gives different numbers. It says \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md] It also says \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nI can't tell from these documents which requirement is current, so the Windows-specific figure is the most direct answer. If you have an older card with compute capability 5.0 through 6.2, the gpu.md page indicates you need driver 570 or newer.",
+  "ttft_ms": 3312,
+  "type": "result",
+  "duration_ms": 4389,
+  "uuid": "c1c04a52-9179-4417-ab2a-31308ac956ab",
+  "ttft_stream_ms": 2882,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 2883,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

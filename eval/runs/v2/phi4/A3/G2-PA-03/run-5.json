@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 5,
+ "started_utc": "2026-10-29T17:43:50Z",
+ "seconds": 6.12,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "I do not have the specific information regarding the total and active parameters of the Nemotron 3.5 Bolt model within the provided context. The available details in the context mention the parameters for the Nemotron 3.5 Super model but do not explicitly state the parameters for the Nemotron 3.5 Bolt model. \n\nIf you have access to the project's documentation or other resources, you might find this information there. Otherwise, I recommend consulting the official documentation or reaching out to the project maintainers for accurate details.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2036,
+  "output": 107
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 6575283800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:43:56.2647829Z",
+  "response": "I do not have the specific information regarding the total and active parameters of the Nemotron 3.5 Bolt model within the provided context. The available details in the context mention the parameters for the Nemotron 3.5 Super model but do not explicitly state the parameters for the Nemotron 3.5 Bolt model. \n\nIf you have access to the project's documentation or other resources, you might find this information there. Otherwise, I recommend consulting the official documentation or reaching out to the project maintainers for accurate details.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6575283800,
+  "load_duration": 13902100,
+  "prompt_eval_count": 2036,
+  "prompt_eval_cached_count": 106,
+  "prompt_eval_duration": 1048521999,
+  "eval_count": 107,
+  "eval_duration": 5350527000
+ }
+}

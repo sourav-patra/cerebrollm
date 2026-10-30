@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-06",
+ "run": 5,
+ "started_utc": "2026-10-29T01:48:06Z",
+ "seconds": 9.71,
+ "prompt_file": "runs/prompts/A0/PA-06.txt",
+ "prompt_sha256": "34422d74e405239a6b2b02b869a33468d7e3ebb79a720bb33ea045f26ef765e0",
+ "answer": "The feature is **iterative index scans**, added in pgvector 0.8.0. Without it, an HNSW or IVFFlat index scan stops after one pass over its candidates, so a `WHERE` filter applied after the index lookup can leave you with fewer rows than `LIMIT`. With iterative scans enabled, the index keeps scanning until it has enough matching rows or hits a limit.\n\nIt's controlled by session settings:\n\n- **HNSW:** `SET hnsw.iterative_scan = strict_order;` or `relaxed_order`. Related settings are `hnsw.max_scan_tuples` (default 20000) and `hnsw.scan_mem_multiplier`. Raising `hnsw.ef_search` (default 40) also helps, since it sets the candidate pool size per pass.\n- **IVFFlat:** `SET ivfflat.iterative_scan = ...;` with the same two modes, and `ivfflat.max_probes` controls how many lists are probed as the scan continues.\n\n`strict_order` returns results in exact distance order. `relaxed_order` can return them slightly out of order, so you can re-sort in an outer query (`SELECT ... ORDER BY distance`) when you need strict ordering with better performance.\n\nI'm working from memory here, so check the setting names and defaults against the pgvector README for your installed version.",
+ "tokens": {
+  "input": 687,
+  "output": 865,
+  "thinking": 423,
+  "cache_read": 0,
+  "cache_creation": 685
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005697,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5240,
+  "stop_reason": "end_turn",
+  "session_id": "cfe4bd71-34fc-43d7-bde1-574c37c2e319",
+  "total_cost_usd": 0.0005697,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 685,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 865,
+   "output_tokens_details": {
+    "thinking_tokens": 423
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 685,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 865,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 685,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 685
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 865,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 685,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005697,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 423,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 685,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The feature is **iterative index scans**, added in pgvector 0.8.0. Without it, an HNSW or IVFFlat index scan stops after one pass over its candidates, so a `WHERE` filter applied after the index lookup can leave you with fewer rows than `LIMIT`. With iterative scans enabled, the index keeps scanning until it has enough matching rows or hits a limit.\n\nIt's controlled by session settings:\n\n- **HNSW:** `SET hnsw.iterative_scan = strict_order;` or `relaxed_order`. Related settings are `hnsw.max_scan_tuples` (default 20000) and `hnsw.scan_mem_multiplier`. Raising `hnsw.ef_search` (default 40) also helps, since it sets the candidate pool size per pass.\n- **IVFFlat:** `SET ivfflat.iterative_scan = ...;` with the same two modes, and `ivfflat.max_probes` controls how many lists are probed as the scan continues.\n\n`strict_order` returns results in exact distance order. `relaxed_order` can return them slightly out of order, so you can re-sort in an outer query (`SELECT ... ORDER BY distance`) when you need strict ordering with better performance.\n\nI'm working from memory here, so check the setting names and defaults against the pgvector README for your installed version.",
+  "ttft_ms": 3399,
+  "type": "result",
+  "duration_ms": 5361,
+  "uuid": "e5a63d3c-a914-4ed1-a89c-8a5aa82a0611",
+  "ttft_stream_ms": 3077,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 3077,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-09",
+ "run": 3,
+ "started_utc": "2026-10-29T17:32:39Z",
+ "seconds": 12.11,
+ "prompt_sha256": "33a2e37033519f45139e844295bea3f485cce58529b79198feb005d00dc1f617",
+ "answer": "I do not know the default value of the `separator_regex` for LlamaIndex's `TokenTextSplitter`. The provided context describes the `TokenTextSplitter` and its parameters, such as `chunk_size`, `chunk_overlap`, and `separator`, but does not mention `separator_regex`. The relevant passage is:\n\n\"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts.\n\n```python\nfrom llama_index.core.node_parser import TokenTextSplitter\n\nsplitter = TokenTextSplitter(\n    chunk_size=1024,\n    chunk_overlap=20,\n    separator=\" \",\n)\nnodes = splitter.get_nodes_from_documents(documents)\n```\n\n[1] llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md (lines 182-195)\" \n\nSince `separator_regex` is not mentioned here or elsewhere in the provided context, I cannot provide its default value.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1588,
+  "output": 191
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10277532700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:32:50.427848Z",
+  "response": "I do not know the default value of the `separator_regex` for LlamaIndex's `TokenTextSplitter`. The provided context describes the `TokenTextSplitter` and its parameters, such as `chunk_size`, `chunk_overlap`, and `separator`, but does not mention `separator_regex`. The relevant passage is:\n\n\"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts.\n\n```python\nfrom llama_index.core.node_parser import TokenTextSplitter\n\nsplitter = TokenTextSplitter(\n    chunk_size=1024,\n    chunk_overlap=20,\n    separator=\" \",\n)\nnodes = splitter.get_nodes_from_documents(documents)\n```\n\n[1] llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md (lines 182-195)\" \n\nSince `separator_regex` is not mentioned here or elsewhere in the provided context, I cannot provide its default value.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10277532700,
+  "load_duration": 13175500,
+  "prompt_eval_count": 1588,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 764227000,
+  "eval_count": 191,
+  "eval_duration": 9361833000
+ }
+}

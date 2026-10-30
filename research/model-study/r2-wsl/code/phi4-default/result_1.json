@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/70",
+  "index": 1,
+  "request": {
+    "model": "phi4",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "phi4",
+    "created_at": "2026-10-28T20:47:23.5586106Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n    result = []\n    while lst:\n        result.append(min(lst))\n        lst.remove(result[-1])\n        if lst:\n            result.append(max(lst))\n            lst.remove(result[-1])\n    return result\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7623237800,
+    "load_duration": 11173000,
+    "prompt_eval_count": 153,
+    "prompt_eval_cached_count": 30,
+    "prompt_eval_duration": 118688000,
+    "eval_count": 165,
+    "eval_duration": 7459084000
+  },
+  "wall_seconds": 7.215335849000439,
+  "load_average_before": [
+    0.26025390625,
+    0.21337890625,
+    0.140625
+  ],
+  "load_average_after": [
+    0.37451171875,
+    0.23974609375,
+    0.150390625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-phi4-default-1",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\phi4-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_1.py"
+    ],
+    "wall_seconds": 0.6891387249997933,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

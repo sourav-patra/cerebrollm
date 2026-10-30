@@ -1,0 +1,13 @@
+{
+  "table": "data_chunks",
+  "chunks": 13431,
+  "distinct_node_ids": 13431,
+  "distinct_texts": 13346,
+  "documents": 1412,
+  "snapshot_file": "~/cerebrollm-scratch/corpus-snapshot.json",
+  "snapshot_sha256": "5900cdc76c16d99db0db63b7741ed95dd399043af5e5386e94efa42544ba7c19",
+  "statuses": [
+    "current",
+    "superseded"
+  ]
+}

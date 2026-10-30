@@ -1,0 +1,98 @@
+{
+  "model": "gpt-oss:20b",
+  "mode": "low",
+  "length": 200,
+  "run": 2,
+  "calibration": {
+    "repetitions": 97,
+    "length": 200,
+    "prompt_tokens": 202,
+    "template_overhead_tokens": 68
+  },
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793229947.7213466,
+    "loadavg": [
+      0.09228515625,
+      0.05419921875,
+      0.00732421875
+    ],
+    "win_cpu_pct": 12.3,
+    "gpu_util_pct": 6,
+    "gpu_mem_mib": 11678,
+    "ollama_ps": [
+      "gpt-oss:20b"
+    ]
+  },
+  "load_average_after": [
+    0.07763671875,
+    0.05224609375,
+    0.00634765625
+  ],
+  "ttft_seconds": 0.4392828260024544,
+  "first_visible_content_seconds": 0.7690420340004493,
+  "wall_seconds": 4.380562326001382,
+  "events": 248,
+  "final": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T23:25:58.4569475Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 4660419200,
+    "load_duration": 13776900,
+    "prompt_eval_count": 202,
+    "prompt_eval_cached_count": 60,
+    "prompt_eval_duration": 392998000,
+    "eval_count": 256,
+    "eval_duration": 4246520000
+  },
+  "prompt_tps": 361.3249940203258,
+  "generation_tps": 60.28465661294424,
+  "ps_api": [
+    {
+      "name": "gpt-oss:20b",
+      "model": "gpt-oss:20b",
+      "size": 14069876652,
+      "digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gpt-oss",
+        "families": [
+          "gpt-oss"
+        ],
+        "parameter_size": "20.9B",
+        "quantization_level": "MXFP4"
+      },
+      "expires_at": "2026-10-29T05:10:58.4574523+05:30",
+      "size_vram": 10041771949,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    }
+  ],
+  "ps_cli": "NAME           ID              SIZE     PROCESSOR          CONTEXT    RUNNER      UNTIL               \ngpt-oss:20b    f38aa0c53da5    14 GB    29%/71% CPU/GPU    16384      llamacpp    14 minutes from now    \n",
+  "gpu_pct": 71.4,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Performance measurement run 2. Read the following data.\nriver meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle window engine anchor rocket basket island pepper\nWrite a detailed explanation of binary search, including Python examples and complexity. Continue for at least 500 words."
+      }
+    ],
+    "stream": true,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 256
+    },
+    "think": "low"
+  }
+}

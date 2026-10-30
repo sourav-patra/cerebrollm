@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-16",
+ "run": 1,
+ "started_utc": "2026-10-29T01:51:30Z",
+ "seconds": 9.64,
+ "prompt_file": "runs/prompts/A0/PA-16.txt",
+ "prompt_sha256": "8377aa47fd54091bb908204d986022ffa121803fd2c95c4b854ab96454aff3c8",
+ "answer": "I'm fairly confident promptfoo supports this, but I can't verify the exact flags for your installed version, so check them with `promptfoo eval --help`.\n\nThe usual approach is to re-run the last eval, or a specific one, with the errors-only filter:\n\n```powershell\npromptfoo eval --filter-errors-only <evalId>\n```\n\n- **Find the eval ID:** run `promptfoo list evals` (or `promptfoo view`) to see recent runs and their IDs. If you omit the ID, promptfoo generally uses the most recent eval.\n- **Re-run errors only:** `--filter-errors-only` selects only the test cases that ended in an error, such as network failures, timeouts, or rate-limit responses, and skips the ones that passed or failed normally.\n- **Resume an interrupted run:** if the eval was cut off partway through rather than finishing with errors, `promptfoo eval --resume <evalId>` may be the better option. I'm less sure of its exact behavior.\n\nFor rate limits in particular, you may want to lower concurrency (`--max-concurrency`) or add a delay before retrying, since re-running immediately can hit the same limit. I'm not certain of the exact option names in your version, so confirm them in the help output.",
+ "tokens": {
+  "input": 665,
+  "output": 786,
+  "thinking": 380,
+  "cache_read": 0,
+  "cache_creation": 663
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005258,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5142,
+  "stop_reason": "end_turn",
+  "session_id": "9e4c0912-91b7-4a98-a7cc-bf8d578545cc",
+  "total_cost_usd": 0.0005258,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 663,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 786,
+   "output_tokens_details": {
+    "thinking_tokens": 380
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 663,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 786,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 663,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 663
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 786,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 663,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005258,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 380,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 663,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I'm fairly confident promptfoo supports this, but I can't verify the exact flags for your installed version, so check them with `promptfoo eval --help`.\n\nThe usual approach is to re-run the last eval, or a specific one, with the errors-only filter:\n\n```powershell\npromptfoo eval --filter-errors-only <evalId>\n```\n\n- **Find the eval ID:** run `promptfoo list evals` (or `promptfoo view`) to see recent runs and their IDs. If you omit the ID, promptfoo generally uses the most recent eval.\n- **Re-run errors only:** `--filter-errors-only` selects only the test cases that ended in an error, such as network failures, timeouts, or rate-limit responses, and skips the ones that passed or failed normally.\n- **Resume an interrupted run:** if the eval was cut off partway through rather than finishing with errors, `promptfoo eval --resume <evalId>` may be the better option. I'm less sure of its exact behavior.\n\nFor rate limits in particular, you may want to lower concurrency (`--max-concurrency`) or add a delay before retrying, since re-running immediately can hit the same limit. I'm not certain of the exact option names in your version, so confirm them in the help output.",
+  "ttft_ms": 3281,
+  "type": "result",
+  "duration_ms": 5261,
+  "uuid": "cc82bc10-5704-4b2a-b556-113b4d46041a",
+  "ttft_stream_ms": 2766,
+  "time_to_request_ms": 156,
+  "first_content_frame_ms": 2766,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

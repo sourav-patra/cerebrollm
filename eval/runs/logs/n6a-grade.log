@@ -1,0 +1,88 @@
+== 2026-10-30T07:45:39Z waiting for lock: grade gpt-oss:20b
+== 2026-10-30T07:49:03Z lock held: grade gpt-oss:20b ollama {"version":"0.40.13"}
+gpt-oss:20b: 0 done, 1574 to do
+25/1574 gemma4-12b/A0/G2-EX-05/5 N elapsed 60s
+50/1574 gemma4-12b/A0/G2-EX-10/5 N elapsed 103s
+75/1574 gemma4-12b/A0/G2-PA-05/5 N elapsed 163s
+100/1574 gemma4-12b/A0/G2-ST-03/5 N elapsed 212s
+125/1574 gemma4-12b/A0/G3-UN-05/5 Y elapsed 280s
+150/1574 gemma4-12b/A0/G3-UN-10/5 Y elapsed 347s
+175/1574 gemma4-12b/A0/G3-UN-15/5 Y elapsed 411s
+200/1574 gemma4-12b/A3/G2-EX-05/5 N elapsed 468s
+225/1574 gemma4-12b/A3/G2-EX-10/5 Y elapsed 549s
+250/1574 gemma4-12b/A3/G2-PA-05/5 Y elapsed 622s
+275/1574 gemma4-12b/A3/G2-ST-03/5 Y elapsed 703s
+300/1574 gemma4-12b/A3/G3-UN-05/5 Y elapsed 765s
+325/1574 gemma4-12b/A3/G3-UN-10/5 Y elapsed 829s
+350/1574 gemma4-12b/A3/G3-UN-15/5 Y elapsed 892s
+375/1574 gemma4-12b/A4/G2-EX-09/1 N elapsed 950s
+400/1574 gemma4-12b/A4/G2-PA-07/2 N elapsed 1023s
+425/1574 gemma4-12b/A4/G3-UN-05/3 Y elapsed 1086s
+450/1574 gemma4-12b/A4/G3-UN-14/1 Y elapsed 1150s
+475/1574 gpt-oss-20b/A0/G2-EX-04/5 N elapsed 1217s
+500/1574 gpt-oss-20b/A0/G2-EX-09/5 N elapsed 1293s
+525/1574 gpt-oss-20b/A0/G2-PA-04/5 N elapsed 1371s
+550/1574 gpt-oss-20b/A0/G2-ST-02/5 Y elapsed 1465s
+575/1574 gpt-oss-20b/A0/G3-UN-04/5 N elapsed 1594s
+600/1574 gpt-oss-20b/A0/G3-UN-09/5 Y elapsed 1690s
+625/1574 gpt-oss-20b/A0/G3-UN-14/5 Y elapsed 1801s
+650/1574 gpt-oss-20b/A3/G2-EX-04/5 Y elapsed 1867s
+675/1574 gpt-oss-20b/A3/G2-EX-09/5 Y elapsed 1951s
+700/1574 gpt-oss-20b/A3/G2-PA-04/5 Y elapsed 2021s
+725/1574 gpt-oss-20b/A3/G2-ST-02/5 Y elapsed 2101s
+750/1574 gpt-oss-20b/A3/G3-UN-04/5 Y elapsed 2171s
+775/1574 gpt-oss-20b/A3/G3-UN-09/5 Y elapsed 2258s
+800/1574 gpt-oss-20b/A3/G3-UN-14/5 Y elapsed 2340s
+825/1574 gpt-oss-20b/A4/G2-EX-07/3 Y elapsed 2412s
+850/1574 gpt-oss-20b/A4/G2-PA-06/1 Y elapsed 2491s
+875/1574 gpt-oss-20b/A4/G3-UN-04/2 Y elapsed 2558s
+900/1574 gpt-oss-20b/A4/G3-UN-12/3 Y elapsed 2623s
+925/1574 phi4/A0/G2-EX-04/1 N elapsed 2709s
+950/1574 phi4/A0/G2-EX-09/1 N elapsed 2795s
+975/1574 phi4/A0/G2-PA-04/1 N elapsed 2890s
+1000/1574 phi4/A0/G2-ST-02/1 N elapsed 2991s
+1025/1574 phi4/A0/G3-UN-04/1 Y elapsed 3092s
+1050/1574 phi4/A0/G3-UN-09/1 Y elapsed 3193s
+1075/1574 phi4/A0/G3-UN-14/1 Y elapsed 3289s
+1100/1574 phi4/A3/G2-EX-04/1 Y elapsed 3363s
+1125/1574 phi4/A3/G2-EX-09/1 Y elapsed 3443s
+1150/1574 phi4/A3/G2-PA-04/1 Y elapsed 3524s
+1175/1574 phi4/A3/G2-ST-02/1 Y elapsed 3646s
+1200/1574 phi4/A3/G3-UN-04/1 Y elapsed 3738s
+1225/1574 phi4/A3/G3-UN-09/1 Y elapsed 3835s
+1250/1574 phi4/A3/G3-UN-14/1 Y elapsed 3924s
+1275/1574 phi4/A4/G2-EX-06/1 N elapsed 3992s
+1300/1574 phi4/A4/G2-PA-04/2 N elapsed 4070s
+1325/1574 phi4/A4/G3-UN-02/3 Y elapsed 4141s
+1350/1574 phi4/A4/G3-UN-11/1 Y elapsed 4207s
+1375/1574 sonnet-5-5/A0/G2-EX-04/2 N elapsed 4281s
+1400/1574 sonnet-5-5/A0/G2-PA-02/3 N elapsed 4382s
+1425/1574 sonnet-5-5/A0/G3-UN-01/1 Y elapsed 4485s
+1450/1574 sonnet-5-5/A0/G3-UN-09/2 Y elapsed 4587s
+1475/1574 sonnet-5-5/A3/G2-EX-02/3 Y elapsed 4675s
+1500/1574 sonnet-5-5/A3/G2-PA-01/1 Y elapsed 4756s
+1525/1574 sonnet-5-5/A3/G2-ST-02/2 Y elapsed 4871s
+1550/1574 sonnet-5-5/A3/G3-UN-07/3 Y elapsed 4969s
+== 2026-10-30T09:13:18Z lock released
+== 2026-10-30T09:13:18Z waiting for lock: grade gemma4:12b
+== 2026-10-30T09:18:20Z lock held: grade gemma4:12b ollama {"version":"0.40.13"}
+gemma4:12b: 0 done, 454 to do
+25/454 gpt-oss-20b/A0/G2-EX-05/5 N elapsed 23s
+50/454 gpt-oss-20b/A0/G2-EX-10/5 N elapsed 38s
+75/454 gpt-oss-20b/A0/G2-PA-05/5 N elapsed 52s
+100/454 gpt-oss-20b/A0/G2-ST-03/5 N elapsed 69s
+125/454 gpt-oss-20b/A0/G3-UN-05/5 Y elapsed 82s
+150/454 gpt-oss-20b/A0/G3-UN-10/5 Y elapsed 95s
+175/454 gpt-oss-20b/A0/G3-UN-15/5 N elapsed 109s
+200/454 gpt-oss-20b/A3/G2-EX-05/5 N elapsed 121s
+225/454 gpt-oss-20b/A3/G2-EX-10/5 Y elapsed 135s
+250/454 gpt-oss-20b/A3/G2-PA-05/5 Y elapsed 147s
+275/454 gpt-oss-20b/A3/G2-ST-03/5 Y elapsed 163s
+300/454 gpt-oss-20b/A3/G3-UN-05/5 N elapsed 176s
+325/454 gpt-oss-20b/A3/G3-UN-10/5 Y elapsed 188s
+350/454 gpt-oss-20b/A3/G3-UN-15/5 Y elapsed 203s
+375/454 gpt-oss-20b/A4/G2-EX-09/2 Y elapsed 214s
+400/454 gpt-oss-20b/A4/G2-PA-07/3 Y elapsed 225s
+425/454 gpt-oss-20b/A4/G3-UN-06/1 Y elapsed 239s
+450/454 gpt-oss-20b/A4/G3-UN-14/2 Y elapsed 250s
+== 2026-10-30T09:22:33Z lock released

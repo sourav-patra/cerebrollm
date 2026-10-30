@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-PA-3",
+ "run": 2,
+ "started_utc": "2026-10-29T01:54:08Z",
+ "seconds": 9.4,
+ "prompt_file": "runs/prompts/A3/PR-PA-3.txt",
+ "prompt_sha256": "b2566560bf41ae84a155ce83d7a9999de3ff9142ea8fe73cba8bf42ec5d710a4",
+ "answer": "The retrieved excerpt of the local starter tutorial doesn't show a timeout. It only covers lines 1-14 of `starter_example_local.md`, which describe the embedding model and `llama3.1 8B` served through Ollama, and the Ollama code isn't in that range [llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md]. So I don't know the value it uses.\n\nOther LlamaIndex docs in the context configure Ollama with a 60-second timeout, but those aren't the starter example. The \"Using a local LLM\" section shows `request_timeout=60.0,` [llama_index/docs/src/content/docs/framework/understanding/using_llms.md], and the FAQ shows the same value in its \"I want to use a different LLM\" example [llama_index/docs/src/content/docs/framework/getting_started/faq.md].",
+ "tokens": {
+  "input": 3165,
+  "output": 657,
+  "thinking": 370,
+  "cache_read": 2777,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00043367000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5073,
+  "stop_reason": "end_turn",
+  "session_id": "53b3400d-3861-4a26-99e0-a67c0e8fa0e4",
+  "total_cost_usd": 0.00043367000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2777,
+   "output_tokens": 657,
+   "output_tokens_details": {
+    "thinking_tokens": 370
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 657,
+     "cache_read_input_tokens": 2777,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 657,
+    "cacheReadInputTokens": 2777,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00043367000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 370,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The retrieved excerpt of the local starter tutorial doesn't show a timeout. It only covers lines 1-14 of `starter_example_local.md`, which describe the embedding model and `llama3.1 8B` served through Ollama, and the Ollama code isn't in that range [llama_index/docs/src/content/docs/framework/getting_started/starter_example_local.md]. So I don't know the value it uses.\n\nOther LlamaIndex docs in the context configure Ollama with a 60-second timeout, but those aren't the starter example. The \"Using a local LLM\" section shows `request_timeout=60.0,` [llama_index/docs/src/content/docs/framework/understanding/using_llms.md], and the FAQ shows the same value in its \"I want to use a different LLM\" example [llama_index/docs/src/content/docs/framework/getting_started/faq.md].",
+  "ttft_ms": 4098,
+  "type": "result",
+  "duration_ms": 5205,
+  "uuid": "875c89fb-aacd-4fc4-9185-cdf281c4f5b6",
+  "ttft_stream_ms": 2843,
+  "time_to_request_ms": 159,
+  "first_content_frame_ms": 2843,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

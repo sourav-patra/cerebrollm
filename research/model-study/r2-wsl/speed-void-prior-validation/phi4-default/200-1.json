@@ -1,0 +1,91 @@
+{
+  "model": "phi4",
+  "mode": "default",
+  "length": 200,
+  "run": 1,
+  "valid": true,
+  "problems": [],
+  "before": {
+    "time": 1793227856.802476,
+    "loadavg": [
+      0.013671875,
+      0.02783203125,
+      0.02783203125
+    ],
+    "win_cpu_pct": 13.1,
+    "gpu_util_pct": 10,
+    "gpu_mem_mib": 11589,
+    "ollama_ps": [
+      "phi4:latest"
+    ]
+  },
+  "load_average_after": [
+    0.009765625,
+    0.0263671875,
+    0.0263671875
+  ],
+  "ttft_seconds": 0.38047274200107495,
+  "first_visible_content_seconds": 0.38047274200107495,
+  "wall_seconds": 11.054190726001252,
+  "events": 257,
+  "final": {
+    "model": "phi4",
+    "created_at": "2026-10-28T22:51:14.0027999Z",
+    "message": {
+      "role": "assistant",
+      "content": ""
+    },
+    "done": true,
+    "done_reason": "length",
+    "total_duration": 11918474800,
+    "load_duration": 12004500,
+    "prompt_eval_count": 202,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 396287000,
+    "eval_count": 256,
+    "eval_duration": 11497898000
+  },
+  "prompt_tps": 499.63788870187517,
+  "generation_tps": 22.264939208888443,
+  "ps_api": [
+    {
+      "name": "phi4:latest",
+      "model": "phi4:latest",
+      "size": 12709967951,
+      "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "phi3",
+        "families": [
+          "phi3"
+        ],
+        "parameter_size": "14.7B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-29T04:36:14.0035719+05:30",
+      "size_vram": 10279798701,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    }
+  ],
+  "ps_cli": "NAME           ID              SIZE     PROCESSOR          CONTEXT    RUNNER      UNTIL               \nphi4:latest    ac896e5b8b34    12 GB    19%/81% CPU/GPU    16384      llamacpp    14 minutes from now    \n",
+  "gpu_pct": 80.9,
+  "request": {
+    "model": "phi4",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Performance measurement run 1. Read the following data.\nriver meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember ladder window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle window engine anchor rocket basket island pepper harbor pencil orchard wagon falcon marble garden ribbon saddle season cobalt jungle river meadow forest puzzle yellow glacier nectar copper valley thread ticket dagger kettle stone candle bridge quartz zephyr hammer oyster lantern market mirror velvet ember\nWrite a detailed explanation of binary search, including Python examples and complexity. Continue for at least 500 words."
+      }
+    ],
+    "stream": true,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 256
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-ST-03",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:09Z",
+ "seconds": 1.99,
+ "prompt_sha256": "aab6defc0af8fafa4ccd956a58f3b5e5d66d048dabc1508496819de684ce22c8",
+ "answer": "\"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" [ollama/v0.40.13.md (lines 1-11)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2200,
+  "output": 114
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 2095019100
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:57:11.6146056Z",
+  "response": "\"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" [ollama/v0.40.13.md (lines 1-11)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2095019100,
+  "load_duration": 19179400,
+  "prompt_eval_count": 2200,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 939155000,
+  "eval_count": 114,
+  "eval_duration": 860348000
+ }
+}

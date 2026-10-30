@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/138",
+  "index": 7,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:35:31.2022677Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    # The smallest positive even number is 2.\n    # The sum of four positive even numbers must be at least 2 + 2 + 2 + 2 = 8.\n    # Additionally, the sum of any number of even numbers is always even.\n    return n >= 8 and n % 2 == 0\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1287598000,
+    "load_duration": 14993200,
+    "prompt_eval_count": 128,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 88917000,
+    "eval_count": 168,
+    "eval_duration": 1129127000
+  },
+  "wall_seconds": 1.234545770996192,
+  "load_average_before": [
+    0.17431640625,
+    0.1279296875,
+    0.23486328125
+  ],
+  "load_average_after": [
+    0.17431640625,
+    0.1279296875,
+    0.23486328125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-off-7",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_7.py"
+    ],
+    "wall_seconds": 0.6836341410016757,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

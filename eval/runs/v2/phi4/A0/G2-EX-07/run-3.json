@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-07",
+ "run": 3,
+ "started_utc": "2026-10-29T17:27:00Z",
+ "seconds": 3.93,
+ "prompt_sha256": "667ad0a6d493998d512839bd7cad683e298b8c831b5855cec2f5ad61e0cd5a6d",
+ "answer": "I do not know which two ROUGE-based assertion types promptfoo 0.125.0 added. ROUGE is a set of metrics for evaluating automatic summarization and machine translation, focusing on comparing an automatically produced summary or translation against a set of reference summaries or translations. However, specific details about the features added in a particular version of a software project like promptfoo would require access to that project's release notes or documentation.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 87
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4214585800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:27:03.7888948Z",
+  "response": "I do not know which two ROUGE-based assertion types promptfoo 0.125.0 added. ROUGE is a set of metrics for evaluating automatic summarization and machine translation, focusing on comparing an automatically produced summary or translation against a set of reference summaries or translations. However, specific details about the features added in a particular version of a software project like promptfoo would require access to that project's release notes or documentation.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4214585800,
+  "load_duration": 13909000,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 221431000,
+  "eval_count": 87,
+  "eval_duration": 3965735000
+ }
+}

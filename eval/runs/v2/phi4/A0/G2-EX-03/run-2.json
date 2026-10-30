@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-03",
+ "run": 2,
+ "started_utc": "2026-10-29T17:19:08Z",
+ "seconds": 2.25,
+ "prompt_sha256": "2c755b7ce89cefac47b9aa32769a5b32145573c4a85b9d740bf03c8fb3988b31",
+ "answer": "I do not know the specific size of the context window for Recursive's Flint model on Ollama. Context window size can vary between different models and implementations, and without specific documentation or details about this particular setup, I cannot provide an accurate answer.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 49,
+  "output": 51
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2492633500
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:19:11.2654848Z",
+  "response": "I do not know the specific size of the context window for Recursive's Flint model on Ollama. Context window size can vary between different models and implementations, and without specific documentation or details about this particular setup, I cannot provide an accurate answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2492633500,
+  "load_duration": 13268200,
+  "prompt_eval_count": 49,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 213990000,
+  "eval_count": 51,
+  "eval_duration": 2247431000
+ }
+}

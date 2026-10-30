@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-EX-4",
+ "run": 4,
+ "started_utc": "2026-10-29T01:46:01Z",
+ "seconds": 7.39,
+ "prompt_file": "runs/prompts/A3/PR-EX-4.txt",
+ "prompt_sha256": "5a2cf74031f76110e5f079eb26030008cac8cc8e3cc7fb66836ed38cdc9b89b0",
+ "answer": "The flag is `--resume [evalId]`. It resumes a paused or incomplete eval, and if you omit `evalId`, it resumes the latest one. \"Resume a paused/incomplete eval. If `evalId` is omitted, resumes latest\" [promptfoo/site/docs/usage/command-line.md].\n\nUsage examples from the same document:\n\n\"promptfoo eval --resume            # resumes the latest eval\" [promptfoo/site/docs/usage/command-line.md]\n\n\"promptfoo eval --resume <evalId>   # resumes a specific eval\" [promptfoo/site/docs/usage/command-line.md]",
+ "tokens": {
+  "input": 3080,
+  "output": 209,
+  "thinking": 0,
+  "cache_read": 2693,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00020863,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2740,
+  "stop_reason": "end_turn",
+  "session_id": "f708eb68-4c4d-4396-947d-32cbdbc06bda",
+  "total_cost_usd": 0.00020863,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2693,
+   "output_tokens": 209,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 209,
+     "cache_read_input_tokens": 2693,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 209,
+    "cacheReadInputTokens": 2693,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00020863,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The flag is `--resume [evalId]`. It resumes a paused or incomplete eval, and if you omit `evalId`, it resumes the latest one. \"Resume a paused/incomplete eval. If `evalId` is omitted, resumes latest\" [promptfoo/site/docs/usage/command-line.md].\n\nUsage examples from the same document:\n\n\"promptfoo eval --resume            # resumes the latest eval\" [promptfoo/site/docs/usage/command-line.md]\n\n\"promptfoo eval --resume <evalId>   # resumes a specific eval\" [promptfoo/site/docs/usage/command-line.md]",
+  "ttft_ms": 2849,
+  "type": "result",
+  "duration_ms": 2866,
+  "uuid": "c810b08b-a82a-4bb6-bdb5-d1f486a322a4",
+  "ttft_stream_ms": 2847,
+  "time_to_request_ms": 153,
+  "first_content_frame_ms": 2847,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

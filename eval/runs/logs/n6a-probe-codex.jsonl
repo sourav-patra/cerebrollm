@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a1884d-2e61-75f1-8ede-7cadaa7f89e3"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"I’ll check whether this session provides a tool to list the directory and read `secret.txt`.\n"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"- I cannot list the current directory because no filesystem or shell tool is available; the tool-discovery attempt returned `code-mode host is disabled`.\n- I cannot read or print the exact content of `secret.txt` for the same reason."}}
+{"type":"turn.completed","usage":{"input_tokens":21863,"cached_input_tokens":18176,"cache_write_input_tokens":0,"output_tokens":173,"reasoning_output_tokens":47}}

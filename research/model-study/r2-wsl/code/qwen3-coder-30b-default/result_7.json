@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/138",
+  "index": 7,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:05:28.4476834Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    # The smallest sum of 4 positive even numbers is 2+2+2+2 = 8\n    # Any number less than 8 cannot be expressed as sum of 4 positive even numbers\n    if n < 8:\n        return False\n    \n    # The sum of 4 even numbers is always even\n    # So if n is odd, it's impossible\n    if n % 2 != 0:\n        return False\n    \n    # If n >= 8 and n is even, we can always express it as sum of 4 positive even numbers\n    # For example: n = 2 + 2 + 2 + (n-6) where (n-6) is even and positive when n >= 8\n    return True\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 6058182000,
+    "load_duration": 40991500,
+    "prompt_eval_count": 104,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 334559000,
+    "eval_count": 237,
+    "eval_duration": 5645153000
+  },
+  "wall_seconds": 5.621535817997938,
+  "load_average_before": [
+    0.216796875,
+    0.08935546875,
+    0.02099609375
+  ],
+  "load_average_after": [
+    0.19921875,
+    0.08740234375,
+    0.0205078125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-coder-30b-default-7",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-coder-30b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_7.py"
+    ],
+    "wall_seconds": 0.7202990780024265,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-PA-1",
+ "run": 1,
+ "started_utc": "2026-10-29T01:53:21Z",
+ "seconds": 8.05,
+ "prompt_file": "runs/prompts/A0/PR-PA-1.txt",
+ "prompt_sha256": "5ae12311882e7873939bf04bf0cd90eabbc778776782ae63aacbde435e242b54",
+ "answer": "To run the Ollama container with access to all NVIDIA GPUs, use the `--gpus=all` flag:\n\n```bash\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThis requires the NVIDIA Container Toolkit on Linux, or Docker Desktop with the WSL2 backend and up-to-date NVIDIA drivers on Windows. To confirm the GPUs are visible inside the container, run `docker exec -it ollama nvidia-smi`.\n\nI don't have any details about your specific project, though. I haven't inspected the files in your working directory, so if you already have a `docker-compose.yml` or other setup, share it and I can tailor the answer to it.",
+ "tokens": {
+  "input": 656,
+  "output": 492,
+  "thinking": 240,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00037700000000000006,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3171,
+  "stop_reason": "end_turn",
+  "session_id": "32c6594c-abce-40eb-bf1e-8df1e9fd8bb1",
+  "total_cost_usd": 0.00037700000000000006,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 492,
+   "output_tokens_details": {
+    "thinking_tokens": 240
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 492,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 492,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.00037700000000000006,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 240,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To run the Ollama container with access to all NVIDIA GPUs, use the `--gpus=all` flag:\n\n```bash\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\nThis requires the NVIDIA Container Toolkit on Linux, or Docker Desktop with the WSL2 backend and up-to-date NVIDIA drivers on Windows. To confirm the GPUs are visible inside the container, run `docker exec -it ollama nvidia-smi`.\n\nI don't have any details about your specific project, though. I haven't inspected the files in your working directory, so if you already have a `docker-compose.yml` or other setup, share it and I can tailor the answer to it.",
+  "ttft_ms": 2917,
+  "type": "result",
+  "duration_ms": 3312,
+  "uuid": "b07affd7-fe02-4530-8c56-97c03d2e5e09",
+  "ttft_stream_ms": 2916,
+  "time_to_request_ms": 140,
+  "first_content_frame_ms": 2916,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

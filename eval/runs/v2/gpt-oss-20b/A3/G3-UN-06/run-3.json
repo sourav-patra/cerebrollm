@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-06",
+ "run": 3,
+ "started_utc": "2026-10-29T16:36:18Z",
+ "seconds": 7.72,
+ "prompt_sha256": "c9f4fdb460682b97dbcf6fbbea7a2d7680542f3fd6ab7249edf525b1c9919d0a",
+ "answer": "I do not know.",
+ "thinking_chars": 1339,
+ "tokens": {
+  "input": 1797,
+  "output": 306
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5350162300
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:36:24.7914886Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"Which Ollama environment variable sets how many model layers are downloaded concurrently during ollama pull?\" We must answer from knowledge. The context provided does not mention this variable. We need to check if we know from outside knowledge. I know that Ollama has an environment variable `OLLAMA_MAX_DOWNLOAD_CONCURRENCY` maybe? I'm not certain. Let's think. The question: \"Which Ollama environment variable sets how many model layers are downloaded concurrently during ollama pull?\" In Ollama, there is an env var controlling parallel download concurrency. I recall reading about `OLLAMA_MAX_DOWNLOAD_CONCURRENCY` or `OLLAMA_MAX_CONCURRENCY`? Actually, I think the variable is `OLLAMA_MAX_DOWNLOAD_CONCURRENCY`. Let me search memory: In Ollama docs, there is an env var `OLLAMA_MAX_DOWNLOAD_CONCURRENCY` controlling how many layers are downloaded concurrently. I think it's correct. But we need to provide quote and path from the project docs. The context provided does not include that. But the answer says \"If you don't know, say you do not know.\" We don't have a quote. According to policy, if we don't know, say we do not know. But I'm fairly sure the variable is `OLLAMA_MAX_DOWNLOAD_CONCURRENCY`. But need a quote. Let's check if any context lines mention. No. So we can't quote. We must say we do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5350162300,
+  "load_duration": 14054800,
+  "prompt_eval_count": 1797,
+  "prompt_eval_cached_count": 1792,
+  "prompt_eval_duration": 56577000,
+  "eval_count": 306,
+  "eval_duration": 5222802000
+ }
+}

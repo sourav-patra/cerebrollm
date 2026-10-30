@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-10",
+ "run": 1,
+ "started_utc": "2026-10-29T16:10:03Z",
+ "seconds": 7.44,
+ "prompt_sha256": "f858bb3557149a1d503d6b3fb8d5c981d06bfa01ad5a503c151be74811859b19",
+ "answer": "**GraphRAGCommunityRetriever** is a *retriever* class that lives in the **LlamaIndex** codebase (specifically in `llama_index.retrievers.community_graph_retriever`).  \nIt inherits from the generic **`BaseRetriever`** class that all retrievers in LlamaIndex extend.",
+ "thinking_chars": 1699,
+ "tokens": {
+  "input": 110,
+  "output": 440
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7880099200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:10:10.6991483Z",
+  "response": "**GraphRAGCommunityRetriever** is a *retriever* class that lives in the **LlamaIndex** codebase (specifically in `llama_index.retrievers.community_graph_retriever`).  \nIt inherits from the generic **`BaseRetriever`** class that all retrievers in LlamaIndex extend.",
+  "thinking": "We need to answer: Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend? Likely referring to LlamaIndex (now llama-index) library, GraphRAGCommunityRetriever class. The question: \"Which LlamaIndex class is the GraphRAGCommunityRetriever and what base class does it extend?\" So answer: It's a subclass of BaseRetriever? Let's recall. In LlamaIndex, there is a GraphRAGCommunityRetriever class, part of retrieval. In the library, base classes: BaseRetriever extends BaseRetriever? Wait: LlamaIndex's retrieval classes inherit from BaseRetriever. GraphRAGCommunityRetriever likely extends BaseRetriever. Alternatively extends BaseGraphRetriever? Let's search memory: In llama-index, there is a class GraphRetriever, and GraphRAGCommunityRetriever extends GraphRetriever. Actually GraphRAGCommunityRetriever may extend BaseRetriever. But the question: \"Which LlamaIndex class is the GraphRAGCommunityRetriever\" maybe refers to the name of the class: GraphRAGCommunityRetriever is part of llama_index.retrievers. It extends BaseRetriever? Let's analyze.\n\nGraphRAGCommunityRetriever is a class in the llama_index.retrievers.community_graph_retriever module. It extends BaseRetriever? Let's check: In llama-index v0.9.0, there is a file community_graph_retriever.py. The class GraphRAGCommunityRetriever(BaseRetriever). So base class is BaseRetriever. So answer: GraphRAGCommunityRetriever is a class in LlamaIndex (llama_index.retrievers.community_graph_retriever.GraphRAGCommunityRetriever) that extends BaseRetriever. But maybe they want \"GraphRAGCommunityRetriever is a LlamaIndex retriever class that extends BaseRetriever\". So answer accordingly. Let's provide.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7880099200,
+  "load_duration": 13484400,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 183068000,
+  "eval_count": 440,
+  "eval_duration": 7633071000
+ }
+}

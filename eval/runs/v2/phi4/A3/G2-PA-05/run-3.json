@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 3,
+ "started_utc": "2026-10-29T17:30:59Z",
+ "seconds": 10.42,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "Promptfoo version 0.124.0 accepts comma-separated values for the `--filter-metadata` option to implement OR logic within one key. This enhancement allows users to specify multiple values for a single metadata key, where any of those values can match for the filter to apply.\n\nThe relevant information is stated as follows:\n\n* \"support comma-separated OR values in --filter-metadata\" [3]\n\nThis indicates that users can now use a format like `key=value1,value2` to filter tests that match either `value1` or `value2` for the specified key. This change was introduced in version 0.124.0, as highlighted by the feature description linked to the commit [b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c). [3] promptfoo/0.124.0.md (lines 20-31) > Features.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1677,
+  "output": 207
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 11202364300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:31:09.0665721Z",
+  "response": "Promptfoo version 0.124.0 accepts comma-separated values for the `--filter-metadata` option to implement OR logic within one key. This enhancement allows users to specify multiple values for a single metadata key, where any of those values can match for the filter to apply.\n\nThe relevant information is stated as follows:\n\n* \"support comma-separated OR values in --filter-metadata\" [3]\n\nThis indicates that users can now use a format like `key=value1,value2` to filter tests that match either `value1` or `value2` for the specified key. This change was introduced in version 0.124.0, as highlighted by the feature description linked to the commit [b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c). [3] promptfoo/0.124.0.md (lines 20-31) > Features.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11202364300,
+  "load_duration": 12324400,
+  "prompt_eval_count": 1677,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 877428000,
+  "eval_count": 207,
+  "eval_duration": 10149059000
+ }
+}

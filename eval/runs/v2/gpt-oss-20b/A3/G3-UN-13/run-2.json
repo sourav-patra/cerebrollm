@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-13",
+ "run": 2,
+ "started_utc": "2026-10-29T16:26:32Z",
+ "seconds": 6.52,
+ "prompt_sha256": "2b27a5beb390e929cf096ab1c01caf8f6d8a290b15d5ae2ddb723941e21a8641",
+ "answer": "I do not know.",
+ "thinking_chars": 1154,
+ "tokens": {
+  "input": 1662,
+  "output": 283
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4999267500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:26:37.6952775Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer which assertion type computes BERTScore between an output and a reference. We need to find if any mention of BERTScore in the docs. The context includes deterministic metrics like BLEU, METEOR, etc. There's no mention of BERTScore in the provided context. We might need to know from general knowledge of promptfoo. But the instruction: \"Answer from what you know about this project; if you do not know, say you do not know. Quote the line you rely on and cite its path.\" So if we don't know, we say we don't know. But maybe we can recall that promptfoo supports BERTScore. But need to confirm from docs. Let's search context for \"BERTScore\". None. But maybe in other parts not included. Since we only have this context, we must say we do not know. We should quote that we don't know. The instruction: \"If you do not know, say you do not know.\" So answer: \"I do not know.\" But we should still quote a line that indicates that we don't know? There's no line stating we don't know. So we just say we do not know. No quote. But they want a quote if we rely on something. Since we have no evidence, we say we don't know. Probably acceptable.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4999267500,
+  "load_duration": 13985200,
+  "prompt_eval_count": 1662,
+  "prompt_eval_cached_count": 1657,
+  "prompt_eval_duration": 55123000,
+  "eval_count": 283,
+  "eval_duration": 4869170000
+ }
+}

@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/61",
+  "index": 14,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "medium"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:19:38.2023497Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef correct_bracketing(brackets: str) -> bool:\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n    balance = 0\n    for ch in brackets:\n        if ch == '(':\n            balance += 1\n        elif ch == ')':\n            balance -= 1\n            if balance < 0:\n                return False\n        else:\n            # ignore any other characters\n            continue\n    return balance == 0\n```",
+      "thinking": "We need to implement correct_bracketing. It should return True if every opening bracket has a corresponding closing bracket. Essentially check if parentheses are balanced. The docstring examples: \"(\" -> False, \"()\" -> True, \"(()())\" -> True, \")(()\" -> False. So typical algorithm: iterate, maintain counter, increment on '(', decrement on ')', if counter negative at any point return False, at end return counter==0.\n\nEdge cases: empty string? Should be True? Not specified. Usually empty string is balanced. We'll return True.\n\nImplement function with type hint. Add imports? None needed. Provide code block with function definition. Ensure docstring preserved. Provide tests? Not needed. Just function.\n\nLet's produce final answer."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5818142700,
+    "load_duration": 21595600,
+    "prompt_eval_count": 177,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 189992000,
+    "eval_count": 320,
+    "eval_duration": 5569981000
+  },
+  "wall_seconds": 5.483874181998544,
+  "load_average_before": [
+    0.1416015625,
+    0.07421875,
+    0.0712890625
+  ],
+  "load_average_after": [
+    0.1298828125,
+    0.07275390625,
+    0.07080078125
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-medium-14",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-medium:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_14.py"
+    ],
+    "wall_seconds": 0.7183659019992774,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

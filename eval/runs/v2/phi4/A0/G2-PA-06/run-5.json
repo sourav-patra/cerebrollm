@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-06",
+ "run": 5,
+ "started_utc": "2026-10-29T17:41:50Z",
+ "seconds": 3.88,
+ "prompt_sha256": "0a19284e9beaa8302543432ec33147546b121487da9b33c3fca9eef83ebee43d",
+ "answer": "I do not know the specific context window that `llama-index-llms-anthropic 0.11.10` sets for Claude Opus 4.6. This information would typically be found in the documentation or release notes for that specific version of the software, as it pertains to how the software interfaces with the Claude Opus model. If you need this information, I recommend checking the official documentation or contacting the developers directly.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 61,
+  "output": 91
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4154521700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:41:55.653934Z",
+  "response": "I do not know the specific context window that `llama-index-llms-anthropic 0.11.10` sets for Claude Opus 4.6. This information would typically be found in the documentation or release notes for that specific version of the software, as it pertains to how the software interfaces with the Claude Opus model. If you need this information, I recommend checking the official documentation or contacting the developers directly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4154521700,
+  "load_duration": 13343200,
+  "prompt_eval_count": 61,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 96150000,
+  "eval_count": 91,
+  "eval_duration": 4030019000
+ }
+}

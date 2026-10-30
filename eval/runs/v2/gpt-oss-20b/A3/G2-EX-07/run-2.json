@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 2,
+ "started_utc": "2026-10-29T16:24:35Z",
+ "seconds": 3.71,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "The release notes for **promptfoo 0.125.0** state that it added two new ROUGE‑based assertion types:\n\n\"**assertions:** add rouge‑l and rouge‑s assertion types\" [promptfoo/0.125.0.md].",
+ "thinking_chars": 606,
+ "tokens": {
+  "input": 2235,
+  "output": 223
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3942466800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:24:39.6270017Z",
+  "response": "The release notes for **promptfoo 0.125.0** state that it added two new ROUGE‑based assertion types:\n\n\"**assertions:** add rouge‑l and rouge‑s assertion types\" [promptfoo/0.125.0.md].",
+  "thinking": "We need to answer: Which two ROUGE-based assertion types did promptfoo 0.125.0 add? The context includes a line from promptfoo/0.125.0.md lines 14-25 which lists Features, including \"assertions: add rouge-l and rouge-s assertion types\". So answer: rouge-l and rouge-s. Must quote the line and path. Let's locate the exact quote. In context [1] we see lines 14-25. The relevant lines: \"* **assertions:** add rouge-l and rouge-s assertion types ([#10256]...\" That is the line. We'll quote that. Path: promptfoo/0.125.0.md. The line includes the assertion types. So answer: rouge-l and rouge-s. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3942466800,
+  "load_duration": 14307700,
+  "prompt_eval_count": 2235,
+  "prompt_eval_cached_count": 2230,
+  "prompt_eval_duration": 57960000,
+  "eval_count": 223,
+  "eval_duration": 3806374000
+ }
+}

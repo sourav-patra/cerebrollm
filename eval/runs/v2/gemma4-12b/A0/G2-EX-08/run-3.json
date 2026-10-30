@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A0",
+ "id": "G2-EX-08",
+ "run": 3,
+ "started_utc": "2026-10-29T15:57:50Z",
+ "seconds": 0.41,
+ "prompt_sha256": "b411a6fb69c2354af49cdcea218c3db8945d222685dc2218b23d5dcb151d6f97",
+ "answer": "I do not know. My current knowledge does not include specific details regarding the \"safe mode\" added to `promptfoo` version 0.125.0.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 59,
+  "output": 36
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 446345600
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:57:50.9726608Z",
+  "response": "I do not know. My current knowledge does not include specific details regarding the \"safe mode\" added to `promptfoo` version 0.125.0.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 446345600,
+  "load_duration": 14944700,
+  "prompt_eval_count": 59,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 64313000,
+  "eval_count": 36,
+  "eval_duration": 342232000
+ }
+}

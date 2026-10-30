@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-07",
+ "run": 2,
+ "started_utc": "2026-10-29T01:56:36Z",
+ "seconds": 10.97,
+ "prompt_file": "runs/prompts/A0/ST-07.txt",
+ "prompt_sha256": "8b1b1d0f40bdd6745bb587c8c9c179c6302aedcd0d36d1051cd542e3ab658d6b",
+ "answer": "In current LlamaIndex (0.10+), you set global defaults on the `Settings` object in `llama_index.core`. The older `ServiceContext` approach is deprecated.\n\nInstall the integration packages you need, for example:\n\n```bash\npip install llama-index-core llama-index-llms-openai llama-index-embeddings-openai\n```\n\nThen configure the models:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.openai import OpenAI\nfrom llama_index.embeddings.openai import OpenAIEmbedding\n\nSettings.llm = OpenAI(model=\"gpt-4o-mini\", temperature=0.1)\nSettings.embed_model = OpenAIEmbedding(model=\"text-embedding-3-small\")\n```\n\nAny index, query engine, or retriever you create afterward uses these defaults. For example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)  # uses Settings.embed_model\nquery_engine = index.as_query_engine()              # uses Settings.llm\nprint(query_engine.query(\"What is this about?\"))\n```\n\nFor a local setup, swap in other integrations. For example, Ollama for the LLM and HuggingFace for embeddings (install `llama-index-llms-ollama` and `llama-index-embeddings-huggingface` first):\n\n```python\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3.1\", request_timeout=120.0)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nOther useful global settings include `Settings.chunk_size`, `Settings.chunk_overlap`, `Settings.node_parser`, `Settings.context_window`, `Settings.num_output`, and `Settings.callback_manager`.\n\nTo override the global default for one component, pass the model directly, for example `VectorStoreIndex.from_documents(docs, embed_model=other_embed)` or `index.as_query_engine(llm=other_llm)`.\n\nSet your API key before running, for example `OPENAI_API_KEY` as an environment variable. I'm not certain about the exact default embedding model in every recent release, so if you rely on the default, check the version you have installed.",
+ "tokens": {
+  "input": 659,
+  "output": 1328,
+  "thinking": 504,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007956,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6317,
+  "stop_reason": "end_turn",
+  "session_id": "7851ae4d-0722-4665-aeda-1b470d583789",
+  "total_cost_usd": 0.0007956,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1328,
+   "output_tokens_details": {
+    "thinking_tokens": 504
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1328,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1328,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007956,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 504,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In current LlamaIndex (0.10+), you set global defaults on the `Settings` object in `llama_index.core`. The older `ServiceContext` approach is deprecated.\n\nInstall the integration packages you need, for example:\n\n```bash\npip install llama-index-core llama-index-llms-openai llama-index-embeddings-openai\n```\n\nThen configure the models:\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.llms.openai import OpenAI\nfrom llama_index.embeddings.openai import OpenAIEmbedding\n\nSettings.llm = OpenAI(model=\"gpt-4o-mini\", temperature=0.1)\nSettings.embed_model = OpenAIEmbedding(model=\"text-embedding-3-small\")\n```\n\nAny index, query engine, or retriever you create afterward uses these defaults. For example:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)  # uses Settings.embed_model\nquery_engine = index.as_query_engine()              # uses Settings.llm\nprint(query_engine.query(\"What is this about?\"))\n```\n\nFor a local setup, swap in other integrations. For example, Ollama for the LLM and HuggingFace for embeddings (install `llama-index-llms-ollama` and `llama-index-embeddings-huggingface` first):\n\n```python\nfrom llama_index.llms.ollama import Ollama\nfrom llama_index.embeddings.huggingface import HuggingFaceEmbedding\n\nSettings.llm = Ollama(model=\"llama3.1\", request_timeout=120.0)\nSettings.embed_model = HuggingFaceEmbedding(model_name=\"BAAI/bge-small-en-v1.5\")\n```\n\nOther useful global settings include `Settings.chunk_size`, `Settings.chunk_overlap`, `Settings.node_parser`, `Settings.context_window`, `Settings.num_output`, and `Settings.callback_manager`.\n\nTo override the global default for one component, pass the model directly, for example `VectorStoreIndex.from_documents(docs, embed_model=other_embed)` or `index.as_query_engine(llm=other_llm)`.\n\nSet your API key before running, for example `OPENAI_API_KEY` as an environment variable. I'm not certain about the exact default embedding model in every recent release, so if you rely on the default, check the version you have installed.",
+  "ttft_ms": 3586,
+  "type": "result",
+  "duration_ms": 6436,
+  "uuid": "e1415b47-f5f6-4316-8b3b-7a1458fdac8e",
+  "ttft_stream_ms": 2792,
+  "time_to_request_ms": 170,
+  "first_content_frame_ms": 2793,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

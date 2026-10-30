@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 2,
+ "started_utc": "2026-10-29T16:23:58Z",
+ "seconds": 3.93,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "The Nemotron 3.5 Bolt model in Ollama has **74 billion total parameters** and **9 billion active parameters**.  \n“distills Super down to 74B parameters (9B active)” [1]",
+ "thinking_chars": 626,
+ "tokens": {
+  "input": 2076,
+  "output": 235
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4162868700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:24:02.163996Z",
+  "response": "The Nemotron 3.5 Bolt model in Ollama has **74 billion total parameters** and **9 billion active parameters**.  \n“distills Super down to 74B parameters (9B active)” [1]",
+  "thinking": "We need to answer: \"How many total and how many active parameters does the Nemotron 3.5 Bolt model have in Ollama?\" The context includes description of Nemotron 3.5 Super and Nemotron 3.5 Bolt. In [1] lines 1-14, we see: \"A compact sibling, Nemotron 3.5 Bolt, distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" So total parameters: 74B. Active parameters: 9B. That is the answer. Quote: \"distills Super down to 74B parameters (9B active)\" [1]. That seems correct.\n\nThus answer: 74B total, 9B active. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4162868700,
+  "load_duration": 12580300,
+  "prompt_eval_count": 2076,
+  "prompt_eval_cached_count": 2071,
+  "prompt_eval_duration": 56260000,
+  "eval_count": 235,
+  "eval_duration": 4030796000
+ }
+}

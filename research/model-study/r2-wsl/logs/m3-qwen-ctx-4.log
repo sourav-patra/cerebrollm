@@ -1,0 +1,83 @@
+2026-10-29T18:03:17+00:00 qwen-ctx-4: lock taken
+Traceback (most recent call last):
+  File "<repo>/research/model-study/m3_speed.py", line 157, in <module>
+    ladder(sys.argv[1], sys.argv[2], steps)
+  File "<repo>/research/model-study/m3_speed.py", line 132, in ladder
+    assert all(n in (model, model + ':latest') for n in r2_wsl.ps_models()), 'another model is loaded: ' + str(r2_wsl.ps_models())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: another model is loaded: ['qwen3-embedding:0.6b']
+2026-10-29T18:03:17+00:00 qwen-ctx-4: command exit 1, releasing lock
+2026-10-29T18:35:23+00:00 qwen-ctx-4: lock taken
+Traceback (most recent call last):
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<repo>/research/model-study/m3_speed.py", line 161, in <module>
+    ladder(sys.argv[1], sys.argv[2], steps)
+  File "<repo>/research/model-study/m3_speed.py", line 133, in ladder
+    if all(n in (model, model + ':latest') for n in r2_wsl.ps_models()):
+                                                    ^^^^^^^^^^^^^^^^^^
+  File "<repo>/research/model-study/r2_wsl.py", line 61, in ps_models
+    return [m['model'] for m in CLIENT.get(OLLAMA_URL + '/api/ps').json().get('models', [])]
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_client.py", line 1053, in get
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+2026-10-29T18:35:23+00:00 qwen-ctx-4: command exit 1, releasing lock
+2026-10-29T18:39:56+00:00 qwen-ctx-4: lock taken
+unloaded qwen3-embedding:0.6b before the ladder (ollama stop exit 0); ollama ps now: ['gpt-oss:20b', 'qwen3.5:9b']
+unloaded gpt-oss:20b before the ladder (ollama stop exit 0); ollama ps now: ['qwen3.5:9b']
+unloaded qwen3.5:9b before the ladder (ollama stop exit 0); ollama ps now: []
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off 8192 1 valid True [] gen_tps 9.433950791554535 prompt_tps 80.87563888720506 gpu% 0.0 memory {'samples': 50, 'min_free_mb': 972.0, 'min_available_mb': 995.0, 'max_pages_per_sec': 123358.5, 'median_pages_per_sec': 15677.8, 'longest_paging_run_samples': 50, 'sustained_paging': True, 'free_ok': False}
+STOP after 8192: free RAM or paging rule failed; higher steps not attempted
+guard unload qwen3.6:35b-a3b-coding-mtp-q4_K_M exit 0 qwen3.6:35b-a3b-coding-mtp-q4_K_M unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+2026-10-29T18:43:57+00:00 qwen-ctx-4: command exit 0, releasing lock

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-10",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:16Z",
+ "seconds": 8.89,
+ "prompt_sha256": "51ac80b6e62672310139a96464ccc983ad375f80ef8674d713b62d1c5dd224bb",
+ "answer": "I don't know. The retrieved documents don't mention a `GraphRAGCommunityRetriever`, so I can't say what class it is or what base class it extends.\n\nWhat the context does cover:\n\n- The property graph retrievers listed in the guide: \"`LLMSynonymRetriever` - retrieve based on LLM generated keywords/synonyms\" [llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md]. The list is cut off after `TextToCypherRetriever`, so I can't tell whether it includes anything community-related.\n- The knowledge graph retriever API page, which lists only \"KGTableRetriever - KnowledgeGraphRAGRetriever\" [llama_index/docs/api_reference/api_reference/retrievers/knowledge_graph.md].\n\nNeither of these is `GraphRAGCommunityRetriever`, and neither states a base class. To answer this, I'd need the source or API reference page that defines it.",
+ "tokens": {
+  "input": 2850,
+  "output": 323,
+  "thinking": 0,
+  "cache_read": 2484,
+  "cache_creation": 364
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0049384,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4742,
+  "stop_reason": "end_turn",
+  "session_id": "abeebfff-ec1b-4afe-9e02-a43ec2ee0961",
+  "total_cost_usd": 0.0049384,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 364,
+   "cache_read_input_tokens": 2484,
+   "output_tokens": 323,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 364,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 323,
+     "cache_read_input_tokens": 2484,
+     "cache_creation_input_tokens": 364,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 364
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 323,
+    "cacheReadInputTokens": 2484,
+    "cacheCreationInputTokens": 364,
+    "webSearchRequests": 0,
+    "costUSD": 0.0049384,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 364,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved documents don't mention a `GraphRAGCommunityRetriever`, so I can't say what class it is or what base class it extends.\n\nWhat the context does cover:\n\n- The property graph retrievers listed in the guide: \"`LLMSynonymRetriever` - retrieve based on LLM generated keywords/synonyms\" [llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md]. The list is cut off after `TextToCypherRetriever`, so I can't tell whether it includes anything community-related.\n- The knowledge graph retriever API page, which lists only \"KGTableRetriever - KnowledgeGraphRAGRetriever\" [llama_index/docs/api_reference/api_reference/retrievers/knowledge_graph.md].\n\nNeither of these is `GraphRAGCommunityRetriever`, and neither states a base class. To answer this, I'd need the source or API reference page that defines it.",
+  "ttft_ms": 4810,
+  "type": "result",
+  "duration_ms": 4833,
+  "uuid": "0d2ff133-7320-426e-837c-3d58aa55954f",
+  "ttft_stream_ms": 2670,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 2671,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

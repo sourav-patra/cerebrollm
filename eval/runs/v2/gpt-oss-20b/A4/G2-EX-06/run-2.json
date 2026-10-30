@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-EX-06",
+ "run": 2,
+ "started_utc": "2026-10-30T06:17:19Z",
+ "seconds": 18.09,
+ "prompt_sha256": "73d13ac6ff02e02214919a65c00096c3bbbb175a6b1ba07a0839e3675de77daa",
+ "answer": "\"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\" [promptfoo/0.122.0.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "promptfoo/0.122.0.md",
+   "quote": "drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))",
+   "verify": "OK",
+   "detail": "promptfoo/0.122.0.md@file sha256 4098cdaa973b"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 0.75,
+   "rerank": 9.06,
+   "generate": 5.45,
+   "verify": 0.29,
+   "total": 15.56
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 8,
+    "rerank_score": 0.88783,
+    "path": "promptfoo/0.122.0.md",
+    "line_start": 29,
+    "line_end": 31
+   },
+   {
+    "rank": 2,
+    "search_rank": 1,
+    "rerank_score": 0.88203,
+    "path": "promptfoo/site/docs/installation.md",
+    "line_start": 38,
+    "line_end": 71
+   },
+   {
+    "rank": 3,
+    "search_rank": 3,
+    "rerank_score": 0.87022,
+    "path": "promptfoo/0.122.0.md",
+    "line_start": 9,
+    "line_end": 23
+   },
+   {
+    "rank": 4,
+    "search_rank": 18,
+    "rerank_score": 0.58684,
+    "path": "promptfoo/0.125.0.md",
+    "line_start": 60,
+    "line_end": 69
+   },
+   {
+    "rank": 5,
+    "search_rank": 2,
+    "rerank_score": 0.57626,
+    "path": "promptfoo/site/docs/usage/node-package.md",
+    "line_start": 7,
+    "line_end": 26
+   },
+   {
+    "rank": 6,
+    "search_rank": 13,
+    "rerank_score": 0.56384,
+    "path": "promptfoo/site/docs/providers/openai-codex-security.md",
+    "line_start": 19,
+    "line_end": 29
+   },
+   {
+    "rank": 7,
+    "search_rank": 19,
+    "rerank_score": 0.42281,
+    "path": "promptfoo/site/docs/guides/evaluate-crewai.md",
+    "line_start": 104,
+    "line_end": 144
+   },
+   {
+    "rank": 8,
+    "search_rank": 10,
+    "rerank_score": 0.42265,
+    "path": "promptfoo/0.122.0.md",
+    "line_start": 1,
+    "line_end": 6
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

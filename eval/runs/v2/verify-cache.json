@@ -1,0 +1,1266 @@
+{
+ "[\"ollama/v0.34.3.md\", \"GET /api/show now advertises each model's thinking controls and default:\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.3.md@file"
+ },
+ "[\"ollama/v0.35.1.md\", \"Models using web search can now perform up to ten searches per response, up from three\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.1.md@file sha256 22d5f7313fd1"
+ },
+ "[\"ollama/v0.40.8.md\", \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.8.md@file sha256 82e2766f1f70"
+ },
+ "[\"ollama/v0.34.1.md\", \"294 ms cold in testing\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.1.md@file sha256 46fbeb08a704"
+ },
+ "[\"promptfoo/0.122.0.md\", \"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260)) ([26b725b](https://github.com/promptfoo/promptfoo/commit/26b725bd9496351ef269380c9fd83b9c2c338a0e))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.122.0.md@file sha256 4098cdaa973b"
+ },
+ "[\"promptfoo/0.125.0.md\", \"add rouge-l and rouge-s assertion types\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/0.125.0.md\", \"assertions: add rouge-l and rouge-s assertion types\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.125.0.md@file"
+ },
+ "[\"promptfoo/0.125.0.md\", \"**assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Reject inline JavaScript assertions and shared transforms.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+ },
+ "[\"llama_index/v0.14.24.md\", \"use gemini 3.7 Flash by default in lib and docs\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.24.md\", \"feat(google-genai): use gemini 3.7 Flash by default in lib and docs ([#22734](https://github.com/run-llama/llama_index/pull/22734))\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.25.md\", \"Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.25.md@file sha256 2b6667de98e1"
+ },
+ "[\"ollama/v0.32.10.md\", \"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding; set a per-model parameter if an older model repeats itself.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.10.md@file sha256 acb7b246ab7b"
+ },
+ "[\"ollama/docs/capabilities/speech.md\", \"Use the OpenAI-compatible `/v1/audio/speech` endpoint:\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/capabilities/speech.md@file sha256 f1ace9f4033b"
+ },
+ "[\"ollama/v0.40.11.md\", \"apps can stream audio through the OpenAI-compatible `/v1/audio/speech` endpoint.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.11.md@file sha256 a640ebae45ef"
+ },
+ "[\"ollama/docs/capabilities/speech.md\", \"Use the OpenAI-compatible /v1/audio/speech endpoint:\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/capabilities/speech.md@file"
+ },
+ "[\"ollama/v0.40.5.md\", \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.5.md@file sha256 25a26dc01575"
+ },
+ "[\"promptfoo/0.123.0.md\", \"default GPT-5.6+ to Responses\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.123.0.md@file sha256 d61d8fd43e4e"
+ },
+ "[\"promptfoo/0.124.0.md\", \"comma-separated OR values\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.124.0.md@file sha256 2bf16cedc8ea"
+ },
+ "[\"promptfoo/0.124.0.md\", \"cli: support comma-separated OR values in --filter-metadata\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.124.0.md@file"
+ },
+ "[\"llama_index/v0.14.24.md\", \"fix(anthropic): correct Opus 4.6 context window to 1M ([#22555](https://github.com/run-llama/llama_index/pull/22555))\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.24.md\", \"fix(anthropic): correct Opus 4.6 context window to 1M\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.25.md\", \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.25.md@file sha256 2b6667de98e1"
+ },
+ "[\"ollama/v0.32.8.md\", \"Muse Glimmer is now available on all platforms.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.8.md@file sha256 458c8b5f79f6"
+ },
+ "[\"ollama/v0.40.9.md\", \"Flint now runs on Linux and Windows as well as macOS.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.9.md@file"
+ },
+ "[\"ollama/v0.40.13.md\", \"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.13.md@file sha256 0dc33ae41416"
+ },
+ "[\"ollama/v0.34.3.md\", \"GET /api/show\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.3.md@file sha256 60942ac037c7"
+ },
+ "[\"ollama/v0.35.1.md\", \"Models using web search can now perform up to ten searches per response, up from three.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.35.1.md@file"
+ },
+ "[\"ollama/v0.40.8.md\", \"and a **262K\\u2011token context window** support longer tasks across files and tool interactions.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.8.md@file"
+ },
+ "[\"ollama/v0.34.1.md\", \"/api/tags\\\\\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.34.1.md\", \"3.1\\u202fs\\u202f\\u2192\\u202f294\\u202fms cold in testing.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.34.1.md\", \"/api/tags is much faster on large model libraries (3.1\\u202fs\\u202f\\u2192\\u202f294\\u202fms cold in testing), and model capabilities are now reported consistently.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.35.0.md\", \"\\u201ctype\\u201d: \\u201cnoul\\u201d.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.35.0.md@file"
+ },
+ "[\"ollama/v0.35.1.md\", \"instructions\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.1.md@file sha256 22d5f7313fd1"
+ },
+ "[\"ollama/v0.35.1.md\", \"Does this image contain Ollama?\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.1.md@file sha256 22d5f7313fd1"
+ },
+ "[\"ollama/v0.35.1.md\", \"\\\"type\\\": \\\"noul\\\", \\\"instructions\\\": \\\"Does this image contain Ollama?\\\"\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.1.md@file sha256 22d5f7313fd1"
+ },
+ "[\"ollama/v0.35.1.md\", \"[ollama/v0.35.1.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.35.1.md@file"
+ },
+ "[\"ollama/v0.40.4.md\", \"Decision models can now be used directly from the terminal with `ollama run` \\u2014 ask yes/no questions, classify text into labels, or score against a rubric:\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.4.md@file sha256 f6c167b38fd8"
+ },
+ "[\"ollama/v0.40.4.md\", \"\\\"Decision models can now be used directly from the terminal with `ollama run` \\u2014 ask yes/no questions, classify text into labels, or score against a rubric:\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.4.md@file"
+ },
+ "[\"ollama/v0.40.4.md\", \"[ollama/v0.40.4.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.4.md@file"
+ },
+ "[\"promptfoo/0.122.0.md\", \"drop Node.js 20 support\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.122.0.md@file sha256 4098cdaa973b"
+ },
+ "[\"promptfoo/0.122.0.md\", \"\\\"drop Node.js 20 support\\\" [promptfoo/0.122.0.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"promptfoo/0.122.0.md\", \"* drop Node.js 20 support\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.122.0.md@file sha256 4098cdaa973b"
+ },
+ "[\"promptfoo/0.122.0.md\", \"* drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))*\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"promptfoo/0.122.0.md\", \"\\\"* drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))*\\\" [promptfoo/0.122.0.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"promptfoo/0.125.0.md\", \"**assertions:** add rouge-l and rouge-s assertion types\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/0.125.0.md\", \"**assertions:** add rouge\\u2011l and rouge\\u2011s assertion types\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.125.0.md@file"
+ },
+ "[\"promptfoo/0.125.0.md\", \"**assertions:** add rouge\\u2011l and rouge\\u2011s assertion types.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.125.0.md@file"
+ },
+ "[\"promptfoo/0.125.0.md\", \"* **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))*\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.125.0.md@file"
+ },
+ "[\"promptfoo/0.125.0.md\", \"\\\"* **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))*\\\" [promptfoo/0.125.0.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.125.0.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string\\u2011based JavaScript assertions and inline expressions handled by the shared transform helper.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"\\\"Reject inline JavaScript assertions and shared transforms.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"[promptfoo/site/docs/usage/command-line.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"\\\"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string\\u2011based JavaScript assertions and inline expressions handled by the shared transform helper.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"[promptfoo/site/docs/configuration/expected-outputs/javascript.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"Reject string\\u2011based JavaScript assertions and inline expressions handled by the shared transform helper.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"\\\"Reject string\\u2011based JavaScript assertions and inline expressions handled by the shared transform helper.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"llama_index/v0.14.24.md\", \"feat(google-genai): use gemini 3.7 Flash by default in lib and docs.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.24.md@file"
+ },
+ "[\"llama_index/v0.14.24.md\", \"feat(google-genai): use gemini 3.7 Flash by default in lib and docs\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.25.md\", \"Remove deprecated ipex-llm and optimum-intel IPEX integrations.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"llama_index/v0.14.25.md\", \"Remove deprecated **ipex-llm** and **optimum-intel IPEX** integrations\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"ollama/v0.32.10.md\", \"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding;\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.10.md@file sha256 acb7b246ab7b"
+ },
+ "[\"ollama/v0.32.10.md\", \"\\\"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding;\\\" [ollama/v0.32.10.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.10.md@file"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"Use the OpenAI-compatible `/v1/audio/speech` endpoint:\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api/openai-compatibility.md@file"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"Generates audio with [speech models](/capabilities/speech). The response streams while audio is generated.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api/openai-compatibility.md@file sha256 faf1e202e753"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"\\\"Use the OpenAI-compatible `/v1/audio/speech` endpoint:\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api/openai-compatibility.md@file"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"> \\\"Generates audio with [speech models](/capabilities/speech). The response streams while audio is generated.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api/openai-compatibility.md@file"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"> [4] ollama/docs/api/openai-compatibility.md (lines 318\\u2011335)\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api/openai-compatibility.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"`ollama run` plays text or a chat model\\u2019s reply aloud as the audio is generated, and apps can stream audio through the OpenAI\\u2011compatible `/v1/audio/speech` endpoint.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.11.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"\\u201c`ollama run` plays text or a chat model\\u2019s reply aloud as the audio is generated, and apps can stream audio through the OpenAI\\u2011compatible `/v1/audio/speech` endpoint.\\u201d\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.11.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"[ollama/v0.40.11.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.11.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"\\\"apps can stream audio through the OpenAI-compatible `/v1/audio/speech` endpoint.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.11.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"[1] ollama/v0.40.11.md (lines 1\\u201112)\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.11.md@file"
+ },
+ "[\"ollama/v0.40.5.md\", \"distills Super down to 74B parameters (9B active) tuned to fit a 24\\u202fGB NVIDIA GPU for everyday agentic tasks\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.5.md@file sha256 25a26dc01575"
+ },
+ "[\"ollama/v0.40.5.md\", \"Nemotron 3.5 Bolt, distills Super down to 74B parameters (9B active) tuned to fit a 24\\u202fGB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.5.md@file"
+ },
+ "[\"promptfoo/0.123.0.md\", \"**providers:** default GPT\\u20115.6+ to Responses\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"These IDs default to Responses.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"\\\"These IDs default to Responses.\\\" [promptfoo/site/docs/providers/openai.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/providers/openai.md@file"
+ },
+ "[\"promptfoo/0.123.0.md\", \"* **providers:** default GPT\\u20115.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))*\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/0.123.0.md\", \"default to Responses\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"For GPT\\u20115.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/providers/openai.md@file"
+ },
+ "[\"promptfoo/0.123.0.md\", \"\\\"* **providers:** default GPT\\u20115.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))*\\\" [promptfoo/0.123.0.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"\\u201cFor GPT\\u20115.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\\u201d [promptfoo/site/docs/providers/openai.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/providers/openai.md@file"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"\\\"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/providers/openai.md@file"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"[promptfoo/site/docs/providers/openai.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/providers/openai.md@file"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Comma\\u2011separated OR values in `--filter\\u2011metadata`.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+ },
+ "[\"promptfoo/0.124.0.md\", \"support comma-separated OR values in --filter-metadata\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.124.0.md@file sha256 2bf16cedc8ea"
+ },
+ "[\"llama_index/v0.14.24.md\", \"fix(anthropic): correct Opus 4.6 context window to 1M.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.24.md@file"
+ },
+ "[\"llama_index/v0.14.25.md\", \"feat(core): add native async support to StructuredLLMRerank\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.25.md@file sha256 2b6667de98e1"
+ },
+ "[\"llama_index/v0.14.25.md\", \"\\\"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"llama_index/v0.14.25.md\", \"[1] llama_index/v0.14.25.md\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"llama_index/v0.14.25.md\", \"feat(core): add native async support to StructuredLLMRerank.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"Muse Glimmer is now available on **all platforms**.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"Ollama\\u2019s MLX engine provides state\\u2011of\\u2011the\\u2011art performance on **Apple\\u202fSilicon** for this model.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"Add Muse Glimmer support for **NVIDIA, AMD, and additional platforms**.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.7.md\", \"Muse Glimmer is currently available via initial support via Ollama\\u2019s MLX engine on **Apple\\u202fSilicon**.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.7.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"all platforms\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.8.md@file sha256 458c8b5f79f6"
+ },
+ "[\"ollama/v0.32.8.md\", \"Add Muse Glimmer support for NVIDIA, AMD, and additional platforms.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.7.md\", \"Note: Muse Glimmer is currently available via initial support via Ollama's MLX engine on Apple Silicon.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.7.md@file sha256 5ce79b5a83b5"
+ },
+ "[\"ollama/v0.32.8.md\", \"\\u201cMuse Glimmer is now available on all platforms.\\u201d [ollama/v0.32.8.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"\\u201cAdd Muse Glimmer support for NVIDIA, AMD, and additional platforms.\\u201d [ollama/v0.32.8.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"\\u201cNote: Muse Glimmer is currently available via initial support via Ollama's MLX engine on Apple Silicon.\\u201d [ollama/v0.32.7.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.8.md@file"
+ },
+ "[\"ollama/v0.32.7.md\", \"Note: Muse Glimmer is currently available via initial support via Ollama\\u2019s MLX engine on Apple\\u202fSilicon. Additional support and optimizations for Apple\\u202fSilicon, NVIDIA, AMD, and other platforms will be available in the coming days.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.7.md@file"
+ },
+ "[\"ollama/v0.32.7.md\", \"Note: Muse Glimmer is currently available via initial support via Ollama's MLX engine on Apple Silicon. Additional support and optimizations for Apple Silicon, NVIDIA, AMD, and other platforms will be available in the coming days.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.7.md@file sha256 5ce79b5a83b5"
+ },
+ "[\"ollama/v0.40.8.md\", \"Note: Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.8.md@file sha256 82e2766f1f70"
+ },
+ "[\"ollama/v0.40.13.md\", \"Liquid AI's LFM3 models, including text\\u2011to\\u2011speech in lfm3\\u2011audio and lfm3\\u2011omni, now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.13.md@file"
+ },
+ "[\"ollama/v0.40.13.md\", \"Liquid AI's LFM3 models, including text-to-speech in lfm3\\u2011audio and lfm3\\u2011omni, now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.13.md@file"
+ },
+ "[\"ollama/v0.40.13.md\", \"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text\\u2011to\\u2011speech in [lfm3\\u2011audio](https://ollama.com/library/lfm3\\u2011audio) and [lfm3\\u2011omni](https://ollama.com/library/lfm3\\u2011omni), now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.13.md@file"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"\\\"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"[pgvector/CHANGELOG.md (lines\\u202f102\\u2011116)]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"If upgrading with Postgres\\u202f12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"\\u201cIf upgrading with Postgres\\u202f12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\\u201d\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"[pgvector/CHANGELOG.md (lines 102\\u2011116)]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/README.md\", \"Each bit vector takes `dimensions / 8 + 8` bytes of storage.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"ollama/docs/faq.md\", \"By default models are kept in memory for 5 minutes before being unloaded.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"The quantization type for the K/V cache. Default is `f16`.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/api.md\", \"\\\"Parameters\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api.md@file"
+ },
+ "[\"ollama/docs/api.md\", \"- `model`: name of the model to pull\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+ },
+ "[\"ollama/docs/api.md\", \"- `insecure`: (optional) allow insecure connections to the library. Only use this if you are pulling from your own library during development.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+ },
+ "[\"ollama/docs/api.md\", \"- `stream`: (optional) if `false` the response will be returned as a single response object, rather than a stream of objects\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api.md@file"
+ },
+ "[\"ollama/docs/api.md\", \"[ollama/docs/api.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md\", \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md@file sha256 2d66879a7aee"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md\", \"\\u201cThe `run` method of `IngestionPipeline` can be executed with parallel processes.\\u201d\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md\", \"[llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Retries `callApi()` with 1\\u2011second base backoff, up to **3 times by default**.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"\\\"Retries `callApi()` with 1\\u2011second base backoff, up to **3 times by default**.\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"[promptfoo/site/docs/configuration/rate-limits.md]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"\\u201cRetries `callApi()` with 1\\u2011second base backoff, up to **3 times by default**.\\u201d\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Defaults to 4 retries, or the provider's maxRetries when set.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/deterministic.md\", \"BLEU (Bilingual Evaluation Understudy) is a precision-oriented metric originally designed for evaluating machine translation.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/deterministic.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number;\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"promptfoo export eval <evalId>\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Export an eval record to JSON format.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/outputs.md\", \"Full eval data for XML-only consumers:\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/outputs.md@file sha256 e23926d6a6f5"
+ },
+ "[\"ollama/v0.34.3.md\", \"GET /api/show now advertises each model's thinking controls and default.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.3.md@file"
+ },
+ "[\"ollama/v0.34.3.md\", \"glm-5.3-flash:cloud\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.3.md@file sha256 60942ac037c7"
+ },
+ "[\"ollama/v0.34.3.md\", \"thinking\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.3.md@file sha256 60942ac037c7"
+ },
+ "[\"github.com/ollama/ollama/releases/tag/v0.34.3\", \"ollama/v0.34.3.md (lines 1-41)\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/ollama/ollama/releases/tag/v0.34.3"
+ },
+ "[\"ollama/v0.34.1.md\", \"Runaway repeat token detection now requires 100 repeat tokens for reduced false positives (e.g. OCR); `/api/tags` is much faster on large model libraries (3.1 s \\u2192 294 ms cold in testing), and model capabilities are now reported consistently.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.34.1.md\", \"* `/api/tags` is much faster on large model libraries (3.1 s \\u2192 294 ms cold in testing), and model capabilities are now reported consistently.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.1.md@file sha256 46fbeb08a704"
+ },
+ "[\"ollama/v0.34.1.md\", \"Run `/api/tags` is much faster on large model libraries (3.1 s \\u2192 294 ms cold in testing), and model capabilities are now reported consistently.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.34.1.md\", \"*`/api/tags` is much faster on large model libraries (3.1 s \\u2192 294 ms cold in testing), and model capabilities are now reported consistently.*\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.34.1.md\", \"\\\"*`/api/tags` is much faster on large model libraries (3.1 s \\u2192 294 ms cold in testing), and model capabilities are now reported consistently.*\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.34.1.md@file"
+ },
+ "[\"ollama/v0.35.0.md\", \"Does this ticket need attention within the hour?\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.35.0.md@file"
+ },
+ "[\"ollama/v0.35.0.md\", \"instructions\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.0.md@file sha256 33b41250cacb"
+ },
+ "[\"ollama/v0.35.0.md\", \"is explicitly mentioned, and\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.35.0.md@file"
+ },
+ "[\"ollama/v0.35.0.md\", \"questions\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.0.md@file sha256 33b41250cacb"
+ },
+ "[\"github.com/ollama/ollama/releases/tag/v0.35.0\", \"has_ollama\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/ollama/ollama/releases/tag/v0.35.0"
+ },
+ "[\"promptfoo/0.122.0.md\", \"BREAKING CHANGES,\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"promptfoo/0.122.0.md\", \"BREAKING CHANGES\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.122.0.md@file sha256 4098cdaa973b"
+ },
+ "[\"promptfoo/0.122.0.md\", \"\\u26a0 BREAKING CHANGES: drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"promptfoo/0.122.0.md\", \"*drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260)) ([26b725b](https://github.com/promptfoo/promptfoo/commit/26b725bd9496351ef269380c9fd83b9c2c338a0e))*\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"promptfoo/0.122.0.md\", \"*\\u26a0 BREAKING CHANGES: drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))*\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.122.0.md@file"
+ },
+ "[\"github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0\", \"[0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > Miscellaneous Chores\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0"
+ },
+ "[\"github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0\", \"drop Node.js 20 support\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0"
+ },
+ "[\"github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0\", \"[0.122.0](https://github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0) (2026-08-04) > \\u26a0 BREAKING CHANGES\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/promptfoo/promptfoo/compare/0.121.20...0.122.0"
+ },
+ "[\"promptfoo/0.125.0.md\", \"add provider-only environment overrides\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/0.125.0.md\", \"[#11889](https://github.com/promptfoo/promptfoo/issues/11889)) ([2eed6e1](https://github.com/promptfoo/promptfoo/commit/2eed6e176eb8a07c43eb57de5c2c4d3d621fd9d2))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/0.125.0.md\", \"[#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/0.125.0.md\", \"add rouge-l and rouge-s assertion types.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.125.0.md@file"
+ },
+ "[\"github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0\", \"promptfoo/0.125.0.md (lines 14-25)\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0"
+ },
+ "[\"promptfoo/0.125.0.md\", \"**assertions:** filter trace spans by attributes ([#10648](https://github.com/promptfoo/promptfoo/issues/10648)) ([faf08b4](https://github.com/promptfoo/promptfoo/commit/faf08b45e17675a89b42c016589eae848964bb2c))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.125.0.md@file sha256 a1eb86adcb9d"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Command line\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"Config settings cannot disable a guard enabled by the CLI flag or process environment.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \":::warning Limited execution guard This option is not a sandbox and does not make untrusted configurations safe to run.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+ },
+ "[\"llama_index/v0.14.24.md\", \"llama-index-llms-google-genai\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.24.md\", \"gemini 3.7 Flash\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.24.md@file sha256 b4c638fe50ad"
+ },
+ "[\"llama_index/v0.14.24.md\", \"llama_index/v0.14.24.md (lines 69-73) > Release Notes > [2026-08-19] > llama-index-llms-google-genai [0.10.0]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.24.md@file"
+ },
+ "[\"llama_index/v0.14.24.md\", \"gemini 3.7 Flash.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.24.md@file"
+ },
+ "[\"llama_index/v0.14.25.md\", \"ipex-llm\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.25.md@file sha256 2b6667de98e1"
+ },
+ "[\"llama_index/v0.14.25.md\", \"optimum-intel IPEX\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/v0.14.25.md@file sha256 2b6667de98e1"
+ },
+ "[\"llama_index/v0.14.25.md\", \"llama_index/v0.14.25.md (lines 58-66) > Release Notes > [2026-09-21] > llama-index-core [0.14.25]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"ollama/v0.32.10.md\", \"[1] ollama/v0.32.10.md\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.10.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"Ollama can now generate [speech](https://docs.ollama.com/capabilities/speech) on macOS. `ollama run` plays text or a chat model's reply aloud as the audio is generated, and apps can stream audio through the OpenAI-compatible `/v1/audio/speech` endpoint.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.11.md@file sha256 a640ebae45ef"
+ },
+ "[\"ollama/docs/capabilities/speech.md\", \"Use the OpenAI-compatible `/v1/audio/speech` endpoint.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/capabilities/speech.md@file"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"Note: Added in Ollama v0.40.8\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api/openai-compatibility.md@file sha256 faf1e202e753"
+ },
+ "[\"ollama/docs/capabilities/speech.md\", \"and apps can stream audio through the OpenAI-compatible `/v1/audio/speech` endpoint.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/capabilities/speech.md@file"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"/`v1/audio/speech` - Generates audio with speech models. The response streams while audio is generated.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/api/openai-compatibility.md@file"
+ },
+ "[\"ollama.com/library/nemotron-3.5\", \"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: ollama.com/library/nemotron-3.5"
+ },
+ "[\"ollama.com/library/nemotron-3.5\", \"120B-parameter hybrid Mamba-2/Transformer mixture-of-experts backbone\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: ollama.com/library/nemotron-3.5"
+ },
+ "[\"ollama.com/library/nemotron-3.5\", \"compact sibling, Nemotron 3.5 Bolt, distills Super down to 74B parameters (9B active),\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: ollama.com/library/nemotron-3.5"
+ },
+ "[\"promptfoo/0.123.0.md\", \"For GPT-5.6 and newer models, use `openai:<model>`, such as `openai:gpt-6-luna`. These IDs default to Responses.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/0.123.0.md\", \"default GPT-5.6+ to Responses.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/0.123.0.md\", \"**providers:** default GPT-5.6+ to Responses ([#10803](https://github.com/promptfoo/promptfoo/issues/10803))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.123.0.md@file sha256 d61d8fd43e4e"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"Responses supports text, image and file inputs, built-in tools, and response state. GPT-5.6 and newer models use it by default\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"GPT-5.6 and newer models use it by default\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/0.123.0.md\", \"providers: default GPT-5.6+ to Responses.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.123.0.md@file"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"Responses supports text, image and file inputs, built-in tools, and response state. GPT-5.6 and newer models use it by default:\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/0.124.0.md\", \"Features\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.124.0.md@file sha256 2bf16cedc8ea"
+ },
+ "[\"promptfoo/0.124.0.md\", \"Features: **cli:** support comma-separated OR values in --filter-metadata ([#11320](https://github.com/promptfoo/promptfoo/issues/11320)) ([b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c))\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.124.0.md@file"
+ },
+ "[\"promptfoo/0.124.0.md\", \"`--filter-metadata <key=value>`: Filter tests by metadata substring. Commas separate OR values (`\\\\,` is a comma); repeated flags use AND.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/0.124.0.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"Set context window for claude 4 sonnet to 1 mln tokens\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/docs/src/content/docs/framework/CHANGELOG.md@file sha256 030d5e16f263"
+ },
+ "[\"llama_index/v0.14.24.md\", \"llama_index/v0.14.24.md (lines 55-60)\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.24.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md\", \"llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3610-3617)\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/CHANGELOG.md@file"
+ },
+ "[\"llama_index/v0.14.25.md\", \"reranker class\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/v0.14.25.md@file"
+ },
+ "[\"ollama/v0.32.8.md\", \"Add Muse Glimmer support for NVIDIA, AMD, and additional platforms\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.8.md@file sha256 458c8b5f79f6"
+ },
+ "[\"ollama/v0.40.8.md\", \"Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.8.md@file sha256 82e2766f1f70"
+ },
+ "[\"Ollama/v0.40.13.md\", \"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: Ollama/v0.40.13.md"
+ },
+ "[\"ollama/v0.40.13.md\", \"**Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.13.md@file"
+ },
+ "[\"ollama/v0.40.13.md\", \"**LFM3 on Linux and Windows**: Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.13.md@file"
+ },
+ "[\"github.com/ollama/ollama/releases/tag/v0.40.13\", \"ollama/v0.40.13.md (lines 1-11)\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/ollama/ollama/releases/tag/v0.40.13"
+ },
+ "[\"ollama/v0.40.13.md\", \"**Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.**\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.40.13.md@file"
+ },
+ "[\"github.com/pgvector/pgvector/blob/master/CHANGELOG.md\", \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/pgvector/pgvector/blob/master/CHANGELOG.md"
+ },
+ "[\"github.com/pgvector/pgvector/blob/master/CHANGELOG.md\", \"Added support for parallel index builds for HNSW\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/pgvector/pgvector/blob/master/CHANGELOG.md"
+ },
+ "[\"github.com/pgvector/pgvector/blob/master/CHANGELOG.md\", \"Fixed error with logical replication\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: github.com/pgvector/pgvector/blob/master/CHANGELOG.md"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"[1] pgvector/CHANGELOG.md (lines 102-116) > 0.6.0 (2024-01-29)\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"0.8.0 (2023-07-09)\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"Added support for `pg_upgrade` to carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/README.md\", \"type. The context provided mentions a\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/README.md@file"
+ },
+ "[\"pgvector/README.md\", \"type, but it does not specify any maximum number of dimensions for it. The relevant excerpt states,\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/README.md@file"
+ },
+ "[\"www.postgresql.org/docs/current/datatype-bit.html\", \"type. The context provided does mention storage details for the\"]": {
+  "exit": 1,
+  "stdout": "GONE  source not found: www.postgresql.org/docs/current/datatype-bit.html"
+ },
+ "[\"pgvector/README.md\", \"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the [Postgres docs](https://www.postgresql.org/docs/current/datatype-bit.html) for more info.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"ollama/docs/faq.md\", \"By default, Ollama uses a context window size of 4096 tokens.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"Ollama binds 127.0.0.1 port 11434 by default.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"If you want to immediately unload a model from memory, use the `ollama stop` command:\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"The `keep_alive` parameter can be set to [...] any negative number which will keep the model loaded in memory (e.g. -1 or \\\\\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+ },
+ "[\"ollama/docs/faq.md\", \"\\\"If you want to immediately unload a model from memory, use the `ollama stop` command:\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+ },
+ "[\"ollama/docs/faq.md\", \"\\\"The `keep_alive` parameter can be set to [...] any negative number which will keep the model loaded in memory (e.g. -1 or \\\\\\\"-1m\\\\\\\")\\\"\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+ },
+ "[\"ollama/docs/faq.md\", \"keep_alive\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"To use quantized K/V cache with Ollama you can set the following environment variable: - `OLLAMA_KV_CACHE_TYPE`\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"The `keep_alive` parameter can be set to: a duration string (such as\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/docs/faq.md@file"
+ },
+ "[\"ollama/docs/faq.md\", \") - a number in seconds (such as 3600) - any negative number which will keep the model loaded in memory (e.g. -1 or\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \") - '0' which will unload the model immediately after generating a response\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"How can I set the quantization type for the K/V cache?\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/faq.md\", \"How do I keep a model loaded in memory or make it unload immediately?\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts.\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file sha256 e8f51b9726bb"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts. ```python from llama_index.core.node_parser import TokenTextSplitter splitter = TokenTextSplitter(chunk_size=1024, chunk_overlap=20, separator=\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \",) nodes = splitter.get_nodes_from_documents(documents) ```\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md\", \"The `run` method of `IngestionPipeline` can be executed with parallel processes. It does so by making use of `multiprocessing.Pool` distributing batches of nodes across processors.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Backoff Configuration\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/rate-limits.md@file sha256 12dbe4937dde"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Provider-level retry\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/rate-limits.md@file sha256 12dbe4937dde"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"HTTP-level retry\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/rate-limits.md@file sha256 12dbe4937dde"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Retry Errors\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"EvaluateOptions is an object that includes options for how the evaluation should be performed. It includes the maximum concurrency for API calls, whether to show a progress bar, a callback for progress updates, the number of times to repeat each test, and a delay between tests.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"EvaluateOptions,\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"[1] promptfoo/site/docs/configuration/reference.md (lines 1121-1149) > Reference > Evaluation inputs > EvaluateOptions\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/reference.md@file"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Export an eval record to JSON format. To export the most recent, use `latest`.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/outputs.md\", \"Full eval data for XML-only consumers: `promptfoo eval --output results.xml`\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/outputs.md@file"
+ },
+ "[\"ollama/v0.34.3.md\", \"`GET /api/show` now advertises each model's thinking controls and default:\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.3.md@file sha256 60942ac037c7"
+ },
+ "[\"ollama/docs/capabilities/thinking.md\", \"`default` is used when `think` is not set.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/capabilities/thinking.md@file sha256 8bcd3b59f17c"
+ },
+ "[\"ollama/v0.34.3.md\", \"`GET /api/show` now advertises each model's thinking controls and default\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.3.md@file sha256 60942ac037c7"
+ },
+ "[\"ollama/docs/capabilities/thinking.md\", \"Use `/api/show` to discover the values a model supports and the value Ollama uses by default\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/capabilities/thinking.md@file sha256 8bcd3b59f17c"
+ },
+ "[\"ollama/docs/integrations/chatgpt.md\", \"Web search uses Ollama's web-search service when you use an Ollama model. It requires Ollama sign-in and is limited to three calls per response.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/integrations/chatgpt.md@file sha256 fc09c04c839e"
+ },
+ "[\"ollama/docs/integrations/chatgpt.md\", \"limited to three calls per response\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/integrations/chatgpt.md@file sha256 fc09c04c839e"
+ },
+ "[\"ollama/docs/context-length.md\", \"Tasks which require large context like web search, agents, and coding tools should be set to at least 64000 tokens.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/context-length.md@file sha256 8414ca2ad9c6"
+ },
+ "[\"ollama/v0.34.1.md\", \"`/api/tags` is much faster on large model libraries (3.1 s \\u2192 294 ms cold in testing), and model capabilities are now reported consistently.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.34.1.md@file sha256 46fbeb08a704"
+ },
+ "[\"ollama/v0.35.1.md\", \"has_ollama\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.35.1.md@file sha256 22d5f7313fd1"
+ },
+ "[\"ollama/v0.40.4.md\", \"ask yes/no questions, classify text into labels, or score against a rubric\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.4.md@file sha256 f6c167b38fd8"
+ },
+ "[\"promptfoo/site/docs/installation.md\", \"Promptfoo requires Node.js `22.22.0` or newer. Node.js 24 LTS is recommended.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/installation.md@file sha256 043a42e479b9"
+ },
+ "[\"promptfoo/0.122.0.md\", \"drop Node.js 20 support ([#10260](https://github.com/promptfoo/promptfoo/issues/10260))\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.122.0.md@file sha256 4098cdaa973b"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"Rejected assertions fail with an explanatory reason; rejected transforms produce an error.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"JavaScript function values passed through the Node API remain supported.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"This option is not a sandbox and does not make untrusted configurations safe to run.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"File callbacks, programmatic functions, executable providers, config modules, [...]\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/javascript.md\", \"rejected assertions fail with an explanatory reason; rejected transforms produce an error.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/expected-outputs/javascript.md@file"
+ },
+ "[\"ollama/v0.40.11.md\", \"on macOS.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.11.md@file sha256 a640ebae45ef"
+ },
+ "[\"ollama/docs/api/openai-compatibility.md\", \"The response streams while audio is generated.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api/openai-compatibility.md@file sha256 faf1e202e753"
+ },
+ "[\"promptfoo/0.123.0.md\", \"**providers:** default GPT-5.6+ to Responses\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/0.123.0.md@file sha256 d61d8fd43e4e"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"Use `openai:chat:<model>` or `openai:responses:<model>` to select the endpoint explicitly, including for a compatible gateway.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/site/docs/providers/openai.md\", \"Use `openai:chat:<model>` or `openai:responses:<model>` to select the endpoint explicitly\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/providers/openai.md@file sha256 fd87b7a82d4f"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Filter tests by metadata substring. Commas separate OR values (`\\\\,` is a comma); repeated flags use AND.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"Multiple filters are combined with AND logic\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Commas separate OR values (`\\\\,` is a comma); repeated flags use AND.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"ollama/v0.32.7.md\", \"Muse Glimmer is currently available via initial support via Ollama's MLX engine on Apple Silicon.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.32.7.md@file sha256 5ce79b5a83b5"
+ },
+ "[\"ollama/v0.32.7.md\", \"additional platforms.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in ollama/v0.32.7.md@file"
+ },
+ "[\"ollama/v0.40.9.md\", \"[Flint](https://ollama.com/library/flint) now runs on Linux and Windows as well as macOS.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.9.md@file sha256 397d21ccd517"
+ },
+ "[\"ollama/v0.40.12.md\", \"Note: lfm3 and d1 2b are supported on Apple hardware in this release. Support for Linux/Windows coming soon.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/v0.40.12.md@file sha256 8a9b70640158"
+ },
+ "[\"pgvector/README.md\", \"Specify the max number of tuples to visit (20,000 by default)\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"Specify the max amount of memory to use, as a multiple of `work_mem` (1 by default)\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"Added support for parallel index builds for HNSW\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+ },
+ "[\"pgvector/README.md\", \"ALTER EXTENSION vector UPDATE;\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"Then in each database you want to upgrade, run:\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"If upgrading with Postgres 12 or Docker, see these notes.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/CHANGELOG.md@file"
+ },
+ "[\"pgvector/README.md\", \"type. pgvector's type is called `bit`, and the retrieved text only gives its storage size:\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in pgvector/README.md@file"
+ },
+ "[\"pgvector/README.md\", \"You can use [half-precision vectors](#half-precision-vectors) or [half-precision indexing](#half-precision-indexing) to index up to 4,000 dimensions or [binary quantization](#binary-quantization) to index up to 64,000 dimensions.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"Vectors can have up to 16,000 dimensions.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"to index up to 64,000 dimensions\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/README.md\", \"[binary quantization](#binary-quantization) to index up to 64,000 dimensions.\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"Fixed error with logical replication\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+ },
+ "[\"pgvector/CHANGELOG.md\", \"Reduced WAL generation for HNSW index builds\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/CHANGELOG.md@file sha256 21ac5ec19697"
+ },
+ "[\"pgvector/README.md\", \"with [replicas](https://www.postgresql.org/docs/current/hot-standby.html)\"]": {
+  "exit": 0,
+  "stdout": "OK  pgvector/README.md@file sha256 19cebadeeb8d"
+ },
+ "[\"ollama/docs/api.md\", \"The number of files to be downloaded depends on the number of layers specified in the manifest.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+ },
+ "[\"ollama/docs/faq.md\", \"`OLLAMA_KV_CACHE_TYPE` - The quantization type for the K/V cache. Default is `f16`.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/faq.md@file sha256 e3630684676a"
+ },
+ "[\"ollama/docs/cli.md\", \"ollama pull gemma4\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/cli.md@file sha256 4bd727366845"
+ },
+ "[\"ollama/docs/api.md\", \"`model`: name of the model to pull\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+ },
+ "[\"ollama/docs/api.md\", \"Cancelled pulls are resumed from where they left off, and multiple calls will share the same download progress.\"]": {
+  "exit": 0,
+  "stdout": "OK  ollama/docs/api.md@file sha256 96db03080e38"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"splitter = TokenTextSplitter(chunk_size=1024, chunk_overlap=20, separator=\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md\", \"separator=\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md@file sha256 e8f51b9726bb"
+ },
+ "[\"llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md\", \"`LLMSynonymRetriever` - retrieve based on LLM generated keywords/synonyms\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/docs/src/content/docs/framework/module_guides/indexing/lpg_index_guide.md@file sha256 e87d085abb3b"
+ },
+ "[\"llama_index/docs/api_reference/api_reference/retrievers/knowledge_graph.md\", \"KGTableRetriever - KnowledgeGraphRAGRetriever\"]": {
+  "exit": 0,
+  "stdout": "OK  llama_index/docs/api_reference/api_reference/retrievers/knowledge_graph.md@file sha256 faa3ed4fd204"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Retries `callApi()` with 1-second base backoff, up to 3 times by default.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/rate-limits.md@file sha256 12dbe4937dde"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Defaults to 4 retries, or the provider's `maxRetries` when set.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/rate-limits.md@file sha256 12dbe4937dde"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"promptfoo eval --retry-errors      # retries all ERROR results from the latest eval\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"Provider-level retry (scheduler): Retries `callApi()` with 1-second base backoff, up to 3 times by default.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/rate-limits.md\", \"HTTP-level retry: Retries failed HTTP requests. Defaults to 4 retries, or the provider's `maxRetries` when set.\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/configuration/rate-limits.md@file"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"`promptfoo eval --retry-errors` # retries all ERROR results from the latest eval\"]": {
+  "exit": 1,
+  "stdout": "MISSING  quote not found in promptfoo/site/docs/usage/command-line.md@file"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/deterministic.md\", \"BLEU (Bilingual Evaluation Understudy) is a **precision-oriented** metric originally designed for evaluating machine translation.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/deterministic.md@file sha256 eaa5ab38fe28"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/deterministic.md\", \"METEOR can evaluate against multiple reference texts, using the best-matching reference for scoring:\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/deterministic.md@file sha256 eaa5ab38fe28"
+ },
+ "[\"promptfoo/site/docs/configuration/expected-outputs/deterministic.md\", \"a **precision-oriented** metric originally designed for evaluating machine translation\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/expected-outputs/deterministic.md@file sha256 eaa5ab38fe28"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"Truncate console table cells to this length\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"maxConcurrency?: number;\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"`--table-cell-max-length <number>`\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/reference.md\", \"interface EvaluateOptions { cache?: boolean; delay?: number; generateSuggestions?: boolean; suggestionsCount?: number;\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/reference.md@file sha256 e8dcbe1799bb"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"`--table-cell-max-length <number>` | Truncate console table cells to this length\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"`-o, --output <filepath>` | File to write. Writes to stdout by default.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/outputs.md\", \"promptfoo eval --output results.xml\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/outputs.md@file sha256 e23926d6a6f5"
+ },
+ "[\"promptfoo/site/docs/usage/command-line.md\", \"File to write. Writes to stdout by default.\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/usage/command-line.md@file sha256 718c79bae47c"
+ },
+ "[\"promptfoo/site/docs/configuration/outputs.md\", \"Full eval data for XML-only consumers\"]": {
+  "exit": 0,
+  "stdout": "OK  promptfoo/site/docs/configuration/outputs.md@file sha256 e23926d6a6f5"
+ }
+}

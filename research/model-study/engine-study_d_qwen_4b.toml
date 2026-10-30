@@ -1,0 +1,165 @@
+# cerebrollm configuration: one domain, its roots, tier and status rules, exclusions.
+# Rules are evaluated in order; the first match wins. Globs use pathlib full_match
+# semantics on the path relative to the root (case-sensitive, "**" spans directories).
+
+domain = "org"
+state_dir = "$HOME/.cerebrollm"
+supersession_default_year = 2026   # for date tokens written without a year, e.g. "18-oct"
+
+[postgres]
+socket_dir = "$HOME/.cerebrollm/pg16/sock"
+port = 54329
+database = "rag_local"
+user = "cerebrollm"
+table = "study_d_qwen_4b"
+embed_dim = 1024
+text_search_config = "english"
+
+[ollama]
+base_url = "http://127.0.0.1:11434"
+model = "qwen3-embedding:4b"
+
+[chunking]
+chunk_size = 800        # tokens, LlamaIndex SentenceSplitter, applied to each Markdown section
+chunk_overlap = 60
+min_chunk_chars = 200   # a section shorter than this is merged into the section before it
+
+[search]
+synonyms_enabled = false   # off by default: on 26 Oct the one measured effect was a lexical rank drop (1 to 9); --synonyms turns it on for an ablation
+default_k = 8
+default_mode = "hybrid"
+fetch_factor = 5        # candidates fetched per arm = k * fetch_factor (at least 40)
+token_budget = 2000     # whole printed output, estimated at 4 characters per token
+
+[search.tier_boost]     # multiplied into the fused score
+T1 = 1.30
+T2 = 1.15
+T3 = 1.00
+T4 = 0.85
+
+[search.recency]        # multiplied into the fused score after the tier boost (not with --all-status)
+weight = 0.005         # extra multiplier for a document dated now; at most 0.5 %, below the
+                       # step between adjacent hybrid ranks (about 0.5 to 0.8 % near the top),
+                       # so it reorders near-ties and does not reverse a clearly better match
+half_life_days = 30    # the extra halves for every 30 days of age (commit date or file date)
+
+# Synonyms for the lexical arm only. The query gains the other side's words as OR alternatives:
+# an abbreviation in the query adds its phrase, a phrase in the query adds its abbreviation.
+[synonyms]
+PR = "pull request"
+CI = "continuous integration"
+RC = "release candidate"
+LLD = "low level design"
+TRD = "technical requirements"
+PRD = "product requirements"
+
+# Roots. kind "dir" is read from disk (ref "file"); kind "git" is read with git show/ls-tree.
+[[root]]
+name = "notes"
+kind = "dir"
+path = "$HOME/cerebrollm-corpus"
+ref = "file"
+
+# Project slug for a top-level notes-store folder (others: lower-cased folder name).
+[project_names]
+"Project A" = "example"
+
+# Never index. Directory rules look at every directory component of the relative path.
+[never]
+dirs = ["evidence", "runs", "run", "logs", "archive", ".obsidian"]
+dir_prefixes = ["scratch", "stage", "sim"]
+file_prefixes = ["GOLDEN-"]   # the golden question set is held out from the index
+# Relative path prefixes, checked before any file is read: the evaluation's plan, task briefs and eval set.
+path_prefixes = ["research/"]
+suffixes = [".log", ".json", ".jsonl", ".patch", ".map", ".lock", ".sha256"]
+
+# Tier rules. status "locked" | "current" | "draft".
+[[rule]]
+root = "example-repo"
+glob = "docs/specs/**/*.md"
+tier = "T1"
+status = "locked"
+
+[[rule]]
+root = "notes"
+glob = "Project A/locked/**/*.md"
+tier = "T1"
+status = "locked"
+
+[[rule]]
+root = "notes"
+glob = "shared/ADR-*.md"
+tier = "T1"
+status = "locked"
+
+[[rule]]
+root = "notes"
+glob = "shared/POLICY-*.md"
+tier = "T1"
+status = "locked"
+
+[[rule]]
+root = "notes"
+glob = "shared/PRINCIPLES-locked.md"
+tier = "T1"
+status = "locked"
+
+[[rule]]
+root = "notes"
+glob = "Project A/drafts/**/*.md"
+tier = "T4"
+status = "draft"
+
+[[rule]]
+root = "notes"
+glob = "shared/drafts/**/*.md"
+tier = "T4"
+status = "draft"
+
+[[rule]]
+root = "notes"
+glob = "Project A/notes/*.md"
+tier = "T2"
+status = "current"
+
+[[rule]]
+root = "notes"
+glob = "Project A/journal/JOURNAL*.md"
+tier = "T2"
+status = "current"
+
+[[rule]]
+root = "notes"
+glob = "Project A/journal/STATUS*.md"
+tier = "T2"
+status = "current"
+
+[[rule]]
+root = "notes"
+glob = "*/INDEX.md"
+tier = "T2"
+status = "current"
+
+[[rule]]
+root = "notes"
+glob = "shared/*.md"
+tier = "T2"
+status = "current"
+
+[[rule]]
+root = "example-repo"
+glob = "README.md"
+tier = "T3"
+status = "current"
+
+[[rule]]
+root = "example-repo"
+glob = "AGENTS.md"
+tier = "T3"
+status = "current"
+
+[[rule]]
+root = "example-repo"
+glob = "docs/**/*.md"
+tier = "T3"
+status = "current"

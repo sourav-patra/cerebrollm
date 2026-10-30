@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-01",
+ "run": 5,
+ "started_utc": "2026-10-29T17:45:51Z",
+ "seconds": 5.93,
+ "prompt_sha256": "8d36acc17d80b55b637bc1eb276b47450f693cfc08efce7585ec3adf0f9b16dc",
+ "answer": "I do not know the default value of `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. The provided context does not mention this specific configuration option. The closest related options discussed are `hnsw.max_scan_tuples`, `hnsw.scan_mem_multiplier`, and others, but no mention of `hnsw.max_scan_tuples_per_page` is found in the context. \n\nIf you are looking for specific configuration details, it might be helpful to consult the official `pgvector` documentation or source code for more information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1620,
+  "output": 109
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 6363728300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:45:58.0974056Z",
+  "response": "I do not know the default value of `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. The provided context does not mention this specific configuration option. The closest related options discussed are `hnsw.max_scan_tuples`, `hnsw.scan_mem_multiplier`, and others, but no mention of `hnsw.max_scan_tuples_per_page` is found in the context. \n\nIf you are looking for specific configuration details, it might be helpful to consult the official `pgvector` documentation or source code for more information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6363728300,
+  "load_duration": 13183200,
+  "prompt_eval_count": 1620,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 787096000,
+  "eval_count": 109,
+  "eval_duration": 5435529000
+ }
+}

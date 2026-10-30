@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-04",
+ "run": 5,
+ "started_utc": "2026-10-29T16:57:55Z",
+ "seconds": 4.25,
+ "prompt_sha256": "d7d8fbac53fff77aabef414bb850210a10a62dab90fdb5a939e34cdf882699f1",
+ "answer": "I do not know.",
+ "thinking_chars": 1035,
+ "tokens": {
+  "input": 1924,
+  "output": 249
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4420764500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:57:58.4665053Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer the question: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" We must rely on context. Search context for replication lag. The context includes lines about replication support but not specific lag. Let's search the lines: [2] says replication supported, uses WAL. But no guarantee. [1] mentions fixed error with logical replication. [3] about scaling. [4] HNSW details. No mention of lag. Might not have answer. The question likely expects \"pgvector does not guarantee any replication lag; it uses WAL, so replication lag is whatever PostgreSQL replication lag is.\" But we need a quote. Do we have a line stating replication lag? Let's search context for \"lag\". There's none. So cannot answer. We must say we don't know. But instructions: \"If you do not know, say you do not know.\" So answer: I do not know. But we might still quote \"Yes, pgvector uses the write-ahead log (WAL), which allows for replication\" [2]. But that doesn't answer lag. We must say we do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4420764500,
+  "load_duration": 13250400,
+  "prompt_eval_count": 1924,
+  "prompt_eval_cached_count": 1919,
+  "prompt_eval_duration": 57310000,
+  "eval_count": 249,
+  "eval_duration": 4289354000
+ }
+}

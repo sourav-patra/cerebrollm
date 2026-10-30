@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/19",
+  "index": 39,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "medium"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:24:01.5281937Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import Dict\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\"Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest.\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n    # Mapping from word to numeric value\n    word_to_value: Dict[str, int] = {\n        'zero': 0,\n        'one': 1,\n        'two': 2,\n        'three': 3,\n        'four': 4,\n        'five': 5,\n        'six': 6,\n        'seven': 7,\n        'eight': 8,\n        'nine': 9,\n    }\n\n    # Split input into words; handle empty string gracefully\n    words = numbers.split()\n    if not words:\n        return ''\n\n    # Sort words based on numeric value\n    sorted_words = sorted(words, key=lambda w: word_to_value.get(w, 0))\n    return ' '.join(sorted_words)\n```",
+      "thinking": "We need to implement sort_numbers that takes a string of number words separated by spaces, sorts them numerically ascending, and returns a string of sorted words separated by spaces. Need mapping from word to numeric value. Should handle invalid words? Not specified. Probably assume valid. Implementation straightforward.\n\nEdge cases: empty string? Should return empty string. Also multiple spaces? Use split() which splits on whitespace.\n\nReturn string with words joined by space.\n\nLet's implement.\n\nAlso include typing import List? Not needed. But we can keep.\n\nReturn type str.\n\nLet's produce code."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 6850262800,
+    "load_duration": 11785600,
+    "prompt_eval_count": 191,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 188938000,
+    "eval_count": 382,
+    "eval_duration": 6635847000
+  },
+  "wall_seconds": 6.4558187300008285,
+  "load_average_before": [
+    0.57421875,
+    0.30078125,
+    0.15771484375
+  ],
+  "load_average_after": [
+    0.4853515625,
+    0.2900390625,
+    0.15576171875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-medium-39",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-medium:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_39.py"
+    ],
+    "wall_seconds": 0.6664954799998668,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

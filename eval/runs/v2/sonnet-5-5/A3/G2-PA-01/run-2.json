@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-PA-01",
+ "run": 2,
+ "started_utc": "2026-10-29T15:56:07Z",
+ "seconds": 7.02,
+ "prompt_sha256": "b68c308c97c0daa435047538b07503e1e432d54a44f514835f01f54c67648323",
+ "answer": "Models that don't set their own `repeat_penalty` default to 1.0 (off) as of Ollama 0.32.10, instead of the previous 1.1.\n\n\"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding; set a per-model parameter if an older model repeats itself.\" [ollama/v0.32.10.md]\n\nThe context doesn't say whether any later release changed this again, but the later release notes provided (0.34.1, 0.34.3, 0.35.0) don't mention a change to it.",
+ "tokens": {
+  "input": 3507,
+  "output": 195,
+  "thinking": 0,
+  "cache_read": 3141,
+  "cache_creation": 364
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0037241,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2573,
+  "stop_reason": "end_turn",
+  "session_id": "f7f2912b-c55a-469f-9d84-a107720a4dfb",
+  "total_cost_usd": 0.0037241,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 364,
+   "cache_read_input_tokens": 3141,
+   "output_tokens": 195,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 364,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 195,
+     "cache_read_input_tokens": 3141,
+     "cache_creation_input_tokens": 364,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 364
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 195,
+    "cacheReadInputTokens": 3141,
+    "cacheCreationInputTokens": 364,
+    "webSearchRequests": 0,
+    "costUSD": 0.0037241,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 364,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Models that don't set their own `repeat_penalty` default to 1.0 (off) as of Ollama 0.32.10, instead of the previous 1.1.\n\n\"Models that don't set a `repeat_penalty` now default to 1.0 (off) instead of 1.1, matching other engines and speeding up speculative decoding; set a per-model parameter if an older model repeats itself.\" [ollama/v0.32.10.md]\n\nThe context doesn't say whether any later release changed this again, but the later release notes provided (0.34.1, 0.34.3, 0.35.0) don't mention a change to it.",
+  "ttft_ms": 2753,
+  "type": "result",
+  "duration_ms": 2773,
+  "uuid": "ded30d32-b557-44f2-b38d-07a475b75920",
+  "ttft_stream_ms": 2698,
+  "time_to_request_ms": 221,
+  "first_content_frame_ms": 2698,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

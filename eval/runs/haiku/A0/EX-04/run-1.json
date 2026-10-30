@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-04",
+ "run": 1,
+ "started_utc": "2026-10-29T01:38:48Z",
+ "seconds": 8.6,
+ "prompt_file": "runs/prompts/A0/EX-04.txt",
+ "prompt_sha256": "361d5e08739e4f7dd7c1e2ac0b7f1d9e28836a521297c0889c8a034ba9681f97",
+ "answer": "Based on my knowledge of the Ollama documentation, Ollama on Windows requires an NVIDIA driver version **531 or newer**, along with an NVIDIA GPU of compute capability 5.0 or higher.\n\nI may not have the latest information, though. Ollama's requirements can change between releases, so check the current GPU documentation in the Ollama repository (`docs/gpu.md`) before relying on this for a specific install.",
+ "tokens": {
+  "input": 658,
+  "output": 480,
+  "thinking": 339,
+  "cache_read": 0,
+  "cache_creation": 656
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00037140000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3412,
+  "stop_reason": "end_turn",
+  "session_id": "b9b0961a-6f8e-489f-965e-70821f571c4d",
+  "total_cost_usd": 0.00037140000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 656,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 480,
+   "output_tokens_details": {
+    "thinking_tokens": 339
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 656,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 480,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 656,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 656
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 480,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 656,
+    "webSearchRequests": 0,
+    "costUSD": 0.00037140000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 339,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 656,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Based on my knowledge of the Ollama documentation, Ollama on Windows requires an NVIDIA driver version **531 or newer**, along with an NVIDIA GPU of compute capability 5.0 or higher.\n\nI may not have the latest information, though. Ollama's requirements can change between releases, so check the current GPU documentation in the Ollama repository (`docs/gpu.md`) before relying on this for a specific install.",
+  "ttft_ms": 3174,
+  "type": "result",
+  "duration_ms": 3563,
+  "uuid": "d5fd9d2d-66f0-43cf-82ba-6f73cbcd4577",
+  "ttft_stream_ms": 3172,
+  "time_to_request_ms": 202,
+  "first_content_frame_ms": 3172,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

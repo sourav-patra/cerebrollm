@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-ST-03",
+ "run": 3,
+ "started_utc": "2026-10-29T17:26:51Z",
+ "seconds": 5.42,
+ "prompt_sha256": "41cca5e544c4e7ef4b7cd832c11ab2125d03517e230d4085ffb31bd573297f71",
+ "answer": "I do not have access to the specific Ollama release notes, so I cannot provide information on which platforms the LFM3 models run according to the newest release notes up to version 0.40.13. For accurate and detailed information, I recommend checking the official Ollama documentation or release notes directly.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 68,
+  "output": 65
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3205465100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:26:55.9856244Z",
+  "response": "I do not have access to the specific Ollama release notes, so I cannot provide information on which platforms the LFM3 models run according to the newest release notes up to version 0.40.13. For accurate and detailed information, I recommend checking the official Ollama documentation or release notes directly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3205465100,
+  "load_duration": 12502800,
+  "prompt_eval_count": 68,
+  "prompt_eval_cached_count": 38,
+  "prompt_eval_duration": 215402000,
+  "eval_count": 65,
+  "eval_duration": 2960417000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-04",
+ "run": 2,
+ "started_utc": "2026-10-29T16:23:15Z",
+ "seconds": 3.23,
+ "prompt_sha256": "69600fc7cca928f3eed97350782fbe29bd97a187d6422e01086ab6c5a8f18995",
+ "answer": "\"3.1 s → 294 ms cold in testing.\" [1]",
+ "thinking_chars": 542,
+ "tokens": {
+  "input": 2329,
+  "output": 191
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3405123700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:23:17.66818Z",
+  "response": "\"3.1 s → 294 ms cold in testing.\" [1]",
+  "thinking": "We need to answer: \"In its testing, how long did Ollama 0.34.1 take to answer a cold /api/tags request on a large model library after the speed-up?\" We need to find the speed-up time. In context, item [1] says: `/api/tags` is much faster on large model libraries (3.1 s → 294 ms cold in testing). That is likely the answer. So we quote: \"3.1 s → 294 ms cold in testing\". That's the time. We need to quote the line. The line is in [1] lines 1-15. We need to quote the line. The quote: \"3.1 s → 294 ms cold in testing\". Path: [1]. Provide that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3405123700,
+  "load_duration": 14068300,
+  "prompt_eval_count": 2329,
+  "prompt_eval_cached_count": 2324,
+  "prompt_eval_duration": 56818000,
+  "eval_count": 191,
+  "eval_duration": 3261581000
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-14",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:42Z",
+ "seconds": 12.66,
+ "prompt_sha256": "9d067e0c6b7ba45e0eaf44837d4b94f745188a5d9fde256f833802a42f3aab92",
+ "answer": "I don't know of a `maxTokensPerCell` option in promptfoo's `evaluateOptions`, so I can't give you a default for it. I haven't inspected any files in this working directory, so this comes only from what I know of promptfoo.\n\nThe `evaluateOptions` fields I do know of are `maxConcurrency`, `repeat`, `delay`, `showProgressBar`, `cache`, and `timeoutMs`/`maxEvalTimeMs`. `maxTokensPerCell` isn't one of them. It may be a very recent addition, a custom option in your setup, or a mix-up with something else, such as the `max_tokens` setting on a provider's `config`, or an output-display setting.\n\nTo check, you could search the promptfoo docs or source for `maxTokensPerCell`, or run `grep -r maxTokensPerCell node_modules/promptfoo` (PowerShell: `Select-String -Path ... -Pattern maxTokensPerCell -Recurse`). If you point me at the config or source where you saw it, I can look at it with you.",
+ "tokens": {
+  "input": 640,
+  "output": 500,
+  "thinking": 151,
+  "cache_read": 0,
+  "cache_creation": 638
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.007556,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 8187,
+  "stop_reason": "end_turn",
+  "session_id": "53cb3b75-6b36-4086-aa49-e2b624696775",
+  "total_cost_usd": 0.007556,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 638,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 500,
+   "output_tokens_details": {
+    "thinking_tokens": 151
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 638,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 500,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 638,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 638
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 500,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 638,
+    "webSearchRequests": 0,
+    "costUSD": 0.007556,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 151,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 638,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of a `maxTokensPerCell` option in promptfoo's `evaluateOptions`, so I can't give you a default for it. I haven't inspected any files in this working directory, so this comes only from what I know of promptfoo.\n\nThe `evaluateOptions` fields I do know of are `maxConcurrency`, `repeat`, `delay`, `showProgressBar`, `cache`, and `timeoutMs`/`maxEvalTimeMs`. `maxTokensPerCell` isn't one of them. It may be a very recent addition, a custom option in your setup, or a mix-up with something else, such as the `max_tokens` setting on a provider's `config`, or an output-display setting.\n\nTo check, you could search the promptfoo docs or source for `maxTokensPerCell`, or run `grep -r maxTokensPerCell node_modules/promptfoo` (PowerShell: `Select-String -Path ... -Pattern maxTokensPerCell -Recurse`). If you point me at the config or source where you saw it, I can look at it with you.",
+  "ttft_ms": 5670,
+  "type": "result",
+  "duration_ms": 8287,
+  "uuid": "500c5d5f-e048-40b5-83f0-092c2fb9bb57",
+  "ttft_stream_ms": 4590,
+  "time_to_request_ms": 117,
+  "first_content_frame_ms": 4591,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

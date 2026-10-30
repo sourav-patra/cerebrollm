@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-10",
+ "run": 3,
+ "started_utc": "2026-10-29T17:27:18Z",
+ "seconds": 1.97,
+ "prompt_sha256": "f96990a88fb1a5eef44b930657ec637ea126b25fe497dcf48af0b61b819ee3ce",
+ "answer": "I do not know which two deprecated integrations were removed in llama-index-core 0.14.25. Without access to specific release notes or documentation for that version, I cannot provide a definitive answer.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 50,
+  "output": 42
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2115995100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:27:21.3367236Z",
+  "response": "I do not know which two deprecated integrations were removed in llama-index-core 0.14.25. Without access to specific release notes or documentation for that version, I cannot provide a definitive answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2115995100,
+  "load_duration": 15376800,
+  "prompt_eval_count": 50,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 217741000,
+  "eval_count": 42,
+  "eval_duration": 1868716000
+ }
+}

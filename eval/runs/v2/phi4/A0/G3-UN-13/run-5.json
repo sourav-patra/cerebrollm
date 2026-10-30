@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 5,
+ "started_utc": "2026-10-29T17:42:40Z",
+ "seconds": 2.94,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "I do not know which specific promptfoo assertion type computes BERTScore between an output and a reference. BERTScore is a metric for evaluating the quality of text by comparing the contextual similarity of words using BERT embeddings, but without specific information on promptfoo's assertion types, I cannot determine the exact one used for this purpose.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 49,
+  "output": 68
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3261922100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:42:42.6990624Z",
+  "response": "I do not know which specific promptfoo assertion type computes BERTScore between an output and a reference. BERTScore is a metric for evaluating the quality of text by comparing the contextual similarity of words using BERT embeddings, but without specific information on promptfoo's assertion types, I cannot determine the exact one used for this purpose.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3261922100,
+  "load_duration": 12007400,
+  "prompt_eval_count": 49,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 228130000,
+  "eval_count": 68,
+  "eval_duration": 3004976000
+ }
+}

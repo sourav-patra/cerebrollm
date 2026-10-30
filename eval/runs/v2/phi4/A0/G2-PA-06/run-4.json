@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-06",
+ "run": 4,
+ "started_utc": "2026-10-29T17:34:42Z",
+ "seconds": 3.84,
+ "prompt_sha256": "0a19284e9beaa8302543432ec33147546b121487da9b33c3fca9eef83ebee43d",
+ "answer": "I do not know the specific context window that llama-index-llms-anthropic 0.11.10 sets for Claude Opus 4.6. This information would depend on the implementation details of the software, which are not provided in my training data. Typically, context window size can vary based on the model and the specific configuration set by the developers, so you might need to refer to the official documentation or release notes for precise details.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 61,
+  "output": 92
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4240760700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:34:46.4132529Z",
+  "response": "I do not know the specific context window that llama-index-llms-anthropic 0.11.10 sets for Claude Opus 4.6. This information would depend on the implementation details of the software, which are not provided in my training data. Typically, context window size can vary based on the model and the specific configuration set by the developers, so you might need to refer to the official documentation or release notes for precise details.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4240760700,
+  "load_duration": 29591900,
+  "prompt_eval_count": 61,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 96437000,
+  "eval_count": 92,
+  "eval_duration": 4097551000
+ }
+}

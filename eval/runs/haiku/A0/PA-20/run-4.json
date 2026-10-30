@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-20",
+ "run": 4,
+ "started_utc": "2026-10-29T01:53:13Z",
+ "seconds": 8.55,
+ "prompt_file": "runs/prompts/A0/PA-20.txt",
+ "prompt_sha256": "978088df6c18de7eb3c578df8f5019ca48d355e28984e0c7df110c121650a072",
+ "answer": "I don't know for certain. I'm not aware of a promptfoo filter called \"range\" with documented start and end indices, and I can't check the docs or source from here. The working directory doesn't contain promptfoo code I can read.\n\nThe CLI filters I believe exist are `--filter-first-n`, `--filter-pattern`, `--filter-sample`, `--filter-failing`, and `--filter-errors-only`. If you're using a range option, check the version you have with `promptfoo eval --help`, or look at the docs or source for that option.\n\nIf the implementation uses JavaScript's `slice(start, end)`, the end index is exclusive, so `end` would not be run. That's an assumption about the implementation, not something I've verified. A quick test with a small dataset will confirm the behavior.",
+ "tokens": {
+  "input": 655,
+  "output": 517,
+  "thinking": 265,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003893,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3758,
+  "stop_reason": "end_turn",
+  "session_id": "288d8ba3-a29f-4f4e-b3a2-a5b88ef884fe",
+  "total_cost_usd": 0.0003893,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 517,
+   "output_tokens_details": {
+    "thinking_tokens": 265
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 517,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 517,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003893,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 265,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know for certain. I'm not aware of a promptfoo filter called \"range\" with documented start and end indices, and I can't check the docs or source from here. The working directory doesn't contain promptfoo code I can read.\n\nThe CLI filters I believe exist are `--filter-first-n`, `--filter-pattern`, `--filter-sample`, `--filter-failing`, and `--filter-errors-only`. If you're using a range option, check the version you have with `promptfoo eval --help`, or look at the docs or source for that option.\n\nIf the implementation uses JavaScript's `slice(start, end)`, the end index is exclusive, so `end` would not be run. That's an assumption about the implementation, not something I've verified. A quick test with a small dataset will confirm the behavior.",
+  "ttft_ms": 2740,
+  "type": "result",
+  "duration_ms": 3887,
+  "uuid": "36353024-c1e4-4e26-b88e-7084e27e7242",
+  "ttft_stream_ms": 2738,
+  "time_to_request_ms": 125,
+  "first_content_frame_ms": 2738,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

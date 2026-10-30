@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-17",
+ "run": 1,
+ "started_utc": "2026-10-29T01:51:54Z",
+ "seconds": 9.68,
+ "prompt_file": "runs/prompts/A0/PA-17.txt",
+ "prompt_sha256": "0b727d7eb81ef9321a681ceaa4861e106e84e277214e2cfb8d36e4df76a91b69",
+ "answer": "Use the `--no-write` flag on the eval command:\n\n```powershell\nnpx promptfoo eval --no-write\n```\n\nI'm fairly confident this flag exists and does what you want, but I'd check `npx promptfoo eval --help` on your installed version to confirm.\n\nPromptfoo stores results in a SQLite database in its config directory, which defaults to `%USERPROFILE%\\.promptfoo` on Windows. `--no-write` skips saving the eval to that database.\n\nTwo related things can also write to that directory:\n\n- **Cache:** Responses are cached in the same directory. To stop that, use `--no-cache`, or set `PROMPTFOO_CACHE_ENABLED=false`.\n- **Location:** If you only want the data somewhere else, set `PROMPTFOO_CONFIG_DIR` to a different path instead of stopping the writes.\n\nIf you want a file output without touching the promptfoo directory, `--output results.json` writes results to that file. I'm less sure how it interacts with `--no-write`, so test it on a small config first.",
+ "tokens": {
+  "input": 658,
+  "output": 853,
+  "thinking": 509,
+  "cache_read": 0,
+  "cache_creation": 656
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005579000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4842,
+  "stop_reason": "end_turn",
+  "session_id": "5469057e-317b-46d7-b71d-5d9e7f4ea941",
+  "total_cost_usd": 0.0005579000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 656,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 853,
+   "output_tokens_details": {
+    "thinking_tokens": 509
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 656,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 853,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 656,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 656
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 853,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 656,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005579000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 509,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 656,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use the `--no-write` flag on the eval command:\n\n```powershell\nnpx promptfoo eval --no-write\n```\n\nI'm fairly confident this flag exists and does what you want, but I'd check `npx promptfoo eval --help` on your installed version to confirm.\n\nPromptfoo stores results in a SQLite database in its config directory, which defaults to `%USERPROFILE%\\.promptfoo` on Windows. `--no-write` skips saving the eval to that database.\n\nTwo related things can also write to that directory:\n\n- **Cache:** Responses are cached in the same directory. To stop that, use `--no-cache`, or set `PROMPTFOO_CACHE_ENABLED=false`.\n- **Location:** If you only want the data somewhere else, set `PROMPTFOO_CONFIG_DIR` to a different path instead of stopping the writes.\n\nIf you want a file output without touching the promptfoo directory, `--output results.json` writes results to that file. I'm less sure how it interacts with `--no-write`, so test it on a small config first.",
+  "ttft_ms": 3319,
+  "type": "result",
+  "duration_ms": 4991,
+  "uuid": "06e9af1e-7365-483a-8c4a-dcac50c25432",
+  "ttft_stream_ms": 2976,
+  "time_to_request_ms": 152,
+  "first_content_frame_ms": 2976,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

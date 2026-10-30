@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-EX-01",
+ "run": 5,
+ "started_utc": "2026-10-29T15:59:59Z",
+ "seconds": 1.25,
+ "prompt_sha256": "4065eb8cb2aa0f4dc0d887c72c5a9df43117de178706c95bf08d2a3b59330e15",
+ "answer": "\"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md (lines 1-41)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2312,
+  "output": 40
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1322152100
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T16:00:00.8426013Z",
+  "response": "\"GET /api/show now advertises each model's thinking controls and default:\" [ollama/v0.34.3.md (lines 1-41)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1322152100,
+  "load_duration": 13964000,
+  "prompt_eval_count": 2312,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 951925000,
+  "eval_count": 40,
+  "eval_duration": 329940000
+ }
+}

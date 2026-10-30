@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-06",
+ "run": 5,
+ "started_utc": "2026-10-29T01:39:50Z",
+ "seconds": 7.96,
+ "prompt_file": "runs/prompts/A3/EX-06.txt",
+ "prompt_sha256": "908e6571309c4252e945f845ef7bf3e793479d1418810175183129ee0ec72f9c",
+ "answer": "I don't know the limit for `halfvec` from the provided context. The excerpt lists a \"Halfvec\" section in the Reference, but it doesn't include that section's text.\n\nThe only dimension limit in the context is for the `vector` type: \"Vectors can have up to 16,000 dimensions.\" [pgvector/README.md]. I can't tell whether the same limit applies to `halfvec` HNSW indexes. The full README's Halfvec Type section would answer this.",
+ "tokens": {
+  "input": 2938,
+  "output": 435,
+  "thinking": 284,
+  "cache_read": 2550,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003204,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3231,
+  "stop_reason": "end_turn",
+  "session_id": "25f97cba-f30c-4a3d-a2d3-ee678840f25a",
+  "total_cost_usd": 0.0003204,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2550,
+   "output_tokens": 435,
+   "output_tokens_details": {
+    "thinking_tokens": 284
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 435,
+     "cache_read_input_tokens": 2550,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 435,
+    "cacheReadInputTokens": 2550,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003204,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 284,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the limit for `halfvec` from the provided context. The excerpt lists a \"Halfvec\" section in the Reference, but it doesn't include that section's text.\n\nThe only dimension limit in the context is for the `vector` type: \"Vectors can have up to 16,000 dimensions.\" [pgvector/README.md]. I can't tell whether the same limit applies to `halfvec` HNSW indexes. The full README's Halfvec Type section would answer this.",
+  "ttft_ms": 2843,
+  "type": "result",
+  "duration_ms": 3353,
+  "uuid": "8e4d28cd-3f39-45f9-8f35-3a25d41839de",
+  "ttft_stream_ms": 2842,
+  "time_to_request_ms": 149,
+  "first_content_frame_ms": 2842,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

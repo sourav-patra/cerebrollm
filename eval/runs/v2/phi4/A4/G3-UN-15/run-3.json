@@ -1,0 +1,89 @@
+{
+ "model": "phi4",
+ "arm": "A4",
+ "id": "G3-UN-15",
+ "run": 3,
+ "started_utc": "2026-10-30T07:45:10Z",
+ "seconds": 28.62,
+ "prompt_sha256": "4ee10dc1fa3a919ebc775321cf1d5f1447f3824c1493b99090ed74110cadf148",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 4.42,
+   "rerank": 7.98,
+   "generate": 13.42,
+   "verify": 0.0,
+   "total": 25.82
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.78512,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 8,
+    "line_end": 66
+   },
+   {
+    "rank": 2,
+    "search_rank": 6,
+    "rerank_score": 0.71639,
+    "path": "promptfoo/site/docs/usage/node-package.md",
+    "line_start": 196,
+    "line_end": 287
+   },
+   {
+    "rank": 3,
+    "search_rank": 5,
+    "rerank_score": 0.6981,
+    "path": "promptfoo/site/docs/getting-started.md",
+    "line_start": 231,
+    "line_end": 294
+   },
+   {
+    "rank": 4,
+    "search_rank": 8,
+    "rerank_score": 0.65792,
+    "path": "promptfoo/site/docs/enterprise/findings.md",
+    "line_start": 76,
+    "line_end": 84
+   },
+   {
+    "rank": 5,
+    "search_rank": 2,
+    "rerank_score": 0.58627,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 554,
+    "line_end": 554
+   },
+   {
+    "rank": 6,
+    "search_rank": 19,
+    "rerank_score": 0.52388,
+    "path": "promptfoo/site/docs/integrations/circle-ci.md",
+    "line_start": 10,
+    "line_end": 65
+   },
+   {
+    "rank": 7,
+    "search_rank": 17,
+    "rerank_score": 0.50104,
+    "path": "promptfoo/site/docs/providers/openai-agents.md",
+    "line_start": 444,
+    "line_end": 505
+   },
+   {
+    "rank": 8,
+    "search_rank": 3,
+    "rerank_score": 0.45896,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 151,
+    "line_end": 172
+   }
+  ],
+  "model": "phi4"
+ }
+}

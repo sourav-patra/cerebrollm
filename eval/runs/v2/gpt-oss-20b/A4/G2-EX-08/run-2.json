@@ -1,0 +1,96 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G2-EX-08",
+ "run": 2,
+ "started_utc": "2026-10-30T06:17:56Z",
+ "seconds": 23.94,
+ "prompt_sha256": "c850e0ac34913f757ea4775e1516b8178f5950cd30deb126aeb4486ea41bd110",
+ "answer": "It disables inline JavaScript assertions and the shared transform helper, i.e. it rejects string‑based JavaScript assertions and inline expressions.  \n\n\"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" [promptfoo/site/docs/configuration/expected-outputs/javascript.md]",
+ "tokens": {},
+ "citations": [
+  {
+   "path": "promptfoo/site/docs/configuration/expected-outputs/javascript.md",
+   "quote": "Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.",
+   "verify": "OK",
+   "detail": "promptfoo/site/docs/configuration/expected-outputs/javascript.md@file sha256 d3d1bf5ee35a"
+  }
+ ],
+ "meta": {
+  "abstained": false,
+  "timings": {
+   "search": 0.84,
+   "rerank": 9.54,
+   "generate": 10.87,
+   "verify": 0.28,
+   "total": 21.53
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 4,
+    "rerank_score": 0.951,
+    "path": "promptfoo/site/docs/configuration/expected-outputs/javascript.md",
+    "line_start": 11,
+    "line_end": 64
+   },
+   {
+    "rank": 2,
+    "search_rank": 2,
+    "rerank_score": 0.94433,
+    "path": "promptfoo/0.125.0.md",
+    "line_start": 14,
+    "line_end": 25
+   },
+   {
+    "rank": 3,
+    "search_rank": 1,
+    "rerank_score": 0.93945,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 125,
+    "line_end": 125
+   },
+   {
+    "rank": 4,
+    "search_rank": 5,
+    "rerank_score": 0.56278,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 1112,
+    "line_end": 1112
+   },
+   {
+    "rank": 5,
+    "search_rank": 10,
+    "rerank_score": 0.52854,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 8,
+    "line_end": 66
+   },
+   {
+    "rank": 6,
+    "search_rank": 12,
+    "rerank_score": 0.47006,
+    "path": "promptfoo/0.125.0.md",
+    "line_start": 78,
+    "line_end": 87
+   },
+   {
+    "rank": 7,
+    "search_rank": 7,
+    "rerank_score": 0.4026,
+    "path": "promptfoo/site/docs/usage/command-line.md",
+    "line_start": 203,
+    "line_end": 211
+   },
+   {
+    "rank": 8,
+    "search_rank": 14,
+    "rerank_score": 0.36486,
+    "path": "promptfoo/site/docs/providers/openai-agents-api.md",
+    "line_start": 106,
+    "line_end": 116
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

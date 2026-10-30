@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-09",
+ "run": 2,
+ "started_utc": "2026-10-29T16:22:08Z",
+ "seconds": 10.93,
+ "prompt_sha256": "efbec7170f83fcf5026be22ea90b9a91961b648d3a1a298bc724107f640c731c",
+ "answer": "I’m not sure what the exact default `separator_regex` is for LlamaIndex’s `TokenTextSplitter`. If you need the precise value, I’d recommend checking the library’s source code or its documentation.",
+ "thinking_chars": 2339,
+ "tokens": {
+  "input": 105,
+  "output": 662
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11601007800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:22:18.9752305Z",
+  "response": "I’m not sure what the exact default `separator_regex` is for LlamaIndex’s `TokenTextSplitter`. If you need the precise value, I’d recommend checking the library’s source code or its documentation.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" They want the default separator_regex. I need to know LlamaIndex's TokenTextSplitter. LlamaIndex (now called llama-index) is a library for building LLM applications. The TokenTextSplitter splits text into tokens. It likely uses a regex to split on punctuation. Let's recall. In earlier versions, TokenTextSplitter had a default separator_regex of r'\\s+|\\n|\\r|,|;|\\.|:|\\?|\\!|\\(|\\)|\\[|\\]|\\\"|\\''? But I need to check. Let's think.\n\nMaybe the default separator_regex is r'[\\s\\n\\r.,;:?!()\\'\\\"-]+' or something. I'm not sure. Let's search memory: In llama-index, there is a TextSplitter class. There's a token_text_splitter. The default separator regex might be r'\\s+'? But token-based splitting often uses the regex r'\\n' or r'\\s+|[,.!?;:()]'. Let's check: In LlamaIndex's TokenTextSplitter, I recall reading that it splits on newline and punctuation. Maybe it's r'(?<!\\w)[.,;:!?](?!\\w)'? That seems too complex.\n\nAlternatively, the default separator_regex might be r'(?<!\\w)[,.!?;:](?!\\w)'. But I'm not sure.\n\nWe can search knowledge: LlamaIndex v0.9. So the TokenTextSplitter is in llama_index/text_splitter/token_text_splitter.py. The default separator_regex is defined as r'\\s+|[,.!?;:()]'. Actually, reading from memory: It might be r'\\n|'? But likely uses regex to split on punctuation.\n\nLet's think: The TokenTextSplitter splits the text into tokens and uses a regex to separate tokens. The default separator_regex is used to split on punctuation and whitespace. Let's guess: r'\\s+|[,.!?;:()\\\"\\\\-]'.\n\nGiven the question, they expect a specific regex string. If I can't recall, I should say \"I do not know\". But maybe I can approximate. Let's search memory: In LlamaIndex's README or docs, the default separator_regex for TokenTextSplitter is r'\\n|(?<=[.!?])\\s+'? No.\n\nWait, I can approximate: The default separator_regex is r'(?<!\\w)(?:[.,;:!?])(?=\\s)'? But that seems wrong.\n\nGiven uncertain, I should answer that I don't know. But maybe I can say: The default separator_regex is r'\\s+'? That would split on whitespace. But the name suggests a regex used for separators between tokens. Likely they want a specific pattern.\n\nThus, answer: I don't know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11601007800,
+  "load_duration": 14483800,
+  "prompt_eval_count": 105,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 190842000,
+  "eval_count": 662,
+  "eval_duration": 11382307000
+ }
+}

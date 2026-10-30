@@ -1,0 +1,33 @@
+2026-10-28T18:58:15Z
+{
+  "mode": "full",
+  "duration_s": 709.3,
+  "documents": 1412,
+  "chunks_embedded": 13431,
+  "chunks_located": 13431,
+  "chunks_per_min": 1136,
+  "skipped_rule": {},
+  "skipped_secret": [
+    "notes:promptfoo/site/docs/providers/slack.md",
+    "notes:promptfoo/site/docs/providers/http.md"
+  ],
+  "no_rule": 0,
+  "files_seen": 1416,
+  "duplicates_collapsed": 2,
+  "backoff_seconds": 130.0,
+  "pace_max_texts_per_second": 25,
+  "wall_seconds": 709.5
+}
+EXIT 0
+WALL_SECONDS 712
+cerebrollm status  domain=org  table=chunks
+documents 1412  chunks 13431
+tier status      documents  chunks
+T3   current          1411   13382
+T3   superseded          1      49
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 2
+files seen 1416  matched no tier rule 0  duplicate paths collapsed 2
+last index: 2026-10-28T19:10:06+0000  mode=full  duration=709.3s  chunks embedded=13431
+embedding model: bge-m3  digest: 7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab  num_ctx: 8192

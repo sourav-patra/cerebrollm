@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 3,
+ "started_utc": "2026-10-29T16:32:29Z",
+ "seconds": 6.9,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I do not know the default value of the `OLLAMA_KV_CACHE_RETENTION` environment variable.",
+ "thinking_chars": 1657,
+ "tokens": {
+  "input": 110,
+  "output": 428
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7513041700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:32:36.807067Z",
+  "response": "I do not know the default value of the `OLLAMA_KV_CACHE_RETENTION` environment variable.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION?\"\n\nWe need to answer. We need to know about Ollama environment variables. Ollama is a tool for local LLM inference. There's an environment variable OLLAMA_KV_CACHE_RETENTION which likely sets retention policy for key-value cache. We need the default value. I don't recall exactly. Let's think: In Ollama docs, environment variables include OLLAMA_HOST, OLLAMA_PORT, OLLAMA_ORG, OLLAMA_API_KEY, OLLAMA_KV_CACHE_RETENTION maybe controls retention time. Possibly default is \"30d\"? Might be 30 days. Or maybe default is \"0\" meaning infinite? But typical retention might be 60 days? Let's search memory: I recall reading about \"OLLAMA_KV_CACHE_RETENTION\" controlling how long to keep KV cache entries. Default is 0 meaning unlimited? Actually retention refers to retention period in days? Not sure.\n\nBetter to be safe: \"I do not know.\" But maybe we can provide best guess. The user said: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I should answer with what I know. If I don't know, say so. I think I don't know the exact default value. I can say: \"I don't know the default value.\" But maybe I can guess: The default is \"30 days\"? But I'd rather say I don't know. The user might want a fact. If I guess incorrectly, might be wrong. It's safer to say I don't know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I say: \"I do not know the default value.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7513041700,
+  "load_duration": 15792300,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 187270000,
+  "eval_count": 428,
+  "eval_duration": 7295902000
+ }
+}

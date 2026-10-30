@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-EX-3",
+ "run": 4,
+ "started_utc": "2026-10-29T01:45:37Z",
+ "seconds": 7.46,
+ "prompt_file": "runs/prompts/A3/PR-EX-3.txt",
+ "prompt_sha256": "0b60f3da546481c37a24577c02be4c3ea4be5686492feef96d673bf50ff09809",
+ "answer": "The provided documents say the class is `TokenCountingHandler`. The callbacks index lists it as a supported callback: \"- [TokenCountingHandler](/python/examples/observability/tokencountinghandler) -> Flexible token counting for prompt, completion, and embedding token usage.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/index.md]\n\nThe setup example also imports it from the callbacks module: \"from llama_index.core.callbacks import CallbackManager, TokenCountingHandler\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\nThe API reference page is consistent with this: \"members: - TokenCountingHandler\" [llama_index/docs/api_reference/api_reference/callbacks/token_counter.md]",
+ "tokens": {
+  "input": 3145,
+  "output": 281,
+  "thinking": 0,
+  "cache_read": 2757,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00024547,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2605,
+  "stop_reason": "end_turn",
+  "session_id": "10a20b48-39f8-4cd9-9e5d-6ee3c7da8d53",
+  "total_cost_usd": 0.00024547,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2757,
+   "output_tokens": 281,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 281,
+     "cache_read_input_tokens": 2757,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 281,
+    "cacheReadInputTokens": 2757,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00024547,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The provided documents say the class is `TokenCountingHandler`. The callbacks index lists it as a supported callback: \"- [TokenCountingHandler](/python/examples/observability/tokencountinghandler) -> Flexible token counting for prompt, completion, and embedding token usage.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/index.md]\n\nThe setup example also imports it from the callbacks module: \"from llama_index.core.callbacks import CallbackManager, TokenCountingHandler\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]\n\nThe API reference page is consistent with this: \"members: - TokenCountingHandler\" [llama_index/docs/api_reference/api_reference/callbacks/token_counter.md]",
+  "ttft_ms": 2682,
+  "type": "result",
+  "duration_ms": 2693,
+  "uuid": "8461bf7c-1b84-43f0-b0ea-063e7dfad222",
+  "ttft_stream_ms": 2680,
+  "time_to_request_ms": 86,
+  "first_content_frame_ms": 2680,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

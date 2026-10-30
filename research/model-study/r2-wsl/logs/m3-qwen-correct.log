@@ -1,0 +1,109 @@
+2026-10-29T16:59:22+00:00 qwen-correct: lock taken
+guard pull qwen3.6:35b-a3b-coding-mtp-q4_K_M exit 0 qwen3.6:35b-a3b-coding-mtp-q4_K_M digest 6f7983cafbe272cbdd2d3e88a55bc1ff2e7677cd304e4cecbdb05584d7a69649 
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 1 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 2 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 3 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 4 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 5 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 6 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 7 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 8 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 9 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 10 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 11 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 12 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 13 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 14 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 15 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 16 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 17 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 18 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 19 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 20 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 21 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 22 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 23 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 24 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 25 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 26 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 27 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 28 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 29 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 30 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 31 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 32 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 33 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 34 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 35 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 36 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 37 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 38 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 39 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off code 40 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 1 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 2 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 3 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 4 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 5 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 6 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 7 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 8 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 9 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 10 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 11 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp4-think-off tools 12 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 1 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 2 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 3 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 4 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 5 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 6 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 7 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 8 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 9 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 10 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 11 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 12 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 13 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 14 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 15 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 16 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 17 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 18 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 19 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 20 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 21 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 22 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 23 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 24 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 25 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 26 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 27 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 28 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 29 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 30 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 31 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 32 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 33 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 34 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 35 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 36 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 37 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 38 passed False
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 39 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off code 40 passed True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 1 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 2 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 3 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 4 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 5 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 6 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 7 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 8 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 9 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 10 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 11 True
+qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off tools 12 True
+guard unload qwen3.6:35b-a3b-coding-mtp-q4_K_M exit 0 qwen3.6:35b-a3b-coding-mtp-q4_K_M unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+2026-10-29T17:08:19+00:00 qwen-correct: command exit 0, releasing lock

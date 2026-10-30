@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/25",
+  "index": 31,
+  "request": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:8b",
+    "created_at": "2026-10-28T22:36:00.4881336Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import List\n\ndef factorize(n: int) -> List[int]:\n    factors = []\n    divisor = 2\n    while divisor * divisor <= n:\n        while n % divisor == 0:\n            factors.append(divisor)\n            n //= divisor\n        divisor += 1\n    if n > 1:\n        factors.append(n)\n    return factors\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1045506100,
+    "load_duration": 12330200,
+    "prompt_eval_count": 163,
+    "prompt_eval_cached_count": 27,
+    "prompt_eval_duration": 35911000,
+    "eval_count": 81,
+    "eval_duration": 981931000
+  },
+  "wall_seconds": 0.9661002630000439,
+  "load_average_before": [
+    0.39794921875,
+    0.19775390625,
+    0.06884765625
+  ],
+  "load_average_after": [
+    0.39794921875,
+    0.19775390625,
+    0.06884765625
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-8b-thinking-off-31",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-8b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_31.py"
+    ],
+    "wall_seconds": 0.7324384590010595,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

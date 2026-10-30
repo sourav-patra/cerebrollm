@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-12",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:40Z",
+ "seconds": 20.02,
+ "prompt_sha256": "9f1688db504759b4676bbf04220a596f33e5c4152ea6da40a28185c49c79caff",
+ "answer": "I don't know. The retrieved docs don't describe a `--max-retries` flag for `promptfoo eval`, so no default is documented for one.\n\nThe docs do mention retry settings that may be what you're after, but none of them is that flag:\n\n- `maxRetries` is a provider config setting, not a CLI flag. Its defaults are described as: \"Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" [promptfoo/site/docs/configuration/rate-limits.md] and \"Defaults to 4 retries, or the provider's `maxRetries` when set.\" [promptfoo/site/docs/configuration/rate-limits.md]\n- The related `eval` flag is `--retry-errors`, which re-runs ERROR results: \"promptfoo eval --retry-errors      # retries all ERROR results from the latest eval\" [promptfoo/site/docs/usage/command-line.md]. It's a boolean flag with no documented retry count.\n\nIf you saw `--max-retries` somewhere, check `promptfoo eval --help` for your installed version.",
+ "tokens": {
+  "input": 3263,
+  "output": 456,
+  "thinking": 106,
+  "cache_read": 0,
+  "cache_creation": 3261
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.017608,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 16114,
+  "stop_reason": "end_turn",
+  "session_id": "0f8a6d1c-faa5-4673-9826-54512b63d10b",
+  "total_cost_usd": 0.017608,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3261,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 456,
+   "output_tokens_details": {
+    "thinking_tokens": 106
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3261,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 456,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3261,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3261
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 456,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3261,
+    "webSearchRequests": 0,
+    "costUSD": 0.017608,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 106,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3261,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved docs don't describe a `--max-retries` flag for `promptfoo eval`, so no default is documented for one.\n\nThe docs do mention retry settings that may be what you're after, but none of them is that flag:\n\n- `maxRetries` is a provider config setting, not a CLI flag. Its defaults are described as: \"Retries `callApi()` with 1-second base backoff, up to 3 times by default.\" [promptfoo/site/docs/configuration/rate-limits.md] and \"Defaults to 4 retries, or the provider's `maxRetries` when set.\" [promptfoo/site/docs/configuration/rate-limits.md]\n- The related `eval` flag is `--retry-errors`, which re-runs ERROR results: \"promptfoo eval --retry-errors      # retries all ERROR results from the latest eval\" [promptfoo/site/docs/usage/command-line.md]. It's a boolean flag with no documented retry count.\n\nIf you saw `--max-retries` somewhere, check `promptfoo eval --help` for your installed version.",
+  "ttft_ms": 13778,
+  "type": "result",
+  "duration_ms": 16200,
+  "uuid": "77b7b51f-8b41-4783-9b26-31a59326d143",
+  "ttft_stream_ms": 12916,
+  "time_to_request_ms": 102,
+  "first_content_frame_ms": 12916,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

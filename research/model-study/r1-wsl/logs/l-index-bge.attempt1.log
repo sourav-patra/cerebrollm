@@ -1,0 +1,60 @@
+2026-10-28T18:52:51Z
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<repo>/engine/cerebrollm/__main__.py", line 5, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<repo>/engine/cerebrollm/cli.py", line 41, in main
+    print(json.dumps(run_index(cfg, changed=args.changed), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/engine/cerebrollm/indexer.py", line 84, in run_index
+    nodes = pipeline.run(documents=docs, show_progress=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index_instrumentation/dispatcher.py", line 413, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/ingestion/pipeline.py", line 638, in run
+    nodes = run_transformations(
+            ^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/ingestion/pipeline.py", line 110, in run_transformations
+    nodes = transform(nodes, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index_instrumentation/dispatcher.py", line 413, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/base/embeddings/base.py", line 639, in __call__
+    embeddings = self.get_text_embedding_batch(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index_instrumentation/dispatcher.py", line 413, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/core/base/embeddings/base.py", line 517, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/embeddings/ollama/base.py", line 95, in _get_text_embeddings
+    return self.get_general_text_embeddings(formatted_texts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/llama_index/embeddings/ollama/base.py", line 104, in get_general_text_embeddings
+    result = self._client.embed(
+             ^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/ollama/_client.py", line 442, in embed
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/ollama/_client.py", line 203, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/ollama/_client.py", line 147, in _request_raw
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: Post "http://127.0.0.1:64902/tokenize": dial tcp 127.0.0.1:64902: connectex: Only one usage of each socket address (protocol/network address/port) is normally permitted. (status code: 400)
+EXIT 1
+WALL_SECONDS 52
+cerebrollm status  domain=org  table=chunks
+documents 0  chunks 0
+tier status      documents  chunks
+indexed from never-index paths: 0
+skipped by rule: 0  {}
+skipped by secret scan: 0
+files seen None  matched no tier rule None  duplicate paths collapsed None
+last index: None  mode=None  duration=Nones  chunks embedded=None
+embedding model: None  digest: None  num_ctx: 8192

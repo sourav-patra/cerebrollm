@@ -1,0 +1,5 @@
+# N5 leak scan summaries (counts only; needle values are private). Scanner and needle source are kept in the private folder.
+# Each scan covers the diff of everything N5 added or changed against the parent of the first N5 commit (2d1ae36^), staged state.
+scan 1 (first commit, before review): needles scanned: path 23, title 19, quote 34, question 27, fact 14, project 9, keyfact 33, email 2; history emails 1; hits 0
+scan 2 (path/name fix): needles scanned: path 23, title 19, quote 34, question 27, fact 14, project 9, keyfact 33, literal 10, folder 29, email 2; history emails 0; hits 0
+scan 3 (review round 1 fixes, run on the staged state that includes this file): needles scanned: path 23, title 19, quote 34, question 27, fact 14, project 9, keyfact 33, literal 10, folder 29, email 2; history emails 0; hits 0

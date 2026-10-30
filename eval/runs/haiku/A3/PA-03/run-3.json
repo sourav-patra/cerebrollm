@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-03",
+ "run": 3,
+ "started_utc": "2026-10-29T01:46:57Z",
+ "seconds": 7.45,
+ "prompt_file": "runs/prompts/A3/PA-03.txt",
+ "prompt_sha256": "b7e2c1b37564fbdfed3f32ca8a71eb6a75f983aa43bf9a4fbf577048d217fe5f",
+ "answer": "Use `ollama ls` to list the models you have downloaded, and `ollama ps` to see which models are currently loaded into memory.\n\nFor `ollama ls`, the docs list it under the heading \"### List models\" with the command \"ollama ls\" [ollama/docs/cli.md]. For `ollama ps`, the FAQ says \"Use the `ollama ps` command to see what models are currently loaded into memory.\" [ollama/docs/faq.md]",
+ "tokens": {
+  "input": 3081,
+  "output": 453,
+  "thinking": 307,
+  "cache_read": 2692,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00033102,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3153,
+  "stop_reason": "end_turn",
+  "session_id": "816d8e2c-d183-45ca-b14b-b10a14913ae4",
+  "total_cost_usd": 0.00033102,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2692,
+   "output_tokens": 453,
+   "output_tokens_details": {
+    "thinking_tokens": 307
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 453,
+     "cache_read_input_tokens": 2692,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 453,
+    "cacheReadInputTokens": 2692,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00033102,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 307,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use `ollama ls` to list the models you have downloaded, and `ollama ps` to see which models are currently loaded into memory.\n\nFor `ollama ls`, the docs list it under the heading \"### List models\" with the command \"ollama ls\" [ollama/docs/cli.md]. For `ollama ps`, the FAQ says \"Use the `ollama ps` command to see what models are currently loaded into memory.\" [ollama/docs/faq.md]",
+  "ttft_ms": 2925,
+  "type": "result",
+  "duration_ms": 3268,
+  "uuid": "fff5f1e4-e7f5-406a-ae9e-73e45e7b4251",
+  "ttft_stream_ms": 2923,
+  "time_to_request_ms": 147,
+  "first_content_frame_ms": 2924,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

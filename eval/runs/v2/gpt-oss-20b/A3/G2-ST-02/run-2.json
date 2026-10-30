@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 2,
+ "started_utc": "2026-10-29T16:24:20Z",
+ "seconds": 5.71,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "Flint runs on **macOS, Linux, and Windows**.  \n\"Flint now runs on Linux and Windows as well as macOS.\" [3] (ollama/v0.40.9.md)",
+ "thinking_chars": 1039,
+ "tokens": {
+  "input": 1746,
+  "output": 344
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6042837400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:24:25.5858932Z",
+  "response": "Flint runs on **macOS, Linux, and Windows**.  \n\"Flint now runs on Linux and Windows as well as macOS.\" [3] (ollama/v0.40.9.md)",
+  "thinking": "We need to answer: According to the newest Ollama release notes that cover Flint (up to 0.40.13), on which operating systems does Ollama run it? We have context documents up to v0.40.12. v0.40.13 not included. But maybe we can infer from v0.40.9 which says Flint now runs on Linux and Windows as well as macOS. Also earlier v0.40.8 says Flint is supported on macOS. So the newest release notes that cover Flint up to 0.40.13 likely mention that Flint runs on Linux, Windows, macOS. We need to quote the line that states that. In context [3] (v0.40.9) says: \"## Flint on Linux and Windows\" and then \"Flint now runs on Linux and Windows as well as macOS.\" That covers the OS. So answer: macOS, Linux, Windows. Provide quote: \"Flint now runs on Linux and Windows as well as macOS.\" [3] lines 1-8. Also maybe v0.40.8 says \"Note: Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" But the newest release notes up to 0.40.13 includes v0.40.9. So use that.\n\nThus answer: macOS, Linux, Windows. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6042837400,
+  "load_duration": 13022300,
+  "prompt_eval_count": 1746,
+  "prompt_eval_cached_count": 1741,
+  "prompt_eval_duration": 55162000,
+  "eval_count": 344,
+  "eval_duration": 5903690000
+ }
+}

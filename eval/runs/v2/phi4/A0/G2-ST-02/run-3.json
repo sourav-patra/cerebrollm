@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-ST-02",
+ "run": 3,
+ "started_utc": "2026-10-29T17:26:47Z",
+ "seconds": 4.06,
+ "prompt_sha256": "2d23fc8450ae62e8c4f0b78b5a1d6b1c9851b74705f4ea1c4160f7f8992fd031",
+ "answer": "I do not have access to the specific release notes for the newest Ollama release that covers Flint (up to 0.40.13). Therefore, I do not know the exact operating systems on which Ollama runs Flint according to those notes. Generally, software like Ollama typically supports popular operating systems such as Windows, macOS, and Linux, but for precise information, you would need to refer to the release notes directly.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 66,
+  "output": 90
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4360417100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:26:52.7390194Z",
+  "response": "I do not have access to the specific release notes for the newest Ollama release that covers Flint (up to 0.40.13). Therefore, I do not know the exact operating systems on which Ollama runs Flint according to those notes. Generally, software like Ollama typically supports popular operating systems such as Windows, macOS, and Linux, but for precise information, you would need to refer to the release notes directly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4360417100,
+  "load_duration": 12946200,
+  "prompt_eval_count": 66,
+  "prompt_eval_cached_count": 38,
+  "prompt_eval_duration": 218891000,
+  "eval_count": 90,
+  "eval_duration": 4112911000
+ }
+}

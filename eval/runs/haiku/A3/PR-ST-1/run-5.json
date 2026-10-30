@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-ST-1",
+ "run": 5,
+ "started_utc": "2026-10-29T02:02:16Z",
+ "seconds": 8.49,
+ "prompt_file": "runs/prompts/A3/PR-ST-1.txt",
+ "prompt_sha256": "50019051c806dd26fc0ba6c16743359613213703e53f5eba615ab01fe88a8307",
+ "answer": "Ollama uses a **4k context** by default on a GPU with 12 GiB of VRAM. The context-length docs state that the default depends on VRAM, and this tier applies: \"< 24 GiB VRAM: 4k context\" [ollama/docs/context-length.md].\n\nThe FAQ gives a general default of 4096 tokens, which matches this tier: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md]\n\nThe docs also say that tasks like web search, agents, and coding tools should use at least 64000 tokens: \"Tasks which require large context like web search, agents, and coding tools should be set to at least 64000 tokens.\" [ollama/docs/context-length.md]",
+ "tokens": {
+  "input": 2844,
+  "output": 533,
+  "thinking": 296,
+  "cache_read": 2456,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00036846000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4017,
+  "stop_reason": "end_turn",
+  "session_id": "26724f80-e06c-4a9d-aaa1-81d29e854bb8",
+  "total_cost_usd": 0.00036846000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2456,
+   "output_tokens": 533,
+   "output_tokens_details": {
+    "thinking_tokens": 296
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 533,
+     "cache_read_input_tokens": 2456,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 533,
+    "cacheReadInputTokens": 2456,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00036846000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 296,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Ollama uses a **4k context** by default on a GPU with 12 GiB of VRAM. The context-length docs state that the default depends on VRAM, and this tier applies: \"< 24 GiB VRAM: 4k context\" [ollama/docs/context-length.md].\n\nThe FAQ gives a general default of 4096 tokens, which matches this tier: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md]\n\nThe docs also say that tasks like web search, agents, and coding tools should use at least 64000 tokens: \"Tasks which require large context like web search, agents, and coding tools should be set to at least 64000 tokens.\" [ollama/docs/context-length.md]",
+  "ttft_ms": 3268,
+  "type": "result",
+  "duration_ms": 4143,
+  "uuid": "5c3b24e9-b180-4ec1-bbf0-3c6806864b23",
+  "ttft_stream_ms": 2750,
+  "time_to_request_ms": 164,
+  "first_content_frame_ms": 2750,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

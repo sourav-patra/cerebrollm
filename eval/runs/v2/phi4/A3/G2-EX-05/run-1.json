@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 1,
+ "started_utc": "2026-10-29T17:14:04Z",
+ "seconds": 21.9,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "Based on the provided context, Ollama's `/v1/systemone` decision-model API supports three question types. These are:\n\n1. **noul**: This type appears in both the Nimble model example and the Clef Flash model example. For instance, in the Nimble example, it is used in the question with instructions \"Does this ticket need attention within the hour?\".\n\n2. **Instructions**: While not explicitly named as a type in the provided examples, it appears as a field used in question objects, such as in the Nimble example: `\"instructions\": \"Does this ticket need attention within the hour?\"`.\n\n3. **Type**: This is mentioned in the context of the decision models, as a field in the JSON object that specifies the type of question, such as `\"type\": \"noul\"`.\n\nThese types are inferred from the context where questions are structured with a \"type\" and \"instructions\" within the JSON payloads sent to the API.\n\n\"noul\" is explicitly mentioned, and \"instructions\" and \"type\" are inferred from the structure of the questions. \n\nThe relevant context is:\n\n- \"questions\": { \"urgent\": { \"type\": \"noul\", \"instructions\": \"Does this ticket need attention within the hour?\" } } [ollama/v0.35.0.md](https://github.com/ollama/ollama/releases/tag/v0.35.0) \n- \"questions\": { \"has_ollama\": { \"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\" } } [ollama/v0.35.1.md](https://github.com/ollama/ollama/releases/tag/v0.35.1) \n\nThese examples illustrate the structure and types used in the decision models.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2262,
+  "output": 368
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 20767072400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:14:26.0587445Z",
+  "response": "Based on the provided context, Ollama's `/v1/systemone` decision-model API supports three question types. These are:\n\n1. **noul**: This type appears in both the Nimble model example and the Clef Flash model example. For instance, in the Nimble example, it is used in the question with instructions \"Does this ticket need attention within the hour?\".\n\n2. **Instructions**: While not explicitly named as a type in the provided examples, it appears as a field used in question objects, such as in the Nimble example: `\"instructions\": \"Does this ticket need attention within the hour?\"`.\n\n3. **Type**: This is mentioned in the context of the decision models, as a field in the JSON object that specifies the type of question, such as `\"type\": \"noul\"`.\n\nThese types are inferred from the context where questions are structured with a \"type\" and \"instructions\" within the JSON payloads sent to the API.\n\n\"noul\" is explicitly mentioned, and \"instructions\" and \"type\" are inferred from the structure of the questions. \n\nThe relevant context is:\n\n- \"questions\": { \"urgent\": { \"type\": \"noul\", \"instructions\": \"Does this ticket need attention within the hour?\" } } [ollama/v0.35.0.md](https://github.com/ollama/ollama/releases/tag/v0.35.0) \n- \"questions\": { \"has_ollama\": { \"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\" } } [ollama/v0.35.1.md](https://github.com/ollama/ollama/releases/tag/v0.35.1) \n\nThese examples illustrate the structure and types used in the decision models.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 20767072400,
+  "load_duration": 14821300,
+  "prompt_eval_count": 2262,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1191756000,
+  "eval_count": 368,
+  "eval_duration": 19335930000
+ }
+}

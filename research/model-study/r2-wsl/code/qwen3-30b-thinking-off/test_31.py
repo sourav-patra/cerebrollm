@@ -1,0 +1,251 @@
+Okay, let's see. I need to implement a function that factorizes a given integer into its prime factors, listed in order from smallest to largest, with each factor repeated according to its multiplicity. So for example, 8 should be [2,2,2], 25 is [5,5], and 70 is [2,5,7].
+
+First, I should think about how to approach prime factorization. The standard method is to divide the number by the smallest possible prime factor repeatedly until the number becomes 1.
+
+Let me outline the steps. Start with the smallest prime, which is 2. While the number is even, divide by 2 and add 2 to the list. Then move to the next prime, which is 3, and check divisibility. But wait, after 2, the next primes are 3, 5, 7, etc. However, checking all numbers might not be efficient, but for the purpose of this problem, since the input size isn't specified, maybe a simple approach is okay.
+
+Wait, but for numbers up to, say, 1e6, this method would work. Let's proceed.
+
+So the algorithm would be:
+
+1. Initialize an empty list to store the factors.
+2. Start with the smallest prime factor, which is 2.
+3. While n is divisible by 2, add 2 to the list and divide n by 2.
+4. Then check for odd factors starting from 3. For each factor i, while n is divisible by i, add i to the list and divide n by i.
+5. Increment i by 2 each time (since even numbers after 2 are not prime).
+6. Continue until n becomes 1.
+
+Wait, but what about when n is a prime number itself? For example, if n is 7, then the loop would check up to sqrt(n), but since 7 is prime, the loop would not find any factors, and then the remaining n would be added to the list.
+
+Wait, let's think. Let's say n is 7. The loop starts with 2. 7 is not divisible by 2. Then check 3. 7/3 is not integer. Then 5, but 5*5 is 25 which is larger than 7, so the loop would stop. Then the remaining n is 7, which is added to the list.
+
+So the code should handle that.
+
+So the steps in code:
+
+- Handle 2 as a factor first.
+- Then check odd numbers starting from 3.
+- The loop for i should go up to sqrt(n), but since n is changing, maybe better to loop while i * i <= n.
+
+Wait, let's think about the code structure.
+
+Initialize factors = [].
+
+First, handle factor 2. While n is even, append 2 and divide n by 2.
+
+Then, for i starting at 3, while i * i <= n, check if n is divisible by i. If yes, append i and divide n by i. If not, increment i by 2.
+
+After that, if n is still greater than 1, then n is a prime number, so append it.
+
+Wait, let's test this with some examples.
+
+Take n=8.
+
+First, handle 2: 8 is even. Append 2, n becomes 4. Append 2, n becomes 2. Append 2, n becomes 1. Then the loop for i starts at 3, but n is 1, so the loop doesn't run. So factors are [2,2,2]. Correct.
+
+Another example: n=25.
+
+Handle 2: 25 is odd, so skip. Then i starts at 3. Check if 25 is divisible by 3? No. i increments to 5. 5*5=25 <=25. Check 25%5==0. Yes. Append 5, n becomes 5. Check again: 5%5==0. Append 5, n becomes 1. Then loop ends. So factors [5,5]. Correct.
+
+Another example: n=70.
+
+Handle 2: 70 is even. Append 2, n=35. Now check i=3. 35%3 !=0. i=5. 35%5=0. Append 5, n=7. Now check i=5 again (since i is 5, and 5*5=25 >7, so loop stops). Then n is 7, which is added. So factors [2,5,7]. Correct.
+
+Another test case: n=7. Handle 2: no. Then i starts at 3. 3*3=9>7, so loop doesn't run. Then append 7. So [7]. Correct.
+
+Another test: n=1. Wait, but the problem says input number should be equal to the product of all factors. For n=1, the factorization is empty list? But the problem examples don't include 1. Let's check the problem statement. The examples start from 8, 25, 70. So perhaps the input n is at least 2. But the problem says "given integer", so maybe n >=2. But the code should handle n=1 as well. However, according to the problem statement, the input number should equal the product of the factors. For n=1, the product of an empty list is 1 (since product of empty list is 1 by convention), so the function should return [].
+
+But the problem's examples don't include 1, so maybe the code can assume n >=2. But to be safe, perhaps handle n=1 as well.
+
+But let's proceed. Let's code accordingly.
+
+So the code steps:
+
+def factorize(n: int) -> List[int]:
+    factors = []
+    # Handle factor 2
+    while n % 2 == 0:
+        factors.append(2)
+        n = n // 2
+    # Now n is odd
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n = n // i
+        i += 2
+    # If n is a prime number greater than 2
+    if n > 1:
+        factors.append(n)
+    return factors
+
+Wait, let's test this code with the examples.
+
+For n=8:
+
+After handling 2, factors are [2,2,2], n becomes 1. Then i starts at 3, but i*i=9 >1, so loop doesn't run. Then n is 1, so no append. Return [2,2,2]. Correct.
+
+n=25:
+
+Handle 2: no. Then i=3. 3*3=9 <=25. Check 25%3 !=0. i becomes 5. 5*5=25 <=25. Check 25%5=0. Append 5, n=5. Check again: 5%5=0. Append 5, n=1. Then i increments to 7, but i*i=49>1, so loop ends. Then n is 1, so no append. Return [5,5]. Correct.
+
+n=70:
+
+Handle 2: append 2, n=35. Then i=3: 35%3 !=0. i=5: 35%5=0. Append 5, n=7. Now check 7%5 !=0. i increments to 7. i*i=49>7, so loop ends. Then n=7>1, append 7. So factors [2,5,7]. Correct.
+
+Another test: n=14.
+
+14: handle 2, append 2, n=7. Then i=3: 3*3=9>7, so loop ends. Append 7. So [2,7]. Correct.
+
+Another test: n=12.
+
+12: handle 2, append 2, n=6. Append 2, n=3. Now handle 2: 3 is odd. Then i=3. i*i=9>3? No, 3*3=9>3? Wait, 3*3=9, which is larger than 3. So the loop condition is i*i <=n. For n=3, i=3, i*i=9>3, so the loop doesn't run. Then append n=3. So factors [2,2,3]. Correct.
+
+Wait, let's step through n=12.
+
+n=12.
+
+First, while n%2==0: 12%2=0, append 2, n=6. 6%2=0, append 2, n=3. Now n=3.
+
+i starts at 3. i*i=9 <=3? No. So the while loop for i doesn't run. Then check if n>1 (3>1), append 3. So factors [2,2,3]. Correct.
+
+Another test: n=9.
+
+Handle 2: no. i=3. i*i=9 <=9. Check 9%3=0. Append 3, n=3. Check again: 3%3=0. Append 3, n=1. Then i increments to 5, but i*i=25>1. So return [3,3]. Correct.
+
+Okay, this code seems to handle all the cases.
+
+Now, check if the code handles n=1. If n=1, the while loop for 2 doesn't run, then i starts at 3, but i*i=9>1, so loop doesn't run. Then n=1, so no append. Return empty list. Which is correct.
+
+But the problem's examples don't include n=1, but the code should handle it.
+
+Now, check if the code is efficient enough. For example, for a large prime number, the loop runs up to sqrt(n), which is acceptable for numbers up to, say, 1e12, but for the problem's context, it's probably okay.
+
+Now, check if the code is correct for all edge cases.
+
+Another edge case: n=2. The code would handle 2 as a factor. So factors = [2], n becomes 1. Then return [2]. Correct.
+
+n=3: handle 2 (no), then i=3. i*i=9>3, so loop doesn't run. Append 3. So [3]. Correct.
+
+n=4: [2,2]. Correct.
+
+So the code seems solid.
+
+Now, check if the code is written correctly.
+
+In Python, integer division is //, so n = n // 2.
+
+Yes.
+
+So the code should be:
+
+from typing import List
+
+def factorize(n: int) -> List[int]:
+    factors = []
+    while n % 2 == 0:
+        factors.append(2)
+        n = n // 2
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n = n // i
+        i += 2
+    if n > 1:
+        factors.append(n)
+    return factors
+
+Wait, but what about when n is 0? But the problem states that the input is a positive integer, I assume. The examples are positive. So the code can assume n >=1.
+
+But the problem says "given integer", but the examples are positive. So the code should handle positive integers. If n is 0, but the problem's examples don't include that, so probably not required.
+
+So the code as written should be correct.
+
+Let me check the example given in the problem statement.
+
+For 70, the code returns [2,5,7], which matches.
+
+Another example: 25 returns [5,5], correct.
+
+So this code should be correct.
+
+Now, check if there's any possible mistake.
+
+Wait, when n is a square of a prime, like 25, the code correctly appends the prime twice.
+
+Yes.
+
+Another possible mistake: when n is 1, but as discussed, the code returns empty list, which is correct.
+
+So I think this code is correct.
+
+Now, the problem says to return the complete executable function with any needed imports. The only import needed is from typing import List, which is already in the problem statement.
+
+So the code should be as written.
+
+Wait, the problem says "Return the complete executable function with any needed imports, in one Python code block, without explanations."
+
+So the code block should include the import and the function.
+
+Yes.
+
+So the code is:
+
+from typing import List
+
+def factorize(n: int) -> List[int]:
+    factors = []
+    while n % 2 == 0:
+        factors.append(2)
+        n = n // 2
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n = n // i
+        i += 2
+    if n > 1:
+        factors.append(n)
+    return factors
+
+Yes, this should be correct.
+</think>
+
+from typing import List
+
+
+def factorize(n: int) -> List[int]:
+    factors = []
+    while n % 2 == 0:
+        factors.append(2)
+        n = n // 2
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n = n // i
+        i += 2
+    if n > 1:
+        factors.append(n)
+    return factors
+
+
+
+METADATA = {
+    'author': 'jt',
+    'dataset': 'test'
+}
+
+
+def check(candidate):
+    assert candidate(2) == [2]
+    assert candidate(4) == [2, 2]
+    assert candidate(8) == [2, 2, 2]
+    assert candidate(3 * 19) == [3, 19]
+    assert candidate(3 * 19 * 3 * 19) == [3, 3, 19, 19]
+    assert candidate(3 * 19 * 3 * 19 * 3 * 19) == [3, 3, 3, 19, 19, 19]
+    assert candidate(3 * 19 * 19 * 19) == [3, 19, 19, 19]
+    assert candidate(3 * 2 * 3) == [2, 3, 3]
+
+check(factorize)

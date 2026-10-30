@@ -1,0 +1,42 @@
+{
+  "model": "bge-m3",
+  "chunks": 13431,
+  "duration_seconds": 525.9478914610017,
+  "chunks_per_minute": 1532.2050208461637,
+  "within_60_minutes": true,
+  "timing": "sum of sequential embedding-and-insert batches; excludes operator pauses between bounded commands",
+  "memory": {
+    "api": {
+      "models": [
+        {
+          "name": "bge-m3:latest",
+          "model": "bge-m3:latest",
+          "size": 689187061,
+          "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+          "details": {
+            "parent_model": "",
+            "format": "gguf",
+            "family": "bert",
+            "families": [
+              "bert"
+            ],
+            "parameter_size": "566.70M",
+            "quantization_level": "F16"
+          },
+          "expires_at": "2026-10-29T01:19:59.6825641+05:30",
+          "size_vram": 689187061,
+          "context_length": 8192,
+          "runner": "llamacpp"
+        }
+      ]
+    },
+    "command": [
+      "ollama.exe",
+      "ps"
+    ],
+    "stdout": "NAME             ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL               \nbge-m3:latest    790764642607    689 MB    100% GPU     8192       llamacpp    14 minutes from now    \n",
+    "stderr": "",
+    "exit": 0
+  },
+  "query_prefix": ""
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:21Z",
+ "seconds": 9.59,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I don't know of an Ollama environment variable named `OLLAMA_KV_CACHE_RETENTION`, so I can't give you a default for it.\n\nThe KV-cache-related variables I do know of are:\n\n- `OLLAMA_KV_CACHE_TYPE`: sets the K/V cache quantization type (`f16` by default, with `q8_0` and `q4_0` as other options).\n- `OLLAMA_FLASH_ATTENTION`: enables flash attention, which is required for quantized KV cache.\n- `OLLAMA_KEEP_ALIVE`: controls how long a model stays loaded in memory (5 minutes by default).\n\n`OLLAMA_KV_CACHE_RETENTION` may be a newer addition that I'm not aware of, or the name may be slightly different. I also can't check it here, since this working directory has no Ollama project files. The Ollama docs, or the `envconfig` package in the Ollama source (`envconfig/config.go`), would list the real variables and their defaults.",
+ "tokens": {
+  "input": 644,
+  "output": 336,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 642
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.005932,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5604,
+  "stop_reason": "end_turn",
+  "session_id": "fa66c38f-f2c9-4b8a-8377-d80b9abce3dd",
+  "total_cost_usd": 0.005932,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 642,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 336,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 642,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 336,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 642,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 642
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 336,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 642,
+    "webSearchRequests": 0,
+    "costUSD": 0.005932,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 642,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an Ollama environment variable named `OLLAMA_KV_CACHE_RETENTION`, so I can't give you a default for it.\n\nThe KV-cache-related variables I do know of are:\n\n- `OLLAMA_KV_CACHE_TYPE`: sets the K/V cache quantization type (`f16` by default, with `q8_0` and `q4_0` as other options).\n- `OLLAMA_FLASH_ATTENTION`: enables flash attention, which is required for quantized KV cache.\n- `OLLAMA_KEEP_ALIVE`: controls how long a model stays loaded in memory (5 minutes by default).\n\n`OLLAMA_KV_CACHE_RETENTION` may be a newer addition that I'm not aware of, or the name may be slightly different. I also can't check it here, since this working directory has no Ollama project files. The Ollama docs, or the `envconfig` package in the Ollama source (`envconfig/config.go`), would list the real variables and their defaults.",
+  "ttft_ms": 5660,
+  "type": "result",
+  "duration_ms": 5687,
+  "uuid": "5894d3a5-f679-41a1-a094-8c6e6f523d92",
+  "ttft_stream_ms": 3403,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 3404,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

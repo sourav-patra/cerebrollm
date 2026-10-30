@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-06",
+ "run": 1,
+ "started_utc": "2026-10-29T17:17:49Z",
+ "seconds": 7.0,
+ "prompt_sha256": "c9f4fdb460682b97dbcf6fbbea7a2d7680542f3fd6ab7249edf525b1c9919d0a",
+ "answer": "I do not know the answer to the question regarding which Ollama environment variable sets how many model layers are downloaded concurrently during the `ollama pull` operation. The provided context does not mention any specific environment variable related to the concurrent downloading of model layers. \n\nThe context discusses various aspects of Ollama's functionality, including API usage, concurrent request handling, and configuration settings, but does not specify an environment variable for controlling concurrent downloads of model layers. \n\nIf such an environment variable exists, it is not detailed in the given documents. Therefore, further investigation into Ollama's official documentation or source code might be necessary to find this information.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1772,
+  "output": 132
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7767527000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:17:56.0969213Z",
+  "response": "I do not know the answer to the question regarding which Ollama environment variable sets how many model layers are downloaded concurrently during the `ollama pull` operation. The provided context does not mention any specific environment variable related to the concurrent downloading of model layers. \n\nThe context discusses various aspects of Ollama's functionality, including API usage, concurrent request handling, and configuration settings, but does not specify an environment variable for controlling concurrent downloads of model layers. \n\nIf such an environment variable exists, it is not detailed in the given documents. Therefore, further investigation into Ollama's official documentation or source code might be necessary to find this information.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7767527000,
+  "load_duration": 13393000,
+  "prompt_eval_count": 1772,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 902291000,
+  "eval_count": 132,
+  "eval_duration": 6667065000
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-03",
+ "run": 1,
+ "started_utc": "2026-10-29T16:10:54Z",
+ "seconds": 6.29,
+ "prompt_sha256": "db75b1c050dbf2852df8783d1fd5d7792e27408e214d188243cff0240c6cf5a4",
+ "answer": "The Flint model on Ollama supports a **262,000‑token context window**.  \n“Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.” [1] ollama/v0.40.8.md (lines 8‑21).",
+ "thinking_chars": 1090,
+ "tokens": {
+  "input": 1795,
+  "output": 333
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6630619600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:11:01.3155478Z",
+  "response": "The Flint model on Ollama supports a **262,000‑token context window**.  \n“Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.” [1] ollama/v0.40.8.md (lines 8‑21).",
+  "thinking": "We need to answer: \"How large is the context window of Recursive's Flint model on Ollama?\" We must rely on the provided context. Let's search for context length or window for Flint. In context [1] there is a description of Flint, but no mention of context window. Maybe there's mention elsewhere. Look at lines 1-14 of context-length doc: says default context length based on VRAM, but not specific to Flint. But maybe Flint has a large context window. Let's search in [1] again: \"262K-token context window\" in the description: \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" Yes, in [1] line 1: \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" So Flint has a 262K-token context window. That seems like the answer. Quote that line: \"Reasoning, multi-turn tool use, and a 262K-token context window support longer tasks across files and tool interactions.\" Provide the citation path: [1] ollama/v0.40.8.md (lines 8-21). So answer: 262K tokens.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6630619600,
+  "load_duration": 14244500,
+  "prompt_eval_count": 1795,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 686290000,
+  "eval_count": 333,
+  "eval_duration": 5885499000
+ }
+}

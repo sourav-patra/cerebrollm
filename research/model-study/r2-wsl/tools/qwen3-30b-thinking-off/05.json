@@ -1,0 +1,157 @@
+{
+  "id": 6,
+  "request": {
+    "model": "qwen3:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Save the single line print(42) into scratch/answer.py."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": false,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:30b",
+    "created_at": "2026-10-29T01:06:35.3805839Z",
+    "message": {
+      "role": "assistant",
+      "content": "Okay, the user wants me to save the single line print(42) into scratch/answer.py. Let me check the available tools.\n\nLooking at the tools provided, there's a write_file function. It requires a path and content. The path should be scratch/answer.py and the content is print(42). \n\nI need to make sure the arguments are correctly formatted. The function expects path and content as parameters. So the path is \"scratch/answer.py\" and the content is \"print(42)\".\n\nWait, the user said \"single line\", so the content should be exactly that string. No extra spaces or newlines. The write_file function will replace any existing content, so that's good.\n\nI should structure the tool call with the correct JSON. The name is write_file, and the arguments should be a JSON object with path and content. Let me confirm the parameters: path is a string, content is a string. Yep.\n\nSo the tool call should be write_file with path \"scratch/answer.py\" and content \"print(42)\".\n</think>\n\n",
+      "tool_calls": [
+        {
+          "id": "call_gkls3e3x",
+          "function": {
+            "index": 0,
+            "name": "write_file",
+            "arguments": {
+              "path": "scratch/answer.py",
+              "content": "print(42)"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 6743935400,
+    "load_duration": 13412300,
+    "prompt_eval_count": 343,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 183353000,
+    "eval_count": 256,
+    "eval_duration": 6489385000
+  },
+  "wall_seconds": 6.719553752001957,
+  "load_average_before": [
+    0.04296875,
+    0.05615234375,
+    0.00537109375
+  ],
+  "load_average_after": [
+    0.03564453125,
+    0.05419921875,
+    0.00439453125
+  ],
+  "expected": {
+    "name": "write_file",
+    "arguments": {
+      "path": "scratch/answer.py",
+      "content": "print(42)"
+    }
+  },
+  "passed": true
+}

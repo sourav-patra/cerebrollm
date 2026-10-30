@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-16",
+ "run": 4,
+ "started_utc": "2026-10-29T01:51:45Z",
+ "seconds": 9.6,
+ "prompt_file": "runs/prompts/A0/PA-16.txt",
+ "prompt_sha256": "8377aa47fd54091bb908204d986022ffa121803fd2c95c4b854ab96454aff3c8",
+ "answer": "In promptfoo, you can re-run only the errored test cases with the `--filter-errors-only` option on `promptfoo eval`. You pass it the ID of the earlier evaluation, or `latest`:\n\n```powershell\npromptfoo eval --filter-errors-only latest\n```\n\nor with a specific evaluation ID:\n\n```powershell\npromptfoo eval --filter-errors-only <eval-id>\n```\n\nThis reruns only the cases that ended in an error, such as network failures or rate-limit responses, and skips the ones that passed or failed normally. The results are saved as a new evaluation.\n\nI'm not fully certain of the exact flag names and whether they vary by version, so please check `promptfoo eval --help` and the promptfoo docs for your installed version. I also believe newer versions include a `promptfoo retry` command aimed at the same purpose, but I can't confirm its details. If you're hitting rate limits, you may also want to lower the concurrency (for example, with `-j` or `--max-concurrency`) before rerunning, so the same errors don't recur.",
+ "tokens": {
+  "input": 664,
+  "output": 868,
+  "thinking": 522,
+  "cache_read": 0,
+  "cache_creation": 662
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005666,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5294,
+  "stop_reason": "end_turn",
+  "session_id": "8a39a44f-50ee-43d5-9800-92a276fd42fc",
+  "total_cost_usd": 0.0005666,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 662,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 868,
+   "output_tokens_details": {
+    "thinking_tokens": 522
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 662,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 868,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 662,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 662
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 868,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 662,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005666,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 522,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 662,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In promptfoo, you can re-run only the errored test cases with the `--filter-errors-only` option on `promptfoo eval`. You pass it the ID of the earlier evaluation, or `latest`:\n\n```powershell\npromptfoo eval --filter-errors-only latest\n```\n\nor with a specific evaluation ID:\n\n```powershell\npromptfoo eval --filter-errors-only <eval-id>\n```\n\nThis reruns only the cases that ended in an error, such as network failures or rate-limit responses, and skips the ones that passed or failed normally. The results are saved as a new evaluation.\n\nI'm not fully certain of the exact flag names and whether they vary by version, so please check `promptfoo eval --help` and the promptfoo docs for your installed version. I also believe newer versions include a `promptfoo retry` command aimed at the same purpose, but I can't confirm its details. If you're hitting rate limits, you may also want to lower the concurrency (for example, with `-j` or `--max-concurrency`) before rerunning, so the same errors don't recur.",
+  "ttft_ms": 3783,
+  "type": "result",
+  "duration_ms": 5421,
+  "uuid": "edd5088c-c2d6-47d6-8b98-3dc0a2bf0492",
+  "ttft_stream_ms": 2839,
+  "time_to_request_ms": 161,
+  "first_content_frame_ms": 2840,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

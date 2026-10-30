@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-09",
+ "run": 4,
+ "started_utc": "2026-10-29T16:47:22Z",
+ "seconds": 5.67,
+ "prompt_sha256": "33a2e37033519f45139e844295bea3f485cce58529b79198feb005d00dc1f617",
+ "answer": "I do not know.",
+ "thinking_chars": 1450,
+ "tokens": {
+  "input": 1640,
+  "output": 346
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 6042229100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:47:29.5189628Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: default separator_regex of LlamaIndex's TokenTextSplitter. The context includes token_text_splitter docs but not default separator_regex. The context snippet [1] shows TokenTextSplitter usage but not separator_regex. No mention of separator_regex. Might be defined in code or docs not included. We must answer based on known knowledge. I know that TokenTextSplitter in LlamaIndex has separator_regex default of r\"\\s\". Wait: The class likely uses separator_regex to split on whitespace. Let's recall: In llama_index, token_text_splitter.py: class TokenTextSplitter(NodeParser). It has __init__(chunk_size, chunk_overlap, separator=\" \", separator_regex=None...). I think default separator_regex is r\"\\s+\"? I should check memory: In LlamaIndex, token_text_splitter.py: \n\n```\nclass TokenTextSplitter(NodeParser):\n    def __init__(self, chunk_size: int = 1024, chunk_overlap: int = 20, separator: str = \" \", separator_regex: Optional[str] = None, ...):\n        super().__init__()\n        self.chunk_size = chunk_size\n        self.chunk_overlap = chunk_overlap\n        self.separator = separator\n        self.separator_regex = separator_regex or re.compile(r\"\\s+\")\n```\n\nBut not sure. Another possibility: default separator_regex is \"(\\n|\\r|\\r\\n)\"? Hmm.\n\nWe need to provide a quote and path. The context does not provide that quote. We might not know. In such case, answer that we don't know. We should say: \"I do not know.\" Provide that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6042229100,
+  "load_duration": 13223400,
+  "prompt_eval_count": 1640,
+  "prompt_eval_cached_count": 1635,
+  "prompt_eval_duration": 56765000,
+  "eval_count": 346,
+  "eval_duration": 5914188000
+ }
+}

@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/19",
+  "index": 39,
+  "request": {
+    "model": "devstral:24b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\nfrom typing import List\n\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "devstral:24b",
+    "created_at": "2026-10-28T21:14:49.9500325Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\nfrom typing import List\n\ndef sort_numbers(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numerals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers sorted from smallest to largest\n    >>> sort_numbers('three one five')\n    'one three five'\n    \"\"\"\n    number_map = {\n        'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,\n        'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9\n    }\n    reverse_number_map = {v: k for k, v in number_map.items()}\n\n    # Split the input string into a list of number words\n    number_words = numbers.split()\n\n    # Convert number words to their numeric values\n    number_values = [number_map[word] for word in number_words]\n\n    # Sort the numeric values\n    number_values.sort()\n\n    # Convert the sorted numeric values back to number words\n    sorted_number_words = [reverse_number_map[value] for value in number_values]\n\n    # Join the sorted number words into a single string\n    return ' '.join(sorted_number_words)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 47322710300,
+    "load_duration": 33391300,
+    "prompt_eval_count": 1356,
+    "prompt_eval_cached_count": 1249,
+    "prompt_eval_duration": 448383000,
+    "eval_count": 310,
+    "eval_duration": 46810969000
+  },
+  "wall_seconds": 44.49560927099992,
+  "load_average_before": [
+    0.0,
+    0.0439453125,
+    0.07373046875
+  ],
+  "load_average_after": [
+    0.0,
+    0.03515625,
+    0.0693359375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-devstral-24b-default-39",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\devstral-24b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_39.py"
+    ],
+    "wall_seconds": 0.6301339399997232,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

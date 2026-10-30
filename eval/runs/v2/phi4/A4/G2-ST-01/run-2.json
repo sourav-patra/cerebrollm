@@ -1,0 +1,89 @@
+{
+ "model": "phi4",
+ "arm": "A4",
+ "id": "G2-ST-01",
+ "run": 2,
+ "started_utc": "2026-10-30T07:16:43Z",
+ "seconds": 26.84,
+ "prompt_sha256": "283a8800985bafd5ed9df19b9e4a121313b3d934c2c2148eeae4f738d26fe5cc",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 3.9,
+   "rerank": 7.57,
+   "generate": 13.19,
+   "verify": 0.0,
+   "total": 24.65
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 2,
+    "rerank_score": 0.98389,
+    "path": "ollama/v0.32.7.md",
+    "line_start": 1,
+    "line_end": 42
+   },
+   {
+    "rank": 2,
+    "search_rank": 1,
+    "rerank_score": 0.95612,
+    "path": "ollama/v0.32.8.md",
+    "line_start": 1,
+    "line_end": 38
+   },
+   {
+    "rank": 3,
+    "search_rank": 5,
+    "rerank_score": 0.81534,
+    "path": "ollama/v0.32.8.md",
+    "line_start": 40,
+    "line_end": 43
+   },
+   {
+    "rank": 4,
+    "search_rank": 7,
+    "rerank_score": 0.63802,
+    "path": "ollama/docs/windows.md",
+    "line_start": 1,
+    "line_end": 9
+   },
+   {
+    "rank": 5,
+    "search_rank": 14,
+    "rerank_score": 0.57387,
+    "path": "ollama/README.md",
+    "line_start": 178,
+    "line_end": 203
+   },
+   {
+    "rank": 6,
+    "search_rank": 3,
+    "rerank_score": 0.55048,
+    "path": "ollama/v0.40.11.md",
+    "line_start": 1,
+    "line_end": 12
+   },
+   {
+    "rank": 7,
+    "search_rank": 11,
+    "rerank_score": 0.40767,
+    "path": "ollama/docs/quickstart.md",
+    "line_start": 96,
+    "line_end": 196
+   },
+   {
+    "rank": 8,
+    "search_rank": 16,
+    "rerank_score": 0.39417,
+    "path": "promptfoo/site/docs/providers/ollama.md",
+    "line_start": 69,
+    "line_end": 120
+   }
+  ],
+  "model": "phi4"
+ }
+}

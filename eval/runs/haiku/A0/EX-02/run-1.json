@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-02",
+ "run": 1,
+ "started_utc": "2026-10-29T01:38:07Z",
+ "seconds": 7.64,
+ "prompt_file": "runs/prompts/A0/EX-02.txt",
+ "prompt_sha256": "5a79ef424b3d5f0e0a140a04f1ad10fb91af40480e8889cdc8931fccf7dd38c3",
+ "answer": "The environment variable is **`OLLAMA_MODELS`**. Set it to the directory where you want Ollama to store model files, then restart Ollama so the change takes effect.\n\nOn Windows, you can set it in PowerShell for your user account:\n\n```powershell\n[Environment]::SetEnvironmentVariable(\"OLLAMA_MODELS\", \"D:\\OllamaModels\", \"User\")\n```\n\nThen quit Ollama from the system tray and start it again. By default, Ollama stores models in `%USERPROFILE%\\.ollama\\models`.",
+ "tokens": {
+  "input": 656,
+  "output": 180,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.000221,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2821,
+  "stop_reason": "end_turn",
+  "session_id": "67fa7987-a1e4-4bf0-a8a2-afb2128b7aab",
+  "total_cost_usd": 0.000221,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 180,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 180,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 180,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.000221,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The environment variable is **`OLLAMA_MODELS`**. Set it to the directory where you want Ollama to store model files, then restart Ollama so the change takes effect.\n\nOn Windows, you can set it in PowerShell for your user account:\n\n```powershell\n[Environment]::SetEnvironmentVariable(\"OLLAMA_MODELS\", \"D:\\OllamaModels\", \"User\")\n```\n\nThen quit Ollama from the system tray and start it again. By default, Ollama stores models in `%USERPROFILE%\\.ollama\\models`.",
+  "ttft_ms": 2936,
+  "type": "result",
+  "duration_ms": 2953,
+  "uuid": "5514d92d-15cd-428a-ae79-3d0ea9d9a25b",
+  "ttft_stream_ms": 2933,
+  "time_to_request_ms": 150,
+  "first_content_frame_ms": 2933,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

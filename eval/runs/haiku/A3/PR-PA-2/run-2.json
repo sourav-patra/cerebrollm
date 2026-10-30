@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-PA-2",
+ "run": 2,
+ "started_utc": "2026-10-29T01:53:48Z",
+ "seconds": 8.01,
+ "prompt_file": "runs/prompts/A3/PR-PA-2.txt",
+ "prompt_sha256": "e72e6674aae3add92bb1dad6c705b516ff14db2c4d049190f8be48c3a04de916",
+ "answer": "The tag is `pg17-bookworm`, or `0.8.7-pg17-bookworm` if you want to pin the pgvector version. The README lists it in the supported tags:\n\n\"- `pg17-bookworm`, `0.8.7-pg17-bookworm`, `pg17`, `0.8.7-pg17`\" [pgvector/README.md]\n\nThe README also gives the pull command with a Postgres version placeholder: \"docker pull pgvector/pgvector:pg18-trixie\" [pgvector/README.md]. For Postgres 17 on bookworm, you would use `pgvector/pgvector:pg17-bookworm`.",
+ "tokens": {
+  "input": 3346,
+  "output": 579,
+  "thinking": 367,
+  "cache_read": 2957,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00039666999999999995,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3484,
+  "stop_reason": "end_turn",
+  "session_id": "1b1b0af6-0ebb-4ade-ba8b-ccfbb1698aeb",
+  "total_cost_usd": 0.00039666999999999995,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2957,
+   "output_tokens": 579,
+   "output_tokens_details": {
+    "thinking_tokens": 367
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 579,
+     "cache_read_input_tokens": 2957,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 579,
+    "cacheReadInputTokens": 2957,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.00039666999999999995,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 367,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The tag is `pg17-bookworm`, or `0.8.7-pg17-bookworm` if you want to pin the pgvector version. The README lists it in the supported tags:\n\n\"- `pg17-bookworm`, `0.8.7-pg17-bookworm`, `pg17`, `0.8.7-pg17`\" [pgvector/README.md]\n\nThe README also gives the pull command with a Postgres version placeholder: \"docker pull pgvector/pgvector:pg18-trixie\" [pgvector/README.md]. For Postgres 17 on bookworm, you would use `pgvector/pgvector:pg17-bookworm`.",
+  "ttft_ms": 2757,
+  "type": "result",
+  "duration_ms": 3603,
+  "uuid": "409631f4-b7ea-4669-943b-69ac66a0be20",
+  "ttft_stream_ms": 2688,
+  "time_to_request_ms": 121,
+  "first_content_frame_ms": 2688,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

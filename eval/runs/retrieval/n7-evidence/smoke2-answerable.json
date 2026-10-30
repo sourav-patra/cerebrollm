@@ -1,0 +1,87 @@
+{
+  "question": "Which environment variable changes where Ollama stores downloaded models on Windows?",
+  "model": "gpt-oss:20b",
+  "answer": "\"set the environment variable `OLLAMA_MODELS` in your user account.\" [ollama/docs/windows.md]",
+  "abstained": false,
+  "citations": [
+    {
+      "path": "ollama/docs/windows.md",
+      "quote": "set the environment variable `OLLAMA_MODELS` in your user account.",
+      "verify": "OK",
+      "detail": "ollama/docs/windows.md@file sha256 2dd781e58983"
+    }
+  ],
+  "hits": [
+    {
+      "rank": 1,
+      "search_rank": 1,
+      "rerank_score": 0.99929,
+      "path": "ollama/docs/windows.md",
+      "line_start": 39,
+      "line_end": 51
+    },
+    {
+      "rank": 2,
+      "search_rank": 2,
+      "rerank_score": 0.924,
+      "path": "ollama/docs/faq.md",
+      "line_start": 233,
+      "line_end": 247
+    },
+    {
+      "rank": 3,
+      "search_rank": 3,
+      "rerank_score": 0.8618,
+      "path": "ollama/docs/faq.md",
+      "line_start": 113,
+      "line_end": 127
+    },
+    {
+      "rank": 4,
+      "search_rank": 6,
+      "rerank_score": 0.68756,
+      "path": "ollama/docs/windows.md",
+      "line_start": 74,
+      "line_end": 80
+    },
+    {
+      "rank": 5,
+      "search_rank": 19,
+      "rerank_score": 0.6708,
+      "path": "ollama/docs/faq.md",
+      "line_start": 91,
+      "line_end": 111
+    },
+    {
+      "rank": 6,
+      "search_rank": 5,
+      "rerank_score": 0.5865,
+      "path": "promptfoo/site/docs/providers/ollama.md",
+      "line_start": 1,
+      "line_end": 53
+    },
+    {
+      "rank": 7,
+      "search_rank": 12,
+      "rerank_score": 0.5265,
+      "path": "ollama/docs/faq.md",
+      "line_start": 289,
+      "line_end": 318
+    },
+    {
+      "rank": 8,
+      "search_rank": 11,
+      "rerank_score": 0.42847,
+      "path": "ollama/docs/faq.md",
+      "line_start": 15,
+      "line_end": 49
+    }
+  ],
+  "timings": {
+    "search": 3.22,
+    "rerank": 11.85,
+    "generate": 22.62,
+    "verify": 0.32,
+    "total": 38.02
+  }
+}

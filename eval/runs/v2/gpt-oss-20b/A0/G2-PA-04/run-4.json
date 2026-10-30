@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-PA-04",
+ "run": 4,
+ "started_utc": "2026-10-29T16:40:28Z",
+ "seconds": 7.35,
+ "prompt_sha256": "14fdc993daeb14fc601114caf128b618448037451bb731a2a9ad691d09d3a328",
+ "answer": "I’m not aware of any other special endpoint – in version 0.123.0 **promptfoo** defaults to the standard OpenAI **chat completions** API (the `/v1/chat/completions` endpoint) when you run it against GPT‑5.6 and newer models.",
+ "thinking_chars": 1419,
+ "tokens": {
+  "input": 116,
+  "output": 470
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8161883100
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:40:35.6043626Z",
+  "response": "I’m not aware of any other special endpoint – in version 0.123.0 **promptfoo** defaults to the standard OpenAI **chat completions** API (the `/v1/chat/completions` endpoint) when you run it against GPT‑5.6 and newer models.",
+  "thinking": "We need to answer a question about the project \"promptfoo\" version 0.123.0. The question: \"Which OpenAI API does promptfoo 0.123.0 use by default for GPT-5.6 and newer models?\" Likely refers to the API endpoint used for newer GPT-4, GPT-5? Actually GPT-5.6? Maybe referencing the OpenAI API that promptfoo uses by default for GPT-5.6 and newer models. Could be \"OpenAI API v1\" or \"Chat API\" or \"v1/chat/completions\"? Might be \"openai.ChatCompletion\" vs \"openai.Completion\"? Let's think: Promptfoo is a tool for evaluating prompts. The default API for GPT-4 (and likely GPT-5.6) is the OpenAI chat completions endpoint: /v1/chat/completions. So the answer: It uses the OpenAI Chat Completions API. But maybe they mention \"OpenAI API 1.2\" or \"OpenAI's new endpoint /v1/chat/completions\" for GPT-5.6? Let's search memory: Promptfoo 0.123.0 release notes? Not sure. Could be that earlier versions used the older /v1/completions endpoint for GPT-3.5 and older. For newer models, default is /v1/chat/completions. So answer: The default is the OpenAI Chat Completions API.\n\nAlternatively, maybe it's \"OpenAI API: v1/ChatCompletions\" or \"v1/chat/completions\". So I'd answer: It uses the standard OpenAI chat completions endpoint (v1/chat/completions). If unsure: \"I don't know.\" But I think it's correct.\n\nThus: Promptfoo 0.123.0 uses the OpenAI Chat Completions API (the chat endpoint) by default for GPT‑5.6 and newer models.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8161883100,
+  "load_duration": 14839700,
+  "prompt_eval_count": 116,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 182802000,
+  "eval_count": 470,
+  "eval_duration": 7948797000
+ }
+}

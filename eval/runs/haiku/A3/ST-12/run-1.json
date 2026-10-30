@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-12",
+ "run": 1,
+ "started_utc": "2026-10-29T01:58:35Z",
+ "seconds": 12.06,
+ "prompt_file": "runs/prompts/A3/ST-12.txt",
+ "prompt_sha256": "28daf9c92948063d398f0009aa0b4b5a7e32fb85dc9b3b30b59d56951af1ecc3",
+ "answer": "To count tokens for both LLM and embedding calls, use the `TokenCountingHandler` callback. The docs say token counting moved into a callback:\n\n\"Going forward, token counting as moved into a callback.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]\n\nThe setup has three steps:\n\n1. **Create the models.** The example uses mock objects, which let you test token counting without calling a real API: \"llm = MockLLM(max_tokens=256)\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]. For real counts, substitute your actual LLM and embedding model.\n\n2. **Create the handler and attach it to a callback manager.** The example passes a tokenizer to the handler: \"token_counter = TokenCountingHandler(\" and then \"callback_manager = CallbackManager([token_counter])\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md].\n\n3. **Register the models globally.** The example sets \"Settings.llm = llm\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]. The excerpt cuts off before the callback manager is attached to `Settings`, so I don't know the exact line for that step.\n\nThe tokenizer you pass should match your model. The docs state: \"By default, LlamaIndex uses a global tokenizer for all token counting.\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms.md]. The default is `cl100k` (from tiktoken), which matches `gpt-3.5-turbo`. If you use a different model, set `Settings.tokenizer` to a matching tokenizer so the counts are accurate.\n\nThe excerpts don't show how to read the totals from the handler after your calls. I believe `TokenCountingHandler` exposes running totals such as `total_llm_token_count` and `total_embedding_token_count`, but those attribute names aren't in the provided context, so please verify them against the current API reference.",
+ "tokens": {
+  "input": 3292,
+  "output": 1582,
+  "thinking": 873,
+  "cache_read": 0,
+  "cache_creation": 3290
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0014492,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7734,
+  "stop_reason": "end_turn",
+  "session_id": "85435865-640f-497f-9f03-fcb42cdc684a",
+  "total_cost_usd": 0.0014492,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3290,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1582,
+   "output_tokens_details": {
+    "thinking_tokens": 873
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3290,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1582,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3290,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3290
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1582,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3290,
+    "webSearchRequests": 0,
+    "costUSD": 0.0014492,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 873,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3290,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To count tokens for both LLM and embedding calls, use the `TokenCountingHandler` callback. The docs say token counting moved into a callback:\n\n\"Going forward, token counting as moved into a callback.\" [llama_index/docs/src/content/docs/framework/module_guides/observability/callbacks/token_counting_migration.md]\n\nThe setup has three steps:\n\n1. **Create the models.** The example uses mock objects, which let you test token counting without calling a real API: \"llm = MockLLM(max_tokens=256)\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]. For real counts, substitute your actual LLM and embedding model.\n\n2. **Create the handler and attach it to a callback manager.** The example passes a tokenizer to the handler: \"token_counter = TokenCountingHandler(\" and then \"callback_manager = CallbackManager([token_counter])\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md].\n\n3. **Register the models globally.** The example sets \"Settings.llm = llm\" [llama_index/docs/src/content/docs/framework/understanding/evaluating/cost_analysis/usage_pattern.md]. The excerpt cuts off before the callback manager is attached to `Settings`, so I don't know the exact line for that step.\n\nThe tokenizer you pass should match your model. The docs state: \"By default, LlamaIndex uses a global tokenizer for all token counting.\" [llama_index/docs/src/content/docs/framework/module_guides/models/llms.md]. The default is `cl100k` (from tiktoken), which matches `gpt-3.5-turbo`. If you use a different model, set `Settings.tokenizer` to a matching tokenizer so the counts are accurate.\n\nThe excerpts don't show how to read the totals from the handler after your calls. I believe `TokenCountingHandler` exposes running totals such as `total_llm_token_count` and `total_embedding_token_count`, but those attribute names aren't in the provided context, so please verify them against the current API reference.",
+  "ttft_ms": 5161,
+  "type": "result",
+  "duration_ms": 7857,
+  "uuid": "66031fbb-40bb-4c63-bfce-37f53423859a",
+  "ttft_stream_ms": 3097,
+  "time_to_request_ms": 167,
+  "first_content_frame_ms": 3097,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

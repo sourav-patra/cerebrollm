@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 4,
+ "started_utc": "2026-10-29T17:38:05Z",
+ "seconds": 9.8,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "Promptfoo version 0.124.0 accepts a new form of value for the `--filter-metadata` option, which is the ability to support comma-separated OR values. This means that within a single key, values can be separated by commas to apply OR logic. This feature allows more flexible filtering of test cases based on metadata.\n\nThis is explicitly mentioned in the context:\n\n*\"Features\n* **cli:** support comma-separated OR values in --filter-metadata ([#11320](https://github.com/promptfoo/promptfoo/issues/11320)) ([b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c))\"*\n\n[\"Features\" section, promptfoo/0.124.0.md (lines 20-31)] [3] promptfoo/0.124.0.md (lines 20-31).",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1677,
+  "output": 199
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10861318300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:38:15.883204Z",
+  "response": "Promptfoo version 0.124.0 accepts a new form of value for the `--filter-metadata` option, which is the ability to support comma-separated OR values. This means that within a single key, values can be separated by commas to apply OR logic. This feature allows more flexible filtering of test cases based on metadata.\n\nThis is explicitly mentioned in the context:\n\n*\"Features\n* **cli:** support comma-separated OR values in --filter-metadata ([#11320](https://github.com/promptfoo/promptfoo/issues/11320)) ([b7cae9f](https://github.com/promptfoo/promptfoo/commit/b7cae9ff5b756fdca72af54e0d3dcc25d5238d4c))\"*\n\n[\"Features\" section, promptfoo/0.124.0.md (lines 20-31)] [3] promptfoo/0.124.0.md (lines 20-31).",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10861318300,
+  "load_duration": 12366000,
+  "prompt_eval_count": 1677,
+  "prompt_eval_cached_count": 102,
+  "prompt_eval_duration": 889512000,
+  "eval_count": 199,
+  "eval_duration": 9796157000
+ }
+}

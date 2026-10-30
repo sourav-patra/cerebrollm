@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: With promptfoo's range filter, is the end index of the slice included in the run?

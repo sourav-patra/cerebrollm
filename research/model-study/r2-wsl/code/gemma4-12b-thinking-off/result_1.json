@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/70",
+  "index": 1,
+  "request": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "gemma4:12b",
+    "created_at": "2026-10-29T05:35:18.4748756Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef strange_sort_list(lst):\n    \"\"\"\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    \"\"\"\n    if not lst:\n        return []\n    \n    # Sort the list to easily pick min and max\n    sorted_lst = sorted(lst)\n    result = []\n    \n    left = 0\n    right = len(sorted_lst) - 1\n    \n    while left <= right:\n        # Add the minimum of the remaining\n        result.append(sorted_lst[left])\n        left += 1\n        \n        # If there are elements left, add the maximum of the remaining\n        if left <= right:\n            result.append(sorted_lst[right])\n            right -= 1\n            \n    return result\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 2108927700,
+    "load_duration": 12924400,
+    "prompt_eval_count": 174,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 107225000,
+    "eval_count": 285,
+    "eval_duration": 1931476000
+  },
+  "wall_seconds": 2.019642475002911,
+  "load_average_before": [
+    0.20654296875,
+    0.1328125,
+    0.23779296875
+  ],
+  "load_average_after": [
+    0.20654296875,
+    0.1328125,
+    0.23779296875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gemma4-12b-thinking-off-1",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gemma4-12b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_1.py"
+    ],
+    "wall_seconds": 0.761951862994465,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

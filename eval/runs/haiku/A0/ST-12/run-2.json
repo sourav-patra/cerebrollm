@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-12",
+ "run": 2,
+ "started_utc": "2026-10-29T01:58:36Z",
+ "seconds": 10.11,
+ "prompt_file": "runs/prompts/A0/ST-12.txt",
+ "prompt_sha256": "7ae00a655640bdbe80f6bf71fad0b0945932dcb03dc2ac6608e84d91b5625d4d",
+ "answer": "In LlamaIndex, you count tokens with `TokenCountingHandler`, a callback handler that tracks both LLM and embedding calls. This is from my knowledge of the library, so check the current docs if your version differs.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings, VectorStoreIndex, SimpleDirectoryReader\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\n# Use the tokenizer that matches your model. cl100k_base is a common default.\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.get_encoding(\"cl100k_base\").encode\n)\n\n# Register the handler globally so LLM and embedding calls are both tracked\nSettings.callback_manager = CallbackManager([token_counter])\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)  # counts embedding tokens\nquery_engine = index.as_query_engine()\nresponse = query_engine.query(\"What is this about?\")  # counts LLM tokens\n\nprint(\"Embedding tokens:\", token_counter.total_embedding_token_count)\nprint(\"LLM prompt tokens:\", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"LLM total tokens:\", token_counter.total_llm_token_count)\n\n# Reset between runs so counts don't accumulate\ntoken_counter.reset_counts()\n```\n\nNotes:\n- **Tokenizer:** Counts are only as accurate as the tokenizer you pass. For OpenAI models, `tiktoken` with the model's encoding is the usual choice. Install it with `pip install tiktoken`.\n- **Per-event detail:** `token_counter.llm_token_counts` and `token_counter.embedding_token_counts` hold per-call records.\n- **Scope:** The handler only sees events that go through the callback manager. If you create an LLM or embedding model without setting `Settings`, pass the callback manager to it directly.\n- **Provider-reported usage:** Some integrations expose the token usage the API returned, which can differ from a local tokenizer's count. I'm not certain how each integration surfaces this in current versions, so check the specific integration's docs.",
+ "tokens": {
+  "input": 655,
+  "output": 1171,
+  "thinking": 407,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007163,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5818,
+  "stop_reason": "end_turn",
+  "session_id": "6f5947cc-f2d2-415c-aee8-9bb401fb59cb",
+  "total_cost_usd": 0.0007163,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1171,
+   "output_tokens_details": {
+    "thinking_tokens": 407
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1171,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1171,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007163,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 407,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In LlamaIndex, you count tokens with `TokenCountingHandler`, a callback handler that tracks both LLM and embedding calls. This is from my knowledge of the library, so check the current docs if your version differs.\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings, VectorStoreIndex, SimpleDirectoryReader\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\n# Use the tokenizer that matches your model. cl100k_base is a common default.\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.get_encoding(\"cl100k_base\").encode\n)\n\n# Register the handler globally so LLM and embedding calls are both tracked\nSettings.callback_manager = CallbackManager([token_counter])\n\ndocuments = SimpleDirectoryReader(\"data\").load_data()\nindex = VectorStoreIndex.from_documents(documents)  # counts embedding tokens\nquery_engine = index.as_query_engine()\nresponse = query_engine.query(\"What is this about?\")  # counts LLM tokens\n\nprint(\"Embedding tokens:\", token_counter.total_embedding_token_count)\nprint(\"LLM prompt tokens:\", token_counter.prompt_llm_token_count)\nprint(\"LLM completion tokens:\", token_counter.completion_llm_token_count)\nprint(\"LLM total tokens:\", token_counter.total_llm_token_count)\n\n# Reset between runs so counts don't accumulate\ntoken_counter.reset_counts()\n```\n\nNotes:\n- **Tokenizer:** Counts are only as accurate as the tokenizer you pass. For OpenAI models, `tiktoken` with the model's encoding is the usual choice. Install it with `pip install tiktoken`.\n- **Per-event detail:** `token_counter.llm_token_counts` and `token_counter.embedding_token_counts` hold per-call records.\n- **Scope:** The handler only sees events that go through the callback manager. If you create an LLM or embedding model without setting `Settings`, pass the callback manager to it directly.\n- **Provider-reported usage:** Some integrations expose the token usage the API returned, which can differ from a local tokenizer's count. I'm not certain how each integration surfaces this in current versions, so check the specific integration's docs.",
+  "ttft_ms": 2911,
+  "type": "result",
+  "duration_ms": 5943,
+  "uuid": "3294b5b0-149e-45e6-b93e-24e44840d46e",
+  "ttft_stream_ms": 2821,
+  "time_to_request_ms": 156,
+  "first_content_frame_ms": 2821,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

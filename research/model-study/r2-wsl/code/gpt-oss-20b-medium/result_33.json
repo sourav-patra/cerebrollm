@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/77",
+  "index": 33,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef iscube(a):\n    '''\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    iscube(1) ==> True\n    iscube(2) ==> False\n    iscube(-1) ==> True\n    iscube(64) ==> True\n    iscube(0) ==> True\n    iscube(180) ==> False\n    '''\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "medium"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:23:13.253907Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef iscube(a):\n    \"\"\"\n    Return True if integer a is a perfect cube, otherwise False.\n    \"\"\"\n    if a == 0:\n        return True\n\n    x = abs(a)\n\n    # Find an upper bound for the cube root\n    high = 1\n    while high ** 3 <= x:\n        high <<= 1  # multiply by 2\n\n    low = high >> 1  # half of high\n\n    # Binary search for integer cube root\n    while low <= high:\n        mid = (low + high) // 2\n        cube = mid ** 3\n        if cube == x:\n            return True\n        elif cube < x:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return False\n```",
+      "thinking": "We need to implement iscube(a). Determine if integer a is a perfect cube. For negative numbers, cube root negative. Approach: compute integer cube root via round or int(pow(a, 1/3)). But careful with negative. Use round(abs(a)**(1/3)). But floating errors. Better use integer arithmetic: compute integer cube root via round(a**(1/3)). For negative, use sign. Or use integer binary search. Simpler: compute n = round(a ** (1/3)). Then check n**3 == a. But for large numbers, floating may be inaccurate. But input valid? Not specified. Could use integer math: use integer cube root via math.isclose? Let's implement binary search for integer cube root for absolute value. For negative, compute cube root of abs and apply sign. Implementation: if a==0: return True. sign = 1 if a>0 else -1. x = abs(a). low=0, high= int(round(x**(1/3)))+1? But we can set high = int(x**(1/3))+2. But for large x, x**(1/3) may overflow? Use high = int(pow(x, 1/3))+2. But still float. Instead, we can set high = int(x**(1/3))+2. But for huge numbers, float may not represent. But we can set high = int(pow(x, 1/3))+2. But if x is huge, pow may overflow? Actually pow returns float, may overflow to inf. But we can set high = int(x**(1/3))+2. But if x is huge, x**(1/3) may be inf. But we can use integer binary search with high = 1; while high**3 <= x: high*=2. Then binary search between low=high//2 and high. That works for arbitrary large ints. Let's implement that.\n\nAlgorithm:\nif a==0: return True\nsign = 1 if a>0 else -1\nx = abs(a)\n# find high\nhigh = 1\nwhile high**3 <= x:\n    high *= 2\nlow = high//2\nwhile low <= high:\n    mid = (low+high)//2\n    cube = mid**3\n    if cube == x:\n        return True\n    elif cube < x:\n        low = mid+1\n    else:\n        high = mid-1\nreturn False\n\nReturn True if found. For negative, we just check positive cube root. Because negative cube root of negative number is negative integer. So if x is perfect cube, then a is perfect cube. So we can just check x perfect cube. So we don't need sign. But we need to handle negative a: if a<0, check if abs(a) is perfect cube. So same algorithm.\n\nEdge: a=0 returns True.\n\nLet's implement.\n\nAlso import nothing needed.\n\nReturn function.\n\nLet's produce code."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14268137900,
+    "load_duration": 19315500,
+    "prompt_eval_count": 196,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 196390000,
+    "eval_count": 802,
+    "eval_duration": 14024649000
+  },
+  "wall_seconds": 13.435246282000662,
+  "load_average_before": [
+    0.95849609375,
+    0.302734375,
+    0.150390625
+  ],
+  "load_average_after": [
+    0.74560546875,
+    0.287109375,
+    0.1474609375
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-medium-33",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-medium:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_33.py"
+    ],
+    "wall_seconds": 0.7522502960000566,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-06",
+ "run": 3,
+ "started_utc": "2026-10-29T16:29:12Z",
+ "seconds": 19.1,
+ "prompt_sha256": "76eeb457029140d225af9863f4ff3e13b0a7dccc8497126a58581f184707e600",
+ "answer": "I don’t know the answer.",
+ "thinking_chars": 3615,
+ "tokens": {
+  "input": 107,
+  "output": 1033
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 18026863700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:29:30.2240135Z",
+  "response": "I don’t know the answer.",
+  "thinking": "We need to answer: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" So this is about promptfoo project version 0.122.0. We need to know which Node.js major version it stopped supporting.\n\nWe need to recall or search memory. I don't have internet access. I can recall that promptfoo is a library for evaluating LLMs. The question: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" So maybe earlier it supported Node 14, 16, 18, etc. The major version that was dropped: Node.js 14? Or Node 16? Let's think.\n\nPromptfoo 0.122.0 was likely released in some timeframe. Many projects drop Node 12, 14, 16, 18 support. Node 14 LTS ended in April 2023. Node 16 LTS ended in April 2024. Node 18 LTS ended in April 2025. But promptfoo 0.122.0 maybe dropped Node 12? But Node 12 ended in 2022. But the question: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" Likely Node 12. But let's check.\n\nWe need to recall the documentation or release notes. Promptfoo 0.122.0 might be a major release. In its release notes, they might mention that Node 12 is no longer supported. Actually, many libraries drop Node 12 earlier. But Node 12 is older LTS (EOL Jan 2022). Node 14 LTS ended in April 2023. Node 16 LTS ended in April 2024. Node 18 LTS will end in April 2025. So a 2024 release might drop Node 12 and 14? Wait: Node 14 LTS ended in April 2023, so 0.122.0 might drop Node 14 support. But the question is which major version did promptfoo 0.122.0 stop supporting. So likely Node 12 or 14. We need to be sure.\n\nLet's consider typical Node version support. Many libraries still support Node 12 until 2023. But promptfoo 0.122.0 might be released after Node 14 LTS end. So they might drop Node 14. Let's see: Node 14 LTS ended 2023, so a 2024 release might drop it. But the question might be referencing that promptfoo 0.122.0 no longer supports Node 14. Let's think about the context: The question is from a Q&A about the project. The answer likely: Node 12. But we need to check.\n\nSearch memory: I recall reading about promptfoo 0.122.0 release notes: \"The new version 0.122.0 drops Node.js 12 support, and is now only compatible with Node 14 and later.\" But I'm not sure. But let's analyze.\n\nPromptfoo is a Node-based CLI tool. The maintainers might drop Node 12 support because it's no longer maintained. Node 12 LTS ended in 2022. Many projects drop Node 12 by 2023. So 0.122.0 might drop Node 12. But the question: \"Which Node.js major version did promptfoo 0.122.0 stop supporting?\" If the answer is Node 12, that's a major version. They might drop Node 12 support, leaving Node 14 and Node 16? Or Node 18? But if they drop Node 12, the major version is 12. So the answer: Node.js 12.\n\nAlternatively, if they dropped Node 16 support, that would be major 16. But Node 16 LTS ended in April 2024, so maybe 0.122.0 dropped Node 16. But that seems less likely because Node 16 was still LTS at the time of 0.122.0 release? Actually Node 16 LTS ended in April 2024, so if 0.122.0 was released after that, they might drop Node 16. But it's more typical to drop older LTS earlier. Let's check the timeline: Node 14 LTS ended April 2023, Node 16 LTS ended April 2024. So a release after 2024 may drop Node 16. But if 0.122.0 is a recent release maybe in 2024 or 2025, they might drop Node 14 or Node 12. But the question likely expects Node 12.\n\nLet's see if there's any known information: Promptfoo's GitHub release 0.122.0. The release notes might mention \"Support for Node 12 has been dropped.\" That would be the answer. So answer: Node.js 12.\n\nThus I answer: Node.js 12.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 18026863700,
+  "load_duration": 14597500,
+  "prompt_eval_count": 107,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181699000,
+  "eval_count": 1033,
+  "eval_duration": 17811325000
+ }
+}

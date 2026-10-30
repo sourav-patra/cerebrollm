@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-17",
+ "run": 5,
+ "started_utc": "2026-10-29T02:00:50Z",
+ "seconds": 8.64,
+ "prompt_file": "runs/prompts/A3/ST-17.txt",
+ "prompt_sha256": "fc724e2d9274be20762507a8416ae77c7550b612b188c9186383e0f5ecff2777",
+ "answer": "The option is `isReasoningModel`, set to `true`. The Azure docs say to \"Set `isReasoningModel: true`\" [promptfoo/site/docs/providers/azure.md]. The troubleshooting section adds that for a custom or aliased deployment, the error \"commonly means Promptfoo is not treating it as a reasoning model because `isReasoningModel: true` is missing\" [promptfoo/site/docs/providers/azure.md].\n\nKnown built-in model names, such as `MAI-Thinking-1` and `MAI-DS-R1`, are detected as reasoning models by name, so they may not need the flag. The context doesn't say whether the same applies to other model names.",
+ "tokens": {
+  "input": 3862,
+  "output": 602,
+  "thinking": 378,
+  "cache_read": 3474,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00041314,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3663,
+  "stop_reason": "end_turn",
+  "session_id": "a906b27a-f8b1-4701-9fcc-35b344acd06c",
+  "total_cost_usd": 0.00041314,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 3474,
+   "output_tokens": 602,
+   "output_tokens_details": {
+    "thinking_tokens": 378
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 602,
+     "cache_read_input_tokens": 3474,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 602,
+    "cacheReadInputTokens": 3474,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00041314,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 378,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The option is `isReasoningModel`, set to `true`. The Azure docs say to \"Set `isReasoningModel: true`\" [promptfoo/site/docs/providers/azure.md]. The troubleshooting section adds that for a custom or aliased deployment, the error \"commonly means Promptfoo is not treating it as a reasoning model because `isReasoningModel: true` is missing\" [promptfoo/site/docs/providers/azure.md].\n\nKnown built-in model names, such as `MAI-Thinking-1` and `MAI-DS-R1`, are detected as reasoning models by name, so they may not need the flag. The context doesn't say whether the same applies to other model names.",
+  "ttft_ms": 2830,
+  "type": "result",
+  "duration_ms": 3783,
+  "uuid": "c303e5ab-749f-4905-abaf-85630d5987f8",
+  "ttft_stream_ms": 2774,
+  "time_to_request_ms": 141,
+  "first_content_frame_ms": 2775,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

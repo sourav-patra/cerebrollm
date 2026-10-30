@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-02",
+ "run": 3,
+ "started_utc": "2026-10-29T01:38:15Z",
+ "seconds": 8.07,
+ "prompt_file": "runs/prompts/A3/EX-02.txt",
+ "prompt_sha256": "47e33c291671b0620411f3ea95b3f07dab5d1de33678ac88d5559c3aef63defc",
+ "answer": "The environment variable is `OLLAMA_MODELS`. On Windows, you set it in your user account, and it changes where Ollama stores downloaded models instead of the default home directory. \"Edit or create a new variable for your user account for `OLLAMA_MODELS` where you want the models stored\" [ollama/docs/windows.md].\n\nQuit and relaunch Ollama after saving so it picks up the new value. \"If Ollama is already running, Quit the tray application and relaunch it from the Start menu, or a new terminal started after you saved the environment variables.\" [ollama/docs/windows.md]",
+ "tokens": {
+  "input": 2827,
+  "output": 194,
+  "thinking": 0,
+  "cache_read": 2439,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00019879,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2909,
+  "stop_reason": "end_turn",
+  "session_id": "00b4d731-4922-4579-942e-25dab76990e7",
+  "total_cost_usd": 0.00019879,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2439,
+   "output_tokens": 194,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 194,
+     "cache_read_input_tokens": 2439,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 194,
+    "cacheReadInputTokens": 2439,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.00019879,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The environment variable is `OLLAMA_MODELS`. On Windows, you set it in your user account, and it changes where Ollama stores downloaded models instead of the default home directory. \"Edit or create a new variable for your user account for `OLLAMA_MODELS` where you want the models stored\" [ollama/docs/windows.md].\n\nQuit and relaunch Ollama after saving so it picks up the new value. \"If Ollama is already running, Quit the tray application and relaunch it from the Start menu, or a new terminal started after you saved the environment variables.\" [ollama/docs/windows.md]",
+  "ttft_ms": 3030,
+  "type": "result",
+  "duration_ms": 3048,
+  "uuid": "4a73eae1-bcc9-4ccd-b389-6cc89e9140e7",
+  "ttft_stream_ms": 3027,
+  "time_to_request_ms": 139,
+  "first_content_frame_ms": 3027,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

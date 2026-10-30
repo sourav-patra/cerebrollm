@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-06",
+ "run": 3,
+ "started_utc": "2026-10-29T01:39:41Z",
+ "seconds": 8.18,
+ "prompt_file": "runs/prompts/A3/EX-06.txt",
+ "prompt_sha256": "908e6571309c4252e945f845ef7bf3e793479d1418810175183129ee0ec72f9c",
+ "answer": "I don't know the dimension limit for an HNSW index on `halfvec` from the provided context. The excerpts show halfvec indexing but don't state a limit for it.\n\nThe only dimension limit in the excerpts is for the `vector` type, not `halfvec`: \"Vectors can have up to 16,000 dimensions.\" [pgvector/README.md (lines 951-960) > pgvector > Reference]\n\nThe excerpts also show an HNSW index on `halfvec` but not its maximum dimensions: \"CREATE INDEX ON items USING hnsw ((embedding::halfvec(3)) halfvec_l2_ops);\" [pgvector/README.md (lines 558-570) > pgvector > Half-Precision Indexing]\n\nThe \"Halfvec Type\" section, which would likely state its limit, is not included in the context. Check that section of the pgvector README, or the project's documentation for the version you're using.",
+ "tokens": {
+  "input": 2937,
+  "output": 533,
+  "thinking": 236,
+  "cache_read": 2550,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003692000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3578,
+  "stop_reason": "end_turn",
+  "session_id": "4cbb1c23-cada-4533-8e21-c6b3598ecac9",
+  "total_cost_usd": 0.0003692000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2550,
+   "output_tokens": 533,
+   "output_tokens_details": {
+    "thinking_tokens": 236
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 533,
+     "cache_read_input_tokens": 2550,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 533,
+    "cacheReadInputTokens": 2550,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003692000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 236,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know the dimension limit for an HNSW index on `halfvec` from the provided context. The excerpts show halfvec indexing but don't state a limit for it.\n\nThe only dimension limit in the excerpts is for the `vector` type, not `halfvec`: \"Vectors can have up to 16,000 dimensions.\" [pgvector/README.md (lines 951-960) > pgvector > Reference]\n\nThe excerpts also show an HNSW index on `halfvec` but not its maximum dimensions: \"CREATE INDEX ON items USING hnsw ((embedding::halfvec(3)) halfvec_l2_ops);\" [pgvector/README.md (lines 558-570) > pgvector > Half-Precision Indexing]\n\nThe \"Halfvec Type\" section, which would likely state its limit, is not included in the context. Check that section of the pgvector README, or the project's documentation for the version you're using.",
+  "ttft_ms": 2978,
+  "type": "result",
+  "duration_ms": 3709,
+  "uuid": "f1a9fadd-ea22-4a93-ba6c-7f9f900013cb",
+  "ttft_stream_ms": 2977,
+  "time_to_request_ms": 169,
+  "first_content_frame_ms": 2978,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

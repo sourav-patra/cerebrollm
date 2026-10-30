@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/70",
+  "index": 1,
+  "request": {
+    "model": "qwen3-coder:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "qwen3-coder:30b",
+    "created_at": "2026-10-29T00:04:59.0298197Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef strange_sort_list(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list([]) == []\n    '''\n    if not lst:\n        return []\n    \n    sorted_lst = sorted(lst)\n    result = []\n    take_min = True\n    \n    while sorted_lst:\n        if take_min:\n            result.append(sorted_lst.pop(0))\n        else:\n            result.append(sorted_lst.pop(-1))\n        take_min = not take_min\n    \n    return result\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5059514000,
+    "load_duration": 15826300,
+    "prompt_eval_count": 151,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 548118000,
+    "eval_count": 192,
+    "eval_duration": 4454646000
+  },
+  "wall_seconds": 4.716792622002686,
+  "load_average_before": [
+    0.1064453125,
+    0.06298828125,
+    0.01220703125
+  ],
+  "load_average_after": [
+    0.09765625,
+    0.0615234375,
+    0.01171875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-coder-30b-default-1",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-coder-30b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_1.py"
+    ],
+    "wall_seconds": 0.7574964400009776,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

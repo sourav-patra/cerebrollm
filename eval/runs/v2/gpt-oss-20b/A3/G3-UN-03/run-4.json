@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-03",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:44Z",
+ "seconds": 7.7,
+ "prompt_sha256": "ea1c0621f7cf79de8af3f668c6d57ad0ac7fab228bd8a07e61bee258a07b2ea9",
+ "answer": "I do not know.",
+ "thinking_chars": 1898,
+ "tokens": {
+  "input": 1698,
+  "output": 471
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8200101400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:46:52.687465Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the maximum number of dimensions pgvector supports for the bitvec type?\" We have context. Let's search for bitvec maximum dimensions. Context lines mention bit type storage: \"Each bit vector takes `dimensions / 8 + 8` bytes of storage.\" No explicit maximum. The question: maximum number of dimensions for bitvec type. Maybe similar to vector type max 16000. For bitvec, maybe same as vector? But need to find from docs. Let's search context. In [8], halfvec aggregate functions and bit type description: \"Each bit vector takes `dimensions / 8 + 8` bytes of storage. See the Postgres docs for more info.\" No maximum. But maybe earlier in README? Let's search context lines. Not provided. But maybe the answer: same as vector: 16,000 dimensions? But bit vectors? Bits per dimension? In Postgres bit type, max length is 10,000? Actually Postgres bit type can have up to 10,000 bits? Wait: Postgres bit string type: bit(n) can be up to 10,000 bits? Let's recall: Postgres bit and varbit types: bit(n) fixed-length, varbit variable length; maximum length is 10,000 bits? According to Postgres docs: \"The maximum length of a bit string is 10,000 bits.\" Yes, varbit maximum 10,000 bits. But pgvector bit type might be varbit? The README didn't state limit. But likely inherits from Postgres varbit, so maximum 10,000 bits.\n\nLet's confirm by searching for \"bit\" elsewhere. But only given snippet [8]. Maybe earlier context includes bit type max? Not in provided snippet. But maybe the answer: 10,000 dimensions. The question: \"What is the maximum number of dimensions pgvector supports for the bitvec type?\" The answer: 10,000 bits. Provide quote? Need quote referencing maximum dimension. But we don't have a quote. We can say we don't know. But maybe we can infer. The safe approach: say we do not know. Provide explanation.\n\nWe should answer: I do not know. Provide no quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8200101400,
+  "load_duration": 14218800,
+  "prompt_eval_count": 1698,
+  "prompt_eval_cached_count": 1693,
+  "prompt_eval_duration": 55351000,
+  "eval_count": 471,
+  "eval_duration": 8063092000
+ }
+}

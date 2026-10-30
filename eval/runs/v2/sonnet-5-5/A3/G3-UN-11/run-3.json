@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:56Z",
+ "seconds": 10.86,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "I don't know. The retrieved documents don't give any throughput figure for `IngestionPipeline`, whether documents per second or per CPU core.\n\nThe closest material is about parallelism. The docs say \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]. They also show how to set `num_workers` to use multiple processes. They don't say how fast any of this runs.\n\nThroughput will depend on which transformations you use (splitters, extractors, embedding models) and on whether those call external LLM or embedding APIs. You'd need to benchmark your own pipeline to get a real number.",
+ "tokens": {
+  "input": 3391,
+  "output": 235,
+  "thinking": 0,
+  "cache_read": 3024,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0041164,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7043,
+  "stop_reason": "end_turn",
+  "session_id": "529d1c7b-ec3f-460d-a9a2-c471e9401462",
+  "total_cost_usd": 0.0041164,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 3024,
+   "output_tokens": 235,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 235,
+     "cache_read_input_tokens": 3024,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 235,
+    "cacheReadInputTokens": 3024,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0041164,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved documents don't give any throughput figure for `IngestionPipeline`, whether documents per second or per CPU core.\n\nThe closest material is about parallelism. The docs say \"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]. They also show how to set `num_workers` to use multiple processes. They don't say how fast any of this runs.\n\nThroughput will depend on which transformations you use (splitters, extractors, embedding models) and on whether those call external LLM or embedding APIs. You'd need to benchmark your own pipeline to get a real number.",
+  "ttft_ms": 7100,
+  "type": "result",
+  "duration_ms": 7124,
+  "uuid": "1d87807d-4660-48e7-a803-ef83e12f9388",
+  "ttft_stream_ms": 5106,
+  "time_to_request_ms": 98,
+  "first_content_frame_ms": 5106,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

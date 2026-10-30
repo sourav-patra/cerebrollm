@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-03",
+ "run": 4,
+ "started_utc": "2026-10-29T15:59:09Z",
+ "seconds": 4.24,
+ "prompt_sha256": "262b90f5523f033c9f91a19c02284e74821b49396951e2bd440866c8331f033f",
+ "answer": "The Nemotron 3.5 Bolt model has 74B total parameters and 9B active parameters.\n\n\"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md (lines 1-14)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2251,
+  "output": 118
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 2384461100
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:59:12.3112198Z",
+  "response": "The Nemotron 3.5 Bolt model has 74B total parameters and 9B active parameters.\n\n\"A compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\" [ollama/v0.40.5.md (lines 1-14)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2384461100,
+  "load_duration": 18551600,
+  "prompt_eval_count": 2251,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 995958000,
+  "eval_count": 118,
+  "eval_duration": 1039291999
+ }
+}

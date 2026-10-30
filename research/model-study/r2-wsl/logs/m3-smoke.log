@@ -1,0 +1,59 @@
+2026-10-29T15:53:58+00:00 smoke: lock taken
+Traceback (most recent call last):
+  File "<repo>/research/model-study/m3_smoke.py", line 31, in <module>
+    payload, final, ttft, wall = one_request(model, mode, 16384, text, 200)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/research/model-study/m3_speed.py", line 79, in one_request
+    response.raise_for_status()
+  File "~/.cerebrollm/venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://127.0.0.1:11434/api/chat'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2026-10-29T15:54:45+00:00 smoke: command exit 1, releasing lock
+2026-10-29T16:00:55+00:00 smoke: lock taken
+mtp4-think-off gen tok/s 46.9 load_s 28.1
+mtp0-think-off gen tok/s 46.6 load_s 27.9
+mtp4-think-off gen tok/s 52.4 load_s 29.2
+llama_model_loader: - kv  28:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  29:            tokenizer.ggml.padding_token_id u32              = 248044
+llama_model_loader: - kv  30:                         tokenizer.ggml.pre str              = qwen35
+llama_model_loader: - kv  31:                      tokenizer.ggml.scores arr[f32,248320]  = [0.000000, 1.000000, 2.000000, 3.0000...
+llama_model_loader: - kv  32:                  tokenizer.ggml.token_type arr[i32,248320]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  33:                      tokenizer.ggml.tokens arr[str,248320]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  34:               general.quantization_version u32              = 2
+llama_model_loader: - kv  35:                          general.file_type u32              = 15
+load: special tokens cache size = 276
+print_info: n_head_kv             = 2
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 40 repeating layers to GPU
+load_tensors: offloaded 42/42 layers to GPU
+llama_context: flash_attn            = auto
+llama_context: kv_unified            = false
+llama_kv_cache:      CUDA0 KV buffer size =   320.00 MiB
+llama_kv_cache: size =  320.00 MiB ( 16384 cells,  10 layers,  1/1 seqs), K (f16):  160.00 MiB, V (f16):  160.00 MiB
+llama_kv_cache: n_rot_k = 0, n_embd_head_k_all = 256
+llama_kv_cache: n_rot_v = 0, n_embd_head_k_all = 256
+llama_memory_recurrent: size =  314.06 MiB (     1 cells,  40 layers,  1 seqs  4 rs_seq), R (f32):   14.06 MiB, S (f32):  300.00 MiB, P (f32):    0.00 MiB
+resolve_fused_ops: Flash Attention enabled
+cmn  common_init_: KV cache shifting is not supported for this context, disabling KV cache shifting
+common_speculative_init_result: creating MTP draft context against the target model '<home>\.ollama\models\blobs\sha256-d372de8e934898a59e6ccfabc3368474711384d8f1fd4d22d87a3f0a45400cdc'
+llama_context: flash_attn            = auto
+llama_context: kv_unified            = false
+llama_kv_cache:      CUDA0 KV buffer size =    32.00 MiB
+llama_kv_cache: size =   32.00 MiB ( 16384 cells,   1 layers,  1/1 seqs), K (f16):   16.00 MiB, V (f16):   16.00 MiB
+llama_kv_cache: n_rot_k = 0, n_embd_head_k_all = 256
+llama_kv_cache: n_rot_v = 0, n_embd_head_k_all = 256
+resolve_fused_ops: Flash Attention enabled
+clip_model_loader: n_kv:         19
+warmup: flash attention is enabled
+srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+spec common_specu: adding speculative implementation 'draft-mtp'
+spec common_specu: - n_max=4, n_min=0, p_min=0.00, n_embd=2048, backend_sampling=1
+spec common_specu: - gpu_layers=-1, cache_k=f16, cache_v=f16, ctx_tgt=yes, ctx_dft=yes, devices=[default]
+srv    load_model: speculative decoding context initialized
+time=2026-10-29T21:32:30.087+05:30 level=INFO source=images.go:431 msg="template selection" model=registry.ollama.ai/library/qwen3.6:35b-a3b-coding-mtp-q4_K_M selected=renderer_parser renderer=qwen3.5 parser=qwen3.5 go_template=null chat_template="[tools thinking completion vision]" harmony=null renderer_parser="[completion vision tools thinking]"
+slot print_timing: id  0 | task 0 | draft acceptance = 0.59322 (  140 accepted /   236 generated), mean len =  3.37
+spec common_specu: statistics        draft-mtp: #calls(b,g,a) =    1     59     59, #gen drafts =     59, #acc drafts =    55, #gen tokens =    236, #acc tokens =   140, #mean acc len = 3.37, #acc rate/pos = (0.932, 0.661, 0.424, 0.356), dur(b,g,a) = 0.005, 725.363, 0.109 ms
+guard unload qwen3.6:35b-a3b-coding-mtp-q4_K_M exit 0 qwen3.6:35b-a3b-coding-mtp-q4_K_M unloaded; /api/ps is empty 
+guard check-empty exit 0 /api/ps is empty 
+2026-10-29T16:02:38+00:00 smoke: command exit 0, releasing lock

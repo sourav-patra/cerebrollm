@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-PA-06",
+ "run": 4,
+ "started_utc": "2026-10-29T17:38:32Z",
+ "seconds": 8.53,
+ "prompt_sha256": "e02a7b5ff599cf3bfec4bf1079a9e4139804bf300a7d1c1ed13a7c79ceb27b66",
+ "answer": "The context window for Claude Opus 4.6 in `llama-index-llms-anthropic` version 0.11.10 is set to 1 million tokens. This is specified in the release notes for that version:\n\n\"fix(anthropic): correct Opus 4.6 context window to 1M.\"  \n[\"llama_index/v0.14.24.md (lines 55-60)\" [1]]\n\nAdditionally, a similar context window setting is noted in another version, which might have been carried over:\n\n\"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6.\"  \n[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3610-3617)\" [4]]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1558,
+  "output": 169
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9272902600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:38:40.5692685Z",
+  "response": "The context window for Claude Opus 4.6 in `llama-index-llms-anthropic` version 0.11.10 is set to 1 million tokens. This is specified in the release notes for that version:\n\n\"fix(anthropic): correct Opus 4.6 context window to 1M.\"  \n[\"llama_index/v0.14.24.md (lines 55-60)\" [1]]\n\nAdditionally, a similar context window setting is noted in another version, which might have been carried over:\n\n\"feat(bedrock-converse): Set context window size to 1M for Opus 4.6 & Sonnet 4.6.\"  \n[\"llama_index/docs/src/content/docs/framework/CHANGELOG.md (lines 3610-3617)\" [4]]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9272902600,
+  "load_duration": 14564900,
+  "prompt_eval_count": 1558,
+  "prompt_eval_cached_count": 105,
+  "prompt_eval_duration": 752302000,
+  "eval_count": 169,
+  "eval_duration": 8347367000
+ }
+}

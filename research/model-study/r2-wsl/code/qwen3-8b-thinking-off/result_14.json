@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/61",
+  "index": 14,
+  "request": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:8b",
+    "created_at": "2026-10-28T22:35:27.1888092Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n    \"\"\"\n    balance = 0\n    for char in brackets:\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n            if balance < 0:\n                return False\n    return balance == 0\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1218669300,
+    "load_duration": 15367400,
+    "prompt_eval_count": 124,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 26570000,
+    "eval_count": 95,
+    "eval_duration": 1153520000
+  },
+  "wall_seconds": 1.1398969609999767,
+  "load_average_before": [
+    0.453125,
+    0.18505859375,
+    0.060546875
+  ],
+  "load_average_after": [
+    0.453125,
+    0.18505859375,
+    0.060546875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-8b-thinking-off-14",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-8b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_14.py"
+    ],
+    "wall_seconds": 0.7761851439991005,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,24 @@
+2026-10-29T01:37:43Z
+Cache is disabled.
+Starting evaluation eval-YMJ-2026-10-29T01:37:49
+Running 700 test cases (up to 4 at a time)...
+Skipping table output because there are more than 500 tests.
+✓ Eval complete (ID: eval-YMJ-2026-10-29T01:37:49)
+
+» View results: promptfoo view
+» Share with your team: https://promptfoo.app
+» Feedback: https://promptfoo.dev/feedback
+
+
+Repeat stability:
+  140 repeated groups; 0 unstable
+
+Results:
+  ✓ 700 passed (100%)
+  0 failed (0%)
+  0 errors (0%)
+Duration: 25m 22s (concurrency: 4)
+
+Writing output to runs/promptfoo-hosted.json, runs/promptfoo-hosted.html
+exit 0
+2026-10-29T02:03:11Z

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-15",
+ "run": 1,
+ "started_utc": "2026-10-29T01:51:11Z",
+ "seconds": 8.03,
+ "prompt_file": "runs/prompts/A0/PA-15.txt",
+ "prompt_sha256": "3ecaafcb90f0c887f551134417261f11d3477ef9b46858d0fb4f4a09054bcd19",
+ "answer": "You assign it to **`Settings.callback_manager`**. Wrap your handler, such as a `TokenCountingHandler`, in a `CallbackManager` and set it there:\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode\n)\nSettings.callback_manager = CallbackManager([token_counter])\n```\n\nComponents created after this assignment pick up the global callback manager, so their events are counted. The tokenizer choice is an example; use one that matches your model.",
+ "tokens": {
+  "input": 673,
+  "output": 501,
+  "thinking": 265,
+  "cache_read": 0,
+  "cache_creation": 671
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00038490000000000003,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3319,
+  "stop_reason": "end_turn",
+  "session_id": "0605ae8d-cd0b-4ff0-b3d3-07d665186dfe",
+  "total_cost_usd": 0.00038490000000000003,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 671,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 501,
+   "output_tokens_details": {
+    "thinking_tokens": 265
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 671,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 501,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 671,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 671
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 501,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 671,
+    "webSearchRequests": 0,
+    "costUSD": 0.00038490000000000003,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 265,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 671,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You assign it to **`Settings.callback_manager`**. Wrap your handler, such as a `TokenCountingHandler`, in a `CallbackManager` and set it there:\n\n```python\nimport tiktoken\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode\n)\nSettings.callback_manager = CallbackManager([token_counter])\n```\n\nComponents created after this assignment pick up the global callback manager, so their events are counted. The tokenizer choice is an example; use one that matches your model.",
+  "ttft_ms": 2892,
+  "type": "result",
+  "duration_ms": 3442,
+  "uuid": "ae900436-8abe-4f62-9e41-93ec14133f08",
+  "ttft_stream_ms": 2891,
+  "time_to_request_ms": 163,
+  "first_content_frame_ms": 2891,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

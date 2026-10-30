@@ -1,0 +1,211 @@
+{
+  "note": "Written on 2026-10-29 for development step M, before any R2 model ran on this machine. The Mac scenario file of 2026-10-27 was never committed and could not be recovered, so these 12 are new. Scored by study.py rules: exactly one tool call, right name, arguments equal to the expected object.",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "read_file",
+        "description": "Read a text file and return its contents.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Path of the file to read"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "write_file",
+        "description": "Write text to a file, replacing any existing content.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Path of the file to write"
+            },
+            "content": {
+              "type": "string",
+              "description": "Exact text to write"
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "run_tests",
+        "description": "Run the tests in one test file and return the result.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Path of the test file"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "search_code",
+        "description": "Search the code base for a text string and return the matching lines.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Text to search for"
+            }
+          },
+          "required": [
+            "query"
+          ]
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": 1,
+      "prompt": "Show me the contents of src/main.py.",
+      "expected": {
+        "name": "read_file",
+        "arguments": {
+          "path": "src/main.py"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "I need to see the file README.md before I change anything.",
+      "expected": {
+        "name": "read_file",
+        "arguments": {
+          "path": "README.md"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "What is the timeout value? It is set somewhere in config/settings.toml, so open that file first.",
+      "expected": {
+        "name": "read_file",
+        "arguments": {
+          "path": "config/settings.toml"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "Create the file hello.txt containing exactly the text: hello world",
+      "expected": {
+        "name": "write_file",
+        "arguments": {
+          "path": "hello.txt",
+          "content": "hello world"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "prompt": "Overwrite src/version.py so that it contains exactly this text: VERSION = \"2.1.0\"",
+      "expected": {
+        "name": "write_file",
+        "arguments": {
+          "path": "src/version.py",
+          "content": "VERSION = \"2.1.0\""
+        }
+      }
+    },
+    {
+      "id": 6,
+      "prompt": "Save the single line print(42) into scratch/answer.py.",
+      "expected": {
+        "name": "write_file",
+        "arguments": {
+          "path": "scratch/answer.py",
+          "content": "print(42)"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "prompt": "Run the tests in tests/test_math.py.",
+      "expected": {
+        "name": "run_tests",
+        "arguments": {
+          "path": "tests/test_math.py"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "prompt": "I just edited tests/test_io.py. Check that its tests pass.",
+      "expected": {
+        "name": "run_tests",
+        "arguments": {
+          "path": "tests/test_io.py"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "prompt": "The fix is in. Run the test file tests/test_api.py now.",
+      "expected": {
+        "name": "run_tests",
+        "arguments": {
+          "path": "tests/test_api.py"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "prompt": "Search the code for the text parse_header.",
+      "expected": {
+        "name": "search_code",
+        "arguments": {
+          "query": "parse_header"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "prompt": "Search the code for the string TODO.",
+      "expected": {
+        "name": "search_code",
+        "arguments": {
+          "query": "TODO"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "prompt": "Use code search to find where load_config appears.",
+      "expected": {
+        "name": "search_code",
+        "arguments": {
+          "query": "load_config"
+        }
+      }
+    }
+  ]
+}

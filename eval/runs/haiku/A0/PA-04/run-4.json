@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-04",
+ "run": 4,
+ "started_utc": "2026-10-29T01:47:19Z",
+ "seconds": 7.63,
+ "prompt_file": "runs/prompts/A0/PA-04.txt",
+ "prompt_sha256": "99c2ac73a9bbb1ba3c7d062879c149968b1d08b5af6447e11ae05f62f7481549",
+ "answer": "If a Modelfile doesn't set `temperature`, Ollama uses a default of **0.8**. This is the documented default in Ollama's parameter reference and the built-in default options. I'm going from memory and can't check the current source, so verify against the docs for your version if it matters.",
+ "tokens": {
+  "input": 659,
+  "output": 287,
+  "thinking": 197,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0002751,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2724,
+  "stop_reason": "end_turn",
+  "session_id": "a639544c-5850-46f8-81a6-0f0c317a82b4",
+  "total_cost_usd": 0.0002751,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 287,
+   "output_tokens_details": {
+    "thinking_tokens": 197
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 287,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 287,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.0002751,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 197,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "If a Modelfile doesn't set `temperature`, Ollama uses a default of **0.8**. This is the documented default in Ollama's parameter reference and the built-in default options. I'm going from memory and can't check the current source, so verify against the docs for your version if it matters.",
+  "ttft_ms": 2844,
+  "type": "result",
+  "duration_ms": 2864,
+  "uuid": "3db8eadf-5f70-4d1c-987f-89b936e65695",
+  "ttft_stream_ms": 2843,
+  "time_to_request_ms": 162,
+  "first_content_frame_ms": 2843,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

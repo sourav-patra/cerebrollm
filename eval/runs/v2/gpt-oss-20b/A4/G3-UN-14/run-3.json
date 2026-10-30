@@ -1,0 +1,89 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-14",
+ "run": 3,
+ "started_utc": "2026-10-30T06:41:19Z",
+ "seconds": 18.91,
+ "prompt_sha256": "0c1bdfe41cd789fbb5d3f9d0b383ad7a1a26b04ae3fbfde440ecefa259745de0",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 0.87,
+   "rerank": 10.94,
+   "generate": 4.71,
+   "verify": 0.0,
+   "total": 16.52
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.93364,
+    "path": "promptfoo/site/docs/providers/openai.md",
+    "line_start": 235,
+    "line_end": 260
+   },
+   {
+    "rank": 2,
+    "search_rank": 13,
+    "rerank_score": 0.93245,
+    "path": "promptfoo/site/docs/configuration/reference.md",
+    "line_start": 226,
+    "line_end": 278
+   },
+   {
+    "rank": 3,
+    "search_rank": 2,
+    "rerank_score": 0.84928,
+    "path": "promptfoo/site/docs/providers/groq.md",
+    "line_start": 51,
+    "line_end": 87
+   },
+   {
+    "rank": 4,
+    "search_rank": 6,
+    "rerank_score": 0.83839,
+    "path": "promptfoo/site/docs/providers/moonshot.md",
+    "line_start": 73,
+    "line_end": 97
+   },
+   {
+    "rank": 5,
+    "search_rank": 7,
+    "rerank_score": 0.78099,
+    "path": "promptfoo/site/docs/configuration/reference.md",
+    "line_start": 52,
+    "line_end": 52
+   },
+   {
+    "rank": 6,
+    "search_rank": 8,
+    "rerank_score": 0.6903,
+    "path": "promptfoo/site/docs/tracing.md",
+    "line_start": 306,
+    "line_end": 362
+   },
+   {
+    "rank": 7,
+    "search_rank": 17,
+    "rerank_score": 0.68596,
+    "path": "promptfoo/site/docs/configuration/reference.md",
+    "line_start": 189,
+    "line_end": 189
+   },
+   {
+    "rank": 8,
+    "search_rank": 19,
+    "rerank_score": 0.66646,
+    "path": "promptfoo/site/docs/getting-started.md",
+    "line_start": 231,
+    "line_end": 294
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-08",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:42Z",
+ "seconds": 6.98,
+ "prompt_sha256": "4c2ac3f2b8c5d0cd55b591290e0e5a02e298352e9e6ed8584c109b3fc7e96c68",
+ "answer": "I don't know of any Ollama CLI flag that sets the number of parallel layer downloads for `ollama pull`. As far as I know, `ollama pull` has options like `--insecure`, but nothing for download concurrency. I also have no project-specific context here that says otherwise.\n\nTo confirm, you can run `ollama pull --help` and check the flags your installed version lists. Ollama's behavior may also have changed in newer releases, so the docs or release notes are worth a look.",
+ "tokens": {
+  "input": 642,
+  "output": 154,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 640
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004104,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2642,
+  "stop_reason": "end_turn",
+  "session_id": "167e73b3-60be-428f-8472-7c22509019de",
+  "total_cost_usd": 0.004104,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 640,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 154,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 640,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 154,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 640,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 640
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 154,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 640,
+    "webSearchRequests": 0,
+    "costUSD": 0.004104,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 640,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of any Ollama CLI flag that sets the number of parallel layer downloads for `ollama pull`. As far as I know, `ollama pull` has options like `--insecure`, but nothing for download concurrency. I also have no project-specific context here that says otherwise.\n\nTo confirm, you can run `ollama pull --help` and check the flags your installed version lists. Ollama's behavior may also have changed in newer releases, so the docs or release notes are worth a look.",
+  "ttft_ms": 2712,
+  "type": "result",
+  "duration_ms": 2728,
+  "uuid": "cbed9876-2744-4df0-b219-4327c4485f0c",
+  "ttft_stream_ms": 2710,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 2710,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

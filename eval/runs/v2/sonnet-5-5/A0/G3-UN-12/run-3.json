@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-12",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:39Z",
+ "seconds": 8.01,
+ "prompt_sha256": "e1200184b323a2c8814ad450516cddee19c4dbcd96f07faf83c21a3a790ea8a1",
+ "answer": "I don't know. I'm not aware of a `--max-retries` flag on `promptfoo eval`, so I can't give a default for it. I don't want to guess.\n\nRelated options I do know of are `--repeat`, `--delay`, `--max-concurrency`, and `--retry-errors`, which re-runs results that errored. There is also an environment variable for request backoff timing (`PROMPTFOO_REQUEST_BACKOFF_MS`). I can't confirm that any of these are what you mean.\n\nTo check, run `promptfoo eval --help` and look for the flag and its default. If you point me to a promptfoo checkout or its docs, I can look there too.",
+ "tokens": {
+  "input": 633,
+  "output": 381,
+  "thinking": 166,
+  "cache_read": 0,
+  "cache_creation": 631
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.006338,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3756,
+  "stop_reason": "end_turn",
+  "session_id": "aa0db16c-0177-4d74-a769-f11636ee6977",
+  "total_cost_usd": 0.006338,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 631,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 381,
+   "output_tokens_details": {
+    "thinking_tokens": 166
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 631,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 381,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 631,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 631
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 381,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 631,
+    "webSearchRequests": 0,
+    "costUSD": 0.006338,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 166,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 631,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I'm not aware of a `--max-retries` flag on `promptfoo eval`, so I can't give a default for it. I don't want to guess.\n\nRelated options I do know of are `--repeat`, `--delay`, `--max-concurrency`, and `--retry-errors`, which re-runs results that errored. There is also an environment variable for request backoff timing (`PROMPTFOO_REQUEST_BACKOFF_MS`). I can't confirm that any of these are what you mean.\n\nTo check, run `promptfoo eval --help` and look for the flag and its default. If you point me to a promptfoo checkout or its docs, I can look there too.",
+  "ttft_ms": 2959,
+  "type": "result",
+  "duration_ms": 3860,
+  "uuid": "b73965f5-f7a9-4b01-ae04-35e592a0c8b6",
+  "ttft_stream_ms": 2942,
+  "time_to_request_ms": 131,
+  "first_content_frame_ms": 2942,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

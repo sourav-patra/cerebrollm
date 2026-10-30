@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-07",
+ "run": 3,
+ "started_utc": "2026-10-29T17:30:24Z",
+ "seconds": 13.1,
+ "prompt_sha256": "f9c1cedfb218da3a7d88978fbcdf7c4c4f4b124e1c4c2b6f91985f3ed7788462",
+ "answer": "The two ROUGE-based assertion types added in promptfoo 0.125.0 are `rouge-l` and `rouge-s`. This information is found in the context provided under the following quote:\n\n* **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\n\n[\"promptfoo/0.125.0.md (lines 14-25)\"](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) > Features > Features > * **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf)).",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2180,
+  "output": 245
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 14081340000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:30:37.1650292Z",
+  "response": "The two ROUGE-based assertion types added in promptfoo 0.125.0 are `rouge-l` and `rouge-s`. This information is found in the context provided under the following quote:\n\n* **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf))\n\n[\"promptfoo/0.125.0.md (lines 14-25)\"](https://github.com/promptfoo/promptfoo/compare/0.124.1...0.125.0) > Features > Features > * **assertions:** add rouge-l and rouge-s assertion types ([#10256](https://github.com/promptfoo/promptfoo/issues/10256)) ([6842fc3](https://github.com/promptfoo/promptfoo/commit/6842fc3932e42d3a0da6feb42f51a1b656b378bf)).",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 14081340000,
+  "load_duration": 15495600,
+  "prompt_eval_count": 2180,
+  "prompt_eval_cached_count": 100,
+  "prompt_eval_duration": 1148270000,
+  "eval_count": 245,
+  "eval_duration": 12768431000
+ }
+}

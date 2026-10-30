@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-08",
+ "run": 5,
+ "started_utc": "2026-10-29T16:51:07Z",
+ "seconds": 12.68,
+ "prompt_sha256": "b411a6fb69c2354af49cdcea218c3db8945d222685dc2218b23d5dcb151d6f97",
+ "answer": "I’m not familiar with that specific detail.",
+ "thinking_chars": 3476,
+ "tokens": {
+  "input": 110,
+  "output": 801
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 13558981600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:51:20.3659527Z",
+  "response": "I’m not familiar with that specific detail.",
+  "thinking": "We need to answer: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we need to answer from knowledge about PromptFoo, a project. It's a CLI tool for evaluating LLM prompts. The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" That means safe mode in eval turned off something. We need to recall what safe mode does: likely disables safety checks, maybe disables \"response safety\" features like content filtering, or it disables the \"OpenAI safety prompt\" for the model. But promptfoo 0.125.0 added a safe mode to eval. Let's search memory: PromptFoo release notes? The safe mode might turn off \"OpenAI safety checks\" or \"OpenAI moderation\" or \"OpenAI's moderation API\" or \"OpenAI's content filtering\" or \"OpenAI's safety filter\" or \"OpenAI's content safety\" or \"OpenAI's usage restrictions\".\n\nWait: The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So safe mode turns off something. Might be \"turns off the built-in safety filter\" for the evaluation. Could be \"turns off the safety prompt injection\" or \"turns off the safety guard that prevents the model from producing unsafe content.\" Let's recall: PromptFoo originally had a safety filter that used the OpenAI moderation endpoint or some custom logic. The safe mode might disable the \"safety prompt\" that ensures the model stays safe. But the question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" That implies safe mode disables something like \"the safety filter that blocks disallowed content.\" It might disable \"the safety checks that filter out disallowed content like profanity, hate, etc.\" But we need to be precise: According to the documentation: \"Safe mode: If enabled, will turn off the safety filter and allow any output.\" Actually safe mode might turn off the \"safety filtering\" that is on by default. But we need to confirm.\n\nLet's search memory: PromptFoo's release notes: \"0.125.0: Added safe mode to eval, which turns off the safety filter.\" Or \"safe mode disables the safety checks for the model.\" The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" The answer: \"It turns off the safety filter that blocks unsafe content.\" Or \"It turns off the safety checks for the model.\" But we need to be precise: \"It turns off the built-in safety guard that checks for disallowed content and stops the prompt.\" Or maybe \"It turns off the safety features of the evaluation, such as the moderation endpoint and the safety filter.\" The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So answer: \"It turns off the safety filter that prevents the model from generating disallowed content.\" Let's phrase: \"Safe mode disables the safety filtering mechanism, allowing raw model output without safety checks.\"\n\nAlternatively, maybe safe mode turns off \"OpenAI's moderation endpoint.\" But the question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So the answer: \"It turns off the safety filter that blocks disallowed content.\" Let's be safe: \"It turns off the safety filter that checks the output for disallowed content.\" That is likely correct.\n\nWe can also mention: \"Safe mode disables the built-in safety checks, including the OpenAI moderation and any content filters.\" Let's answer accordingly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13558981600,
+  "load_duration": 14056100,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181975000,
+  "eval_count": 801,
+  "eval_duration": 13344031000
+ }
+}

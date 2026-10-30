@@ -1,0 +1,21 @@
+description: N2 local model phi4, arms A0-A3 (issue #12); the exec scripts send the saved prompt for each arm
+prompts:
+  - "{{question}}"
+providers:
+  - id: exec:python arms/a0.py
+    label: A0
+    config:
+      model: phi4
+  - id: exec:python arms/a1.py
+    label: A1
+    config:
+      model: phi4
+  - id: exec:python arms/a2.py
+    label: A2
+    config:
+      model: phi4
+  - id: exec:python arms/a3.py
+    label: A3
+    config:
+      model: phi4
+tests: file://promptfoo-tests.json

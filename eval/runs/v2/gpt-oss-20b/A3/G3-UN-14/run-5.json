@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-14",
+ "run": 5,
+ "started_utc": "2026-10-29T16:59:09Z",
+ "seconds": 3.44,
+ "prompt_sha256": "4221129194bf1cb934aa3106f44dad4955d3e80e0ddbe6ce1259e4b7a90bfaa6",
+ "answer": "I do not know.",
+ "thinking_chars": 861,
+ "tokens": {
+  "input": 1545,
+  "output": 207
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3697493800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:59:12.0946942Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: What is the default value of promptfoo's evaluateOptions.maxTokensPerCell? This is a config property. We need to search context for \"maxTokensPerCell\". In provided context, we have EvaluateOptions interface, but it doesn't include maxTokensPerCell. The default value might be defined elsewhere. Maybe in docs or config reference. Search in context: I see no maxTokensPerCell in EvaluateOptions. There's a config reference at [5] but not shown. There's a section about \"table-cell-max-length\" in command-line options. That might relate. But the question: default value of evaluateOptions.maxTokensPerCell. Might be defined in docs or code. Not present in context. So answer: I don't know. According to instruction, if I don't know, say I do not know. Provide quote and path if known. Since I don't know, I should say \"I do not know.\" No quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3697493800,
+  "load_duration": 15173100,
+  "prompt_eval_count": 1545,
+  "prompt_eval_cached_count": 1540,
+  "prompt_eval_duration": 57808000,
+  "eval_count": 207,
+  "eval_duration": 3562143000
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-09",
+ "run": 1,
+ "started_utc": "2026-10-29T01:57:21Z",
+ "seconds": 8.01,
+ "prompt_file": "runs/prompts/A0/ST-09.txt",
+ "prompt_sha256": "4b047831c6d002523517f59996208514d2b62819cb7e8d4a79f7fe70029fb16a",
+ "answer": "Use **`VectorStoreIndex`**, from `llama_index.core`. It chunks documents, embeds them, and stores the vectors. Load your files first with **`SimpleDirectoryReader`**:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"path/to/your/docs\").load_data()\nindex = VectorStoreIndex.from_documents(documents)\n\nquery_engine = index.as_query_engine()\nprint(query_engine.query(\"Your question here\"))\n```\n\nBy default this uses an in-memory store and OpenAI embeddings, so you'll need an `OPENAI_API_KEY` set or another embedding model configured. To save the index to disk and reload it later:\n\n```python\nindex.storage_context.persist(persist_dir=\"./storage\")\n\nfrom llama_index.core import StorageContext, load_index_from_storage\nstorage_context = StorageContext.from_defaults(persist_dir=\"./storage\")\nindex = load_index_from_storage(storage_context)\n```\n\nI don't know which LlamaIndex version or project setup you're using, so these import paths assume the current `llama_index.core` package layout. If you're on an older version, the imports may differ.",
+ "tokens": {
+  "input": 656,
+  "output": 605,
+  "thinking": 202,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00043349999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3374,
+  "stop_reason": "end_turn",
+  "session_id": "37f7204b-1848-41c9-b052-d1c115232fb3",
+  "total_cost_usd": 0.00043349999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 605,
+   "output_tokens_details": {
+    "thinking_tokens": 202
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 605,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 605,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.00043349999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 202,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **`VectorStoreIndex`**, from `llama_index.core`. It chunks documents, embeds them, and stores the vectors. Load your files first with **`SimpleDirectoryReader`**:\n\n```python\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\ndocuments = SimpleDirectoryReader(\"path/to/your/docs\").load_data()\nindex = VectorStoreIndex.from_documents(documents)\n\nquery_engine = index.as_query_engine()\nprint(query_engine.query(\"Your question here\"))\n```\n\nBy default this uses an in-memory store and OpenAI embeddings, so you'll need an `OPENAI_API_KEY` set or another embedding model configured. To save the index to disk and reload it later:\n\n```python\nindex.storage_context.persist(persist_dir=\"./storage\")\n\nfrom llama_index.core import StorageContext, load_index_from_storage\nstorage_context = StorageContext.from_defaults(persist_dir=\"./storage\")\nindex = load_index_from_storage(storage_context)\n```\n\nI don't know which LlamaIndex version or project setup you're using, so these import paths assume the current `llama_index.core` package layout. If you're on an older version, the imports may differ.",
+  "ttft_ms": 2843,
+  "type": "result",
+  "duration_ms": 3499,
+  "uuid": "93658939-c903-4e5e-8b9e-788007f3eaa2",
+  "ttft_stream_ms": 2841,
+  "time_to_request_ms": 167,
+  "first_content_frame_ms": 2841,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

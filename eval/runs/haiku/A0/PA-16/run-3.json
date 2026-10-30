@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-16",
+ "run": 3,
+ "started_utc": "2026-10-29T01:51:40Z",
+ "seconds": 9.84,
+ "prompt_file": "runs/prompts/A0/PA-16.txt",
+ "prompt_sha256": "8377aa47fd54091bb908204d986022ffa121803fd2c95c4b854ab96454aff3c8",
+ "answer": "In promptfoo, you can re-run only the tests that errored, rather than the whole suite, using the eval ID from the previous run:\n\n```powershell\n# Re-run only errored tests from the most recent eval\npromptfoo eval --filter-errors-only latest\n\n# Or from a specific eval ID\npromptfoo eval --filter-errors-only <evalId>\n```\n\nThe `--filter-errors-only` flag selects tests that ended in an error, such as network failures or rate-limit responses, and skips the ones that passed or failed normally. Your config and prompts stay the same, so run it from the same directory as your original `promptfoo eval` command.\n\nI also believe a `promptfoo retry` command exists for this purpose, but I'm less certain of its exact syntax in your version. Run `promptfoo --help` and `promptfoo eval --help` to confirm which options your installed version supports. If your run was interrupted rather than finishing with errors, `promptfoo eval --resume <evalId>` is the related option to check for.",
+ "tokens": {
+  "input": 665,
+  "output": 780,
+  "thinking": 452,
+  "cache_read": 0,
+  "cache_creation": 663
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005228,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4949,
+  "stop_reason": "end_turn",
+  "session_id": "e9c1e1f2-525c-442a-a981-61052e737b18",
+  "total_cost_usd": 0.0005228,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 663,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 780,
+   "output_tokens_details": {
+    "thinking_tokens": 452
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 663,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 780,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 663,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 663
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 780,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 663,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005228,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 452,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 663,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "In promptfoo, you can re-run only the tests that errored, rather than the whole suite, using the eval ID from the previous run:\n\n```powershell\n# Re-run only errored tests from the most recent eval\npromptfoo eval --filter-errors-only latest\n\n# Or from a specific eval ID\npromptfoo eval --filter-errors-only <evalId>\n```\n\nThe `--filter-errors-only` flag selects tests that ended in an error, such as network failures or rate-limit responses, and skips the ones that passed or failed normally. Your config and prompts stay the same, so run it from the same directory as your original `promptfoo eval` command.\n\nI also believe a `promptfoo retry` command exists for this purpose, but I'm less certain of its exact syntax in your version. Run `promptfoo --help` and `promptfoo eval --help` to confirm which options your installed version supports. If your run was interrupted rather than finishing with errors, `promptfoo eval --resume <evalId>` is the related option to check for.",
+  "ttft_ms": 3430,
+  "type": "result",
+  "duration_ms": 5094,
+  "uuid": "9a4e5b53-c0a1-4d28-8f49-8f2b9bda23a0",
+  "ttft_stream_ms": 2869,
+  "time_to_request_ms": 142,
+  "first_content_frame_ms": 2869,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

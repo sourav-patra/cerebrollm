@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-ST-01",
+ "run": 5,
+ "started_utc": "2026-10-29T17:43:57Z",
+ "seconds": 7.35,
+ "prompt_sha256": "81d26abcb7033fa7bba12bc14a95f9752c646ac8715241271d65aa32300e5b5d",
+ "answer": "According to the context provided, Muse Glimmer is supported on Apple Silicon, NVIDIA, AMD, and additional platforms as of Ollama version 0.32.8. The specific quote is: \n\n\"Add Muse Glimmer support for NVIDIA, AMD, and additional platforms\" \n\nThis information is found in the document at:\n\n[8] ollama/v0.32.8.md (lines 40-43) > What's Changed\n\nThere is no mention of release notes up to version 0.32.15 in the provided context, so the information is based on the latest available data, which is version 0.32.8.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1797,
+  "output": 136
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 7846748200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:44:04.1545443Z",
+  "response": "According to the context provided, Muse Glimmer is supported on Apple Silicon, NVIDIA, AMD, and additional platforms as of Ollama version 0.32.8. The specific quote is: \n\n\"Add Muse Glimmer support for NVIDIA, AMD, and additional platforms\" \n\nThis information is found in the document at:\n\n[8] ollama/v0.32.8.md (lines 40-43) > What's Changed\n\nThere is no mention of release notes up to version 0.32.15 in the provided context, so the information is based on the latest available data, which is version 0.32.8.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7846748200,
+  "load_duration": 12959500,
+  "prompt_eval_count": 1797,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 923202000,
+  "eval_count": 136,
+  "eval_duration": 6754203000
+ }
+}

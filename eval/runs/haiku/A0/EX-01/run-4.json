@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-01",
+ "run": 4,
+ "started_utc": "2026-10-29T01:37:58Z",
+ "seconds": 8.47,
+ "prompt_file": "runs/prompts/A0/EX-01.txt",
+ "prompt_sha256": "421726b9e01ed8cd5f11c62bcacc8cacdf1da592c65480fc5fe89beef8378fa7",
+ "answer": "The environment variable is **`OLLAMA_CONTEXT_LENGTH`**. You set it before running `ollama serve` to change the default context window for models the server loads. I'm not certain of its current default value, so check the Ollama documentation for your version.",
+ "tokens": {
+  "input": 656,
+  "output": 260,
+  "thinking": 177,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.000261,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3082,
+  "stop_reason": "end_turn",
+  "session_id": "102a8d8b-462e-4ce5-a59d-667f61c9b34a",
+  "total_cost_usd": 0.000261,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 260,
+   "output_tokens_details": {
+    "thinking_tokens": 177
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 260,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 260,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.000261,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 177,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The environment variable is **`OLLAMA_CONTEXT_LENGTH`**. You set it before running `ollama serve` to change the default context window for models the server loads. I'm not certain of its current default value, so check the Ollama documentation for your version.",
+  "ttft_ms": 3054,
+  "type": "result",
+  "duration_ms": 3261,
+  "uuid": "0b342003-02c5-49dd-b939-76b55cfbf705",
+  "ttft_stream_ms": 3053,
+  "time_to_request_ms": 203,
+  "first_content_frame_ms": 3053,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

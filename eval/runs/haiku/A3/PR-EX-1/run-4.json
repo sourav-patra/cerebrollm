@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PR-EX-1",
+ "run": 4,
+ "started_utc": "2026-10-29T01:44:57Z",
+ "seconds": 7.68,
+ "prompt_file": "runs/prompts/A3/PR-EX-1.txt",
+ "prompt_sha256": "f993d909be021d62db6f852f02a2e4ac71219b324c80d52644fa38dd337268d0",
+ "answer": "The retrieved docs don't show a CLI command for this. They document the HTTP endpoint instead. The section is titled \"List Running Models,\" and it shows `GET /api/ps` with the description \"List models that are currently loaded into memory.\" [ollama/docs/api.md]\n\nThe example request is `curl http://localhost:11434/api/ps` [ollama/docs/api.md].\n\nFrom general knowledge of Ollama, `ollama ps` is the CLI equivalent, but none of the provided excerpts confirm that.",
+ "tokens": {
+  "input": 3337,
+  "output": 482,
+  "thinking": 315,
+  "cache_read": 2950,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00034770000000000005,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3309,
+  "stop_reason": "end_turn",
+  "session_id": "f15154cc-1f1b-4af9-ae5e-52153beb812e",
+  "total_cost_usd": 0.00034770000000000005,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2950,
+   "output_tokens": 482,
+   "output_tokens_details": {
+    "thinking_tokens": 315
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 482,
+     "cache_read_input_tokens": 2950,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 482,
+    "cacheReadInputTokens": 2950,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00034770000000000005,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 315,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The retrieved docs don't show a CLI command for this. They document the HTTP endpoint instead. The section is titled \"List Running Models,\" and it shows `GET /api/ps` with the description \"List models that are currently loaded into memory.\" [ollama/docs/api.md]\n\nThe example request is `curl http://localhost:11434/api/ps` [ollama/docs/api.md].\n\nFrom general knowledge of Ollama, `ollama ps` is the CLI equivalent, but none of the provided excerpts confirm that.",
+  "ttft_ms": 2899,
+  "type": "result",
+  "duration_ms": 3456,
+  "uuid": "78794a50-a5db-43e8-8f29-bdffa424221f",
+  "ttft_stream_ms": 2898,
+  "time_to_request_ms": 145,
+  "first_content_frame_ms": 2898,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

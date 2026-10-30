@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-09",
+ "run": 1,
+ "started_utc": "2026-10-29T17:16:39Z",
+ "seconds": 7.96,
+ "prompt_sha256": "b45889bffc4c0532b81b685d10f4af853292432ba529109055c0dea8c106eea4",
+ "answer": "The \"llama-index-llms-google-genai\" version 0.10.0 uses \"gemini 3.7 Flash\" by default in the library and docs. This is indicated by the feature addition listed in the release notes:\n\n\"feat(google-genai): use gemini 3.7 Flash by default in lib and docs ([#22734](https://github.com/run-llama/llama_index/pull/22734))\"\n\n[\"llama_index/v0.14.24.md (lines 69-73) > Release Notes > [2026-08-19] > llama-index-llms-google-genai [0.10.0]\"](https://github.com/run-llama/llama_index/pull/22734)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1403,
+  "output": 161
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 8784177100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:16:46.9454131Z",
+  "response": "The \"llama-index-llms-google-genai\" version 0.10.0 uses \"gemini 3.7 Flash\" by default in the library and docs. This is indicated by the feature addition listed in the release notes:\n\n\"feat(google-genai): use gemini 3.7 Flash by default in lib and docs ([#22734](https://github.com/run-llama/llama_index/pull/22734))\"\n\n[\"llama_index/v0.14.24.md (lines 69-73) > Release Notes > [2026-08-19] > llama-index-llms-google-genai [0.10.0]\"](https://github.com/run-llama/llama_index/pull/22734)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8784177100,
+  "load_duration": 12019700,
+  "prompt_eval_count": 1403,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 702167000,
+  "eval_count": 161,
+  "eval_duration": 7882032000
+ }
+}

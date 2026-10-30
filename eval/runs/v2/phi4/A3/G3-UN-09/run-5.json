@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-09",
+ "run": 5,
+ "started_utc": "2026-10-29T17:46:47Z",
+ "seconds": 10.21,
+ "prompt_sha256": "33a2e37033519f45139e844295bea3f485cce58529b79198feb005d00dc1f617",
+ "answer": "I do not know the default `separator_regex` of LlamaIndex's `TokenTextSplitter`. The context provided mentions the default separator as a space character `\" \"` [1] but does not specify a `separator_regex`. If `separator_regex` is a configurable parameter, it might not be set by default or may use the same default separator as a string. For more details, one would need to refer to the implementation code or documentation of `TokenTextSplitter`. \n\nReference:\n- \"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts. ```python from llama_index.core.node_parser import TokenTextSplitter splitter = TokenTextSplitter(chunk_size=1024, chunk_overlap=20, separator=\" \",) nodes = splitter.get_nodes_from_documents(documents) ```\" [1] llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md (lines 182-195) > Text-Splitters > TokenTextSplitter",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1588,
+  "output": 205
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 10975938100
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:46:57.9134054Z",
+  "response": "I do not know the default `separator_regex` of LlamaIndex's `TokenTextSplitter`. The context provided mentions the default separator as a space character `\" \"` [1] but does not specify a `separator_regex`. If `separator_regex` is a configurable parameter, it might not be set by default or may use the same default separator as a string. For more details, one would need to refer to the implementation code or documentation of `TokenTextSplitter`. \n\nReference:\n- \"The `TokenTextSplitter` attempts to split to a consistent chunk size according to raw token counts. ```python from llama_index.core.node_parser import TokenTextSplitter splitter = TokenTextSplitter(chunk_size=1024, chunk_overlap=20, separator=\" \",) nodes = splitter.get_nodes_from_documents(documents) ```\" [1] llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md (lines 182-195) > Text-Splitters > TokenTextSplitter",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10975938100,
+  "load_duration": 13694900,
+  "prompt_eval_count": 1588,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 762689000,
+  "eval_count": 205,
+  "eval_duration": 10043314000
+ }
+}

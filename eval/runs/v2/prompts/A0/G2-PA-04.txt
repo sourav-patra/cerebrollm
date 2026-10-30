@@ -1,0 +1,3 @@
+Answer from what you know about this project; if you do not know, say you do not know.
+
+Question: Which OpenAI API does promptfoo 0.123.0 use by default for GPT-5.6 and newer models?

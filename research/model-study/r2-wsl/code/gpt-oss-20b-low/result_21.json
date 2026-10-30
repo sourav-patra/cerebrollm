@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/13",
+  "index": 21,
+  "request": {
+    "model": "gpt-oss:20b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\n\ndef greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": "low"
+  },
+  "response": {
+    "model": "gpt-oss:20b",
+    "created_at": "2026-10-28T21:26:23.8749747Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\"Return the greatest common divisor of two integers a and b.\"\"\"\n    a, b = abs(a), abs(b)\n    while b:\n        a, b = b, a % b\n    return a\n```",
+      "thinking": "Implement Euclidean algorithm. Handle negative."
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1702103700,
+    "load_duration": 38584300,
+    "prompt_eval_count": 156,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 191886000,
+    "eval_count": 82,
+    "eval_duration": 1432543000
+  },
+  "wall_seconds": 1.60498976999952,
+  "load_average_before": [
+    0.080078125,
+    0.1962890625,
+    0.13623046875
+  ],
+  "load_average_after": [
+    0.080078125,
+    0.1962890625,
+    0.13623046875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-gpt-oss-20b-low-21",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\gpt-oss-20b-low:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_21.py"
+    ],
+    "wall_seconds": 0.614016203000574,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-01",
+ "run": 1,
+ "started_utc": "2026-10-29T01:46:05Z",
+ "seconds": 7.83,
+ "prompt_file": "runs/prompts/A0/PA-01.txt",
+ "prompt_sha256": "9bcb4563ddae08bef1eca7488767168e1b6d51cddc088b4009bfbca1000b679e",
+ "answer": "Ollama on Windows writes its server log to:\n\n**`%LOCALAPPDATA%\\Ollama\\server.log`**\n\nThis usually expands to `C:\\Users\\<your-username>\\AppData\\Local\\Ollama\\server.log`. You can paste `%LOCALAPPDATA%\\Ollama` into File Explorer's address bar to open the folder.\n\nThe same folder also contains `app.log` (logs from the Ollama tray app) and `upgrade.log`. Older server logs are rotated into files such as `server-1.log`, so `server.log` is the most recent one.\n\nYou can also open the logs from the Ollama tray icon by choosing \"View logs.\" If you run `ollama serve` yourself in a terminal, the output goes to that terminal rather than these files.",
+ "tokens": {
+  "input": 661,
+  "output": 487,
+  "thinking": 237,
+  "cache_read": 0,
+  "cache_creation": 659
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003755,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3264,
+  "stop_reason": "end_turn",
+  "session_id": "9af3ad42-5c2f-44f7-a745-7e38c7247a7f",
+  "total_cost_usd": 0.0003755,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 659,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 487,
+   "output_tokens_details": {
+    "thinking_tokens": 237
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 659,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 487,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 659,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 659
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 487,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 659,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003755,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 237,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 659,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Ollama on Windows writes its server log to:\n\n**`%LOCALAPPDATA%\\Ollama\\server.log`**\n\nThis usually expands to `C:\\Users\\<your-username>\\AppData\\Local\\Ollama\\server.log`. You can paste `%LOCALAPPDATA%\\Ollama` into File Explorer's address bar to open the folder.\n\nThe same folder also contains `app.log` (logs from the Ollama tray app) and `upgrade.log`. Older server logs are rotated into files such as `server-1.log`, so `server.log` is the most recent one.\n\nYou can also open the logs from the Ollama tray icon by choosing \"View logs.\" If you run `ollama serve` yourself in a terminal, the output goes to that terminal rather than these files.",
+  "ttft_ms": 2943,
+  "type": "result",
+  "duration_ms": 3389,
+  "uuid": "b9f02bd1-b631-4efb-bf85-8e74dff02aa1",
+  "ttft_stream_ms": 2941,
+  "time_to_request_ms": 155,
+  "first_content_frame_ms": 2941,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

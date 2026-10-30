@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-06",
+ "run": 1,
+ "started_utc": "2026-10-29T01:56:12Z",
+ "seconds": 7.51,
+ "prompt_file": "runs/prompts/A3/ST-06.txt",
+ "prompt_sha256": "9ed88010779515fd90218ac6c4eda87b554402222a364a57fd8aa351da43a3a8",
+ "answer": "The oldest Postgres major version supported by the current pgvector release (0.8.7) is **Postgres 13**.\n\nThe Linux and Mac installation section says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md]. That section also uses `git clone --branch v0.8.7`, which identifies 0.8.7 as the version being installed.",
+ "tokens": {
+  "input": 3081,
+  "output": 317,
+  "thinking": 194,
+  "cache_read": 0,
+  "cache_creation": 3079
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007745000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2698,
+  "stop_reason": "end_turn",
+  "session_id": "6f18c3dd-dade-4dae-a913-10be9d07f502",
+  "total_cost_usd": 0.0007745000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3079,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 317,
+   "output_tokens_details": {
+    "thinking_tokens": 194
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3079,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 317,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3079,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3079
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 317,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3079,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007745000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 194,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3079,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The oldest Postgres major version supported by the current pgvector release (0.8.7) is **Postgres 13**.\n\nThe Linux and Mac installation section says: \"Compile and install the extension (supports Postgres 13+)\" [pgvector/README.md]. That section also uses `git clone --branch v0.8.7`, which identifies 0.8.7 as the version being installed.",
+  "ttft_ms": 2806,
+  "type": "result",
+  "duration_ms": 2820,
+  "uuid": "1d11eb08-c8b5-4506-8156-ee1d0a8fe8e4",
+  "ttft_stream_ms": 2805,
+  "time_to_request_ms": 124,
+  "first_content_frame_ms": 2805,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

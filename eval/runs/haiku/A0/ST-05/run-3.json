@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-05",
+ "run": 3,
+ "started_utc": "2026-10-29T01:55:56Z",
+ "seconds": 8.7,
+ "prompt_file": "runs/prompts/A0/ST-05.txt",
+ "prompt_sha256": "4ece7102ce55b865c451b89e67d531541c32ed21f535d023d71ae85c1638e020",
+ "answer": "I believe pgvector's `vector` type uses the **`EXTENDED`** storage mode, which is the default for variable-length types. That lets Postgres TOAST and compress large values. I'm not certain this is unchanged in the most recent releases, so check `sql/vector.sql` in the pgvector repository or run `SELECT typstorage FROM pg_type WHERE typname = 'vector';` on your installed version to confirm.",
+ "tokens": {
+  "input": 657,
+  "output": 692,
+  "thinking": 550,
+  "cache_read": 0,
+  "cache_creation": 655
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004772,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4249,
+  "stop_reason": "end_turn",
+  "session_id": "751e4840-a7e3-4a65-9f2b-2ffb16669413",
+  "total_cost_usd": 0.0004772,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 655,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 692,
+   "output_tokens_details": {
+    "thinking_tokens": 550
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 655,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 692,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 655,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 655
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 692,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 655,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004772,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 550,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 655,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I believe pgvector's `vector` type uses the **`EXTENDED`** storage mode, which is the default for variable-length types. That lets Postgres TOAST and compress large values. I'm not certain this is unchanged in the most recent releases, so check `sql/vector.sql` in the pgvector repository or run `SELECT typstorage FROM pg_type WHERE typname = 'vector';` on your installed version to confirm.",
+  "ttft_ms": 3873,
+  "type": "result",
+  "duration_ms": 4383,
+  "uuid": "bf74e65c-a270-441e-b206-9c1ffc87f261",
+  "ttft_stream_ms": 2923,
+  "time_to_request_ms": 175,
+  "first_content_frame_ms": 2923,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

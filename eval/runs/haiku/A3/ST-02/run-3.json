@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-02",
+ "run": 3,
+ "started_utc": "2026-10-29T01:54:56Z",
+ "seconds": 8.35,
+ "prompt_file": "runs/prompts/A3/ST-02.txt",
+ "prompt_sha256": "82db70092481be63a7047a4fea9e290feba5c17ccbf19bea8671dc0e5b43eb99",
+ "answer": "Ollama uses a **32k context** by default on a GPU with 32 GiB of VRAM, because that falls in the 24–48 GiB tier. The docs say: \"24-48 GiB VRAM: 32k context\" [ollama/docs/context-length.md].\n\nThe FAQ gives a different default: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md]. The documents don't say which is current, so I can't resolve the conflict. The VRAM-tiered figure is the more specific one for your case, but you can confirm the context actually in use with `ollama ps`, which shows a CONTEXT column [ollama/docs/context-length.md].",
+ "tokens": {
+  "input": 3130,
+  "output": 521,
+  "thinking": 295,
+  "cache_read": 2743,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00036512999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3447,
+  "stop_reason": "end_turn",
+  "session_id": "f170ead5-26c3-48b7-8364-4960f8c440a3",
+  "total_cost_usd": 0.00036512999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2743,
+   "output_tokens": 521,
+   "output_tokens_details": {
+    "thinking_tokens": 295
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 521,
+     "cache_read_input_tokens": 2743,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 521,
+    "cacheReadInputTokens": 2743,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00036512999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 295,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Ollama uses a **32k context** by default on a GPU with 32 GiB of VRAM, because that falls in the 24–48 GiB tier. The docs say: \"24-48 GiB VRAM: 32k context\" [ollama/docs/context-length.md].\n\nThe FAQ gives a different default: \"By default, Ollama uses a context window size of 4096 tokens.\" [ollama/docs/faq.md]. The documents don't say which is current, so I can't resolve the conflict. The VRAM-tiered figure is the more specific one for your case, but you can confirm the context actually in use with `ollama ps`, which shows a CONTEXT column [ollama/docs/context-length.md].",
+  "ttft_ms": 3055,
+  "type": "result",
+  "duration_ms": 3588,
+  "uuid": "89552f88-a803-434c-8415-c2a6b989c9ef",
+  "ttft_stream_ms": 3054,
+  "time_to_request_ms": 340,
+  "first_content_frame_ms": 3054,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

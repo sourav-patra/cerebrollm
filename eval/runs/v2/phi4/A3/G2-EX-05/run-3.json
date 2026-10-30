@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G2-EX-05",
+ "run": 3,
+ "started_utc": "2026-10-29T17:28:54Z",
+ "seconds": 16.04,
+ "prompt_sha256": "cff10806a9a243fa79609d90e4c5a141be3553b938c590c0d13cca5b11fbfb21",
+ "answer": "Based on the provided context, Ollama's `/v1/systemone` decision-model API supports the following three question types:\n\n1. **noul**: This is mentioned in the context of the `urgent` question in the Nimble model example:\n   ```json\n   \"urgent\": {\n     \"type\": \"noul\",\n     \"instructions\": \"Does this ticket need attention within the hour?\"\n   }\n   ```\n   [ollama/v0.35.0.md](https://github.com/ollama/ollama/releases/tag/v0.35.0)\n\n2. **noul** (again): This type is also used in the Clef Flash model example:\n   ```json\n   \"has_ollama\": {\n     \"type\": \"noul\",\n     \"instructions\": \"Does this image contain Ollama?\"\n   }\n   ```\n   [ollama/v0.35.1.md](https://github.com/ollama/ollama/releases/tag/v0.35.1)\n\n3. The third type is not explicitly named in the context provided. However, the structure of the questions suggests there are other types supported, as the examples show different instructions and question contexts.\n\nThe context does not provide a direct list of all question types, but the examples indicate that \"noul\" is a used type. Without additional information, I cannot definitively identify the third question type. If there are other types, they are not explicitly mentioned in the provided excerpts.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 2262,
+  "output": 303
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 17255103700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:29:11.9177592Z",
+  "response": "Based on the provided context, Ollama's `/v1/systemone` decision-model API supports the following three question types:\n\n1. **noul**: This is mentioned in the context of the `urgent` question in the Nimble model example:\n   ```json\n   \"urgent\": {\n     \"type\": \"noul\",\n     \"instructions\": \"Does this ticket need attention within the hour?\"\n   }\n   ```\n   [ollama/v0.35.0.md](https://github.com/ollama/ollama/releases/tag/v0.35.0)\n\n2. **noul** (again): This type is also used in the Clef Flash model example:\n   ```json\n   \"has_ollama\": {\n     \"type\": \"noul\",\n     \"instructions\": \"Does this image contain Ollama?\"\n   }\n   ```\n   [ollama/v0.35.1.md](https://github.com/ollama/ollama/releases/tag/v0.35.1)\n\n3. The third type is not explicitly named in the context provided. However, the structure of the questions suggests there are other types supported, as the examples show different instructions and question contexts.\n\nThe context does not provide a direct list of all question types, but the examples indicate that \"noul\" is a used type. Without additional information, I cannot definitively identify the third question type. If there are other types, they are not explicitly mentioned in the provided excerpts.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 17255103700,
+  "load_duration": 15217800,
+  "prompt_eval_count": 2262,
+  "prompt_eval_cached_count": 104,
+  "prompt_eval_duration": 1171488000,
+  "eval_count": 303,
+  "eval_duration": 15878761000
+ }
+}

@@ -1,0 +1,91 @@
+{
+  "task_id": "HumanEval/138",
+  "index": 7,
+  "request": {
+    "model": "devstral:24b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    }
+  },
+  "response": {
+    "model": "devstral:24b",
+    "created_at": "2026-10-28T20:56:49.3353625Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n    # Since we need 4 positive even numbers, the smallest sum is 2 + 2 + 2 + 2 = 8\n    if n < 8:\n        return False\n\n    # Check if n is even\n    if n % 2 != 0:\n        return False\n\n    # Try to find 4 positive even numbers that sum to n\n    for i in range(2, n, 2):\n        for j in range(i, n, 2):\n            for k in range(j, n, 2):\n                l = n - (i + j + k)\n                if l > 0 and l % 2 == 0 and l >= j:\n                    return True\n\n    return False\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 35995784300,
+    "load_duration": 11618400,
+    "prompt_eval_count": 1327,
+    "prompt_eval_cached_count": 1251,
+    "prompt_eval_duration": 382779000,
+    "eval_count": 235,
+    "eval_duration": 35588363000
+  },
+  "wall_seconds": 34.01890431299944,
+  "load_average_before": [
+    0.50146484375,
+    0.20068359375,
+    0.14208984375
+  ],
+  "load_average_after": [
+    0.302734375,
+    0.18017578125,
+    0.13623046875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-devstral-24b-default-7",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\devstral-24b-default:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_7.py"
+    ],
+    "wall_seconds": 0.7044074269997509,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

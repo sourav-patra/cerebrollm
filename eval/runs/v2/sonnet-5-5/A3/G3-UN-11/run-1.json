@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-11",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:36Z",
+ "seconds": 6.64,
+ "prompt_sha256": "649de84873f71c3412608298e6572311d04dd44a392d0ff025a1584aac297e82",
+ "answer": "I don't know. The retrieved documents don't give any throughput figure for `IngestionPipeline`, such as documents per second on a single CPU core. Throughput would depend on the transformations used (splitters, extractors, embedding models) and the hardware.\n\nThe only related line is about parallelism, not speed:\n\n\"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]\n\nIt says you can set `num_workers` to spread batches of nodes across processes, but it gives no benchmark. To get a real number, you'd need to time your own pipeline on your own data.",
+ "tokens": {
+  "input": 3389,
+  "output": 226,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3387
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.015812,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2712,
+  "stop_reason": "end_turn",
+  "session_id": "dcef5576-0b3d-40e2-b03d-af5524a4196b",
+  "total_cost_usd": 0.015812,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3387,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 226,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 226,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 226,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3387,
+    "webSearchRequests": 0,
+    "costUSD": 0.015812,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3387,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. The retrieved documents don't give any throughput figure for `IngestionPipeline`, such as documents per second on a single CPU core. Throughput would depend on the transformations used (splitters, extractors, embedding models) and the hardware.\n\nThe only related line is about parallelism, not speed:\n\n\"The `run` method of `IngestionPipeline` can be executed with parallel processes.\" [llama_index/docs/src/content/docs/framework/module_guides/loading/ingestion_pipeline/index.md]\n\nIt says you can set `num_workers` to spread batches of nodes across processes, but it gives no benchmark. To get a real number, you'd need to time your own pipeline on your own data.",
+  "ttft_ms": 2782,
+  "type": "result",
+  "duration_ms": 2804,
+  "uuid": "9a10a3b1-d5bd-4998-9407-515a5b1885f4",
+  "ttft_stream_ms": 2590,
+  "time_to_request_ms": 115,
+  "first_content_frame_ms": 2590,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

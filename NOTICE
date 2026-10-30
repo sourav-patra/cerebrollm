@@ -1,0 +1,12 @@
+cerebrollm is MIT licensed (LICENSE). This repository also holds text copied from the projects below. The licence of each is the one the fetch script recorded from that project's licence file at the pinned commit (research/corpus/manifest.json, field "licence"). Each project keeps its own copyright notice; read its LICENSE at the commit named there.
+
+- Ollama (https://github.com/ollama/ollama), MIT: release notes in eval/v2-sources/ollama/, documentation passages quoted in eval/runs/.
+- LlamaIndex (https://github.com/run-llama/llama_index), MIT: release notes in eval/v2-sources/llama_index/, documentation passages quoted in eval/runs/.
+- promptfoo (https://github.com/promptfoo/promptfoo), MIT: release notes in eval/v2-sources/promptfoo/, documentation passages quoted in eval/runs/.
+- pgvector (https://github.com/pgvector/pgvector), PostgreSQL licence: README passages quoted in eval/runs/.
+- Model cards in research/model-study/sources/ are saved copies for the licence checks of the model study; each file records its source and the licence stated there. research/model-study/sources/LICENSE is the licence of the HumanEval dataset repository.
+
+Models are not part of this repository. The licence of each model you pull applies to that model.
+psycopg2-binary (LGPL-3.0 with exceptions) is installed by pip as a separate dependency and is not bundled.
+
+Skipped or not checked: the copyright holder line of each project's licence file was not copied here; the licences above were not re-read on 2026-10-30.

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-11",
+ "run": 1,
+ "started_utc": "2026-10-29T01:58:12Z",
+ "seconds": 7.9,
+ "prompt_file": "runs/prompts/A3/ST-11.txt",
+ "prompt_sha256": "4585c0cab7d69f7d23a207e896ab3d5c9dee598ebbec56ac0e34a9dfb12cd9da",
+ "answer": "Use **Workflows**. The concepts doc describes it as \"a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\" [llama_index/docs/src/content/docs/framework/getting_started/concepts.md]\n\nThe docs also say that workflows \"can maintain state,\" which helps with more complex applications. [llama_index/docs/src/content/docs/framework/understanding/index.md]",
+ "tokens": {
+  "input": 3394,
+  "output": 540,
+  "thinking": 398,
+  "cache_read": 0,
+  "cache_creation": 3392
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0009486,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3355,
+  "stop_reason": "end_turn",
+  "session_id": "2780bed7-e706-4fcb-b0fc-ec12cef34e6c",
+  "total_cost_usd": 0.0009486,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3392,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 540,
+   "output_tokens_details": {
+    "thinking_tokens": 398
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3392,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 540,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3392,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3392
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 540,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3392,
+    "webSearchRequests": 0,
+    "costUSD": 0.0009486,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 398,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3392,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use **Workflows**. The concepts doc describes it as \"a specific event-driven abstraction that allows you to orchestrate a sequence of steps and LLMs calls.\" [llama_index/docs/src/content/docs/framework/getting_started/concepts.md]\n\nThe docs also say that workflows \"can maintain state,\" which helps with more complex applications. [llama_index/docs/src/content/docs/framework/understanding/index.md]",
+  "ttft_ms": 2929,
+  "type": "result",
+  "duration_ms": 3485,
+  "uuid": "282141df-d84d-44fb-9b83-fa13a9a0f08e",
+  "ttft_stream_ms": 2863,
+  "time_to_request_ms": 173,
+  "first_content_frame_ms": 2863,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

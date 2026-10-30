@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-06",
+ "run": 2,
+ "started_utc": "2026-10-29T15:45:14Z",
+ "seconds": 11.24,
+ "prompt_sha256": "0a19284e9beaa8302543432ec33147546b121487da9b33c3fca9eef83ebee43d",
+ "answer": "I don't know. I have no reliable knowledge of what `llama-index-llms-anthropic` 0.11.10 sets as the context window for Claude Opus 4.6, and nothing in this project covers it. I'd rather not guess a number.\n\nTo check, you could look at the `ANTHROPIC_MODELS` dict in `llama_index/llms/anthropic/utils.py` in that package version. It maps model names to context window sizes. If you'd like, I can download the package into a fresh, empty directory and read that file.",
+ "tokens": {
+  "input": 647,
+  "output": 254,
+  "thinking": 85,
+  "cache_read": 0,
+  "cache_creation": 645
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.005124,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7313,
+  "stop_reason": "end_turn",
+  "session_id": "d8b9438f-9afd-4781-be2c-0141f9e5635b",
+  "total_cost_usd": 0.005124,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 645,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 254,
+   "output_tokens_details": {
+    "thinking_tokens": 85
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 645,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 254,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 645,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 645
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 254,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 645,
+    "webSearchRequests": 0,
+    "costUSD": 0.005124,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 85,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 645,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable knowledge of what `llama-index-llms-anthropic` 0.11.10 sets as the context window for Claude Opus 4.6, and nothing in this project covers it. I'd rather not guess a number.\n\nTo check, you could look at the `ANTHROPIC_MODELS` dict in `llama_index/llms/anthropic/utils.py` in that package version. It maps model names to context window sizes. If you'd like, I can download the package into a fresh, empty directory and read that file.",
+  "ttft_ms": 5883,
+  "type": "result",
+  "duration_ms": 7397,
+  "uuid": "5a19cfab-fa16-4231-85aa-d0a4cb45847a",
+  "ttft_stream_ms": 5365,
+  "time_to_request_ms": 102,
+  "first_content_frame_ms": 5365,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

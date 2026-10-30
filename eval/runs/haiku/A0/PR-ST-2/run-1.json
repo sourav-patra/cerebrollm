@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-ST-2",
+ "run": 1,
+ "started_utc": "2026-10-29T02:02:19Z",
+ "seconds": 8.03,
+ "prompt_file": "runs/prompts/A0/PR-ST-2.txt",
+ "prompt_sha256": "376319f9fd071e1966cf9e55f19d27d2925ea0f6c3d70e811610a68002c91c1d",
+ "answer": "I don't know which sampling parameters promptfoo's Ollama provider lists, or which one it has deprecated, so I can't say which to prefer. I also don't have a reliable record of a deprecation notice for one of them.\n\nThe parameters Ollama itself accepts in its `options` object include `temperature`, `top_p`, `top_k`, `seed`, `num_predict`, `repeat_penalty`, `stop`, and `num_ctx`. Those are a reasonable starting point, but check that they match your promptfoo version. To find the deprecated option and the current recommendation, check the promptfoo Ollama provider docs or its changelog and release notes. The provider's TypeScript types or JSON schema for your installed version will also show the supported fields.",
+ "tokens": {
+  "input": 676,
+  "output": 449,
+  "thinking": 206,
+  "cache_read": 0,
+  "cache_creation": 674
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003595,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3385,
+  "stop_reason": "end_turn",
+  "session_id": "9a2d82bc-0f06-49f0-9bbd-1587dd2ff592",
+  "total_cost_usd": 0.0003595,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 674,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 449,
+   "output_tokens_details": {
+    "thinking_tokens": 206
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 674,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 449,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 674,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 674
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 449,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 674,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003595,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 206,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 674,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know which sampling parameters promptfoo's Ollama provider lists, or which one it has deprecated, so I can't say which to prefer. I also don't have a reliable record of a deprecation notice for one of them.\n\nThe parameters Ollama itself accepts in its `options` object include `temperature`, `top_p`, `top_k`, `seed`, `num_predict`, `repeat_penalty`, `stop`, and `num_ctx`. Those are a reasonable starting point, but check that they match your promptfoo version. To find the deprecated option and the current recommendation, check the promptfoo Ollama provider docs or its changelog and release notes. The provider's TypeScript types or JSON schema for your installed version will also show the supported fields.",
+  "ttft_ms": 3034,
+  "type": "result",
+  "duration_ms": 3512,
+  "uuid": "60404627-d554-40e5-b89a-3b0e6402e9fe",
+  "ttft_stream_ms": 3034,
+  "time_to_request_ms": 293,
+  "first_content_frame_ms": 3034,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

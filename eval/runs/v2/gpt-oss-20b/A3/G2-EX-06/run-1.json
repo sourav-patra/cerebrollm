@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 1,
+ "started_utc": "2026-10-29T16:13:13Z",
+ "seconds": 4.93,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "The release notes for promptfoo 0.122.0 state that it **drops support for Node.js 20**.  \n\n> \"drop Node.js 20 support\" [promptfoo/0.122.0.md]",
+ "thinking_chars": 336,
+ "tokens": {
+  "input": 1834,
+  "output": 154
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5188846600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:13:18.3656127Z",
+  "response": "The release notes for promptfoo 0.122.0 state that it **drops support for Node.js 20**.  \n\n> \"drop Node.js 20 support\" [promptfoo/0.122.0.md]",
+  "thinking": "We need to answer: Which Node.js major version did promptfoo 0.122.0 stop supporting? The context: In [3] and [4], they mention: \"drop Node.js 20 support\". So it stopped supporting Node.js 20. That is major version 20. Let's quote lines. [3] lines 29-31: \"* drop Node.js 20 support\". Also [4] same. So answer: Node.js 20. Provide quote.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5188846600,
+  "load_duration": 14040700,
+  "prompt_eval_count": 1834,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 936478000,
+  "eval_count": 154,
+  "eval_duration": 4183600999
+ }
+}

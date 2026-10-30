@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-05",
+ "run": 4,
+ "started_utc": "2026-10-29T17:39:28Z",
+ "seconds": 6.02,
+ "prompt_sha256": "24b4f0a37bcdab2f151d071b7668e6d0bfd5e8d71c91b1bd324da97df9d05009",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT` based on the provided context. The context mentions a default unload time of 5 minutes for models in memory, but it does not specify an environment variable by that name or its default value. \n\nThe context refers to \"keep_alive\" parameters for controlling model memory duration but does not mention `OLLAMA_UNLOAD_TIMEOUT`. Therefore, I cannot provide an answer based on the information given. [ollama/docs/faq.md (lines 289-318)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1586,
+  "output": 113
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 6446029400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:39:35.453102Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT` based on the provided context. The context mentions a default unload time of 5 minutes for models in memory, but it does not specify an environment variable by that name or its default value. \n\nThe context refers to \"keep_alive\" parameters for controlling model memory duration but does not mention `OLLAMA_UNLOAD_TIMEOUT`. Therefore, I cannot provide an answer based on the information given. [ollama/docs/faq.md (lines 289-318)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 6446029400,
+  "load_duration": 13198400,
+  "prompt_eval_count": 1586,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 777253000,
+  "eval_count": 113,
+  "eval_duration": 5504150000
+ }
+}

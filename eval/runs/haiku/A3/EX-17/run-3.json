@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-17",
+ "run": 3,
+ "started_utc": "2026-10-29T01:43:35Z",
+ "seconds": 9.2,
+ "prompt_file": "runs/prompts/A3/EX-17.txt",
+ "prompt_sha256": "9d17afe56a2dd54b70f48b900a0ccdd1ec453d7645c2e0263c4e1c8c4d6fccb8",
+ "answer": "I don't know of an environment variable that sets a pass-rate threshold for `promptfoo eval`. The retrieved docs don't name one.\n\nThe docs show pass-rate gates implemented in the CI shell script, with the 95% threshold hardcoded: \"if (( $(echo \"$PASS_RATE < 95\" | bc -l) )); then\" [promptfoo/site/docs/integrations/ci-cd.md]. The docs also describe a separate flag: \"# Fail on any test failures\" [promptfoo/site/docs/integrations/ci-cd.md], which corresponds to `--fail-on-error`. That flag fails on errors rather than on a configurable pass rate. The AWS CodeCommit page says a custom threshold is an alternative to that flag: \"If you want a custom pass-rate threshold instead of `--fail-on-error`, write the JSON output and check the stats in a second command:\" [promptfoo/site/docs/integrations/aws-codecommit.md].\n\nThe environment variable reference in `promptfoo/site/docs/usage/command-line.md` is cut off in the retrieved context, so I can't rule out a variable listed there. Checking the full table or the `promptfoo eval` options in that file would settle it.",
+ "tokens": {
+  "input": 2856,
+  "output": 885,
+  "thinking": 480,
+  "cache_read": 2467,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005447700000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4584,
+  "stop_reason": "end_turn",
+  "session_id": "b389f562-cd22-4bcc-953d-af45d98994e4",
+  "total_cost_usd": 0.0005447700000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2467,
+   "output_tokens": 885,
+   "output_tokens_details": {
+    "thinking_tokens": 480
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 885,
+     "cache_read_input_tokens": 2467,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 885,
+    "cacheReadInputTokens": 2467,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005447700000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 480,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an environment variable that sets a pass-rate threshold for `promptfoo eval`. The retrieved docs don't name one.\n\nThe docs show pass-rate gates implemented in the CI shell script, with the 95% threshold hardcoded: \"if (( $(echo \"$PASS_RATE < 95\" | bc -l) )); then\" [promptfoo/site/docs/integrations/ci-cd.md]. The docs also describe a separate flag: \"# Fail on any test failures\" [promptfoo/site/docs/integrations/ci-cd.md], which corresponds to `--fail-on-error`. That flag fails on errors rather than on a configurable pass rate. The AWS CodeCommit page says a custom threshold is an alternative to that flag: \"If you want a custom pass-rate threshold instead of `--fail-on-error`, write the JSON output and check the stats in a second command:\" [promptfoo/site/docs/integrations/aws-codecommit.md].\n\nThe environment variable reference in `promptfoo/site/docs/usage/command-line.md` is cut off in the retrieved context, so I can't rule out a variable listed there. Checking the full table or the `promptfoo eval` options in that file would settle it.",
+  "ttft_ms": 3210,
+  "type": "result",
+  "duration_ms": 4706,
+  "uuid": "b63e7f8e-26bc-4165-85cd-6bc9534d58d4",
+  "ttft_stream_ms": 3209,
+  "time_to_request_ms": 152,
+  "first_content_frame_ms": 3209,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

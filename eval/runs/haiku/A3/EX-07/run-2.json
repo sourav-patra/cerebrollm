@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-07",
+ "run": 2,
+ "started_utc": "2026-10-29T01:39:58Z",
+ "seconds": 7.3,
+ "prompt_file": "runs/prompts/A3/EX-07.txt",
+ "prompt_sha256": "f65d0d7d6673b5c5552aec933f6e7a4d6c0bdea8888303d29815243ca86426ea",
+ "answer": "The default value of `hnsw.ef_search` is 40. The README says: \"Specify the size of the dynamic candidate list for search (40 by default)\" [pgvector/README.md]. A troubleshooting section repeats this: \"Results are limited by the size of the dynamic candidate list (`hnsw.ef_search`), which is 40 by default.\" [pgvector/README.md]",
+ "tokens": {
+  "input": 2980,
+  "output": 218,
+  "thinking": 94,
+  "cache_read": 0,
+  "cache_creation": 2978
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007048000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2827,
+  "stop_reason": "end_turn",
+  "session_id": "4e7cb487-3fcb-41ea-b271-123f914483ee",
+  "total_cost_usd": 0.0007048000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2978,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 218,
+   "output_tokens_details": {
+    "thinking_tokens": 94
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2978,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 218,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2978,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2978
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 218,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2978,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007048000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 94,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2978,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The default value of `hnsw.ef_search` is 40. The README says: \"Specify the size of the dynamic candidate list for search (40 by default)\" [pgvector/README.md]. A troubleshooting section repeats this: \"Results are limited by the size of the dynamic candidate list (`hnsw.ef_search`), which is 40 by default.\" [pgvector/README.md]",
+  "ttft_ms": 2950,
+  "type": "result",
+  "duration_ms": 2970,
+  "uuid": "3fadeedd-bdaf-46a1-b4a1-9ee94719ebab",
+  "ttft_stream_ms": 2949,
+  "time_to_request_ms": 171,
+  "first_content_frame_ms": 2949,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,25 @@
+# Machine settings for the study scripts. Defaults match the Windows 11 + WSL2 Ubuntu-24.04 machine;
+# edit them on another machine. "$HOME" and "~" are expanded at run time. A missing key stops the
+# script with a message naming it.
+
+[engine]
+path = "../../engine"   # folder holding cerebrollm.toml and the cerebrollm package (relative to this file)
+
+[data]
+path = "$HOME/.cerebrollm"          # state directory; PostgreSQL cluster in pg16/ below it
+
+[venv]
+path = "$HOME/.cerebrollm/venv"     # bin/python of this virtual environment runs the scripts
+
+[corpus]
+path = "$HOME/cerebrollm-corpus"    # the folder of Markdown notes (the first root of cerebrollm.toml)
+
+[ollama]
+path = "ollama.exe"                 # binary used for `ollama ps`; Ollama runs on Windows, reached via WSL interop
+url = "http://127.0.0.1:11434"
+
+[docker]
+path = "docker.exe"                 # Docker Desktop on Windows, reached via WSL interop
+
+[postgres]
+bin = "/usr/lib/postgresql/16/bin"  # holds pg_ctl and pg_isready

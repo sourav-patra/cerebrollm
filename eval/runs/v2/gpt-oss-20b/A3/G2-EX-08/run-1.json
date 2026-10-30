@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-08",
+ "run": 1,
+ "started_utc": "2026-10-29T16:13:23Z",
+ "seconds": 9.4,
+ "prompt_sha256": "0376b9e5a4c0455f80a6c8f40525e9ec3c8ec3582522ee13c3d9f92aeed40402",
+ "answer": "Safe mode turns off inline JavaScript assertions and the shared‑transform helper.  \n“Reject inline JavaScript assertions and shared transforms.” [promptfoo/site/docs/usage/command-line.md]",
+ "thinking_chars": 1425,
+ "tokens": {
+  "input": 1939,
+  "output": 359
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 7647629400
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:13:32.3150853Z",
+  "response": "Safe mode turns off inline JavaScript assertions and the shared‑transform helper.  \n“Reject inline JavaScript assertions and shared transforms.” [promptfoo/site/docs/usage/command-line.md]",
+  "thinking": "We need to answer: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So from context, safe mode option rejects inline JavaScript assertions and shared transforms. The question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" We must answer by quoting the line we rely on and cite its path. Let's find relevant lines.\n\nFrom [1] promptfoo/site/docs/usage/command-line.md line 125: Option `--safe-mode` description: \"Reject inline JavaScript assertions and shared transforms.\" [1] includes that. Also [2] gives explanation. It says \"Use `promptfoo eval --safe-mode` or `PROMPTFOO_SAFE_MODE=true` to reject string-based JavaScript assertions and inline expressions handled by the shared transform helper.\" So safe mode turns off inline JavaScript assertions and shared transforms.\n\nThus answer: safe mode turns off inline JavaScript assertions and inline expressions handled by shared transform helper, i.e., rejects string-based JavaScript assertions and inline transforms. We need to quote the line. The line: \"Reject inline JavaScript assertions and shared transforms.\" from [1]. Also maybe quote from [2] line. But one quote is enough. Let's quote from [1] or [2]. Let's use [1] line 125: \"Reject inline JavaScript assertions and shared transforms.\" Provide citation.\n\nThus answer: safe mode turns off inline JavaScript assertions and shared transforms. Provide quote and path.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 7647629400,
+  "load_duration": 15150600,
+  "prompt_eval_count": 1939,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 791364000,
+  "eval_count": 359,
+  "eval_duration": 6775385000
+ }
+}

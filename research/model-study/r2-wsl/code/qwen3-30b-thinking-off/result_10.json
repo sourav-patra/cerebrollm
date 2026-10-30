@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/95",
+  "index": 10,
+  "request": {
+    "model": "qwen3:30b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef check_dict_case(dict):\n    \"\"\"\n    Given a dictionary, return True if all keys are strings in lower \n    case or all keys are strings in upper case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\n    check_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\n    check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\n    check_dict_case({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\n    check_dict_case({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:30b",
+    "created_at": "2026-10-29T00:35:51.8540338Z",
+    "message": {
+      "role": "assistant",
+      "content": "We are going to check:\n 1. If the dictionary is empty -> return False.\n 2. We need to check that all keys are either all in lower case or all in upper case.\n 3. Note: The keys must be strings. If there's a non-string key (like an integer), then we return False.\n\n Steps:\n - If the dictionary is empty, return False.\n - We'll iterate over the keys and check:\n      a. If any key is not a string -> return False.\n      b. Then, we'll check if all keys are in lower case OR all keys are in upper case.\n\n However, note the example: \n   check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) -> returns False because of the integer key 8.\n\n Approach:\n   Let's collect the keys that are strings and also check for non-string keys.\n\n   We can do:\n      if not dict: \n          return False\n\n      keys = list(dict.keys())\n      # Check if all keys are strings\n      if not all(isinstance(k, str) for k in keys):\n          return False\n\n      # Now, check if all keys are lower or all are upper.\n      all_lower = all(k.islower() for k in keys)\n      all_upper = all(k.isupper() for k in keys)\n\n      return all_lower or all_upper\n\n But note: what if the key is a string that is mixed case? Then both all_lower and all_upper would be false.\n\n However, the problem says: \"all keys are strings in lower case\" OR \"all keys are strings in upper case\".\n\n Important: The example \"Name\":\"John\", ... has a key \"Name\" which is not all upper (because 'N' is upper but 'ame' is lower) so it fails.\n\n Let's test with the examples:\n\n Example 1: {\"a\":\"apple\", \"b\":\"banana\"} -> \n      keys: ['a','b'] -> both are lower -> all_lower = True, all_upper = False -> returns True.\n\n Example 2: {\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"} -> \n      keys: ['a','A','B'] -> \n          'a' is lower, 'A' is upper, 'B' is upper -> \n          all_lower: 'a' is lower -> but 'A' is not lower -> so all_lower = False.\n          all_upper: 'a' is not upper -> so all_upper = False -> returns False.\n\n Example 3: {\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"} -> \n      We have a key 8 (integer) -> so we return False.\n\n Example 4: {\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"} -> \n      keys: ['Name','Age','City'] -> \n          'Name': 'N' is upper but 'ame' is lower -> not all upper, and not all lower (because 'N' is upper) -> so both false -> returns False.\n\n Example 5: {\"STATE\":\"NC\", \"ZIP\":\"12345\"} -> \n      keys: ['STATE','ZIP'] -> both are all upper -> so all_upper = True -> returns True.\n\n However, note: what if a key is a string that is all upper but also has non-alphabet? \n   The problem says \"strings\", and the examples are letters. But note: the method `isupper` returns True for strings that have at least one cased character and all cased characters are uppercase. \n   But note: if the string is all digits, then `isupper` returns False? Actually, for a string of digits, `isupper` returns False because there are no cased characters.\n\n However, the problem states: \"all keys are strings in lower case or all keys are strings in upper case\". \n   So if we have a key that is \"123\", then it's not in lower case (because it's not letters) and not in upper case (same reason). \n   Therefore, we must have keys that are composed of letters? Actually, the problem doesn't specify, but the examples are letters.\n\n But note: the example \"ZIP\" is all uppercase letters. The example \"12345\" is a value, not a key.\n\n However, the problem says: \"all keys are strings in lower case\" meaning that the string representation of the key must be entirely in lower case (and similarly for upper). \n   But if a key is \"123\", then it's not a letter, so it doesn't have a case. Therefore, it would not be considered as lower or upper.\n\n So our method using `islower` and `isupper` is appropriate because:\n   - For a string of digits, `islower()` returns False (because there are no lowercase letters) and `isupper()` returns False (because there are no uppercase letters).\n\n Therefore, if we have a key that is \"123\", then:\n   all_lower = False (because \"123\".islower() is False) \n   all_upper = False (because \"123\".isupper() is False)\n\n So it would return False.\n\n But note: the problem says \"all keys are strings in lower case\" meaning that every key must be a string that is entirely in lower case. \n   However, \"123\" is not a string of lower case letters (it's digits) so it doesn't qualify.\n\n Therefore, our method is safe.\n\n However, note: the problem says \"strings\", so we assume that the keys are strings. But we already check that all keys are strings (using `isinstance(k, str)`). \n   So if we have a key that is a string of digits, we have already passed the string check, but then `islower` and `isupper` will both be false.\n\n So the function:\n\n   if not dict:\n        return False\n\n   for key in dict:\n        if not isinstance(key, str):\n            return False\n\n   # Now we know all keys are strings\n   all_lower = True\n   all_upper = True\n   for key in dict:\n        if not key.islower():\n            all_lower = False\n        if not key.isupper():\n            all_upper = False\n\n   return all_lower or all_upper\n\n Alternatively, we can use the all() function as above.\n\n But note: the problem says \"all keys are strings in lower case\" meaning that every key must be in lower case. \n   So if we have one key that is not lower, then all_lower becomes false.\n\n However, we can do:\n\n   if all(key.islower() for key in dict):\n        return True\n   if all(key.isupper() for key in dict):\n        return True\n   return False\n\n But note: we must check that the dictionary is not empty and that all keys are strings.\n\n Let's write the code accordingly.\n\n However, note: the problem says \"The function should return False is the given dictionary is empty.\" -> so we check for empty first.\n\n Revised plan:\n\n   if len(dict) == 0:\n        return False\n\n   # Check that every key is a string\n   for key in dict:\n        if not isinstance(key, str):\n            return False\n\n   # Now check the case\n   if all(key.islower() for key in dict):\n        return True\n   if all(key.isupper() for key in dict):\n        return True\n   return False\n\n But note: what if the dictionary has one key that is a string of digits? \n   Example: {\"123\": \"value\"} -> \n        all(key.islower() for key in dict) -> \"123\".islower() is False -> so first condition fails.\n        all(key.isupper() for key in dict) -> \"123\".isupper() is False -> so second condition fails -> returns False.\n\n This is correct.\n\n However, note: the problem says \"all keys are strings in lower case\" meaning that the string must be entirely in lower case. \n   But a string of digits is not considered to be in lower case (because it's not letters). So it's correctly returning False.\n\n Let's code accordingly.\n\n But note: the example \"a\":\"apple\", 8:\"banana\" -> we already return False because 8 is not a string.\n\n We'll write the function accordingly.\n\n However, note: the problem says \"all keys are strings\", so if we have a non-string key, we return False.\n\n We'll implement as described.\n\n Let's write the code.\n</think>\n\n```python\ndef check_dict_case(dict):\n    if not dict:\n        return False\n    for key in dict:\n        if not isinstance(key, str):\n            return False\n    all_lower = all(key.islower() for key in dict)\n    all_upper = all(key.isupper() for key in dict)\n    return all_lower or all_upper\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 47277825200,
+    "load_duration": 12567100,
+    "prompt_eval_count": 202,
+    "prompt_eval_cached_count": 28,
+    "prompt_eval_duration": 362015000,
+    "eval_count": 1864,
+    "eval_duration": 46767851000
+  },
+  "wall_seconds": 43.14332422000007,
+  "load_average_before": [
+    0.07861328125,
+    0.09619140625,
+    0.02783203125
+  ],
+  "load_average_after": [
+    0.09814453125,
+    0.09619140625,
+    0.029296875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-30b-thinking-off-10",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-30b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_10.py"
+    ],
+    "wall_seconds": 0.6564280430029612,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

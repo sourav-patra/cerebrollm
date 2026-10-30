@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-10",
+ "run": 3,
+ "started_utc": "2026-10-29T16:35:17Z",
+ "seconds": 4.84,
+ "prompt_sha256": "d8b687abd783fb2454539937c693a008992fd01c7661361827c7c6240812e159",
+ "answer": "\"Remove deprecated ipex-llm and optimum-intel IPEX integrations.\" [llama_index/v0.14.25.md]",
+ "thinking_chars": 944,
+ "tokens": {
+  "input": 2089,
+  "output": 296
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 5162576600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:35:21.9167537Z",
+  "response": "\"Remove deprecated ipex-llm and optimum-intel IPEX integrations.\" [llama_index/v0.14.25.md]",
+  "thinking": "The question: \"Which two deprecated integrations did llama-index-core 0.14.25 remove?\" We need to locate that info. In context [1] lines 58-66 mention: \"- Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406]\". So the two deprecated integrations removed are ipex-llm and optimum-intel IPEX integrations.\n\nWe need to quote the line and cite path. The line is from [1] llama_index/v0.14.25.md. So quote: \"Remove deprecated ipex-llm and optimum-intel IPEX integrations\". Path: [llama_index/v0.14.25.md]. Provide as requested: \"Remove deprecated ipex-llm and optimum-intel IPEX integrations.\" [llama_index/v0.14.25.md].\n\nCheck for exact wording. In the snippet: \"- Remove deprecated ipex-llm and optimum-intel IPEX integrations ([#22406](https://github.com/run-llama/llama_index/pull/22406))\". So the quote should be \"Remove deprecated ipex-llm and optimum-intel IPEX integrations\". Path: [llama_index/v0.14.25.md].\n\nThus answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5162576600,
+  "load_duration": 16396800,
+  "prompt_eval_count": 2089,
+  "prompt_eval_cached_count": 2084,
+  "prompt_eval_duration": 59331000,
+  "eval_count": 296,
+  "eval_duration": 5027392000
+ }
+}

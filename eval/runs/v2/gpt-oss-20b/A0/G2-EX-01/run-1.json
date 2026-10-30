@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-01",
+ "run": 1,
+ "started_utc": "2026-10-29T16:02:39Z",
+ "seconds": 25.6,
+ "prompt_sha256": "cd5beccda834537ed90607bebba8f323798037e5af9bfbced1755b5de537a08b",
+ "answer": "I’m not aware of any other endpoint that was changed in that release, so the change was to the **`/api/models`** endpoint – the endpoint that lists the available models. Release 0.34.3 extended that endpoint so that each model’s *thinking controls* (e.g., temperature, top‑p, etc.) and their default values are advertised in the response.",
+ "thinking_chars": 2096,
+ "tokens": {
+  "input": 114,
+  "output": 621
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 27139245500
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:03:05.6688817Z",
+  "response": "I’m not aware of any other endpoint that was changed in that release, so the change was to the **`/api/models`** endpoint – the endpoint that lists the available models. Release 0.34.3 extended that endpoint so that each model’s *thinking controls* (e.g., temperature, top‑p, etc.) and their default values are advertised in the response.",
+  "thinking": "We need to answer: \"Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default?\" So it's about Ollama, a model serving tool. They mention release 0.34.3. The question: \"Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default?\" We need to recall what Ollama API endpoints exist: /api/models, /api/generate, /api/pull, etc. \"thinking controls\" likely refers to \"think\" or \"thinking\" for LLMs? Maybe it's about controlling the model's behavior: e.g., \"max_length\", \"temperature\", \"top_p\", \"top_k\", \"seed\", \"stop\", \"stop_seq\" etc. But \"thinking controls\" could refer to \"think\" or \"think time\"? Wait, maybe \"thinking controls\" is a new feature in Ollama's \"Chat API\" where you can set \"thinking\" or \"thinking time\" for the model? Or \"think\" parameter? Let's search memory: Ollama is a lightweight container for LLMs. There's a new release 0.34.3. I recall reading release notes: \"0.34.3\" added new API endpoint for model metadata. Or maybe they extended the /api/models endpoint to advertise each model's \"thinking controls\" and \"default\" values. The question: \"Which Ollama API endpoint did release 0.34.3 extend to advertise each model's thinking controls and default?\" So the answer: /api/models. But the question might want the specific endpoint: \"GET /api/models\" or maybe \"GET /api/tags\"? Wait, there's also /api/tags to list models? Actually, the Ollama API includes: /api/pull, /api/llama, /api/generate, /api/chat, /api/models, /api/health, etc. The /api/models endpoint returns a list of models. The release may have extended it to include \"thinking controls\" and \"default\" values. So the answer: the /api/models endpoint.\n\nThus: It extended the \"GET /api/models\" endpoint. Or \"POST /api/models\" or \"GET /api/models\" (list). I think it's GET /api/models. So answer: The /api/models endpoint.\n\nLet's respond: \"It extended the GET /api/models endpoint to include each model’s thinking controls and default values.\"\n\nAlso maybe they refer to /api/tags? But likely /api/models. So answer that.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 27139245500,
+  "load_duration": 15889394600,
+  "prompt_eval_count": 114,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 574313000,
+  "eval_count": 621,
+  "eval_duration": 10663672000
+ }
+}

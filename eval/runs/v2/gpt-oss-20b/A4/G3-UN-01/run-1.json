@@ -1,0 +1,89 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A4",
+ "id": "G3-UN-01",
+ "run": 1,
+ "started_utc": "2026-10-30T06:06:49Z",
+ "seconds": 17.99,
+ "prompt_sha256": "d9fc357ca01f7099850e9a77f3368423d92239e287e283a49505d209782dd320",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 0.74,
+   "rerank": 9.22,
+   "generate": 5.59,
+   "verify": 0.0,
+   "total": 15.54
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.95201,
+    "path": "pgvector/README.md",
+    "line_start": 518,
+    "line_end": 538
+   },
+   {
+    "rank": 2,
+    "search_rank": 10,
+    "rerank_score": 0.68717,
+    "path": "pgvector/README.md",
+    "line_start": 257,
+    "line_end": 268
+   },
+   {
+    "rank": 3,
+    "search_rank": 4,
+    "rerank_score": 0.31137,
+    "path": "pgvector/README.md",
+    "line_start": 424,
+    "line_end": 466
+   },
+   {
+    "rank": 4,
+    "search_rank": 8,
+    "rerank_score": 0.29174,
+    "path": "pgvector/README.md",
+    "line_start": 933,
+    "line_end": 937
+   },
+   {
+    "rank": 5,
+    "search_rank": 2,
+    "rerank_score": 0.23242,
+    "path": "pgvector/README.md",
+    "line_start": 478,
+    "line_end": 516
+   },
+   {
+    "rank": 6,
+    "search_rank": 3,
+    "rerank_score": 0.21815,
+    "path": "pgvector/README.md",
+    "line_start": 289,
+    "line_end": 319
+   },
+   {
+    "rank": 7,
+    "search_rank": 6,
+    "rerank_score": 0.13415,
+    "path": "cerebrollm/engine/README.md",
+    "line_start": 169,
+    "line_end": 191
+   },
+   {
+    "rank": 8,
+    "search_rank": 7,
+    "rerank_score": 0.10845,
+    "path": "pgvector/README.md",
+    "line_start": 270,
+    "line_end": 287
+   }
+  ],
+  "model": "gpt-oss:20b"
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-PA-1",
+ "run": 4,
+ "started_utc": "2026-10-29T01:53:34Z",
+ "seconds": 8.06,
+ "prompt_file": "runs/prompts/A0/PR-PA-1.txt",
+ "prompt_sha256": "5ae12311882e7873939bf04bf0cd90eabbc778776782ae63aacbde435e242b54",
+ "answer": "To run the Ollama container with access to all NVIDIA GPUs, use the `--gpus=all` flag:\n\n```bash\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\n- `--gpus=all` exposes every NVIDIA GPU on the host to the container.\n- `-v ollama:/root/.ollama` stores downloaded models in a named volume so they persist.\n- `-p 11434:11434` maps Ollama's API port to the host.\n\nThis requires the NVIDIA Container Toolkit on the host. On Windows, run Docker Desktop with the WSL 2 backend and make sure the NVIDIA driver and GPU support are enabled for WSL. To check that the GPUs are visible inside the container, run:\n\n```bash\ndocker exec -it ollama nvidia-smi\n```\n\nIf you want to limit the container to specific GPUs instead, use `--gpus '\"device=0,1\"'`. I'm not certain of every platform-specific detail, so check the Ollama Docker documentation if the setup differs on your system.",
+ "tokens": {
+  "input": 656,
+  "output": 567,
+  "thinking": 200,
+  "cache_read": 0,
+  "cache_creation": 654
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00041450000000000005,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3511,
+  "stop_reason": "end_turn",
+  "session_id": "3aac5a78-bacc-428e-b8ae-27e5f9612636",
+  "total_cost_usd": 0.00041450000000000005,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 654,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 567,
+   "output_tokens_details": {
+    "thinking_tokens": 200
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 654,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 567,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 654,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 654
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 567,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 654,
+    "webSearchRequests": 0,
+    "costUSD": 0.00041450000000000005,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 200,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 654,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "To run the Ollama container with access to all NVIDIA GPUs, use the `--gpus=all` flag:\n\n```bash\ndocker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama\n```\n\n- `--gpus=all` exposes every NVIDIA GPU on the host to the container.\n- `-v ollama:/root/.ollama` stores downloaded models in a named volume so they persist.\n- `-p 11434:11434` maps Ollama's API port to the host.\n\nThis requires the NVIDIA Container Toolkit on the host. On Windows, run Docker Desktop with the WSL 2 backend and make sure the NVIDIA driver and GPU support are enabled for WSL. To check that the GPUs are visible inside the container, run:\n\n```bash\ndocker exec -it ollama nvidia-smi\n```\n\nIf you want to limit the container to specific GPUs instead, use `--gpus '\"device=0,1\"'`. I'm not certain of every platform-specific detail, so check the Ollama Docker documentation if the setup differs on your system.",
+  "ttft_ms": 2747,
+  "type": "result",
+  "duration_ms": 3632,
+  "uuid": "dd95a45e-ce73-4757-a192-37d28bb94635",
+  "ttft_stream_ms": 2747,
+  "time_to_request_ms": 154,
+  "first_content_frame_ms": 2747,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

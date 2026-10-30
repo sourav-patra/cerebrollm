@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-11",
+ "run": 4,
+ "started_utc": "2026-10-29T01:41:25Z",
+ "seconds": 10.01,
+ "prompt_file": "runs/prompts/A0/EX-11.txt",
+ "prompt_sha256": "12184bbc2859c9595555ca7491af0eaceb7ff4a95637554262b529644fdf347a",
+ "answer": "The starter bundle, as I recall the LlamaIndex docs, is these four packages:\n\n1. `llama-index-core`\n2. `llama-index-llms-openai`\n3. `llama-index-embeddings-openai`\n4. `llama-index-readers-file`\n\nI'm not certain this list is current. The `llama-index` meta-package's dependencies have changed across releases, and I believe later versions pull in more integrations. Check the installed package's metadata (`pip show llama-index` or `pip show -f llama-index`) or the current install docs to confirm.",
+ "tokens": {
+  "input": 653,
+  "output": 1013,
+  "thinking": 832,
+  "cache_read": 0,
+  "cache_creation": 651
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0006369,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4630,
+  "stop_reason": "end_turn",
+  "session_id": "103c634b-dd97-44bb-9e14-ce2277910bf7",
+  "total_cost_usd": 0.0006369,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 651,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1013,
+   "output_tokens_details": {
+    "thinking_tokens": 832
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 651,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1013,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 651,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 651
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1013,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 651,
+    "webSearchRequests": 0,
+    "costUSD": 0.0006369,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 832,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 651,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The starter bundle, as I recall the LlamaIndex docs, is these four packages:\n\n1. `llama-index-core`\n2. `llama-index-llms-openai`\n3. `llama-index-embeddings-openai`\n4. `llama-index-readers-file`\n\nI'm not certain this list is current. The `llama-index` meta-package's dependencies have changed across releases, and I believe later versions pull in more integrations. Check the installed package's metadata (`pip show llama-index` or `pip show -f llama-index`) or the current install docs to confirm.",
+  "ttft_ms": 4042,
+  "type": "result",
+  "duration_ms": 4818,
+  "uuid": "6257e278-b027-4cba-b631-79929c3f63ee",
+  "ttft_stream_ms": 2933,
+  "time_to_request_ms": 187,
+  "first_content_frame_ms": 2933,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

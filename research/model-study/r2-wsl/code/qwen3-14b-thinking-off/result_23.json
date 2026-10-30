@@ -1,0 +1,92 @@
+{
+  "task_id": "HumanEval/89",
+  "index": 23,
+  "request": {
+    "model": "qwen3:14b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef encrypt(s):\n    \"\"\"Create a function encrypt that takes a string as an argument and\n    returns a string encrypted with the alphabet being rotated. \n    The alphabet should be rotated in a manner such that the letters \n    shift down by two multiplied to two places.\n    For example:\n    encrypt('hi') returns 'lm'\n    encrypt('asdfghjkl') returns 'ewhjklnop'\n    encrypt('gf') returns 'kj'\n    encrypt('et') returns 'ix'\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3:14b",
+    "created_at": "2026-10-28T22:32:33.9089728Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef encrypt(s):\n    \"\"\"Create a function encrypt that takes a string as an argument and\n    returns a string encrypted with the alphabet being rotated. \n    The alphabet should be rotated in a manner such that the letters \n    shift down by two multiplied to two places.\n    For example:\n    encrypt('hi') returns 'lm'\n    encrypt('asdfghjkl') returns 'ewhjklnop'\n    encrypt('gf') returns 'kj'\n    encrypt('et') returns 'ix'\n    \"\"\"\n    import string\n    shift = 4  # 2 multiplied by 2\n    result = []\n    for char in s:\n        if char in string.ascii_lowercase:\n            new_char = chr((ord(char) - ord('a') + shift) % 26 + ord('a'))\n            result.append(new_char)\n        else:\n            result.append(char)\n    return ''.join(result)\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7754857400,
+    "load_duration": 37546500,
+    "prompt_eval_count": 145,
+    "prompt_eval_cached_count": 29,
+    "prompt_eval_duration": 99609000,
+    "eval_count": 191,
+    "eval_duration": 7580264000
+  },
+  "wall_seconds": 7.260007021999627,
+  "load_average_before": [
+    0.3017578125,
+    0.10302734375,
+    0.02734375
+  ],
+  "load_average_after": [
+    0.2548828125,
+    0.09912109375,
+    0.0263671875
+  ],
+  "test": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3-14b-thinking-off-23",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3-14b-thinking-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_23.py"
+    ],
+    "wall_seconds": 0.7573673449987837,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": true
+}

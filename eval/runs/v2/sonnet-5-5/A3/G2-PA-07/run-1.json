@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-PA-07",
+ "run": 1,
+ "started_utc": "2026-10-29T15:55:04Z",
+ "seconds": 7.0,
+ "prompt_sha256": "966074e791335ca871ebd5a7d82b30bbeb317f071d36667858d564446d44005d",
+ "answer": "`StructuredLLMRerank` gained native async support in llama-index-core 0.14.25.\n\nThe release notes say: \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\" [llama_index/v0.14.25.md]",
+ "tokens": {
+  "input": 2616,
+  "output": 105,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 2614
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.01151,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2488,
+  "stop_reason": "end_turn",
+  "session_id": "e35421f6-d931-4255-8b1f-416200ca15a7",
+  "total_cost_usd": 0.01151,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2614,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 105,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2614,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 105,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2614,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2614
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 105,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2614,
+    "webSearchRequests": 0,
+    "costUSD": 0.01151,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2614,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "`StructuredLLMRerank` gained native async support in llama-index-core 0.14.25.\n\nThe release notes say: \"feat(core): add native async support to StructuredLLMRerank ([#22842](https://github.com/run-llama/llama_index/pull/22842))\" [llama_index/v0.14.25.md]",
+  "ttft_ms": 2563,
+  "type": "result",
+  "duration_ms": 2590,
+  "uuid": "0821d854-5efb-430c-b03b-7eb08805d90a",
+  "ttft_stream_ms": 2561,
+  "time_to_request_ms": 111,
+  "first_content_frame_ms": 2562,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-05",
+ "run": 3,
+ "started_utc": "2026-10-29T17:32:10Z",
+ "seconds": 9.15,
+ "prompt_sha256": "24b4f0a37bcdab2f151d071b7668e6d0bfd5e8d71c91b1bd324da97df9d05009",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. The provided context does not mention this specific variable or its default value. The closest related information is about keeping a model loaded in memory or unloading it immediately, but no specific environment variable `OLLAMA_UNLOAD_TIMEOUT` is mentioned. \n\nFor example, the section on unloading models states:\n> \"If you want to immediately unload a model from memory, use the `ollama stop` command:\"\n\nAnd on keeping models loaded:\n> \"The `keep_alive` parameter can be set to [...] any negative number which will keep the model loaded in memory (e.g. -1 or \\\"-1m\\\")\" \n\nHowever, this does not specify an `OLLAMA_UNLOAD_TIMEOUT` environment variable. [1] ollama/docs/faq.md (lines 289-318)",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1586,
+  "output": 182
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9836829200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:32:19.023991Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. The provided context does not mention this specific variable or its default value. The closest related information is about keeping a model loaded in memory or unloading it immediately, but no specific environment variable `OLLAMA_UNLOAD_TIMEOUT` is mentioned. \n\nFor example, the section on unloading models states:\n> \"If you want to immediately unload a model from memory, use the `ollama stop` command:\"\n\nAnd on keeping models loaded:\n> \"The `keep_alive` parameter can be set to [...] any negative number which will keep the model loaded in memory (e.g. -1 or \\\"-1m\\\")\" \n\nHowever, this does not specify an `OLLAMA_UNLOAD_TIMEOUT` environment variable. [1] ollama/docs/faq.md (lines 289-318)",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9836829200,
+  "load_duration": 14601100,
+  "prompt_eval_count": 1586,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 773276000,
+  "eval_count": 182,
+  "eval_duration": 8890681000
+ }
+}

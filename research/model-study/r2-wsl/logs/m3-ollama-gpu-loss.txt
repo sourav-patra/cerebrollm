@@ -1,0 +1,21 @@
+# server.log (first lines after the 2026-10-30 00:05 IST restart), paths scrubbed
+time=2026-10-30T00:05:32.574+05:30 level=INFO source=routes.go:2536 msg="Listening on 127.0.0.1:11434 (version 0.40.13)"
+time=2026-10-30T00:05:32.575+05:30 level=INFO source=runner.go:60 msg="discovering available GPUs..."
+time=2026-10-30T00:05:34.279+05:30 level=INFO source=types.go:50 msg="inference compute" id=cpu library=cpu compute="" name=cpu description=cpu libdirs=ollama driver="" pci_id="" type="" total="31.8 GiB" available="12.5 GiB"
+time=2026-10-30T00:05:34.279+05:30 level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="0 B" default_num_ctx=4096
+time=2026-10-30T00:05:34.327+05:30 level=INFO source=sched.go:1183 msg="disabling mmap for llama-server load by default" model=<home>\.ollama\models\blobs\sha256-06507c7b42688469c4e7298b0a1e16deff06caf291cf0a5b278c308249c3e439 reason=cpu
+cmn  common_param:   - CPU     : 13th Gen Intel(R) Core(TM) i5-13600K (32535 MiB, 12778 MiB free)
+cmn  common_param: system_info: n_threads = 10 (n_threads_batch = 10) / 20 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+# upgrade.log, last matching lines
+2026-10-30 00:04:54.237   Setup version: Inno Setup version 6.7.1
+2026-10-30 00:04:54.237   Original Setup EXE: <home>\AppData\Local\Ollama\OllamaSetup.exe
+2026-10-30 00:04:54.238   Setup command line: /SL5="$60458,1675011019,845824,<home>\AppData\Local\Ollama\OllamaSetup.exe" /CLOSEAPPLICATIONS /LOG=upgrade.log /FORCECLOSEAPPLICATIONS /SP /NOCANCEL /SIL
+2026-10-30 00:04:54.238   Windows version: 10.0.26300
+2026-10-30 00:04:56.667   Version of our file: 51.1054.0.0
+2026-10-30 00:04:56.731   Version of existing file: 51.1054.0.0
+2026-10-30 00:05:00.906   Dest filename: <home>\AppData\Local\Programs\Ollama\lib\ollama\cuda_v12\concrt140.dll
+2026-10-30 00:05:00.907   Creating directory: <home>\AppData\Local\Programs\Ollama\lib\ollama\cuda_v12
+2026-10-30 00:05:00.917   Dest filename: <home>\AppData\Local\Programs\Ollama\lib\ollama\cuda_v12\cublas64_12.dll
+2026-10-30 00:05:04.225   Dest filename: <home>\AppData\Local\Programs\Ollama\lib\ollama\cuda_v12\cublasLt64_12.dll
+2026-10-30 00:05:18.267   Dest filename: <home>\AppData\Local\Programs\Ollama\lib\ollama\cuda_v12\cudart64_12.dll
+2026-10-30 00:05:18.279   Dest filename: <home>\AppData\Local\Programs\Ollama\lib\ollama\cuda_v12\ggml-cuda.dll

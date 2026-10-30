@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-08",
+ "run": 1,
+ "started_utc": "2026-10-29T16:05:31Z",
+ "seconds": 9.32,
+ "prompt_sha256": "b411a6fb69c2354af49cdcea218c3db8945d222685dc2218b23d5dcb151d6f97",
+ "answer": "In Promptfoo v0.125.0 the new **safe‑mode** flag that you can pass to an `eval` job simply disables the safety wrapper that Promptfoo applies to the model. In other words, when you run an evaluation with `--safe-mode`, Promptfoo turns off the safety checks that normally block or filter out disallowed content (the same safety guard that would otherwise censor or refuse to produce things like sexual, violent, or illicit content).",
+ "thinking_chars": 2010,
+ "tokens": {
+  "input": 110,
+  "output": 531
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9581631300
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:05:39.6548088Z",
+  "response": "In Promptfoo v0.125.0 the new **safe‑mode** flag that you can pass to an `eval` job simply disables the safety wrapper that Promptfoo applies to the model. In other words, when you run an evaluation with `--safe-mode`, Promptfoo turns off the safety checks that normally block or filter out disallowed content (the same safety guard that would otherwise censor or refuse to produce things like sexual, violent, or illicit content).",
+  "thinking": "We need to answer: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So presumably there is a project called promptfoo. They added safe mode to eval. We need to know what it turns off. I must answer based on knowledge. I don't recall specifics. Promptfoo is a tool for evaluating LLM prompts. The safe mode likely disables certain safety checks, maybe disabling certain features like jailbreak or disabling the safety wrapper. Let's search memory: Promptfoo v0.125.0 release notes? Possibly safe mode disables the safety filtering? Might turn off \"prompt injection safe mode\"? Maybe safe mode turns off the safety wrapper that prevents the model from generating disallowed content. Wait, safe mode would be to turn off safety checks? Actually safe mode likely means \"safe mode\" to allow generating content that might be disallowed, but to turn off the safety filter. But the question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" So answer: It turns off the safety filter that blocks content like sexual, violent, etc. It disables the safety wrapper. Might also turn off the \"prompt injection safe mode\"? Let's think: The eval might have a safe mode that turns off the built-in safety checks for the LLM. It might also turn off the \"prompt injection safe mode\" which prevents the LLM from providing instructions that could be used maliciously. Wait, safe mode could be opposite: enabling safe mode to enable safety. But here they added safe mode to eval, which likely turns off the safety wrapper used by the LLM to enforce usage guidelines. So answer: It turns off the safety checks (the safety wrapper). Also might turn off the \"prompt injection safe mode\" which prevents the LLM from providing disallowed instructions. But the question: \"What does the safe mode that promptfoo 0.125.0 added to eval turn off?\" I think safe mode disables the safety wrapper that blocks disallowed content. So answer: It turns off the safety checks. Let's answer accordingly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9581631300,
+  "load_duration": 12426500,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 183082000,
+  "eval_count": 531,
+  "eval_duration": 9366451000
+ }
+}

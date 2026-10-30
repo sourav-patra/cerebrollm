@@ -1,0 +1,89 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A4",
+ "id": "G3-UN-09",
+ "run": 1,
+ "started_utc": "2026-10-29T18:13:17Z",
+ "seconds": 26.67,
+ "prompt_sha256": "e937d4d2a3c56cfbab33020467e714282c93a57e33b0670773d320b7d6307893",
+ "answer": "Not in the sources.",
+ "tokens": {},
+ "citations": [],
+ "meta": {
+  "abstained": true,
+  "timings": {
+   "search": 3.72,
+   "rerank": 7.66,
+   "generate": 9.78,
+   "verify": 0.0,
+   "total": 21.15
+  },
+  "hits": [
+   {
+    "rank": 1,
+    "search_rank": 1,
+    "rerank_score": 0.75539,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/loading/node_parsers/modules.md",
+    "line_start": 182,
+    "line_end": 195
+   },
+   {
+    "rank": 2,
+    "search_rank": 8,
+    "rerank_score": 0.63795,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/querying/response_synthesizers/index.md",
+    "line_start": 75,
+    "line_end": 128
+   },
+   {
+    "rank": 3,
+    "search_rank": 9,
+    "rerank_score": 0.33887,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/deploying/query_engine/response_modes.md",
+    "line_start": 1,
+    "line_end": 53
+   },
+   {
+    "rank": 4,
+    "search_rank": 20,
+    "rerank_score": 0.32983,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md",
+    "line_start": 37,
+    "line_end": 53
+   },
+   {
+    "rank": 5,
+    "search_rank": 5,
+    "rerank_score": 0.29047,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 7988,
+    "line_end": 7994
+   },
+   {
+    "rank": 6,
+    "search_rank": 12,
+    "rerank_score": 0.26245,
+    "path": "llama_index/docs/src/content/docs/framework/CHANGELOG.md",
+    "line_start": 8030,
+    "line_end": 8039
+   },
+   {
+    "rank": 7,
+    "search_rank": 2,
+    "rerank_score": 0.22711,
+    "path": "llama_index/docs/src/content/docs/framework/module_guides/models/llms.md",
+    "line_start": 48,
+    "line_end": 72
+   },
+   {
+    "rank": 8,
+    "search_rank": 3,
+    "rerank_score": 0.1255,
+    "path": "llama_index/docs/src/content/docs/framework/understanding/rag/loading/index.md",
+    "line_start": 110,
+    "line_end": 128
+   }
+  ],
+  "model": "gemma4:12b"
+ }
+}

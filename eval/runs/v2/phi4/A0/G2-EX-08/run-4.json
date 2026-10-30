@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-08",
+ "run": 4,
+ "started_utc": "2026-10-29T17:34:27Z",
+ "seconds": 4.11,
+ "prompt_sha256": "b411a6fb69c2354af49cdcea218c3db8945d222685dc2218b23d5dcb151d6f97",
+ "answer": "I do not know the specific details of what safe mode in promptfoo 0.125.0 turns off in its `eval` function. Generally, safe modes in programming contexts are designed to restrict certain operations or features to enhance security, such as limiting access to certain functions, disabling arbitrary code execution, or preventing certain types of input. However, without specific documentation or release notes for this version of promptfoo, I cannot provide an exact answer.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 53,
+  "output": 91
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 4259943600
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:34:30.0298872Z",
+  "response": "I do not know the specific details of what safe mode in promptfoo 0.125.0 turns off in its `eval` function. Generally, safe modes in programming contexts are designed to restrict certain operations or features to enhance security, such as limiting access to certain functions, disabling arbitrary code execution, or preventing certain types of input. However, without specific documentation or release notes for this version of promptfoo, I cannot provide an exact answer.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4259943600,
+  "load_duration": 13157500,
+  "prompt_eval_count": 53,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 218612000,
+  "eval_count": 91,
+  "eval_duration": 4010740000
+ }
+}

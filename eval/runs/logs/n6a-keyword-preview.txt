@@ -1,0 +1,11 @@
+# N6a interim preview (keyword grade of GRADING.md section 1, answerable items only; not the N6a model grade)
+# model arm | answers | empty | answerable runs keyword-correct/total | unanswerable runs containing a disclaimer phrase of grade_lib.DISCLAIMERS / total
+gemma4-12b A0 | 175 | 0 | 0/100 | 75/75
+gemma4-12b A3 | 175 | 0 | 95/100 | 75/75
+gemma4-12b A4 | 77 | 0 | 18/47 | 0/30
+gpt-oss-20b A0 | 175 | 1 | 19/100 | 14/75
+gpt-oss-20b A3 | 175 | 0 | 87/100 | 58/75
+phi4 A0 | 175 | 0 | 3/100 | 68/75
+phi4 A3 | 175 | 0 | 89/100 | 71/75
+sonnet-5-5 A0 | 105 | 0 | 10/60 | 41/45
+sonnet-5-5 A3 | 105 | 0 | 49/60 | 44/45

@@ -1,0 +1,40 @@
+{
+ "model": "gemma4-12b",
+ "arm": "A3",
+ "id": "G2-PA-05",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:18Z",
+ "seconds": 1.59,
+ "prompt_sha256": "bebaf2714d645fa4927873c1e57a9df9f87f069c8f166254bad07abe7a359f83",
+ "answer": "\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md (lines 20-31)].",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1995,
+  "output": 38
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gemma4:12b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": false,
+  "total_duration_ns": 1665821000
+ },
+ "raw": {
+  "model": "gemma4:12b",
+  "created_at": "2026-10-29T15:57:21.0246436Z",
+  "response": "\"cli: support comma-separated OR values in --filter-metadata\" [promptfoo/0.124.0.md (lines 20-31)].",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1665821000,
+  "load_duration": 16822400,
+  "prompt_eval_count": 1995,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 907087000,
+  "eval_count": 38,
+  "eval_duration": 332805000
+ }
+}

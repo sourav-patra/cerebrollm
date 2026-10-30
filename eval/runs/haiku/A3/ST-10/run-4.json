@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-10",
+ "run": 4,
+ "started_utc": "2026-10-29T01:58:01Z",
+ "seconds": 10.44,
+ "prompt_file": "runs/prompts/A3/ST-10.txt",
+ "prompt_sha256": "9510a1e4bdc0b8e1449871adbb81454e670bd7c32ab9dfb63ff3a52f71c74b3c",
+ "answer": "Use the prebuilt **`FunctionAgent`** from the agent workflow module. The agents guide shows it in a short example:\n\n\"from llama_index.core.agent.workflow import FunctionAgent\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md]\n\nThe example passes a plain Python function as a tool, along with an LLM and a system prompt:\n\n\"agent = FunctionAgent(\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md]\n\nThe tool is an ordinary function with a docstring describing what it does:\n\n\"Useful for multiplying two numbers.\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md]\n\nThe tool's name and description matter because the LLM uses them to decide when and how to call the tool: \"the tool selected (and the arguments written for that tool) rely strongly on the **tool name** and **description**\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/tools.md]\n\nThe introduction also names `FunctionAgent` as one of the pre-built options: \"you can use our pre-built agentic workflows like `FunctionAgent`\" [llama_index/docs/src/content/docs/framework/understanding/agent/index.md]\n\nThe excerpts I have are truncated, so I don't know the rest of the example, such as how to run the agent or pass it a query. Check the full agents guide for those details.",
+ "tokens": {
+  "input": 3330,
+  "output": 1291,
+  "thinking": 803,
+  "cache_read": 2941,
+  "cache_creation": 387
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0007525100000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6001,
+  "stop_reason": "end_turn",
+  "session_id": "009e5d4f-bae8-4d3b-a556-207a5abf9cbe",
+  "total_cost_usd": 0.0007525100000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 387,
+   "cache_read_input_tokens": 2941,
+   "output_tokens": 1291,
+   "output_tokens_details": {
+    "thinking_tokens": 803
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 387,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1291,
+     "cache_read_input_tokens": 2941,
+     "cache_creation_input_tokens": 387,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 387
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1291,
+    "cacheReadInputTokens": 2941,
+    "cacheCreationInputTokens": 387,
+    "webSearchRequests": 0,
+    "costUSD": 0.0007525100000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 803,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 387,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use the prebuilt **`FunctionAgent`** from the agent workflow module. The agents guide shows it in a short example:\n\n\"from llama_index.core.agent.workflow import FunctionAgent\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md]\n\nThe example passes a plain Python function as a tool, along with an LLM and a system prompt:\n\n\"agent = FunctionAgent(\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md]\n\nThe tool is an ordinary function with a docstring describing what it does:\n\n\"Useful for multiplying two numbers.\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/index.md]\n\nThe tool's name and description matter because the LLM uses them to decide when and how to call the tool: \"the tool selected (and the arguments written for that tool) rely strongly on the **tool name** and **description**\" [llama_index/docs/src/content/docs/framework/module_guides/deploying/agents/tools.md]\n\nThe introduction also names `FunctionAgent` as one of the pre-built options: \"you can use our pre-built agentic workflows like `FunctionAgent`\" [llama_index/docs/src/content/docs/framework/understanding/agent/index.md]\n\nThe excerpts I have are truncated, so I don't know the rest of the example, such as how to run the agent or pass it a query. Check the full agents guide for those details.",
+  "ttft_ms": 4364,
+  "type": "result",
+  "duration_ms": 6161,
+  "uuid": "bd482e8e-2df8-4458-b1b9-c11a8cb25345",
+  "ttft_stream_ms": 2912,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 2912,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-15",
+ "run": 4,
+ "started_utc": "2026-10-29T01:51:27Z",
+ "seconds": 7.83,
+ "prompt_file": "runs/prompts/A3/PA-15.txt",
+ "prompt_sha256": "2e5844ce3a7e3405b3aea6f9b60cebb8ed9423a77f85ca9ceae1652140b41a61",
+ "answer": "The attribute is `Settings.callback_manager`. The docs show: \"Settings.callback_manager = CallbackManager([token_counter])\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nThe same page says \"You can set a global callback manager, which can be used to observe and consume events generated throughout the llama-index code\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md], which is why assigning it on `Settings` covers the whole application.",
+ "tokens": {
+  "input": 3057,
+  "output": 403,
+  "thinking": 224,
+  "cache_read": 2670,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003054,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2773,
+  "stop_reason": "end_turn",
+  "session_id": "07425f36-2c89-4126-859d-0c04b733aae0",
+  "total_cost_usd": 0.0003054,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2670,
+   "output_tokens": 403,
+   "output_tokens_details": {
+    "thinking_tokens": 224
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 403,
+     "cache_read_input_tokens": 2670,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 403,
+    "cacheReadInputTokens": 2670,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003054,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 224,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The attribute is `Settings.callback_manager`. The docs show: \"Settings.callback_manager = CallbackManager([token_counter])\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md]\n\nThe same page says \"You can set a global callback manager, which can be used to observe and consume events generated throughout the llama-index code\" [llama_index/docs/src/content/docs/framework/module_guides/supporting_modules/settings.md], which is why assigning it on `Settings` covers the whole application.",
+  "ttft_ms": 2912,
+  "type": "result",
+  "duration_ms": 3032,
+  "uuid": "d2f27600-6a3d-4fdb-93ec-56922cc99fe6",
+  "ttft_stream_ms": 2911,
+  "time_to_request_ms": 258,
+  "first_content_frame_ms": 2911,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,61 @@
+Proves: the CI test selection passes with no PostgreSQL, Ollama or GPU (empty HOME), on Python 3.12, 2026-10-30.
+== python
+Python 3.12.3
+== engine/tests (pytest)
+wsl.exe : ~/pub-release-venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:300: 
+PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+At line:4 char:1
++ wsl.exe -d Ubuntu-24.04 -- bash "$b/ci-local.sh" $ws ~/pub ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (~/pu...cope" is unset.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+The event loop scope for asynchronous fixtures will default to the "fixture" caching scope. Future versions of 
+pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop 
+scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", 
+"class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+.............................................s..................s.................. [ 69%]
+....................ssss............                                     [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_end_to_end.py:65: Postgres unavailable: connection to server on socket "~/pub-ci-home/.cerebrollm/pg16/sock/.s.PGSQL.54329" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+SKIPPED [1] tests/test_mcp_server.py:220: Postgres unavailable: connection to server on socket "~/pub-ci-home/.cerebrollm/pg16/sock/.s.PGSQL.54329" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+SKIPPED [1] tests/test_swap.py:123: Postgres unavailable: connection to server on socket "~/pub-ci-home/.cerebrollm/pg16/sock/.s.PGSQL.54329" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+SKIPPED [1] tests/test_swap.py:92: Postgres unavailable: connection to server on socket "~/pub-ci-home/.cerebrollm/pg16/sock/.s.PGSQL.54329" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+SKIPPED [1] tests/test_swap.py:145: Postgres unavailable: connection to server on socket "~/pub-ci-home/.cerebrollm/pg16/sock/.s.PGSQL.54329" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+SKIPPED [1] tests/test_swap.py:79: Postgres unavailable: connection to server on socket "~/pub-ci-home/.cerebrollm/pg16/sock/.s.PGSQL.54329" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+113 passed, 6 skipped, 61 subtests passed in 3.98s
+== eval tests
+OK 186
+.............s...............
+----------------------------------------------------------------------
+Ran 29 tests in 8.671s
+
+OK (skipped=1)
+OK 19
+== research/model-study tests
+....................................................................swap deadlock (autovacuum), retry 1
+swap deadlock (autovacuum), retry 2
+swap deadlock (autovacuum), retry 3
+swap deadlock (autovacuum), retry 4
+swap deadlock (autovacuum), retry 5
+..swap deadlock (autovacuum), retry 1
+.guard pull phi4 exit 0  
+guard unload phi4 exit 1  
+.guard check-empty exit 0  refused
+.guard pull phi4 exit 1  refused
+guard pull phi4 exit 2  refused
+.guard pull phi4 exit 2  refused
+.......................
+----------------------------------------------------------------------
+Ran 97 tests in 0.147s
+
+OK
+exit codes: engine=0 eval=0 study=0

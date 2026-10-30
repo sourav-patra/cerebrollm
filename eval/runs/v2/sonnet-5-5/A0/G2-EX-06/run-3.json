@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-06",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:32Z",
+ "seconds": 6.87,
+ "prompt_sha256": "76eeb457029140d225af9863f4ff3e13b0a7dccc8497126a58581f184707e600",
+ "answer": "I don't know which Node.js major version promptfoo 0.122.0 stopped supporting. I don't have reliable information about that release, and I'd rather not guess.\n\nThe promptfoo GitHub releases page and `CHANGELOG.md` should say. The `engines` field in the package's `package.json` shows the supported Node range for each version, so you can compare 0.121.x with 0.122.0.",
+ "tokens": {
+  "input": 637,
+  "output": 225,
+  "thinking": 96,
+  "cache_read": 0,
+  "cache_creation": 635
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004794,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2692,
+  "stop_reason": "end_turn",
+  "session_id": "f15088ed-a488-49bc-a792-485262e4f0c0",
+  "total_cost_usd": 0.004794,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 635,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 225,
+   "output_tokens_details": {
+    "thinking_tokens": 96
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 635,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 225,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 635,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 635
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 225,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 635,
+    "webSearchRequests": 0,
+    "costUSD": 0.004794,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 96,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 635,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know which Node.js major version promptfoo 0.122.0 stopped supporting. I don't have reliable information about that release, and I'd rather not guess.\n\nThe promptfoo GitHub releases page and `CHANGELOG.md` should say. The `engines` field in the package's `package.json` shows the supported Node range for each version, so you can compare 0.121.x with 0.122.0.",
+  "ttft_ms": 2759,
+  "type": "result",
+  "duration_ms": 2776,
+  "uuid": "a73f7de6-fdde-4318-8862-8fb825a2a51b",
+  "ttft_stream_ms": 2758,
+  "time_to_request_ms": 115,
+  "first_content_frame_ms": 2758,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

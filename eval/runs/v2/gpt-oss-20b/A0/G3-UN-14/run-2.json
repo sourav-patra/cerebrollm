@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-14",
+ "run": 2,
+ "started_utc": "2026-10-29T16:22:53Z",
+ "seconds": 3.99,
+ "prompt_sha256": "9d067e0c6b7ba45e0eaf44837d4b94f745188a5d9fde256f833802a42f3aab92",
+ "answer": "I’m sorry, but I don’t have that information.",
+ "thinking_chars": 940,
+ "tokens": {
+  "input": 106,
+  "output": 238
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 4239471700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:22:57.2725539Z",
+  "response": "I’m sorry, but I don’t have that information.",
+  "thinking": "The user asks: \"Answer from what you know about this project; if you do not know, say you do not know. Question: What is the default value of promptfoo's evaluateOptions.maxTokensPerCell?\" They want the default value. This is about promptfoo, a project. I need to know default value of evaluateOptions.maxTokensPerCell. I don't recall this. Let's think: promptfoo is a framework for evaluating prompts? There's a config where evaluateOptions has maxTokensPerCell. Default maybe 50? Let's search memory. In promptfoo docs, they have evaluateOptions for evaluating each cell. There's maxTokensPerCell: maybe limit on token usage per cell. Default might be 500? I'm not sure. I could guess but better to say I do not know. The instruction: \"Answer from what you know about this project; if you do not know, say you do not know.\" So I should respond: I do not know. But maybe I can mention that I don't have that info. So answer: I do not know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 4239471700,
+  "load_duration": 15636000,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 184626000,
+  "eval_count": 238,
+  "eval_duration": 4022585000
+ }
+}

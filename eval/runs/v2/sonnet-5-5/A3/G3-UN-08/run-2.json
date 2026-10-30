@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G3-UN-08",
+ "run": 2,
+ "started_utc": "2026-10-29T15:57:10Z",
+ "seconds": 18.09,
+ "prompt_sha256": "6aa67305c2d3d502e197c468c7f1133f40522aa105aede1e8c22e0c41cf5c9f1",
+ "answer": "I don't know of any such flag. The retrieved documents don't mention an `ollama pull` flag for the number of parallel layer downloads.\n\nThe CLI docs only show the bare command: \"ollama pull gemma4\" [ollama/docs/cli.md]\n\nThe API docs list only `model`, `insecure` and `stream` as parameters for pulling. They say \"The number of files to be downloaded depends on the number of layers specified in the manifest.\" [ollama/docs/api.md]. That describes how many files are downloaded, not a way to control concurrency.\n\nThe excerpts may not be the full documentation, so I can't rule out that such a flag exists. `ollama pull --help` will list the flags your installed version supports.",
+ "tokens": {
+  "input": 2942,
+  "output": 357,
+  "thinking": 128,
+  "cache_read": 2575,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0052915,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 14576,
+  "stop_reason": "end_turn",
+  "session_id": "be3c3ce4-ceae-45bd-921c-7d2153b5af40",
+  "total_cost_usd": 0.0052915,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 2575,
+   "output_tokens": 357,
+   "output_tokens_details": {
+    "thinking_tokens": 128
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 357,
+     "cache_read_input_tokens": 2575,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 357,
+    "cacheReadInputTokens": 2575,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0052915,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 128,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of any such flag. The retrieved documents don't mention an `ollama pull` flag for the number of parallel layer downloads.\n\nThe CLI docs only show the bare command: \"ollama pull gemma4\" [ollama/docs/cli.md]\n\nThe API docs list only `model`, `insecure` and `stream` as parameters for pulling. They say \"The number of files to be downloaded depends on the number of layers specified in the manifest.\" [ollama/docs/api.md]. That describes how many files are downloaded, not a way to control concurrency.\n\nThe excerpts may not be the full documentation, so I can't rule out that such a flag exists. `ollama pull --help` will list the flags your installed version supports.",
+  "ttft_ms": 12714,
+  "type": "result",
+  "duration_ms": 14659,
+  "uuid": "c3f93329-f8aa-48de-8771-818fc7f0dbc6",
+  "ttft_stream_ms": 11693,
+  "time_to_request_ms": 102,
+  "first_content_frame_ms": 11693,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

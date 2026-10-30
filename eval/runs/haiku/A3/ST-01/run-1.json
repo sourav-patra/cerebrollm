@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "ST-01",
+ "run": 1,
+ "started_utc": "2026-10-29T01:54:25Z",
+ "seconds": 9.77,
+ "prompt_file": "runs/prompts/A3/ST-01.txt",
+ "prompt_sha256": "97332b187f8a05a358ba3bafcf1841c5f4c6045464a099af9f7ec9d377d356c3",
+ "answer": "Use `POST http://localhost:11434/api/embed`. Its `input` field takes either a single string or an array of strings for a batch.\n\nThe docs show the endpoint in a cURL example: \"curl -X POST http://localhost:11434/api/embed \\\" [ollama/docs/capabilities/embeddings.md]. A single string is passed as `input`, as in the Python example that calls `ollama.embed(model='embeddinggemma', input='...')` [ollama/docs/capabilities/embeddings.md (lines 8-63)]. For batches, \"Pass an array of strings to `input`.\" [ollama/docs/capabilities/embeddings.md (lines 65-114)]\n\nThe API reference also documents an older endpoint, `/api/embeddings`, which takes `prompt` instead of `input`: \"curl http://localhost:11434/api/embeddings -d '{\" [ollama/docs/api.md (lines 1826-1848)]. The provided context doesn't say whether it is deprecated, so I'd use `/api/embed` unless you have a reason to need the older one.",
+ "tokens": {
+  "input": 3352,
+  "output": 1077,
+  "thinking": 725,
+  "cache_read": 0,
+  "cache_creation": 3350
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0012087,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 5399,
+  "stop_reason": "end_turn",
+  "session_id": "31bc7a33-3a53-45a0-ab1f-59db14c0236c",
+  "total_cost_usd": 0.0012087,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3350,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1077,
+   "output_tokens_details": {
+    "thinking_tokens": 725
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3350,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1077,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3350,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3350
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1077,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3350,
+    "webSearchRequests": 0,
+    "costUSD": 0.0012087,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 725,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3350,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Use `POST http://localhost:11434/api/embed`. Its `input` field takes either a single string or an array of strings for a batch.\n\nThe docs show the endpoint in a cURL example: \"curl -X POST http://localhost:11434/api/embed \\\" [ollama/docs/capabilities/embeddings.md]. A single string is passed as `input`, as in the Python example that calls `ollama.embed(model='embeddinggemma', input='...')` [ollama/docs/capabilities/embeddings.md (lines 8-63)]. For batches, \"Pass an array of strings to `input`.\" [ollama/docs/capabilities/embeddings.md (lines 65-114)]\n\nThe API reference also documents an older endpoint, `/api/embeddings`, which takes `prompt` instead of `input`: \"curl http://localhost:11434/api/embeddings -d '{\" [ollama/docs/api.md (lines 1826-1848)]. The provided context doesn't say whether it is deprecated, so I'd use `/api/embed` unless you have a reason to need the older one.",
+  "ttft_ms": 4220,
+  "type": "result",
+  "duration_ms": 5518,
+  "uuid": "8f5c2061-1d2d-4c83-8266-a347cb36acad",
+  "ttft_stream_ms": 2951,
+  "time_to_request_ms": 117,
+  "first_content_frame_ms": 2951,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

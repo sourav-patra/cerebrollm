@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "EX-04",
+ "run": 4,
+ "started_utc": "2026-10-29T01:39:05Z",
+ "seconds": 9.04,
+ "prompt_file": "runs/prompts/A3/EX-04.txt",
+ "prompt_sha256": "7217b4bdc84e8b5d6c4be165e43b370b6b7e12310f840e3834e6fbb17d388402",
+ "answer": "The Windows docs list **551.61** as the minimum: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general hardware support page gives a lower bound of 550 and adds a stricter rule for older cards: \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md] \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nThe documents don't explain the difference between 550 and 551.61. For Windows, I'd use the 551.61 figure from the Windows page, and 570 or newer if your card has compute capability 5.0 through 6.2.",
+ "tokens": {
+  "input": 2698,
+  "output": 703,
+  "thinking": 432,
+  "cache_read": 2311,
+  "cache_creation": 385
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00045180999999999997,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4062,
+  "stop_reason": "end_turn",
+  "session_id": "626098ad-42d0-4573-aae5-c7886b9c307b",
+  "total_cost_usd": 0.00045180999999999997,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 385,
+   "cache_read_input_tokens": 2311,
+   "output_tokens": 703,
+   "output_tokens_details": {
+    "thinking_tokens": 432
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 385,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 703,
+     "cache_read_input_tokens": 2311,
+     "cache_creation_input_tokens": 385,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 385
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 703,
+    "cacheReadInputTokens": 2311,
+    "cacheCreationInputTokens": 385,
+    "webSearchRequests": 0,
+    "costUSD": 0.00045180999999999997,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 432,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 385,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The Windows docs list **551.61** as the minimum: \"NVIDIA 551.61 or newer Drivers if you have an NVIDIA card\" [ollama/docs/windows.md].\n\nThe general hardware support page gives a lower bound of 550 and adds a stricter rule for older cards: \"Ollama supports Nvidia GPUs with compute capability 5.0+ and driver version 550 and newer.\" [ollama/docs/gpu.md] \"Nvidia GPUs with compute capability 5.0 through 6.2 require driver version 570 or newer.\" [ollama/docs/gpu.md]\n\nThe documents don't explain the difference between 550 and 551.61. For Windows, I'd use the 551.61 figure from the Windows page, and 570 or newer if your card has compute capability 5.0 through 6.2.",
+  "ttft_ms": 3237,
+  "type": "result",
+  "duration_ms": 4220,
+  "uuid": "2fe38d43-9c16-4bc8-83fc-530deee0df02",
+  "ttft_stream_ms": 2784,
+  "time_to_request_ms": 158,
+  "first_content_frame_ms": 2784,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-EX-07",
+ "run": 3,
+ "started_utc": "2026-10-29T15:46:33Z",
+ "seconds": 11.0,
+ "prompt_sha256": "667ad0a6d493998d512839bd7cad683e298b8c831b5855cec2f5ad61e0cd5a6d",
+ "answer": "I don't know. I can't confirm from what I know which ROUGE-based assertion types, if any, promptfoo 0.125.0 added. I know promptfoo has a `rouge-n` assertion, but I can't tie it, or a second ROUGE type, to that release. The project's changelog or release notes for 0.125.0 would answer it. I can also check if you point me to a local copy of the repo.",
+ "tokens": {
+  "input": 640,
+  "output": 258,
+  "thinking": 128,
+  "cache_read": 0,
+  "cache_creation": 638
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.005136,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 7121,
+  "stop_reason": "end_turn",
+  "session_id": "50bb17b0-e6bd-4e8f-8355-65e7647a28d0",
+  "total_cost_usd": 0.005136,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 638,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 258,
+   "output_tokens_details": {
+    "thinking_tokens": 128
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 638,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 258,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 638,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 638
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 258,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 638,
+    "webSearchRequests": 0,
+    "costUSD": 0.005136,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 128,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 638,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I can't confirm from what I know which ROUGE-based assertion types, if any, promptfoo 0.125.0 added. I know promptfoo has a `rouge-n` assertion, but I can't tie it, or a second ROUGE type, to that release. The project's changelog or release notes for 0.125.0 would answer it. I can also check if you point me to a local copy of the repo.",
+  "ttft_ms": 5960,
+  "type": "result",
+  "duration_ms": 7231,
+  "uuid": "eb79aa75-b52f-4ee2-8690-0f542acb96b4",
+  "ttft_stream_ms": 4945,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 4945,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-01",
+ "run": 2,
+ "started_utc": "2026-10-29T17:19:03Z",
+ "seconds": 2.03,
+ "prompt_sha256": "cd5beccda834537ed90607bebba8f323798037e5af9bfbced1755b5de537a08b",
+ "answer": "I do not know which Ollama API endpoint release 0.34.3 extended to advertise each model's thinking controls and default. My training data does not include specific details about this release or its features.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 58,
+  "output": 44
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2256936200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:19:05.2999488Z",
+  "response": "I do not know which Ollama API endpoint release 0.34.3 extended to advertise each model's thinking controls and default. My training data does not include specific details about this release or its features.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2256936200,
+  "load_duration": 12585200,
+  "prompt_eval_count": 58,
+  "prompt_eval_cached_count": 24,
+  "prompt_eval_duration": 97865000,
+  "eval_count": 44,
+  "eval_duration": 1967996000
+ }
+}

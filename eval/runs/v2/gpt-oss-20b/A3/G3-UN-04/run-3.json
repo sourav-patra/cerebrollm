@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-04",
+ "run": 3,
+ "started_utc": "2026-10-29T16:36:04Z",
+ "seconds": 8.89,
+ "prompt_sha256": "d7d8fbac53fff77aabef414bb850210a10a62dab90fdb5a939e34cdf882699f1",
+ "answer": "I do not know. The documentation only states that pgvector uses the write‑ahead log (WAL) for replication, but it does not specify any lag guarantees for HNSW index updates on a streaming replica.  \n\"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\" [pgvector/README.md]",
+ "thinking_chars": 2090,
+ "tokens": {
+  "input": 1924,
+  "output": 555
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 9661508200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:36:14.660544Z",
+  "response": "I do not know. The documentation only states that pgvector uses the write‑ahead log (WAL) for replication, but it does not specify any lag guarantees for HNSW index updates on a streaming replica.  \n\"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\" [pgvector/README.md]",
+  "thinking": "We need to answer: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" This is a question about replication lag guarantee. We need to look through context. The context includes pgvector docs. Let's search the context for \"replication lag\". The context includes a FAQ: \"Is replication supported?\" says yes, uses WAL. But no mention of lag.\n\nMaybe the answer is that pgvector guarantees zero replication lag for HNSW index updates on a streaming replica. Let's search the entire context. There's mention of replication support. The FAQ says yes. But no lag guarantee. The question: \"What replication lag does pgvector guarantee for HNSW index updates on a streaming replica?\" Maybe the answer: It guarantees no lag, i.e., updates are replicated instantly as part of WAL. Let's see if there's any text about \"replication lag\" or \"zero replication lag\". Search context for \"lag\". None. \"replication lag\" not in context. \"streaming replica\" not. So we might not have direct evidence. We could answer: We don't know. The instruction says: \"Answer from what you know about this project; if you do not know, say you do not know.\" So we must say \"I do not know\" if not found. Since no mention. So answer: I do not know. And cite that we didn't find. Provide quote maybe from FAQ. But we need to say we don't know. The instruction: \"Quote the line you rely on and cite its path.\" If we answer we don't know, we can cite that we didn't find. But maybe we can quote the FAQ that replication is supported. But that doesn't answer lag. We can say: I do not know. Provide that we looked but no mention. But we need to quote something we rely on. The only relevant quote is the FAQ line: \"Yes, pgvector uses the write-ahead log (WAL), which allows for replication and point-in-time recovery.\" That's the only mention. But it doesn't specify lag. So we can quote that to show we know replication is supported. But the question is about replication lag guarantee. Since not present, we say we don't know. Provide quote. So answer: \"I do not know.\" Provide quote. Ok.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9661508200,
+  "load_duration": 15972900,
+  "prompt_eval_count": 1924,
+  "prompt_eval_cached_count": 1919,
+  "prompt_eval_duration": 59799000,
+  "eval_count": 555,
+  "eval_duration": 9528586000
+ }
+}

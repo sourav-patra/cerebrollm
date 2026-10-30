@@ -1,0 +1,8 @@
+43-2026-10-28 20:13:10.404 UTC [2999] LOG:  checkpoint complete: wrote 126 buffers (0.8%); 0 WAL file(s) added, 0 removed, 1 recycled; write=12.523 s, sync=0.018 s, total=12.550 s; sync files=110, longest=0.003 s, average=0.001 s; distance=18584 kB, estimate=75770 kB; lsn=0/1FDC7E70, redo lsn=0/1FDC7E38
+44:2026-10-28 20:21:13.580 UTC [35758] ERROR:  deadlock detected
+45-2026-10-28 20:21:13.580 UTC [35758] DETAIL:  Process 35758 waits for AccessExclusiveLock on relation 101241 of database 16384; blocked by process 35755.
+46-	Process 35755 waits for ShareLock on transaction 3686; blocked by process 35758.
+47-	Process 35758: alter table data_chunks_next rename to data_chunks
+48-	Process 35755: autovacuum: VACUUM ANALYZE public.data_chunks_next
+49-2026-10-28 20:21:13.580 UTC [35758] HINT:  See server log for query details.
+50-2026-10-28 20:21:13.580 UTC [35758] STATEMENT:  alter table data_chunks_next rename to data_chunks

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-01",
+ "run": 1,
+ "started_utc": "2026-10-29T16:14:05Z",
+ "seconds": 3.32,
+ "prompt_sha256": "8d36acc17d80b55b637bc1eb276b47450f693cfc08efce7585ec3adf0f9b16dc",
+ "answer": "I do not know.",
+ "thinking_chars": 492,
+ "tokens": {
+  "input": 1693,
+  "output": 133
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3334983200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:14:07.2712515Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the default value of pgvector's hnsw.max_scan_tuples_per_page setting?\" We need to find that setting in the docs. The context provided does not mention max_scan_tuples_per_page; it mentions hnsw.max_scan_tuples default 20000. So the answer might be unknown. We should say we do not know. But we can quote from context that mentions max_scan_tuples. The question asks for max_scan_tuples_per_page. No mention in context. So answer: I do not know. Provide statement.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3334983200,
+  "load_duration": 13321000,
+  "prompt_eval_count": 1693,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 778832000,
+  "eval_count": 133,
+  "eval_duration": 2491769000
+ }
+}

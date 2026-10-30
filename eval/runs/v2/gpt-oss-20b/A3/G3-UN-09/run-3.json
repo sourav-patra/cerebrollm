@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-09",
+ "run": 3,
+ "started_utc": "2026-10-29T16:36:34Z",
+ "seconds": 9.94,
+ "prompt_sha256": "33a2e37033519f45139e844295bea3f485cce58529b79198feb005d00dc1f617",
+ "answer": "I do not know.",
+ "thinking_chars": 2808,
+ "tokens": {
+  "input": 1640,
+  "output": 633
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 10982651800
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:36:44.7148938Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: \"What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" We need to find the default separator_regex. The context doesn't mention separator_regex. We need to know from knowledge of project or maybe from code. The context includes a snippet where TokenTextSplitter is used: it has parameters chunk_size, chunk_overlap, separator=\" \". The default separator is \" \" but not separator_regex. There is no mention of separator_regex. The question asks for default separator_regex. We might need to say we don't know, citing lack of info. But we can try to recall from LlamaIndex (now llama-index). I know that TokenTextSplitter is part of llama-index-core. I recall it uses a separator_regex to split on whitespace or punctuation. Actually I think TokenTextSplitter uses a regex to split on token boundaries. But let's search memory: In llama-index, there's a class TokenTextSplitter that inherits from TokenTextSplitter? Wait. In llama-index-core node_parser/text/token.py. I recall that TokenTextSplitter is defined in node_parser/text/token.py. Let's approximate: It likely has a default separator_regex = r\"\\s+\". But not sure. Let's think: The TokenTextSplitter splits text into chunks of tokens. It uses a tokenizer to count tokens. It splits on whitespace by default. The separator argument is used as the separator between tokens? The separator_regex might be used to split text into tokens. In many libraries, the default separator_regex is r\"\\s+\". So we could answer that the default separator_regex is r\"\\s+\".\n\nBut the question: \"What is the default separator_regex of LlamaIndex's TokenTextSplitter?\" We need to quote the line we rely on. But we don't have that line. We can say we do not know, citing that the context does not provide that info.\n\nGiven the instruction: If you do not know, say you do not know. Quote the line you rely on and cite its path. So I should say I do not know. I should quote the line I rely on, but I don't have it. So maybe I can quote the context that mentions separator=\" \" but not separator_regex. But that is not the answer. The question is about default separator_regex. The context doesn't mention it. So we say we don't know.\n\nThus answer: I do not know. Provide no quote. But the instruction says quote the line you rely on. If we don't know, we can say we do not know. No quote needed. But we might quote the line that mentions separator but not separator_regex. But that is not evidence. The safer is: \"I do not know.\" And maybe cite the context that doesn't contain the answer. But the instruction says: If you do not know, say you do not know. Quote the line you rely on and cite its path. If we don't know, we don't have a line to quote. So we might say: I do not know. No quote. That satisfies.\n\nThus answer: \"I do not know.\"",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 10982651800,
+  "load_duration": 14691800,
+  "prompt_eval_count": 1640,
+  "prompt_eval_cached_count": 1635,
+  "prompt_eval_duration": 56519000,
+  "eval_count": 633,
+  "eval_duration": 10856253000
+ }
+}

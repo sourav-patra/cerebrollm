@@ -1,0 +1,155 @@
+{
+  "id": 1,
+  "request": {
+    "model": "qwen3:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Show me the contents of src/main.py."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": false,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:30b",
+    "created_at": "2026-10-29T01:05:56.9110156Z",
+    "message": {
+      "role": "assistant",
+      "content": "Okay, the user is asking to see the contents of src/main.py. Let me check the available tools. There's a read_file function that takes a path. The path they mentioned is src/main.py, so I should use that. I need to make sure the path is correct. The function requires the path as a string. So I'll call read_file with path \"src/main.py\". No other tools are needed here. Just need to output the tool call in the specified JSON format.\n</think>\n\n",
+      "tool_calls": [
+        {
+          "id": "call_ppcajd26",
+          "function": {
+            "index": 0,
+            "name": "read_file",
+            "arguments": {
+              "path": "src/main.py"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3460615600,
+    "load_duration": 15709400,
+    "prompt_eval_count": 337,
+    "prompt_eval_cached_count": 1,
+    "prompt_eval_duration": 445967000,
+    "eval_count": 124,
+    "eval_duration": 2811210000
+  },
+  "wall_seconds": 3.4522681920025207,
+  "load_average_before": [
+    0.07958984375,
+    0.0654296875,
+    0.0087890625
+  ],
+  "load_average_after": [
+    0.07275390625,
+    0.06396484375,
+    0.00830078125
+  ],
+  "expected": {
+    "name": "read_file",
+    "arguments": {
+      "path": "src/main.py"
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 3,
+ "started_utc": "2026-10-29T16:33:18Z",
+ "seconds": 3.54,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "The assertion type is called **`bert_score`** – it computes the BERTScore between an output and a reference.",
+ "thinking_chars": 706,
+ "tokens": {
+  "input": 106,
+  "output": 200
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3728786000
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:33:22.7604461Z",
+  "response": "The assertion type is called **`bert_score`** – it computes the BERTScore between an output and a reference.",
+  "thinking": "We need to answer the question: \"Which promptfoo assertion type computes BERTScore between an output and a reference?\" The user says: \"Answer from what you know about this project; if you do not know, say you do not know.\"\n\nSo we need to know about promptfoo, a tool. The assertion types include something like \"bert_score\", \"bleu\", \"rouge\", \"exact_match\", \"semantic_similarity\", etc. I recall that promptfoo uses \"assertion\" to evaluate outputs. I think the assertion type is called \"bert_score\". So the answer: \"The 'bert_score' assertion type computes BERTScore between an output and a reference.\" If I'm not sure, I could say that.\n\nThus answer: The assertion type is \"bert_score\".\n\nThus: \"bert_score\".",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3728786000,
+  "load_duration": 16951800,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 197489000,
+  "eval_count": 200,
+  "eval_duration": 3501801000
+ }
+}

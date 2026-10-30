@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PR-EX-3",
+ "run": 3,
+ "started_utc": "2026-10-29T01:45:33Z",
+ "seconds": 8.17,
+ "prompt_file": "runs/prompts/A0/PR-EX-3.txt",
+ "prompt_sha256": "ddd6ee4ae9d6d85963f58300329ba3abc4f5be839e055c12c5df949894edcb2f",
+ "answer": "LlamaIndex provides **`TokenCountingHandler`**, in `llama_index.core.callbacks`. You attach it to a `CallbackManager`, and it tracks LLM prompt, completion, and total token counts, plus embedding token counts.\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\nimport tiktoken\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# After running queries:\nprint(token_counter.total_llm_token_count)\ntoken_counter.reset_counts()\n```\n\nI'm confident about the class name and its basic usage, but check the exact attribute names and import paths against the version of LlamaIndex you're using, since the API has changed over time.",
+ "tokens": {
+  "input": 655,
+  "output": 549,
+  "thinking": 243,
+  "cache_read": 0,
+  "cache_creation": 653
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.00040530000000000004,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3439,
+  "stop_reason": "end_turn",
+  "session_id": "e89dd67f-5740-44b2-a17a-2dff57a1fbdd",
+  "total_cost_usd": 0.00040530000000000004,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 653,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 549,
+   "output_tokens_details": {
+    "thinking_tokens": 243
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 653,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 549,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 653,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 653
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 549,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 653,
+    "webSearchRequests": 0,
+    "costUSD": 0.00040530000000000004,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 243,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 653,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "LlamaIndex provides **`TokenCountingHandler`**, in `llama_index.core.callbacks`. You attach it to a `CallbackManager`, and it tracks LLM prompt, completion, and total token counts, plus embedding token counts.\n\n```python\nfrom llama_index.core import Settings\nfrom llama_index.core.callbacks import CallbackManager, TokenCountingHandler\nimport tiktoken\n\ntoken_counter = TokenCountingHandler(\n    tokenizer=tiktoken.encoding_for_model(\"gpt-3.5-turbo\").encode\n)\nSettings.callback_manager = CallbackManager([token_counter])\n\n# After running queries:\nprint(token_counter.total_llm_token_count)\ntoken_counter.reset_counts()\n```\n\nI'm confident about the class name and its basic usage, but check the exact attribute names and import paths against the version of LlamaIndex you're using, since the API has changed over time.",
+  "ttft_ms": 3154,
+  "type": "result",
+  "duration_ms": 3560,
+  "uuid": "ffe51112-3cac-4bc4-89d9-d3f6af42e978",
+  "ttft_stream_ms": 3152,
+  "time_to_request_ms": 153,
+  "first_content_frame_ms": 3152,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

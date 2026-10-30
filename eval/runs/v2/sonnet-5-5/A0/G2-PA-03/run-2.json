@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G2-PA-03",
+ "run": 2,
+ "started_utc": "2026-10-29T15:44:42Z",
+ "seconds": 7.05,
+ "prompt_sha256": "98200b24f98d7ad2eb6bb7ace9cd93045ca11119a4738c7f7930ca7ec85d6b10",
+ "answer": "I don't know. I have no reliable information about a \"Nemotron 3.5 Bolt\" model in Ollama, including its total or active parameter counts, and nothing in this project's context mentions it. I'd rather not guess at numbers.\n\nTo find out, you could check the model's page on ollama.com/library, or run `ollama show <model-name>` locally after pulling it, which lists the parameter count and architecture details. If it's a mixture-of-experts model, the model card usually gives the active parameter count separately. If you share the page or output, I can help interpret it.",
+ "tokens": {
+  "input": 645,
+  "output": 179,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 643
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.004366,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2720,
+  "stop_reason": "end_turn",
+  "session_id": "6f9ee921-e85c-4bcb-a538-fc3c9904e260",
+  "total_cost_usd": 0.004366,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 643,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 179,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 643,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 179,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 643,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 643
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 179,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 643,
+    "webSearchRequests": 0,
+    "costUSD": 0.004366,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 643,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know. I have no reliable information about a \"Nemotron 3.5 Bolt\" model in Ollama, including its total or active parameter counts, and nothing in this project's context mentions it. I'd rather not guess at numbers.\n\nTo find out, you could check the model's page on ollama.com/library, or run `ollama show <model-name>` locally after pulling it, which lists the parameter count and architecture details. If it's a mixture-of-experts model, the model card usually gives the active parameter count separately. If you share the page or output, I can help interpret it.",
+  "ttft_ms": 2778,
+  "type": "result",
+  "duration_ms": 2810,
+  "uuid": "4d70155b-00b0-4f4c-8ca3-b26bff22b77b",
+  "ttft_stream_ms": 2775,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 2776,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

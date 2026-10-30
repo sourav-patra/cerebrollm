@@ -1,0 +1,27 @@
+2026-10-29T01:35:56Z
+Database migration failed: LibsqlBatchError: SQLITE_ERROR: SQLITE_ERROR: table `datasets` already exists
+file:///<user-profile>/AppData/Local/npm-cache/_npx/cd33a14de7de0b1b/node_modules/@libsql/client/lib-esm/sqlite3.js:307
+                        throw new LibsqlBatchError(e.message, i, e.code, e.extendedCode, e.rawCode, e.cause instanceof Error ? e.cause : undefined);
+                              ^
+
+LibsqlBatchError: SQLITE_ERROR: SQLITE_ERROR: table `datasets` already exists
+    at Sqlite3Client.migrate (file:///<user-profile>/AppData/Local/npm-cache/_npx/cd33a14de7de0b1b/node_modules/@libsql/client/lib-esm/sqlite3.js:307:31)
+    at async withLockRecovery (file:///<user-profile>/AppData/Local/npm-cache/_npx/cd33a14de7de0b1b/node_modules/promptfoo/dist/src/tables-BONxKPrt.js:4228:12) {
+  code: 'SQLITE_ERROR',
+  extendedCode: 'SQLITE_ERROR',
+  rawCode: 1,
+  statementIndex: 0,
+  [cause]: SqliteError: table `datasets` already exists
+      at convertError (%USERPROFILE%\AppData\Local\npm-cache\_npx\cd33a14de7de0b1b\node_modules\libsql\index.js:59:12)
+      at Statement.run (%USERPROFILE%\AppData\Local\npm-cache\_npx\cd33a14de7de0b1b\node_modules\libsql\index.js:335:13)
+      at executeStmt (file:///<user-profile>/AppData/Local/npm-cache/_npx/cd33a14de7de0b1b/node_modules/@libsql/client/lib-esm/sqlite3.js:549:34)
+      at Sqlite3Client.migrate (file:///<user-profile>/AppData/Local/npm-cache/_npx/cd33a14de7de0b1b/node_modules/@libsql/client/lib-esm/sqlite3.js:300:37)
+      at async withLockRecovery (file:///<user-profile>/AppData/Local/npm-cache/_npx/cd33a14de7de0b1b/node_modules/promptfoo/dist/src/tables-BONxKPrt.js:4228:12) {
+    code: 'SQLITE_ERROR',
+    rawCode: 1
+  }
+}
+
+Node.js v22.23.1
+exit 1
+2026-10-29T01:36:00Z

@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "PA-08",
+ "run": 5,
+ "started_utc": "2026-10-29T01:48:49Z",
+ "seconds": 8.0,
+ "prompt_file": "runs/prompts/A0/PA-08.txt",
+ "prompt_sha256": "5266053eb27fb4ae84336ed79082ffd0ddc8124cc866622f95a23c6631a03a52",
+ "answer": "After installing the newer pgvector build on the server, run this in each database that has the extension:\n\n```sql\nALTER EXTENSION vector UPDATE;\n```\n\nThis upgrades to the newest version the installed files support. To target a specific version, use `ALTER EXTENSION vector UPDATE TO '0.8.0';` (substitute the version you want).\n\nTo check the result, run:\n\n```sql\nSELECT extversion FROM pg_extension WHERE extname = 'vector';\n```\n\nTo see which versions are available, query `pg_available_extension_versions WHERE name = 'vector'`.\n\nExisting client sessions may still have the old shared library loaded, so reconnect after upgrading. I'm going from general knowledge of pgvector and PostgreSQL here, not from this project's specific setup.",
+ "tokens": {
+  "input": 660,
+  "output": 490,
+  "thinking": 233,
+  "cache_read": 0,
+  "cache_creation": 658
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003768,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3332,
+  "stop_reason": "end_turn",
+  "session_id": "57e4c15c-fcb4-46ed-8029-bab5f9ca6ba0",
+  "total_cost_usd": 0.0003768,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 658,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 490,
+   "output_tokens_details": {
+    "thinking_tokens": 233
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 658,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 490,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 658,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 658
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 490,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 658,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003768,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 233,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 658,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "After installing the newer pgvector build on the server, run this in each database that has the extension:\n\n```sql\nALTER EXTENSION vector UPDATE;\n```\n\nThis upgrades to the newest version the installed files support. To target a specific version, use `ALTER EXTENSION vector UPDATE TO '0.8.0';` (substitute the version you want).\n\nTo check the result, run:\n\n```sql\nSELECT extversion FROM pg_extension WHERE extname = 'vector';\n```\n\nTo see which versions are available, query `pg_available_extension_versions WHERE name = 'vector'`.\n\nExisting client sessions may still have the old shared library loaded, so reconnect after upgrading. I'm going from general knowledge of pgvector and PostgreSQL here, not from this project's specific setup.",
+  "ttft_ms": 2978,
+  "type": "result",
+  "duration_ms": 3454,
+  "uuid": "e4cb9a26-e566-4dac-b921-111839f7c60b",
+  "ttft_stream_ms": 2976,
+  "time_to_request_ms": 162,
+  "first_content_frame_ms": 2976,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

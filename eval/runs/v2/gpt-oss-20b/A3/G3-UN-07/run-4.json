@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-07",
+ "run": 4,
+ "started_utc": "2026-10-29T16:47:10Z",
+ "seconds": 2.24,
+ "prompt_sha256": "dbdfd668dc693024eaf55238eb69d2a3c8e309f8350f53a3767d1d06f0d0b83e",
+ "answer": "I do not know the default value of the `OLLAMA_KV_CACHE_RETENTION` environment variable.",
+ "thinking_chars": 415,
+ "tokens": {
+  "input": 1546,
+  "output": 132
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 2378436600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:47:12.9416603Z",
+  "response": "I do not know the default value of the `OLLAMA_KV_CACHE_RETENTION` environment variable.",
+  "thinking": "The question: \"What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION?\" We need to answer based on project docs. Search context for OLLAMA_KV_CACHE_RETENTION. It's not in provided context. We must say we don't know. The instructions: if we don't know, say we do not know. Also quote the line we rely on. But we didn't find it. So we must say we do not know. No quote. Just statement.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2378436600,
+  "load_duration": 15416500,
+  "prompt_eval_count": 1546,
+  "prompt_eval_cached_count": 1541,
+  "prompt_eval_duration": 60208000,
+  "eval_count": 132,
+  "eval_duration": 2248232000
+ }
+}

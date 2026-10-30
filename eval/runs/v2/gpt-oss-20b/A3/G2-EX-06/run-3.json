@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G2-EX-06",
+ "run": 3,
+ "started_utc": "2026-10-29T16:34:47Z",
+ "seconds": 3.26,
+ "prompt_sha256": "daa668b94e7daf353a96283540043f0bfa5133d6386ecab362b9f426905a77a5",
+ "answer": "The release notes for **promptfoo 0.122.0** state that it dropped support for Node.js 20.  \n\" * drop Node.js 20 support\" [4] promptfoo/0.122.0.md (lines 9‑23)",
+ "thinking_chars": 478,
+ "tokens": {
+  "input": 1834,
+  "output": 203
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 3611276200
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:34:49.8974064Z",
+  "response": "The release notes for **promptfoo 0.122.0** state that it dropped support for Node.js 20.  \n\" * drop Node.js 20 support\" [4] promptfoo/0.122.0.md (lines 9‑23)",
+  "thinking": "We need to answer: Which Node.js major version did promptfoo 0.122.0 stop supporting? According to context: In 0.122.0 release notes, there's a \"BREAKING CHANGES\" section: \"* drop Node.js 20 support\". So the major version is 20. That is the answer. We should quote the line: \"* drop Node.js 20 support\". That is from context [4] or [3]. Let's choose [4] lines 9-23. The quote: \"* drop Node.js 20 support\". Path: [4] promptfoo/0.122.0.md (lines 9-23). Provide answer accordingly.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3611276200,
+  "load_duration": 16563400,
+  "prompt_eval_count": 1834,
+  "prompt_eval_cached_count": 1829,
+  "prompt_eval_duration": 59042000,
+  "eval_count": 203,
+  "eval_duration": 3468898000
+ }
+}

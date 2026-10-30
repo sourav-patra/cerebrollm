@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-11",
+ "run": 4,
+ "started_utc": "2026-10-29T01:58:25Z",
+ "seconds": 9.72,
+ "prompt_file": "runs/prompts/A0/ST-11.txt",
+ "prompt_sha256": "070cac5a92521498abad22c165711759349caac6dcd474c3d71a8e1e408012bc",
+ "answer": "LlamaIndex's facility for this is **Workflows**. It's an event-driven orchestration system in `llama_index.core.workflow` (also available as the `llama-index-workflows` package in newer releases; check your installed version, since the import path has changed over time).\n\nThe core pieces are:\n\n- **Steps**: async methods decorated with `@step` on a `Workflow` subclass. Each step takes an incoming event and can emit new events.\n- **Events**: subclasses of `Event` that carry data between steps. Steps declare which event type they handle through type annotations, and the framework routes events accordingly.\n- **Start and stop**: a `StartEvent` kicks off the run, and a `StopEvent` (returned from a step) ends it and produces the final result.\n- **Context**: shared state across steps within a run, with `ctx.store` for storing and retrieving values.\n- **Branching, loops, and fan-out**: you can return different event types to route control flow, loop by emitting an event a earlier step handles, and use `ctx.send_event()` with collection helpers to run several branches in parallel and wait for them.\n- **Streaming**: you can emit progress events from steps and consume them while the workflow runs.\n\nA minimal example looks like this:\n\n```python\nfrom llama_index.core.workflow import Workflow, StartEvent, StopEvent, step, Event\n\nclass MyEvent(Event):\n    text: str\n\nclass MyWorkflow(Workflow):\n    @step\n    async def first(self, ev: StartEvent) -> MyEvent:\n        return MyEvent(text=\"processed\")\n\n    @step\n    async def second(self, ev: MyEvent) -> StopEvent:\n        return StopEvent(result=ev.text)\n\nasync def main():\n    w = MyWorkflow(timeout=60)\n    result = await w.run(query=\"hello\")\n    print(result)\n```\n\nWorkflows are the recommended choice over the older query pipelines or chaining approaches for agentic and multi-step logic. Higher-level abstractions such as agents in LlamaIndex are themselves built on top of Workflows. I'm not certain about the exact API details for the latest release, so verify parameter names and import paths against the current LlamaIndex docs.",
+ "tokens": {
+  "input": 667,
+  "output": 818,
+  "thinking": 102,
+  "cache_read": 0,
+  "cache_creation": 665
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005422000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4929,
+  "stop_reason": "end_turn",
+  "session_id": "8edd8c5e-8b6e-406f-822b-59dad06c9aba",
+  "total_cost_usd": 0.0005422000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 665,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 818,
+   "output_tokens_details": {
+    "thinking_tokens": 102
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 665,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 818,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 665,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 665
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 818,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 665,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005422000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 102,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 665,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "LlamaIndex's facility for this is **Workflows**. It's an event-driven orchestration system in `llama_index.core.workflow` (also available as the `llama-index-workflows` package in newer releases; check your installed version, since the import path has changed over time).\n\nThe core pieces are:\n\n- **Steps**: async methods decorated with `@step` on a `Workflow` subclass. Each step takes an incoming event and can emit new events.\n- **Events**: subclasses of `Event` that carry data between steps. Steps declare which event type they handle through type annotations, and the framework routes events accordingly.\n- **Start and stop**: a `StartEvent` kicks off the run, and a `StopEvent` (returned from a step) ends it and produces the final result.\n- **Context**: shared state across steps within a run, with `ctx.store` for storing and retrieving values.\n- **Branching, loops, and fan-out**: you can return different event types to route control flow, loop by emitting an event a earlier step handles, and use `ctx.send_event()` with collection helpers to run several branches in parallel and wait for them.\n- **Streaming**: you can emit progress events from steps and consume them while the workflow runs.\n\nA minimal example looks like this:\n\n```python\nfrom llama_index.core.workflow import Workflow, StartEvent, StopEvent, step, Event\n\nclass MyEvent(Event):\n    text: str\n\nclass MyWorkflow(Workflow):\n    @step\n    async def first(self, ev: StartEvent) -> MyEvent:\n        return MyEvent(text=\"processed\")\n\n    @step\n    async def second(self, ev: MyEvent) -> StopEvent:\n        return StopEvent(result=ev.text)\n\nasync def main():\n    w = MyWorkflow(timeout=60)\n    result = await w.run(query=\"hello\")\n    print(result)\n```\n\nWorkflows are the recommended choice over the older query pipelines or chaining approaches for agentic and multi-step logic. Higher-level abstractions such as agents in LlamaIndex are themselves built on top of Workflows. I'm not certain about the exact API details for the latest release, so verify parameter names and import paths against the current LlamaIndex docs.",
+  "ttft_ms": 2924,
+  "type": "result",
+  "duration_ms": 5061,
+  "uuid": "53ec5c9a-273b-4b2c-a900-50fc1f877126",
+  "ttft_stream_ms": 2923,
+  "time_to_request_ms": 176,
+  "first_content_frame_ms": 2923,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

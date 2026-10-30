@@ -1,0 +1,85 @@
+[
+  {
+    "name": "humaneval-commit.json",
+    "url": "https://api.github.com/repos/openai/human-eval/commits/master",
+    "status": 403,
+    "sha256": "c7d197a3a26522ed0cbce62ab1ba00caad3f28f6e9f9678b423695b5d4132e23"
+  },
+  {
+    "name": "qwen-embedding-0.6b.md",
+    "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/raw/main/README.md",
+    "status": 200,
+    "sha256": "c34d9b7e5a267ad3fdd13227a253686bc90844ff4744a2a6a86c7c905e3d06f3"
+  },
+  {
+    "name": "qwen-embedding-4b.md",
+    "url": "https://huggingface.co/Qwen/Qwen3-Embedding-4B/raw/main/README.md",
+    "status": 200,
+    "sha256": "3c8dafc1e6529491fa8918cd96c62b90229b317fd83f2794cea20cda100d6122"
+  },
+  {
+    "name": "phi4.md",
+    "url": "https://huggingface.co/microsoft/phi-4/raw/main/README.md",
+    "status": 200,
+    "sha256": "4cc56faa6a5bcbde6227789b2ef9aedfde481ca660c8a4b686703aae19b00011"
+  },
+  {
+    "name": "gpt-oss-20b.md",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/raw/main/README.md",
+    "status": 200,
+    "sha256": "03c2fcf292549176757b85c911e7dcf527aef3e4241d64b6caec94af3ecf3ac2"
+  },
+  {
+    "name": "qwen3-14b.md",
+    "url": "https://huggingface.co/Qwen/Qwen3-14B/raw/main/README.md",
+    "status": 200,
+    "sha256": "7ef503e68996a4e32007fedc7d8e198846e9b1f36620d38a79b89934100b1250"
+  },
+  {
+    "name": "qwen3-8b.md",
+    "url": "https://huggingface.co/Qwen/Qwen3-8B/raw/main/README.md",
+    "status": 200,
+    "sha256": "0f36caaff9c2516411a7738db384606263ba653c1e63e61d72f511606164d5a6"
+  },
+  {
+    "name": "llama-embedding-qa.py",
+    "url": "https://raw.githubusercontent.com/run-llama/llama_index/v0.10.68/llama-index-core/llama_index/core/evaluation/retrieval/embedding_qa_dataset.py",
+    "status": 404,
+    "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  },
+  {
+    "name": "llama-core-pypi.json",
+    "url": "https://pypi.org/pypi/llama-index-core/0.10.68/json",
+    "sha256": "53eaa97cfa4a4a1929ad5084610df1baa001b67e9367e736bfa6b9460148ce04",
+    "status": 200
+  },
+  {
+    "name": "llama_index_core-0.10.68-py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/6a/0f/d01dc03b64523305224c028cd6fa5178dc4f124aa99d1c0ecaca7951fa44/llama_index_core-0.10.68-py3-none-any.whl",
+    "sha256": "b579128e2a59e3543e5c2aa7f8c9107e8095c48cf9a1be27c28bcc7e96e5f718",
+    "status": 200
+  },
+  {
+    "name": "llama-core-pypi.json",
+    "url": "https://pypi.org/pypi/llama-index-core/0.10.68/json",
+    "sha256": "53eaa97cfa4a4a1929ad5084610df1baa001b67e9367e736bfa6b9460148ce04",
+    "status": 200
+  },
+  {
+    "name": "llama-embedding-qa.py",
+    "wheel_member": "llama_index/core/llama_dataset/legacy/embedding.py",
+    "sha256": "f7acb53f837b1717426672ce1b6a5d91538d53f2498e2c354f2d004950e8800e"
+  },
+  {
+    "name": "HumanEval.jsonl.gz",
+    "url": "https://raw.githubusercontent.com/openai/human-eval/b9453e8f1865df0a0057a1383767caa400acfbcf/data/HumanEval.jsonl.gz",
+    "sha256": "b796127e635a67f93fb35c04f4cb03cf06f38c8072ee7cee8833d7bee06979ef",
+    "status": 200
+  },
+  {
+    "name": "LICENSE",
+    "url": "https://raw.githubusercontent.com/openai/human-eval/b9453e8f1865df0a0057a1383767caa400acfbcf/LICENSE",
+    "sha256": "bcba3de214851cce46ed5af42d6698044616eeace887c3231bc7a20474ab639e",
+    "status": 200
+  }
+]

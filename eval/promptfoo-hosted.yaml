@@ -1,0 +1,13 @@
+description: N2 hosted model claude haiku, arms A0 and A3 (issue #12, ruling R-7)
+prompts:
+  - "{{question}}"
+providers:
+  - id: exec:python arms/a0.py
+    label: A0
+    config:
+      model: haiku
+  - id: exec:python arms/a3.py
+    label: A3
+    config:
+      model: haiku
+tests: file://promptfoo-tests.json

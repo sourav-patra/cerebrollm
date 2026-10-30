@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-ST-02",
+ "run": 1,
+ "started_utc": "2026-10-29T15:54:33Z",
+ "seconds": 6.81,
+ "prompt_sha256": "e2a7c6f1ea96458d7fdfb8f1fc0fa3cb3a6c376c1ca9538fc9d77ad135a569da",
+ "answer": "Ollama runs Flint on macOS, Linux, and Windows, according to the newest release notes in the retrieved context that cover it (v0.40.9):\n\n\"[Flint](https://ollama.com/library/flint) now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md]\n\nThis supersedes the earlier v0.40.8 note, which said \"Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md]\n\nThe v0.40.12 notes mention Flint only for faster prompt processing on Apple silicon, and say nothing that changes platform support. I don't have the notes for v0.40.13, so I can't confirm whether that release changes anything.",
+ "tokens": {
+  "input": 3084,
+  "output": 247,
+  "thinking": 0,
+  "cache_read": 0,
+  "cache_creation": 3082
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.014802000000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2524,
+  "stop_reason": "end_turn",
+  "session_id": "b0f74170-de25-4cf2-b485-7ea1eb55605f",
+  "total_cost_usd": 0.014802000000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 3082,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 247,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3082,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 247,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 3082,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 3082
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 247,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 3082,
+    "webSearchRequests": 0,
+    "costUSD": 0.014802000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 3082,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Ollama runs Flint on macOS, Linux, and Windows, according to the newest release notes in the retrieved context that cover it (v0.40.9):\n\n\"[Flint](https://ollama.com/library/flint) now runs on Linux and Windows as well as macOS.\" [ollama/v0.40.9.md]\n\nThis supersedes the earlier v0.40.8 note, which said \"Flint is supported on MacOS. Other GPU support will be enabled in a subsequent release.\" [ollama/v0.40.8.md]\n\nThe v0.40.12 notes mention Flint only for faster prompt processing on Apple silicon, and say nothing that changes platform support. I don't have the notes for v0.40.13, so I can't confirm whether that release changes anything.",
+  "ttft_ms": 2587,
+  "type": "result",
+  "duration_ms": 2600,
+  "uuid": "11193ea0-8236-466f-aa2b-f21b5e0754b3",
+  "ttft_stream_ms": 2584,
+  "time_to_request_ms": 95,
+  "first_content_frame_ms": 2584,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

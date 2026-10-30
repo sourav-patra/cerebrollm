@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 4,
+ "started_utc": "2026-10-29T16:46:33Z",
+ "seconds": 10.52,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "I do not know.",
+ "thinking_chars": 2480,
+ "tokens": {
+  "input": 1753,
+  "output": 645
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 11212163700
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:46:44.4329263Z",
+  "response": "I do not know.",
+  "thinking": "We need to answer: Which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them?\n\nWe need to find in the docs about pgvector, perhaps change logs mention that earlier versions didn't support carrying HNSW indexes across major PG upgrade. Looking at the context: In [1] changelog 0.6.0 notes: \"Added support for parallel index builds for HNSW\" etc. But not about upgrade. In [1], 0.6.0 notes: \"Changed storage for vector from `extended` to `external`\". But the question: Which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them? This likely refers to a feature that allows pg_upgrade to preserve HNSW indexes across major upgrades.\n\nWe need to find a line that indicates that. Search context for \"pg_upgrade\" or \"carry\". None. Maybe not in context. But maybe the answer is that pgvector 0.8.0 or 0.8.7? The context shows that 0.6.0 had changes. But 0.9.0 is unreleased. There might be note about upgrade in docs. Let's search context: 'pg_upgrade' not present. 'carry' not present. Maybe the answer is from knowledge: In pgvector 0.8.0 or later, HNSW indexes can be carried over with pg_upgrade. Let's recall from memory: In pgvector 0.8.0, they changed index support to allow pg_upgrade to preserve HNSW indexes. Actually, I recall that HNSW indexes were not supported across major upgrades before 0.7? Let's think.\n\nThe question: \"Which pgvector version lets pg_upgrade carry HNSW indexes across a major PostgreSQL upgrade without rebuilding them?\" So we need a specific version. The likely answer: pgvector 0.8.0. But check context: In the changelog, 0.6.0 introduced some features. The question might refer to 0.8.0 or 0.8.7. The context includes [2] README shows Docker tags for 0.8.7. But not about upgrade.\n\nLook at [1] 0.6.0. It says \"Added support for parallel index builds for HNSW\". But no mention of pg_upgrade.\n\nSearch again: The context may include mention of \"pg_upgrade\" in other lines not shown. But we only have context lines. We can only quote from context. If the context doesn't mention it, we cannot answer. So we must say we don't know.\n\nBut the question is likely from docs: In the README, maybe there is a note: \"pg_upgrade does not support HNSW across major upgrades before 0.8.0\". We don't see that in context. So answer: \"pgvector 0.8.0\" but we need to quote a line. No line.\n\nThus we must say we do not know. But we can say we don't know.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 11212163700,
+  "load_duration": 14265700,
+  "prompt_eval_count": 1753,
+  "prompt_eval_cached_count": 1748,
+  "prompt_eval_duration": 59607000,
+  "eval_count": 645,
+  "eval_duration": 11077377000
+ }
+}

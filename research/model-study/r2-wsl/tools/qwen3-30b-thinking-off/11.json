@@ -1,0 +1,155 @@
+{
+  "id": 12,
+  "request": {
+    "model": "qwen3:30b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one next tool call. Do not execute tools or return explanations."
+      },
+      {
+        "role": "user",
+        "content": "Use code search to find where load_config appears."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 2048
+    },
+    "think": false,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read a text file and return its contents.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to read"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Write text to a file, replacing any existing content.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the file to write"
+              },
+              "content": {
+                "type": "string",
+                "description": "Exact text to write"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_tests",
+          "description": "Run the tests in one test file and return the result.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path of the test file"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_code",
+          "description": "Search the code base for a text string and return the matching lines.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Text to search for"
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen3:30b",
+    "created_at": "2026-10-29T01:07:11.3633528Z",
+    "message": {
+      "role": "assistant",
+      "content": "Okay, the user wants to find where \"load_config\" appears in the code. Let me check the available tools. There's a search_code function that takes a query. The description says it searches the code base for a text string and returns matching lines. So I need to call search_code with the query \"load_config\".\n\nWait, the function's parameters require a \"query\" string. The user mentioned \"load_config\", so the query should be exactly that. Let me make sure I'm using the right tool. The other tools are for reading files, writing, running tests, but the search_code is the right one here.\n\nNo other parameters needed. Just the query. So the tool call should be search_code with query \"load_config\". Let me structure the JSON correctly. The arguments should be {\"query\": \"load_config\"}.\n\nDouble-checking the function definition: search_code takes [query], and the query is a string. Yep, that's right. So the tool call is correct.\n</think>\n\n",
+      "tool_calls": [
+        {
+          "id": "call_zqockw60",
+          "function": {
+            "index": 0,
+            "name": "search_code",
+            "arguments": {
+              "query": "load_config"
+            }
+          }
+        }
+      ]
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 5951027000,
+    "load_duration": 11693300,
+    "prompt_eval_count": 338,
+    "prompt_eval_cached_count": 321,
+    "prompt_eval_duration": 149873000,
+    "eval_count": 226,
+    "eval_duration": 5782496000
+  },
+  "wall_seconds": 5.951814124000521,
+  "load_average_before": [
+    0.0205078125,
+    0.04833984375,
+    0.00146484375
+  ],
+  "load_average_after": [
+    0.0185546875,
+    0.04736328125,
+    0.0009765625
+  ],
+  "expected": {
+    "name": "search_code",
+    "arguments": {
+      "query": "load_config"
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-14",
+ "run": 3,
+ "started_utc": "2026-10-29T17:28:17Z",
+ "seconds": 2.87,
+ "prompt_sha256": "9d067e0c6b7ba45e0eaf44837d4b94f745188a5d9fde256f833802a42f3aab92",
+ "answer": "I do not know the default value of `promptfoo's evaluateOptions.maxTokensPerCell`. This information might be specific to the configuration or documentation of the PromptFoo project, which I do not have access to. To find the default value, you may need to consult the project's official documentation or configuration files.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 49,
+  "output": 64
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3083799400
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:28:19.8973338Z",
+  "response": "I do not know the default value of `promptfoo's evaluateOptions.maxTokensPerCell`. This information might be specific to the configuration or documentation of the PromptFoo project, which I do not have access to. To find the default value, you may need to consult the project's official documentation or configuration files.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3083799400,
+  "load_duration": 13150400,
+  "prompt_eval_count": 49,
+  "prompt_eval_cached_count": 33,
+  "prompt_eval_duration": 159228000,
+  "eval_count": 64,
+  "eval_duration": 2892992000
+ }
+}

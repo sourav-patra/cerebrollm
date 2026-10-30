@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-05",
+ "run": 5,
+ "started_utc": "2026-10-29T17:46:22Z",
+ "seconds": 4.9,
+ "prompt_sha256": "24b4f0a37bcdab2f151d071b7668e6d0bfd5e8d71c91b1bd324da97df9d05009",
+ "answer": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. The provided context does not mention this specific environment variable or its default value. The context discusses other aspects of Ollama, such as how to keep a model loaded in memory or unload it, but it does not provide information on `OLLAMA_UNLOAD_TIMEOUT`. [ollama/docs/faq.md (lines 289-318)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1586,
+  "output": 89
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5272594200
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:46:27.5578065Z",
+  "response": "I do not know the default value of the Ollama environment variable `OLLAMA_UNLOAD_TIMEOUT`. The provided context does not mention this specific environment variable or its default value. The context discusses other aspects of Ollama, such as how to keep a model loaded in memory or unload it, but it does not provide information on `OLLAMA_UNLOAD_TIMEOUT`. [ollama/docs/faq.md (lines 289-318)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5272594200,
+  "load_duration": 14472000,
+  "prompt_eval_count": 1586,
+  "prompt_eval_cached_count": 98,
+  "prompt_eval_duration": 772881000,
+  "eval_count": 89,
+  "eval_duration": 4326701000
+ }
+}

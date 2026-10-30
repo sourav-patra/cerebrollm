@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A3",
+ "id": "G2-ST-03",
+ "run": 3,
+ "started_utc": "2026-10-29T15:58:03Z",
+ "seconds": 9.39,
+ "prompt_sha256": "aab6defc0af8fafa4ccd956a58f3b5e5d66d048dabc1508496819de684ce22c8",
+ "answer": "According to the newest release notes covering LFM3 (v0.40.13), the LFM3 models run on Linux and Windows as well as Apple silicon:\n\n\"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" [ollama/v0.40.13.md]\n\nThis supersedes the earlier v0.40.12 note, which limited support to Apple hardware: \"Note: lfm3 and d1 2b are supported on Apple hardware in this release. Support for Linux/Windows coming soon.\" [ollama/v0.40.12.md]",
+ "tokens": {
+  "input": 3430,
+  "output": 269,
+  "thinking": 0,
+  "cache_read": 3063,
+  "cache_creation": 365
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0044603,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4991,
+  "stop_reason": "end_turn",
+  "session_id": "4b84bb9c-a2b0-4567-862b-286882c9e4f9",
+  "total_cost_usd": 0.0044603,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 365,
+   "cache_read_input_tokens": 3063,
+   "output_tokens": 269,
+   "output_tokens_details": {
+    "thinking_tokens": 0
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 365,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 269,
+     "cache_read_input_tokens": 3063,
+     "cache_creation_input_tokens": 365,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 365
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 269,
+    "cacheReadInputTokens": 3063,
+    "cacheCreationInputTokens": 365,
+    "webSearchRequests": 0,
+    "costUSD": 0.0044603,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 0,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 365,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "According to the newest release notes covering LFM3 (v0.40.13), the LFM3 models run on Linux and Windows as well as Apple silicon:\n\n\"Liquid AI's [LFM3](https://ollama.com/library/lfm3) models, including text-to-speech in [lfm3-audio](https://ollama.com/library/lfm3-audio) and [lfm3-omni](https://ollama.com/library/lfm3-omni), now run on Linux and Windows as well as Apple silicon.\" [ollama/v0.40.13.md]\n\nThis supersedes the earlier v0.40.12 note, which limited support to Apple hardware: \"Note: lfm3 and d1 2b are supported on Apple hardware in this release. Support for Linux/Windows coming soon.\" [ollama/v0.40.12.md]",
+  "ttft_ms": 5066,
+  "type": "result",
+  "duration_ms": 5088,
+  "uuid": "a62ab3b1-b7b3-425c-b492-f89a4ace5190",
+  "ttft_stream_ms": 3529,
+  "time_to_request_ms": 95,
+  "first_content_frame_ms": 3529,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

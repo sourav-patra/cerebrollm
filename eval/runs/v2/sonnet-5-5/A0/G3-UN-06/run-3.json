@@ -1,0 +1,128 @@
+{
+ "model": "sonnet-5-5",
+ "arm": "A0",
+ "id": "G3-UN-06",
+ "run": 3,
+ "started_utc": "2026-10-29T15:47:17Z",
+ "seconds": 9.92,
+ "prompt_sha256": "a2128622bd33ab8470d5545049e2bbaa01efad76ef0c0f33e0399f30876aac75",
+ "answer": "I don't know of an Ollama environment variable that is documented for this, and I can't confirm one from this workspace, since there's no Ollama project here.\n\nWhat I remember, with uncertainty:\n- The standard `ollama pull` path downloads each layer in parallel chunks, and that chunk count is a hard-coded constant in the server's download code, not an environment variable.\n- There may be an `OLLAMA_REGISTRY_MAXSTREAMS` variable in Ollama's newer registry client that limits concurrent download streams. I'm not confident about the name or whether it applies to the normal `ollama pull`, so please verify it before relying on it.\n- Variables like `OLLAMA_NUM_PARALLEL`, `OLLAMA_MAX_LOADED_MODELS`, and `OLLAMA_MAX_QUEUE` control inference concurrency, not downloads.\n\nTo check, run `ollama serve --help`, which lists the supported environment variables, or search Ollama's `envconfig` package for the current list.",
+ "tokens": {
+  "input": 644,
+  "output": 709,
+  "thinking": 373,
+  "cache_read": 0,
+  "cache_creation": 642
+ },
+ "meta": {
+  "models": [
+   "claude-sonnet-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.009662,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 6075,
+  "stop_reason": "end_turn",
+  "session_id": "633343da-b05c-48f1-9bfe-42680dc467fd",
+  "total_cost_usd": 0.009662,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 642,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 709,
+   "output_tokens_details": {
+    "thinking_tokens": 373
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 642,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 709,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 642,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 642
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-sonnet-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 709,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 642,
+    "webSearchRequests": 0,
+    "costUSD": 0.009662,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 373,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 642,
+    "canonicalModel": "claude-sonnet-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't know of an Ollama environment variable that is documented for this, and I can't confirm one from this workspace, since there's no Ollama project here.\n\nWhat I remember, with uncertainty:\n- The standard `ollama pull` path downloads each layer in parallel chunks, and that chunk count is a hard-coded constant in the server's download code, not an environment variable.\n- There may be an `OLLAMA_REGISTRY_MAXSTREAMS` variable in Ollama's newer registry client that limits concurrent download streams. I'm not confident about the name or whether it applies to the normal `ollama pull`, so please verify it before relying on it.\n- Variables like `OLLAMA_NUM_PARALLEL`, `OLLAMA_MAX_LOADED_MODELS`, and `OLLAMA_MAX_QUEUE` control inference concurrency, not downloads.\n\nTo check, run `ollama serve --help`, which lists the supported environment variables, or search Ollama's `envconfig` package for the current list.",
+  "ttft_ms": 3601,
+  "type": "result",
+  "duration_ms": 6187,
+  "uuid": "79ff172b-fdda-4888-8020-b162f11e96de",
+  "ttft_stream_ms": 2816,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 2816,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G2-EX-10",
+ "run": 1,
+ "started_utc": "2026-10-29T16:06:11Z",
+ "seconds": 16.67,
+ "prompt_sha256": "f96990a88fb1a5eef44b930657ec637ea126b25fe497dcf48af0b61b819ee3ce",
+ "answer": "I’m not sure about this.",
+ "thinking_chars": 4070,
+ "tokens": {
+  "input": 106,
+  "output": 1009
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 17734117600
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:06:28.313346Z",
+  "response": "I’m not sure about this.",
+  "thinking": "We need to answer: \"Which two deprecated integrations did llama-index-core 0.14.25 remove?\" So it's about a specific project, llama-index-core version 0.14.25, which removed two deprecated integrations. I need to recall what those were. Llama-index is a library for LLM indexing. I can recall that earlier versions had integrations for \"faiss\" and \"weaviate\" or \"pinecone\"? But the question: Which two deprecated integrations did llama-index-core 0.14.25 remove? I think in that release, they removed \"faiss\" integration and \"weaviate\" integration? But need to be sure. Let's think: In earlier releases, there was an integration for \"llama_index.core.vector_stores.faiss\" maybe, and \"llama_index.core.vector_stores.weaviate\". But in 0.14.25 they removed the \"faiss\" and \"pinecone\" integration? Let's recall reading about removal of \"faiss\" integration in 0.14.25? Actually, I think they removed the \"faiss\" integration because they moved to \"faiss-cpu\" separate? Let's search memory: LlamaIndex 0.14.25 release notes: \"Deprecated integrations: Weaviate, Pinecone, and FAISS. These will be removed in 0.15.0.\" Wait maybe the release notes: \"Removed deprecated 'faiss' and 'weaviate' integration modules.\" Let me think. The question: \"Which two deprecated integrations did llama-index-core 0.14.25 remove?\" So the answer: \"Weaviate and Pinecone\"? Or \"Weaviate and FAISS\"? Let's check.\n\nI recall that in earlier versions, there were modules like \"llama_index.core.embeddings.openai\" etc. The integration modules: \"llama_index.core.vector_stores.faiss\". But I think they removed \"faiss\" integration in 0.14.25 because of deprecation. And maybe \"weaviate\" integration removed too. But the question says \"two deprecated integrations\". Likely the answer is \"Weaviate and Pinecone\" because those are common vector store integrations that were deprecated. However I am not entirely sure.\n\nLet's think of context: The question likely comes from a Q&A about a GitHub issue or release notes. They ask \"Which two deprecated integrations did llama-index-core 0.14.25 remove?\" The answer likely is \"Weaviate and Pinecone\" because those are the ones that were removed. I recall reading about \"llama-index-core\" releasing 0.14.25, removing deprecated \"faiss\" and \"milvus\" integration? Actually, there is also \"milvus\" integration. But which two? Let's search memory: In the release notes for 0.14.25, they mention removal of \"faiss\" integration and \"weaviate\" integration. Let me recall reading that \"faiss\" integration is deprecated and will be removed in 0.15.0. And \"weaviate\" integration is also deprecated. So I think the answer: \"faiss and weaviate\".\n\nAlternatively, maybe \"faiss\" and \"pinecone\" are removed. But Pinecone integration is in separate package? Actually, pinecone integration might be in \"llama-index-core\". It might be removed too.\n\nLet's look at known modules: In llama-index, there is \"llama_index.vector_stores.faiss\" in earlier versions. And \"llama_index.vector_stores.pinecone\" maybe. And \"llama_index.vector_stores.weaviate\". So the question: Which two deprecated integrations did llama-index-core 0.14.25 remove? I think it's \"faiss\" and \"pinecone\" because they removed the integration modules. But I'm not certain. Let's consider the typical release notes: \"Deprecated: weaviate, pinecone, faiss\". But they removed two of them. Which two? The question likely expects the answer: \"Weaviate and Pinecone\".\n\nBut why would they remove only two? Because the other one might still be available? Let's check: In 0.14.25, they removed the \"faiss\" integration (maybe they moved to separate package). And removed \"weaviate\" integration? But maybe \"pinecone\" was not removed? Actually, Pinecone integration might still be available but moved to separate package. But I'm not sure.\n\nLet's think: The question is likely from a Q&A about the removal of \"faiss\" and \"milvus\" integration. But milvus integration might be in separate package too. But I think the safe answer: \"faiss and weaviate\".\n\nI'll answer: They removed the deprecated \"faiss\" and \"weaviate\" integrations.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 17734117600,
+  "load_duration": 15066800,
+  "prompt_eval_count": 106,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 181485000,
+  "eval_count": 1009,
+  "eval_duration": 17515873000
+ }
+}

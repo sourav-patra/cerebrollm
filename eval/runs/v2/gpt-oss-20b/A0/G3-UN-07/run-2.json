@@ -1,0 +1,41 @@
+{
+ "model": "gpt-oss-20b",
+ "arm": "A0",
+ "id": "G3-UN-07",
+ "run": 2,
+ "started_utc": "2026-10-29T16:21:50Z",
+ "seconds": 8.23,
+ "prompt_sha256": "4bf8d91529b51ad91ad229cb2b39351683d3b250e433b46300d6e8195a6816a2",
+ "answer": "I’m not certain. I don’t know the default value of the `OLLAMA_KV_CACHE_RETENTION` environment variable.",
+ "thinking_chars": 1868,
+ "tokens": {
+  "input": 110,
+  "output": 488
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "gpt-oss:20b",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": "medium",
+  "total_duration_ns": 8744359900
+ },
+ "raw": {
+  "model": "gpt-oss:20b",
+  "created_at": "2026-10-29T16:21:59.7690331Z",
+  "response": "I’m not certain. I don’t know the default value of the `OLLAMA_KV_CACHE_RETENTION` environment variable.",
+  "thinking": "We need to answer: \"What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION?\" The question refers to \"Ollama\" environment variable. Ollama is an open-source local LLM inference engine. OLLAMA_KV_CACHE_RETENTION likely refers to key-value cache retention setting. We need to know its default value. My knowledge: I recall reading about Ollama's environment variables. There's OLLAMA_KV_CACHE_RETENTION which sets the retention for the KV cache. The default might be \"60\" or \"30\" minutes? But maybe default is \"30\" days? Let's research from memory. I recall reading about environment variables in Ollama's docs: OLLAMA_HOST, OLLAMA_PORT, OLLAMA_KEEP_ALIVE, OLLAMA_KEEP_ALIVE_TIMEOUT, OLLAMA_KV_CACHE_RETENTION (default: 60). Wait maybe it's default 60. But let's think.\n\nThe KV cache retention refers to how long to keep the key-value cache for models. The default might be 600 seconds? Actually, let's search memory: In Ollama's code, there might be a constant: kvCacheRetention = 10 * 60 * 1000? Wait, but environment variable likely sets retention in seconds or minutes. The default might be 600 (10 minutes). But I recall reading that \"By default, OLLAMA_KV_CACHE_RETENTION is set to 60, which is 60 seconds.\" That seems plausible.\n\nAlternatively, maybe default is 0 (no retention). But the question likely expects a numeric value. Let's check the official docs: There's an environment variable OLLAMA_KV_CACHE_RETENTION. The docs: \"The amount of time in seconds that the KV cache is retained for a given model.\" Default: 86400 (24 hours). Actually, not sure.\n\nLet's approximate: The default value is 60. The question: \"What is the default value of the Ollama environment variable OLLAMA_KV_CACHE_RETENTION?\" I think answer: 60 (seconds). Let's answer that. If uncertain, I could say I don't know. But I think it's 60. I'll answer: 60.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 8744359900,
+  "load_duration": 13486900,
+  "prompt_eval_count": 110,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 180613000,
+  "eval_count": 488,
+  "eval_duration": 8538483000
+ }
+}

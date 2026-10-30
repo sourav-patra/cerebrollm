@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-02",
+ "run": 5,
+ "started_utc": "2026-10-29T01:55:05Z",
+ "seconds": 8.56,
+ "prompt_file": "runs/prompts/A0/ST-02.txt",
+ "prompt_sha256": "72c22e8559deeceb7ba3ef06e2203cae92f9f01e8d9c7882a853670142ecd925",
+ "answer": "On a GPU with 32 GiB of VRAM, recent versions of Ollama default to a **32,768-token (32K) context length**. I believe Ollama sets the default by VRAM tier: under 24 GiB uses 4K, 24 to 48 GiB uses 32K, and 48 GiB or more uses 256K. Older releases used a much smaller default of 2,048 or 4,096 tokens, so the exact value depends on your Ollama version.\n\nYou can override the default with the `OLLAMA_CONTEXT_LENGTH` environment variable or the `num_ctx` option in an API request or Modelfile. Check your version's documentation or release notes to confirm the current defaults.",
+ "tokens": {
+  "input": 659,
+  "output": 605,
+  "thinking": 378,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004341,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4090,
+  "stop_reason": "end_turn",
+  "session_id": "9f4504ba-edf5-4a70-bfc3-aab813e355a9",
+  "total_cost_usd": 0.0004341,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 605,
+   "output_tokens_details": {
+    "thinking_tokens": 378
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 605,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 605,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004341,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 378,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "On a GPU with 32 GiB of VRAM, recent versions of Ollama default to a **32,768-token (32K) context length**. I believe Ollama sets the default by VRAM tier: under 24 GiB uses 4K, 24 to 48 GiB uses 32K, and 48 GiB or more uses 256K. Older releases used a much smaller default of 2,048 or 4,096 tokens, so the exact value depends on your Ollama version.\n\nYou can override the default with the `OLLAMA_CONTEXT_LENGTH` environment variable or the `num_ctx` option in an API request or Modelfile. Check your version's documentation or release notes to confirm the current defaults.",
+  "ttft_ms": 3232,
+  "type": "result",
+  "duration_ms": 4195,
+  "uuid": "25cecd41-ad5f-4c69-b854-9a018f63a8ba",
+  "ttft_stream_ms": 2830,
+  "time_to_request_ms": 131,
+  "first_content_frame_ms": 2830,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

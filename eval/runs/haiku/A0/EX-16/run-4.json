@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-16",
+ "run": 4,
+ "started_utc": "2026-10-29T01:43:11Z",
+ "seconds": 8.88,
+ "prompt_file": "runs/prompts/A0/EX-16.txt",
+ "prompt_sha256": "3483d7e2de5a2240fecf5e9485064e7ad50ac436dc7ae14112c6f705ade3433b",
+ "answer": "Based on what I know, `promptfoo eval` exits with **code 100** when at least one test case fails. I believe a standard error (such as a configuration problem) produces exit code 1, and a fully successful run exits with 0. I'm not certain of this for every version, so you can confirm it in the promptfoo CLI docs or by checking the exit code (`$LASTEXITCODE` in PowerShell) after a run that has a failing test.",
+ "tokens": {
+  "input": 653,
+  "output": 387,
+  "thinking": 245,
+  "cache_read": 0,
+  "cache_creation": 651
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003239,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 3295,
+  "stop_reason": "end_turn",
+  "session_id": "7bb11184-8f4c-4981-a699-3f455b1c8a00",
+  "total_cost_usd": 0.0003239,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 651,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 387,
+   "output_tokens_details": {
+    "thinking_tokens": 245
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 651,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 387,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 651,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 651
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 387,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 651,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003239,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 245,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 651,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Based on what I know, `promptfoo eval` exits with **code 100** when at least one test case fails. I believe a standard error (such as a configuration problem) produces exit code 1, and a fully successful run exits with 0. I'm not certain of this for every version, so you can confirm it in the promptfoo CLI docs or by checking the exit code (`$LASTEXITCODE` in PowerShell) after a run that has a failing test.",
+  "ttft_ms": 3423,
+  "type": "result",
+  "duration_ms": 3445,
+  "uuid": "4385f6a7-57d3-4dbc-afa8-0dcc826e1ed3",
+  "ttft_stream_ms": 3422,
+  "time_to_request_ms": 317,
+  "first_content_frame_ms": 3422,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

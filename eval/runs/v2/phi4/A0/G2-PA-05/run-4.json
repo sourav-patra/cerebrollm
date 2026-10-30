@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-PA-05",
+ "run": 4,
+ "started_utc": "2026-10-29T17:34:33Z",
+ "seconds": 3.6,
+ "prompt_sha256": "0029e8b4caf8e96161381415b24b55a425803651c47c409acbb58c0159ac97f0",
+ "answer": "I do not have specific information about the new form of value that `promptfoo 0.124.0` accepts for the `--filter-metadata` option. To find this information, you might want to consult the official documentation or release notes for `promptfoo` version 0.124.0. These sources typically provide detailed information about new features, changes, and accepted values for various options.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 55,
+  "output": 82
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3879487700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:34:36.6821115Z",
+  "response": "I do not have specific information about the new form of value that `promptfoo 0.124.0` accepts for the `--filter-metadata` option. To find this information, you might want to consult the official documentation or release notes for `promptfoo` version 0.124.0. These sources typically provide detailed information about new features, changes, and accepted values for various options.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3879487700,
+  "load_duration": 12157700,
+  "prompt_eval_count": 55,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 214939000,
+  "eval_count": 82,
+  "eval_duration": 3634897000
+ }
+}

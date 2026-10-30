@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-06",
+ "run": 1,
+ "started_utc": "2026-10-29T17:12:58Z",
+ "seconds": 5.58,
+ "prompt_sha256": "a2128622bd33ab8470d5545049e2bbaa01efad76ef0c0f33e0399f30876aac75",
+ "answer": "I do not know which Ollama environment variable sets how many model layers are downloaded concurrently during the `ollama pull` process. This specific detail about Ollama's configuration environment variables is not within my current knowledge base. If you need this information, I recommend consulting the official Ollama documentation or community resources for guidance.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 53,
+  "output": 68
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3334434800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:13:02.3559764Z",
+  "response": "I do not know which Ollama environment variable sets how many model layers are downloaded concurrently during the `ollama pull` process. This specific detail about Ollama's configuration environment variables is not within my current knowledge base. If you need this information, I recommend consulting the official Ollama documentation or community resources for guidance.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3334434800,
+  "load_duration": 13151800,
+  "prompt_eval_count": 53,
+  "prompt_eval_cached_count": 28,
+  "prompt_eval_duration": 217535000,
+  "eval_count": 68,
+  "eval_duration": 3084191000
+ }
+}

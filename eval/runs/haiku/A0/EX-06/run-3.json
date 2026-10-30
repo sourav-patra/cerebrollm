@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "EX-06",
+ "run": 3,
+ "started_utc": "2026-10-29T01:39:40Z",
+ "seconds": 7.6,
+ "prompt_file": "runs/prompts/A0/EX-06.txt",
+ "prompt_sha256": "e5bb4841046fb599cd2b83bb1784254f6dd049eb11c09ae6a69dbe6721991df9",
+ "answer": "pgvector can build an HNSW index on the `halfvec` type for vectors up to **4,000 dimensions**. This limit comes from pgvector's documentation as I recall it. The regular `vector` type is limited to 2,000 dimensions for HNSW indexes, and `halfvec` can store up to 16,000 dimensions. Check the README for your installed version, since limits can change between releases.",
+ "tokens": {
+  "input": 660,
+  "output": 409,
+  "thinking": 279,
+  "cache_read": 0,
+  "cache_creation": 658
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0003363,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 2968,
+  "stop_reason": "end_turn",
+  "session_id": "16e8c14c-aeb2-44bc-979f-9a176639a882",
+  "total_cost_usd": 0.0003363,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 658,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 409,
+   "output_tokens_details": {
+    "thinking_tokens": 279
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 658,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 409,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 658,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 658
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 409,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 658,
+    "webSearchRequests": 0,
+    "costUSD": 0.0003363,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 279,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 658,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "pgvector can build an HNSW index on the `halfvec` type for vectors up to **4,000 dimensions**. This limit comes from pgvector's documentation as I recall it. The regular `vector` type is limited to 2,000 dimensions for HNSW indexes, and `halfvec` can store up to 16,000 dimensions. Check the README for your installed version, since limits can change between releases.",
+  "ttft_ms": 3066,
+  "type": "result",
+  "duration_ms": 3088,
+  "uuid": "aa11769d-b2d0-4289-81e8-adf5b0329a54",
+  "ttft_stream_ms": 3064,
+  "time_to_request_ms": 147,
+  "first_content_frame_ms": 3065,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

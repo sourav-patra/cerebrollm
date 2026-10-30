@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-13",
+ "run": 2,
+ "started_utc": "2026-10-29T17:20:52Z",
+ "seconds": 2.52,
+ "prompt_sha256": "a4da3e5b437efbdec116bb9bf4888cd6237ab4f538dccf0f97090e7b84b0e2e6",
+ "answer": "I do not know which promptfoo assertion type computes BERTScore between an output and a reference. Promptfoo is not a widely recognized tool in my training data, and without specific documentation or context, I cannot provide an accurate answer regarding its functionalities or specific assertion types.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 49,
+  "output": 55
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 2796432300
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:20:55.9000029Z",
+  "response": "I do not know which promptfoo assertion type computes BERTScore between an output and a reference. Promptfoo is not a widely recognized tool in my training data, and without specific documentation or context, I cannot provide an accurate answer regarding its functionalities or specific assertion types.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 2796432300,
+  "load_duration": 22263900,
+  "prompt_eval_count": 49,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 215242000,
+  "eval_count": 55,
+  "eval_duration": 2542297000
+ }
+}

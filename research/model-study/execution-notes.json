@@ -1,0 +1,66 @@
+{
+  "status": "local execution record, pending study completion",
+  "failures_and_recoveries": [
+    {
+      "action": "Initial source discovery under cerebrollm/src",
+      "result": "Failed path match; cerebrollm is a top-level package, not a src-layout project",
+      "recovery": "Read actual cerebrollm/ modules; source hashes captured"
+    },
+    {
+      "action": "Initial nested-shell SQL quoting",
+      "result": "Failed SQL syntax; shell expanded dollar quoting",
+      "recovery": "Moved SQL into preflight.py; read-only snapshot and full live-table boundary hashes passed"
+    },
+    {
+      "action": "GitHub commit API",
+      "result": "HTTP 403 rate limit; preflight.py exited with KeyError after writing its valid local snapshot",
+      "recovery": "prepare_inputs.py used git ls-remote to pin HumanEval and verified the 40-item dataset; original failure remains in preflight.log and sources/humaneval-commit.json"
+    },
+    {
+      "action": "Historical LlamaIndex helper lookup",
+      "result": "Initial raw URL returned 404; first wheel search failed because the public helper is an alias",
+      "recovery": "Extracted core 0.10.68 legacy/embedding.py from the wheel after SHA-256 verification; used the exact exported alias generate_question_context_pairs = generate_qa_embedding_pairs"
+    },
+    {
+      "action": "Phi4 question drafts",
+      "result": "Filename/path constraints rejected some generated drafts; manual review also rejected extensionless README in question 0",
+      "recovery": "Phi4 rewrote the same sampled chunks before any retrieval scores; all 150 passed the final input verifier, raw drafts retained"
+    },
+    {
+      "action": "One write_report.py patch",
+      "result": "Failed match; apply_patch changed no file",
+      "recovery": "A narrower patch succeeded; final script syntax and generated report passed verify_delivery.py"
+    },
+    {
+      "action": "Native phi4 tools",
+      "result": "12 HTTP 400 responses: model does not support tools",
+      "recovery": "Measured 0/12; no prompt-based call conversion or rerun"
+    },
+    {
+      "action": "Host process listing",
+      "result": "ps: operation not permitted",
+      "recovery": "Used bounded process completion tools and local API evidence; no host process-management changes"
+    }
+  ],
+  "published_score_limit": "The vendor PDF table was read through web extraction. A screenshot request returned a reference without an image payload; Poppler and PDF Python renderers are absent from the required environment. Visual rendering is not claimed.",
+  "router": "No external reporting tool was used: its default log and state destinations lie outside the authorized output folder. The current Codex session was the stated fallback; the local run record is preserved.",
+  "capture": "No external capture was made: it would write outside the authorized folder. Local run-receipt.json is preserved.",
+  "skipped": "Optional practice set, cloud inference, optional benchmark variants, project code changes, dependencies and environment changes.",
+  "attempt_2": {
+    "authority": "27 Oct attempt-2 instructions",
+    "phi4_correctness": "reused, not rerun",
+    "speed": "all deferred until tonight after restart",
+    "load_recording": "new code, tool, index and retrieval records include before/after load",
+    "writer": "report_attempt2.py; attempt-1 write_report.py and verify_delivery.py are historical and must not overwrite current outputs",
+    "download_diagnostic": {
+      "evidence": [
+        "download-resume-integrity.json",
+        "download-part-metadata.json",
+        "download-diagnostic.json"
+      ],
+      "observed": "Qwen14 third API stream peaked at 6.619 GB then ended at 2.764 GB. Fourth-attempt on-disk part metadata records 2.764 GB completed across 16 parts, one fully complete. API peak progress is not retained-byte evidence. Exact cause of the in-stream regression is unverified. Model-store metadata was read, never modified."
+    },
+    "context_trace_latest": 896569,
+    "context_counter_scope": "Read helper source: latest Claude Code session input/cache tokens. This Codex context percentage is unavailable; no Codex threshold is inferred."
+  }
+}

@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A3",
+ "id": "G3-UN-02",
+ "run": 3,
+ "started_utc": "2026-10-29T17:31:45Z",
+ "seconds": 8.44,
+ "prompt_sha256": "c1608da14d6a0f72f3d19a5cc2c287fc409487145c7ce2ff1f04699a4996bdbe",
+ "answer": "Based on the provided context, the pgvector version that supports carrying HNSW indexes across a major PostgreSQL upgrade without rebuilding them is 0.6.0. This is indicated by the note in the changelog for version 0.6.0, which mentions specific instructions for upgrading with Postgres 12 or Docker: \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\" This suggests that there are considerations or mechanisms in place in version 0.6.0 for handling HNSW indexes during an upgrade.\n\n\" \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\" [pgvector/CHANGELOG.md (lines 102-116)]",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 1674,
+  "output": 164
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 9074482700
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:31:54.4472989Z",
+  "response": "Based on the provided context, the pgvector version that supports carrying HNSW indexes across a major PostgreSQL upgrade without rebuilding them is 0.6.0. This is indicated by the note in the changelog for version 0.6.0, which mentions specific instructions for upgrading with Postgres 12 or Docker: \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\" This suggests that there are considerations or mechanisms in place in version 0.6.0 for handling HNSW indexes during an upgrade.\n\n\" \"If upgrading with Postgres 12 or Docker, see [these notes](https://github.com/pgvector/pgvector#060).\" [pgvector/CHANGELOG.md (lines 102-116)]",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 9074482700,
+  "load_duration": 13746600,
+  "prompt_eval_count": 1674,
+  "prompt_eval_cached_count": 101,
+  "prompt_eval_duration": 871590000,
+  "eval_count": 164,
+  "eval_duration": 8046840000
+ }
+}

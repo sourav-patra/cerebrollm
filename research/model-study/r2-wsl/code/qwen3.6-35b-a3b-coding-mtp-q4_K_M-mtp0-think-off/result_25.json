@@ -1,0 +1,93 @@
+{
+  "task_id": "HumanEval/163",
+  "index": 25,
+  "request": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Implement the Python function below. Return the complete executable function with any needed imports, in one Python code block, without explanations.\n\n\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "15m",
+    "options": {
+      "temperature": 0,
+      "seed": 27,
+      "num_ctx": 16384,
+      "num_predict": 4096,
+      "draft_num_predict": 0
+    },
+    "think": false
+  },
+  "response": {
+    "model": "qwen3.6:35b-a3b-coding-mtp-q4_K_M",
+    "created_at": "2026-10-29T17:06:34.0083434Z",
+    "message": {
+      "role": "assistant",
+      "content": "```python\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n    # Determine the range\n    start = min(a, b)\n    end = max(a, b)\n    \n    # Collect even digits that appear in any number in the range [start, end]\n    even_digits = set()\n    for num in range(start, end + 1):\n        for digit in str(num):\n            d = int(digit)\n            if d % 2 == 0:\n                even_digits.add(d)\n    \n    # Return sorted list of even digits\n    return sorted(list(even_digits))\n```"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 4969660800,
+    "load_duration": 14085500,
+    "prompt_eval_count": 145,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 494379000,
+    "eval_count": 230,
+    "eval_duration": 4408604000
+  },
+  "wall_seconds": 4.654081236993079,
+  "load_average_before": [
+    0.28857421875,
+    0.349609375,
+    0.1943359375
+  ],
+  "load_average_after": [
+    0.26513671875,
+    0.34375,
+    0.19287109375
+  ],
+  "test": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/w/test_25.py\", line 38, in <module>\n    check(generate_integers)\n    ~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/w/test_25.py\", line 29, in check\n    assert candidate(2, 10) == [2, 4, 6, 8], \"Test 1\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Test 1\n",
+    "timeout": false,
+    "command": [
+      "docker.exe",
+      "run",
+      "--rm",
+      "--name",
+      "r2-qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off-25",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--memory",
+      "256m",
+      "--cpus",
+      "1",
+      "--pids-limit",
+      "64",
+      "--user",
+      "65534:65534",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "-v",
+      "<repo>\\research\\model-study\\r2-wsl\\code\\qwen3.6-35b-a3b-coding-mtp-q4_K_M-mtp0-think-off:/w:ro",
+      "python:3.13-slim",
+      "python",
+      "/w/test_25.py"
+    ],
+    "wall_seconds": 0.7043329409934813,
+    "cleanup": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "passed": false
+}

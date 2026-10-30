@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A0",
+ "id": "ST-08",
+ "run": 4,
+ "started_utc": "2026-10-29T01:57:12Z",
+ "seconds": 8.89,
+ "prompt_file": "runs/prompts/A0/ST-08.txt",
+ "prompt_sha256": "eff47a5cbc20a22f9b25a4142186b1b9028e17573226d57b8cdc164063d12ec8",
+ "answer": "The parameter is **`context_window`**. In current LlamaIndex releases it's usually set in one of these places:\n\n- **On the LLM itself**, e.g. `OpenAI(model=\"...\", context_window=...)`. It's exposed through the LLM's `metadata` (`LLMMetadata.context_window`).\n- **Globally**, via `Settings.context_window` (with `Settings.num_output` for the reserved output tokens).\n- **On `PromptHelper`**, which uses it to decide how much text fits in a prompt.\n\nI'm less certain of the exact defaults and which integrations override them, so check the docs for your installed version.",
+ "tokens": {
+  "input": 659,
+  "output": 610,
+  "thinking": 403,
+  "cache_read": 0,
+  "cache_creation": 657
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0004366,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4212,
+  "stop_reason": "end_turn",
+  "session_id": "2eb5ce51-769e-41a1-8667-a0367209b309",
+  "total_cost_usd": 0.0004366,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 657,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 610,
+   "output_tokens_details": {
+    "thinking_tokens": 403
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 657,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 610,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 657,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 657
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 610,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 657,
+    "webSearchRequests": 0,
+    "costUSD": 0.0004366,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 403,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 657,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The parameter is **`context_window`**. In current LlamaIndex releases it's usually set in one of these places:\n\n- **On the LLM itself**, e.g. `OpenAI(model=\"...\", context_window=...)`. It's exposed through the LLM's `metadata` (`LLMMetadata.context_window`).\n- **Globally**, via `Settings.context_window` (with `Settings.num_output` for the reserved output tokens).\n- **On `PromptHelper`**, which uses it to decide how much text fits in a prompt.\n\nI'm less certain of the exact defaults and which integrations override them, so check the docs for your installed version.",
+  "ttft_ms": 3176,
+  "type": "result",
+  "duration_ms": 4340,
+  "uuid": "a9802376-d2f0-42ad-b1c8-6e6ab11365ce",
+  "ttft_stream_ms": 3060,
+  "time_to_request_ms": 157,
+  "first_content_frame_ms": 3060,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}

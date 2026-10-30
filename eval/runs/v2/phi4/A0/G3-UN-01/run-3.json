@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G3-UN-01",
+ "run": 3,
+ "started_utc": "2026-10-29T17:27:29Z",
+ "seconds": 5.15,
+ "prompt_sha256": "6b24b53d9e74ec4a02d457527687083549c4113cc98dcf294f5d69aa8760a802",
+ "answer": "I do not know the default value of the `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. This setting pertains to the configuration of the HNSW (Hierarchical Navigable Small World) index within the `pgvector` extension for PostgreSQL, which is used for vector similarity search. The default values for specific configurations like this are typically found in the official documentation or release notes for the specific version of the extension you are using. If you need this information, I recommend checking the latest `pgvector` documentation or configuration files.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 51,
+  "output": 116
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 5533283800
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:27:34.1318939Z",
+  "response": "I do not know the default value of the `pgvector`'s `hnsw.max_scan_tuples_per_page` setting. This setting pertains to the configuration of the HNSW (Hierarchical Navigable Small World) index within the `pgvector` extension for PostgreSQL, which is used for vector similarity search. The default values for specific configurations like this are typically found in the official documentation or release notes for the specific version of the extension you are using. If you need this information, I recommend checking the latest `pgvector` documentation or configuration files.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5533283800,
+  "load_duration": 14152400,
+  "prompt_eval_count": 51,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 216675000,
+  "eval_count": 116,
+  "eval_duration": 5285241000
+ }
+}

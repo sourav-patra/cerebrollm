@@ -1,0 +1,40 @@
+{
+ "model": "phi4",
+ "arm": "A0",
+ "id": "G2-EX-02",
+ "run": 3,
+ "started_utc": "2026-10-29T17:26:22Z",
+ "seconds": 3.35,
+ "prompt_sha256": "3dbacc6b4ebf250bab5fdef51e63d95042f22336f4ba5630c473b91551bebdd0",
+ "answer": "I do not know the specific details regarding how many web searches a model can perform per response since Ollama 0.35.1. This information would typically be determined by the specific configurations or guidelines set by the developers of the tool or platform in question. If this is a critical detail, I recommend consulting the official documentation or support resources for Ollama.",
+ "thinking_chars": 0,
+ "tokens": {
+  "input": 59,
+  "output": 75
+ },
+ "meta": {
+  "done_reason": "stop",
+  "model": "phi4",
+  "options": {
+   "num_ctx": 16384,
+   "temperature": 0.7,
+   "num_predict": 4096
+  },
+  "think": null,
+  "total_duration_ns": 3592316000
+ },
+ "raw": {
+  "model": "phi4",
+  "created_at": "2026-10-29T17:26:25.3577913Z",
+  "response": "I do not know the specific details regarding how many web searches a model can perform per response since Ollama 0.35.1. This information would typically be determined by the specific configurations or guidelines set by the developers of the tool or platform in question. If this is a critical detail, I recommend consulting the official documentation or support resources for Ollama.",
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 3592316000,
+  "load_duration": 12804200,
+  "prompt_eval_count": 59,
+  "prompt_eval_cached_count": 27,
+  "prompt_eval_duration": 98774000,
+  "eval_count": 75,
+  "eval_duration": 3446233000
+ }
+}

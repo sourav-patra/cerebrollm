@@ -1,0 +1,129 @@
+{
+ "model": "haiku",
+ "arm": "A3",
+ "id": "PA-16",
+ "run": 2,
+ "started_utc": "2026-10-29T01:51:36Z",
+ "seconds": 9.67,
+ "prompt_file": "runs/prompts/A3/PA-16.txt",
+ "prompt_sha256": "d1c275e2e156a9d37ef66b21dd030c01327ae55f1aed1f90ccf2182081bd0b37",
+ "answer": "You can use `promptfoo retry <evalId>` to re-run only the errored test cases from a specific eval. The docs describe it this way: \"Retry all ERROR results from a specific eval. This command finds test cases that resulted in errors (e.g., from network issues, rate limits, or API failures) and re-runs only those test cases. The results are updated in place in the original eval.\" [promptfoo/site/docs/usage/command-line.md]\n\nFor example:\n\n```sh\npromptfoo retry eval-abc123\n```\n\nThe docs list other options, such as `-c updated-config.yaml` for a different config file and `--max-concurrency 2` to limit concurrency. [promptfoo/site/docs/usage/command-line.md]\n\nIf you want to retry the most recent eval instead, use `promptfoo eval --retry-errors`, which \"retries all ERROR results from the latest eval\" [promptfoo/site/docs/usage/command-line.md]. This flag \"Cannot be used together with `--resume` or `--no-write` flags.\" [promptfoo/site/docs/usage/command-line.md]\n\nIf a retry fails, your original errors are kept: \"Old ERROR results are only removed after the retry succeeds.\" [promptfoo/site/docs/usage/command-line.md] You can run the command again safely.",
+ "tokens": {
+  "input": 2952,
+  "output": 929,
+  "thinking": 508,
+  "cache_read": 2564,
+  "cache_creation": 386
+ },
+ "meta": {
+  "models": [
+   "claude-haiku-5-5"
+  ],
+  "num_turns": 1,
+  "permission_denials": [],
+  "stop_reason": "end_turn",
+  "cost_usd": 0.0005675400000000001,
+  "effort": "medium"
+ },
+ "raw": {
+  "duration_api_ms": 4860,
+  "stop_reason": "end_turn",
+  "session_id": "b715ea46-22a6-4d54-ad51-eb192350b351",
+  "total_cost_usd": 0.0005675400000000001,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 386,
+   "cache_read_input_tokens": 2564,
+   "output_tokens": 929,
+   "output_tokens_details": {
+    "thinking_tokens": 508
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 386,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 929,
+     "cache_read_input_tokens": 2564,
+     "cache_creation_input_tokens": 386,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 386
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-haiku-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 929,
+    "cacheReadInputTokens": 2564,
+    "cacheCreationInputTokens": 386,
+    "webSearchRequests": 0,
+    "costUSD": 0.0005675400000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 508,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 386,
+    "canonicalModel": "claude-haiku-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You can use `promptfoo retry <evalId>` to re-run only the errored test cases from a specific eval. The docs describe it this way: \"Retry all ERROR results from a specific eval. This command finds test cases that resulted in errors (e.g., from network issues, rate limits, or API failures) and re-runs only those test cases. The results are updated in place in the original eval.\" [promptfoo/site/docs/usage/command-line.md]\n\nFor example:\n\n```sh\npromptfoo retry eval-abc123\n```\n\nThe docs list other options, such as `-c updated-config.yaml` for a different config file and `--max-concurrency 2` to limit concurrency. [promptfoo/site/docs/usage/command-line.md]\n\nIf you want to retry the most recent eval instead, use `promptfoo eval --retry-errors`, which \"retries all ERROR results from the latest eval\" [promptfoo/site/docs/usage/command-line.md]. This flag \"Cannot be used together with `--resume` or `--no-write` flags.\" [promptfoo/site/docs/usage/command-line.md]\n\nIf a retry fails, your original errors are kept: \"Old ERROR results are only removed after the retry succeeds.\" [promptfoo/site/docs/usage/command-line.md] You can run the command again safely.",
+  "ttft_ms": 3578,
+  "type": "result",
+  "duration_ms": 5008,
+  "uuid": "c0d451fe-ac68-430e-bdf9-7ddfdbd65eba",
+  "ttft_stream_ms": 3228,
+  "time_to_request_ms": 143,
+  "first_content_frame_ms": 3229,
+  "queued_turn_count": 0,
+  "result_index": 0
+ }
+}
