@@ -5,6 +5,9 @@ gate before it merges. The owner verifies the settings after the repository
 becomes public and records the date here. Agents open draft pull requests
 only; the owner merges.
 
-Settings verified: not yet (owner step after publication).
+Settings verified: 2026-10-30. The ruleset `main-security` on the default
+branch requires a pull request (no approval count) and blocks force pushes and
+deletion; repository admins may bypass it.
 
-Skipped or not checked: the branch protection settings, which exist only once the repository is public.
+Skipped or not checked: the ruleset does not require the `unit` and `package`
+checks; the owner runs the local gate before merging.
