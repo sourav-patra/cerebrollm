@@ -6,8 +6,9 @@ becomes public and records the date here. Agents open draft pull requests
 only; the owner merges.
 
 Settings verified: 2026-10-30. The ruleset `main-security` on the default
-branch requires a pull request (no approval count) and blocks force pushes and
-deletion; repository admins may bypass it.
+branch requires a pull request (no approval count) and passing `unit` and
+`package` checks on an up-to-date branch, and blocks force pushes and deletion;
+repository admins may bypass it.
 
-Skipped or not checked: the ruleset does not require the `unit` and `package`
-checks; the owner runs the local gate before merging.
+Skipped or not checked: the local gate (PostgreSQL and Ollama tests) runs on
+the owner's machine, not on GitHub.
