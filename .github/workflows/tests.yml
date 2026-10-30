@@ -20,8 +20,12 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+      # A fresh venv: NLTK refuses data in the runner's group-writable tool cache.
       - name: Install the package and pytest (no reranker extra, no GPU)
-        run: pip install ".[test]"
+        run: |
+          python -m venv "$RUNNER_TEMP/venv"
+          echo "$RUNNER_TEMP/venv/bin" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/venv/bin/pip" install ".[test]"
       - name: Engine tests
         working-directory: engine
         run: python -m pytest -q -rs tests
