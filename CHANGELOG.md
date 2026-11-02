@@ -6,7 +6,7 @@ Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm ind
 
 Documentation only; no re-index needed.
 
-- README: a walk-through image, two figures (`docs/site/context.svg`, `docs/site/parts.svg`), a requirements table, an MCP setup section with host examples and a troubleshooting table. The product page shows the same figures.
+- README: a walk-through image, two figures (`docs/site/context.svg`, `docs/site/parts.svg`), a requirements table, an MCP setup section with host examples and a short results table with a documentation table pointing to the details. The full results and limits moved to `docs/RESULTS.md`, troubleshooting to `docs/TROUBLESHOOTING.md`, and the repository map and provenance to `docs/REPOSITORY.md`. The product page shows the same figures.
 
 ## 0.1.0 (unreleased; the date is set when the owner tags it)
 
