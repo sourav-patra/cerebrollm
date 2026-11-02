@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
   <title id="t">cerebrollm in its surroundings</title>
-  <desc id="d">You ask cerebrollm a question in the terminal. On your computer, cerebrollm reads your Markdown notes and uses local models run by Ollama to embed text and write answers. Optionally, an AI app with a hosted model calls cerebrollm's search and verify tools over MCP; the passages it fetches go to that model's provider. You chat with that app directly.</desc>
+  <desc id="d">You ask cerebrollm a question in the terminal. On your computer, cerebrollm reads your Markdown notes and uses local models run by Ollama to embed text and write answers. Optionally, an AI app with a hosted model calls cerebrollm's search and verify tools over MCP; the passages it fetches go to that model's provider. Solid lines stay local while Ollama uses its default loopback address, which cerebrollm does not enforce. You chat with that app directly.</desc>
   <defs>
     <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#1f2933"/>
@@ -9,7 +9,8 @@
   <rect width="900" height="440" fill="#ffffff"/>
   <g font-size="12" fill="#1f2933">
     <text x="20" y="30" font-size="15" font-weight="700">Who and what cerebrollm talks to</text>
-    <text x="20" y="50">Arrows point from the caller. Solid lines stay on your computer; what travels on a dashed line reaches a hosted model's provider.</text>
+    <text x="20" y="48">Arrows point from the caller. What travels on a dashed line reaches a hosted model's provider.</text>
+    <text x="20" y="63">Solid lines stay on your computer while Ollama uses its default loopback address.</text>
   </g>
   <rect x="260" y="70" width="625" height="355" rx="10" fill="none" stroke="#1f2933" stroke-width="1.5" stroke-dasharray="8 6"/>
   <text x="276" y="94" font-size="13" font-weight="700" fill="#1f2933">Your computer</text>

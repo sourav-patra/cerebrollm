@@ -29,11 +29,11 @@ Tested on Ubuntu 24.04, native or under WSL2 on Windows 11. macOS and native Win
 | Ollama | runs the embedding model and the answer model locally | `curl http://127.0.0.1:11434/api/version` answers |
 | PostgreSQL 16 with pgvector | stores the index; step 2 installs it | `/usr/lib/postgresql/16/bin/postgres --version` prints 16.x |
 | About 17 GB of disk | the two Ollama models take about 14.5 GB (`research/model-study/STUDY-DONE.md`), the optional reranker about 2.3 GB | `df -h ~` |
-| A GPU with 12 GB | the default answer model `gpt-oss:20b` was measured on a 12 GB card; other sizes are not measured | `nvidia-smi` |
+| Measured hardware: a GPU with 12 GB | all speeds and the default answer model `gpt-oss:20b` were measured on one 12 GB card; other hardware, and CPU only, are not measured | `nvidia-smi` |
 
 The commands below are the ones the author ran; the first `index` and `ask` on a fresh machine were not re-run while preparing this release.
 
-1. Clone the repository: `git clone https://github.com/sourav-patra/cerebrollm && cd cerebrollm`
+1. Clone the repository: `git clone https://github.com/sourav-patra/cerebrollm && cd cerebrollm`. Check: `ls engine/setup` lists `root-ubuntu.sh` and `user.sh`.
 2. Install the system packages once, with sudo: `sudo bash engine/setup/root-ubuntu.sh`. Check: `/usr/lib/postgresql/16/bin/postgres --version` prints a 16.x version.
 3. Start Ollama, then create the virtual environment and the socket-only PostgreSQL cluster: `bash engine/setup/user.sh`. It is safe to repeat. Check: the last line is `USER SETUP DONE`.
 4. Pull the models: `ollama pull qwen3-embedding:0.6b` and `ollama pull gpt-oss:20b`. Check: `ollama list` shows both.
@@ -41,8 +41,8 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
 
 ### First ask
 
-1. Put your Markdown files in `~/cerebrollm-corpus/notes/`.
-2. Copy the configuration and add a rule for that folder. The shipped `engine/cerebrollm.toml` has rules only for the public documentation folders the evaluation uses, and a file that matches no rule is not indexed.
+1. Put your Markdown files in `~/cerebrollm-corpus/notes/`. Check: `ls ~/cerebrollm-corpus/notes` lists them.
+2. Copy the configuration and add a rule for that folder. The shipped `engine/cerebrollm.toml` holds example rules and the rules for the public documentation folders the evaluation uses; a file that matches no rule is not indexed, so your folder needs the rule below.
 
    ```
    cp engine/cerebrollm.toml ~/cerebrollm.toml
@@ -58,7 +58,7 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
    status = "current"
    ```
 
-   Then `export CEREBROLLM_CONFIG=~/cerebrollm.toml`.
+   Then `export CEREBROLLM_CONFIG=~/cerebrollm.toml`. Check: `tail -6 ~/cerebrollm.toml` shows the rule.
 3. Build the index: `engine/bin/cerebrollm index`. Check: `engine/bin/cerebrollm status` lists chunks for tier T2.
 4. Ask: `engine/bin/cerebrollm ask "a question your notes answer"`. Check: the output is an answer followed by lines such as `OK  notes/guide.md`. A question your notes do not answer prints `Not in the sources.`
 5. If the reranker is not downloaded the command stops with an error that names the folder. Download it as described next, or add `--no-rerank`.
@@ -85,13 +85,13 @@ cerebrollm sits between you, your notes and local models. An AI app can also cal
 
 <img src="docs/site/context.svg" alt="Context diagram. Inside a dashed boundary labelled Your computer: cerebrollm in the middle, Your notes (Markdown files) and Local models (run by Ollama). You, outside the boundary, ask cerebrollm in the terminal. cerebrollm reads and re-checks your notes and uses the local models to embed and answer. An optional AI app with a hosted model, for example Claude, calls search and verify over MCP on a dashed two-way line, and the passages go back to the app and its model's provider. You chat with that app directly." width="900">
 
-Figure: who and what cerebrollm talks to. Arrows point from the caller. Solid lines stay on your computer; what travels on a dashed line reaches a hosted model's provider. It leaves out how the AI app sends its prompts, which cerebrollm does not see.
+Figure: who and what cerebrollm talks to. Arrows point from the caller. What travels on a dashed line reaches a hosted model's provider. Solid lines stay on your computer only while Ollama uses its default loopback address (`base_url` in `cerebrollm.toml`), which cerebrollm does not enforce. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
 
 Inside, one program does the work. It keeps an index of passages in PostgreSQL, calls Ollama for embeddings and answers, and loads a reranker from local files.
 
 <img src="docs/site/parts.svg" alt="Parts diagram. Inside the boundary Your computer: the cerebrollm program (commands index, ask, search, verify, status; MCP server search and verify, read-only) in the middle. It reads and re-checks the notes folders, each with a trust rule; stores and searches the index (PostgreSQL: passages, their vectors and file fingerprints); calls Ollama (embedding model, answer model gpt-oss:20b) to embed and answer; and sends 20 passages to the reranker (local model files), which keeps 8. You reach the program from the terminal; an AI app reaches it over MCP with a dashed line." width="900">
 
-Figure: the parts of cerebrollm and what each link does, read against `engine/cerebrollm/`. It leaves out the configuration file and the secret scan that runs while indexing.
+Figure: the parts of cerebrollm and what each link does, read against `engine/cerebrollm/`. It shows the default configuration with Ollama on loopback, and leaves out the configuration file and the secret scan that runs while indexing.
 
 ### What `cerebrollm ask` does
 
@@ -109,6 +109,8 @@ Other commands: `index`, `search`, `verify`, `status` and `mcp` (a read-only MCP
 
 ## Use it from an AI app (MCP)
 
+Install the package into the cerebrollm environment first: `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `~/.cerebrollm/venv/bin/cerebrollm --help` lists the commands. From a clone without the package, use the absolute path of `engine/bin/cerebrollm` as the command instead.
+
 Register `cerebrollm mcp` as a stdio server in your MCP host. It offers two read-only tools, `search` and `verify`, and returns passages inside `<<<BEGIN RETRIEVED DATA>>>` markers so that a host can treat them as data. A host that sends tool results to a cloud model sends your passages to that provider. Nothing else leaves the machine except what you set up yourself (the Ollama address in `cerebrollm.toml` defaults to loopback and is not restricted to it).
 
 Hosts that read a JSON server list take this entry; replace `<you>` with your user name:
@@ -119,7 +121,7 @@ Hosts that read a JSON server list take this entry; replace `<you>` with your us
   "args": ["--config", "/home/<you>/cerebrollm.toml", "mcp"]}}}
 ```
 
-Claude Code, on the same Linux machine: `claude mcp add --scope user cerebrollm -- ~/.cerebrollm/venv/bin/cerebrollm --config ~/cerebrollm.toml mcp`. Claude Code on Windows with cerebrollm under WSL2: `claude mcp add --scope user cerebrollm -- wsl.exe -d Ubuntu-24.04 -e /home/<you>/.cerebrollm/venv/bin/cerebrollm --config /home/<you>/cerebrollm.toml mcp`. Both assume `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `claude mcp list` shows `cerebrollm` as connected.
+Claude Code, on the same Linux machine: `claude mcp add --scope user cerebrollm -- ~/.cerebrollm/venv/bin/cerebrollm --config ~/cerebrollm.toml mcp`. Claude Code on Windows with cerebrollm under WSL2: `claude mcp add --scope user cerebrollm -- wsl.exe -d Ubuntu-24.04 -e /home/<you>/.cerebrollm/venv/bin/cerebrollm --config /home/<you>/cerebrollm.toml mcp`. Check: `claude mcp list` shows `cerebrollm` as connected.
 
 ## Results at a glance
 
@@ -142,7 +144,7 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 | fix an install or indexing error | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) |
 | use each command and its options | [engine/README.md](engine/README.md) |
 | find a file, or learn what was withheld from this repository | [docs/REPOSITORY.md](docs/REPOSITORY.md) |
-| read the locked design: [PRD](docs/design/PRD-cerebrollm-2026-10-30.md), [TRD](docs/design/TRD-cerebrollm-2026-10-30.md), [LLD](docs/design/LLD-cerebrollm-2026-10-30.md), [POLICY](docs/design/POLICY-cerebrollm-2026-10-30.md) | `docs/LOCKS.md` holds the hash of each (locked 2026-10-30) |
+| read the locked design: [PRD](docs/design/PRD-cerebrollm-2026-10-30.md), [TRD](docs/design/TRD-cerebrollm-2026-10-30.md), [LLD](docs/design/LLD-cerebrollm-2026-10-30.md), [POLICY](docs/design/POLICY-cerebrollm-2026-10-30.md) | `docs/LOCKS.md` holds the hash of each (locked 2026-10-30); `SECURITY.md`, `CONTRIBUTING.md`, `docs/DATA.md`, `docs/RELEASING.md` and `docs/GOVERNANCE.md` come from the POLICY |
 | know what data leaves the machine and how releases work | [docs/DATA.md](docs/DATA.md), [docs/RELEASING.md](docs/RELEASING.md), [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
 | contribute or report a vulnerability | [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) (not a public issue) |
 | see what changed | [CHANGELOG.md](CHANGELOG.md) |
