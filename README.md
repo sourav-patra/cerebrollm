@@ -81,7 +81,7 @@ Check: `sha256sum` prints `OK` for six files. The download is about 2.3 GB (`mod
 
 ## How it works
 
-cerebrollm sits between you, your notes and local models. An AI app can also call it, and that is the one path where passages leave your computer.
+cerebrollm sits between you, your notes and local models. An AI app can also call it over MCP, and the passages it fetches go to that app and its model's provider. Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback; cerebrollm does not prevent that.
 
 <img src="docs/site/context.svg" alt="Context diagram. Inside a dashed boundary labelled Your computer: cerebrollm in the middle, Your notes (Markdown files) and Local models (run by Ollama). You, outside the boundary, ask cerebrollm in the terminal. cerebrollm reads and re-checks your notes and uses the local models to embed and answer. An optional AI app with a hosted model, for example Claude, calls search and verify over MCP on a dashed two-way line, and the passages go back to the app and its model's provider. You chat with that app directly." width="900">
 
