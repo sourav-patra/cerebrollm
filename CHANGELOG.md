@@ -2,6 +2,12 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+Documentation only; no re-index needed.
+
+- README: a walk-through image, two figures (`docs/site/context.svg`, `docs/site/parts.svg`), a requirements table, an MCP setup section with host examples and a troubleshooting table. The product page shows the same figures.
+
 ## 0.1.0 (unreleased; the date is set when the owner tags it)
 
 First public release. No earlier release exists, so no migration applies.

@@ -19,6 +19,21 @@
 <p>It is for people who run local models, or who let a cloud model read their documents, and who need every answer traced to a file.</p>
 
 <figure>
+<img src="walkthrough.gif" alt="Animated walk-through in nine frames: cerebrollm on your computer between you, your notes and local models; its parts; then one question, link by link: you ask, the index returns 20 passages, the reranker keeps 8, a local model answers and quotes one line, cerebrollm re-reads that file, and you get the answer with its source or Not in the sources; last, the output gate.">
+<figcaption>Figure: one question through cerebrollm, built from the three figures on this page. It leaves out indexing and error exits.</figcaption>
+</figure>
+
+<figure>
+<img src="context.svg" alt="Context diagram. Inside the boundary Your computer: cerebrollm, your Markdown notes and local models run by Ollama. You ask cerebrollm in the terminal. An optional AI app with a hosted model calls search and verify over MCP on a dashed two-way line; the passages go back to the app and its model's provider.">
+<figcaption>Figure: who and what cerebrollm talks to. Arrows point from the caller; what travels on a dashed line reaches a hosted model's provider.</figcaption>
+</figure>
+
+<figure>
+<img src="parts.svg" alt="Parts diagram. The cerebrollm program (commands and a read-only MCP server) reads and re-checks the notes folders, stores and searches a PostgreSQL index of passages, vectors and file fingerprints, calls Ollama to embed and answer, and runs a local reranker that keeps the best 8 of 20 passages.">
+<figcaption>Figure: the parts of cerebrollm and what each link does, read against <code>engine/cerebrollm/</code>. It leaves out the configuration file and the secret scan that runs while indexing.</figcaption>
+</figure>
+
+<figure>
 <img src="ask-flow.svg" alt="Flow chart of cerebrollm ask. A question goes through search for 20 passages, rerank to 8, generate with a local model and verify of each citation against the source file. A gate then asks whether any citation verified OK. Yes prints the answer and the verify codes. No prints exactly Not in the sources. Empty answers and searches with no passages also abstain. A failure in search, rerank or generation prints an error and exits 2.">
 <figcaption>Figure: the five steps of <code>cerebrollm ask</code> and its output gate, checked against <code>engine/cerebrollm/answer.py</code>. It leaves out indexing and the MCP server.</figcaption>
 </figure>
