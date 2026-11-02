@@ -15,7 +15,7 @@ Figure: one question through cerebrollm, built from the three figures below. It 
 
 For people who run local models, or let a cloud model read their documents, and need every answer traced to a file.
 
-- A language model does not automatically read your current files. It answers from its training data.
+- A language model does not automatically read your current files. It answers from its training data and the context supplied to it.
 - A model reads only what fits in its context window (the text it can take in at once, counted in tokens), and every token costs time. A real set of notes does not fit with each question.
 - Retrieval (RAG: search the notes first, then hand the model only the matching passages) fixes both, but the model can still ignore or misquote the passages, and the answer still looks sourced. cerebrollm re-reads the cited file before it prints anything.
 
