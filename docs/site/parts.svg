@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <title id="t">The parts of cerebrollm</title>
+  <desc id="d">The cerebrollm program sits in the middle; you use it from the terminal, and an AI app uses it through the MCP server. It reads the notes folders and re-reads a cited file to check a quote. It stores passages, their vectors and file fingerprints in a PostgreSQL index and searches it. It calls Ollama to embed text and to write answers. A local reranker keeps the best 8 of 20 passages. Ollama is local while it uses its default loopback address, which cerebrollm does not enforce.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1f2933"/>
+    </marker>
+  </defs>
+  <rect width="900" height="560" fill="#ffffff"/>
+  <g font-size="12" fill="#1f2933">
+    <text x="20" y="30" font-size="15" font-weight="700">The parts of cerebrollm and what each link does</text>
+    <text x="20" y="48">Arrows point from the caller. Passages sent over the dashed MCP link go to the AI app and its model's provider.</text>
+    <text x="20" y="63">Every box inside the line runs on your computer while Ollama uses its default loopback address.</text>
+  </g>
+  <rect x="300" y="70" width="585" height="475" rx="10" fill="none" stroke="#1f2933" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="316" y="94" font-size="13" font-weight="700" fill="#1f2933">Your computer</text>
+
+  <g stroke="#1f2933" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <path id="e-ask" d="M240 138 L336 268"/>
+    <path id="e-notes" d="M590 268 L686 160"/>
+    <path id="e-index" d="M590 305 H686" marker-start="url(#ar)"/>
+    <path id="e-ollama" d="M590 345 L686 455"/>
+    <path id="e-rerank" d="M465 360 V441"/>
+  </g>
+  <path id="e-mcp" d="M240 478 L336 345" marker-start="url(#ar)" stroke="#1f2933" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ar)"/>
+  <g font-size="12" fill="#1f2933">
+    <text x="284" y="215" text-anchor="end">commands</text>
+    <text x="284" y="400" text-anchor="end">MCP</text>
+    <text x="630" y="205" text-anchor="end">read, re-check</text>
+    <text x="638" y="289" text-anchor="middle">store, search</text>
+    <text x="630" y="412" text-anchor="end">embed, answer</text>
+    <text x="455" y="405" text-anchor="end">20 in, best 8 kept</text>
+  </g>
+
+  <g stroke="#1f2933" stroke-width="2">
+    <rect x="30" y="100" width="210" height="76" rx="38" fill="#dcfce7"/>
+    <rect x="30" y="440" width="210" height="76" rx="6" fill="#fef3c7" stroke-dasharray="6 4"/>
+    <rect x="340" y="250" width="250" height="110" rx="6" fill="#dbeafe" stroke-width="3"/>
+    <rect x="690" y="110" width="190" height="80" rx="6" fill="#f1f5f9"/>
+    <rect x="690" y="255" width="190" height="100" rx="6" fill="#f1f5f9"/>
+    <rect x="690" y="420" width="190" height="100" rx="6" fill="#f1f5f9"/>
+    <rect x="340" y="445" width="250" height="76" rx="6" fill="#f1f5f9"/>
+  </g>
+  <g font-size="15" fill="#1f2933" text-anchor="middle" font-weight="700">
+    <text x="135" y="134">You</text>
+    <text x="135" y="474">AI app</text>
+    <text x="465" y="282">cerebrollm program</text>
+    <text x="785" y="144">Notes folders</text>
+    <text x="785" y="285">Index</text>
+    <text x="785" y="452">Ollama</text>
+    <text x="465" y="477">Reranker</text>
+  </g>
+  <g font-size="12" fill="#1f2933" text-anchor="middle">
+    <text x="135" y="154">terminal</text>
+    <text x="135" y="494">MCP host, for example Claude</text>
+    <text x="465" y="304">commands: index, ask, search, verify, status</text>
+    <text x="465" y="322">MCP server: search, verify (read-only)</text>
+    <text x="785" y="164">each with a trust rule</text>
+    <text x="785" y="305">PostgreSQL: passages,</text>
+    <text x="785" y="321">their vectors and</text>
+    <text x="785" y="337">file fingerprints (sha256)</text>
+    <text x="785" y="474">embedding model</text>
+    <text x="785" y="490">answer model (gpt-oss:20b)</text>
+    <text x="465" y="497">runs in the program, from local files</text>
+  </g>
+</svg>
