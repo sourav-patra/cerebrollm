@@ -163,9 +163,10 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     out = []
     for h in hits:
         meta = h.node.metadata
-        # shortcut: a stale row whose path a never-index rule now matches is dropped with its copies; promoting a
-        # copy needs its own supersession status and ref, which the row does not hold. A re-index restores the copy.
-        if rules.never_reason(meta.get("path") or "", cfg.never):
+        # shortcut: a stale row whose root, tier rule or never-index rule no longer allows its path is dropped with
+        # its copies; promoting a copy needs its own supersession status and ref, which the row does not hold.
+        # A re-index restores an allowed copy.
+        if not _allowed(cfg, copy_key(meta)):
             continue
         score = h.score or 0.0
         if not all_status:
