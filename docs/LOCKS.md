@@ -11,4 +11,6 @@ Each row is a document the owner locked. Recompute the hash with `sha256sum <pat
 
 The files are copied byte for byte, and `.gitattributes` stops git from changing their line endings. Two independent reviewers passed each file on the hash shown. After the first lock, the owner approved a header-only edit (the `status:` line now reads LOCKED, and the pins to other documents name the locked PRD and TRD hashes); both reviewers confirmed that no other byte changed, and the owner locked the files again on these hashes. Section 1 of the POLICY records the state of each check before the lock.
 
+The POLICY's line "Documentation follows DOC-PHILOSOPHY.md at the repository root" (its CONTRIBUTING.md text) is superseded by the "Writing docs" section of `CONTRIBUTING.md` since 2026-11-03, when `DOC-PHILOSOPHY.md` was removed. The locked POLICY bytes are unchanged; the owner revises that line in the next POLICY lock.
+
 Skipped or not checked: the hashes were recomputed on 2026-10-30 from the files in this folder and match the lock records; nothing else was checked.

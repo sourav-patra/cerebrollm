@@ -116,7 +116,7 @@ Figure: the parts of cerebrollm and what each link does, read against `engine/ce
 Figure: the five steps of `ask` and its output gate, read against `engine/cerebrollm/answer.py` (function `ask`, gate `decide`). It leaves out indexing, the MCP server and the other commands.
 
 1. Search takes the top 20 passages with the default hybrid search (`cerebrollm search`), which applies the status filter and the tier and recency boosts from `cerebrollm.toml`.
-2. Rerank scores those 20 with the cross-encoder `BAAI/bge-reranker-v2-m3` and keeps 8. `--no-rerank` keeps the first 8 of the search instead.
+2. Rerank scores those 20 with the cross-encoder `BAAI/bge-reranker-v2-m3` (a model that reads the question and a passage together) and keeps 8. `--no-rerank` keeps the first 8 of the search instead.
 3. Generate sends the 8 passages, marked as data, to a local Ollama model (default `gpt-oss:20b`, only models listed as allowed in `engine/models.toml`) and asks for one quoted line with its path.
 4. Verify re-reads each cited file and checks that the quote is in it and that the file still has the sha256 recorded at indexing time.
 5. The gate prints the answer when at least one citation verified `OK`, and prints exactly `Not in the sources.` in every other case, including an empty answer and no search hits. A failure in search, rerank or generation prints an error on stderr and exits 2; it never prints an answer.
@@ -127,7 +127,7 @@ Other commands: `index`, `search`, `verify`, `status` and `mcp` (a read-only MCP
 
 Install the package into the cerebrollm environment first: `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `~/.cerebrollm/venv/bin/cerebrollm --help` lists the commands. From a clone without the package, use the absolute path of `engine/bin/cerebrollm` as the command instead.
 
-Register `cerebrollm mcp` as a stdio server in your MCP host. It offers two read-only tools, `search` and `verify`.
+Register `cerebrollm mcp` as a stdio server in your MCP host: the host starts the command and talks to it over standard input and output. It offers two read-only tools, `search` and `verify`.
 
 It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat them as data. A host that sends tool results to a cloud model sends your passages to that provider.
 
@@ -141,7 +141,12 @@ Hosts that read a JSON server list take this entry; replace `<you>` with your us
   "args": ["--config", "/home/<you>/cerebrollm.toml", "mcp"]}}}
 ```
 
-Claude Code, on the same Linux machine: `claude mcp add --scope user cerebrollm -- ~/.cerebrollm/venv/bin/cerebrollm --config ~/cerebrollm.toml mcp`. Claude Code on Windows with cerebrollm under WSL2: `claude mcp add --scope user cerebrollm -- wsl.exe -d Ubuntu-24.04 -e /home/<you>/.cerebrollm/venv/bin/cerebrollm --config /home/<you>/cerebrollm.toml mcp`. Check: `claude mcp list` shows `cerebrollm` as connected.
+Claude Code takes one command:
+
+- On the same Linux machine: `claude mcp add --scope user cerebrollm -- ~/.cerebrollm/venv/bin/cerebrollm --config ~/cerebrollm.toml mcp`.
+- On Windows with cerebrollm under WSL2: `claude mcp add --scope user cerebrollm -- wsl.exe -d Ubuntu-24.04 -e /home/<you>/.cerebrollm/venv/bin/cerebrollm --config /home/<you>/cerebrollm.toml mcp`.
+
+Check: `claude mcp list` shows `cerebrollm` as connected.
 
 ## Results at a glance
 
@@ -151,7 +156,7 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 |---|---|---|---|
 | Does retrieval help a small local model? `phi4`, 60 questions | without retrieval 1/60, with retrieval 47/60 | `eval/RESULTS.md` | measured |
 | How often is `gpt-oss:20b` confidently wrong on 35 questions about recent releases? | no retrieval 122 of 175 runs, plain search 17 of 175, `cerebrollm ask` 7 of 104 | `eval/RESULTS-v2.md` | measured |
-| Does `ask` meet the aim of at least 90% right outcomes with under 2% confidently wrong runs? | not met by any local model; met only by Claude Sonnet 5.5 with plain search | `eval/RESULTS-v2.md` | measured |
+| Does `ask` meet the aim of at least 90% right outcomes with under 2% confidently wrong runs? | not met by any local model; observed for Claude Sonnet 5.5 with plain search, but 35 items cannot show a rate under 2% | `eval/RESULTS-v2.md` | measured |
 | Does the top 8 hold a line that answers the question? 60 questions | default search 45/60, with the reranker 46/60 | `eval/runs/retrieval/R-summary.md` | measured |
 
 `ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer. Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
@@ -168,6 +173,7 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 | know what data leaves the machine and how releases work | [docs/DATA.md](docs/DATA.md), [docs/RELEASING.md](docs/RELEASING.md), [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
 | contribute or report a vulnerability | [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) (not a public issue) |
 | see what changed | [CHANGELOG.md](CHANGELOG.md) |
+| see how this README and its figures were checked | [docs/README-CHECKS.md](docs/README-CHECKS.md) |
 
 ## Licence
 
