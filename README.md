@@ -5,13 +5,13 @@ Ask a question of your own Markdown documents and get an answer whose quote has 
 [![tests](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml/badge.svg)](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml)
 PyPI: [cerebrollm 0.1.0](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
 
-[Key features](#key-features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Use it from an AI app (MCP)](#use-it-from-an-ai-app-mcp) · [Results](#results-at-a-glance) · [Documentation](#documentation) · [Product page](https://sourav-patra.github.io/cerebrollm/)
+[Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Use it from an AI app (MCP)](#use-it-from-an-ai-app-mcp) · [Results](#results-at-a-glance) · [Docs](#docs) · [Product page](https://sourav-patra.github.io/cerebrollm/)
 
 <img src="docs/site/walkthrough.gif" alt="Animated walk-through in nine frames. Frame 1: cerebrollm on your computer between you, your notes and local models. Frame 2: its parts. Frames 3 to 8 highlight, one link at a time, the path of one question: you ask; the question is embedded and the index returns 20 passages; the reranker keeps 8; a local model answers and quotes one line; cerebrollm re-reads that file; you get the answer with its source, or Not in the sources. Frame 9: the output gate." width="900">
 
 Figure: one question through cerebrollm, built from the three figures below. It leaves out indexing and error exits, which the figures under [How it works](#how-it-works) show.
 
-## The problem it solves
+## Why
 
 For people who run local models, or let a cloud model read their documents, and need every answer traced to a file.
 
@@ -23,7 +23,7 @@ Evidence: with retrieval and a citation instruction, the small local model `phi4
 
 Status: 0.1.0, early research. The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
 
-## Key features
+## Features
 
 - Answers only with a quote it re-read in your file; otherwise prints `Not in the sources.` One confirmed quote lets the whole answer through, and the rest of its text is not checked.
 - Runs on your machine: a PostgreSQL index, local models through Ollama and a local reranker (a second model that re-orders passages by how well they fit the question).
@@ -72,6 +72,7 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
    ```
 
    Then `export CEREBROLLM_CONFIG=~/cerebrollm.toml`. Check: `tail -6 ~/cerebrollm.toml` shows the rule.
+
 3. Build the index: `engine/bin/cerebrollm index`. Check: `engine/bin/cerebrollm status` lists chunks for tier T2.
 4. Ask: `engine/bin/cerebrollm ask "a question your notes answer"`. Check: the output is an answer followed by lines such as `OK  notes/guide.md`. A question your notes do not answer prints `Not in the sources.`
 5. If the reranker is not downloaded the command stops with an error that names the folder. Download it as described next, or add `--no-rerank`. Check: the same `ask` prints an answer or `Not in the sources.` instead of the error.
@@ -155,7 +156,7 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 
 `ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer. Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
 
-## Documentation
+## Docs
 
 | To | Read |
 |---|---|
@@ -170,6 +171,6 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 
 ## Licence
 
-Code: MIT ([LICENSE](LICENSE)). Third-party text copied into `eval/` and `research/` is credited in `NOTICE`. Documents follow `DOC-PHILOSOPHY.md`.
+Code: MIT ([LICENSE](LICENSE)). Third-party text copied into `eval/` and `research/` is credited in `NOTICE`. Documents follow the "Writing docs" section of [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Skipped or not checked: the first `index` and `ask` on a fresh machine, the reranker download, the Qwen3.6 context ladder, GLM-4.7-Flash (pulled, not measured), and the figures on the PyPI page, which does not resolve the relative image paths.
