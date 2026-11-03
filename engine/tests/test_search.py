@@ -80,12 +80,17 @@ class TestExcluded(unittest.TestCase):
         data["rule"] = [{"root": "fx", "glob": "**/*.md", "tier": "T2", "status": "current"}]
         return config.Config(data, "test")
 
-    def test_excluded_primary_shows_an_allowed_copy(self):
+    def test_excluded_primary_is_dropped_in_every_mode(self):
         meta = {"root": "fx", "path": "shared/logs/primary.md", "tier": "T1", "status": "current", "ref": "file",
-                "also_at": ["fx:shared/logs/other.md", "fx:shared/ok.md"]}
+                "also_at": ["fx:shared/ok.md"]}
         for mode, hits in self.search_all_modes(meta).items():
-            self.assertEqual([(h["path"], h["tier"], h["also_at"]) for h in hits],
-                             [("shared/ok.md", "T2", [])], mode)
+            self.assertEqual(hits, [], mode)
+
+    def test_also_at_keys_of_unknown_roots_or_excluded_paths_are_dropped(self):
+        meta = {"root": "fx", "path": "shared/ok.md", "tier": "T2", "status": "current", "ref": "file",
+                "also_at": ["fx:a/logs/b.md", "gone:a.md", "fx:a/c.md"]}
+        for mode, hits in self.search_all_modes(meta).items():
+            self.assertEqual(hits[0]["also_at"], ["fx:a/c.md"], mode)
 
     def test_root_name_with_a_colon_is_refused(self):
         data = config.load().data

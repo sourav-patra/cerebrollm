@@ -98,25 +98,10 @@ def recency_multiplier(mtime, now, weight, half_life_days):
 
 
 def _allowed(cfg, key):
-    """(root, path, tier, status) for an also_at key the index may show, else None."""
+    """True for an also_at key ("root:path") of a configured root whose path the index may hold."""
     name, _, path = key.partition(":")
-    hit = rules.classify(name, path, cfg.rules) if name in cfg.roots else None
-    if hit is None or rules.never_reason(path, cfg.never):
-        return None
-    return name, path, hit[0], hit[1]
-
-
-def _shown(cfg, meta, all_status):
-    """meta as the hit is shown: unchanged when its path is allowed; when a never-index rule now excludes it, the
-    first allowed collapsed copy (same bytes, so the same line span and sha256); None when no copy is allowed."""
-    if not rules.never_reason(meta.get("path") or "", cfg.never):
-        return meta
-    for key in meta.get("also_at") or []:
-        copy = _allowed(cfg, key)
-        if copy and (all_status or copy[3] in ACTIVE_STATUS):
-            rest = [k for k in meta["also_at"] if k != key]
-            return {**meta, "root": copy[0], "path": copy[1], "tier": copy[2], "status": copy[3], "also_at": rest}
-    return None
+    return (name in cfg.roots and not rules.never_reason(path, cfg.never)
+            and rules.classify(name, path, cfg.rules) is not None)
 
 
 def copy_key(meta):
@@ -177,8 +162,10 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     now = datetime.datetime.now(datetime.timezone.utc)
     out = []
     for h in hits:
-        meta = _shown(cfg, h.node.metadata, all_status)   # a stale row for a now-excluded path
-        if meta is None:
+        meta = h.node.metadata
+        # shortcut: a stale row whose path a never-index rule now matches is dropped with its copies; promoting a
+        # copy needs its own supersession status and ref, which the row does not hold. A re-index restores the copy.
+        if rules.never_reason(meta.get("path") or "", cfg.never):
             continue
         score = h.score or 0.0
         if not all_status:
