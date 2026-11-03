@@ -1,6 +1,6 @@
 ﻿# cerebrollm
 
-Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.`
+Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.` Only the quote is checked, not the rest of the answer.
 
 [![tests](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml/badge.svg)](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml)
 PyPI: [cerebrollm 0.1.0](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
@@ -21,7 +21,9 @@ For people who run local models, or let a cloud model read their documents, and 
 
 Evidence: with retrieval and a citation instruction, the small local model `phi4` answered 47 of 60 questions right instead of 1 (model-graded, majority of 5 runs, `eval/RESULTS.md`).
 
-Status: 0.1.0, early research. The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
+Status: 0.1.0, early research.
+
+The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
 
 ## Features
 
@@ -95,7 +97,9 @@ Check: `sha256sum` prints `OK` for six files. The download is about 2.3 GB (`mod
 
 ## How it works
 
-cerebrollm sits between you, your notes and local models. An AI app can also call it over MCP. The passages it fetches go to that app and its model's provider.
+cerebrollm sits between you, your notes and local models. An AI app can also call it over MCP.
+
+The passages it fetches go to that app and its model's provider.
 
 Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback. cerebrollm does not prevent that.
 
@@ -103,7 +107,9 @@ Passages also leave your computer if you point the Ollama address in `cerebrollm
 
 Figure: who and what cerebrollm talks to. Arrows point from the caller; dashed lines reach a hosted model's provider. Solid lines stay local while Ollama uses its default loopback address (`base_url`), which cerebrollm does not enforce. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
 
-Inside, one program does the work. It keeps an index of passages in PostgreSQL, calls Ollama for embeddings and answers, and loads a reranker from local files.
+Inside, one program does the work.
+
+It keeps an index of passages in PostgreSQL, calls Ollama for embeddings and answers, and loads a reranker from local files.
 
 <img src="docs/site/parts.svg" alt="Parts diagram. Inside the boundary Your computer: the cerebrollm program (commands index, ask, search, verify, status; MCP server search and verify, read-only) in the middle. It reads and re-checks the notes folders, each with a trust rule; stores and searches the index (PostgreSQL: passages, their vectors and file fingerprints); calls Ollama (embedding model, answer model gpt-oss:20b) to embed and answer; and sends 20 passages to the reranker (local model files), which keeps 8. You reach the program from the terminal; an AI app reaches it over MCP with a dashed line." width="900">
 
@@ -125,11 +131,17 @@ Other commands: `index`, `search`, `verify`, `status` and `mcp` (a read-only MCP
 
 ## Use it from an AI app (MCP)
 
-Install the package into the cerebrollm environment first: `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `~/.cerebrollm/venv/bin/cerebrollm --help` lists the commands. From a clone without the package, use the absolute path of `engine/bin/cerebrollm` as the command instead.
+Install the package into the cerebrollm environment first: `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `~/.cerebrollm/venv/bin/cerebrollm --help` lists the commands.
 
-Register `cerebrollm mcp` as a stdio server in your MCP host: the host starts the command and talks to it over standard input and output. It offers two read-only tools, `search` and `verify`.
+From a clone without the package, use the absolute path of `engine/bin/cerebrollm` as the command instead.
 
-It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat them as data. A host that sends tool results to a cloud model sends your passages to that provider.
+Register `cerebrollm mcp` as a stdio server in your MCP host: the host starts the command and talks to it over standard input and output.
+
+It offers two read-only tools, `search` and `verify`.
+
+It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat them as data.
+
+A host that sends tool results to a cloud model sends your passages to that provider.
 
 Nothing else leaves the machine except what you set up yourself. The Ollama address in `cerebrollm.toml` defaults to loopback and is not restricted to it.
 
@@ -150,7 +162,9 @@ Check: `claude mcp list` shows `cerebrollm` as connected.
 
 ## Results at a glance
 
-Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 GB) with public documentation as the corpus. The full tables, the v2 evaluation method and every limit are in [docs/RESULTS.md](docs/RESULTS.md).
+Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 GB) with public documentation as the corpus.
+
+The full tables, the v2 evaluation method and every limit are in [docs/RESULTS.md](docs/RESULTS.md).
 
 | Question | Result | Source | State |
 |---|---|---|---|
@@ -159,7 +173,9 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 | Does `ask` meet the aim of at least 90% right outcomes with under 2% confidently wrong runs? | not met by any local model; observed for Claude Sonnet 5.5 with plain search, but 35 items cannot show a rate under 2% | `eval/RESULTS-v2.md` | measured |
 | Does the top 8 hold a line that answers the question? 60 questions | default search 45/60, with the reranker 46/60 | `eval/runs/retrieval/R-summary.md` | measured |
 
-`ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer. Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
+`ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer.
+
+Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
 
 ## Docs
 
