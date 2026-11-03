@@ -27,6 +27,8 @@ The aim is at least 90% right outcomes (a right answer, or a correct `Not in the
 
 ## Features
 
+word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word
+
 - Answers only with a quote it re-read in your file; otherwise prints `Not in the sources.` One confirmed quote lets the whole answer through, and the rest of its text is not checked.
 - Runs on your machine: a PostgreSQL index, local models through Ollama and a local reranker (a second model that re-orders passages by how well they fit the question).
 - Hybrid search: keyword and meaning (vector) search find 20 passages, and a reranker keeps the best 8.
