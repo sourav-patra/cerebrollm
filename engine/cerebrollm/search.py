@@ -175,7 +175,8 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
             "status": meta.get("status"), "project": meta.get("project"), "path": meta.get("path"),
             "ref": meta.get("ref"), "title": meta.get("title"), "heading_path": meta.get("heading_path", ""),
             "line_start": first, "line_end": last, "source_unchanged": fresh,
-            "sha256": meta.get("sha256"), "mtime": meta.get("mtime"), "also_at": entry["also_at"],
+            "sha256": meta.get("sha256"), "mtime": meta.get("mtime"),
+            "also_at": [p for p in entry["also_at"] if not rules.never_reason(p.split(":", 1)[-1], cfg.never)],
             "text": o["node"].get_content(),
         })
     return results

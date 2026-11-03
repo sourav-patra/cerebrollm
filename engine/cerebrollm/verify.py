@@ -25,16 +25,21 @@ def _resolve(cfg, path, ref):
     return cands
 
 
-def _canonical(root, rel):
-    """The path inside the root that rel names, with links and ".." resolved, or None when it leaves the root."""
+def _requested(rel):
+    """rel with "." and ".." removed lexically, before any link is followed; None when it leaves the root."""
+    rel = posixpath.normpath(rel.replace(os.sep, "/"))
+    return None if rel == ".." or rel.startswith("../") or rel.startswith("/") else rel
+
+
+def _target(root, rel):
+    """The path inside the root that rel reaches through links, in the form the indexer stores; None outside."""
     if root["kind"] == "git":
-        rel = posixpath.normpath(rel)
-        return None if rel == ".." or rel.startswith("../") or rel.startswith("/") else rel
+        return rel
     top = os.path.realpath(root["path"])
     full = os.path.realpath(os.path.join(top, rel))
     if os.path.commonpath([top, full]) != top:
         return None
-    return os.path.relpath(full, top).replace(os.sep, "/")
+    return os.path.relpath(full, top)
 
 
 def _excluded(cfg, root, rel):
@@ -57,16 +62,24 @@ def _indexed_sha(cfg, root_name, rel, ref):
 
 def run_verify(cfg, path, quote, ref=None):
     """Return (code, detail); code is OK, CHANGED, MISSING, GONE or UNINDEXED."""
-    seen_gone = False
+    seen_gone, absent = False, None
     for root, rel, rref in _resolve(cfg, path, ref):
-        rel = _canonical(root, rel)
-        if rel is None:   # outside the root, also through a link: refused before any read
+        asked = _requested(rel)
+        if asked is None:
             seen_gone = True
             continue
-        absent = ("MISSING", "quote not found in %s@%s" % (rel, rref))
-        # An excluded file answers exactly as an absent quote, decided before the file is read.
+        # An excluded path answers exactly as an absent quote, decided before any link is followed or any
+        # file is read: first the path as asked, then the file a link reaches. Later roots are still tried.
+        if _excluded(cfg, root, asked):
+            absent = absent or ("MISSING", "quote not found in %s@%s" % (asked, rref))
+            continue
+        rel = _target(root, asked)
+        if rel is None:   # a link out of the root reads nothing and answers as a file that is not there
+            seen_gone = True
+            continue
         if _excluded(cfg, root, rel):
-            return absent
+            absent = absent or ("MISSING", "quote not found in %s@%s" % (asked, rref))
+            continue
         try:
             data = corpus.read_source(root, rel, rref)
         except (FileNotFoundError, IsADirectoryError, PermissionError):
@@ -74,7 +87,7 @@ def run_verify(cfg, path, quote, ref=None):
             continue
         text = data.decode("utf-8", "replace")
         if rules.secret_hit(text) or _normalise(quote) not in _normalise(text):
-            return absent
+            return "MISSING", "quote not found in %s@%s" % (asked, rref)
         sha = hashlib.sha256(data).hexdigest()
         indexed = _indexed_sha(cfg, root["name"], rel, rref)
         if not indexed:
@@ -83,6 +96,8 @@ def run_verify(cfg, path, quote, ref=None):
             return "OK", "%s@%s sha256 %s" % (rel, rref, sha[:12])
         return "CHANGED", "quote present; %s@%s changed since indexing (now %s, indexed %s)" % (
             rel, rref, sha[:12], sorted(indexed)[0][:12])
+    if absent:
+        return absent
     if seen_gone:
         return "GONE", "source not found: " + path
     return "GONE", "no registered root matches: " + path

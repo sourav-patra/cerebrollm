@@ -61,6 +61,18 @@ class TestExcluded(unittest.TestCase):
             paths = [r["path"] for r in search.run_search(config.load(), "change", k=8, mode="vector")]
         self.assertEqual(paths, ["notes/ok.md"])
 
+    def test_excluded_copy_left_out_of_also_at(self):
+        from unittest import mock
+        from llama_index.core.schema import NodeWithScore
+        meta = {"path": "notes/ok.md", "also_at": ["fx:notes/copy.md", "fx:notes/logs/copy.md"]}
+        index = mock.Mock()
+        index.as_retriever.return_value.retrieve.return_value = [
+            NodeWithScore(node=TextNode(text="kept", metadata=meta), score=0.5)]
+        with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index), \
+                mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
+            hits = search.run_search(config.load(), "change", k=8, mode="vector")
+        self.assertEqual(hits[0]["also_at"], ["fx:notes/copy.md"])
+
 
 def hit(rank, path, also_at=()):
     return {"rank": rank, "score": 0.0312, "tier": "T1", "status": "locked", "path": path,

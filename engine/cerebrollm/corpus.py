@@ -2,10 +2,13 @@
 import datetime
 import hashlib
 import os
+import re
 import subprocess
 from collections import Counter
 
 from . import rules
+
+SAFE_REF = re.compile(r"[A-Za-z0-9._/@^~][A-Za-z0-9._/@^~-]*")
 
 
 def _git(root, *args):
@@ -16,8 +19,12 @@ def _git(root, *args):
 def read_source(root, rel_path, ref=None):
     """Exact bytes of a source file; FileNotFoundError when it is absent."""
     if root["kind"] == "git":
+        ref = ref or root["ref"]
+        if not SAFE_REF.fullmatch(ref):   # a ref git could read as an option (LLD I-03)
+            raise FileNotFoundError(rel_path)
         try:
-            return _git(root, "show", "%s:%s" % (ref or root["ref"], rel_path))
+            commit = _git(root, "rev-parse", "--verify", "--quiet", "--end-of-options", ref + "^{commit}")
+            return _git(root, "show", "--end-of-options", "%s:%s" % (commit.decode().strip(), rel_path))
         except subprocess.CalledProcessError as exc:
             raise FileNotFoundError(rel_path) from exc
     top = os.path.realpath(root["path"])
