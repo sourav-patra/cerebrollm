@@ -4,7 +4,10 @@ Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm ind
 
 ## Unreleased
 
-Documentation only; no re-index needed.
+No re-index needed.
+
+- `verify` (command and MCP tool) answers for an excluded path exactly as for an absent quote: `MISSING` with the same detail. Never-index and tier rules are checked on the canonical path before the file is read; a file with a secret pattern is checked after. A path that leaves its root, also through a link, is `GONE` without a read. Before this, `verify` read any file under a registered root and told whether a quote was in it, including never-index folders (LLD issue I-01).
+- `search` drops a hit whose path matches a never-index rule, so a stale index row for a newly excluded folder is not returned.
 
 - README: a walk-through image, two figures (`docs/site/context.svg`, `docs/site/parts.svg`), a requirements table, an MCP setup section with host examples and a short results table with a documentation table pointing to the details. The full results and limits moved to `docs/RESULTS.md`, troubleshooting to `docs/TROUBLESHOOTING.md`, and the repository map and provenance to `docs/REPOSITORY.md`. The product page shows the same figures. The README follows the Entry pages rule: a problem section with one line of evidence, key features, and paragraphs of at most 60 words. `DOC-PHILOSOPHY.md` is updated from the shared copy, which adds that rule.
 

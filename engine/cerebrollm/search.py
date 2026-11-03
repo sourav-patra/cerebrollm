@@ -10,7 +10,7 @@ from llama_index.core.schema import NodeWithScore
 from llama_index.core.vector_stores.types import (
     FilterOperator, MetadataFilter, MetadataFilters, VectorStoreQueryMode)
 
-from . import corpus, store
+from . import corpus, rules, store
 
 ACTIVE_STATUS = ["locked", "current"]
 TSQUERY_OPERATORS = re.compile(r"[&|!():*<>'\"\\]")
@@ -156,6 +156,8 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     out = []
     for h in hits:
         meta = h.node.metadata
+        if rules.never_reason(meta.get("path") or "", cfg.never):   # a stale row for a now-excluded path
+            continue
         score = h.score or 0.0
         if not all_status:
             score *= boost.get(meta.get("tier"), 1.0)

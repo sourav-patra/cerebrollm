@@ -15,6 +15,7 @@ class TestVerify(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         data = copy.deepcopy(config.load().data)
         data["root"] = [{"name": "fx", "kind": "dir", "path": self.tmp.name, "ref": "file"}]
+        data["rule"] = [{"root": "fx", "glob": "**/*.md", "tier": "T2", "status": "current"}]
         self.cfg = config.Config(data, Path("test"))
         self.file = Path(self.tmp.name) / "doc.md"
         self.file.write_text("# Title\n\nA change gets  two review\nrounds before merge.\n")
@@ -41,6 +42,55 @@ class TestVerify(unittest.TestCase):
 
     def test_unindexed(self):
         self.assertEqual(self.run_verify("doc.md", "A change gets", set()), "UNINDEXED")
+
+    def excluded_same_as_absent(self, rel, text, quote):
+        f = Path(self.tmp.name) / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(text)
+        with mock.patch.object(verify, "_indexed_sha", return_value=set()):
+            with_quote = verify.run_verify(self.cfg, rel, quote)
+            without = verify.run_verify(self.cfg, rel, "a sentence that is in no file")
+        self.assertEqual(with_quote[0], "MISSING")
+        self.assertEqual(with_quote, (without[0], without[1]))
+
+    def test_excluded_same_code_with_or_without_quote(self):
+        self.excluded_same_as_absent("evidence/secret.md", "The vault code is 4417.\n", "vault code is 4417")
+
+    def test_secret_file_same_as_absent_quote(self):
+        self.excluded_same_as_absent("keys.md", "token AKIA" + "X" * 16 + " here\n", "token AKIA")
+
+    def test_no_rule_file_same_as_absent_quote(self):
+        self.excluded_same_as_absent("notes.txt", "Plain text the rules do not match.\n", "Plain text")
+
+    def test_excluded_path_is_not_read(self):
+        (Path(self.tmp.name) / "logs").mkdir()
+        (Path(self.tmp.name) / "logs" / "x.md").write_text("A change gets\n")
+        with mock.patch.object(verify.corpus, "read_source", side_effect=AssertionError("read")):
+            self.assertEqual(self.run_verify("logs/x.md", "A change gets", set()), "MISSING")
+            self.assertEqual(self.run_verify("doc/../logs/x.md", "A change gets", set()), "MISSING")
+
+    def test_symlink_out_of_root_refused(self):
+        outside = tempfile.TemporaryDirectory(dir=SCRATCH)
+        self.addCleanup(outside.cleanup)
+        target = Path(outside.name) / "private.md"
+        target.write_text("A change gets\n")
+        link = Path(self.tmp.name) / "link.md"
+        try:
+            link.symlink_to(target)
+        except OSError as exc:
+            self.skipTest("cannot create a symlink here: %s" % exc)
+        with mock.patch.object(verify.corpus, "read_source", side_effect=AssertionError("read")):
+            self.assertEqual(self.run_verify("link.md", "A change gets", {self.sha}), "GONE")
+
+    def test_symlink_to_excluded_file_inside_root(self):
+        (Path(self.tmp.name) / "evidence").mkdir()
+        (Path(self.tmp.name) / "evidence" / "e.md").write_text("A change gets\n")
+        link = Path(self.tmp.name) / "alias.md"
+        try:
+            link.symlink_to(Path(self.tmp.name) / "evidence" / "e.md")
+        except OSError as exc:
+            self.skipTest("cannot create a symlink here: %s" % exc)
+        self.assertEqual(self.run_verify("alias.md", "A change gets", set()), "MISSING")
 
     def test_outside_root_is_refused(self):
         with self.assertRaises(PermissionError):

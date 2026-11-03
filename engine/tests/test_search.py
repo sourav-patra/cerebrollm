@@ -49,6 +49,19 @@ class TestRecency(unittest.TestCase):
         self.assertLessEqual(cfg.search["recency"]["weight"], 0.005)
 
 
+class TestExcluded(unittest.TestCase):
+    def test_excluded_path_not_returned(self):
+        from unittest import mock
+        from llama_index.core.schema import NodeWithScore
+        nodes = [NodeWithScore(node=TextNode(text="kept", metadata={"path": "notes/ok.md"}), score=0.5),
+                 NodeWithScore(node=TextNode(text="hidden", metadata={"path": "notes/evidence/x.md"}), score=0.9)]
+        index = mock.Mock()
+        index.as_retriever.return_value.retrieve.return_value = nodes
+        with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index),                 mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
+            paths = [r["path"] for r in search.run_search(config.load(), "change", k=8, mode="vector")]
+        self.assertEqual(paths, ["notes/ok.md"])
+
+
 def hit(rank, path, also_at=()):
     return {"rank": rank, "score": 0.0312, "tier": "T1", "status": "locked", "path": path,
             "line_start": 1, "line_end": 3, "ref": "origin/main", "project": "example",
