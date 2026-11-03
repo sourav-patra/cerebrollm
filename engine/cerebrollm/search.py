@@ -97,6 +97,28 @@ def recency_multiplier(mtime, now, weight, half_life_days):
     return 1.0 + weight * 0.5 ** (age_days / half_life_days)
 
 
+def _allowed(cfg, key):
+    """(root, path, tier, status) for an also_at key the index may show, else None."""
+    name, _, path = key.partition(":")
+    hit = rules.classify(name, path, cfg.rules) if name in cfg.roots else None
+    if hit is None or rules.never_reason(path, cfg.never):
+        return None
+    return name, path, hit[0], hit[1]
+
+
+def _shown(cfg, meta, all_status):
+    """meta as the hit is shown: unchanged when its path is allowed; when a never-index rule now excludes it, the
+    first allowed collapsed copy (same bytes, so the same line span and sha256); None when no copy is allowed."""
+    if not rules.never_reason(meta.get("path") or "", cfg.never):
+        return meta
+    for key in meta.get("also_at") or []:
+        copy = _allowed(cfg, key)
+        if copy and (all_status or copy[3] in ACTIVE_STATUS):
+            rest = [k for k in meta["also_at"] if k != key]
+            return {**meta, "root": copy[0], "path": copy[1], "tier": copy[2], "status": copy[3], "also_at": rest}
+    return None
+
+
 def copy_key(meta):
     """The "root:path" form used in also_at; the bare path when the root is unknown."""
     root, path = meta.get("root"), meta.get("path")
@@ -155,8 +177,8 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     now = datetime.datetime.now(datetime.timezone.utc)
     out = []
     for h in hits:
-        meta = h.node.metadata
-        if rules.never_reason(meta.get("path") or "", cfg.never):   # a stale row for a now-excluded path
+        meta = _shown(cfg, h.node.metadata, all_status)   # a stale row for a now-excluded path
+        if meta is None:
             continue
         score = h.score or 0.0
         if not all_status:
@@ -176,7 +198,7 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
             "ref": meta.get("ref"), "title": meta.get("title"), "heading_path": meta.get("heading_path", ""),
             "line_start": first, "line_end": last, "source_unchanged": fresh,
             "sha256": meta.get("sha256"), "mtime": meta.get("mtime"),
-            "also_at": [p for p in entry["also_at"] if not rules.never_reason(p.split(":", 1)[-1], cfg.never)],
+            "also_at": [k for k in entry["also_at"] if _allowed(cfg, k)],
             "text": o["node"].get_content(),
         })
     return results

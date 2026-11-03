@@ -61,6 +61,38 @@ class TestExcluded(unittest.TestCase):
             paths = [r["path"] for r in search.run_search(config.load(), "change", k=8, mode="vector")]
         self.assertEqual(paths, ["notes/ok.md"])
 
+    def search_all_modes(self, meta, cfg=None):
+        from unittest import mock
+        from llama_index.core.schema import NodeWithScore
+        index = mock.Mock()
+        index.as_retriever.return_value.retrieve.return_value = [
+            NodeWithScore(node=TextNode(text="kept", metadata=meta), score=0.5)]
+        hits = {}
+        with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index), \
+                mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
+            for mode in ("lexical", "vector", "hybrid"):
+                hits[mode] = search.run_search(cfg or self.cfg(), "change", k=8, mode=mode)
+        return hits
+
+    def cfg(self):
+        data = config.load().data
+        data["root"] = [{"name": "fx", "kind": "dir", "path": "/nonexistent", "ref": "file"}]
+        data["rule"] = [{"root": "fx", "glob": "**/*.md", "tier": "T2", "status": "current"}]
+        return config.Config(data, "test")
+
+    def test_excluded_primary_shows_an_allowed_copy(self):
+        meta = {"root": "fx", "path": "shared/logs/primary.md", "tier": "T1", "status": "current", "ref": "file",
+                "also_at": ["fx:shared/logs/other.md", "fx:shared/ok.md"]}
+        for mode, hits in self.search_all_modes(meta).items():
+            self.assertEqual([(h["path"], h["tier"], h["also_at"]) for h in hits],
+                             [("shared/ok.md", "T2", [])], mode)
+
+    def test_root_name_with_a_colon_is_refused(self):
+        data = config.load().data
+        data["root"] = [{"name": "r:x", "kind": "dir", "path": "/nonexistent", "ref": "file"}]
+        with self.assertRaises(ValueError):
+            config.Config(data, "test")
+
     def test_excluded_copy_left_out_of_also_at(self):
         from unittest import mock
         from llama_index.core.schema import NodeWithScore
@@ -70,7 +102,7 @@ class TestExcluded(unittest.TestCase):
             NodeWithScore(node=TextNode(text="kept", metadata=meta), score=0.5)]
         with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index), \
                 mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
-            hits = search.run_search(config.load(), "change", k=8, mode="vector")
+            hits = search.run_search(self.cfg(), "change", k=8, mode="vector")
         self.assertEqual(hits[0]["also_at"], ["fx:notes/copy.md"])
 
 
