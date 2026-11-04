@@ -4,7 +4,11 @@ Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm ind
 
 ## Unreleased
 
-Documentation only; no re-index needed.
+No re-index needed.
+
+- `verify` (command and MCP tool) answers for an excluded path exactly as for an absent quote: `MISSING` with the same detail. Never-index and tier rules are checked on the canonical path before the file is read; a file with a secret pattern is checked after. A path that leaves its root, also through a link, is `GONE` without a read. Before this, `verify` read any file under a registered root and told whether a quote was in it, including never-index folders (LLD issue I-01).
+- For a git root, `verify` refuses a `ref` that git could read as an option or that names no commit, and answers `GONE` without reading (LLD issue I-03). A tree id as `ref` no longer reaches a file under another path.
+- `search` drops a hit whose root is no longer configured or whose path no tier rule or a never-index rule matches, and leaves copies whose path is excluded, or whose root is not configured, out of `also_at`, so a stale index row for a newly excluded folder is not returned; a re-index brings back an allowed copy of a dropped hit. A root name may not contain `:`.
 
 - README: a walk-through image, two figures (`docs/site/context.svg`, `docs/site/parts.svg`), a requirements table, an MCP setup section with host examples and a short results table with a documentation table pointing to the details. The full results and limits moved to `docs/RESULTS.md`, troubleshooting to `docs/TROUBLESHOOTING.md`, and the repository map and provenance to `docs/REPOSITORY.md`. The product page shows the same figures. The README follows the Entry pages rule: a problem section with one line of evidence, key features, and paragraphs of at most 60 words. `DOC-PHILOSOPHY.md` is updated from the shared copy, which adds that rule.
 - Documentation rules now live where contributors look: a "Writing docs" section in `CONTRIBUTING.md`, one line in a new `AGENTS.md`, the README lint as `scripts/readme_lint.py` (version 7) and a `docs-lint` workflow that runs it on every pull request. `DOC-PHILOSOPHY.md` and its checksum file are removed. README headings are now Why, Features, Quick start and Docs.

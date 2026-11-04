@@ -10,7 +10,7 @@ from llama_index.core.schema import NodeWithScore
 from llama_index.core.vector_stores.types import (
     FilterOperator, MetadataFilter, MetadataFilters, VectorStoreQueryMode)
 
-from . import corpus, store
+from . import corpus, rules, store
 
 ACTIVE_STATUS = ["locked", "current"]
 TSQUERY_OPERATORS = re.compile(r"[&|!():*<>'\"\\]")
@@ -97,6 +97,13 @@ def recency_multiplier(mtime, now, weight, half_life_days):
     return 1.0 + weight * 0.5 ** (age_days / half_life_days)
 
 
+def _allowed(cfg, key):
+    """True for an also_at key ("root:path") of a configured root whose path the index may hold."""
+    name, _, path = key.partition(":")
+    return (name in cfg.roots and not rules.never_reason(path, cfg.never)
+            and rules.classify(name, path, cfg.rules) is not None)
+
+
 def copy_key(meta):
     """The "root:path" form used in also_at; the bare path when the root is unknown."""
     root, path = meta.get("root"), meta.get("path")
@@ -156,6 +163,11 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     out = []
     for h in hits:
         meta = h.node.metadata
+        # shortcut: a stale row whose root, tier rule or never-index rule no longer allows its path is dropped with
+        # its copies; promoting a copy needs its own supersession status and ref, which the row does not hold.
+        # A re-index restores an allowed copy.
+        if not _allowed(cfg, copy_key(meta)):
+            continue
         score = h.score or 0.0
         if not all_status:
             score *= boost.get(meta.get("tier"), 1.0)
@@ -173,7 +185,8 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
             "status": meta.get("status"), "project": meta.get("project"), "path": meta.get("path"),
             "ref": meta.get("ref"), "title": meta.get("title"), "heading_path": meta.get("heading_path", ""),
             "line_start": first, "line_end": last, "source_unchanged": fresh,
-            "sha256": meta.get("sha256"), "mtime": meta.get("mtime"), "also_at": entry["also_at"],
+            "sha256": meta.get("sha256"), "mtime": meta.get("mtime"),
+            "also_at": [k for k in entry["also_at"] if _allowed(cfg, k)],
             "text": o["node"].get_content(),
         })
     return results
