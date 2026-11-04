@@ -82,6 +82,11 @@ since indexing), `MISSING` (quote absent), `GONE` (file absent). Exit 0 only for
 the four outcomes: `UNINDEXED` (quote present but the path is not in the index; exit 1). `PATH` may be
 absolute or the relative path that `search` prints.
 
+A path the index never holds answers exactly as an absent quote, `MISSING` with the same detail: a
+never-index rule or no tier rule decides this from the path before the file is read, and a file with a
+secret pattern after it is read. `UNINDEXED` therefore means an eligible file that is not indexed yet.
+Links and `..` are resolved first; a path that leaves its root is `GONE` and is not read.
+
 ## ask
 
 `cerebrollm ask` runs default search for the top 20, reranks them with the cross-encoder

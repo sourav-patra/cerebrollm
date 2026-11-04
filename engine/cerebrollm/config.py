@@ -28,6 +28,9 @@ class Config:
         self.search = data["search"]
         self.synonyms = data.get("synonyms", {})   # abbreviation -> phrase, both ways, lexical arm only
         self.roots = {r["name"]: r for r in data["root"]}
+        for name in self.roots:   # also_at keys are "root:path", so a colon in a name would make them ambiguous
+            if ":" in name:
+                raise ValueError("root name must not contain ':': %r" % name)
         self.rules = data["rule"]
         self.never = data["never"]
         self.project_names = data.get("project_names", {})

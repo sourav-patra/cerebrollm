@@ -49,6 +49,72 @@ class TestRecency(unittest.TestCase):
         self.assertLessEqual(cfg.search["recency"]["weight"], 0.005)
 
 
+class TestExcluded(unittest.TestCase):
+    def test_excluded_path_not_returned(self):
+        for meta in ({"root": "fx", "path": "notes/evidence/x.md", "ref": "file"},
+                     {"root": "fx", "path": "notes/logs/y.md", "ref": "file"}):
+            for mode, hits in self.search_all_modes(meta).items():
+                self.assertEqual(hits, [], mode)
+        for mode, hits in self.search_all_modes({"root": "fx", "path": "notes/ok.md", "ref": "file"}).items():
+            self.assertEqual([h["path"] for h in hits], ["notes/ok.md"], mode)
+
+    def search_all_modes(self, meta, cfg=None, all_status=False):
+        from unittest import mock
+        from llama_index.core.schema import NodeWithScore
+        index = mock.Mock()
+        index.as_retriever.return_value.retrieve.return_value = [
+            NodeWithScore(node=TextNode(text="kept", metadata=meta), score=0.5)]
+        hits = {}
+        with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index), \
+                mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
+            for mode in ("lexical", "vector", "hybrid"):
+                hits[mode] = search.run_search(cfg or self.cfg(), "change", k=8, mode=mode, all_status=all_status)
+        return hits
+
+    def cfg(self):
+        data = config.load().data
+        data["root"] = [{"name": "fx", "kind": "dir", "path": "/nonexistent", "ref": "file"}]
+        data["rule"] = [{"root": "fx", "glob": "**/*.md", "tier": "T2", "status": "current"}]
+        return config.Config(data, "test")
+
+    def test_excluded_primary_is_dropped_in_every_mode(self):
+        meta = {"root": "fx", "path": "shared/logs/primary.md", "tier": "T1", "status": "current", "ref": "file",
+                "also_at": ["fx:shared/ok.md"]}
+        for mode, hits in self.search_all_modes(meta).items():
+            self.assertEqual(hits, [], mode)
+
+    def test_primary_without_a_root_or_tier_rule_is_dropped(self):
+        for meta in ({"root": "gone", "path": "shared/ok.md", "ref": "file"},
+                     {"root": "fx", "path": "shared/ok.txt", "ref": "file"}):
+            for all_status in (False, True):
+                for mode, hits in self.search_all_modes(meta, all_status=all_status).items():
+                    self.assertEqual(hits, [], (meta["root"], mode, all_status))
+
+    def test_also_at_keys_of_unknown_roots_or_excluded_paths_are_dropped(self):
+        meta = {"root": "fx", "path": "shared/ok.md", "tier": "T2", "status": "current", "ref": "file",
+                "also_at": ["fx:a/logs/b.md", "gone:a.md", "fx:a/c.md"]}
+        for mode, hits in self.search_all_modes(meta).items():
+            self.assertEqual(hits[0]["also_at"], ["fx:a/c.md"], mode)
+
+    def test_root_name_with_a_colon_is_refused(self):
+        data = config.load().data
+        data["root"] = [{"name": "r:x", "kind": "dir", "path": "/nonexistent", "ref": "file"}]
+        with self.assertRaises(ValueError):
+            config.Config(data, "test")
+
+    def test_excluded_copy_left_out_of_also_at(self):
+        from unittest import mock
+        from llama_index.core.schema import NodeWithScore
+        meta = {"root": "fx", "path": "notes/ok.md", "also_at": ["fx:notes/copy.md", "fx:notes/logs/copy.md"]}
+        index = mock.Mock()
+        index.as_retriever.return_value.retrieve.return_value = [
+            NodeWithScore(node=TextNode(text="kept", metadata=meta), score=0.5)]
+        with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index), \
+                mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
+            hits = search.run_search(self.cfg(), "change", k=8, mode="vector")
+        self.assertEqual(hits[0]["also_at"], ["fx:notes/copy.md"])
+
+
 def hit(rank, path, also_at=()):
     return {"rank": rank, "score": 0.0312, "tier": "T1", "status": "locked", "path": path,
             "line_start": 1, "line_end": 3, "ref": "origin/main", "project": "example",
