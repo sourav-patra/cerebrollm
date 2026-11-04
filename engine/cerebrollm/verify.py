@@ -47,7 +47,8 @@ def run_verify(cfg, path, quote, ref=None):
             seen_gone = True
             continue
         text = data.decode("utf-8", "replace")
-        if _normalise(quote) not in _normalise(text):
+        needle = _normalise(quote)
+        if not needle or needle not in _normalise(text):  # "" is inside every string
             return "MISSING", "quote not found in %s@%s" % (rel, rref)
         sha = hashlib.sha256(data).hexdigest()
         indexed = _indexed_sha(cfg, root["name"], rel, rref)
