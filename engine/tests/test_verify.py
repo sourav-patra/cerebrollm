@@ -36,6 +36,13 @@ class TestVerify(unittest.TestCase):
     def test_missing(self):
         self.assertEqual(self.run_verify("doc.md", "a made-up sentence", {self.sha}), "MISSING")
 
+    def test_empty_quote_is_missing(self):
+        for quote in ("", " \n\t ", "\u00a0\u2003"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING")
+
+    def test_empty_quote_on_absent_file_is_gone(self):
+        self.assertEqual(self.run_verify("nope.md", "", {self.sha}), "GONE")
+
     def test_changed(self):
         self.assertEqual(self.run_verify("doc.md", "A change gets", {"0" * 64}), "CHANGED")
 
