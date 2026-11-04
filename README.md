@@ -3,7 +3,7 @@
 Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.` Only the quote is checked, not the rest of the answer.
 
 [![tests](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml/badge.svg)](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml)
-PyPI: [cerebrollm 0.1.0](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
+PyPI: [cerebrollm 0.1.1](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
 
 [Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Use it from an AI app (MCP)](#use-it-from-an-ai-app-mcp) · [Results](#results-at-a-glance) · [Docs](#docs) · [Product page](https://sourav-patra.github.io/cerebrollm/)
 
@@ -21,7 +21,7 @@ For people who run local models, or let a cloud model read their documents, and 
 
 Evidence: with retrieval and a citation instruction, the small local model `phi4` answered 47 of 60 questions right instead of 1 (model-graded, majority of 5 runs, `eval/RESULTS.md`).
 
-Status: 0.1.0, early research.
+Status: 0.1.1, early research.
 
 The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
 

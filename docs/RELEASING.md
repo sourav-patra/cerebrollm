@@ -14,7 +14,8 @@ Before a tag, all of these pass:
    steps 2 and 3 from the repository root.
 2. The leak scan over the release tree passes: `gitleaks dir . --redact` exits 0;
    `git log --all --format='%an <%ae>%n%cn <%ce>' | sort -u` lists only the
-   project's noreply identity; `grep -rIFf NEEDLES .` prints nothing, where
+   project's noreply identity and `GitHub <noreply@github.com>`, the committer of
+   merges made on GitHub; `grep -rIFf NEEDLES .` prints nothing, where
    NEEDLES is the owner's file of private names and paths, kept outside the
    repository. The owner saves the three outputs and attaches them to the
    release pull request.
