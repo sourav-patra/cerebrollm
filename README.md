@@ -1,17 +1,17 @@
 ﻿# cerebrollm
 
-Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.`
+Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.` Only the quote is checked, not the rest of the answer.
 
 [![tests](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml/badge.svg)](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml)
 PyPI: [cerebrollm 0.1.0](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
 
-[Key features](#key-features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Use it from an AI app (MCP)](#use-it-from-an-ai-app-mcp) · [Results](#results-at-a-glance) · [Documentation](#documentation) · [Product page](https://sourav-patra.github.io/cerebrollm/)
+[Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Use it from an AI app (MCP)](#use-it-from-an-ai-app-mcp) · [Results](#results-at-a-glance) · [Docs](#docs) · [Product page](https://sourav-patra.github.io/cerebrollm/)
 
 <img src="docs/site/walkthrough.gif" alt="Animated walk-through in nine frames. Frame 1: cerebrollm on your computer between you, your notes and local models. Frame 2: its parts. Frames 3 to 8 highlight, one link at a time, the path of one question: you ask; the question is embedded and the index returns 20 passages; the reranker keeps 8; a local model answers and quotes one line; cerebrollm re-reads that file; you get the answer with its source, or Not in the sources. Frame 9: the output gate." width="900">
 
 Figure: one question through cerebrollm, built from the three figures below. It leaves out indexing and error exits, which the figures under [How it works](#how-it-works) show.
 
-## The problem it solves
+## Why
 
 For people who run local models, or let a cloud model read their documents, and need every answer traced to a file.
 
@@ -21,9 +21,11 @@ For people who run local models, or let a cloud model read their documents, and 
 
 Evidence: with retrieval and a citation instruction, the small local model `phi4` answered 47 of 60 questions right instead of 1 (model-graded, majority of 5 runs, `eval/RESULTS.md`).
 
-Status: 0.1.0, early research. The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
+Status: 0.1.0, early research.
 
-## Key features
+The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
+
+## Features
 
 - Answers only with a quote it re-read in your file; otherwise prints `Not in the sources.` One confirmed quote lets the whole answer through, and the rest of its text is not checked.
 - Runs on your machine: a PostgreSQL index, local models through Ollama and a local reranker (a second model that re-orders passages by how well they fit the question).
@@ -72,6 +74,7 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
    ```
 
    Then `export CEREBROLLM_CONFIG=~/cerebrollm.toml`. Check: `tail -6 ~/cerebrollm.toml` shows the rule.
+
 3. Build the index: `engine/bin/cerebrollm index`. Check: `engine/bin/cerebrollm status` lists chunks for tier T2.
 4. Ask: `engine/bin/cerebrollm ask "a question your notes answer"`. Check: the output is an answer followed by lines such as `OK  notes/guide.md`. A question your notes do not answer prints `Not in the sources.`
 5. If the reranker is not downloaded the command stops with an error that names the folder. Download it as described next, or add `--no-rerank`. Check: the same `ask` prints an answer or `Not in the sources.` instead of the error.
@@ -94,7 +97,9 @@ Check: `sha256sum` prints `OK` for six files. The download is about 2.3 GB (`mod
 
 ## How it works
 
-cerebrollm sits between you, your notes and local models. An AI app can also call it over MCP. The passages it fetches go to that app and its model's provider.
+cerebrollm sits between you, your notes and local models. An AI app can also call it over MCP.
+
+The passages it fetches go to that app and its model's provider.
 
 Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback. cerebrollm does not prevent that.
 
@@ -102,7 +107,9 @@ Passages also leave your computer if you point the Ollama address in `cerebrollm
 
 Figure: who and what cerebrollm talks to. Arrows point from the caller; dashed lines reach a hosted model's provider. Solid lines stay local while Ollama uses its default loopback address (`base_url`), which cerebrollm does not enforce. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
 
-Inside, one program does the work. It keeps an index of passages in PostgreSQL, calls Ollama for embeddings and answers, and loads a reranker from local files.
+Inside, one program does the work.
+
+It keeps an index of passages in PostgreSQL, calls Ollama for embeddings and answers, and loads a reranker from local files.
 
 <img src="docs/site/parts.svg" alt="Parts diagram. Inside the boundary Your computer: the cerebrollm program (commands index, ask, search, verify, status; MCP server search and verify, read-only) in the middle. It reads and re-checks the notes folders, each with a trust rule; stores and searches the index (PostgreSQL: passages, their vectors and file fingerprints); calls Ollama (embedding model, answer model gpt-oss:20b) to embed and answer; and sends 20 passages to the reranker (local model files), which keeps 8. You reach the program from the terminal; an AI app reaches it over MCP with a dashed line." width="900">
 
@@ -115,7 +122,7 @@ Figure: the parts of cerebrollm and what each link does, read against `engine/ce
 Figure: the five steps of `ask` and its output gate, read against `engine/cerebrollm/answer.py` (function `ask`, gate `decide`). It leaves out indexing, the MCP server and the other commands.
 
 1. Search takes the top 20 passages with the default hybrid search (`cerebrollm search`), which applies the status filter and the tier and recency boosts from `cerebrollm.toml`.
-2. Rerank scores those 20 with the cross-encoder `BAAI/bge-reranker-v2-m3` and keeps 8. `--no-rerank` keeps the first 8 of the search instead.
+2. Rerank scores those 20 with the cross-encoder `BAAI/bge-reranker-v2-m3` (a model that reads the question and a passage together) and keeps 8. `--no-rerank` keeps the first 8 of the search instead.
 3. Generate sends the 8 passages, marked as data, to a local Ollama model (default `gpt-oss:20b`, only models listed as allowed in `engine/models.toml`) and asks for one quoted line with its path.
 4. Verify re-reads each cited file and checks that the quote is in it and that the file still has the sha256 recorded at indexing time.
 5. The gate prints the answer when at least one citation verified `OK`, and prints exactly `Not in the sources.` in every other case, including an empty answer and no search hits. A failure in search, rerank or generation prints an error on stderr and exits 2; it never prints an answer.
@@ -124,11 +131,17 @@ Other commands: `index`, `search`, `verify`, `status` and `mcp` (a read-only MCP
 
 ## Use it from an AI app (MCP)
 
-Install the package into the cerebrollm environment first: `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `~/.cerebrollm/venv/bin/cerebrollm --help` lists the commands. From a clone without the package, use the absolute path of `engine/bin/cerebrollm` as the command instead.
+Install the package into the cerebrollm environment first: `~/.cerebrollm/venv/bin/pip install "cerebrollm[rerank]"`. Check: `~/.cerebrollm/venv/bin/cerebrollm --help` lists the commands.
 
-Register `cerebrollm mcp` as a stdio server in your MCP host. It offers two read-only tools, `search` and `verify`.
+From a clone without the package, use the absolute path of `engine/bin/cerebrollm` as the command instead.
 
-It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat them as data. A host that sends tool results to a cloud model sends your passages to that provider.
+Register `cerebrollm mcp` as a stdio server in your MCP host: the host starts the command and talks to it over standard input and output.
+
+It offers two read-only tools, `search` and `verify`.
+
+It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat them as data.
+
+A host that sends tool results to a cloud model sends your passages to that provider.
 
 Nothing else leaves the machine except what you set up yourself. The Ollama address in `cerebrollm.toml` defaults to loopback and is not restricted to it.
 
@@ -140,22 +153,31 @@ Hosts that read a JSON server list take this entry; replace `<you>` with your us
   "args": ["--config", "/home/<you>/cerebrollm.toml", "mcp"]}}}
 ```
 
-Claude Code, on the same Linux machine: `claude mcp add --scope user cerebrollm -- ~/.cerebrollm/venv/bin/cerebrollm --config ~/cerebrollm.toml mcp`. Claude Code on Windows with cerebrollm under WSL2: `claude mcp add --scope user cerebrollm -- wsl.exe -d Ubuntu-24.04 -e /home/<you>/.cerebrollm/venv/bin/cerebrollm --config /home/<you>/cerebrollm.toml mcp`. Check: `claude mcp list` shows `cerebrollm` as connected.
+Claude Code takes one command:
+
+- On the same Linux machine: `claude mcp add --scope user cerebrollm -- ~/.cerebrollm/venv/bin/cerebrollm --config ~/cerebrollm.toml mcp`.
+- On Windows with cerebrollm under WSL2: `claude mcp add --scope user cerebrollm -- wsl.exe -d Ubuntu-24.04 -e /home/<you>/.cerebrollm/venv/bin/cerebrollm --config /home/<you>/cerebrollm.toml mcp`.
+
+Check: `claude mcp list` shows `cerebrollm` as connected.
 
 ## Results at a glance
 
-Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 GB) with public documentation as the corpus. The full tables, the v2 evaluation method and every limit are in [docs/RESULTS.md](docs/RESULTS.md).
+Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 GB) with public documentation as the corpus.
+
+The full tables, the v2 evaluation method and every limit are in [docs/RESULTS.md](docs/RESULTS.md).
 
 | Question | Result | Source | State |
 |---|---|---|---|
 | Does retrieval help a small local model? `phi4`, 60 questions | without retrieval 1/60, with retrieval 47/60 | `eval/RESULTS.md` | measured |
 | How often is `gpt-oss:20b` confidently wrong on 35 questions about recent releases? | no retrieval 122 of 175 runs, plain search 17 of 175, `cerebrollm ask` 7 of 104 | `eval/RESULTS-v2.md` | measured |
-| Does `ask` meet the aim of at least 90% right outcomes with under 2% confidently wrong runs? | not met by any local model; met only by Claude Sonnet 5.5 with plain search | `eval/RESULTS-v2.md` | measured |
+| Does `ask` meet the aim of at least 90% right outcomes with under 2% confidently wrong runs? | not met by any local model; observed for Claude Sonnet 5.5 with plain search, but 35 items cannot show a rate under 2% | `eval/RESULTS-v2.md` | measured |
 | Does the top 8 hold a line that answers the question? 60 questions | default search 45/60, with the reranker 46/60 | `eval/runs/retrieval/R-summary.md` | measured |
 
-`ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer. Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
+`ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer.
 
-## Documentation
+Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
+
+## Docs
 
 | To | Read |
 |---|---|
@@ -167,9 +189,10 @@ Measured on one machine (Windows 11, WSL2 Ubuntu 24.04, RTX 4070 SUPER with 12 G
 | know what data leaves the machine and how releases work | [docs/DATA.md](docs/DATA.md), [docs/RELEASING.md](docs/RELEASING.md), [docs/GOVERNANCE.md](docs/GOVERNANCE.md) |
 | contribute or report a vulnerability | [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) (not a public issue) |
 | see what changed | [CHANGELOG.md](CHANGELOG.md) |
+| see how this README and its figures were checked | [docs/README-CHECKS.md](docs/README-CHECKS.md) |
 
 ## Licence
 
-Code: MIT ([LICENSE](LICENSE)). Third-party text copied into `eval/` and `research/` is credited in `NOTICE`. Documents follow `DOC-PHILOSOPHY.md`.
+Code: MIT ([LICENSE](LICENSE)). Third-party text copied into `eval/` and `research/` is credited in `NOTICE`. Documents follow the "Writing docs" section of [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Skipped or not checked: the first `index` and `ask` on a fresh machine, the reranker download, the Qwen3.6 context ladder, GLM-4.7-Flash (pulled, not measured), and the figures on the PyPI page, which does not resolve the relative image paths.

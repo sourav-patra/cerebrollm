@@ -4,3 +4,6 @@ engine/bin/* text eol=lf
 
 # Locked documents: keep the bytes the lock hashed, on every platform.
 docs/design/** -text
+
+# The README lint, byte-identical to the locked version 7 (sha256 3dca65ba).
+scripts/readme_lint.py -text
