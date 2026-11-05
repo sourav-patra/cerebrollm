@@ -15,4 +15,6 @@ The POLICY's line "Documentation follows DOC-PHILOSOPHY.md at the repository roo
 
 The POLICY's release check that the git log lists only the project's noreply identity is superseded by step 2 of `docs/RELEASING.md` since release 0.1.1, because merges made on GitHub have `GitHub <noreply@github.com>` as committer, and step 2 also allows that identity. The locked POLICY bytes are unchanged; the owner revises that check in the next POLICY lock.
 
+Step 2 also removes complete lines the owner accepted as upstream text from the POLICY's private-name scan. The POLICY bytes stay unchanged here too, and the owner revises that scan in the next POLICY lock.
+
 Skipped or not checked: the hashes were recomputed on 2026-10-30 from the files in this folder and match the lock records; nothing else was checked.

@@ -15,10 +15,14 @@ Before a tag, all of these pass:
 2. The leak scan over the release tree passes: `gitleaks dir . --redact` exits 0;
    `git log --all --format='%an <%ae>%n%cn <%ce>' | sort -u` lists only the
    project's noreply identity and `GitHub <noreply@github.com>`, the committer of
-   merges made on GitHub; `grep -rIFf NEEDLES .` prints nothing, where
-   NEEDLES is the owner's file of private names and paths, kept outside the
-   repository. The owner saves the three outputs and attaches them to the
-   release pull request.
+   merges made on GitHub; `grep -rIFf NEEDLES . | grep -vxFf ACCEPTED` prints
+   nothing and neither `grep` reports an error. NEEDLES is the owner's file of
+   private names and paths. ACCEPTED is the owner's file of complete scan lines
+   already read and accepted as upstream text. Both stay outside the repository.
+   As of 0.1.1, ACCEPTED holds three LlamaIndex lines: a package heading and two
+   manifest paths. A changed line that still matches NEEDLES prints again unless
+   ACCEPTED holds the new line. The owner saves the three outputs and attaches
+   them to the release pull request.
 3. `python -m build` makes the sdist and wheel; the wheel installs into a new
    virtual environment, and `cerebrollm --help` and `cerebrollm ask --help` exit 0.
 4. The PRD, TRD, LLD and POLICY are locked and `docs/LOCKS.md` is current.
