@@ -33,6 +33,65 @@ class TestVerify(unittest.TestCase):
     def test_ok_absolute_path(self):
         self.assertEqual(self.run_verify(str(self.file), "A change gets", {self.sha}), "OK")
 
+    def test_ok_when_a_model_changes_only_markdown(self):
+        self.file.write_text("* **Bold** rule with `code` and [a link](http://x.example) here\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("Bold rule with code and a link here", "**Bold** rule with code.", "* Bold rule with `code`,"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
+
+    def test_marks_inside_a_word_are_content(self):
+        self.file.write_text("Set require_auth to true, 10**24 bytes and **this** too, not `FOO_` or `BAR*`.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        self.assertEqual(self.run_verify("doc.md", "Set requireauth to true", {self.sha}), "MISSING")
+        self.assertEqual(self.run_verify("doc.md", "true, 1024 bytes", {self.sha}), "MISSING")
+        self.assertEqual(self.run_verify("doc.md", "**Set** require_auth to true, 10**24 bytes and this too", {self.sha}), "OK")
+        for quote in ("not FOO or BAR.", "not FOO_ or BAR."):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        self.assertEqual(self.run_verify("doc.md", "not FOO_ or BAR*.", {self.sha}), "OK")
+
+    def test_a_stripped_quote_matches_whole_words_only(self):
+        self.file.write_text("Use port 8080.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        self.assertEqual(self.run_verify("doc.md", "Use port 80.", {self.sha}), "MISSING")
+        self.file.write_text("The maximum is 10**24 bytes, version 1.2.3, range 10-20, ratio a/b, 10,000 items and (`done`).\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("The maximum is 10.", "range 10.", "ratio a.", "and 10.", "1.2.3, range 10,"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        self.assertEqual(self.run_verify("doc.md", "**The maximum** is 10**24 bytes,", {self.sha}), "OK")
+        self.assertEqual(self.run_verify("doc.md", "10,000 items and (done)", {self.sha}), "OK")
+        self.file.write_text("Use port 8080.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        self.assertEqual(self.run_verify("doc.md", "Use port 8080,", {self.sha}), "OK")
+
+    def test_markup_alone_or_other_words_stay_missing(self):
+        for quote in ("***", "...", "``", "two review rounds after merge", "review rounds two"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+
+    def test_an_exact_quote_must_not_cut_a_word_or_number(self):
+        self.file.write_text("Use port 8080 for the server.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("Use port 80", "se port 8080", "port 8080 for the serv"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        for quote in ("Use port 8080", "port 8080 for the server.", "8080 for"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
+
+    def test_identifiers_and_numbers_are_not_cut(self):
+        self.file.write_text("Set require_auth_extra on, use port 80.5 or 1,000 items.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("Set require_auth", "use port 80.", "use port 80", "or 1 items", "port 80.5 or 1"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        for quote in ("Set require_auth_extra on,", "use port 80.5 or 1,000 items."):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
+
+    def test_combining_marks_belong_to_their_word(self):
+        # the source spells the accent as e plus U+0301; the second word is Devanagari with vowel signs (marks)
+        self.file.write_text("Use cafe\u0301ine daily and \u0915\u093f\u0924\u093e\u092c here.\n", encoding="utf-8")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("Use cafe", "and \u0915", "Use caf"):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        for quote in ("Use caf\u00e9ine daily", "and \u0915\u093f\u0924\u093e\u092c here."):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
+
     def test_missing(self):
         self.assertEqual(self.run_verify("doc.md", "a made-up sentence", {self.sha}), "MISSING")
 
