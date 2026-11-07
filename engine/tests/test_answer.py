@@ -46,7 +46,8 @@ class TestCitations(unittest.TestCase):
         self.assertEqual(answer.extract_citations(GOOD), [("alpha/review.md", QUOTE)])
 
     def test_line_span_in_brackets_is_dropped(self):
-        for tail in ("[alpha/review.md:12]", "[alpha/review.md#L12-30]"):
+        for tail in ("[alpha/review.md:12]", "[alpha/review.md#L12-30]", "[alpha/review.md (lines 14-25)]",
+                     "[alpha/review.md (lines 14-25) > Some > Heading]"):
             self.assertEqual(answer.extract_citations('"%s" %s' % (QUOTE, tail)), [("alpha/review.md", QUOTE)])
 
     def test_curly_quotes_and_duplicates(self):
@@ -134,6 +135,92 @@ class TestAsk(unittest.TestCase):
         self.assertTrue(res["abstained"])
         self.assertEqual(called, [])
 
+    def test_a_term_the_documents_never_name_abstains_before_generation(self):
+        called = []
+        hits = [hit(1, text="Supported types are: `bit` - up to 64,000 dimensions")]
+        cfg = config.load()
+        with mock.patch("cerebrollm.search.run_search", lambda *a, **k: [dict(h) for h in hits]),                 mock.patch.object(rerank, "_model", FakeEncoder()):
+            res = answer.ask(cfg, "What is the maximum for the `bitvec` type?", has=lambda t: False,
+                             generate=lambda p: called.append(p) or GOOD)
+        self.assertTrue(res["abstained"])
+        self.assertEqual(res["absent_terms"], ["bitvec"])
+        self.assertEqual(called, [])
+
+    def test_a_term_found_elsewhere_in_the_corpus_still_asks_the_model(self):
+        res = pipeline(GOOD, ["OK"], has=lambda t: t == "reviewrounds")
+        self.assertFalse(res["abstained"])
+        cfg = config.load()
+        hits = [hit(1, text="alpha text")]
+        with mock.patch("cerebrollm.search.run_search", lambda *a, **k: [dict(h) for h in hits]),                 mock.patch.object(rerank, "_model", FakeEncoder()),                 mock.patch("cerebrollm.answer.run_verify", lambda c, p, q: ("OK", "d")):
+            res = answer.ask(cfg, "What does review_rounds set?", has=lambda t: t == "reviewrounds",
+                             generate=lambda p: GOOD)
+        self.assertFalse(res["abstained"])
+        self.assertEqual(res["absent_terms"], [])
+
+    def test_question_terms_are_identifier_shaped_only(self):
+        q = ("According to the docs, what does OLLAMA_KV_CACHE set, is hnsw.ef_search used by TokenTextSplitter, "
+             "evaluateOptions or --max-retries, e.g. in Node.js 1.2.3 and `bit vec`?")
+        self.assertEqual(answer.question_terms(q), ["ollama_kv_cache", "hnsw.ef_search", "tokentextsplitter",
+                                                    "evaluateoptions", "--max-retries", "node.js", "bit vec", "node"])
+        self.assertEqual(answer.question_terms("How many total parameters does the model have?"), [])
+
+    def test_invented_names_seen_in_live_runs_are_terms(self):
+        cases = {"What is the maximum number of dimensions pgvector supports for the bitvec type?": "bitvec",
+                 "Which promptfoo assertion type computes BERTScore between an output and a reference?": "bertscore",
+                 "Which promptfoo command exports an evaluation to a Parquet file?": "parquet"}
+        for q, term in cases.items():
+            self.assertIn(term, answer.question_terms(q), q)
+            self.assertEqual(answer.absent_terms(None, q, [hit(1, text="`bit` - up to 64,000 dimensions")],
+                                                 has=lambda t: t in ("pgvector", "promptfoo", "assertion", "command")),
+                             [term], q)
+
+    def test_paraphrases_and_spelling_variants_reach_the_model(self):
+        cases = [("Which output format is used?", "Results are JSON."),
+                 ("Does it run on PostgreSQL?", "It needs Postgres 16."),
+                 ("What does `max-retries` default to?", "Set max_retries to 3."),
+                 ("What changed in v1.2 and 0.40.13?", "Version 1.2 adds search."),
+                 ("Which flag sets the OLLAMA-HOST value?", "OLLAMA_HOST sets the address."),
+                 ("What is the output format?", "Results are JSON."),
+                 ("What is the output format?", "Outcomes are serialized as JSON."),
+                 ("What is the return type?", "Retry failures produce an integer."),
+                 ("What is the return type?", "The function produces an integer."),
+                 ("What changed in Version 1.2?", "v1.2 adds search."),
+                 ("What is in release 3.12rc1?", "3.12rc1 adds search.")]
+        for q, text in cases:
+            self.assertEqual(answer.absent_terms(None, q, [hit(1, text=text)], has=lambda t: False), [], q)
+
+    def test_a_kind_word_needs_a_neighbour_written_as_a_name(self):
+        q = "What is the maximum for the bitvec type?"
+        self.assertEqual(answer.absent_terms(None, q, [hit(1, text="bit vectors go up to 64,000")], has=lambda t: False), [])
+        for text in ("`bit` - up to 64,000 dimensions", "The bit type goes up to 64,000 dimensions."):
+            self.assertEqual(answer.absent_terms(None, q, [hit(1, text=text)], has=lambda t: False), ["bitvec"], text)
+
+    def test_grammatical_descriptors_are_never_kind_names(self):
+        self.assertEqual(answer.absent_terms(None, "What is the return type?",
+                                             [hit(1, text="The `retry` function produces an integer.")],
+                                             has=lambda t: False), [])
+        self.assertEqual(answer.absent_terms(None, "What is the output format?",
+                                             [hit(1, text="Results go to `out_dir` as JSON.")],
+                                             has=lambda t: False), [])
+
+    def test_a_name_that_starts_the_sentence_is_a_known_miss(self):
+        # documented limit: a capitalised first word is not taken as a name
+        self.assertEqual(answer.question_terms("Parquet is supported?"), [])
+
+    def test_corpus_lookup_is_used_only_for_names_not_in_the_passages(self):
+        asked = []
+        self.assertEqual(answer.absent_terms(None, "Is the BERTScore metric there?", [hit(1, text="x")],
+                                             has=lambda t: asked.append(t) or False), ["bertscore"])
+        self.assertEqual(sorted(asked), ["bertsco", "bertscore"])
+
+    def test_a_plural_term_matches_its_singular_in_the_documents(self):
+        hits = [hit(1, text="Each Embedding is stored.")]
+        self.assertEqual(answer.absent_terms(None, "How are the Embeddings stored?", hits, has=lambda t: False), [])
+
+    def test_a_term_inside_a_retrieved_passage_needs_no_corpus_lookup(self):
+        hits = [hit(1, text="Set OLLAMA_HOST to bind.")]
+        self.assertEqual(answer.absent_terms(None, "What does OLLAMA_HOST do?", hits, has=lambda t: 1 / 0), [])
+
     def test_prompt_marks_context_as_data(self):
         p = answer.build_prompt("What?", [dict(hit(1, text="body"), path="a/b.md")])
         self.assertIn("<<<BEGIN CONTEXT>>>", p)
@@ -159,7 +246,7 @@ class TestCli(unittest.TestCase):
         rc, out, _ = self.run_cli("review rounds", "--json")
         res = json.loads(out)
         self.assertEqual(rc, 0)
-        self.assertEqual(set(res), {"question", "model", "answer", "abstained", "citations", "hits", "timings"})
+        self.assertEqual(set(res), {"question", "model", "answer", "abstained", "absent_terms", "citations", "hits", "timings"})
         self.assertEqual(res["model"], "gpt-oss:20b")
         self.assertEqual(set(res["citations"][0]), {"path", "quote", "verify", "detail"})
         self.assertEqual(set(res["timings"]), {"search", "rerank", "generate", "verify", "total"})

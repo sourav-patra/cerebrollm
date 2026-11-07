@@ -77,7 +77,10 @@ shows rank, score, tier, status, path, line span, ref, project, heading path, sh
 case the line span may be wrong.
 
 `verify` re-reads the source (file, or `git show REF:PATH`), compares the quote with whitespace
-normalised, and compares the sha256 with the indexed one: `OK`, `CHANGED` (quote present, file changed
+normalised and requires it to start and end on a word boundary (`port 80` does not match `port 8080`).
+When that fails, it compares again with Markdown links, list markers, backticks and paired `*` emphasis
+removed from both, still on word boundaries. Underscores stay, because `FOO_` and `_x` are often content, so
+a quote that drops `__bold__` underscores is `MISSING`. Then it compares the sha256 with the indexed one: `OK`, `CHANGED` (quote present, file changed
 since indexing), `MISSING` (quote absent), `GONE` (file absent). Exit 0 only for `OK`. One addition to
 the four outcomes: `UNINDEXED` (quote present but the path is not in the index; exit 1). `PATH` may be
 absolute or the relative path that `search` prints.
@@ -93,14 +96,31 @@ Links and `..` are resolved first; a path that leaves its root is `GONE` and is 
 `BAAI/bge-reranker-v2-m3` (Apache-2.0; folder and pinned revision in the `[reranker]` section of
 `models.toml`; CUDA when visible, else CPU) to the top 8, and prompts the generator (`--model`, default
 `gpt-oss:20b`; it must be an allowed chat model in `models.toml`, never a `-cloud` name) to quote one line
-and cite its path as `"quote" [path]`. Every citation goes through `verify`. The answer is printed only when
+and cite its path as `"quote" [path]`. Before the generator runs, `ask` applies a name gate, a heuristic.
+It takes the question's name-shaped terms: backticked text, `--flags`, dotted or snake_case names, camelCase
+and PascalCase, BERTScore-style names, and a capitalised word that does not start a sentence (version words
+and version numbers are left out). It also takes the word between an article and a kind of thing ("the bitvec
+type"), but only when a retrieved passage names another thing with the same first three letters, in backticks
+or before a kind word (`bit`, "bit type"): the neighbour a model would answer with instead. A term counts as present when a retrieved passage or any indexed
+chunk holds it with `-`, `_` and `.` ignored, with a plural ending removed, or, for a plain name of 8 or more
+letters, its first 70% (`PostgreSQL` matches `Postgres`). When a term is absent, the output is
+`Not in the sources.` and no model is called. The words return, output, input, data, value, result,
+response, error, file and default are never taken as names in that pattern. Documented limit: any other plain word
+before a kind noun that appears nowhere in the index, while a passage names a neighbour with the same first three
+letters, makes `ask` abstain. Known misses: a name that starts the sentence is not taken as a
+name, other plain words are not checked, and a name the documents spell differently in another way (a typo, a
+translation) makes `ask` abstain. Measured on the evaluation questions with their corpora and no passages, it
+blocked 0 of 150 answerable questions and stopped 76 of 85 unanswerable ones. Replayed on the stored answering
+runs with their retrieved passages, it blocked no answerable run and stopped all 15 runs that answered an
+unanswerable question.
+Every citation goes through `verify`. The answer is printed only when
 at least one citation has code `OK` (a quote shorter than 8 characters is not a citation); otherwise the
 output is exactly `Not in the sources.` An answer that is itself that phrase abstains even if it carries a
 citation. A failure in search, rerank or generation prints an error on stderr and exits 2; it never prints an answer.
-`--json` prints question, model, answer, abstained, citations (path, quote, verify code, detail), the reranked hits
+`--json` prints question, model, answer, abstained, absent_terms (the names the gate found absent, which stopped generation), citations (path, quote, verify code, detail), the reranked hits
 (`search_rank`, `rerank_score`) and timings. The reranker is released before generation so the generator keeps the GPU memory.
 Code: `cerebrollm/answer.py` (the gate is `decide`) and `cerebrollm/rerank.py`; tests in `tests/test_answer.py`.
-Citation format limit: only `"quote" [path]` (or `[path:12]`, `[path#L12-30]`) counts; a `>` quote block does not.
+Citation format limit: only `"quote" [path]` (or `[path:12]`, `[path#L12-30]`, `[path (lines 3-9)]`) counts; a `>` quote block does not.
 
 ## MCP server
 

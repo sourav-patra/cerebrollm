@@ -2,12 +2,63 @@
 import hashlib
 import os
 import posixpath
+import re
+import unicodedata
 
 from . import corpus, rules, store
 
+LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+MARKER = re.compile(r"(?m)^\s*(?:[-+#>]+|\d+\.)\s+")
+EMPHASIS = re.compile(r"(?<![\w*])(\*{1,3})(?=[^\s*])([^*\n]*?[^\s*])\1(?![\w*])")   # matched pairs only: 10**24 and FOO* stay
+
 
 def _normalise(text):
-    return " ".join(text.split())
+    """Whitespace collapsed and Unicode in composed form (NFC), so "e" plus a combining accent equals "é"."""
+    return " ".join(unicodedata.normalize("NFC", text).split())
+
+
+def _plain(text):
+    """Without Markdown markup, which a model drops or adds when it copies a line; the words must still match in order."""
+    text = MARKER.sub("", LINK.sub(r"\1", text))
+    return _normalise(EMPHASIS.sub(r"\2", text).replace("`", ""))   # underscores stay: FOO_ and _x are often content
+
+
+def _word(c):
+    """Part of a word: a letter or digit in any script, "_", or a combining mark that continues the letter before it."""
+    return c.isalnum() or c == "_" or unicodedata.category(c).startswith("M")
+
+
+def _bounded(needle, hay):
+    """needle occurs in hay without cutting a word, identifier or number at either end: "port 80" is not in
+    "port 8080", "require_auth" is not in "require_auth_extra", and "port 80." is not in "port 80.5"."""
+    core = needle.rstrip(".,;:")   # sentence punctuation the model added or kept says nothing about the boundary
+    if not core:
+        return False
+    start = hay.find(core)
+    while start >= 0:
+        end = start + len(core)
+        before = hay[start - 1] if start else ""
+        after = hay[end] if end < len(hay) else ""
+        head_ok = not _word(core[0]) or not (before and (_word(before) or (
+            before in ".," and start >= 2 and hay[start - 2].isdigit() and core[0].isdigit())))
+        tail_ok = not _word(core[-1]) or not (after and (_word(after) or (
+            after in ".," and end + 1 < len(hay) and hay[end + 1].isdigit() and core[-1].isdigit())))
+        if head_ok and tail_ok and hay.startswith(needle, start):
+            return True
+        start = hay.find(core, start + 1)
+    return False
+
+
+def _found(quote, text):
+    needle = _normalise(quote)
+    if not needle:   # "" is inside every string
+        return False
+    if _bounded(needle, _normalise(text)):
+        return True
+    needle = _plain(quote).rstrip(".,;:")
+    # the quote must end where the source's text ends: "port 80." must not match "port 8080", "10**24" or "10.5"
+    return bool(needle) and re.search(r"(?:^|(?<=[\s(\[\"']))%s(?=$|\s|[.,;:!?)\]\"'](?:\s|$))" % re.escape(needle),
+                                      _plain(text)) is not None
 
 
 def _resolve(cfg, path, ref):
@@ -86,8 +137,7 @@ def run_verify(cfg, path, quote, ref=None):
             seen_gone = True
             continue
         text = data.decode("utf-8", "replace")
-        needle = _normalise(quote)
-        if rules.secret_hit(text) or not needle or needle not in _normalise(text):  # "" is inside every string
+        if rules.secret_hit(text) or not _found(quote, text):
             return "MISSING", "quote not found in %s@%s" % (asked, rref)
         sha = hashlib.sha256(data).hexdigest()
         indexed = _indexed_sha(cfg, root["name"], rel, rref)
