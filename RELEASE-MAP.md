@@ -1,6 +1,15 @@
 # Release map
 
-0.1.1 is the current release: 0.1.0 with the `verify` and `search` fixes below, early research and built and measured as far as `README.md` states. Everything under 0.2 and later is proposed and not measured; an item moves into a release only when its acceptance check runs.
+0.1.2 is the current release: 0.1.1 with the name gate and the stricter `verify` below, early research and built and measured as far as `README.md` states. Everything under 0.2 and later is proposed and not measured; an item moves into a release only when its acceptance check runs.
+
+## 0.1.2 (contents)
+
+| Area | What changed | Evidence |
+|---|---|---|
+| `ask` | a name gate abstains before generation when the question names something the documents never contain | `engine/tests/test_answer.py` |
+| `verify` | word-boundary, Unicode-composed and Markdown-tolerant quote matching; `[path (lines a-b)]` citations | `engine/tests/test_verify.py` |
+| Answer quality | `gpt-oss:20b` on the v2 set: 33 of 35 right outcomes, 3 of 105 confidently wrong runs | [pull request 13 comment](https://github.com/sourav-patra/cerebrollm/pull/13#issuecomment-6694829219); run records not committed |
+| Engine tests | 152 passed, 6 skipped without PostgreSQL and Ollama | `engine/tests` |
 
 ## 0.1.1 (contents)
 
@@ -37,7 +46,6 @@ Each item has one acceptance check; none has run.
 
 ## Later (proposed, not measured)
 
-- Accept `path (lines a-b)` as a citation suffix.
 - Test the search input sanitiser and the parameterised SQL path.
 - Platform checks on macOS and native Windows (untested today).
 

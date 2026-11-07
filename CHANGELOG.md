@@ -2,6 +2,16 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## 0.1.2
+
+`ask` gets more answers right and fewer confidently wrong. No re-index needed.
+
+- Name gate: `ask` answers `Not in the sources.` without calling the model when the question names something that neither a retrieved passage nor any indexed chunk contains, such as an invented flag or type. Names are found by shape (backticks, `--flags`, dotted or snake_case names, camelCase, PascalCase, capitalised words inside a sentence, and a plain word before a kind noun when a passage names a neighbour). Matching ignores `-`, `_`, `.` and plural endings. It is a heuristic; `engine/README.md` lists its known misses. The `--json` output gains the key `absent_terms`.
+- `verify`: a quote must start and end on a word boundary, so "port 80" no longer matches "port 8080" and `require_auth` no longer matches `require_auth_extra`. Text is compared in Unicode composed form. Quotes that differ from the source only in Markdown links, list markers, backticks or paired `*` emphasis still verify.
+- Citations also accept the `[path (lines a-b)]` form the prompt shows.
+
+Measured on the 35-item v2 set with `gpt-oss:20b` (thinking medium, 3 runs per item, one machine): right outcomes 33 of 35 (94.3%, was 31), confidently wrong runs 3 of 105 (2.9%, was 9), mean time per call 17.0 s (was 21.4 s). The under-2% confidently wrong aim is not met. Engine tests: 152 passed, 6 skipped without PostgreSQL.
+
 ## 0.1.1
 
 Security fixes in `verify` and `search`: upgrade if an MCP host, an agent or another person can call them. No re-index needed.
