@@ -48,6 +48,8 @@ Each item has one acceptance check; none has run.
 
 - Test the search input sanitiser and the parameterised SQL path.
 - Platform checks on macOS and native Windows (untested today).
+- An HTTP API, so tools that call web services can use `search`, `verify` and `ask`.
+- An example n8n workflow in `docs/` that calls the HTTP API with n8n's HTTP Request node. n8n stays outside cerebrollm: no n8n code or dependency in the package.
 
 ## How a proposed item becomes measured
 
