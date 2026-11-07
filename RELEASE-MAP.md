@@ -7,7 +7,7 @@
 | Area | What changed | Evidence |
 |---|---|---|
 | `ask` | a name gate abstains before generation when the question names something the documents never contain | `engine/tests/test_answer.py` |
-| `verify` | word-boundary, Unicode-composed and Markdown-tolerant quote matching; `[path (lines a-b)]` citations | `engine/tests/test_verify.py` |
+| `verify` | word-boundary, Unicode-composed and Markdown-tolerant quote matching; `[path (lines a-b)]` citations | `engine/tests/test_verify.py`, `engine/tests/test_answer.py` |
 | Answer quality | `gpt-oss:20b` on the v2 set: 33 of 35 right outcomes, 3 of 105 confidently wrong runs | [pull request 13 comment](https://github.com/sourav-patra/cerebrollm/pull/13#issuecomment-6694829219); run records not committed |
 | Engine tests | 152 passed, 6 skipped without PostgreSQL and Ollama | `engine/tests` |
 
