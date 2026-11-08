@@ -38,6 +38,16 @@ class OllamaUrlTest(unittest.TestCase):
     def test_shipped_config_loads(self):
         self.assertEqual(config.load().ollama["base_url"], "http://127.0.0.1:11434")
 
+    def test_loading_a_config_with_a_remote_address_is_refused(self):
+        import tomllib
+        with open(config.DEFAULT_CONFIG, "rb") as f:
+            data = config.expand_paths(tomllib.load(f))
+        data["ollama"]["base_url"] = "http://10.0.0.5:11434"
+        with self.assertRaisesRegex(ValueError, r"ollama\.base_url"):
+            config.Config(data, config.DEFAULT_CONFIG)
+        data["ollama"]["allow_remote"] = True
+        config.Config(data, config.DEFAULT_CONFIG)
+
 
 if __name__ == "__main__":
     unittest.main()

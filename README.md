@@ -101,11 +101,11 @@ cerebrollm sits between you, your notes and local models. An AI app can also cal
 
 The passages it fetches go to that app and its model's provider.
 
-Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback. cerebrollm does not prevent that.
+Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback. cerebrollm refuses such an address unless you also set `allow_remote = true`.
 
 <img src="docs/site/context.svg" alt="Context diagram. Inside a dashed boundary labelled Your computer: cerebrollm in the middle, Your notes (Markdown files) and Local models (run by Ollama). You, outside the boundary, ask cerebrollm in the terminal. cerebrollm reads and re-checks your notes and uses the local models to embed and answer. An optional AI app with a hosted model, for example Claude, calls search and verify over MCP on a dashed two-way line, and the passages go back to the app and its model's provider. You chat with that app directly." width="900">
 
-Figure: who and what cerebrollm talks to. Arrows point from the caller; dashed lines reach a hosted model's provider. Solid lines stay local while Ollama uses its default loopback address (`base_url`), which cerebrollm does not enforce. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
+Figure: who and what cerebrollm talks to. Arrows point from the caller; dashed lines reach a hosted model's provider. Solid lines stay local while Ollama uses a loopback address (`base_url`); cerebrollm refuses any other address unless `allow_remote = true`. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
 
 Inside, one program does the work.
 
@@ -143,7 +143,7 @@ It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat th
 
 A host that sends tool results to a cloud model sends your passages to that provider.
 
-Nothing else leaves the machine except what you set up yourself. The Ollama address in `cerebrollm.toml` defaults to loopback and is not restricted to it.
+Nothing else leaves the machine except what you set up yourself. The Ollama address in `cerebrollm.toml` defaults to loopback, and another address needs `allow_remote = true`.
 
 Hosts that read a JSON server list take this entry; replace `<you>` with your user name:
 

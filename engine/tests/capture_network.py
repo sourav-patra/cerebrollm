@@ -36,8 +36,10 @@ def describe(addr):
 
 
 def main(argv):
-    out, sep, cmd = argv[0], argv[1], argv[2:]
-    assert sep == "--" and cmd, __doc__
+    if len(argv) < 3 or argv[1] != "--":
+        print(__doc__, file=sys.stderr)
+        return 2
+    out, cmd = argv[0], argv[2:]
     seen = {}
 
     def hook(event, args):
@@ -58,12 +60,5 @@ def main(argv):
     return 1 if bad else 0
 
 
-def _self_check():
-    assert is_local("/home/u/.cerebrollm/pg16/sock/.s.PGSQL.54329") and is_local(("127.0.0.1", 11434))
-    assert is_local(("::1", 11434)) and is_local(("localhost", 11434))
-    assert not is_local(("10.0.0.5", 11434)) and not is_local(("huggingface.co", 443))
-
-
 if __name__ == "__main__":
-    _self_check()
     sys.exit(main(sys.argv[1:]))

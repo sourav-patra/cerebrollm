@@ -132,7 +132,7 @@ def search_tool(query: str, k: int | None = None, mode: Literal["lexical", "vect
     if mode is not None and mode not in MODES:
         return "Invalid mode %r: use lexical, vector or hybrid." % (mode,)
     cfg = _config()
-    size = k or cfg.search["default_k"]
+    size = k or min(cfg.search["default_k"], MAX_K)   # a large default_k in a user config cannot pass the cap
     return _guard(lambda: _search_page(cfg, query, size, page, mode, all_status, project, rerank))
 
 

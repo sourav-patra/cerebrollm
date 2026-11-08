@@ -27,9 +27,14 @@ WEIGHTS_FILE = "model.safetensors"
 
 
 def check_weights(folder, expected):
-    """Refuse weights whose sha256 differs from models.toml, so a swapped or damaged file never loads."""
+    """Refuse weights whose sha256 differs from models.toml, so a swapped or damaged file never loads.
+    shortcut: only the weights file is hashed, not config.json or the tokenizer; pin those too if they are
+    ever found to matter."""
     digest = hashlib.sha256()
-    with open(os.path.join(folder, WEIGHTS_FILE), "rb") as f:
+    path = os.path.join(folder, WEIGHTS_FILE)
+    if not os.path.isfile(path):
+        raise FileNotFoundError("reranker weights %s are missing; download the pinned revision again" % path)
+    with open(path, "rb") as f:
         for block in iter(lambda: f.read(1 << 20), b""):
             digest.update(block)
     if digest.hexdigest() != expected:

@@ -99,6 +99,8 @@ class TestRerank(unittest.TestCase):
         import hashlib
         import tempfile
         with tempfile.TemporaryDirectory() as folder:
+            with self.assertRaisesRegex(FileNotFoundError, "are missing"):
+                rerank.check_weights(folder, "0" * 64)
             with open("%s/%s" % (folder, rerank.WEIGHTS_FILE), "wb") as f:
                 f.write(b"weights")
             rerank.check_weights(folder, hashlib.sha256(b"weights").hexdigest())

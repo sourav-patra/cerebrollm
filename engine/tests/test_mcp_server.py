@@ -80,6 +80,14 @@ class TestSearchPaging(unittest.TestCase):
         self.assertIn("No hits on page 4.", out)
         self.assertEqual(out.splitlines()[-1], "Page 4: no further page.")
 
+    def test_a_large_default_k_is_capped(self):
+        fake = FakeSearch(self.hits)
+        cfg = config.load()
+        cfg.search = dict(cfg.search, default_k=500)
+        with patched_search(fake), mock.patch.object(mcp_server, "_cfg", cfg):
+            mcp_server.search_tool("q")
+        self.assertEqual(fake.calls[0]["k"], mcp_server.MAX_K + 1)
+
     def test_invalid_paging_and_mode_do_not_search(self):
         fake = FakeSearch(self.hits)
         with patched_search(fake):

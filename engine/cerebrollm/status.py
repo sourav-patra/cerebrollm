@@ -6,13 +6,18 @@ from . import rules, store
 
 
 def socket_dir_mode(path):
-    """The permission bits of the Postgres socket folder as '0700', or 'missing'. Any group or other bit
-    lets another local user reach the database socket."""
+    """The permission bits of the Postgres socket folder as '0700', or 'missing' or 'unreadable'."""
     try:
-        mode = stat.S_IMODE(os.stat(path).st_mode)
+        return "%04o" % stat.S_IMODE(os.stat(path).st_mode)
     except FileNotFoundError:
         return "missing"
-    return "%04o" % mode + ("" if mode & 0o077 == 0 else "  (open to other users: chmod 700 it)")
+    except PermissionError:
+        return "unreadable"
+
+
+def socket_dir_open(mode):
+    """True when a group or other bit is set: another local user can reach the database socket."""
+    return mode not in ("missing", "unreadable") and int(mode, 8) & 0o077 != 0
 
 
 def collect(cfg):
@@ -53,4 +58,6 @@ def format_status(cfg, s):
     lines.append("embedding model: %s  digest: %s  num_ctx: %s" % (
         st.get("embedding_model"), st.get("embedding_digest"), s["num_ctx"]))
     lines.append("postgres socket folder: %s  mode %s" % (cfg.pg["socket_dir"], s["socket_mode"]))
+    if socket_dir_open(s["socket_mode"]):
+        lines.append("WARNING: other local users can reach the database socket; run: chmod 700 %s" % cfg.pg["socket_dir"])
     return "\n".join(lines)
