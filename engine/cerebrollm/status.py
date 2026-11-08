@@ -6,10 +6,13 @@ from . import rules, store
 
 
 def socket_dir_mode(path):
-    """The permission bits of the Postgres socket folder as '0700', or 'missing' or 'unreadable'."""
+    """The permission bits of the Postgres socket folder as '0700', or 'missing', 'unreadable', or
+    'not checked on Windows' (os.stat reports no real permission bits there)."""
+    if os.name == "nt":
+        return "not checked on Windows"
     try:
         return "%04o" % stat.S_IMODE(os.stat(path).st_mode)
-    except FileNotFoundError:
+    except (FileNotFoundError, NotADirectoryError):
         return "missing"
     except PermissionError:
         return "unreadable"
@@ -17,7 +20,7 @@ def socket_dir_mode(path):
 
 def socket_dir_open(mode):
     """True when a group or other bit is set: another local user can reach the database socket."""
-    return mode not in ("missing", "unreadable") and int(mode, 8) & 0o077 != 0
+    return mode.isdigit() and int(mode, 8) & 0o077 != 0
 
 
 def collect(cfg):

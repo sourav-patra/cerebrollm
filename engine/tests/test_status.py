@@ -33,7 +33,7 @@ class TestSocketMode(unittest.TestCase):
         self.assertNotIn("WARNING", text)
         for mode in ("0755", "0710", "0701"):
             self.assertIn("WARNING: other local users can reach the database socket", self.text_for(mode)[1], mode)
-        for mode in ("missing", "unreadable"):
+        for mode in ("missing", "unreadable", "not checked on Windows"):
             self.assertNotIn("WARNING", self.text_for(mode)[1], mode)
 
 
