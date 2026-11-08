@@ -10,8 +10,8 @@ model, read the database and read source files for line spans; `ask` also sends
 the retrieved passages to the generator. `verify` reads source files and the
 database. `status` reads the database and the state file. `search`, `ask`,
 `verify` and `status` write nothing. PostgreSQL is reached over a Unix socket and
-Ollama at the address in `cerebrollm.toml`, which defaults to 127.0.0.1:11434
-and is not restricted to loopback. `ask` refuses model names ending `-cloud` or
+Ollama at the address in `cerebrollm.toml`, which defaults to 127.0.0.1:11434.
+An address off this machine is refused unless `[ollama] allow_remote = true`. `ask` refuses model names ending `-cloud` or
 `:cloud`. The package sets `ANONYMIZED_TELEMETRY=False`, `DO_NOT_TRACK=1`,
 `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1` as defaults before it imports any
 library; a value you set yourself wins. The index holds the text of your documents

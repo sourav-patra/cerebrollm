@@ -22,5 +22,22 @@ class ExpandPathsTest(unittest.TestCase):
                 config.expand_paths({"root": [{"path": "$CEREBROLLM_TEST_UNSET/x"}]})
 
 
+class OllamaUrlTest(unittest.TestCase):
+    def test_loopback_addresses_pass(self):
+        for url in ("http://127.0.0.1:11434", "http://localhost:11434", "http://[::1]:11434"):
+            config.check_ollama_url({"base_url": url})
+
+    def test_remote_address_is_refused_unless_allowed(self):
+        for url in ("http://192.168.1.5:11434", "https://ollama.example.com", "http://127.0.0.1.example.com"):
+            with self.assertRaisesRegex(ValueError, "not a loopback address"):
+                config.check_ollama_url({"base_url": url})
+        with self.assertRaisesRegex(ValueError, "allow_remote"):
+            config.check_ollama_url({"base_url": "http://10.0.0.2:11434", "allow_remote": "yes"})   # only true counts
+        config.check_ollama_url({"base_url": "http://10.0.0.2:11434", "allow_remote": True})
+
+    def test_shipped_config_loads(self):
+        self.assertEqual(config.load().ollama["base_url"], "http://127.0.0.1:11434")
+
+
 if __name__ == "__main__":
     unittest.main()

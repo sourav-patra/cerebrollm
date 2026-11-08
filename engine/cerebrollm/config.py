@@ -3,6 +3,7 @@ import os
 import sys
 import tomllib
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 def data_file(name):
@@ -23,6 +24,7 @@ class Config:
         self.state_dir = Path(os.path.expanduser(data["state_dir"]))
         self.pg = data["postgres"]
         self.ollama = data["ollama"]
+        check_ollama_url(self.ollama)
         self.ollama_options = {"num_ctx": int(self.ollama["num_ctx"])}   # sent to Ollama with each embed call
         self.chunking = data["chunking"]
         self.search = data["search"]
@@ -72,6 +74,19 @@ class Config:
             return root["project"]
         top = rel_path.split("/", 1)[0]
         return self.project_names.get(top, top.lower().replace(" ", "-"))
+
+
+LOOPBACK_HOSTS = {"127.0.0.1", "::1", "localhost"}
+
+
+def check_ollama_url(ollama):
+    """Refuse an Ollama base_url off this machine unless [ollama] allow_remote = true: documents and
+    questions are sent to it."""
+    host = urlsplit(ollama["base_url"]).hostname
+    if host not in LOOPBACK_HOSTS and ollama.get("allow_remote") is not True:
+        raise ValueError("ollama.base_url = %r is not a loopback address; documents and questions would leave "
+                         "this machine. Use 127.0.0.1, or set allow_remote = true in [ollama] to allow it"
+                         % ollama["base_url"])
 
 
 PATH_KEYS = {"state_dir", "socket_dir", "path"}

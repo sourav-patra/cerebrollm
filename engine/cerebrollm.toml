@@ -17,6 +17,7 @@ text_search_config = "english"
 
 [ollama]
 base_url = "http://127.0.0.1:11434"
+# allow_remote = true   # needed for an address off this machine: documents and questions are then sent there
 model = "qwen3-embedding:0.6b"   # chosen by R1 on 2026-10-29 (research/model-study/RESULTS.md); bge-m3 stays installed
 query_prefix = "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:"   # put before each search query (Qwen3-Embedding model card); documents get none; unset for bge-m3
 num_ctx = 8192          # context Ollama loads the embedding model with; unset, Ollama uses the model's maximum (262,144 for Qwen3-Embedding, 11 GB)
