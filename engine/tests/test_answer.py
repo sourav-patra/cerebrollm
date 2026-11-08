@@ -93,6 +93,24 @@ class TestRerank(unittest.TestCase):
         self.assertEqual(name, "BAAI/bge-reranker-v2-m3")
         self.assertRegex(entry["revision"], r"^[0-9a-f]{40}$")
         self.assertEqual(entry["licence"], "Apache-2.0")
+        self.assertRegex(entry["model_sha256"], r"^[0-9a-f]{64}$")
+
+    def test_weights_with_another_hash_are_refused(self):
+        import hashlib
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            with open("%s/%s" % (folder, rerank.WEIGHTS_FILE), "wb") as f:
+                f.write(b"weights")
+            rerank.check_weights(folder, hashlib.sha256(b"weights").hexdigest())
+            with self.assertRaisesRegex(ValueError, "models.toml pins"):
+                rerank.check_weights(folder, "0" * 64)
+            entry = {"local_dir": folder, "model_sha256": "0" * 64, "max_length": 8}
+            with mock.patch.object(rerank, "settings", lambda: ("m", entry)), \
+                    mock.patch.object(rerank, "_model", None), \
+                    mock.patch.dict("sys.modules", {"torch": mock.MagicMock(),
+                                                    "sentence_transformers": mock.MagicMock()}):
+                with self.assertRaisesRegex(ValueError, "models.toml pins"):
+                    rerank._load()   # refused before the cross-encoder is built
 
 
 class TestModelCheck(unittest.TestCase):
