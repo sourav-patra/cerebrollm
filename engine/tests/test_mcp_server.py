@@ -83,8 +83,14 @@ class TestSearchPaging(unittest.TestCase):
     def test_invalid_paging_and_mode_do_not_search(self):
         fake = FakeSearch(self.hits)
         with patched_search(fake):
-            self.assertIn("page and k must be 1 or more", mcp_server.search_tool("q", page=0))
-            self.assertIn("page and k must be 1 or more", mcp_server.search_tool("q", k=0))
+            for bad in ({"page": 0}, {"k": 0}, {"k": 51}, {"page": 101}, {"k": 10 ** 9}):
+                self.assertIn("k must be 1 to 50 and page 1 to 100", mcp_server.search_tool("q", **bad))
+        self.assertEqual(fake.calls, [])
+        with patched_search(fake):
+            mcp_server.search_tool("q", k=50, page=100)
+        self.assertEqual(fake.calls[0]["k"], 5001)   # the largest allowed request, plus one to see a next page
+        fake.calls.clear()
+        with patched_search(fake):
             self.assertIn("Invalid mode 'bogus'", mcp_server.search_tool("q", mode="bogus"))
         self.assertEqual(fake.calls, [])
 
