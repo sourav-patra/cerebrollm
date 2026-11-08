@@ -245,5 +245,22 @@ class TestGitRef(unittest.TestCase):
         self.assertEqual(self.run_verify("a.md", "not in any file", self.tree), "GONE")
 
 
+def _postgres_down():
+    try:
+        from cerebrollm import store
+        with store.sql(config.load()) as cur:
+            cur.execute("select 1")
+    except Exception as exc:  # noqa: BLE001
+        return "Postgres unavailable: %s" % exc
+    return None
+
+
+class TestIndexedShaQuery(unittest.TestCase):
+    @unittest.skipIf(_postgres_down(), _postgres_down() or "")
+    def test_a_path_with_a_quote_is_a_parameter(self):
+        cfg = config.load()
+        self.assertEqual(verify._indexed_sha(cfg, "notes", "it's'; drop table x; --.md", "file"), set())
+
+
 if __name__ == "__main__":
     unittest.main()
