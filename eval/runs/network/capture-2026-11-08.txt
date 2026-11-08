@@ -1,0 +1,12 @@
+$ cerebrollm search How does pgvector store halfvec?  (exit 0)
+  local  127.0.0.1:11434
+  local  lookup:127.0.0.1
+  result: only loopback and Unix sockets
+$ cerebrollm index --changed  (exit 0)
+  local  127.0.0.1:11434
+  local  lookup:127.0.0.1
+  result: only loopback and Unix sockets
+$ cerebrollm ask What is the maximum number of dimensions for the vector type in pgvector?  (exit 0)
+  local  127.0.0.1:11434
+  local  lookup:127.0.0.1
+  result: only loopback and Unix sockets
