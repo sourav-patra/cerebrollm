@@ -23,6 +23,7 @@ if [ ! -f "$STATE/pg16/PG_VERSION" ]; then
   mkdir -p "$STATE/pg16/sock"
   printf "listen_addresses = ''\nunix_socket_directories = '%s'\nport = 54329\n" "$STATE/pg16/sock" >> "$STATE/pg16/postgresql.conf"
 fi
+chmod 700 "$STATE/pg16/sock"   # the cluster trusts every socket connection, so only this user may reach the socket
 $PG/pg_ctl -D "$STATE/pg16" status >/dev/null || $PG/pg_ctl -D "$STATE/pg16" -l "$STATE/pg16/server.log" -w start
 $PG/psql -h "$STATE/pg16/sock" -p 54329 -U cerebrollm -d postgres -lqt | cut -d'|' -f1 | grep -qw rag_local \
   || $PG/createdb -h "$STATE/pg16/sock" -p 54329 -U cerebrollm rag_local

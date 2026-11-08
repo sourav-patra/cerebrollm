@@ -1,11 +1,24 @@
 """cerebrollm status."""
+import os
+import stat
+
 from . import rules, store
+
+
+def socket_dir_mode(path):
+    """The permission bits of the Postgres socket folder as '0700', or 'missing'. Any group or other bit
+    lets another local user reach the database socket."""
+    try:
+        mode = stat.S_IMODE(os.stat(path).st_mode)
+    except FileNotFoundError:
+        return "missing"
+    return "%04o" % mode + ("" if mode & 0o077 == 0 else "  (open to other users: chmod 700 it)")
 
 
 def collect(cfg):
     st = store.read_state(cfg)
     out = {"state": st, "tiers": [], "never_violations": None, "chunks": 0, "documents": 0,
-           "num_ctx": cfg.ollama_options["num_ctx"]}
+           "num_ctx": cfg.ollama_options["num_ctx"], "socket_mode": socket_dir_mode(cfg.pg["socket_dir"])}
     if not store.table_exists(cfg):
         return out
     with store.sql(cfg) as cur:
@@ -39,4 +52,5 @@ def format_status(cfg, s):
         st.get("last_index_time"), last.get("mode"), last.get("duration_s"), last.get("chunks_embedded")))
     lines.append("embedding model: %s  digest: %s  num_ctx: %s" % (
         st.get("embedding_model"), st.get("embedding_digest"), s["num_ctx"]))
+    lines.append("postgres socket folder: %s  mode %s" % (cfg.pg["socket_dir"], s["socket_mode"]))
     return "\n".join(lines)
