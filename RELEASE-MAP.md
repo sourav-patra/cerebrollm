@@ -33,20 +33,20 @@
 
 ## 0.2 (proposed, not measured)
 
-Each item has one acceptance check; none has run.
+Each item has one acceptance check. Items marked Built pass their check and are in no release yet.
 
 1. A relevance check: `ask` accepts a verified quote only when the quote answers the question, so a real quote from an unrelated passage no longer passes the gate.
 2. `ask` prints only the verified quotes, counts a citation only when its path is among the 8 retrieved hits, and shows the generator's own text only on request.
-3. The engine refuses a non-loopback Ollama address unless the user allows it.
-4. The reranker weights are hashed when they load.
-5. The MCP `search` tool caps `k` and `page`.
+3. The engine refuses a non-loopback Ollama address unless the user allows it. Built: `engine/tests/test_config.py`.
+4. The reranker weights are hashed when they load. Built: `engine/tests/test_answer.py`; the pinned weights pass on the development machine.
+5. The MCP `search` tool caps `k` at 50 and `page` at 100. Built: `engine/tests/test_mcp_server.py`.
 6. A second public item set large enough to bound a 2% confidently-wrong rate, and a report that prints the bound.
-7. A network capture check for `index`, `search` and `ask`.
-8. `status` reports the mode of the PostgreSQL socket folder.
+7. A network capture check for `index`, `search` and `ask`. Built: `engine/tests/capture_network.py`, output `eval/runs/network/capture-2026-11-08.txt` (Python sockets only; libpq is not seen).
+8. `status` reports the mode of the PostgreSQL socket folder, and `setup/user.sh` sets it to 700. Built: `engine/tests/test_status.py`.
 
 ## Later (proposed, not measured)
 
-- Test the search input sanitiser and the parameterised SQL path.
+- Test the search input sanitiser and the parameterised SQL path. Built: `engine/tests/test_search.py`, `engine/tests/test_verify.py`.
 - Platform checks on macOS and native Windows (untested today).
 - An HTTP API, so tools that call web services can use `search`, `verify` and `ask`.
 - An example n8n workflow in `docs/` that calls the HTTP API with n8n's HTTP Request node. n8n stays outside cerebrollm: no n8n code or dependency in the package.
