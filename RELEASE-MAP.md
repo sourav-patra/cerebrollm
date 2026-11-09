@@ -40,7 +40,7 @@ Each item has one acceptance check. Items marked Built pass their check and are 
 3. The engine refuses a non-loopback Ollama address unless the user allows it. Built: `engine/tests/test_config.py`.
 4. The reranker weights are hashed when they load. Built: `engine/tests/test_answer.py`; the pinned weights pass on the development machine.
 5. The MCP `search` tool caps `k` at 50 and `page` at 100. Built: `engine/tests/test_mcp_server.py`.
-6. A second public item set large enough to bound a 2% confidently-wrong rate, and a report that prints the bound.
+6. A second public item set large enough to bound a 2% confidently-wrong rate, and a report that prints the bound. Built: the report half, `eval/test_run_v2.py`; the 200-item set is not written.
 7. A network capture check for `index`, `search` and `ask`. Built: `engine/tests/capture_network.py`, output `eval/runs/network/capture-2026-11-08.txt` (Python sockets only; libpq is not seen).
 8. `status` reports the mode of the PostgreSQL socket folder, and `setup/user.sh` sets it to 700. Built: `engine/tests/test_status.py`.
 

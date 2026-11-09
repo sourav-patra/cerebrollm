@@ -50,6 +50,20 @@ def majority(classes, name):
     return sum(c == name for c in classes) * 2 > len(classes)
 
 
+def rule_of_three(arm, per, runs=3):
+    """Items with any confidently-wrong run, and the 95% upper bound 3 / unique items when there are none.
+    per: item id -> [class per run]. Fails when an item has fewer than `runs` graded runs."""
+    short = sorted(i for i, v in per.items() if len(v) < runs)
+    if short:
+        raise SystemExit("report refused: arm %s has fewer than %d graded runs for %s" % (arm, runs, ", ".join(short)))
+    cw = sum("confidently-wrong" in v for v in per.values())
+    line = f"{arm}: {cw} of {len(per)} items with a confidently-wrong run"
+    if cw == 0:
+        line += (f"; 95% upper bound {pct(3, len(per))} (3 / {len(per)} unique items), conditional on independent "
+                 "draws from the item population (repeated runs at temperature 0 are not independent trials)")
+    return cw, line
+
+
 def kappa(pairs):
     n = len(pairs)
     po = sum(a == b for a, b in pairs) / n
@@ -94,8 +108,11 @@ def main():
     hdr = ("| Model | Arm | Runs | Correct (of 20, majority) | Correct (run level) | Abstained correctly (of 15, majority) | "
            "Right outcome (of 35, majority) | Confidently wrong items (majority) | Confidently wrong (runs) | Abstained wrong (runs) | Empty (runs) | Aim 90% / under 2% |")
     lines += ["## Per model and arm\n", hdr, "|" + "---|" * 12]
+    bounds = []
     for (m, a), per in sorted(rows.items(), key=lambda x: (list(R.MODELS).index(x[0][0]), x[0][1])):
         cl = {i: per.get(i, []) for i in items}
+        cw_any, bound_line = rule_of_three(f"{m} {a}", cl)
+        bounds.append(bound_line)
         n_runs = sum(len(v) for v in per.values())
         run_cls = collections.Counter(c for v in per.values() for c in v)
         corr = sum(majority(cl[i["id"]], "correct") for i in answerable)
@@ -110,7 +127,7 @@ def main():
             "records_graded": n_runs, "correct_majority_of_20": corr, "correct_runs": corr_runs, "answerable_runs": n_ans_runs,
             "abstained_correctly_majority_of_15": abst, "right_outcome_majority_of_35": corr + abst,
             "confidently_wrong_items_majority": cw_items, "confidently_wrong_runs": cw, "abstained_wrong_runs": run_cls["abstained-wrong"],
-            "empty_runs": run_cls["empty"], "error_runs": run_cls["error"], "aim": aim,
+            "empty_runs": run_cls["empty"], "error_runs": run_cls["error"], "aim": aim, "items_any_confidently_wrong": cw_any,
             "by_kind_majority_ok": {k: sum(majority(cl[i["id"]], "abstained-correctly" if k == "unanswerable" else "correct")
                                            for i in items.values() if i["kind"] == k) for k in ("exact", "paraphrase", "stale", "unanswerable")}}
         lines.append(f"| {m} | {a} | {n_runs} | {corr} ({pct(corr, 20)}) | {corr_runs}/{n_ans_runs} ({pct(corr_runs, n_ans_runs)}) | "
@@ -118,6 +135,7 @@ def main():
                      f"{run_cls['abstained-wrong']} | {run_cls['empty']} | {aim} |")
     lines.append("\nAim: right outcome at least 90 percent of the 35 items (majority) and confidently wrong under 2 percent of runs. "
                  "Confidently wrong: a wrong answer to an answerable item, or any answer to an unanswerable item.\n")
+    lines += ["## Items with any confidently-wrong run (rule of three)\n"] + ["- " + b for b in bounds] + [""]
     lines += ["## Majority correct by kind\n", "| Model | Arm | exact (of 10) | paraphrase (of 7) | stale (of 3) | unanswerable (of 15) |", "|---|---|---|---|---|---|"]
     for m, d in S["models"].items():
         for a, v in d.items():
