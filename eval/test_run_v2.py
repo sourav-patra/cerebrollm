@@ -47,8 +47,15 @@ class T(unittest.TestCase):
         cw, line = RV.rule_of_three("m A4", per)
         self.assertEqual(cw, 1)
         self.assertNotIn("upper bound", line)
+        self.assertIn("(I-07)", line)
         per["I-09"] = ["correct", "correct"]
         with self.assertRaisesRegex(SystemExit, "fewer than 3 graded runs for I-09"):
+            RV.rule_of_three("m A4", per)
+        per["I-09"] = ["correct", "correct", "error"]
+        with self.assertRaisesRegex(SystemExit, "for I-09"):
+            RV.rule_of_three("m A4", per)
+        per["I-09"], per["I-10"] = ["correct"] * 3, []
+        with self.assertRaisesRegex(SystemExit, "for I-10"):
             RV.rule_of_three("m A4", per)
 
     def test_codex_parse(self):

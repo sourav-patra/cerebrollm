@@ -11,7 +11,7 @@ Hardening for 0.2. No re-index needed.
 - The MCP `search` tool refuses `k` above 50 and `page` above 100 (I-06).
 - `status` prints the mode of the PostgreSQL socket folder and warns when other users can reach it; `setup/user.sh` now sets the folder to 700, because the cluster trusts every socket connection (I-10). Re-run `setup/user.sh` or `chmod 700 ~/.cerebrollm/pg16/sock` on an existing install.
 - New tests for the search sanitiser and the parameterised SQL path (I-12), and `engine/tests/capture_network.py`, which lists every address the Python code of `index`, `search` and `ask` connects to; C code such as libpq is not seen (I-09).
-- `python3 eval/run_v2.py report` refuses an arm with fewer than 3 graded runs for any item, and prints per arm the items with any confidently-wrong run and, when there are none, the rule-of-three 95% upper bound `3 / unique items` (I-11).
+- `python3 eval/run_v2.py report` refuses an arm with fewer than 3 graded runs for any item, and prints per arm the count and ids of items with any confidently-wrong run and, when there are none, the rule-of-three 95% upper bound `3 / unique items` on that share (I-11). On this tree it refuses the committed v2 A4 arms, whose withheld raw records leave five items without graded runs.
 
 ## 0.1.2
 

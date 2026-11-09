@@ -51,17 +51,19 @@ def majority(classes, name):
 
 
 def rule_of_three(arm, per, runs=3):
-    """Items with any confidently-wrong run, and the 95% upper bound 3 / unique items when there are none.
-    per: item id -> [class per run]. Fails when an item has fewer than `runs` graded runs."""
-    short = sorted(i for i, v in per.items() if len(v) < runs)
+    """Items with any confidently-wrong run, and the 95% upper bound 3 / unique items on the share of such items
+    when there are none. per: item id -> [class per run]. Fails when an item has fewer than `runs` graded runs;
+    a run whose grade did not parse ("error") does not count as graded."""
+    short = sorted(i for i, v in per.items() if sum(c != "error" for c in v) < runs)
     if short:
         raise SystemExit("report refused: arm %s has fewer than %d graded runs for %s" % (arm, runs, ", ".join(short)))
-    cw = sum("confidently-wrong" in v for v in per.values())
-    line = f"{arm}: {cw} of {len(per)} items with a confidently-wrong run"
-    if cw == 0:
-        line += (f"; 95% upper bound {pct(3, len(per))} (3 / {len(per)} unique items), conditional on independent "
-                 "draws from the item population (repeated runs at temperature 0 are not independent trials)")
-    return cw, line
+    bad = sorted(i for i, v in per.items() if "confidently-wrong" in v)
+    line = f"{arm}: {len(bad)} of {len(per)} items with a confidently-wrong run" + (f" ({', '.join(bad)})" if bad else "")
+    if not bad:
+        line += (f"; 95% upper bound on the share of items with a confidently-wrong run {pct(3, len(per))} "
+                 f"(3 / {len(per)} unique items), conditional on independent draws from the item population "
+                 "(repeated runs of the same item are not independent trials); it does not bound the run-level rate")
+    return len(bad), line
 
 
 def kappa(pairs):
