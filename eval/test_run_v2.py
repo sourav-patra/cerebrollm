@@ -6,6 +6,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import judge_v2 as JV  # noqa: E402
+import report_v2 as RV  # noqa: E402
 import run_v2 as R  # noqa: E402
 
 UN = {"kind": "unanswerable", "question": "What is the default of FOO?", "key_facts": [], "quotes": []}
@@ -35,6 +36,27 @@ class T(unittest.TestCase):
         self.assertEqual((r["verdict"], r["attempts"]), ("Y", 2))
         r = JV.judge(UN, "x", "gpt-oss:20b", call=lambda p: ("bad", {}))
         self.assertEqual(r["verdict"], "error")
+
+    def test_rule_of_three(self):
+        per = {"I-%02d" % n: ["correct"] * 3 for n in range(35)}
+        cw, line = RV.rule_of_three("m A4", per)
+        self.assertEqual(cw, 0)
+        self.assertIn("8.6% (3 / 35 unique items)", line)
+        self.assertIn("conditional on independent draws from the item population", line)
+        per["I-07"] = ["correct", "confidently-wrong", "correct"]
+        cw, line = RV.rule_of_three("m A4", per)
+        self.assertEqual(cw, 1)
+        self.assertNotIn("upper bound", line)
+        self.assertIn("(I-07)", line)
+        per["I-09"] = ["correct", "correct"]
+        with self.assertRaisesRegex(SystemExit, "fewer than 3 graded runs for I-09"):
+            RV.rule_of_three("m A4", per)
+        per["I-09"] = ["correct", "correct", "error"]
+        with self.assertRaisesRegex(SystemExit, "for I-09"):
+            RV.rule_of_three("m A4", per)
+        per["I-09"], per["I-10"] = ["correct"] * 3, []
+        with self.assertRaisesRegex(SystemExit, "for I-10"):
+            RV.rule_of_three("m A4", per)
 
     def test_codex_parse(self):
         ev = [{"type": "item.completed", "item": {"type": "error", "message": "m"}},

@@ -4,6 +4,7 @@ The model, its pinned revision and its folder are in the [reranker] section of e
 is downloaded here: `scripts` in the run record show the one-time fetch. The model loads on first use, on CUDA
 when it is visible, else on the CPU; `release()` frees it (the `ask` command does this before generation so
 the generator has the GPU memory)."""
+import hashlib
 import os
 import sys
 import tomllib
@@ -22,6 +23,25 @@ def settings():
     return name, entry
 
 
+WEIGHTS_FILE = "model.safetensors"
+
+
+def check_weights(folder, expected):
+    """Refuse weights whose sha256 differs from models.toml, so a swapped or damaged file never loads.
+    shortcut: only the weights file is hashed, not config.json or the tokenizer; pin those too if they are
+    ever found to matter."""
+    digest = hashlib.sha256()
+    path = os.path.join(folder, WEIGHTS_FILE)
+    if not os.path.isfile(path):
+        raise FileNotFoundError("reranker weights %s are missing; download the pinned revision again" % path)
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            digest.update(block)
+    if digest.hexdigest() != expected:
+        raise ValueError("reranker weights %s have sha256 %s, models.toml pins %s; download the pinned revision again"
+                         % (os.path.join(folder, WEIGHTS_FILE), digest.hexdigest(), expected))
+
+
 def _load():
     global _model
     if _model is None:
@@ -35,6 +55,7 @@ def _load():
         folder = os.path.expanduser(entry["local_dir"])
         if not os.path.isdir(folder):
             raise FileNotFoundError("reranker %s is not downloaded: %s (steps: README, section The reranker)" % (name, folder))
+        check_weights(folder, entry["model_sha256"])
         # a local folder: nothing is fetched at query time
         _model = CrossEncoder(folder, max_length=entry["max_length"],
                               device="cuda" if torch.cuda.is_available() else "cpu")

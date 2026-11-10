@@ -12,7 +12,7 @@
 <h1>cerebrollm</h1>
 <p class="lede">Ask a question of your own Markdown documents. You get an answer with a quote that the tool has re-read in the source file, or the words <code>Not in the sources.</code></p>
 
-<div class="status"><strong>Status:</strong> version 0.1.2, early research. The aim of at least 90% right outcomes with under 2% confidently wrong runs is not yet met by local models; the measured results are below.</div>
+<div class="status"><strong>Status:</strong> version 0.1.3, early research. The aim of at least 90% right outcomes with under 2% confidently wrong runs is not yet met by local models; the measured results are below.</div>
 
 <h2>What it does</h2>
 <p>cerebrollm runs on your machine. It indexes a folder of Markdown files in a local PostgreSQL database. For a question it finds the best passages (keyword and vector search, then a reranker), asks a local model to quote the one line it relies on, and checks that quote against the source file and the sha256 recorded at indexing time. It prints the answer only when a quote is confirmed. It also serves the same search and check to a cloud model through a read-only MCP server.</p>

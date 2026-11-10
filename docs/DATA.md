@@ -10,8 +10,8 @@ model, read the database and read source files for line spans; `ask` also sends
 the retrieved passages to the generator. `verify` reads source files and the
 database. `status` reads the database and the state file. `search`, `ask`,
 `verify` and `status` write nothing. PostgreSQL is reached over a Unix socket and
-Ollama at the address in `cerebrollm.toml`, which defaults to 127.0.0.1:11434
-and is not restricted to loopback. `ask` refuses model names ending `-cloud` or
+Ollama at the address in `cerebrollm.toml`, which defaults to 127.0.0.1:11434.
+An address off this machine is refused unless `[ollama] allow_remote = true`. `ask` refuses model names ending `-cloud` or
 `:cloud`. The package sets `ANONYMIZED_TELEMETRY=False`, `DO_NOT_TRACK=1`,
 `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1` as defaults before it imports any
 library; a value you set yourself wins. The index holds the text of your documents
@@ -19,7 +19,7 @@ and is not encrypted: protect the folder with your operating system's permission
 
 | Action | What leaves the machine | Where to | Retention | Control |
 |---|---|---|---|---|
-| You set the Ollama address to a host other than your machine | chunk text (`index`), queries (`search`, `ask`), retrieved passages (`ask`) | that host | set by that host | the default is loopback; 0.1.x does not refuse another address |
+| You set the Ollama address to a host other than your machine and set `allow_remote = true` | chunk text (`index`), queries (`search`, `ask`), retrieved passages (`ask`) | that host | set by that host | the default is loopback; another address is refused unless `[ollama] allow_remote = true` |
 | A model host calls the MCP tools `search` or `verify` | the tool results: passages of your documents, paths, line spans | the model provider you chose for that host | set by that provider | you register the server and you choose the host; unregister it to stop |
 | `pip install`, `ollama pull`, the one-time download of the reranker | package, model and file names, and the normal network address of your machine | the package index, the model registry and the model host | set by those services | you run these steps yourself |
 | `research/model-study/model_guard.py pull` | the model name, to read its manifest | the model registry | set by that service | you run it yourself |
@@ -27,6 +27,9 @@ and is not encrypted: protect the folder with your operating system's permission
 | `research/corpus/fetch_corpus.py`, `research/model-study/fetch_published.py` | requests for public pages | the public hosts named in the scripts | set by those hosts | you run them yourself |
 
 The code in `engine/cerebrollm/` sends nothing else. Dependencies were not audited
-for telemetry in 0.1.x, and a network capture of `ask` and `index` has not been run.
+for telemetry. A capture of the Python sockets opened by `search`, `index --changed`
+and `ask` on 2026-11-08 saw only `127.0.0.1:11434`
+(`eval/runs/network/capture-2026-11-08.txt`, made with `engine/tests/capture_network.py`).
 
-Skipped or not checked: dependency telemetry and a network capture of `ask` and `index`.
+Skipped or not checked: dependency telemetry, and connections made in C code (libpq,
+whose target is the Unix socket in `cerebrollm.toml`), which the capture does not see.

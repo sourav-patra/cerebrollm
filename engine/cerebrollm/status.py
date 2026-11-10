@@ -1,11 +1,32 @@
 """cerebrollm status."""
+import os
+import stat
+
 from . import rules, store
+
+
+def socket_dir_mode(path):
+    """The permission bits of the Postgres socket folder as '0700', or 'missing', 'unreadable', or
+    'not checked on Windows' (os.stat reports no real permission bits there)."""
+    if os.name == "nt":
+        return "not checked on Windows"
+    try:
+        return "%04o" % stat.S_IMODE(os.stat(path).st_mode)
+    except (FileNotFoundError, NotADirectoryError):
+        return "missing"
+    except PermissionError:
+        return "unreadable"
+
+
+def socket_dir_open(mode):
+    """True when a group or other bit is set: another local user can reach the database socket."""
+    return mode.isdigit() and int(mode, 8) & 0o077 != 0
 
 
 def collect(cfg):
     st = store.read_state(cfg)
     out = {"state": st, "tiers": [], "never_violations": None, "chunks": 0, "documents": 0,
-           "num_ctx": cfg.ollama_options["num_ctx"]}
+           "num_ctx": cfg.ollama_options["num_ctx"], "socket_mode": socket_dir_mode(cfg.pg["socket_dir"])}
     if not store.table_exists(cfg):
         return out
     with store.sql(cfg) as cur:
@@ -39,4 +60,7 @@ def format_status(cfg, s):
         st.get("last_index_time"), last.get("mode"), last.get("duration_s"), last.get("chunks_embedded")))
     lines.append("embedding model: %s  digest: %s  num_ctx: %s" % (
         st.get("embedding_model"), st.get("embedding_digest"), s["num_ctx"]))
+    lines.append("postgres socket folder: %s  mode %s" % (cfg.pg["socket_dir"], s["socket_mode"]))
+    if socket_dir_open(s["socket_mode"]):
+        lines.append("WARNING: other local users can reach the database socket; run: chmod 700 %s" % cfg.pg["socket_dir"])
     return "\n".join(lines)

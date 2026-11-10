@@ -1,7 +1,7 @@
 """cerebrollm: local retrieval over your own authoritative documents, with quote verification."""
 import os
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 # Local only: no telemetry, no hub downloads. Set before any library import.
 os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")

@@ -1,6 +1,19 @@
 # Release map
 
-0.1.2 is the current release: 0.1.1 with the name gate and the stricter `verify` below, early research and built and measured as far as `README.md` states. Everything under 0.2 and later is proposed and not measured; an item moves into a release only when its acceptance check runs.
+0.1.3 is the current release: 0.1.2 with the hardening below, early research and built and measured as far as `README.md` states. Everything under 0.2 and later is proposed and not measured; an item moves into a release only when its acceptance check runs.
+
+## 0.1.3 (contents)
+
+| Area | What changed | Evidence |
+|---|---|---|
+| Ollama address | the engine refuses a non-loopback Ollama address unless `[ollama] allow_remote = true` | `engine/tests/test_config.py` |
+| Reranker | the weights are hashed when they load and refused when the hash differs from `models.toml` | `engine/tests/test_answer.py` |
+| MCP `search` | `k` is capped at 50 and `page` at 100 | `engine/tests/test_mcp_server.py` |
+| `status` | prints the mode of the PostgreSQL socket folder and warns when it is open; `setup/user.sh` sets it to 700 | `engine/tests/test_status.py` |
+| Network | `engine/tests/capture_network.py` lists every address the Python code connects to (libpq is not seen) | `eval/runs/network/capture-2026-11-08.txt` |
+| Report | `eval/run_v2.py report` refuses an arm with fewer than 3 graded runs per item and prints the rule-of-three bound | `eval/test_run_v2.py` |
+| Tests | the search sanitiser and the parameterised SQL path | `engine/tests/test_search.py`, `engine/tests/test_verify.py` |
+| Engine tests | 171 passed, 0 skipped with PostgreSQL and Ollama | `engine/tests` |
 
 ## 0.1.2 (contents)
 
@@ -33,20 +46,14 @@
 
 ## 0.2 (proposed, not measured)
 
-Each item has one acceptance check; none has run.
+Each item has one acceptance check. The hardening items once listed here shipped in 0.1.3.
 
 1. A relevance check: `ask` accepts a verified quote only when the quote answers the question, so a real quote from an unrelated passage no longer passes the gate.
 2. `ask` prints only the verified quotes, counts a citation only when its path is among the 8 retrieved hits, and shows the generator's own text only on request.
-3. The engine refuses a non-loopback Ollama address unless the user allows it.
-4. The reranker weights are hashed when they load.
-5. The MCP `search` tool caps `k` and `page`.
-6. A second public item set large enough to bound a 2% confidently-wrong rate, and a report that prints the bound.
-7. A network capture check for `index`, `search` and `ask`.
-8. `status` reports the mode of the PostgreSQL socket folder.
+3. A second public item set large enough to bound a 2% confidently-wrong rate (the report that prints the bound shipped in 0.1.3).
 
 ## Later (proposed, not measured)
 
-- Test the search input sanitiser and the parameterised SQL path.
 - Platform checks on macOS and native Windows (untested today).
 - An HTTP API, so tools that call web services can use `search`, `verify` and `ask`.
 - An example n8n workflow in `docs/` that calls the HTTP API with n8n's HTTP Request node. n8n stays outside cerebrollm: no n8n code or dependency in the package.

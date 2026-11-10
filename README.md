@@ -3,7 +3,7 @@
 Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.` Only the quote is checked, not the rest of the answer.
 
 [![tests](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml/badge.svg)](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml)
-PyPI: [cerebrollm 0.1.2](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
+PyPI: [cerebrollm 0.1.3](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
 
 [Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Use it from an AI app (MCP)](#use-it-from-an-ai-app-mcp) · [Results](#results-at-a-glance) · [Docs](#docs) · [Product page](https://sourav-patra.github.io/cerebrollm/)
 
@@ -21,7 +21,7 @@ For people who run local models, or let a cloud model read their documents, and 
 
 Evidence: with retrieval and a citation instruction, the small local model `phi4` answered 47 of 60 questions right instead of 1 (model-graded, majority of 5 runs, `eval/RESULTS.md`).
 
-Status: 0.1.2, early research.
+Status: 0.1.3, early research.
 
 The aim is at least 90% right outcomes (a right answer, or a correct `Not in the sources.`) with under 2% confidently wrong runs. No local model meets it yet.
 
@@ -101,11 +101,11 @@ cerebrollm sits between you, your notes and local models. An AI app can also cal
 
 The passages it fetches go to that app and its model's provider.
 
-Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback. cerebrollm does not prevent that.
+Passages also leave your computer if you point the Ollama address in `cerebrollm.toml` away from loopback. cerebrollm refuses such an address unless you also set `allow_remote = true`.
 
 <img src="docs/site/context.svg" alt="Context diagram. Inside a dashed boundary labelled Your computer: cerebrollm in the middle, Your notes (Markdown files) and Local models (run by Ollama). You, outside the boundary, ask cerebrollm in the terminal. cerebrollm reads and re-checks your notes and uses the local models to embed and answer. An optional AI app with a hosted model, for example Claude, calls search and verify over MCP on a dashed two-way line, and the passages go back to the app and its model's provider. You chat with that app directly." width="900">
 
-Figure: who and what cerebrollm talks to. Arrows point from the caller; dashed lines reach a hosted model's provider. Solid lines stay local while Ollama uses its default loopback address (`base_url`), which cerebrollm does not enforce. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
+Figure: who and what cerebrollm talks to. Arrows point from the caller; dashed lines reach a hosted model's provider. Solid lines stay local while Ollama uses a loopback address (`base_url`); cerebrollm refuses any other address unless `allow_remote = true`. It leaves out the AI app's own traffic to its provider, which cerebrollm does not see.
 
 Inside, one program does the work.
 
@@ -143,7 +143,7 @@ It wraps passages in `<<<BEGIN RETRIEVED DATA>>>` markers so a host can treat th
 
 A host that sends tool results to a cloud model sends your passages to that provider.
 
-Nothing else leaves the machine except what you set up yourself. The Ollama address in `cerebrollm.toml` defaults to loopback and is not restricted to it.
+Nothing else leaves the machine except what you set up yourself. The Ollama address in `cerebrollm.toml` defaults to loopback, and another address needs `allow_remote = true`.
 
 Hosts that read a JSON server list take this entry; replace `<you>` with your user name:
 

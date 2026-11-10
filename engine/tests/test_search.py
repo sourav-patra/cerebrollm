@@ -197,5 +197,12 @@ class TestRRF(unittest.TestCase):
         self.assertEqual(len(fused), 3)
 
 
+class TestSanitize(unittest.TestCase):
+    def test_tsquery_operators_and_quotes_are_removed(self):
+        out = search.sanitize("a & b | !c (d):* <e> 'f' \"g\" \\h")
+        self.assertEqual(out, "a b c d e f g h")
+        self.assertEqual(search.sanitize("a'; drop table x; --"), "a ; drop table x; --")   # harmless: a bound parameter
+
+
 if __name__ == "__main__":
     unittest.main()

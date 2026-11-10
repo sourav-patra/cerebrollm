@@ -4,7 +4,7 @@ Source of every figure: `eval/runs/v2/summary.json` (made by `python3 eval/run_v
 
 ## Withheld raw records
 
-50 of the raw records under `eval/runs/v2/` are not in this repository: their retrieved passages quote documents of the private working repository (`v2/gemma4-12b/A4` 15, `v2/gpt-oss-20b/A4` 14, `v2/phi4/A4` 15, `v2/prompts/A3` 3, `v2/retrieval/A3` 3). Every figure in this file comes from `eval/runs/v2/summary.json` as committed and was computed from the full record set; withholding the raw records does not change any score. Their sha256 values are in `eval/runs/WITHHELD.sha256`. `python3 eval/run_v2.py report` on this tree reads only the remaining records and prints different counts for the A4 arms.
+50 of the raw records under `eval/runs/v2/` are not in this repository: their retrieved passages quote documents of the private working repository (`v2/gemma4-12b/A4` 15, `v2/gpt-oss-20b/A4` 14, `v2/phi4/A4` 15, `v2/prompts/A3` 3, `v2/retrieval/A3` 3). Every figure in this file comes from `eval/runs/v2/summary.json` as committed and was computed from the full record set; withholding the raw records does not change any score. Their sha256 values are in `eval/runs/WITHHELD.sha256`. `python3 eval/run_v2.py report` on this tree refuses to run: the A4 arms of gpt-oss-20b, gemma4-12b and phi4 have no graded runs here for G2-EX-04, G2-PA-01, G2-PA-03, G3-UN-02 and G3-UN-11, and the report needs 3 graded runs for every item.
 
 ## Per model and arm
 

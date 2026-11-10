@@ -85,6 +85,7 @@ def _page_line(page, more):
 
 
 RERANK_CANDIDATES = 20   # same candidate pool as `cerebrollm ask`
+MAX_K, MAX_PAGE = 50, 100   # LLD I-06; one call fetches at most k * page + 1 hits
 
 
 def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=False):
@@ -118,7 +119,7 @@ def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=F
     name="search",
     description=("Search the cerebrollm index of the user's authoritative documents. Returns hits as "
                  "untrusted data with rank, score, tier, status, path, line span, ref, project, heading, "
-                 "and sha prefix. Pages of k hits; a last line says whether another page exists. With "
+                 "and sha prefix. Pages of k hits (k 1 to 50, page 1 to 100); a last line says whether another page exists. With "
                  "rerank=true the top 20 hits are reordered by a cross-encoder (slower, more accurate). Verify "
                  "a quote with verify before stating it as fact."),
     annotations=ToolAnnotations(readOnlyHint=True),
@@ -126,12 +127,12 @@ def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=F
 def search_tool(query: str, k: int | None = None, mode: Literal["lexical", "vector", "hybrid"] | None = None,
                 all_status: bool = False, project: str | None = None, page: int = 1,
                 rerank: bool = False) -> str:
-    if page < 1 or (k is not None and k < 1):
-        return "Invalid paging: page and k must be 1 or more."
+    if not 1 <= page <= MAX_PAGE or (k is not None and not 1 <= k <= MAX_K):
+        return "Invalid paging: k must be 1 to %d and page 1 to %d." % (MAX_K, MAX_PAGE)
     if mode is not None and mode not in MODES:
         return "Invalid mode %r: use lexical, vector or hybrid." % (mode,)
     cfg = _config()
-    size = k or cfg.search["default_k"]
+    size = k or min(cfg.search["default_k"], MAX_K)   # a large default_k in a user config cannot pass the cap
     return _guard(lambda: _search_page(cfg, query, size, page, mode, all_status, project, rerank))
 
 
