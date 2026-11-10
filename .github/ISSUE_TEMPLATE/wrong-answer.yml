@@ -1,0 +1,48 @@
+name: Wrong or missing answer
+description: ask printed a wrong answer, or printed "Not in the sources." for a question your documents answer.
+labels: ["answer-quality"]
+body:
+  - type: markdown
+    attributes:
+      value: Use public or synthetic documents only. Never paste a private document. A report we can replay is one we can fix.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What happened
+      options:
+        - A wrong answer was printed with an OK citation
+        - 'Not in the sources. was printed for a question the documents answer'
+        - An answer was printed for a question the documents do not answer
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: cerebrollm version and answer model
+      description: For example 0.1.3 with gpt-oss:20b.
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: The question, word for word
+    validations:
+      required: true
+  - type: textarea
+    id: json
+    attributes:
+      label: Output of the same `ask` with `--json`
+      description: It holds the hits, the citations and each verify code.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: The source line that holds the right answer, with its file path
+      description: Leave empty when the documents do not answer the question.
+  - type: input
+    id: flags
+    attributes:
+      label: Options used
+      description: For example `--no-rerank`.

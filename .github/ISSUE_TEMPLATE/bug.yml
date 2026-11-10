@@ -1,0 +1,44 @@
+name: Install or run error
+description: A command failed, crashed or printed an error.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Remove credentials and private document text before you paste output. Check docs/TROUBLESHOOTING.md first.
+  - type: input
+    id: version
+    attributes:
+      label: cerebrollm version
+      description: Output of `pip show cerebrollm`, or the commit of your clone.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: For example Ubuntu 24.04 native, or WSL2 on Windows 11. macOS and native Windows are untested.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Full output and exit code
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: Output of `cerebrollm status`
+      render: text
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
