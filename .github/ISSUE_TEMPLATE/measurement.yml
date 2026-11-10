@@ -1,6 +1,6 @@
 name: Propose or fund a measurement
 description: Ask for a number the project does not have yet, or offer money or hardware time to get it.
-labels: ["measurement"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:

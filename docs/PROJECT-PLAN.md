@@ -29,9 +29,9 @@ What sets it apart is the evidence rule: every number names a committed file, fa
 
 | Item | Acceptance check | Who |
 |---|---|---|
-| Product page with evidence links and a not-claimed table | the page deploys and every evidence link opens signed out | branch `site/product-page-evidence`; owner merges |
+| Product page with evidence links and a not-claimed table | the page deploys and every evidence link opens signed out | owner merges |
 | Fresh-machine quick start | every README quick-start step run on a clean Ubuntu 24.04 or WSL2 instance; log committed under `docs/evidence/` | owner's machine |
-| Community files | `CODE_OF_CONDUCT.md` and three issue templates render on GitHub | this branch; owner sets the conduct contact |
+| Community files | `CODE_OF_CONDUCT.md` and three issue templates render on GitHub | done when merged; owner sets the conduct contact |
 | Sidebar | a social preview image is set and Discussions is on | owner, in Settings |
 | 0.2 items filed as issues | one issue per item in `RELEASE-MAP.md`, each with its acceptance check | owner or agent |
 | Launch post | posted after the fresh-machine log is committed | owner |

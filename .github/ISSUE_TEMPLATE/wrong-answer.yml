@@ -1,6 +1,6 @@
 name: Wrong or missing answer
 description: ask printed a wrong answer, or printed "Not in the sources." for a question your documents answer.
-labels: ["answer-quality"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
