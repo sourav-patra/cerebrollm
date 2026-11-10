@@ -1,0 +1,41 @@
+name: Propose or fund a measurement
+description: Ask for a number the project does not have yet, or offer money or hardware time to get it.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Every proposed item needs one acceptance check. The output is committed whether the result is good or bad. See [RELEASE-MAP.md](https://github.com/sourav-patra/cerebrollm/blob/main/RELEASE-MAP.md).
+  - type: textarea
+    id: question
+    attributes:
+      label: The question the measurement answers
+      description: For example "What is recall in the top 8 at ten times the current corpus?"
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: Acceptance check
+      description: The command or script to run, the corpus or item set, and the file the output goes in.
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data
+      description: Name a public corpus or item set and its licence. Private data cannot be committed.
+  - type: dropdown
+    id: offer
+    attributes:
+      label: Can you help run it?
+      options:
+        - I can run it myself and open a pull request
+        - I can offer hardware time
+        - I can fund it
+        - I am only proposing it
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware, if you offer any
