@@ -6,7 +6,7 @@ This plan says what cerebrollm is for, who it serves, and the order of work afte
 
 cerebrollm is a retrieval tool an AI app or agent calls. It returns passages, checks a quote against the source file, and refuses when the check fails. It is a fixed pipeline. It does not plan or loop.
 
-What sets it apart is the evidence rule: every number names a file in this repository or says that its run records are not committed, failed runs are committed too, and limits sit next to the claims they qualify.
+What sets it apart is the evidence rule: every number names a file in this repository or says that its run records are not committed, failed runs are committed too (except the 100 withheld records `docs/REPOSITORY.md` names), and limits sit next to the claims they qualify.
 
 ## Who it serves
 
@@ -62,8 +62,8 @@ Search scans every vector today. The work is an approximate index in pgvector, b
 
 | Step | Acceptance check |
 |---|---|
-| Approximate index (HNSW, a graph index that compares the query with a fraction of the vectors) behind a configuration switch | recall in the top 8 (the share of the exact scan's top 8 it also returns) on the 60 scored questions, same corpus; table committed |
-| Scale ladder | at each rising corpus size on public text: indexing time, index size on disk, query latency and top-8 recall; one row per step in `docs/RESULTS.md` |
+| Approximate index (HNSW, a graph index that compares the query with a fraction of the vectors) behind a configuration switch | top-8 overlap with the exact scan (the share of the exact scan's top 8 it also returns) on the 60 scored questions, same corpus; table committed |
+| Scale ladder | at each rising corpus size on public text: indexing time, index size on disk, query latency and top-8 hit rate; one row per step in `docs/RESULTS.md` |
 | Resumable indexing | an `index` run stopped part way finishes on restart without re-embedding finished files |
 
 The README then states the largest step that ran. Corpus sizes for the ladder are not chosen here; hardware offered through a "Propose or fund a measurement" issue decides how far it goes.

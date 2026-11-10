@@ -1,6 +1,6 @@
 # Measured results and limits
 
-Every number below comes from a file committed in this repository, and each row names it; where raw run records are withheld, the row's source says so. The README shows a short selection and points here.
+Every number below comes from a file committed in this repository, and each row names it. 100 raw run records that quote private documents are withheld; `docs/REPOSITORY.md` says which and `eval/runs/WITHHELD.sha256` lists their hashes. The README shows a short selection and points here.
 
 ## Results
 
