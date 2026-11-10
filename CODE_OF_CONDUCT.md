@@ -19,7 +19,7 @@ This applies to issues, pull requests, discussions and reviews in this repositor
 
 ## Reporting
 
-Report a conduct problem privately to the maintainer. The contact address is listed under "Skipped or not checked" until the owner sets it.
+Report a conduct problem privately to the maintainer by email: patra.sourav@gmail.com.
 
 Include a link to the comment or pull request and say what happened. The maintainer keeps the reporter's name private unless the reporter agrees otherwise.
 
@@ -29,4 +29,4 @@ A security problem follows [SECURITY.md](SECURITY.md) instead.
 
 The maintainer reads each report and replies to the reporter. The maintainer may edit or hide a comment, lock a thread, or block an account from the repository. A person who disagrees with a decision can ask once, in private, for a second look.
 
-Skipped or not checked: the private contact address for conduct reports (the owner adds it before this file merges), and a reply-time target.
+Skipped or not checked: a reply-time target.
