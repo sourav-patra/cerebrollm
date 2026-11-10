@@ -4,7 +4,7 @@ labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
-      value: Every proposed item needs one acceptance check. The output is committed whether the result is good or bad. See RELEASE-MAP.md.
+      value: Every proposed item needs one acceptance check. The output is committed whether the result is good or bad. See [RELEASE-MAP.md](https://github.com/sourav-patra/cerebrollm/blob/main/RELEASE-MAP.md).
   - type: textarea
     id: question
     attributes:

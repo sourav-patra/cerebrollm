@@ -4,12 +4,12 @@ labels: ["bug"]
 body:
   - type: markdown
     attributes:
-      value: Remove credentials and private document text before you paste output. Check docs/TROUBLESHOOTING.md first.
+      value: Remove credentials and private document text before you paste output. Check [TROUBLESHOOTING.md](https://github.com/sourav-patra/cerebrollm/blob/main/docs/TROUBLESHOOTING.md) first.
   - type: input
     id: version
     attributes:
       label: cerebrollm version
-      description: Output of `pip show cerebrollm`, or the commit of your clone.
+      description: Output of `cerebrollm --version`, or the commit of your clone.
     validations:
       required: true
   - type: input
