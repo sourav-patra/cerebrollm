@@ -2,9 +2,9 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
-## Unreleased
+## 0.1.3
 
-Hardening for 0.2. No re-index needed.
+Hardening. No re-index needed. A config whose Ollama address is not on this machine must add `allow_remote = true` under `[ollama]`.
 
 - The engine refuses an Ollama `base_url` that is not `127.0.0.1`, `localhost` or `::1` unless `[ollama] allow_remote = true` is set (LLD issue I-04).
 - The reranker refuses weights whose sha256 differs from `model_sha256` in `models.toml`; the check reads the file once per process, about 2.4 s on the development machine (I-05).

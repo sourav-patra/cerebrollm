@@ -4,7 +4,7 @@ A local retrieval tool for your own authoritative documents. It indexes Markdown
 (lexical, vector or both), and re-reads the source to confirm a quote before anyone states it. A plumb line checks
 what is true.
 
-Status: 0.1.2, early research. The measured results are in the repository root `README.md`.
+Status: 0.1.3, early research. The measured results are in the repository root `README.md`.
 
 Almost no new code. The pieces are LlamaIndex components configured in `cerebrollm.toml`:
 
