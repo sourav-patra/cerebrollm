@@ -2,6 +2,16 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+`ask` prints only what `verify` confirmed. No re-index needed.
+
+- `ask` prints the verified quotes, one `"quote" [path]` line each, in place of the generator's whole text; the generator's own text prints only with the new `--show-text`, after an `Unverified text:` line. `--json` keeps the verified quotes in `answer` and gains `show_text` and `generator_text`, which is null unless `--show-text` is given (LLD issue I-02).
+- A citation counts only when its path, with `.` and `..` resolved, is among the 8 passages the generator saw; any other path, or one that leaves the root, gets the code `NOT_RETRIEVED` and `verify` is not run (I-02).
+- `python3 eval/run_v2.py` takes `--out DIR` for generation, grading and report, and stores the engine commit in each A4 record as `meta.engine_commit`. With `--out`, the report writes `DIR/summary.json` and `DIR/RESULTS.md` and leaves `eval/RESULTS-v2.md` alone.
+
+Measured on the 35-item v2 set with `gpt-oss:20b` (thinking medium, 3 runs per item, graded by `gpt-oss:20b`, one machine): right outcomes 33 of 35, the same as 0.1.2; correct answerable runs 54 of 60 (was 56); confidently wrong runs 2 of 105 (was 0). Both are incomplete answers in which a required part was not a verified quote; neither states anything false.
+
 ## 0.1.3
 
 Hardening. No re-index needed. A config whose Ollama address is not `127.0.0.1`, `localhost` or `::1` must add `allow_remote = true` under `[ollama]`.

@@ -136,10 +136,31 @@ def pipeline(generated, verify_codes, hits=None, **kw):
 
 
 class TestAsk(unittest.TestCase):
-    def test_verified_answer_is_printed(self):
+    def test_only_the_verified_quote_is_printed(self):
         res = pipeline(GOOD, ["OK"])
         self.assertFalse(res["abstained"])
-        self.assertEqual(res["answer"], GOOD)
+        self.assertEqual(res["answer"], '"%s" [alpha/review.md]' % QUOTE)   # "Two rounds." is the model's own text
+        self.assertEqual(res["generator_text"], GOOD)   # always in the result, printed only on request
+        self.assertEqual(pipeline(GOOD, ["OK"], show_text=True)["generator_text"], GOOD)
+
+    def test_an_unverified_quote_is_dropped_from_the_answer(self):
+        other = "Another sentence that is long enough."
+        text = '"%s" [alpha/review.md] "%s" [alpha/review.md]' % (other, QUOTE)
+        res = pipeline(text, ["MISSING", "OK"])
+        self.assertEqual(res["answer"], '"%s" [alpha/review.md]' % QUOTE)
+
+    def test_a_citation_of_a_file_not_retrieved_never_counts(self):
+        verify_calls = []
+        res = pipeline('"%s" [beta/other.md]' % QUOTE, verify_calls)   # verify would fail on pop: it must not run
+        self.assertTrue(res["abstained"])
+        self.assertEqual(res["citations"][0]["verify"], answer.NOT_RETRIEVED)
+
+    def test_an_equivalent_path_counts_and_a_path_that_leaves_the_root_does_not(self):
+        res = pipeline('"%s" [./alpha/review.md]' % QUOTE, ["OK"])
+        self.assertFalse(res["abstained"])
+        res = pipeline('"%s" [alpha/../../alpha/review.md]' % QUOTE, [])   # verify would fail on pop: it must not run
+        self.assertTrue(res["abstained"])
+        self.assertEqual(res["citations"][0]["verify"], answer.NOT_RETRIEVED)
 
     def test_unverified_answer_is_replaced(self):
         res = pipeline(GOOD, ["MISSING"])
@@ -266,7 +287,7 @@ class TestCli(unittest.TestCase):
         rc, out, _ = self.run_cli("review rounds", "--json")
         res = json.loads(out)
         self.assertEqual(rc, 0)
-        self.assertEqual(set(res), {"question", "model", "answer", "abstained", "absent_terms", "citations", "hits", "timings"})
+        self.assertEqual(set(res), {"question", "model", "answer", "generator_text", "show_text", "abstained", "absent_terms", "citations", "hits", "timings"})
         self.assertEqual(res["model"], "gpt-oss:20b")
         self.assertEqual(set(res["citations"][0]), {"path", "quote", "verify", "detail"})
         self.assertEqual(set(res["timings"]), {"search", "rerank", "generate", "verify", "total"})
@@ -279,8 +300,16 @@ class TestCli(unittest.TestCase):
 
     def test_answer_text_lists_verify_codes(self):
         _, out, _ = self.run_cli("review rounds")
-        self.assertIn(GOOD, out)
-        self.assertIn("OK  alpha/review.md", out)
+        self.assertEqual(out, '"%s" [alpha/review.md]\n\nOK  alpha/review.md\n' % QUOTE)
+
+    def test_model_text_only_on_request(self):
+        _, out, _ = self.run_cli("review rounds", "--show-text")
+        self.assertTrue(out.endswith("Unverified text:\n%s\n" % GOOD))
+        _, out, _ = self.run_cli("review rounds", "--json", "--show-text")
+        self.assertEqual(json.loads(out)["generator_text"], GOOD)
+        _, out, _ = self.run_cli("review rounds", "--json")
+        self.assertIsNone(json.loads(out)["generator_text"])   # unverified text needs --show-text in JSON too
+        self.assertNotIn("Two rounds.", out)
 
     def test_failure_is_an_error_not_an_answer(self):
         with mock.patch("cerebrollm.answer.ask", side_effect=RuntimeError("Ollama is down")):

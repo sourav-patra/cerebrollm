@@ -36,7 +36,7 @@ The aim is at least 90% right outcomes and under 2% confidently wrong runs. Clau
 
 - Retrieval misses 14 to 15 of the 60 scored questions in the top 8 on the public corpus (14 with the reranker, 15 without); a missed question usually ends as `Not in the sources.` or a wrong answer from the model's own knowledge. The share of each is not measured.
 - The gate does not check that the verified quote answers the question: a real quote from a file that is about something else passes. A relevance check is the first proposed item of 0.2 (`RELEASE-MAP.md`).
-- The gate needs one verified citation, not a verified sentence: when the model writes a verified quote plus other text, `ask` prints all of it, and the other text is not checked. A citation is also not required to come from the 8 retrieved passages. Both are proposed changes in `RELEASE-MAP.md`.
+- In 0.1.3 and earlier the gate needs one verified citation, not a verified sentence: when the model writes a verified quote plus other text, `ask` prints all of it, and the other text is not checked; a citation is also not required to come from the 8 retrieved passages. The next release prints only the verified quotes and counts only citations of the 8 passages (`CHANGELOG.md`, Unreleased).
 - The grader that produced the answer-quality numbers is itself a model checked on 40 answers.
 - The 12 tool scenarios and all speeds come from one machine with one GPU. Speeds on other hardware are not measured.
 - The default configuration carries tier rules for the author's folder layout; every new corpus folder needs a `[[rule]]`.

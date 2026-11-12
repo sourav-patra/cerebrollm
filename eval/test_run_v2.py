@@ -25,6 +25,26 @@ class T(unittest.TestCase):
         self.assertEqual(c(EX, "", "empty"), "empty")
         self.assertEqual(c(EX, "<think>x</think>", "empty"), "empty")
 
+    def test_report_with_out_stays_in_the_run_folder(self):
+        import subprocess
+        import tempfile
+        self.assertEqual(RV.RESULTS, os.path.join(R.L.HERE, "RESULTS-v2.md"))   # default: the committed file
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, "run x")   # a space: the printed command must quote the folder
+            code = "import report_v2 as P; print(P.RESULTS); print(P.SRC); print(P.CMD)"
+            p = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True,
+                               cwd=os.path.dirname(os.path.abspath(__file__)),
+                               env=dict(os.environ, CEREBROLLM_V2_OUT=out))
+            self.assertEqual(p.stdout.split("\n")[:3], [os.path.join(out, "RESULTS.md"), ".",
+                                                        "python3 eval/run_v2.py --out '%s' report" % out])
+
+    def test_engine_commit_from_the_environment(self):
+        os.environ["CEREBROLLM_ENGINE_COMMIT"] = "abc123"
+        try:
+            self.assertEqual(R.engine_commit(), "abc123")
+        finally:
+            del os.environ["CEREBROLLM_ENGINE_COMMIT"]
+
     def test_prompts(self):
         self.assertIn("Y only when the answer says the information is not in the sources", JV.build_prompt(UN, "I do not know."))
         self.assertNotIn("Reference lines", JV.build_prompt(UN, "x"))
