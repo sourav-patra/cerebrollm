@@ -27,7 +27,8 @@ import grade_lib as G  # noqa: E402
 import judge_v2 as JV  # noqa: E402
 import n2_lib as L  # noqa: E402
 
-V2 = os.path.join(L.RUNS, "v2")
+# --out (or CEREBROLLM_V2_OUT) writes a run to a fresh folder; one() and cmd_grade() skip records that exist
+V2 = os.path.abspath(os.environ.get("CEREBROLLM_V2_OUT") or os.path.join(L.RUNS, "v2"))
 ITEMS = os.path.join(L.HERE, "items-v2.jsonl")
 OPTS = {"num_ctx": 16384, "temperature": 0.7, "num_predict": 4096}  # one setting for every local model and arm
 CODEX_MODEL = "gpt-6.1-sol"
@@ -175,7 +176,18 @@ def call_ask(model, question):
         raise RuntimeError(f"ask exit {p.returncode}: {p.stderr[-300:]}")
     d = json.loads(p.stdout)
     return {"answer": d["answer"], "tokens": {}, "citations": d["citations"],
-            "meta": {"abstained": d["abstained"], "timings": d["timings"], "hits": d["hits"], "model": cfg["name"]}}
+            "meta": {"abstained": d["abstained"], "timings": d["timings"], "hits": d["hits"], "model": cfg["name"],
+                     "engine_commit": engine_commit()}}
+
+
+def engine_commit():
+    """The engine commit an A4 run used: CEREBROLLM_ENGINE_COMMIT (set it where git cannot read the worktree,
+    such as WSL on a Windows checkout), else git rev-parse HEAD."""
+    env = os.environ.get("CEREBROLLM_ENGINE_COMMIT")
+    if env:
+        return env
+    return subprocess.run(["git", "-C", os.path.join(L.HERE, ".."), "rev-parse", "HEAD"], capture_output=True,
+                          text=True, check=True).stdout.strip()
 
 
 def one(model, arm, it, k):
@@ -297,6 +309,7 @@ def classify(item, answer, verdict, abstained=None):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--out", help="run folder (default eval/runs/v2); records, grades and the report go there")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("prepare").add_argument("--arms", default="A0,A3")
     g = sub.add_parser("gen")
@@ -309,6 +322,8 @@ if __name__ == "__main__":
     j.add_argument("--models", default=",".join(MODELS))
     sub.add_parser("report")
     a = ap.parse_args()
+    if a.out:
+        os.environ["CEREBROLLM_V2_OUT"] = V2 = os.path.abspath(a.out)   # also read by report_v2's own import
     if a.cmd == "prepare":
         cmd_prepare(a.arms.split(","))
     elif a.cmd == "gen":

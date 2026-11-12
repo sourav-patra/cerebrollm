@@ -29,6 +29,7 @@ def main(argv=None):
     p.add_argument("--model", default="gpt-oss:20b", help="generator (an allowed chat model in models.toml)")
     p.add_argument("--think", choices=["low", "medium", "high", "off"], help="thinking level sent to Ollama")
     p.add_argument("--no-rerank", action="store_true", help="skip the reranker: the generator gets the search top 8")
+    p.add_argument("--show-text", action="store_true", help="also print the generator's own text, unverified")
     p.add_argument("--json", action="store_true")
 
     p = sub.add_parser("verify", help="check a quote against the source and the indexed sha256")
@@ -55,7 +56,8 @@ def main(argv=None):
     elif args.cmd == "ask":
         from . import answer
         try:
-            res = answer.ask(cfg, args.question, args.model, args.think, not args.no_rerank)
+            res = answer.ask(cfg, args.question, args.model, args.think, not args.no_rerank,
+                             show_text=args.show_text)
         except Exception as exc:  # noqa: BLE001 - a failed run must never look like an answer
             print("cerebrollm ask failed: %s: %s" % (type(exc).__name__, " ".join(str(exc).split())[:300]),
                   file=sys.stderr)

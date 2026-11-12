@@ -58,7 +58,7 @@ cerebrollm index [--changed]          # no flag: build <table>_next, then swap i
 cerebrollm status                     # counts per tier and status, skips, last index, model and digest
 cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--json]
 cerebrollm verify PATH "QUOTE" [--ref REF]
-cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [--no-rerank] [--json]
+cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [--no-rerank] [--show-text] [--json]
 ```
 
 A full `cerebrollm index` builds the `<table>_next` table while search reads the live table, then swaps it in; a new table with no rows or under half the live rows is refused and kept, and the printed command drops it. `[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
@@ -113,11 +113,14 @@ translation) makes `ask` abstain. Measured on the evaluation questions with thei
 blocked 0 of 150 answerable questions and stopped 76 of 85 unanswerable ones. Replayed on the stored answering
 runs with their retrieved passages, it blocked no answerable run and stopped all 15 runs that answered an
 unanswerable question.
-Every citation goes through `verify`. The answer is printed only when
-at least one citation has code `OK` (a quote shorter than 8 characters is not a citation); otherwise the
-output is exactly `Not in the sources.` An answer that is itself that phrase abstains even if it carries a
+A citation whose path is not among the 8 passages the generator saw gets code `NOT_RETRIEVED` and never
+counts; every other citation goes through `verify`. When at least one citation has code `OK` (a quote shorter
+than 8 characters is not a citation), the output is the verified quotes, one `"quote" [path]` line each,
+followed by one line per citation with its code; otherwise the output is exactly `Not in the sources.` The
+generator's own text is not printed unless `--show-text` is given, which adds it after an `Unverified text:`
+line. An answer that is itself that phrase abstains even if it carries a
 citation. A failure in search, rerank or generation prints an error on stderr and exits 2; it never prints an answer.
-`--json` prints question, model, answer, abstained, absent_terms (the names the gate found absent, which stopped generation), citations (path, quote, verify code, detail), the reranked hits
+`--json` prints question, model, answer (the verified quotes), generator_text (the generator's own text, unverified; null unless `--show-text` is given), show_text, abstained, absent_terms (the names the gate found absent, which stopped generation), citations (path, quote, verify code, detail), the reranked hits
 (`search_rank`, `rerank_score`) and timings. The reranker is released before generation so the generator keeps the GPU memory.
 Code: `cerebrollm/answer.py` (the gate is `decide`) and `cerebrollm/rerank.py`; tests in `tests/test_answer.py`.
 Citation format limit: only `"quote" [path]` (or `[path:12]`, `[path#L12-30]`, `[path (lines 3-9)]`) counts; a `>` quote block does not.

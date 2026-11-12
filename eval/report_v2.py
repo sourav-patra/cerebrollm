@@ -1,9 +1,11 @@
 """N6a report: tables from the saved records and grades. Run in Ubuntu (it calls `cerebrollm verify`):
-python3 eval/run_v2.py report. Writes eval/runs/v2/summary.json and eval/RESULTS-v2.md. Stdlib only.
+python3 eval/run_v2.py report. Writes eval/runs/v2/summary.json and eval/RESULTS-v2.md; with --out DIR,
+DIR/summary.json and DIR/RESULTS.md. Stdlib only.
 """
 import collections
 import json
 import os
+import shlex
 import subprocess
 import sys
 
@@ -17,6 +19,13 @@ PRIMARY, SECOND = "gpt-oss:20b", "gemma4:12b"
 ARMS = ["A0", "A3", "A4"]
 CACHE = os.path.join(R.V2, "verify-cache.json")
 CLI = os.path.join(L.HERE, "..", "engine", "bin", "cerebrollm")
+# With --out the report stays inside the run folder and names it; the committed RESULTS-v2.md is never touched.
+DEFAULT = os.path.abspath(os.path.join(L.RUNS, "v2"))
+if os.path.abspath(R.V2) == DEFAULT:
+    SRC, RESULTS, CMD = "eval/runs/v2", os.path.join(L.HERE, "RESULTS-v2.md"), "python3 eval/run_v2.py report"
+else:   # paths in the report are relative to the report, which sits in the run folder
+    SRC, RESULTS = ".", os.path.join(R.V2, "RESULTS.md")
+    CMD = "python3 eval/run_v2.py --out %s report" % shlex.quote(os.path.abspath(R.V2))
 
 
 def verified_cites(records):
@@ -103,8 +112,8 @@ def main():
     S = {"models": {}}
     lines = []
     lines.append("# Results v2: 35 public items across models and arms (development step N6a)\n")
-    lines.append("Source of every figure: `eval/runs/v2/summary.json` (made by `python3 eval/run_v2.py report` from the records "
-                 "under `eval/runs/v2/<model>/<arm>/` and the grades in `eval/runs/v2/judge/`). Grader: `gpt-oss:20b` thinking medium "
+    lines.append(f"Source of every figure: `{SRC}/summary.json` (made by `{CMD}` from the records "
+                 f"under `{SRC}/<model>/<arm>/` and the grades in `{SRC}/judge/`). Grader: `gpt-oss:20b` thinking medium "
                  "(rubric `eval/judge.py` for the 20 answerable items, `eval/judge_v2.py` `RUBRIC_UN` for the 15 unanswerable items). "
                  "Classes are defined in `eval/GRADING-v2.md`. 'Majority' means more than half of the runs of an item.\n")
     hdr = ("| Model | Arm | Runs | Correct (of 20, majority) | Correct (run level) | Abstained correctly (of 15, majority) | "
@@ -148,7 +157,7 @@ def main():
     nh = sum(bool(v) for v in hits.values())
     lines += ["\n## Retrieval and citations (arm A3)\n",
               f"Top-8 default search holds every quoted line for {nh} of {len(answerable)} answerable items "
-              f"(`eval/runs/v2/retrieval/A3/`). Not-hit items: {', '.join(k for k, v in hits.items() if v is False) or 'none'}.\n",
+              f"(`{SRC}/retrieval/A3/`). Not-hit items: {', '.join(k for k, v in hits.items() if v is False) or 'none'}.\n",
               "| Model | A3 answers | With a verified citation | Share |", "|---|---|---|---|"]
     S["retrieval_hit_items"] = nh
     for m in R.MODELS:
@@ -178,7 +187,7 @@ def main():
             lines.append(f"- arm {arm}, {'unanswerable' if un else 'answerable'} items: {x} of {y} the same")
         S["judge_agreement"] = {"same": agree, "total": len(both), "kappa": kappa(yn)}
         dis = [k for a, b, k in both if a != b]
-        lines.append(f"\nDisagreements: {len(dis)} (listed in `eval/runs/v2/summary.json` under `judge_disagreements`).")
+        lines.append(f"\nDisagreements: {len(dis)} (listed in `{SRC}/summary.json` under `judge_disagreements`).")
         S["judge_disagreements"] = [{"key": list(k), "gpt-oss": judged[k]["verdict"], "gemma4": second[k]["verdict"],
                                      "reason_gpt-oss": judged[k]["reason"], "reason_gemma4": second[k]["reason"]} for k in dis]
     else:
@@ -199,5 +208,5 @@ def main():
     lines.append(f"\nGrader replies that did not parse (recorded as error): {err}.")
     S["grader_errors"] = err
     json.dump(S, open(os.path.join(R.V2, "summary.json"), "w", encoding="utf-8", newline="\n"), indent=1, ensure_ascii=False)
-    open(os.path.join(L.HERE, "RESULTS-v2.md"), "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
+    open(RESULTS, "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
     print("\n".join(lines))

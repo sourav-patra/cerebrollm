@@ -1,8 +1,9 @@
 """cerebrollm ask: retrieve, rerank, generate, verify, and print the answer only if a citation verifies.
 
 Pipeline: default search (top 20) -> cross-encoder rerank (top 8) -> a local generator is asked to quote one
-line and cite its path -> every citation goes through `verify` -> the answer is printed only when at least
-one citation verifies OK. Otherwise the output is exactly ABSTAIN. The gate is `decide`; everything else
+line and cite its path -> a citation of a path outside the 8 passages is refused, every other one goes through
+`verify` -> when at least one citation verifies OK, the verified quotes are printed (the generator's own text
+only on request). Otherwise the output is exactly ABSTAIN. The gate is `decide`; everything else
 feeds it. Retrieved text is data: it reaches the generator inside a marked block, and nothing the generator
 writes is trusted until `verify` re-reads the source file."""
 import json
@@ -13,7 +14,7 @@ import tomllib
 import httpx
 
 from . import rerank, search
-from .verify import run_verify
+from .verify import _requested, run_verify
 
 ABSTAIN = "Not in the sources."
 CANDIDATES, KEEP = 20, 8
@@ -154,12 +155,26 @@ def decide(answer, citations):
     return ABSTAIN
 
 
-def check_citations(cfg, answer):
+NOT_RETRIEVED = "NOT_RETRIEVED"   # a citation of a file the generator was not shown; never counts, verify is not run
+
+
+def check_citations(cfg, answer, retrieved=None):
+    """Verify each citation. With `retrieved` (the paths of the passages the generator saw), a citation of
+    any other path is marked NOT_RETRIEVED instead of being verified."""
+    shown = None if retrieved is None else {_requested(p) for p in retrieved} - {None}
     out = []
     for path, quote in extract_citations(answer or ""):
-        code, detail = run_verify(cfg, path, quote)
+        if shown is not None and _requested(path) not in shown:   # "./a/b.md" is "a/b.md"; "../x" is never shown
+            code, detail = NOT_RETRIEVED, "path is not among the %d retrieved passages" % KEEP
+        else:
+            code, detail = run_verify(cfg, path, quote)
         out.append({"path": path, "quote": quote, "verify": code, "detail": detail})
     return out
+
+
+def verified_quotes(citations):
+    """The printed answer: one '"quote" [path]' line per citation that verified OK, in the generator's order."""
+    return "\n".join('"%s" [%s]' % (c["quote"], c["path"]) for c in citations if c["verify"] == "OK")
 
 
 def chat_model(name):
@@ -185,8 +200,11 @@ def ollama_generate(cfg, model, prompt, num_ctx, think=None):
     return r.json()["message"]["content"]
 
 
-def ask(cfg, question, model=DEFAULT_MODEL, think=None, rerank_on=True, generate=None, has=None):
+def ask(cfg, question, model=DEFAULT_MODEL, think=None, rerank_on=True, generate=None, has=None,
+        show_text=False):
     """Run the pipeline; return the result dict (answer, abstained, absent_terms, citations, hits, timings).
+    The answer is the verified quotes only; generator_text is the generator's own text, unverified, which
+    format_result prints only when show_text is set.
 
     `generate(prompt) -> str` replaces the Ollama call and `has(term) -> bool` the corpus lookup (tests).
     A failure in retrieval, rerank or generation raises; the CLI turns that into an error exit, never
@@ -204,10 +222,13 @@ def ask(cfg, question, model=DEFAULT_MODEL, think=None, rerank_on=True, generate
     raw = (generate or (lambda p: ollama_generate(cfg, model, p, entry["num_ctx"], think)))(
         build_prompt(question, hits)) if run else ""
     t3 = time.time()
-    citations = check_citations(cfg, raw) if run else []
+    citations = check_citations(cfg, raw, {h["path"] for h in hits}) if run else []
     printed = decide(raw, citations)
+    if printed != ABSTAIN:
+        printed = verified_quotes(citations)
     t4 = time.time()
-    return {"question": question, "model": model, "answer": printed, "abstained": printed == ABSTAIN,
+    return {"question": question, "model": model, "answer": printed, "generator_text": raw, "show_text": show_text,
+            "abstained": printed == ABSTAIN,
             "absent_terms": missing, "citations": citations,
             "hits": [{k: h.get(k) for k in ("rank", "search_rank", "rerank_score", "path", "line_start", "line_end")}
                      for h in hits],
@@ -216,13 +237,18 @@ def ask(cfg, question, model=DEFAULT_MODEL, think=None, rerank_on=True, generate
 
 
 def format_result(res):
-    """Plain text: the answer; for a real answer, one line per citation with its verify code."""
-    if res["abstained"]:
-        return ABSTAIN
-    lines = [res["answer"], ""]
-    lines += ["%s  %s" % (c["verify"], c["path"]) for c in res["citations"]]
+    """Plain text: the verified quotes, one line per citation with its verify code, and the generator's
+    own text only when it was requested."""
+    lines = [ABSTAIN] if res["abstained"] else [res["answer"], ""] + [
+        "%s  %s" % (c["verify"], c["path"]) for c in res["citations"]]
+    if res.get("show_text"):
+        lines += ["", "Unverified text:", res["generator_text"] or "(none)"]
     return "\n".join(lines)
 
 
 def to_json(res):
+    """JSON of the result; generator_text is null unless show_text was set, so unverified text never prints
+    without --show-text."""
+    if not res.get("show_text") and "generator_text" in res:
+        res = dict(res, generator_text=None)
     return json.dumps(res, indent=2, ensure_ascii=False)
