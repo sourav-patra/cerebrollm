@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
   <title id="t">The parts of cerebrollm</title>
-  <desc id="d">The cerebrollm program sits in the middle; you use it from the terminal, and an AI app uses it through the MCP server. It reads the notes folders and re-reads a cited file to check a quote. It stores passages, their vectors and file fingerprints in a PostgreSQL index and searches it. It calls Ollama to embed text and to write answers. A local reranker keeps the best 8 of 20 passages. Ollama is local while it uses its default loopback address, which cerebrollm does not enforce.</desc>
+  <desc id="d">The cerebrollm program sits in the middle; you use it from the terminal, and an AI app uses it through the MCP server. It reads the notes folders and re-reads a cited file to check a quote. It stores passages, their vectors and file fingerprints in a PostgreSQL index and searches it. It calls Ollama to embed text and to write answers. A local reranker keeps the best 8 of 20 passages. Ollama is local while it uses its default loopback address; cerebrollm refuses any other address unless allow_remote = true is set under [ollama].</desc>
   <defs>
     <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#1f2933"/>

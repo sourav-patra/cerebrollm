@@ -1,6 +1,6 @@
 ﻿# cerebrollm
 
-Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.` Only the quote is checked, not the rest of the answer.
+Ask a question of your own Markdown documents and get an answer whose quote has been re-read in the source file, or exactly `Not in the sources.` In 0.1.3 only the quote is checked, not the rest of the answer; `main` prints only checked quotes.
 
 [![tests](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml/badge.svg)](https://github.com/sourav-patra/cerebrollm/actions/workflows/tests.yml)
 PyPI: [cerebrollm 0.1.3](https://pypi.org/project/cerebrollm/) · Licence: [MIT](LICENSE) · Python 3.12 · Status: early research
@@ -27,7 +27,7 @@ The aim is at least 90% right outcomes (a right answer, or a correct `Not in the
 
 ## Features
 
-- Answers only with a quote it re-read in your file; otherwise prints `Not in the sources.` One confirmed quote lets the whole answer through, and the rest of its text is not checked.
+- Answers only with a quote it re-read in your file; otherwise prints `Not in the sources.`
 - Runs on your machine: a PostgreSQL index, local models through Ollama and a local reranker (a second model that re-orders passages by how well they fit the question).
 - Hybrid search: keyword and meaning (vector) search find 20 passages, and a reranker keeps the best 8.
 - Trust rules: default search leaves drafts out, trusted and recent notes rank higher, and folders you mark are never indexed.
@@ -127,6 +127,8 @@ Figure: the five steps of `ask` and its output gate, read against `engine/cerebr
 4. Verify re-reads each cited file and checks that the quote is in it and that the file still has the sha256 recorded at indexing time.
 5. The gate prints the answer when at least one citation verified `OK`, and prints exactly `Not in the sources.` in every other case, including an empty answer and no search hits. A failure in search, rerank or generation prints an error on stderr and exits 2; it never prints an answer.
 
+In 0.1.3 (PyPI) the answer printed is the generator's whole text. On `main`, for the next release, it is only the verified quotes; `--show-text` adds the rest (`CHANGELOG.md`, Unreleased).
+
 Other commands: `index`, `search`, `verify`, `status` and `mcp` (a read-only MCP server with the tools `search` and `verify`). `engine/README.md` documents each one.
 
 ## Use it from an AI app (MCP)
@@ -169,7 +171,7 @@ The full tables, the v2 evaluation method and every limit are in [docs/RESULTS.m
 | Question | Result | Source | State |
 |---|---|---|---|
 | Does retrieval help a small local model? `phi4`, 60 questions | without retrieval 1/60, with retrieval 47/60 | `eval/RESULTS.md` | measured |
-| How often is `gpt-oss:20b` confidently wrong on 35 questions about recent releases? | no retrieval 122 of 175 runs, plain search 17 of 175, `cerebrollm ask` 7 of 104 | `eval/RESULTS-v2.md` | measured |
+| How often is `gpt-oss:20b` confidently wrong on 35 questions about recent releases? | no retrieval 122 of 175 runs, plain search 17 of 175, `cerebrollm ask` 7 of 104 (engine 0.1.0) | `eval/RESULTS-v2.md` | measured |
 | Does `ask` meet the aim of at least 90% right outcomes with under 2% confidently wrong runs? | not met by any local model; observed for Claude Sonnet 5.5 with plain search, but 35 items cannot show a rate under 2% | `eval/RESULTS-v2.md` | measured |
 | Does the top 8 hold a line that answers the question? 60 questions | default search 45/60, with the reranker 46/60 | `eval/runs/retrieval/R-summary.md` | measured |
 

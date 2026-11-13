@@ -10,7 +10,7 @@ Run with `engine/bin/cerebrollm` (or `python -m cerebrollm`).
 - `cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--json]`
 - `cerebrollm verify PATH "QUOTED TEXT" [--ref REF]` prints OK, CHANGED, MISSING, GONE or UNINDEXED; exit 0 only for OK. An excluded path (never-index rule, no tier rule, secret pattern) prints MISSING, the same as an absent quote
 - `cerebrollm index [--changed]`: a full run builds into `<table>_next` and swaps it in on success; `--changed` re-embeds only changed files in the live table. A refused swap prints the command that drops `<table>_next`.
-- `cerebrollm ask "QUESTION" [--model M] [--think L] [--no-rerank] [--json]`: search top 20, rerank to 8, local generator, every citation verified; prints the answer only with a verified citation, else exactly `Not in the sources.` (on a shared GPU, serialise model work with a lock such as `flock ~/.cerebrollm/gpu.lock ...`)
+- `cerebrollm ask "QUESTION" [--model M] [--think L] [--no-rerank] [--show-text] [--json]`: search top 20, rerank to 8, local generator, every citation of the 8 passages verified (any other path is `NOT_RETRIEVED`); prints only the verified quotes, else exactly `Not in the sources.`; `--show-text` adds the generator's own text, unverified (on a shared GPU, serialise model work with a lock such as `flock ~/.cerebrollm/gpu.lock ...`)
 - `cerebrollm status`
 - MCP (read-only `search`, with `rerank=true` for the cross-encoder top 8, and `verify` over stdio): register `cerebrollm mcp` as a stdio server in the MCP host
 - Tests: `python -m pytest -q` from `engine/` (the end-to-end test skips if Postgres or Ollama is down)
