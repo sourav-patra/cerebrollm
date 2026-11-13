@@ -49,12 +49,20 @@ def _bounded(needle, hay):
     return False
 
 
+LINKISH = re.compile(r"\]\(|\]\[|://|<\s*a\b|\b(?:href|src)\s*=|\bwww\.|\bmailto:", re.I)   # any link or URL syntax
+
+
 def _found(quote, text):
     needle = _normalise(quote)
     if not needle:   # "" is inside every string
         return False
     if _bounded(needle, _normalise(text)):
         return True
+    # The fallback below drops link destinations and markup, and `ask` prints the quote as the model wrote it,
+    # so a quote with any link or URL in it must match the file exactly (whitespace aside), never through it:
+    # otherwise a link the model added or changed would print inside a verified answer.
+    if LINKISH.search(quote):
+        return False
     needle = _plain(quote).rstrip(".,;:")
     # the quote must end where the source's text ends: "port 80." must not match "port 8080", "10**24" or "10.5"
     return bool(needle) and re.search(r"(?:^|(?<=[\s(\[\"']))%s(?=$|\s|[.,;:!?)\]\"'](?:\s|$))" % re.escape(needle),

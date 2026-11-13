@@ -6,6 +6,8 @@ Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm ind
 
 `ask` prints only what `verify` confirmed. No re-index needed.
 
+- `verify` matches a quote that contains any link or URL syntax (a Markdown link or image, an autolink, an HTML link, `://`, `www.`, `mailto:`) only when it occurs in the file exactly, whitespace aside. Before, such a quote could match with link destinations and markup dropped, so a link the model added or changed could print inside a verified `ask` answer.
+- `setup/root-ubuntu.sh` leaves a PostgreSQL service unit that existed before it, running or stopped, exactly as it was; it stops and disables the packaged service only when its own install created it. Before, it stopped and disabled any packaged PostgreSQL service.
 - `ask` prints the verified quotes, one `"quote" [path]` line each, in place of the generator's whole text; the generator's own text prints only with the new `--show-text`, after an `Unverified text:` line. `--json` keeps the verified quotes in `answer` and gains `show_text` and `generator_text`, which is null unless `--show-text` is given (LLD issue I-02).
 - A citation counts only when its path, with `.` and `..` resolved, is among the 8 passages the generator saw; any other path, or one that leaves the root, gets the code `NOT_RETRIEVED` and `verify` is not run (I-02).
 - `python3 eval/run_v2.py` takes `--out DIR` for generation, grading and report, and stores the engine commit in each A4 record as `meta.engine_commit`. With `--out`, the report writes `DIR/summary.json` and `DIR/RESULTS.md` and leaves `eval/RESULTS-v2.md` alone.

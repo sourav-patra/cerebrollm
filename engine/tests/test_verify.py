@@ -39,6 +39,41 @@ class TestVerify(unittest.TestCase):
         for quote in ("Bold rule with code and a link here", "**Bold** rule with code.", "* Bold rule with `code`,"):
             self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
 
+    def test_a_link_the_source_does_not_hold_is_missing(self):
+        self.file.write_text("Download the tool from [the releases page](https://example.org/releases) today.\n"
+                             "Plain words with no link.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("Download the tool from [the releases page](https://attacker.example/payload) today.",
+                      "Plain words with [no link](https://attacker.example/x).",
+                      "Plain words with no [](https://attacker.example/x)link.",
+                      "Plain ![words](https://attacker.example/x.png) with no link."):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        for quote in ("Download the tool from [the releases page](https://example.org/releases) today.",
+                      "Download the tool from the releases page today."):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
+
+    def test_a_quote_with_link_syntax_must_match_exactly(self):
+        # review round 1: a backtick inside a destination was dropped by the fallback, and the destination
+        # regex stopped at the first ")"; autolinks and HTML links were not seen at all
+        self.file.write_text("Get <https://example.org/tool> now.\n"
+                             "Or <a href='https://example.org/tool'>tool</a> now.\n"
+                             "Also [tool](https://example.org/a(b)c) and ![logo](https://example.org/a(b)c.png) now.\n"
+                             "See [the\n  docs](https://example.org/docs 'Docs') now.\n")
+        self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        for quote in ("Get <https://example.org/to`ol> now.",
+                      "Or <a href='https://example.org/to`ol'>tool</a> now.",
+                      "Also [tool](https://example.org/a(b)`c) and",
+                      "and ![logo](https://example.org/a(b)`c.png) now.",
+                      "Get <https://attacker.example/tool> now.",
+                      "Or **<a href='https://example.org/tool'>tool</a>** now.",
+                      "Get www.attacker.example now."):
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "MISSING", quote)
+        for quote in ("Get <https://example.org/tool> now.",
+                      "Or <a href='https://example.org/tool'>tool</a> now.",
+                      "Also [tool](https://example.org/a(b)c) and ![logo](https://example.org/a(b)c.png) now.",
+                      "See [the docs](https://example.org/docs 'Docs') now."):   # whitespace still normalised
+            self.assertEqual(self.run_verify("doc.md", quote, {self.sha}), "OK", quote)
+
     def test_marks_inside_a_word_are_content(self):
         self.file.write_text("Set require_auth to true, 10**24 bytes and **this** too, not `FOO_` or `BAR*`.\n")
         self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
