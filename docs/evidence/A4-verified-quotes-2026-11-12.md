@@ -12,6 +12,6 @@ Arm A4 (`cerebrollm ask`) on the 35 public items of `eval/items-v2.jsonl`, `gpt-
 The two confidently wrong runs:
 
 - G2-EX-05 run 1, incomplete: the question asks for three types and the printed verified quote names one (`choice`).
-- G2-EX-03 run 3, wrong: asked for the context window of one model, `ask` printed the verified line "24-48 GiB VRAM: 32k context" from Ollama's general context-length page; the reference is 262K. A verified quote can answer a different question; release map 0.2 item 1 targets that.
+- G2-EX-03 run 3, wrong: asked for the context window of one model, `ask` printed the verified line "24-48 GiB VRAM: 32k context" from Ollama's general context-length page; the reference is 262K. A verified quote can answer a different question; release map 0.3 item 1 targets that.
 
 The 0.1.2 release entry in `CHANGELOG.md` reports 3 of 105 confidently wrong runs from an earlier run of the same engine; the rerun above found 0. With 3 runs per item, differences of 1 to 3 runs are within run-to-run variation; no significance test was run.
