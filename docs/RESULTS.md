@@ -8,7 +8,7 @@ All numbers come from files committed here. "Measured" means a run produced the 
 
 | Question | Result | Source | State |
 |---|---|---|---|
-| Does the top 8 hold a line that answers the question? 60 scored questions on 1,432 documents (13,627 chunks) | default search 45/60, search top 20 then rerank 46/60, any of the top 20 48/60 | `eval/runs/retrieval/R-summary.md` | measured |
+| Does the top 8 hold a line that answers the question? 60 scored questions on 1,432 documents (13,627 chunks) | default search 45/60, search top 20 then rerank 46/60, any of the top 20 48/60 | `eval/runs/retrieval/R-summary.md`; corpus size in `R-summary.json` | measured |
 | Does retrieval help a small local model? `phi4`, 60 questions, majority of 5 runs, model-graded | without retrieval 1/60, with default search and a citation instruction 47/60 (46 questions gained, 0 lost, p < 0.0001) | `eval/RESULTS.md`, `eval/runs/judge/tables.md` | measured |
 | Does retrieval help a strong hosted model? Claude Haiku, same 60 questions | without retrieval 47/60, with 48/60 (8 gained, 7 lost, p = 1.0): no effect shown; Haiku already answers 47 of 60 without retrieval, which leaves little room to show a gain | `eval/RESULTS.md`, `eval/runs/judge/tables.md` | measured |
 | How often do citations verify? Answers with at least one `OK` citation | Claude Haiku 347 of 350, `phi4` 184 of 350 | `eval/RESULTS.md` | measured |
