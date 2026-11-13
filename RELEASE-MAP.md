@@ -1,15 +1,17 @@
 # Release map
 
-0.1.3 is the current release: 0.1.2 with the hardening below, early research and built and measured as far as `README.md` states. Everything under 0.2 and later is proposed and not measured; an item moves into a release only when its acceptance check runs.
+0.2.0 is the current release: 0.1.3 with verified-quotes output and the stricter `verify` below, early research and built and measured as far as `README.md` states. Everything under 0.3 and later is proposed and not measured; an item moves into a release only when its acceptance check runs.
 
-## Unreleased (on main)
+## 0.2.0 (contents)
 
 | Area | What changed | Evidence |
 |---|---|---|
 | `ask` | prints only the verified quotes; a citation counts only when its path is among the 8 retrieved passages, else `NOT_RETRIEVED`; `--show-text` adds the generator's own text | `engine/tests/test_answer.py` |
 | Answer quality | `gpt-oss:20b` on the v2 set, A4, 3 runs per item: 33 of 35 right outcomes (0.1.2: 33), 2 of 105 confidently wrong runs (a rerun of 0.1.2 at 56f13e0: 0; the 0.1.2 row below: 3): one incomplete answer and one verified quote that answers a different question | `docs/evidence/A4-verified-quotes-2026-11-12.md`; run records not committed |
+| `verify` | a quote with any link or URL syntax matches only when it occurs in the file exactly, whitespace aside | `engine/tests/test_verify.py` |
+| Setup | `setup/root-ubuntu.sh` leaves a PostgreSQL service that existed before it as it was | `engine/tests/test_setup_root.py` (stub `apt-get` and `systemctl`; not run on a real machine) |
 | Evaluation | `eval/run_v2.py --out DIR` keeps a run apart; A4 records store `meta.engine_commit` | `eval/test_run_v2.py` |
-| Engine tests | 175 passed, 0 skipped with PostgreSQL and Ollama | `engine/tests` |
+| Engine tests | 180 passed, 0 skipped with PostgreSQL and Ollama | `engine/tests` |
 
 ## 0.1.3 (contents)
 
@@ -53,9 +55,9 @@
 | Answer quality | v2 evaluation: 35 public items, plain search and `ask` per model; aim met by one hosted model only | `eval/RESULTS-v2.md` |
 | Packaging | wheel and sdist, console script, `rerank` extra | `pyproject.toml` |
 
-## 0.2 (proposed, not measured)
+## 0.3 (proposed, not measured)
 
-Each item has one acceptance check. The hardening items once listed here shipped in 0.1.3; printing only the verified quotes is on main (Unreleased above).
+Each item has one acceptance check. The hardening items once listed for 0.2 shipped in 0.1.3; printing only the verified quotes shipped in 0.2.0.
 
 1. A relevance check: `ask` accepts a verified quote only when the quote answers the question, so a real quote from an unrelated passage no longer passes the gate.
 2. A second public item set large enough to bound a 2% confidently-wrong rate (the report that prints the bound shipped in 0.1.3).

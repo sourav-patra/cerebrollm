@@ -33,15 +33,15 @@ What sets it apart is the evidence rule: every number names a file in this repos
 | Fresh-machine quick start | every README quick-start step run on a clean Ubuntu 24.04 or WSL2 instance; log committed under `docs/evidence/` | owner's machine |
 | Community files | `CODE_OF_CONDUCT.md` and three issue templates render on GitHub | done when merged; owner sets the conduct contact |
 | Sidebar | a social preview image is set and Discussions is on | owner, in Settings |
-| 0.2 items filed as issues | one issue per item in `RELEASE-MAP.md`, each with its acceptance check | owner or agent |
+| 0.3 items filed as issues | one issue per item in `RELEASE-MAP.md`, each with its acceptance check | owner or agent |
 | Launch post | posted after the fresh-machine log is committed | owner |
 
-## Phase 1: release 0.2, answer quality
+## Phase 1: answer quality (0.2.0 and 0.3)
 
-These are the three items already in `RELEASE-MAP.md`. They come first because they are the project's main claim.
+These were the three answer-quality items of `RELEASE-MAP.md`; item 2 shipped in 0.2.0, items 1 and 3 are proposed for 0.3. They come first because they are the project's main claim.
 
 1. A relevance check, so a real quote from an unrelated passage no longer passes the gate.
-2. `ask` prints only verified quotes, counts a citation only when its path is among the 8 retrieved hits, and shows the generator's own text only on request.
+2. `ask` prints only verified quotes, counts a citation only when its path is among the 8 retrieved hits, and shows the generator's own text only on request. Shipped in 0.2.0.
 3. A second public item set large enough to bound a 2% confidently wrong rate.
 
 ## Phase 2: reach more readers
