@@ -112,9 +112,10 @@ def main():
     S = {"models": {}}
     lines = []
     lines.append("# Results v2: 35 public items across models and arms (development step N6a)\n")
-    lines.append(f"Source of every figure: `{SRC}/summary.json` (made by `{CMD}` from the records "
+    lines.append(f"Source of the tables except time and keyword grade: `{SRC}/summary.json` (made by `{CMD}` from the records "
                  f"under `{SRC}/<model>/<arm>/` and the grades in `{SRC}/judge/`). Grader: `gpt-oss:20b` thinking medium "
                  "(rubric `eval/judge.py` for the 20 answerable items, `eval/judge_v2.py` `RUBRIC_UN` for the 15 unanswerable items). "
+                 "The time and keyword-grade tables are computed from the records themselves. "
                  "Classes are defined in `eval/GRADING-v2.md`. 'Majority' means more than half of the runs of an item.\n")
     hdr = ("| Model | Arm | Runs | Correct (of 20, majority) | Correct (run level) | Abstained correctly (of 15, majority) | "
            "Right outcome (of 35, majority) | Confidently wrong items (majority) | Confidently wrong (runs) | Abstained wrong (runs) | Empty (runs) | Aim 90% / under 2% |")
