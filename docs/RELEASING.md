@@ -34,7 +34,11 @@ Before a tag, all of these pass:
    scans with the settings in `.github/release-gate.toml`, so NEEDLES and ACCEPTED
    stay in the gate's secrets and no agent sees them. A successful check from the
    `agent-release-gate` App on the release commit passes step 2, and
-   `.github/workflows/publish.yml` refuses a release without one. Without the
+   `.github/workflows/publish.yml` refuses a release without one. The scheduled
+   gate scans only open pull request heads and `v*` tags, so before the tag run
+   `gh workflow run gate.yml --repo sourav-patra/release-gate -f
+   repo=sourav-patra/cerebrollm -f sha=<full release commit>` and wait for that
+   commit's `release-gate` check to succeed. Without the
    gate, the owner saves the four outputs and attaches them to the release pull
    request.
 3. `python -m build` makes the sdist and wheel; the wheel installs into a new
