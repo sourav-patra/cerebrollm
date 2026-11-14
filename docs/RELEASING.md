@@ -13,15 +13,24 @@ Before a tag, all of these pass:
 1. `(cd engine && python -m pytest -q -rs)` exits 0 and prints each skip reason. Run
    steps 2 and 3 from the repository root.
 2. The leak scan over the release tree passes: `gitleaks dir . --redact` exits 0;
-   `git log --all --format='%an <%ae>%n%cn <%ce>' | sort -u` lists only the
-   project's noreply identity and `GitHub <noreply@github.com>`, the committer of
-   merges made on GitHub; `grep -rIFf NEEDLES . | grep -vxFf ACCEPTED` prints
+   after `git fetch --prune origin`, so that remote branches match GitHub,
+   `git log --all --format='%ae%n%ce' | sort -u` lists only the project's noreply
+   address `61248036+sourav-patra@users.noreply.github.com`, `noreply@github.com`
+   (the committer of merges made on GitHub) and `noreply@anthropic.com`;
+   `git log --all --format='%H %ae %ce' | grep -F noreply@anthropic.com` prints one
+   line, for `6ff229626d2215033ef705007fc818a3efeff8a9`. The check compares
+   addresses, because the project address appears under two names (`sourav-patra`
+   and `Sourav Patra`) that are one account. That one commit (project plan, code of
+   conduct and launch post drafts, 2026-11-10) has an agent's public noreply
+   address as author and committer; it holds no private address, and rewriting
+   `main` to change it would change every later commit hash. Any other commit with
+   that address fails the check; `grep -rIFf NEEDLES . | grep -vxFf ACCEPTED` prints
    nothing and neither `grep` reports an error. NEEDLES is the owner's file of
    private names and paths. ACCEPTED is the owner's file of complete scan lines
    already read and accepted as upstream text. Both stay outside the repository.
    As of 0.1.1, ACCEPTED holds three LlamaIndex lines: a package heading and two
    manifest paths. A changed line that still matches NEEDLES prints again unless
-   ACCEPTED holds the new line. The owner saves the three outputs and attaches
+   ACCEPTED holds the new line. The owner saves the four outputs and attaches
    them to the release pull request.
 3. `python -m build` makes the sdist and wheel; the wheel installs into a new
    virtual environment, and `cerebrollm --help` and `cerebrollm ask --help` exit 0.
