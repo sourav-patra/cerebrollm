@@ -30,8 +30,13 @@ Before a tag, all of these pass:
    already read and accepted as upstream text. Both stay outside the repository.
    As of 0.1.1, ACCEPTED holds three LlamaIndex lines: a package heading and two
    manifest paths. A changed line that still matches NEEDLES prints again unless
-   ACCEPTED holds the new line. The owner saves the four outputs and attaches
-   them to the release pull request.
+   ACCEPTED holds the new line. From 0.2.0 the `release-gate` check runs these
+   scans with the settings in `.github/release-gate.toml`, so NEEDLES and ACCEPTED
+   stay in the gate's secrets and no agent sees them. A successful check from the
+   `agent-release-gate` App on the release commit passes step 2, and
+   `.github/workflows/publish.yml` refuses a release without one. Without the
+   gate, the owner saves the four outputs and attaches them to the release pull
+   request.
 3. `python -m build` makes the sdist and wheel; the wheel installs into a new
    virtual environment, and `cerebrollm --help` and `cerebrollm ask --help` exit 0.
 4. The PRD, TRD, LLD and POLICY are locked and `docs/LOCKS.md` is current.

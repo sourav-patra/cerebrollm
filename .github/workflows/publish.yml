@@ -3,6 +3,8 @@ name: publish
 # Publishes to PyPI when the owner publishes a GitHub release for a tag vX.Y.Z.
 # Uses PyPI trusted publishing (no token stored). One-time setup by the owner on PyPI: a trusted publisher
 # for this repository, workflow publish.yml, environment pypi.
+# The gate job refuses a release whose commit has no successful release-gate check from the
+# agent-release-gate App (docs/RELEASING.md step 2).
 
 on:
   release:
@@ -12,7 +14,22 @@ permissions:
   contents: read
 
 jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    permissions:
+      checks: read
+    steps:
+      - name: release-gate check succeeded on the release commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          APP_SLUG: agent-release-gate
+        run: |
+          n=$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/check-runs?check_name=release-gate" \
+            --jq "[.check_runs[] | select(.conclusion == \"success\" and .app.slug == \"$APP_SLUG\")] | length")
+          [ "$n" -ge 1 ] || { echo "no successful release-gate check from $APP_SLUG on $GITHUB_SHA"; exit 1; }
+
   build:
+    needs: gate
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
