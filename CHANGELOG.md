@@ -2,6 +2,15 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+Search can be scoped by path and date. No re-index needed.
+
+- `cerebrollm search` takes `--path-prefix PATH`, `--since T` and `--until T`; the MCP `search` tool takes `path_prefix`, `since` and `until`. All three combine with `--project`.
+- A prefix matches at a path-segment boundary, and dates are compared as instants. A bad date exits with status 2 (CLI) or returns one `Invalid date` line (MCP). Details: [engine/README.md](engine/README.md#commands).
+- The filters apply inside both retrieval arms before the candidate limit. Without them, search output is unchanged.
+- Limits: copies listed in `also_at` are not matched by a prefix. A file whose date moved with unchanged content keeps its indexed date until a full `cerebrollm index` run.
+
 ## 0.2.0
 
 `ask` prints only what `verify` confirmed. No re-index needed.
