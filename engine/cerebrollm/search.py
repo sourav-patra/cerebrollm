@@ -231,3 +231,82 @@ def format_hits(results):
 
 def to_json(results):
     return json.dumps(results, indent=2, ensure_ascii=False)
+
+
+MIN_BUDGET, MAX_BUDGET = 50, 20000   # tokens accepted by the opt-in output budget (CLI --budget, MCP budget)
+
+
+def _trimmed(hit, keep):
+    """The hit with its text cut to `keep` characters and TRUNCATED appended, or the hit itself when
+    the text is not longer than `keep`. The header fields are never touched."""
+    text = hit["text"]
+    if keep >= len(text):
+        return hit
+    return dict(hit, text=text[:keep].rstrip() + TRUNCATED, truncated=True)
+
+
+def fit_budget(hits, budget_tokens, render, extra=0):
+    """Choose which hits fit a token budget (4 chars/token) measured on the final rendered output.
+
+    render(shown, dropped) returns the whole output text for those hit lists, footer included;
+    `extra` is the number of characters printed on top of it (the newline print adds). Hits are
+    dropped from the lowest rank up and rank order never changes. The most hits that fit are shown;
+    the last shown hit may have its text trimmed, never its header. When not even one header fits,
+    no hit is shown. Returns (shown, dropped); the hit dicts passed in are not modified.
+
+    The number of hits is found by binary search, so about log2(n) + log2(longest text) renders are
+    made, not one per hit. Shortcut: the search assumes that showing one more hit never makes the
+    output shorter, which holds because a hit adds more characters than the footer can lose; the
+    answer is always one that render itself measured as fitting."""
+    limit = budget_tokens * 4 - extra
+
+    def fits(shown, dropped):
+        return len(render(shown, dropped)) <= limit
+
+    def possible(n):   # the n-th hit fits whole, or with only its header and the marker
+        return (fits(hits[:n], hits[n:])
+                or fits(hits[:n - 1] + [_trimmed(hits[n - 1], 0)], hits[n:]))
+
+    if fits(hits, []):
+        return list(hits), []
+    lo, hi = 0, len(hits)   # the largest n for which possible(n) holds
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if possible(mid):
+            lo = mid
+        else:
+            hi = mid - 1
+    n = lo
+    if n == 0:
+        return [], list(hits)
+    head, last, dropped = hits[:n - 1], hits[n - 1], hits[n:]
+    if fits(hits[:n], dropped):   # a short hit can be shorter whole than with the marker
+        return hits[:n], dropped
+    lo, hi = 0, len(last["text"]) - 1   # the text cut to lo characters fits; the whole text does not
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if fits(head + [_trimmed(last, mid)], dropped):
+            lo = mid
+        else:
+            hi = mid - 1
+    return head + [_trimmed(last, lo)], dropped
+
+
+def _dropped_ranks(dropped):
+    return [dropped[0]["rank"], dropped[-1]["rank"]] if dropped else []
+
+
+def budgeted_output(results, budget_tokens, as_json):
+    """The CLI output under an opt-in budget: text ending in `dropped: n (ranks a-b)`, or with
+    as_json an object with hits, dropped, dropped_ranks and budget_tokens. The newline print adds is
+    counted. cap_text is not applied: the budget replaces it."""
+    def render(shown, dropped):
+        if as_json:
+            return json.dumps({"hits": shown, "dropped": len(dropped), "dropped_ranks": _dropped_ranks(dropped),
+                               "budget_tokens": budget_tokens}, indent=2, ensure_ascii=False)
+        ranks = _dropped_ranks(dropped)
+        footer = "dropped: %d (ranks %d-%d)" % (len(dropped), ranks[0], ranks[1]) if dropped else "dropped: 0"
+        return format_hits(shown) + footer
+
+    shown, dropped = fit_budget(list(results), budget_tokens, render, extra=1)
+    return render(shown, dropped)
