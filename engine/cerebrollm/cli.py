@@ -23,6 +23,9 @@ def main(argv=None):
     p.add_argument("--project")
     p.add_argument("--synonyms", action="store_true", default=None, help="apply the [synonyms] table to the lexical arm (off by default)")
     p.add_argument("--json", action="store_true")
+    p.add_argument("--budget", type=int, metavar="TOKENS",
+                   help="keep the whole output within TOKENS (4 characters each, 50 to 20000): drop the "
+                        "lowest-ranked hits and report how many; replaces [search] token_budget")
 
     p = sub.add_parser("ask", help="answer a question from the index; print it only if a citation verifies")
     p.add_argument("question")
@@ -43,6 +46,10 @@ def main(argv=None):
     sub.add_parser("mcp", help="serve search and verify over MCP on stdio (read-only)")
 
     args = ap.parse_args(argv)
+    if args.cmd == "search" and args.budget is not None:
+        from .search import MIN_BUDGET, MAX_BUDGET
+        if not MIN_BUDGET <= args.budget <= MAX_BUDGET:
+            ap.error("--budget must be %d to %d tokens" % (MIN_BUDGET, MAX_BUDGET))
     cfg = config.load(args.config)
 
     if args.cmd == "index":
@@ -51,8 +58,11 @@ def main(argv=None):
     elif args.cmd == "search":
         from . import search
         results = search.run_search(cfg, args.query, args.k, args.mode, args.all_status, args.project, args.synonyms)
-        results = search.cap_text(results, cfg.search["token_budget"])
-        print(search.to_json(results) if args.json else search.format_hits(results))
+        if args.budget is not None:
+            print(search.budgeted_output(results, args.budget, args.json))
+        else:
+            results = search.cap_text(results, cfg.search["token_budget"])
+            print(search.to_json(results) if args.json else search.format_hits(results))
     elif args.cmd == "ask":
         from . import answer
         try:
