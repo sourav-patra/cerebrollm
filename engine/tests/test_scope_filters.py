@@ -8,6 +8,7 @@ afterwards. They skip with the cause only when Postgres is unreachable. The argu
 the CLI and the MCP tool need nothing."""
 import contextlib
 import copy
+import datetime
 import io
 import os
 import re
@@ -381,7 +382,9 @@ class TestGitFixture(unittest.TestCase):
                 make_git_repo(repo, "2026-01-01T00:00:00+00:00")
             out = subprocess.run(["git", "-C", str(repo), "log", "-1", "--format=%cI"], check=True,
                                  capture_output=True, text=True).stdout.strip()
-            self.assertEqual(out, "2026-01-01T00:00:00+00:00")
+            # some git versions print a UTC date with "Z", others with "+00:00"; compare the instant
+            self.assertEqual(datetime.datetime.fromisoformat(out),
+                             datetime.datetime.fromisoformat("2026-01-01T00:00:00+00:00"))
 
 
 @unittest.skipIf(REASON, REASON or "")
