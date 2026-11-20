@@ -2,6 +2,10 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+- Daily-record file names are a setting: a top-level `journal_prefixes` list in `cerebrollm.toml` (default `["JOURNAL"]`). Dated files whose names start with a listed prefix are append-only records, so they all stay current instead of superseding each other. Without the key, behaviour is unchanged. No re-index needed for existing configs; after adding a prefix, run `cerebrollm index` so older files lose their `superseded` status.
+
 ## 0.2.0
 
 `ask` prints only what `verify` confirmed. No re-index needed.

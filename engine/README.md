@@ -164,7 +164,10 @@ Supersession: files in the same root and directory whose names differ only by a 
 (`rev16`, `r7`, `-r2`) or a date (`2026-10-24`, `18-oct`, `17-oct-2026`) form a family. Only the
 member with the highest (revision, date) keeps its status; the others become `superseded`. Members
 tied at the top all stay. Files whose name starts with `JOURNAL` are append-only daily records, not
-revisions, so they never form a family. A file is also `superseded` when one of its first 30 lines
+revisions, so they never form a family. To use other names for daily records (for example
+`notes-2026-11-10.md`, `notes-2026-11-11.md`), set a top-level `journal_prefixes = ["JOURNAL", "notes-"]`
+in `cerebrollm.toml`; the match is on the start of the file name and is case-sensitive. Without the
+key the list is `["JOURNAL"]`. A file is also `superseded` when one of its first 30 lines
 is a `Status:` line (any case) whose value starts with "superseded", or a line starting
 `Superseded by`. A phrase inside another status value does not count:
 `Status: current; individual details may be superseded by a later note` leaves the file `current`.
