@@ -80,15 +80,15 @@ The 27B grader is about 17.7 GB and does not fit a 12 GB GPU; Ollama runs part o
 
 The run uses a corpus folder, a table and a state folder of its own. It never writes into the corpus that the shipped config indexes.
 
-1. Write the config and stage the sources in a new folder. `mkdir` without `-p` stops if the folder exists, and `diff` shows any file that differs from the saved source:
+1. Write the config and stage the sources in a new folder. Each line runs only when the one before it succeeded: `mkdir` without `-p` fails if the folder exists, so nothing is copied into an existing corpus, and `diff` fails on any file that differs from the saved source, so nothing is indexed:
 
    ```
-   python3 eval/itemset_config.py v3 ~/.cerebrollm/cerebrollm-v3.toml
-   mkdir ~/cerebrollm-corpus-v3
-   cp -r eval/v3-sources/. ~/cerebrollm-corpus-v3/
-   diff -r eval/v3-sources ~/cerebrollm-corpus-v3
-   export CEREBROLLM_CONFIG=~/.cerebrollm/cerebrollm-v3.toml
-   engine/bin/cerebrollm index
+   python3 eval/itemset_config.py v3 ~/.cerebrollm/cerebrollm-v3.toml &&
+   mkdir ~/cerebrollm-corpus-v3 &&
+   cp -r eval/v3-sources/. ~/cerebrollm-corpus-v3/ &&
+   diff -r eval/v3-sources ~/cerebrollm-corpus-v3 &&
+   export CEREBROLLM_CONFIG=~/.cerebrollm/cerebrollm-v3.toml &&
+   engine/bin/cerebrollm index &&
    engine/bin/cerebrollm status
    ```
 
@@ -97,8 +97,8 @@ The run uses a corpus folder, a table and a state folder of its own. It never wr
 3. Optional precheck of the saved searches, with the embedding model only. The release notes carry install and download tables whose rows repeat the version string; whether they crowd out the answering passage is not measured, and this shows it before the long run:
 
    ```
-   python3 eval/run_v2.py --set v3 --out ~/runs/v3-qwen prepare --arms A3
-   python3 eval/run_v2.py --set v3 --out ~/runs/v3-qwen report --retrieval-only
+   python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen prepare --arms A3
+   python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen report --retrieval-only
    ```
 
    It prints how many of the 99 answerable items the top 8 holds, how many were checked, and which are missed or lack a record. It writes nothing and claims nothing.
@@ -107,15 +107,21 @@ The run uses a corpus folder, a table and a state folder of its own. It never wr
 
    ```
    export CEREBROLLM_ENGINE_COMMIT=$(git rev-parse HEAD)
-   python3 eval/run_v2.py --set v3 --out ~/runs/v3-qwen gen qwen3.5-9b --arms A4 --runs 3
-   python3 eval/run_v2.py --set v3 --out ~/runs/v3-qwen grade --judge qwen3.8:27b --models qwen3.5-9b
-   python3 eval/run_v2.py --set v3 --out ~/runs/v3-qwen sample
+   python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen gen qwen3.5-9b --arms A4 --runs 3
+   python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen grade --judge qwen3.8:27b --models qwen3.5-9b
+   python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen sample
    ```
 
-6. Hand check. A person reads the 30 answers of `~/runs/v3-qwen/handcheck-sample.jsonl` (drawn at random with a fixed seed from the graded answers) and compares each with the grader's verdict. The result goes into `~/runs/v3-qwen/handcheck.json`, for example `{"sampled": 30, "disagreements": 0, "by": "name"}`.
-7. Report: `python3 eval/run_v2.py --set v3 --out ~/runs/v3-qwen report --judge qwen3.8:27b`. It fails when nothing is graded and when an item has fewer than 3 graded runs.
+   `run_v2.py` writes only inside this repository and `~/.cerebrollm`, and refuses any other `--out` folder before it writes. `gen` and `grade` of this set refuse a model that is not a local Ollama model: the hosted arm `sonnet-5-5`, or a `-cloud` tag.
 
-   Its "rule of three" lines end with `Target under 2%: reached`, `not reached`, or `not claimed (reason)`. The reason names a missing or failed canary check, a missing hand check, a sample under 30, or a disagreement.
+6. Hand check. A person reads the 30 answers of `~/.cerebrollm/runs/v3-qwen/handcheck-sample.jsonl` (drawn at random with a fixed seed from the graded answers) and compares each with the grader's verdict.
+
+   The result goes into `~/.cerebrollm/runs/v3-qwen/handcheck.json` with the fields `sample` prints. `set`, `judge`, `judge_digest` (the grader's model digest in the grade rows) and `grades_sha256` (the sha256 of the grader's jsonl file) stay as printed; `sampled`, `disagreements` and `by` are filled in.
+7. Report: `python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen report --judge qwen3.8:27b`. It fails when nothing is graded and when an item has fewer than 3 graded runs.
+
+   Its "rule of three" lines end with `Target under 2%: reached`, `not reached`, or `not claimed (reason)`. The reason names a missing or failed canary check, a missing hand check, a sample under 30, a disagreement, or a canary record or hand check made for other grades.
+
+   The canary record and `handcheck.json` count only when their set, grader, model digest and grades fingerprint match the grades the report reads, so grading more answers after the hand check makes both stale; the canary record must also hold every canary of `eval/itemset-v3.toml` with its expected verdict.
 
 `gen` and `grade` skip records that exist, so an interrupted run resumes with the same commands. The generator uses `ask --think off`. The generator and the grader are different models; the hand check is the only check against a human reader.
 

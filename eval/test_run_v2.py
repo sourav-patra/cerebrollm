@@ -1,4 +1,5 @@
 """Checks for N6a: python eval/test_run_v2.py"""
+import hashlib
 import json
 import os
 import shlex
@@ -6,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 for _name in ("CEREBROLLM_ITEMSET", "CEREBROLLM_V2_OUT", "CEREBROLLM_V2_JUDGE"):   # a caller's setting must not steer the tests
     os.environ.pop(_name, None)
@@ -14,6 +16,17 @@ import itemset as IS  # noqa: E402
 import judge_v2 as JV  # noqa: E402
 import report_v2 as RV  # noqa: E402
 import run_v2 as R  # noqa: E402
+
+# run_v2.py writes only inside this repository and $HOME/.cerebrollm, so the tests' run folders are made there
+TMP = os.path.join(os.path.realpath(os.path.expanduser("~/.cerebrollm")), "tmp", "eval-tests")
+
+
+def tmpdir():
+    os.makedirs(TMP, exist_ok=True)
+    return tempfile.TemporaryDirectory(dir=TMP)
+
+
+DIGEST = "d" * 64   # the grader's model digest in synthetic grade rows
 
 UN = {"kind": "unanswerable", "question": "What is the default of FOO?", "key_facts": [], "quotes": []}
 EX = {"kind": "exact", "question": "q", "key_facts": ["ten"], "quotes": [{"path": "a.md", "line": 1, "text": "ten"}]}
@@ -35,7 +48,7 @@ class T(unittest.TestCase):
         import subprocess
         import tempfile
         self.assertEqual(RV.RESULTS, os.path.join(R.L.HERE, "RESULTS-v2.md"))   # default: the committed file
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run x")   # a space: the printed command must quote the folder
             code = "import report_v2 as P; print(P.RESULTS); print(P.SRC); print(P.CMD)"
             p = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True,
@@ -48,7 +61,7 @@ class T(unittest.TestCase):
         import subprocess
         import tempfile
         self.assertEqual((RV.PRIMARY, RV.PRIMARY_THINK), ("gpt-oss:20b", "thinking medium"))   # default unchanged
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             code = "import report_v2 as P; print(P.PRIMARY); print(P.PRIMARY_THINK); print(P.CMD)"
             p = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True,
                                cwd=os.path.dirname(os.path.abspath(__file__)),
@@ -126,8 +139,8 @@ def write_rows(path, rows):
 def judge_row(model, arm, it, k, verdict, item_set=None):
     row = {"model": model, "arm": arm, "id": it["id"], "run": k, "kind": it["kind"], "verdict": verdict,
             "reason": "synthetic", "attempts": 1, "seconds": 1.0, "prompt_sha256": None, "info": None}
-    if item_set:
-        row["set"] = item_set
+    if item_set:   # rows of a set carry the grader's model digest, as `grade` writes them
+        row.update(set=item_set, judge_digest=DIGEST)
     return row
 
 
@@ -161,14 +174,25 @@ def synthetic_v2_run(out, items):
         write_rows(os.path.join(out, "judge", j.replace(":", "-") + ".jsonl"), rows)
 
 
+def evidence(out, judge="qwen3.8:27b", item_set="v3"):
+    """The fields that tie a canary record or handcheck.json to the grades of `judge` in `out`."""
+    with open(os.path.join(out, "judge", judge.replace(":", "-") + ".jsonl"), "rb") as f:
+        sha = hashlib.sha256(f.read()).hexdigest()
+    return {"set": item_set, "judge": judge, "judge_digest": DIGEST, "grades_sha256": sha}
+
+
+def canary_record(out, judge="qwen3.8:27b", item_set="v3", got=None):
+    """A canary record of every configured canary, each with the expected verdict unless `got` maps an answer to another."""
+    got = got or {}
+    results = [{"id": i, "answer": a, "want": w, "got": got.get(a, w)} for i, a, w in IS.load(item_set).canaries]
+    return dict(evidence(out, judge, item_set), passed=all(r["want"] == r["got"] for r in results), results=results)
+
+
 def synthetic_v3_run(out, items, wrong=(), item_set="v3", canary=True, handcheck=True):
     """qwen3.5-9b, arm A4, 3 runs per item, graded by qwen3.8:27b; the items at the indexes in `wrong` get a wrong answer.
-    The folder is bound to the set; the canary record (passed) and the hand-check record are written unless left out."""
+    The folder is bound to the set; the canary record (all passed) and the hand-check record, both naming these grades,
+    are written unless left out."""
     write_json(os.path.join(out, "itemset.json"), {"set": item_set})
-    if canary:
-        write_json(os.path.join(out, "canary-qwen3.8-27b.json"), {"judge": "qwen3.8:27b", "set": item_set, "passed": True, "results": []})
-    if handcheck:
-        write_json(os.path.join(out, "handcheck.json"), {"sampled": 30, "disagreements": 0, "by": "test"})
     rows = []
     for n, it in enumerate(items):
         for k in (1, 2, 3):
@@ -180,6 +204,10 @@ def synthetic_v3_run(out, items, wrong=(), item_set="v3", canary=True, handcheck
                         "tokens": {}, "meta": {"abstained": it["kind"] == "unanswerable"}})
             rows.append(judge_row("qwen3.5-9b", "A4", it, k, "N" if n in wrong else "Y", item_set))
     write_rows(os.path.join(out, "judge", "qwen3.8-27b.jsonl"), rows)
+    if canary:
+        write_json(os.path.join(out, "canary-qwen3.8-27b.json"), canary_record(out, item_set=item_set))
+    if handcheck:
+        write_json(os.path.join(out, "handcheck.json"), dict(evidence(out, item_set=item_set), sampled=30, disagreements=0, by="test"))
 
 
 def run_report(out, *flags, after=()):
@@ -195,7 +223,7 @@ def read(path):
 class ItemSetReport(unittest.TestCase):
     def test_v2_report_is_byte_identical_to_the_one_before_item_sets_were_settings(self):
         items = [json.loads(l) for l in open(IS.load("v2").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v2_run(out, items)
             run_report(out)
@@ -206,7 +234,7 @@ class ItemSetReport(unittest.TestCase):
 
     def test_v2_report_with_another_grader_keeps_the_v2_field_names_and_text(self):
         items = [json.loads(l) for l in open(IS.load("v2").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v2_run(out, items)
             run_report(out, after=("--judge", "qwen3.5:9b"))
@@ -218,7 +246,7 @@ class ItemSetReport(unittest.TestCase):
     def test_v3_report_uses_its_own_counts_grader_and_target(self):
         s = IS.load("v3")
         items = [json.loads(l) for l in open(s.items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             run_report(out, "--set", "v3")
@@ -236,7 +264,7 @@ class ItemSetReport(unittest.TestCase):
 
     def test_v3_report_with_an_explicit_judge_reads_that_graders_file(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             run_report(out, "--set", "v3")
@@ -250,7 +278,7 @@ class ItemSetReport(unittest.TestCase):
 
     def test_report_fails_when_nothing_is_graded_and_the_precheck_has_its_own_mode(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             os.remove(os.path.join(out, "judge", "qwen3.8-27b.jsonl"))
@@ -266,7 +294,7 @@ class ItemSetReport(unittest.TestCase):
     def test_retrieval_check_lists_missing_records_apart_from_misses(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
         answerable = [i for i in items if i["kind"] != "unanswerable"]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             for n, it in enumerate(answerable[:-2]):   # the last two have no retrieval record
@@ -291,20 +319,19 @@ class ItemSetReport(unittest.TestCase):
             (dict(), "Target under 2%: reached"),
         )
         for kwargs, want in cases:
-            with tempfile.TemporaryDirectory() as d:
+            with tmpdir() as d:
                 out = os.path.join(d, "run")
                 synthetic_v3_run(out, items, **kwargs)
                 run_report(out, "--set", "v3")
                 self.assertIn(want, read(os.path.join(out, "RESULTS.md")), kwargs)
-        with tempfile.TemporaryDirectory() as d:   # a failed canary, a short sample and a disagreement each block the claim
+        with tmpdir() as d:   # a failed canary, a short sample and a disagreement each block the claim
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             for rec, path, want in (
-                    ({"judge": "qwen3.8:27b", "set": "v3", "passed": False,
-                      "results": [{"id": "V3-EX-001", "answer": "It is 42.", "want": "N", "got": "Y"}]},
+                    (canary_record(out, got={"It is 42.": "Y"}),
                      "canary-qwen3.8-27b.json", "the grader canary check of qwen3.8:27b failed on 'It is 42.'"),
-                    ({"sampled": 29, "disagreements": 0}, "handcheck.json", "sampled fewer than 30"),
-                    ({"sampled": 30, "disagreements": 1}, "handcheck.json", "found 1 disagreements")):
+                    (dict(evidence(out), sampled=29, disagreements=0), "handcheck.json", "sampled fewer than 30"),
+                    (dict(evidence(out), sampled=30, disagreements=1), "handcheck.json", "found 1 disagreements")):
                 write_json(os.path.join(out, path), rec)
                 run_report(out, "--set", "v3")
                 self.assertIn("Target under 2%: not claimed (", read(os.path.join(out, "RESULTS.md")))
@@ -320,7 +347,7 @@ class ItemSetReport(unittest.TestCase):
                 "r = R.canary('qwen3.8:27b', call=fake)\n"
                 "print(r['passed'], [(x['answer'], x['got']) for x in r['results'] if x['want'] != x['got']])\n"
                 "print(json.load(open(R.canary_path('qwen3.8:27b')))['passed'])")
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             p = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True, cwd=HERE,
                                env=dict(os.environ, CEREBROLLM_ITEMSET="v3", CEREBROLLM_V2_OUT=os.path.join(d, "run")))
         first, second = p.stdout.strip().split("\n")
@@ -329,7 +356,7 @@ class ItemSetReport(unittest.TestCase):
 
     def test_hand_check_sample_is_random_fixed_by_seed_and_written_to_the_run_folder(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), "--set", "v3", "--out", out, "sample"],
@@ -344,7 +371,7 @@ class ItemSetReport(unittest.TestCase):
         self.assertTrue(all(r["your_verdict"] is None and r["grader_verdict"] == "Y" and r["answer"] for r in rows))
 
     def test_a_run_folder_is_bound_to_its_set_before_anything_is_prepared(self):
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             run = lambda *flags: subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), *flags, "--out", out,  # noqa: E731
                                                  "prepare", "--arms", "A0"], capture_output=True, text=True, cwd=HERE)
@@ -366,7 +393,7 @@ class ItemSetReport(unittest.TestCase):
 
     def test_v3_report_says_when_the_bound_is_not_reached(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items, wrong=(0,))
             run_report(out, "--set", "v3")
@@ -411,7 +438,7 @@ class ItemSetReport(unittest.TestCase):
     def test_a_run_folder_refuses_records_of_another_item_set(self):
         v2_items = [json.loads(l) for l in open(IS.load("v2").items, encoding="utf-8") if l.strip()]
         v3_items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()][:5]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             v3_out, v2_out = os.path.join(d, "v3"), os.path.join(d, "v2")
             synthetic_v3_run(v3_out, v3_items)
             synthetic_v2_run(v2_out, v2_items)   # no `set` field: made before item sets were settings
@@ -429,7 +456,7 @@ class ItemSetReport(unittest.TestCase):
             self.assertIn("is of item set v2 but this run is v3", bad.stderr)
 
     def test_new_records_and_grades_carry_the_set_name(self):
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             code = ("import json, run_v2 as R; it = R.load_items()[0]; R.call_ask = lambda m, q: "
                     "{'answer': 'x', 'tokens': {}, 'citations': [], 'meta': {}}; R.one('qwen3.5-9b', 'A4', it, 1); "
                     "print(json.load(open(R.rec_path('qwen3.5-9b', 'A4', it['id'], 1)))['set'])")
@@ -439,7 +466,7 @@ class ItemSetReport(unittest.TestCase):
 
     def test_summary_names_the_actual_graders_of_a_disagreement(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
-        with tempfile.TemporaryDirectory() as d:
+        with tmpdir() as d:
             out = os.path.join(d, "run")
             synthetic_v3_run(out, items)
             second = [judge_row("qwen3.5-9b", "A4", items[0], 1, "N", "v3")]
@@ -471,6 +498,176 @@ class ItemSetReport(unittest.TestCase):
         with open(os.path.join(HERE, "..", "engine", "models.toml"), "rb") as f:
             entry = tomllib.load(f)["models"][R.MODELS["qwen3.5-9b"]["name"]]
         self.assertEqual((entry["role"], entry["allowed"], entry["licence"]), ("chat", True, "Apache-2.0"))
+
+    def test_target_evidence_counts_only_for_the_grades_it_names(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        other = "qwen3.6:35b-a3b-coding-mtp-q4_K_M"
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            grades = os.path.join(out, "judge", "qwen3.8-27b.jsonl")
+
+            def claim(*after):
+                run_report(out, "--set", "v3", after=after)
+                return [l for l in read(os.path.join(out, "RESULTS.md")).splitlines() if "Target under 2%" in l][0]
+            synthetic_v3_run(out, items)
+            self.assertTrue(claim().endswith("Target under 2%: reached"))   # matching evidence is accepted
+            canary, hand = os.path.join(out, "canary-qwen3.8-27b.json"), os.path.join(out, "handcheck.json")
+            for path, change, want in (
+                    (canary, {"judge_digest": "e" * 64}, "the canary record of qwen3.8:27b is for other grades (judge_digest differ)"),
+                    (canary, {"set": "v2"}, "the canary record of qwen3.8:27b is for other grades (set differ)"),
+                    (canary, {"results": canary_record(out)["results"][1:]}, "the canary record of qwen3.8:27b does not hold the configured canaries of v3"),
+                    (canary, {"results": []}, "the canary record of qwen3.8:27b does not hold the configured canaries of v3"),
+                    (canary, {"passed": True, "results": canary_record(out, got={"It is 42.": "Y"})["results"]},
+                     "the grader canary check of qwen3.8:27b failed on 'It is 42.'"),   # a pass flag alone does not count
+                    (hand, {"judge": other}, "handcheck.json is for other grades (judge differ)"),
+                    (hand, {"judge_digest": None}, "handcheck.json is for other grades (judge_digest differ)")):
+                write_json(path, dict(json.load(open(path, encoding="utf-8")), **change))
+                self.assertIn("Target under 2%: not claimed (" + want, claim())
+                synthetic_v3_run(out, items)   # restore the good records
+            # a grade batch that changed after the checks (here one reason) makes both records stale
+            rows = read(grades).replace('"reason": "synthetic"', '"reason": "regraded"', 1)
+            open(grades, "w", encoding="utf-8", newline="\n").write(rows)
+            self.assertIn("not claimed (the canary record of qwen3.8:27b is for other grades (grades_sha256 differ)", claim())
+            write_json(canary, canary_record(out))
+            self.assertIn("not claimed (handcheck.json is for other grades (grades_sha256 differ)", claim())
+            # grades from two model digests qualify for nothing
+            open(grades, "a", encoding="utf-8", newline="\n").write(
+                json.dumps(dict(judge_row("qwen3.5-9b", "A4", items[0], 4, "Y", "v3"), judge_digest="e" * 64)) + "\n")
+            self.assertIn("not claimed (the grades of qwen3.8:27b do not record one model digest)", claim())
+            # the evidence of one grader does not qualify another grader's report
+            synthetic_v3_run(out, items)
+            write_rows(os.path.join(out, "judge", "qwen3.6-35b-a3b-coding-mtp-q4_K_M.jsonl"),
+                       [json.loads(l) for l in read(grades).splitlines()])
+            self.assertIn("not claimed (the grader canary check of %s has not run)" % other, claim("--judge", other))
+            write_json(os.path.join(out, "canary-qwen3.6-35b-a3b-coding-mtp-q4_K_M.json"), canary_record(out, judge=other))
+            self.assertIn("not claimed (handcheck.json is for other grades (judge differ)", claim("--judge", other))
+            write_json(hand, dict(evidence(out, judge=other), sampled=30, disagreements=0))
+            self.assertTrue(claim("--judge", other).endswith("Target under 2%: reached"))
+
+    def test_grade_records_the_digest_and_batch_its_canary_qualifies_and_sample_prints_them(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()][:5]
+        code = ("import run_v2 as R\n"
+                "R.tags_digest = lambda m: 'd' * 64\n"
+                "def fake(item, answer, judge, call=None):\n"   # the expected verdict of each canary and record answer
+                "    ok = answer in ('Not in the sources.', 'Ruff 0.15.22 added an autofix for E402.') or (\n"
+                "        item['kind'] != 'unanswerable' and answer == ' '.join(q['text'] for q in item['quotes']))\n"
+                "    return {'verdict': 'Y' if ok else 'N', 'reason': 'r', 'attempts': 1, 'seconds': 0, 'prompt_sha256': None,\n"
+                "            'info': None}\n"
+                "R.JV.judge = fake\n"
+                "def no_network(*a, **k):\n"
+                "    raise OSError('no network in this test')\n"
+                "R.urllib.request.urlopen = no_network\n"
+                "R.cmd_grade('qwen3.8:27b', ['qwen3.5-9b'])\n")
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            synthetic_v3_run(out, items, canary=False, handcheck=False)
+            grades = os.path.join(out, "judge", "qwen3.8-27b.jsonl")
+            os.remove(grades)
+            env = dict(os.environ, CEREBROLLM_ITEMSET="v3", CEREBROLLM_V2_OUT=out)
+            subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True, cwd=HERE, env=env)
+            self.assertEqual(len(read(grades).splitlines()), 15)
+            canary = json.load(open(os.path.join(out, "canary-qwen3.8-27b.json"), encoding="utf-8"))
+            self.assertEqual({k: canary[k] for k in ("set", "judge", "judge_digest", "grades_sha256")}, evidence(out))
+            self.assertEqual([(r["answer"], r["got"]) for r in canary["results"] if r["want"] != r["got"]], [])
+            before = read(grades)
+            subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True, cwd=HERE, env=env)
+            self.assertEqual(read(grades), before)   # nothing left to grade: the batch and its fingerprint stay
+            self.assertEqual(json.load(open(os.path.join(out, "canary-qwen3.8-27b.json"), encoding="utf-8"))["grades_sha256"],
+                             evidence(out)["grades_sha256"])
+            p = subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), "--set", "v3", "--out", out, "sample"],
+                               capture_output=True, text=True, cwd=HERE, check=True)
+            printed = json.loads(p.stdout[p.stdout.index("{"):])
+            self.assertEqual({k: printed[k] for k in ("set", "judge", "judge_digest", "grades_sha256")}, evidence(out))
+
+    def test_a_losing_process_validates_the_marker_another_process_installed(self):
+        real_link, real_listdir = os.link, os.listdir
+
+        def installed_first(name):   # another process installs its marker between this one's check and its install
+            def link(src, dst):
+                with open(dst, "w", encoding="utf-8") as f:
+                    json.dump({"set": name}, f)
+                return real_link(src, dst)
+            return link
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            marker = os.path.join(out, "itemset.json")
+            with mock.patch.object(R, "V2", out), mock.patch.object(R, "ITEMSET", IS.load("v3")):
+                with mock.patch.object(os, "link", installed_first("v2")):
+                    with self.assertRaisesRegex(SystemExit, "is bound to item set v2 but this run is v3"):
+                        R.bind_folder()
+                self.assertEqual(os.listdir(out), ["itemset.json"])   # the loser left no temporary file
+                os.remove(marker)
+                with mock.patch.object(os, "link", installed_first("v3")):
+                    R.bind_folder()   # the same set won: this process goes on
+                self.assertEqual(json.load(open(marker, encoding="utf-8")), {"set": "v3"})
+                open(marker, "w").write("{")
+                with self.assertRaisesRegex(SystemExit, "cannot be read"):
+                    R.bind_folder()
+                os.remove(marker)
+                open(os.path.join(out, ".itemset.json.other.tmp"), "w").close()   # another process's marker in the making
+                R.bind_folder()
+                self.assertEqual(json.load(open(marker, encoding="utf-8")), {"set": "v3"})
+
+                def run_file_after_marker(path):   # the other process installs its marker, then writes a file of its run
+                    if not os.path.exists(marker):
+                        with open(marker, "w", encoding="utf-8") as f:
+                            json.dump({"set": "v3"}, f)
+                        open(os.path.join(out, "prompts"), "w").close()
+                    return real_listdir(path)
+                os.remove(marker)
+                with mock.patch.object(R, "ITEMSET", IS.load("v2")), mock.patch.object(os, "listdir", run_file_after_marker):
+                    with self.assertRaisesRegex(SystemExit, "is bound to item set v3 but this run is v2"):
+                        R.bind_folder()   # not taken for an old v2 folder with no marker
+
+    def test_a_run_folder_outside_the_repository_and_the_cerebrollm_home_is_refused_before_any_write(self):
+        home = os.path.expanduser("~")
+        for out in (os.path.join(home, "cerebrollm-outside-test-%d" % os.getpid()),
+                    os.path.join(home, ".cerebrollm-x-%d" % os.getpid())):   # a sibling that shares the prefix
+            for flags, env, cmd in ((("--out", out), {}, ("prepare", "--arms", "A0")),
+                                    ((), {"CEREBROLLM_V2_OUT": out}, ("prepare", "--arms", "A0")),
+                                    (("--out", out), {}, ("sample",)),
+                                    (("--out", out), {}, ("report", "--retrieval-only"))):
+                p = subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), "--set", "v3", *flags, *cmd],
+                                   capture_output=True, text=True, cwd=HERE, env=dict(os.environ, **env))
+                self.assertNotEqual(p.returncode, 0)
+                self.assertEqual(p.stdout, "")
+                self.assertEqual(p.stderr.strip().splitlines(),
+                                 ["run folder %s is outside this repository and $HOME/.cerebrollm: use a folder such as "
+                                  "~/.cerebrollm/runs/NAME" % out])
+                self.assertFalse(os.path.exists(out))
+        with mock.patch.object(R, "V2", os.path.join(HERE, "runs", "v3")):
+            R.check_out()   # the default run folders are inside the repository
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            p = subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), "--set", "v3", "--out", out, "prepare",
+                                "--arms", "A0"], capture_output=True, text=True, cwd=HERE)
+            self.assertEqual(p.returncode, 0, p.stderr)   # a folder under $HOME/.cerebrollm is accepted
+            self.assertEqual(json.load(open(os.path.join(out, "itemset.json"), encoding="utf-8")), {"set": "v3"})
+
+    def test_v3_runs_and_grades_only_on_local_models_and_v2_keeps_its_hosted_arm(self):
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            p = subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), "--set", "v3", "--out", out, "gen",
+                                "sonnet-5-5", "--arms", "A0", "--runs", "1"], capture_output=True, text=True, cwd=HERE)
+            self.assertNotEqual(p.returncode, 0)
+            self.assertIn("sonnet-5-5 is not a local Ollama model: item set v3 runs only on local models", p.stderr)
+            self.assertFalse(os.path.exists(out))   # refused before the folder is bound or prepared
+        cloud = {"big-cloud": {"kind": "ollama", "name": "gpt-oss:120b-cloud", "runs": 1}}
+
+        def hosted(prompt):
+            raise AssertionError("a prompt was sent to the hosted model")
+        with mock.patch.object(R, "ITEMSET", IS.load("v3")), mock.patch.dict(R.MODELS, cloud), \
+                mock.patch.object(R.L, "call_hosted", hosted):
+            for model in ("sonnet-5-5", "big-cloud"):
+                with self.assertRaisesRegex(SystemExit, "is not a local Ollama model"):
+                    R.require_local(model)
+                with self.assertRaisesRegex(SystemExit, "is not a local Ollama model"):
+                    R.call(model, "prompt")   # the dispatch refuses as well
+            with self.assertRaisesRegex(SystemExit, "is graded only by local models"):
+                R.cmd_grade("gpt-oss:120b-cloud", ["qwen3.5-9b"])
+            R.require_local("qwen3.5-9b", judge="qwen3.8:27b")
+        with mock.patch.object(R, "ITEMSET", IS.load("v2")):
+            R.require_local("sonnet-5-5", judge="gpt-oss:120b-cloud")   # v2 is unchanged
 
 
 def qwen_available():
