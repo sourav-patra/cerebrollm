@@ -13,7 +13,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("index", help="build or update the index")
-    p.add_argument("--changed", action="store_true", help="re-embed only changed files; keep the rest")
+    p.add_argument("--changed", action="store_true", help="re-embed only changed files; keep the rest (a full index instead when state.json does not record the current index format)")
 
     p = sub.add_parser("search", help="search the index")
     p.add_argument("query")
@@ -32,7 +32,7 @@ def main(argv=None):
     p.add_argument("--show-text", action="store_true", help="also print the generator's own text, unverified")
     p.add_argument("--json", action="store_true")
 
-    p = sub.add_parser("verify", help="check a quote against the source and the indexed sha256")
+    p = sub.add_parser("verify", help="check a quote against the source and the indexed sha256 of the file or passage")
     p.add_argument("path")
     p.add_argument("quote")
     p.add_argument("--ref")
@@ -44,6 +44,14 @@ def main(argv=None):
 
     args = ap.parse_args(argv)
     cfg = config.load(args.config)
+    if args.cmd in ("status", "search", "verify", "ask"):
+        try:
+            from . import store
+            warning = store.format_warning(cfg)
+        except Exception as exc:  # noqa: BLE001 - the warning never stops the command it precedes
+            warning = "WARNING: the index format check failed: %s" % type(exc).__name__
+        if warning:
+            print(warning, file=sys.stderr)   # stderr: stdout stays the answer, the JSON or the verify line
 
     if args.cmd == "index":
         from .indexer import run_index

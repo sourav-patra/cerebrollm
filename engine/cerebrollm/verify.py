@@ -1,4 +1,5 @@
-"""cerebrollm verify: re-read the source and check the quote and the indexed sha256."""
+"""cerebrollm verify: re-read the source and check the quote and the indexed sha256 of the file or of the
+passage that holds the quote."""
 import hashlib
 import os
 import posixpath
@@ -106,21 +107,92 @@ def _excluded(cfg, root, rel):
     return bool(rules.never_reason(rel, cfg.never)) or rules.classify(root["name"], rel, cfg.rules) is None
 
 
+def _source_rows(cfg, root_name, rel, ref, copies=True):
+    """(SQL condition, parameters) selecting the index rows of this source: rows of this root, path and ref,
+    plus, with copies=True, rows whose also_at lists "root:path" as a collapsed copy when ref is the root's
+    configured ref. also_at records no ref, so a copy row only proves that the file once had those bytes;
+    it serves the whole-file hash and never passage evidence (copies=False)."""
+    cond = ("(metadata_->>'root' = %s and metadata_->>'path' = %s and metadata_->>'ref' = %s)")
+    params = [root_name, rel, ref]
+    root = cfg.roots.get(root_name)
+    if copies and root is not None and ref == root["ref"]:
+        cond += (" or exists (select 1 from jsonb_array_elements_text("
+                 "coalesce((metadata_::jsonb)->'also_at', '[]'::jsonb)) as a(p) where a.p = %s)")
+        params.append("%s:%s" % (root_name, rel))
+    return "(" + cond + ")", params
+
+
 def _indexed_sha(cfg, root_name, rel, ref):
-    """sha256 values indexed for this file: rows at this path and ref, plus rows whose also_at
-    lists this file as a collapsed copy (also_at entries are "root:path")."""
-    copy_of = "%s:%s" % (root_name, rel)
+    """sha256 values indexed for this source (see _source_rows)."""
+    cond, params = _source_rows(cfg, root_name, rel, ref)
     with store.sql(cfg) as cur:
-        cur.execute("select distinct metadata_->>'sha256' from %s where "
-                    "(metadata_->>'path' = %%s and metadata_->>'ref' = %%s) or exists ("
-                    "select 1 from jsonb_array_elements_text("
-                    "coalesce((metadata_::jsonb)->'also_at', '[]'::jsonb)) as a(p) where a.p = %%s)"
-                    % cfg.data_table, (rel, ref, copy_of))
+        cur.execute("select distinct metadata_->>'sha256' from %s where %s" % (cfg.data_table, cond), params)
         return {r[0] for r in cur.fetchall()}
 
 
+def _indexed_passages(cfg, root_name, rel, ref):
+    """[(passage text, its indexed sha256)] for the chunks indexed from this exact root, path and ref (no
+    collapsed copies). The passage is the last char_end - char_start characters of the chunk text (a table
+    row's chunk text starts with its prefix lines). Rows of an older index, without passage_sha256, are left
+    out."""
+    cond, params = _source_rows(cfg, root_name, rel, ref, copies=False)
+    with store.sql(cfg) as cur:
+        cur.execute("select text, metadata_->>'passage_sha256', (metadata_->>'char_end')::int - "
+                    "(metadata_->>'char_start')::int from %s where metadata_->>'passage_sha256' is not null "
+                    "and %s" % (cfg.data_table, cond), params)
+        return [(text[-length:] if 0 < length <= len(text) else "", sha) for text, sha, length in cur.fetchall()]
+
+
+def _occurrences(passage, text):
+    """Start offsets of passage in text where each side is a file edge, whitespace beside the passage, or
+    whitespace at the passage's own end. At
+    such an occurrence a quote matched inside the passage has the same word boundaries as in the whole file."""
+    out, start = [], text.find(passage)
+    while start >= 0:
+        end = start + len(passage)
+        if ((start == 0 or passage[0].isspace() or text[start - 1].isspace())
+                and (end == len(text) or passage[-1].isspace() or text[end].isspace())):
+            out.append(start)
+        start = text.find(passage, start + 1)
+    return out
+
+
+def _in_passage(quote, passage):
+    """The quote occurs in the passage with only whitespace and Unicode composition normalised, both of which
+    depend on the passage alone. The Markdown fallback of _found is not used here: dropping a link or
+    backticks can depend on text outside the passage, so a quote that needs it answers CHANGED."""
+    needle = _normalise(quote)
+    return bool(needle) and _bounded(needle, _normalise(passage))
+
+
+def _lossless(data):
+    """True when data is valid UTF-8, so its decoded text stands for exactly these bytes."""
+    try:
+        data.decode("utf-8")
+    except UnicodeDecodeError:
+        return False
+    return True
+
+
+def _unchanged_passage(quote, text, passages):
+    """The sha256 of an intact indexed passage that occurs byte for byte in text between whitespace or file
+    edges and holds the quote on its own (_in_passage); else None. So the accepted quote lies inside the
+    unchanged text. A passage glued to other text with no whitespace between (a cell appended to a table row
+    without a space, a passage that now ends inside a longer word) does not count; a quote that spans two
+    passages is in neither. Both answer CHANGED. When the evidence is ambiguous the answer is CHANGED: a false
+    CHANGED costs a re-index, a false OK would print an unverified quote."""
+    for passage, sha in passages:
+        if "\ufffd" in passage:   # indexed from bytes that were not valid UTF-8: its text does not fix its bytes
+            continue
+        if (passage and hashlib.sha256(passage.encode("utf-8")).hexdigest() == sha
+                and _in_passage(quote, passage) and _occurrences(passage, text)):
+            return sha
+    return None
+
+
 def run_verify(cfg, path, quote, ref=None):
-    """Return (code, detail); code is OK, CHANGED, MISSING, GONE or UNINDEXED."""
+    """Return (code, detail); code is OK, CHANGED, MISSING, GONE or UNINDEXED. OK when the file's sha256 is
+    indexed, or when the file changed but an indexed passage that holds the quote still occurs in it unchanged."""
     seen_gone, absent = False, None
     for root, rel, rref in _resolve(cfg, path, ref):
         asked = _requested(rel)
@@ -153,6 +225,13 @@ def run_verify(cfg, path, quote, ref=None):
             return "UNINDEXED", "quote present but %s@%s is not in the index; sha256 %s" % (rel, rref, sha[:12])
         if sha in indexed:
             return "OK", "%s@%s sha256 %s" % (rel, rref, sha[:12])
+        # Passage evidence compares decoded text, so it is used only when the bytes decode losslessly: two
+        # different invalid byte sequences decode to the same replacement character.
+        kept = _unchanged_passage(quote, text, _indexed_passages(cfg, root["name"], rel, rref)) \
+            if _lossless(data) else None
+        if kept:
+            return "OK", "%s@%s changed since indexing; the indexed passage holding the quote is unchanged " \
+                         "(passage sha256 %s)" % (rel, rref, kept[:12])
         return "CHANGED", "quote present; %s@%s changed since indexing (now %s, indexed %s)" % (
             rel, rref, sha[:12], sorted(indexed)[0][:12])
     if absent:

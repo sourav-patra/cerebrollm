@@ -54,14 +54,16 @@ The configuration file is found in this order: `--config PATH`, the environment 
 `bin/cerebrollm` runs the venv's Python from a source checkout. After `pip install`, the `cerebrollm` command does the same; `python -m cerebrollm` works from `engine/`.
 
 ```
-cerebrollm index [--changed]          # no flag: build <table>_next, then swap it in; --changed: re-embed only changed files
+cerebrollm index [--changed]          # no flag: build <table>_next, then swap it in; --changed: re-embed only changed files (full index once after an index format change)
 cerebrollm status                     # counts per tier and status, skips, last index, model and digest
 cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--json]
 cerebrollm verify PATH "QUOTE" [--ref REF]
 cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [--no-rerank] [--show-text] [--json]
 ```
 
-A full `cerebrollm index` builds the `<table>_next` table while search reads the live table, then swaps it in; a new table with no rows or under half the live rows is refused and kept, and the printed command drops it. `[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
+A full `cerebrollm index` builds the `<table>_next` table while search reads the live table, then swaps it in. A new table with no rows or under half the live rows is refused and kept, and the printed command drops it.
+
+`[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
 
 `search` defaults: mode hybrid, domain `org`, status `locked` or `current`, then the tier boost
 (T1 x1.30, T2 x1.15, T3 x1.00, T4 x0.85, in `cerebrollm.toml`) applied to the fused score, then the
@@ -80,15 +82,38 @@ case the line span may be wrong.
 normalised and requires it to start and end on a word boundary (`port 80` does not match `port 8080`).
 When that fails, it compares again with Markdown links, list markers, backticks and paired `*` emphasis
 removed from both, still on word boundaries. Underscores stay, because `FOO_` and `_x` are often content, so
-a quote that drops `__bold__` underscores is `MISSING`. Then it compares the sha256 with the indexed one: `OK`, `CHANGED` (quote present, file changed
-since indexing), `MISSING` (quote absent), `GONE` (file absent). Exit 0 only for `OK`. One addition to
-the four outcomes: `UNINDEXED` (quote present but the path is not in the index; exit 1). `PATH` may be
-absolute or the relative path that `search` prints.
+a quote that drops `__bold__` underscores is `MISSING`.
+
+Then `verify` compares the file's sha256 with the indexed one: `OK`, `CHANGED` (quote present, file changed
+since indexing), `MISSING` (quote absent), `GONE` (file absent). Exit 0 only for `OK`. One addition to the four
+outcomes: `UNINDEXED` (quote present but the path is not in the index; exit 1). `PATH` may be absolute or the
+relative path that `search` prints.
+
+A changed file still gives `OK` when an indexed passage (a chunk, or a table row alone) holds the quote and
+still occurs in the file with identical text. The index stores the sha256 of each passage's text for this
+check. An edit elsewhere in the file, or a passage moved within it, keeps `OK`.
+
+No qualifying passage gives `CHANGED`: a word edited inside the passage, or a quote that spans two
+passages. The passage must sit between whitespace or file edges, so text glued to it ("port 80" continued into
+"port 8080") gives `CHANGED`. A table row with a cell appended after a space keeps a quote of the old row `OK`.
+
+The passage rule is stricter than the file rule. The quote must occur in the passage with only whitespace
+normalised, without the Markdown leniency above. The passage must come from the same root, path and ref, never
+from a collapsed copy. A file that is not valid UTF-8 gets the file rule only. Anything less certain answers
+`CHANGED`.
 
 A path the index never holds answers exactly as an absent quote, `MISSING` with the same detail: a
 never-index rule or no tier rule decides this from the path before the file is read, and a file with a
 secret pattern after it is read. `UNINDEXED` therefore means an eligible file that is not indexed yet.
 Links and `..` are resolved first; a path that leaves its root is `GONE` and is not read.
+
+### Index format and upgrades
+
+Each index run records the index format (2 since passage hashes were added) and its database and table in `last_index` in `state.json`. Every run replaces `last_index` whole.
+
+`index --changed` runs a full index once when `state.json` does not record format 2 for this table: an index from an older version, a run by an older version after a downgrade, another table, or a missing or unreadable state file.
+
+`status`, `search`, `verify` and `ask` print one warning line on stderr while `state.json` records an older format, or cannot be read or parsed. A missing `state.json` gives no warning, because it looks the same as a machine that never indexed. The next index run rewrites an unreadable `state.json`.
 
 ## ask
 

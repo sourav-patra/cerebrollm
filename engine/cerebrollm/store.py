@@ -1,5 +1,6 @@
 """Shared constructors: vector store, embedding model, direct SQL, state file."""
 import json
+import os
 import time
 from contextlib import contextmanager
 
@@ -111,16 +112,79 @@ def model_digest(cfg):
     return None
 
 
-def read_state(cfg):
+# What the index rows hold. 1 (0.2.0 and earlier, no key in state.json): the file sha256 per chunk.
+# 2: also passage_sha256, the sha256 of each chunk's own text, which verify uses after an unrelated edit.
+# The number is stored inside last_index, the summary each index run replaces whole, so a run by an older
+# cerebrollm (which writes a summary without it) leaves no stale marker behind. Beside it, index_table names
+# the database and table the run wrote, so a marker written for another table never vouches for this one.
+INDEX_FORMAT = 2
+
+
+def index_table(cfg):
+    """The database and data table an index run writes, as stored in last_index["index_table"]."""
+    return "%s.%s" % (cfg.pg["database"], cfg.data_table)
+
+
+def index_format(state, table):
+    """The format of the rows the last recorded index run wrote into table (index_table): 1 when the summary
+    has no index_format (0.2.0 and earlier); None when no run is recorded, the value is not a whole number,
+    or the summary names another table or none."""
+    last = state.get("last_index")
+    if not isinstance(last, dict) or not last:
+        return None
+    if "index_format" not in last:
+        return 1
+    value = last["index_format"]
+    if not isinstance(value, int) or isinstance(value, bool) or last.get("index_table") != table:
+        return None
+    return value
+
+
+def older_format(state, table):
+    """True when state.json records an index run whose rows in table are not known to be of INDEX_FORMAT.
+    No recorded run (nothing indexed yet) is not older."""
+    return bool(state.get("last_index")) and index_format(state, table) != INDEX_FORMAT
+
+
+def format_warning(cfg):
+    """The one warning line for an index of another format or an unreadable state.json, else None. Reads
+    state.json only."""
     try:
-        return json.loads(cfg.state_path.read_text())
+        state = read_state(cfg)
+    except (OSError, ValueError) as exc:
+        return ("WARNING: %s cannot be read (%s); run `cerebrollm index` to rewrite it."
+                % (cfg.state_path, type(exc).__name__))
+    table = index_table(cfg)
+    if not older_format(state, table):
+        return None
+    return ("WARNING: the index in %s has format %s and this cerebrollm needs %d; run `cerebrollm index` once "
+            "(`index --changed` also rebuilds it in full). Until then verify answers CHANGED after any edit "
+            "to a file." % (table, index_format(state, table) or "unknown", INDEX_FORMAT))
+
+
+def read_state(cfg):
+    """state.json as a dict; {} when it is absent. ValueError when it is not JSON or not a JSON object; OSError
+    when it exists and cannot be read."""
+    try:
+        state = json.loads(cfg.state_path.read_text())
     except FileNotFoundError:
         return {}
+    if not isinstance(state, dict):
+        raise ValueError("%s does not hold a JSON object" % cfg.state_path)
+    return state
 
 
 def write_state(cfg, **fields):
+    """Merge fields into state.json. A state.json that cannot be read or parsed is replaced, so an index run
+    repairs it; the new file is written beside it and renamed over it, which needs only the folder to be
+    writable."""
     cfg.state_dir.mkdir(parents=True, exist_ok=True)
-    state = read_state(cfg)
+    try:
+        state = read_state(cfg)
+    except (OSError, ValueError):
+        state = {}
     state.update(fields)
     state["updated"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
-    cfg.state_path.write_text(json.dumps(state, indent=2, sort_keys=True))
+    tmp = cfg.state_path.with_name(cfg.state_path.name + ".tmp")
+    tmp.write_text(json.dumps(state, indent=2, sort_keys=True))
+    os.replace(tmp, cfg.state_path)
