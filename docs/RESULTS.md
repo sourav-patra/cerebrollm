@@ -40,7 +40,7 @@ The aim is at least 90% right outcomes and under 2% confidently wrong runs. Clau
 - The grader that produced the answer-quality numbers is itself a model checked on 40 answers.
 - The 12 tool scenarios and all speeds come from one machine with one GPU. Speeds on other hardware are not measured.
 - The default configuration carries tier rules for the author's folder layout; every new corpus folder needs a `[[rule]]`.
-- Only Markdown files are indexed.
+- Every measurement here used Markdown files. PDF documents can be indexed since the optional `cerebrollm[pdf]` extra (unreleased); retrieval and answer quality on PDFs are not measured.
 - Search scans exactly (no approximate index); behaviour above about 15,000 chunks is not measured.
 - The index is not encrypted and PostgreSQL uses trust authentication on a Unix socket in `~/.cerebrollm`; protect that folder with file permissions.
 - A wheel installed with `pip install --user` or `--target` cannot find the packaged configuration; pass `--config` or set `CEREBROLLM_CONFIG`.

@@ -1,4 +1,5 @@
 """cerebrollm index: LlamaIndex IngestionPipeline over the enumerated corpus."""
+import json
 import os
 import sys
 import time
@@ -8,7 +9,7 @@ from llama_index.core.ingestion import DocstoreStrategy, IngestionPipeline
 from llama_index.core.node_parser import MarkdownNodeParser, SentenceSplitter
 from llama_index.core.storage.docstore import SimpleDocumentStore
 
-from . import corpus, store
+from . import corpus, documents, store
 from .glue import LocateChunks, MergeSmall, SourceDoc, TableRows
 
 REPO = Path(__file__).resolve().parent.parent
@@ -56,6 +57,37 @@ def drop_command(cfg):
             "store.drop_table(config.load('%s'), '%s')\"" % (REPO, sys.executable, cfg.path, cfg.next_data_table))
 
 
+def state_dir_in_a_root(cfg):
+    """True when the state folder is a registered root or inside one. Such a folder holds source documents,
+    which this program only reads, so the refusal record is not written there."""
+    state = os.path.realpath(cfg.state_dir)
+    for root in cfg.roots.values():
+        top = os.path.realpath(root["path"])
+        try:
+            if os.path.commonpath([state, top]) == top:
+                return True
+        except ValueError:   # paths on different drives
+            continue
+    return False
+
+
+def record_refusal(cfg, scan):
+    """Write the scan of an index attempt that found no files to <state_dir>/last_refused.json, so `status` can
+    show why (the PDFs it skipped). It is its own file, replaced whole, never part of state.json: an index that
+    succeeds meanwhile loses nothing, and `status` shows the record only when it is newer than the last
+    successful index. Nothing is written when the state folder is inside a registered root. Returns whether
+    a record was written."""
+    if state_dir_in_a_root(cfg):
+        return False
+    cfg.state_dir.mkdir(parents=True, exist_ok=True)
+    record = {"epoch": time.time(), "time": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+              "files_seen": scan["counts"].get("seen", 0), "pdf": scan["pdf"]}
+    tmp = cfg.state_dir / ("last_refused.%d.tmp" % os.getpid())
+    tmp.write_text(json.dumps(record, indent=2, sort_keys=True))
+    os.replace(tmp, cfg.refused_path)
+    return True
+
+
 def run_index(cfg, changed=False, log=print):
     """Index the corpus. changed=True re-embeds only changed files in the live table. A full run builds
     cfg.next_table and swaps it in after the pipeline finishes, so search reads the live table until the
@@ -64,7 +96,9 @@ def run_index(cfg, changed=False, log=print):
     started = time.time()
     entries, scan = corpus.enumerate_corpus(cfg)
     if not entries:
-        raise SystemExit("refusing to index: the corpus scan found no files (would delete everything)")
+        record_refusal(cfg, scan)
+        raise SystemExit(" ".join(["refusing to index: the corpus scan found no files (would delete everything)."]
+                                  + ["%s." % line for line in documents.pdf_lines(scan["pdf"])]))
     docs = make_documents(entries)
     cfg.state_dir.mkdir(parents=True, exist_ok=True)
     if changed:
@@ -109,6 +143,7 @@ def run_index(cfg, changed=False, log=print):
         "skipped_rule": scan["skipped_rule"], "skipped_secret": scan["skipped_secret"],
         "no_rule": scan["counts"].get("no_rule", 0), "files_seen": scan["counts"]["seen"],
         "duplicates_collapsed": scan["counts"].get("duplicates_collapsed", 0),
+        "pdf": scan["pdf"],
     }
     store.write_state(cfg, last_index=summary, last_index_time=time.strftime("%Y-%m-%dT%H:%M:%S%z"),
                       embedding_model=cfg.ollama["model"], embedding_digest=store.model_digest(cfg))

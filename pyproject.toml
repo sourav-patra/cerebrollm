@@ -34,6 +34,10 @@ dependencies = [
 [project.optional-dependencies]
 # The cross-encoder that `cerebrollm ask` and the MCP `rerank` option use. Without it, `ask --no-rerank` still works.
 rerank = ["sentence-transformers>=6.2,<7", "torch>=2.15"]
+# Text layer of PDF documents (pure Python, BSD-3-Clause). Without it, a PDF that a tier rule admits is skipped.
+# The range is the tested minor release (7.1.1): the indexed text, and so every quote check, depends on what pypdf
+# extracts, so a new minor release is tried and tested before the range moves.
+pdf = ["pypdf>=7.1.1,<7.2"]
 test = ["pytest>=9"]
 
 [project.scripts]
