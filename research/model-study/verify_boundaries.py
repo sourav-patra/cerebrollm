@@ -17,7 +17,7 @@ p=argparse.ArgumentParser()
 p.add_argument('phase',choices=['before','after'])
 a=p.parse_args()
 cfg=config_load()
-conn=psycopg2.connect(host=cfg.pg['socket_dir'],port=cfg.pg['port'],dbname=cfg.pg['database'],user=cfg.pg['user'],connect_timeout=5)
+conn=psycopg2.connect(**{**cfg.pg_connect_args(),'connect_timeout':5})   # socket or loopback TCP, as configured
 conn.set_session(readonly=True)
 with conn,conn.cursor() as cur:
     cur.execute("SELECT count(*),md5(string_agg(md5(concat_ws('|',node_id,text,metadata_::text,embedding::text,text_search_tsv::text)),'' ORDER BY node_id)) FROM data_chunks")

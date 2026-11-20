@@ -4,16 +4,34 @@ import time
 from contextlib import contextmanager
 
 import psycopg2
+import psycopg2.errors
+from sqlalchemy import create_engine
+from sqlalchemy.ext.asyncio import create_async_engine
 
 from llama_index.embeddings.ollama import OllamaEmbedding
 from llama_index.vector_stores.postgres import PGVectorStore
 
+from . import config
+
+
+def tcp_engines(cfg):
+    """SQLAlchemy engines for a TCP connection, each with a finite connect timeout (psycopg2 takes
+    connect_timeout, asyncpg takes timeout). The psycopg2 engine also gets hostaddr, the validated numeric
+    loopback address; asyncpg is given that address as host and reads no PGHOSTADDR."""
+    timeout = config.PG_CONNECT_TIMEOUT
+    return (create_engine(cfg.sync_url, connect_args={"connect_timeout": timeout, "hostaddr": cfg.pg_host}),
+            create_async_engine(cfg.async_url, connect_args={"timeout": timeout}))
+
 
 def vector_store(cfg, table=None):
-    return PGVectorStore.from_params(
-        connection_string=cfg.sync_url, async_connection_string=cfg.async_url,
-        table_name=table or cfg.table, embed_dim=cfg.pg["embed_dim"], hybrid_search=True,
-        text_search_config=cfg.pg["text_search_config"])
+    params = dict(table_name=table or cfg.table, embed_dim=cfg.pg["embed_dim"], hybrid_search=True,
+                  text_search_config=cfg.pg["text_search_config"])
+    if cfg.pg_host is None:
+        return PGVectorStore.from_params(connection_string=cfg.sync_url, async_connection_string=cfg.async_url,
+                                         **params)
+    engine, async_engine = tcp_engines(cfg)
+    return PGVectorStore(connection_string=cfg.sync_url, async_connection_string=cfg.async_url,
+                         engine=engine, async_engine=async_engine, **params)
 
 
 def embed_model(cfg):
@@ -27,8 +45,7 @@ def embed_model(cfg):
 
 @contextmanager
 def sql(cfg):
-    conn = psycopg2.connect(host=cfg.pg["socket_dir"], port=cfg.pg["port"],
-                            dbname=cfg.pg["database"], user=cfg.pg["user"])
+    conn = psycopg2.connect(**cfg.pg_connect_args())
     try:
         with conn, conn.cursor() as cur:
             yield cur
@@ -109,6 +126,17 @@ def model_digest(cfg):
         if m.model == name or m.model == name + ":latest":   # a name with a tag (qwen3-embedding:0.6b) must match its own tag
             return m.digest
     return None
+
+
+def database_identity(cfg):
+    """Names the database a state folder's hashes belong to: the cluster's system identifier and the
+    database name. None when the server does not let this user read it."""
+    try:
+        with sql(cfg) as cur:
+            cur.execute("select system_identifier::text || '/' || current_database() from pg_control_system()")
+            return cur.fetchone()[0]
+    except (psycopg2.errors.InsufficientPrivilege, psycopg2.errors.UndefinedFunction):
+        return None
 
 
 def read_state(cfg):

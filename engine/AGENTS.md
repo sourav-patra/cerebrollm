@@ -1,7 +1,7 @@
 # cerebrollm: instructions for agents
 
 cerebrollm is a local search over the user's authoritative documents.
-Everything runs on this machine: Postgres on a Unix socket, Ollama on 127.0.0.1.
+Everything runs on this machine: Postgres on a Unix socket (default) or over TCP to 127.0.0.1 or ::1, Ollama on 127.0.0.1.
 
 ## Commands
 

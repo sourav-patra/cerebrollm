@@ -56,6 +56,22 @@ def drop_command(cfg):
             "store.drop_table(config.load('%s'), '%s')\"" % (REPO, sys.executable, cfg.path, cfg.next_data_table))
 
 
+def check_state_matches_database(cfg):
+    """`index --changed` skips every file whose hash is in docstore.json, so that file must describe the
+    live table. Refuse when the state folder was written for another database (the identity in state.json
+    differs), or when the live table has no rows while docstore.json lists documents (a new, empty
+    database, for example after moving from the socket to the Docker database with the same state_dir)."""
+    if not cfg.docstore_path.exists():
+        return
+    stored, live = store.read_state(cfg).get("database_identity"), store.database_identity(cfg)
+    if (stored and live and stored != live) or store.row_count(cfg, cfg.data_table) == 0:
+        raise SystemExit(
+            "refusing --changed: %s describes a different database, or this database has no index yet, so "
+            "unchanged files would be skipped and never indexed. Run a full `cerebrollm index`; it rebuilds "
+            "the table and replaces docstore.json. To use another database with its own index, give it its "
+            "own state_dir." % cfg.docstore_path)
+
+
 def run_index(cfg, changed=False, log=print):
     """Index the corpus. changed=True re-embeds only changed files in the live table. A full run builds
     cfg.next_table and swaps it in after the pipeline finishes, so search reads the live table until the
@@ -68,6 +84,7 @@ def run_index(cfg, changed=False, log=print):
     docs = make_documents(entries)
     cfg.state_dir.mkdir(parents=True, exist_ok=True)
     if changed:
+        check_state_matches_database(cfg)
         vs = store.vector_store(cfg)
         if cfg.docstore_path.exists():
             docstore = SimpleDocumentStore.from_persist_path(str(cfg.docstore_path))
@@ -111,5 +128,6 @@ def run_index(cfg, changed=False, log=print):
         "duplicates_collapsed": scan["counts"].get("duplicates_collapsed", 0),
     }
     store.write_state(cfg, last_index=summary, last_index_time=time.strftime("%Y-%m-%dT%H:%M:%S%z"),
-                      embedding_model=cfg.ollama["model"], embedding_digest=store.model_digest(cfg))
+                      embedding_model=cfg.ollama["model"], embedding_digest=store.model_digest(cfg),
+                      database_identity=store.database_identity(cfg))
     return summary
