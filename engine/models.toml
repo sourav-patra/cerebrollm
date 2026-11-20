@@ -123,6 +123,22 @@ allowed = true
 num_ctx = 16384
 digest = "4475827791a269b02c8ec49b1c3bc1abb5846bacf3fae015b75d33986322d8f6"
 
+[models."qwen3.5:9b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "/api/show on the installed model: licence layer sha256:50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32 is the Apache License 2.0 text (11,343 bytes; word for word the licence of qwen3.6:35b-a3b-coding-mtp-q4_K_M apart from the filled-in copyright line), model_info general.license apache-2.0, checked 2026-11-20 (UTC)"
+allowed = true
+num_ctx = 16384
+digest = "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90"
+
+[models."qwen3.8:27b"]
+role = "chat"
+licence = "Apache-2.0"
+licence_source = "/api/show on the installed model: licence layer sha256:4c6a8e842ef0d8504549facfb03f1273a8d0022991519bc1888522cc1a5517d1 is the Apache License 2.0 text (11,345 bytes), model_info general.license apache-2.0, checked 2026-11-20 (UTC)"
+allowed = true
+num_ctx = 16384
+digest = "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813"
+
 # Reranker for `cerebrollm ask` and the MCP search option `rerank` (lane N7). Not an Ollama model: a cross-encoder run by
 # sentence-transformers from a local folder, fetched once from Hugging Face at the pinned revision (files and sha256 in
 # eval/runs/retrieval/n7-evidence/bge-reranker-v2-m3.sha256). The model guard does not read this section.

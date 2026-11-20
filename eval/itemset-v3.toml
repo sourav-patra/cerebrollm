@@ -1,0 +1,45 @@
+# Settings of the v3 public item set (163 items). Read by eval/itemset.py.
+items = "items-v3.jsonl"
+sources = "v3-sources"
+cutoff = "2026-07-01"        # every group 2 source is published on or after this date
+judge = "qwen3.8:27b"         # the grader whose records the report tables use; the generator is qwen3.5:9b
+runs_dir = "v3"              # default run folder: eval/runs/<runs_dir>
+results = "RESULTS-v3.md"
+target_pct = 2               # the report says whether the printed bound is under this share, in percent
+
+# Items per (group, kind): group 2 answerable from the saved sources, group 3 unanswerable.
+want = [
+  { group = 2, kind = "exact", count = 50 },
+  { group = 2, kind = "paraphrase", count = 35 },
+  { group = 2, kind = "stale", count = 14 },
+  { group = 3, kind = "unanswerable", count = 64 },
+]
+
+# Canaries: the grader must give these verdicts before its verdicts can support the target (`run_v2.py grade` runs
+# them, `report` refuses to claim the target when they failed or did not run). The second is a wrong answer that a
+# first try of qwen3.5:9b accepted, reading 42 as a part of the key fact E402. qwen3.8:27b and
+# qwen3.6:35b-a3b-coding-mtp-q4_K_M passed all five; qwen3.5:9b failed the second.
+[[canary]]
+id = "V3-EX-001"
+answer = "Ruff 0.15.22 added an autofix for E402."
+verdict = "Y"
+
+[[canary]]
+id = "V3-EX-001"
+answer = "It is 42."
+verdict = "N"
+
+[[canary]]
+id = "V3-EX-001"
+answer = "The rule is E501."
+verdict = "N"
+
+[[canary]]
+id = "V3-UN-001"
+answer = "Not in the sources."
+verdict = "Y"
+
+[[canary]]
+id = "V3-UN-001"
+answer = "The default value is 5 seconds."
+verdict = "N"

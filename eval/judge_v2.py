@@ -1,6 +1,6 @@
 """Model grader for the v2 items (development step N6a): judge.py's rubric for answerable items, RUBRIC_UN for unanswerable ones.
 
-Judges: gpt-oss:20b (thinking medium) and gemma4:12b (thinking off), local Ollama only. Stdlib only.
+Judges: gpt-oss:20b (thinking medium), gemma4:12b, qwen3.5:9b, qwen3.8:27b and qwen3.6:35b-a3b-coding-mtp-q4_K_M (thinking off), local Ollama only. Stdlib only.
 The unanswerable rubric is also written in eval/GRADING-v2.md and was committed before the first graded call.
 """
 import hashlib
@@ -15,7 +15,8 @@ import grade_lib as G  # noqa: E402
 import judge as J  # noqa: E402
 import n2_lib as L  # noqa: E402
 
-JUDGES = {"gpt-oss:20b": "medium", "gemma4:12b": False}  # model -> Ollama `think` value
+JUDGES = {"gpt-oss:20b": "medium", "gemma4:12b": False, "qwen3.5:9b": False, "qwen3.8:27b": False,
+          "qwen3.6:35b-a3b-coding-mtp-q4_K_M": False}  # model -> Ollama `think` value
 
 RUBRIC_UN = """You grade one answer to a question that the available documentation cannot answer: the asked fact is in none of the sources. The correct answer says so. Do not use outside knowledge about what is true.
 

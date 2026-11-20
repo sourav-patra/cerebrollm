@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Check the v2 item set (development step N5). Stdlib only. eval/check_items.py and eval/items.jsonl stay frozen.
+"""Check a public item set (v2 from development step N5, later sets alike). Stdlib only. eval/check_items.py and
+eval/items.jsonl stay frozen.
 
-Public part (always): eval/items-v2.jsonl, group 2 (post-cutoff public documents, quotes in eval/v2-sources/) and
-group 3 (unanswerable, each absent_terms entry must occur in neither eval/v2-sources/ nor the corpus).
+Public part (always): the items file of the set (default v2: eval/items-v2.jsonl), group 2 (post-cutoff public
+documents, quotes in the set's sources folder, v2: eval/v2-sources/) and group 3 (unanswerable, each absent_terms
+entry must occur in neither the sources folder nor the corpus). The file names, the counts per group and kind and the
+cutoff date are the settings of the set (eval/itemset-<name>.toml, read by eval/itemset.py); --set NAME picks one.
 Private part (only with --private): items.json of group 1 (own project docs) outside the repo, quotes checked against
 the projects folder, plus the sha256 and line range recorded at pick time. The projects folder, the never-open list and
 the skip patterns come from a SOURCES.txt (lines projects_folder:, never_open:, skip:), by default the one beside the
@@ -11,10 +14,11 @@ Every path is normalised and checked against the root and the exclusion lists be
 
 The corpus root comes from --corpus, else from [corpus] path in research/model-study/study.toml ($HOME and ~ expanded).
 
-Usage: python3 eval/check_items_v2.py [--corpus ROOT] [--private ITEMS_JSON [--sources SOURCES_TXT] [--notes-root DIR]]
+Usage: python3 eval/check_items_v2.py [--set NAME] [--corpus ROOT] [--private ITEMS_JSON [--sources SOURCES_TXT] [--notes-root DIR]]
 Prints OK <public> [<private>] or one line per failure and exits 1.
 """
 import argparse
+import collections
 import fnmatch
 import hashlib
 import json
@@ -26,13 +30,13 @@ import tomllib
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import check_items as V1  # noqa: E402  (check_quote is reused, not copied)
+import itemset as IS  # noqa: E402
 
-PUBLIC = os.path.join(HERE, "items-v2.jsonl")
-SOURCES = os.path.join(HERE, "v2-sources")
+ITEMSET, ENV_ERROR = IS.load_early()   # the set named by CEREBROLLM_ITEMSET, else v2; --set wins over a bad name there
+PUBLIC = ITEMSET.items
+SOURCES = ITEMSET.sources
 STUDY = os.path.join(os.path.dirname(HERE), "research", "model-study", "study.toml")
 KINDS = {"exact", "paraphrase", "stale", "unanswerable"}
-WANT_PUBLIC = {(2, "exact"): 10, (2, "paraphrase"): 7, (2, "stale"): 3, (3, "unanswerable"): 15}
-CUTOFF = "2026-07-01"  # group 2 sources must be published on or after this date
 
 
 def read_sources(path):
@@ -178,8 +182,13 @@ def _grep(term, roots):
     return None
 
 
-def check_public(path=PUBLIC, sources=SOURCES, corpus=None):
-    """Group 3 absent terms are always checked against `sources`, and against `corpus` when it is given."""
+def check_public(path=None, sources=None, corpus=None, itemset=None):
+    """Group 3 absent terms are always checked against `sources`, and against `corpus` when it is given.
+    The counts per group and kind and the cutoff date come from `itemset` (default: the set of this run)."""
+    if itemset is None and ENV_ERROR:
+        raise ENV_ERROR
+    itemset = itemset or ITEMSET
+    path, sources = path or itemset.items, sources or itemset.sources
     fails, cache, seen, counts = [], {}, set(), {}
     items = _load_jsonl(path, fails)
     ref = lambda q, label: _ref(sources, q, label, cache, fails)  # noqa: E731
@@ -207,8 +216,8 @@ def check_public(path=PUBLIC, sources=SOURCES, corpus=None):
                     continue
                 if not (h.get("URL", "").startswith("https://") and h.get("Fetched") and h.get("Published")):
                     fails.append("%s: %s lacks URL, Published or Fetched header" % (iid, n))
-                elif h["Published"] < CUTOFF:
-                    fails.append("%s: %s published %s, before %s" % (iid, n, h["Published"], CUTOFF))
+                elif h["Published"] < itemset.cutoff:
+                    fails.append("%s: %s published %s, before %s" % (iid, n, h["Published"], itemset.cutoff))
                 dates.append(h.get("Published", ""))
             if d.get("released") != max(dates or [""]):
                 fails.append("%s: released %r does not match the newest source date" % (iid, d.get("released")))
@@ -231,11 +240,13 @@ def check_public(path=PUBLIC, sources=SOURCES, corpus=None):
             fails.append("%s: group %r is not 2 or 3" % (iid, g))
     if corpus is not None and not os.path.isdir(corpus):
         fails.append("corpus root not found: %s" % corpus)
-    for k, want in WANT_PUBLIC.items():
+    for k, want in itemset.want.items():
         if counts.get(k, 0) != want:
             fails.append("expected %d group %s %s items, found %d" % (want, k[0], k[1], counts.get(k, 0)))
-    if len(items) != sum(WANT_PUBLIC.values()):
-        fails.append("expected %d public items, found %d" % (sum(WANT_PUBLIC.values()), len(items)))
+    if len(items) != itemset.total:
+        fails.append("expected %d public items, found %d" % (itemset.total, len(items)))
+    questions = collections.Counter(" ".join(str(d.get("question", "")).lower().split()) for d in items)
+    fails += ["duplicate question: %s" % q[:80] for q, n in sorted(questions.items()) if n > 1]
     return fails, items
 
 
@@ -292,17 +303,19 @@ def check_private(path, notes_root, public_ids=(), never=(), skip=()):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
+    ap.add_argument("--set", dest="itemset", help="item set (default v2, or CEREBROLLM_ITEMSET): eval/itemset-NAME.toml")
     ap.add_argument("--corpus", help="corpus root (default: [corpus] path of research/model-study/study.toml)")
     ap.add_argument("--private")
     ap.add_argument("--sources", help="SOURCES.txt (default: beside the private items file)")
     ap.add_argument("--notes-root", help="overrides projects_folder from SOURCES.txt")
     a = ap.parse_args(argv)
+    itemset = IS.load(a.itemset)
     try:
         corpus = a.corpus or corpus_from_study()
     except (OSError, ValueError) as e:
         print("FAIL no corpus root: %s" % e)
         return 1
-    fails, items = check_public(corpus=corpus)
+    fails, items = check_public(corpus=corpus, itemset=itemset)
     msg = "OK %d" % len(items)
     if a.private:
         src = read_sources(a.sources or os.path.join(os.path.dirname(os.path.abspath(a.private)), "SOURCES.txt"))
