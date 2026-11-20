@@ -88,15 +88,17 @@ RERANK_CANDIDATES = 20   # same candidate pool as `cerebrollm ask`
 MAX_K, MAX_PAGE = 50, 100   # LLD I-06; one call fetches at most k * page + 1 hits
 
 
-def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=False):
+def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=False, scope=None):
+    scope = scope or {}   # path_prefix, since, until: passed on only when given
     end = page * size
     # One extra hit tells whether another page exists.
     if use_rerank:   # the candidate pool is reordered by the cross-encoder; pages are cut from that order
         pool = search.run_search(cfg, query, k=max(RERANK_CANDIDATES, end + 1), mode=mode,
-                                 all_status=all_status, project=project)
+                                 all_status=all_status, project=project, **scope)
         hits = [dict(h, score=h["rerank_score"]) for h in rerank.rerank(query, pool, top=len(pool))]   # score = cross-encoder score
     else:
-        hits = search.run_search(cfg, query, k=end + 1, mode=mode, all_status=all_status, project=project)
+        hits = search.run_search(cfg, query, k=end + 1, mode=mode, all_status=all_status, project=project,
+                                 **scope)
     shown = hits[end - size:end]
     more = len(hits) > end
     # Fixed text printed around the hits, counted against the page budget: the wrapper line, the
@@ -120,20 +122,30 @@ def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=F
     description=("Search the cerebrollm index of the user's authoritative documents. Returns hits as "
                  "untrusted data with rank, score, tier, status, path, line span, ref, project, heading, "
                  "and sha prefix. Pages of k hits (k 1 to 50, page 1 to 100); a last line says whether another page exists. With "
-                 "rerank=true the top 20 hits are reordered by a cross-encoder (slower, more accurate). Verify "
-                 "a quote with verify before stating it as fact."),
+                 "rerank=true the top 20 hits are reordered by a cross-encoder (slower, more accurate). "
+                 "path_prefix limits hits to documents at or under a root-relative path, at a path-segment boundary "
+                 "(a/b matches a/b/x.md, never a/bc.md); since and until limit them to documents dated in an ISO 8601 "
+                 "date or date-time range (a bare date is 00:00 UTC for since and the whole day, UTC, for until); "
+                 "all three combine with project. Verify a quote with verify before stating it as fact."),
     annotations=ToolAnnotations(readOnlyHint=True),
 )
 def search_tool(query: str, k: int | None = None, mode: Literal["lexical", "vector", "hybrid"] | None = None,
                 all_status: bool = False, project: str | None = None, page: int = 1,
-                rerank: bool = False) -> str:
+                rerank: bool = False, path_prefix: str | None = None, since: str | None = None,
+                until: str | None = None) -> str:
     if not 1 <= page <= MAX_PAGE or (k is not None and not 1 <= k <= MAX_K):
         return "Invalid paging: k must be 1 to %d and page 1 to %d." % (MAX_K, MAX_PAGE)
     if mode is not None and mode not in MODES:
         return "Invalid mode %r: use lexical, vector or hybrid." % (mode,)
+    try:
+        search.parse_scope(since, until)
+    except ValueError as exc:
+        return _one_line(exc)   # an empty date is invalid; only None means not given
+    scope = {name: value for name, value in (("path_prefix", path_prefix), ("since", since), ("until", until))
+             if value is not None}
     cfg = _config()
     size = k or min(cfg.search["default_k"], MAX_K)   # a large default_k in a user config cannot pass the cap
-    return _guard(lambda: _search_page(cfg, query, size, page, mode, all_status, project, rerank))
+    return _guard(lambda: _search_page(cfg, query, size, page, mode, all_status, project, rerank, scope))
 
 
 @server.tool(

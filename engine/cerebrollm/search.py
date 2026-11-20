@@ -27,6 +27,120 @@ def _filters(cfg, all_status, project):
     return MetadataFilters(filters=items)
 
 
+DATE_TIME = re.compile(r"[0-9]{4}-?[0-9]{2}-?[0-9]{2}T")   # the only date-time separator accepted is T
+
+
+def _bare_date(text):
+    try:
+        return datetime.date.fromisoformat(text)
+    except ValueError:
+        return None
+
+
+def parse_instant(text, upper=False):
+    """(instant, exclusive) for an ISO 8601 date or date-time. A bare date is midnight UTC; with
+    upper=True it is the end of that day, given as the next midnight UTC with exclusive=True (the last
+    representable day is given as its final microsecond, not exclusive). A date-time needs the separator
+    T; without an offset it is UTC. Raises ValueError("Invalid date ...") on any other input."""
+    text = (text or "").strip()
+    day = _bare_date(text)
+    try:
+        if day is not None:
+            start = datetime.datetime(day.year, day.month, day.day, tzinfo=datetime.timezone.utc)
+            if not upper:
+                return start, False
+            try:
+                return start + datetime.timedelta(days=1), True
+            except OverflowError:   # 9999-12-31: no next midnight exists
+                return datetime.datetime.max.replace(tzinfo=datetime.timezone.utc), False
+        if not DATE_TIME.match(text):
+            raise ValueError(text)
+        when = datetime.datetime.fromisoformat(text)
+    except (ValueError, OverflowError):
+        raise ValueError("Invalid date %r: use an ISO 8601 date or date-time, e.g. 2026-01-31 or "
+                         "2026-01-31T09:30:00+05:30." % text) from None
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=datetime.timezone.utc)
+    return when, False
+
+
+def parse_scope(since=None, until=None):
+    """(since, until, until_exclusive): the parsed bounds, each None when not given (None is the only
+    value that means not given; an empty string is an invalid date). Raises ValueError("Invalid
+    date ...") for a bad date or a since that falls after the whole until range."""
+    lower = parse_instant(since)[0] if since is not None else None
+    upper, exclusive = parse_instant(until, upper=True) if until is not None else (None, False)
+    if lower is not None and upper is not None and (lower >= upper if exclusive else lower > upper):
+        raise ValueError("Invalid date range: since %r is after until %r." % (since, until))
+    return lower, upper, exclusive
+
+
+def _like_escape(text):
+    return text.replace("\\", "\\\\").replace("%", r"\%").replace("_", r"\_")
+
+
+def _prefix(path_prefix):
+    """The path prefix without one trailing "/"."""
+    prefix = path_prefix or ""
+    return prefix[:-1] if prefix.endswith("/") else prefix
+
+
+def in_scope(path, mtime, prefix, lower, upper, exclusive):
+    """True when a document with this root-relative path and stored mtime (ISO 8601 text) lies under
+    the prefix and inside the date range; the one definition both the lookup and the hit check use.
+    A missing or unreadable mtime never satisfies a date bound."""
+    if prefix and not (path == prefix or path.startswith(prefix + "/")):
+        return False
+    if lower is None and upper is None:
+        return True
+    try:
+        when = datetime.datetime.fromisoformat(mtime)
+    except (TypeError, ValueError):
+        return False
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=datetime.timezone.utc)
+    if lower is not None and when < lower:
+        return False
+    if upper is not None and (when >= upper if exclusive else when > upper):
+        return False
+    return True
+
+
+def scope_doc_ids(cfg, all_status, project, path_prefix=None, since=None, until=None):
+    """The document ids (the ref_doc_id stored with every chunk: domain, project, ref and path, unique
+    per document) of the indexed documents under the path prefix and inside the date range that the
+    other filters (domain, status, project) allow, sorted. One direct query on the live data table
+    fetches the candidates, narrowed by the prefix at a path-segment boundary; the dates are then
+    compared in Python as instants, so offsets that name the same instant compare equal and a stored
+    mtime that cannot be read excludes only its own document."""
+    lower, upper, exclusive = parse_scope(since, until)
+    prefix = _prefix(path_prefix)
+    where, args = ["metadata_->>'domain' = %s"], [cfg.domain]
+    if not all_status:
+        where.append("metadata_->>'status' = any(%s)")
+        args.append(ACTIVE_STATUS)
+    if project:
+        where.append("metadata_->>'project' = %s")
+        args.append(project)
+    if prefix:
+        where.append(r"(metadata_->>'path' = %s or metadata_->>'path' like %s escape '\')")
+        args += [prefix, _like_escape(prefix) + "/%"]
+    sql = ("select distinct metadata_->>'ref_doc_id', metadata_->>'path', metadata_->>'mtime' from %s where %s"
+           % (cfg.data_table, " and ".join(where)))
+    with store.sql(cfg) as cur:
+        cur.execute(sql, args)
+        rows = cur.fetchall()
+    return sorted({doc_id for doc_id, path, mtime in rows
+                   if doc_id and path and in_scope(path, mtime, prefix, lower, upper, exclusive)})
+
+
+def _in_value(text):
+    """A value as the text of a PGVectorStore IN filter, which pastes it between single quotes into a
+    sqlalchemy text() clause: a quote is doubled and a colon is escaped so it is not read as a bind
+    parameter."""
+    return text.replace("'", "''").replace(":", r"\:")
+
+
 def _line_span(cfg, meta):
     """(first line, last line, source_matches_index) computed from the character span."""
     start, end = meta.get("char_start", -1), meta.get("char_end", -1)
@@ -131,8 +245,13 @@ def distinct_by_text(ranked, k):
     return kept
 
 
-def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, synonyms=None):
-    """Return a list of hit dicts, best first, with distinct chunk text."""
+def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, synonyms=None,
+               path_prefix=None, since=None, until=None):
+    """Return a list of hit dicts, best first, with distinct chunk text. path_prefix, since and until
+    (strings, see parse_instant and scope_doc_ids) restrict both retrieval arms before the candidate
+    limit; no document in scope gives no hits."""
+    scope_range = parse_scope(since, until)   # a bad date fails before anything else runs
+    scope_prefix = _prefix(path_prefix)
     query = sanitize(query)   # PGVectorStore ORs the words into to_tsquery
     if not query:
         return []
@@ -141,6 +260,13 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     fetch = max(k * cfg.search["fetch_factor"], 40)
     index = VectorStoreIndex.from_vector_store(store.vector_store(cfg), embed_model=store.embed_model(cfg))
     filters = _filters(cfg, all_status, project)
+    scoped = bool(path_prefix) or since is not None or until is not None
+    if scoped:
+        doc_ids = scope_doc_ids(cfg, all_status, project, path_prefix, since, until)
+        if not doc_ids:
+            return []
+        filters.filters.append(MetadataFilter(key="ref_doc_id", value=[_in_value(d) for d in doc_ids],
+                                              operator=FilterOperator.IN))
     use_synonyms = cfg.search.get("synonyms_enabled", False) if synonyms is None else synonyms
     lexical_query = expand_query(query, cfg.synonyms) if use_synonyms else query
 
@@ -163,6 +289,11 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     out = []
     for h in hits:
         meta = h.node.metadata
+        # the lookup and the retrieval are separate queries: a full index swap between them could bring
+        # in a row of the new table whose date or path differs from the one admitted, so each hit is
+        # checked again (at worst a search during a swap returns fewer hits, never an out-of-scope one)
+        if scoped and not in_scope(meta.get("path") or "", meta.get("mtime"), scope_prefix, *scope_range):
+            continue
         # shortcut: a stale row whose root, tier rule or never-index rule no longer allows its path is dropped with
         # its copies; promoting a copy needs its own supersession status and ref, which the row does not hold.
         # A re-index restores an allowed copy.
