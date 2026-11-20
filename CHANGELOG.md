@@ -9,9 +9,10 @@ Two index runs never write at once. No re-index needed.
 - `cerebrollm index` and `cerebrollm index --changed` take their locks before they read the corpus. They hold them until the run ends or fails.
 - An exclusive lock on `<state_dir>/index.lock` guards `docstore.json`, `docstore.next.json` and `state.json`. The file is created empty when absent and never written; an existing file is only opened to lock it.
 - PostgreSQL advisory locks cover every data table a run can change: the live table, `<table>_next` and `<table>_old`. They also stop two configs whose tables are the same or overlap.
-- A second run exits at once with status 1 and one line on stderr. The line names the lock file and the holder's process id from the kernel lock table (`/proc/locks`), or the locked table. It never waits.
+- A second run exits with status 1 and one line on stderr. The line names the lock file and the holder's process id from the kernel lock table (`/proc/locks`), or the locked table. Where the system has no lock table, as on macOS, the line names the lock file and says another process holds it, without a process id; the run first retries the lock five times, 0.05 s apart, since the holder may just have released it. It never waits for the holder.
 - The operating system and the server release the locks when the holding process dies, including by SIGKILL. `search`, `verify`, `ask`, `status` and `mcp` take no lock.
 - `index` refuses an `index.lock` that is a symbolic link or not a regular file.
+- A CI job on a macOS runner (`macos-15`) runs the engine tests against a PostgreSQL 16 cluster, with pgvector built from a pinned commit. Run 44799443609 passed: 190 passed, 6 skipped, the Ollama tests. cerebrollm has not been run on a physical Mac.
 
 ## 0.2.0
 
