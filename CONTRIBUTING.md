@@ -16,7 +16,7 @@ Prerequisites: Python 3.12, `pip install -r engine/requirements.txt`. Tests that
 need PostgreSQL or Ollama skip with a message when those are down. The
 `-rs` flag prints each skip reason. Put the command, exit code and skip
 reasons in the pull request. Linux, including
-WSL2, is the tested platform; macOS and native Windows are untested.
+WSL2, is the tested platform; macOS has a CI job only and has not been run on a physical Mac; native Windows is untested.
 
 Review: the builder of a change never reviews it. A pull request names who
 built it and who reviewed it. A reviewer from a different tool provider is
