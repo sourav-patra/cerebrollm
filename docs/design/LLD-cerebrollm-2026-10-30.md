@@ -2,9 +2,9 @@
 id: LLD-cerebrollm
 kind: contract
 governs: 0.1.0 as built (section 2 and 3), and the 0.2 issues I-01 to I-12 (section 4, proposed)
-status: LOCKED 2026-10-30 by the owner (content of draft v5)
+status: revision proposed 2026-11-21, owner re-lock pending (the owner locked draft v5 on 2026-10-30, sha256 38337ffa37140ee6e6ef4af28e9ae80130ddda35129a70f46d4460d78b7c0b60; this file is that draft with the passage-hash lines changed)
 upstream:
-  - TRD-cerebrollm-2026-10-30.md (pin: TRD as locked 2026-10-30, sha256 37e2cff553aa760385bc8f03d6852f20e82b4b0a896c2e3e517c06e31e2a3e12)
+  - TRD-cerebrollm-2026-10-30.md (pin: TRD revision proposed 2026-11-21, owner re-lock pending, sha256 b399c0bfc64918c14cf9ff5f261f78c1fa3ae91fd6f20b0ed78464084b690399)
   - PRD-cerebrollm-2026-10-30.md (pin: PRD as locked 2026-10-30, sha256 622fee4d88bc88bdf7e59d767940b809c6651b72ce343b8075695724f84572f2)
 checked-at: source revision 02a00dd, 2026-10-30 (the public repository starts a new history; the hash is for the review record)
 ---
@@ -21,22 +21,22 @@ Marks: E observed in code in this pass; R reported by a committed log or result 
 
 ## 2. Engine modules, `engine/cerebrollm/`
 
-Test counts come from `grep -c "def test_" engine/tests/test_*.py` (E: 119 in total). Their pass result is R: `119 passed, 61 subtests passed` on 2026-10-29 (`eval/runs/retrieval/n7-evidence/engine-suite.log`); not re-run in this pass.
+Test counts in parentheses are historical: they come from `grep -c "def test_" engine/tests/test_*.py` at source revision 02a00dd (E: 119 in total) and are not updated by later revisions, whose rows name current functions and test files without counts. Their pass result is R: `119 passed, 61 subtests passed` on 2026-10-29 (`eval/runs/retrieval/n7-evidence/engine-suite.log`); not re-run in this pass.
 
 | Module | Key functions and classes | Tests |
 |---|---|---|
 | `__init__.py` | sets default environment values `ANONYMIZED_TELEMETRY=False`, `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`, `DO_NOT_TRACK=1`, `OLLAMA_HOST` (loopback) before any library import | none |
-| `__main__.py`, `cli.py` | `main(argv)`: six subcommands, exit 2 on an `ask` failure, 1 on a non-OK `verify` | `test_answer.py` CLI tests |
+| `__main__.py`, `cli.py` | `main(argv)`: six subcommands, exit 2 on an `ask` failure, 1 on a non-OK `verify`; one stderr warning line on `status`, `search`, `verify` and `ask` while the index format is older | `test_answer.py` CLI tests, `test_passage_hash.py` |
 | `config.py` | `Config` (derived table names, state paths, connection URLs), `expand_paths`, `load` | `test_config.py` (2) |
 | `rules.py` | `never_reason`, `classify`, `secret_hit` (9 patterns), `family`, `apply_supersession`, `status_line_superseded`, `collapse_duplicates`, `full_match` | `test_rules.py` (20) |
 | `corpus.py` | `read_source` (real-path containment, or `git show`), `enumerate_corpus`, `doc_id` | `test_corpus.py` (4), `test_end_to_end.py` (1) |
 | `glue.py` | `SourceDoc` (hash ignores mtime), `MergeSmall`, `TableRows`, `LocateChunks`, `headings`, `heading_path`, `table_pieces` | `test_chunking.py` (12) |
-| `indexer.py` | `make_documents`, `chunk_steps`, `build_pipeline`, `run_index` (full rebuild then swap, or `--changed`), `drop_command` | `test_swap.py` (9), `test_end_to_end.py` |
-| `store.py` | `vector_store`, `embed_model` (query prefix, `num_ctx`), `sql`, `swap_in`, `row_count`, `drop_table`, `model_digest`, `read_state`, `write_state` | `test_swap.py` |
+| `indexer.py` | `make_documents`, `chunk_steps`, `build_pipeline`, `run_index` (full rebuild then swap, or `--changed`, which runs in full unless `state.json` records the current index format; writes `index_format` and `index_table` inside `last_index` after a run completes), `drop_command` | `test_swap.py` (9), `test_end_to_end.py`, `test_passage_hash.py` |
+| `store.py` | `vector_store`, `embed_model` (query prefix, `num_ctx`), `sql`, `swap_in`, `row_count`, `drop_table`, `model_digest`, `read_state`, `write_state`, `INDEX_FORMAT`, `index_table`, `index_format`, `older_format`, `format_warning` | `test_swap.py`, `test_passage_hash.py` |
 | `search.py` | `run_search`, `rrf_fuse`, `recency_multiplier`, `distinct_by_text`, `expand_query`, `sanitize`, `cap_text`, `format_hits`, `to_json` | `test_search.py` (18) |
 | `rerank.py` | `settings`, `_load` (local folder, CUDA if visible), `score`, `rerank`, `release` | `test_answer.py` rerank tests |
 | `answer.py` | `build_prompt`, `extract_citations`, `check_citations`, `decide`, `chat_model`, `ollama_generate`, `ask`, `format_result`, `to_json` | `test_answer.py` (27) |
-| `verify.py` | `run_verify` (`OK`, `CHANGED`, `MISSING`, `GONE`, `UNINDEXED`), `_resolve`, `_indexed_sha` | `test_verify.py` (7) |
+| `verify.py` | `run_verify` (`OK`, `CHANGED`, `MISSING`, `GONE`, `UNINDEXED`; `OK` when the file sha256 is indexed, or when a chunk indexed from the same root, path and ref, never a collapsed copy, occurs byte for byte between whitespace or file edges and holds the quote with only whitespace normalised, in a file that is valid UTF-8), `_resolve`, `_source_rows`, `_indexed_sha`, `_indexed_passages`, `_occurrences`, `_in_passage`, `_lossless`, `_unchanged_passage` | `test_verify.py` (7), `test_passage_hash.py` |
 | `status.py` | `collect`, `format_status` | `test_end_to_end.py` |
 | `mcp_server.py` | `search_tool`, `verify_tool`, `_search_page`, `_neutral`, `_guard`, `_down_message`, `run` | `test_mcp_server.py` (19) |
 
