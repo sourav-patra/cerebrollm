@@ -37,6 +37,10 @@ class Config:
         self.never = data["never"]
         self.project_names = data.get("project_names", {})
         self.default_year = data.get("supersession_default_year", 2026)
+        self.journal_prefixes = data.get("journal_prefixes", ["JOURNAL"])   # names of daily records, never a family
+        if (not isinstance(self.journal_prefixes, list)
+                or not all(isinstance(p, str) and p for p in self.journal_prefixes)):
+            raise ValueError("journal_prefixes must be a list of non-empty strings: %r" % (self.journal_prefixes,))
         base = "@/%s?host=%s&port=%s" % (self.pg["database"], self.pg["socket_dir"], self.pg["port"])
         self.sync_url = "postgresql+psycopg2://%s%s" % (self.pg["user"], base)
         self.async_url = "postgresql+asyncpg://%s%s" % (self.pg["user"], base)
