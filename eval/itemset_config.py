@@ -14,19 +14,29 @@ file is written to a new temporary file beside OUT and installed with one atomic
 Then set CEREBROLLM_CONFIG=OUT for `index` and for every run of `run_v2.py --set NAME`; see eval/ITEMS-v3.md.
 """
 import os
+import re
 import sys
 import tempfile
+import tomllib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import itemset as IS  # noqa: E402
 
 ENGINE_CONFIG = os.path.join(HERE, "..", "engine", "cerebrollm.toml")
+FOLDER_NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*\Z")   # goes unescaped into a TOML string and a glob
 RULE = '\n[[rule]]\nroot = "notes"\nglob = "%s/**/*.md"\ntier = "T3"\nstatus = "current"\n'
 
 
 def folders(itemset):
-    return sorted(d for d in os.listdir(itemset.sources) if os.path.isdir(os.path.join(itemset.sources, d)))
+    """The top-level folders of the set's sources. Raises ValueError for a name other than letters, digits, '.', '_'
+    and '-' (not starting with '.', '_' or '-'), which the generated rule could not hold as it is."""
+    names = sorted(d for d in os.listdir(itemset.sources) if os.path.isdir(os.path.join(itemset.sources, d)))
+    bad = [d for d in names if not FOLDER_NAME.match(d)]
+    if bad:
+        raise ValueError("source folder names may hold only letters, digits, '.', '_' and '-': %s"
+                         % ", ".join(repr(d) for d in bad))
+    return names
 
 
 def corpus_name(itemset):
@@ -57,7 +67,7 @@ def default_roots():
     return [os.path.realpath(os.path.join(HERE, "..")), os.path.realpath(os.path.expanduser("~/.cerebrollm"))]
 
 
-def _inside(path, root):
+def inside(path, root):
     try:
         return os.path.commonpath([path, root]) == root
     except ValueError:   # another drive
@@ -66,16 +76,20 @@ def _inside(path, root):
 
 def write_config(itemset, out, force=False, roots=None):
     """Write config_text to `out`: refuse a destination outside `roots` (default: this repository and
-    $HOME/.cerebrollm), build the whole text first, write it to a temporary file created exclusively beside `out`, and
-    install it with one atomic step: a hard link, which fails when `out` exists, or with force a rename over it. A
-    failure leaves an existing `out` as it was and no temporary file."""
+    $HOME/.cerebrollm), build the whole text first and parse it, write it to a temporary file created exclusively
+    beside `out`, and install it with one atomic step: a hard link, which fails when `out` exists, or with force a
+    rename over it. A failure leaves an existing `out` as it was and no temporary file."""
     folder = os.path.realpath(os.path.dirname(os.path.abspath(out)))
     dest = os.path.join(folder, os.path.basename(out))
-    if not any(_inside(dest, r) for r in (roots if roots is not None else default_roots())):
+    if not any(inside(dest, r) for r in (roots if roots is not None else default_roots())):
         raise ValueError("%s is outside the permitted folders (this repository and $HOME/.cerebrollm)" % out)
     if not os.path.isdir(folder):
         raise ValueError("folder %s does not exist" % folder)
     text = config_text(itemset)
+    try:
+        tomllib.loads(text)
+    except tomllib.TOMLDecodeError as e:
+        raise ValueError("the generated config is not valid TOML (%s); nothing written" % e) from None
     fd, tmp = tempfile.mkstemp(dir=folder, prefix=".itemset-config-")   # created with O_EXCL
     try:
         with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as f:

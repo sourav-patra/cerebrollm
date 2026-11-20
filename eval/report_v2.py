@@ -69,22 +69,38 @@ def retrieval_hit(item):
 def target_blocker():
     """Why the grader's verdicts cannot yet support the item set's target, or None. Two records of the run folder are
     needed: the grader's canary check, passed (`run_v2.py grade` writes it), and a hand check of a random sample of
-    graded answers with no disagreement (`run_v2.py sample` draws the sample; the person writes handcheck.json)."""
+    graded answers with no disagreement (`run_v2.py sample` draws the sample; the person writes handcheck.json). Each
+    record counts only for the grades it names: the item set, the grader, the grader's model digest and the sha256 of
+    its grades file (R.batch_evidence); the canary record must also hold every configured canary with the expected
+    verdict, whatever its `passed` says."""
     if IS.target_pct is None:
         return None
+    want = R.batch_evidence(PRIMARY)
+    if want["judge_digest"] is None:
+        return "the grades of %s do not record one model digest" % PRIMARY
     try:
         with open(R.canary_path(PRIMARY), encoding="utf-8") as f:
             canary = json.load(f)
     except OSError:
         return "the grader canary check of %s has not run" % PRIMARY
-    if not canary.get("passed"):
-        bad = [r["answer"] for r in canary["results"] if r["want"] != r["got"]]
+    stale = [k for k, v in want.items() if canary.get(k) != v]
+    if stale:
+        return "the canary record of %s is for other grades (%s differ)" % (PRIMARY, ", ".join(stale))
+    results = canary.get("results")
+    if (not isinstance(results, list) or not all(isinstance(r, dict) for r in results)
+            or sorted(repr((r.get("id"), r.get("answer"), r.get("want"))) for r in results) != sorted(map(repr, IS.canaries))):
+        return "the canary record of %s does not hold the configured canaries of %s" % (PRIMARY, IS.name)
+    bad = [r["answer"] for r in results if r["want"] != r.get("got")]
+    if bad:
         return "the grader canary check of %s failed on %s" % (PRIMARY, "; ".join(repr(a) for a in bad))
     try:
         with open(os.path.join(R.V2, "handcheck.json"), encoding="utf-8") as f:
             hand = json.load(f)
     except OSError:
         return "no hand check of a random sample of graded answers (handcheck.json)"
+    stale = [k for k, v in want.items() if hand.get(k) != v]
+    if stale:
+        return "handcheck.json is for other grades (%s differ)" % ", ".join(stale)
     if not isinstance(hand.get("sampled"), int) or hand["sampled"] < HANDCHECK_MIN:
         return "the hand check sampled fewer than %d graded answers" % HANDCHECK_MIN
     if hand.get("disagreements") != 0:

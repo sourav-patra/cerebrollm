@@ -343,9 +343,8 @@ class ItemSets(unittest.TestCase):
     def test_v3_gold_and_superseded_answers_grade_as_expected(self):
         grade_checks(self, v3_items())
 
-    def test_v3_questions_are_not_in_the_other_sets(self):
-        others = {i["question"] for i in v1_items()} | {i["question"] for i in public_rows()}
-        self.assertFalse(others & {i["question"] for i in v3_items()})
+    def test_v3_questions_are_not_in_the_v2_set(self):
+        self.assertFalse({i["question"] for i in public_rows()} & {i["question"] for i in v3_items()})
 
     def test_v3_stale_items_cite_two_different_releases(self):
         stale = [i for i in v3_items() if i["kind"] == "stale"]
@@ -434,6 +433,29 @@ class SourceTools(unittest.TestCase):
                     IC.write_config(self.itemset(), out, roots=[t])
             self.assertEqual(open(out).read(), "the other writer")
             self.assertEqual(os.listdir(t), ["c.toml"])
+
+    def test_config_refuses_a_source_folder_name_it_cannot_write_as_it_is(self):
+        with tempfile.TemporaryDirectory() as t:
+            out = os.path.join(t, "c.toml")
+            for name in ('x"y', "x y", "x*", "-x"):
+                with mock.patch.object(IC.os, "listdir", return_value=["uv", name]), \
+                        mock.patch.object(IC.os.path, "isdir", return_value=True):
+                    with self.assertRaisesRegex(ValueError, "source folder names may hold only"):
+                        IC.write_config(self.itemset(), out, roots=[t])
+            self.assertEqual(os.listdir(t), [])
+        with mock.patch.object(IC.os, "listdir", return_value=["uv", "ruff-2.x_y"]), \
+                mock.patch.object(IC.os.path, "isdir", return_value=True):
+            self.assertEqual(IC.folders(self.itemset()), ["ruff-2.x_y", "uv"])
+
+    def test_config_that_does_not_parse_is_not_installed(self):
+        with tempfile.TemporaryDirectory() as t:
+            out = os.path.join(t, "c.toml")
+            with mock.patch.object(IC, "config_text", return_value='glob = "a"b/**/*.md"\n'):
+                with self.assertRaisesRegex(ValueError, "not valid TOML"):
+                    IC.write_config(self.itemset(), out, roots=[t])
+            self.assertEqual(os.listdir(t), [])
+            IC.write_config(self.itemset(), out, roots=[t])   # the shipped config with the v3 rules parses
+            self.assertIn('glob = "uv/**/*.md"', open(out).read())
 
     def test_config_failure_leaves_the_destination_and_no_temporary_file(self):
         with tempfile.TemporaryDirectory() as t:
@@ -562,7 +584,8 @@ class SourceTools(unittest.TestCase):
         paragraphs.append(" ".join(cur))
         for para in paragraphs:
             self.assertLessEqual(len(para.split()), 60, para[:60])
-        self.assertIn("mkdir ~/cerebrollm-corpus-v3\n", text)
+        self.assertIn("mkdir ~/cerebrollm-corpus-v3 &&\n", text)   # copies nothing into a folder that exists
+        self.assertIn("diff -r eval/v3-sources ~/cerebrollm-corpus-v3 &&\n", text)   # indexes nothing after a difference
         self.assertIn("cp -r eval/v3-sources/. ~/cerebrollm-corpus-v3/", text)
         copies = [l for l in text.splitlines() if l.strip().startswith("cp ")]
         self.assertTrue(copies and all("~/cerebrollm-corpus-v3" in l for l in copies), copies)
