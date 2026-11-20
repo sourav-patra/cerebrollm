@@ -57,7 +57,10 @@ def _down_message(exc):
     chain = _causes(exc)
     if any(isinstance(e, (psycopg2.OperationalError, SAOperationalError)) for e in chain):
         cfg = _config()
-        data_dir = cfg.pg["socket_dir"].rsplit("/", 1)[0]
+        data_dir = cfg.pg_down_hint()
+        if data_dir is None:   # TCP: the engine does not know how the server was started
+            return ("Postgres is not reachable at %s:%s (%s). Start the server that listens there, for example "
+                    "with: docker compose up -d" % (cfg.pg_host, cfg.pg["port"], _one_line(exc)))
         return ("Postgres is not reachable (%s). Start it with: %s -D %s -l %s/server.log -w start"
                 % (_one_line(exc), PG_CTL, data_dir, data_dir))
     if any(isinstance(e, httpx.ConnectError) for e in chain):

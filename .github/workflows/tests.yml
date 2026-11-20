@@ -3,6 +3,8 @@ name: tests
 # Runs only the tests that need no PostgreSQL, Ollama or GPU. The tests that do need them
 # (engine/tests/test_end_to_end.py, test_swap.py and the stdio case in test_mcp_server.py) stay in the
 # repository and skip themselves with the cause when the database is not reachable, as it is on a runner.
+# engine/tests/test_postgres_tcp.py runs its configuration tests here; its live-cluster class starts its
+# own PostgreSQL and skips with the cause when PostgreSQL 16 server binaries or pgvector are not installed.
 
 on:
   push:

@@ -1,0 +1,39 @@
+# PostgreSQL 16 with pgvector for cerebrollm, reachable on this machine only (127.0.0.1:54329).
+#
+#   export CEREBROLLM_PG_PASSWORD="choose-a-password"
+#   docker compose up -d --wait
+#
+# Needs Docker Engine 28.0.0 or newer: older Engines can expose a port published on 127.0.0.1 to your
+# network segment. After `up`, `docker compose port db 5432` must print 127.0.0.1:54329.
+#
+# Then set `host = "127.0.0.1"` and `password_env = "CEREBROLLM_PG_PASSWORD"` in [postgres] of your
+# cerebrollm.toml, in place of socket_dir (README, "PostgreSQL in Docker"). The engine creates the
+# `vector` extension on first use; POSTGRES_USER is a superuser, so that works.
+#
+# The password is read when the database is first created. Changing the variable later does not change
+# the stored password. `docker compose down` keeps the data; `docker compose down -v` deletes it.
+name: cerebrollm
+
+services:
+  db:
+    image: pgvector/pgvector:0.8.7-pg16-bookworm   # PostgreSQL 16 with pgvector 0.8.7; the pinned tag does not move to a new major version
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cerebrollm
+      POSTGRES_DB: rag_local
+      POSTGRES_PASSWORD: "${CEREBROLLM_PG_PASSWORD:?export CEREBROLLM_PG_PASSWORD first, it becomes the database password}"
+    ports:
+      - "127.0.0.1:54329:5432"   # loopback only; "54329:5432" would expose the database to your network
+    volumes:
+      - cerebrollm-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # -h 127.0.0.1: the temporary server the image runs while it initialises listens on the socket only,
+      # so this check turns healthy only when the real server accepts TCP connections.
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U cerebrollm -d rag_local"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
+
+volumes:
+  cerebrollm-pgdata:

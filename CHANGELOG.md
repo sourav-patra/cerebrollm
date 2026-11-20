@@ -2,6 +2,13 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+`[postgres] host`, `port` and `password_env` connect the engine to a PostgreSQL over TCP, and `docker-compose.yml` starts one. No re-index needed; a config with `socket_dir` behaves as before.
+
+- `[postgres]` takes `host` in place of `socket_dir`; `password_env` names an environment variable that holds the password (the file never holds it). `cerebrollm status` prints which connection is used. The MCP server's "Postgres is not reachable" line for a TCP connection names the host and port. `host` must be `127.0.0.1` or `::1` (`localhost` is read as `127.0.0.1`), the client connects to exactly that address whatever `PGHOSTADDR`, `PGHOST` or `PGPORT` say, and `port` is an integer from 1 to 65535; any other host is refused at load, because remote databases are not supported in this release (there is no `sslmode` setting, so such a connection would be unencrypted). A TCP connection that stalls fails after 10 seconds.
+- `docker-compose.yml` at the repository root runs `pgvector/pgvector:0.8.7-pg16-bookworm` on 127.0.0.1:54329 with a named volume and a health check; the README has a "PostgreSQL in Docker" path. It needs Docker Engine 28.0.0 or newer and was not run on Docker in this change. `index --changed` now refuses a state folder whose `state.json` names another database, or an empty database while `docstore.json` exists, and says to run a full `cerebrollm index`; `state.json` gains `database_identity`. Give a Docker database its own `state_dir`.
+
 ## 0.2.0
 
 `ask` prints only what `verify` confirmed. No re-index needed.
