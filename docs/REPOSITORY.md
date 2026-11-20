@@ -3,7 +3,7 @@
 | Path | Holds |
 |---|---|
 | `engine/` | the package (`cerebrollm`), its tests, the default configuration and model allow-list, the Ubuntu setup scripts |
-| `eval/` | public question sets (`items.jsonl`, `items-v2.jsonl`), grading rules, run scripts, raw run records under `eval/runs/` with `SHA256SUMS`, and `RESULTS.md` |
+| `eval/` | public question sets (`items.jsonl`, `items-v2.jsonl`, `items-v3.jsonl`), grading rules, run scripts, raw run records under `eval/runs/` with `SHA256SUMS`, and `RESULTS.md` |
 | `research/model-study/` | the embedding and generator study: scripts, configurations, raw results (`r1-wsl/`, `r2-wsl/`) and `RESULTS.md` |
 | `research/corpus/` | the pinned list of public documentation files the evaluation corpus is built from |
 | `docs/site/` | the product page (static HTML and CSS), the three figures (SVG) and the walk-through image derived from them |

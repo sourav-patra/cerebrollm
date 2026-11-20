@@ -708,7 +708,7 @@ class RealConfig(unittest.TestCase):
         self.assertEqual(set(cfg['models']), {
             'bge-m3', 'qwen3-embedding:0.6b', 'qwen3-embedding:4b', 'phi4', 'devstral:24b',
             'gpt-oss:20b', 'qwen3:14b', 'qwen3:8b', 'qwen3-coder:30b', 'qwen3:30b', 'gemma4:12b',
-            'nemotron-3.5-lightning', 'qwen3.6:35b-a3b-coding-mtp-q4_K_M', 'glm-4.7-flash:q4_K_M'})
+            'nemotron-3.5-lightning', 'qwen3.6:35b-a3b-coding-mtp-q4_K_M', 'glm-4.7-flash:q4_K_M', 'qwen3.5:9b', 'qwen3.8:27b'})
         for name, m in cfg['models'].items():
             self.assertFalse(name.lower().endswith(('-cloud', ':cloud')), name)
             self.assertEqual(m['allowed'], m['licence'] in mg.LICENCES, name)
