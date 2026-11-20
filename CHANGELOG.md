@@ -2,6 +2,15 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+PDF documents, behind an optional extra. A full `cerebrollm index` is needed only to add PDFs; nothing in an existing index changes, and with no `*.pdf` rule nothing else changes.
+
+- New extra `cerebrollm[pdf]` (`pypdf>=7.1.1,<7.2`, the tested minor release; BSD-3-Clause, pure Python) reads the text layer of a PDF, page by page. Add a `*.pdf` rule to your tiers to index PDFs; the shipped rules still match `*.md` only (`engine/README.md`, section PDF documents).
+- One function, `documents.read_text`, turns file bytes into text for the corpus reader, `verify` and `search`, so a quote is checked against exactly the text that was indexed. Each page with text is its own section (`## Page N`, then the page's text) and is never merged into the next page. A page line that opens a code fence gets a backslash in front (in the index and in `verify`), so it cannot swallow the next page's heading.
+- A `search` hit and an `ask` citation name the page: `report.pdf (page 4)`, or `pages 4-5` for a passage that crosses a break. `search --json` hits gain `page_start` and `page_end` (page numbers, null for other files), and `ask --json` hits gain the same two fields; each verified PDF citation in `ask --json` gains `page`, a label such as `page 4` (null when no single retrieved passage holds the quote).
+- A PDF without a text layer, or that cannot be read, is skipped and counted in `status`; without the extra installed, PDFs that a rule admits are skipped with one `status` line that names the install command. When a corpus holds only such PDFs, `index` still refuses to build an empty index, says why, and `status` shows the counts of that attempt.
+
 ## 0.2.0
 
 `ask` prints only what `verify` confirmed. No re-index needed.

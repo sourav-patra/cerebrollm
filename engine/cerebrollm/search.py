@@ -10,7 +10,7 @@ from llama_index.core.schema import NodeWithScore
 from llama_index.core.vector_stores.types import (
     FilterOperator, MetadataFilter, MetadataFilters, VectorStoreQueryMode)
 
-from . import corpus, rules, store
+from . import corpus, documents, rules, store
 
 ACTIVE_STATUS = ["locked", "current"]
 TSQUERY_OPERATORS = re.compile(r"[&|!():*<>'\"\\]")
@@ -28,19 +28,28 @@ def _filters(cfg, all_status, project):
 
 
 def _line_span(cfg, meta):
-    """(first line, last line, source_matches_index) computed from the character span."""
+    """(first line, last line, source_matches_index, first page, last page) computed from the character span.
+    The pages are None unless the file is a PDF and its bytes are the indexed bytes: the offsets belong to the
+    indexed text, so a changed PDF gets no page. The source is read from the root the passage was indexed from."""
     start, end = meta.get("char_start", -1), meta.get("char_end", -1)
     if start < 0:
-        return None, None, None
-    root = next((r for r in cfg.roots.values() if r["ref"] == meta["ref"]), None)
+        return None, None, None, None, None
+    root = cfg.roots.get(meta.get("root"))
+    if root is None or root["ref"] != meta["ref"]:   # a row without a usable root name: the first root at that ref
+        root = next((r for r in cfg.roots.values() if r["ref"] == meta["ref"]), None)
     try:
         data = corpus.read_source(root, meta["path"], meta["ref"])
     except (FileNotFoundError, PermissionError, AttributeError, TypeError):
-        return None, None, None
-    text = data.decode("utf-8", "replace")
+        return None, None, None, None, None
+    fresh = hashlib.sha256(data).hexdigest() == meta["sha256"]
+    try:
+        text, pages = documents.read_text(data, meta["path"])
+    except documents.DocumentError:   # the file changed into a PDF that cannot be read: still a changed source
+        return None, None, fresh, None, None
     first = text.count("\n", 0, start) + 1
     last = text.count("\n", 0, max(end - 1, start)) + 1
-    return first, last, hashlib.sha256(data).hexdigest() == meta["sha256"]
+    page_first, page_last = documents.page_range(pages, start, end) if fresh else (None, None)
+    return first, last, fresh, page_first, page_last
 
 
 def sanitize(query):
@@ -179,12 +188,13 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
     for rank, entry in enumerate(distinct_by_text(out, k), 1):
         o = entry["item"]
         meta = o["meta"]
-        first, last, fresh = _line_span(cfg, meta)
+        first, last, fresh, page_first, page_last = _line_span(cfg, meta)
         results.append({
             "rank": rank, "score": round(o["score"], 5), "tier": meta.get("tier"),
             "status": meta.get("status"), "project": meta.get("project"), "path": meta.get("path"),
             "ref": meta.get("ref"), "title": meta.get("title"), "heading_path": meta.get("heading_path", ""),
-            "line_start": first, "line_end": last, "source_unchanged": fresh,
+            "line_start": first, "line_end": last, "page_start": page_first, "page_end": page_last,
+            "source_unchanged": fresh,
             "sha256": meta.get("sha256"), "mtime": meta.get("mtime"),
             "also_at": [k for k in entry["also_at"] if _allowed(cfg, k)],
             "text": o["node"].get_content(),
@@ -218,6 +228,9 @@ def format_hits(results):
     lines = []
     for r in results:
         span = "L%s-%s" % (r["line_start"], r["line_end"]) if r["line_start"] else "L?"
+        label = documents.page_label(r.get("page_start"), r.get("page_end"))
+        if label:   # a PDF has no lines of its own: the hit names its page, as "report.pdf (page 4)"
+            span = "(%s)" % label
         stale = "" if r["source_unchanged"] in (None, True) else " SOURCE-CHANGED"
         also = " also_at=[%s]" % ", ".join(r["also_at"]) if r.get("also_at") else ""
         lines.append("#%d score=%.4f %s %s %s %s@%s %s %s sha=%s%s%s" % (

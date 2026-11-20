@@ -228,6 +228,12 @@ class TestToolList(unittest.TestCase):
         names = sorted(t.name for t in asyncio.run(mcp_server.server.list_tools()))
         self.assertEqual(names, ["search", "verify"])
 
+    def test_the_search_description_names_both_kinds_of_location_and_keeps_result_pages_apart(self):
+        tools = {t.name: t for t in asyncio.run(mcp_server.server.list_tools())}
+        text = tools["search"].description
+        self.assertIn("a line span, or for a PDF its page", text)
+        self.assertIn("this is not a PDF page number", text)
+
 
 @unittest.skipIf(REASON, REASON or "")
 class TestStdioServer(unittest.TestCase):

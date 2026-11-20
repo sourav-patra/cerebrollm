@@ -5,7 +5,7 @@ import posixpath
 import re
 import unicodedata
 
-from . import corpus, rules, store
+from . import corpus, documents, rules, store
 
 LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 MARKER = re.compile(r"(?m)^\s*(?:[-+#>]+|\d+\.)\s+")
@@ -144,7 +144,10 @@ def run_verify(cfg, path, quote, ref=None):
         except (FileNotFoundError, IsADirectoryError, PermissionError):
             seen_gone = True
             continue
-        text = data.decode("utf-8", "replace")
+        try:
+            text, _ = documents.read_text(data, rel)
+        except documents.DocumentError:   # a PDF the index skipped answers as a quote that is absent
+            return "MISSING", "quote not found in %s@%s" % (asked, rref)
         if rules.secret_hit(text) or not _found(quote, text):
             return "MISSING", "quote not found in %s@%s" % (asked, rref)
         sha = hashlib.sha256(data).hexdigest()
