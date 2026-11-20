@@ -1,7 +1,11 @@
 """cerebrollm index: LlamaIndex IngestionPipeline over the enumerated corpus."""
+import errno
+import fcntl
 import os
+import stat
 import sys
 import time
+from contextlib import contextmanager
 from pathlib import Path
 
 from llama_index.core.ingestion import DocstoreStrategy, IngestionPipeline
@@ -56,17 +60,118 @@ def drop_command(cfg):
             "store.drop_table(config.load('%s'), '%s')\"" % (REPO, sys.executable, cfg.path, cfg.next_data_table))
 
 
+FLOCK_TRIES = 5   # a failed flock whose holder the kernel no longer lists was released meanwhile: retry
+
+
+def _open_lock_file(path):
+    """Open <state_dir>/index.lock for flock without ever writing to it. An absent file is created empty
+    (O_EXCL); an existing one is opened read-only, so a file that is not ours keeps its bytes. A symbolic
+    link and anything but a regular file are refused (O_NONBLOCK: opening a FIFO does not hang)."""
+    flags = os.O_NOFOLLOW | os.O_CLOEXEC | os.O_NONBLOCK
+    try:
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | flags, 0o600)
+    except FileExistsError:
+        try:
+            fd = os.open(path, os.O_RDONLY | flags)
+        except OSError as exc:
+            if exc.errno == errno.ELOOP:
+                raise SystemExit("refusing to index: lock file %s is a symbolic link; move it away and run "
+                                 "again" % path) from None
+            raise
+    if not stat.S_ISREG(os.fstat(fd).st_mode):
+        os.close(fd)
+        raise SystemExit("refusing to index: lock file %s is not a regular file; move it away and run again"
+                         % path)
+    return fd
+
+
+def _flock_holder(fd):
+    """The process id the kernel lists in /proc/locks for the flock on this file, or None (lock released
+    in the meantime, or no /proc/locks). Linux only, like the supported platforms."""
+    st = os.fstat(fd)
+    dev = "%02x:%02x:%d" % (os.major(st.st_dev), os.minor(st.st_dev), st.st_ino)
+    try:
+        with open("/proc/locks") as f:
+            for line in f:
+                parts = line.split()
+                if len(parts) >= 6 and parts[1] == "FLOCK" and parts[5] == dev:
+                    return int(parts[4])
+    except (OSError, ValueError):
+        pass
+    return None
+
+
+def _take_flock(fd, path):
+    """Take the flock, or exit naming the holder's process id. A holder the kernel no longer lists has
+    released the lock between the two calls, so the flock is tried again (FLOCK_TRIES times)."""
+    for _ in range(FLOCK_TRIES):
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            return
+        except BlockingIOError:
+            holder = _flock_holder(fd)
+            if holder:
+                raise SystemExit("index already running: %s is held by process %d" % (path, holder)) from None
+            time.sleep(0.05)
+    # shortcut: reached only where /proc/locks lists no flock holder (no /proc, or a holder in another
+    # PID namespace); replace if such a platform becomes supported.
+    raise SystemExit("index already running: %s is held by another process; this system's lock table "
+                     "(/proc/locks) does not name it" % path)
+
+
+def _table_lock_names(cfg):
+    """Every data table a run can create, rename or drop: the live table, the table a full run builds
+    (_next) and the name the live table takes during the swap (_old)."""
+    return [cfg.data_table, cfg.next_data_table, "data_%s_old" % cfg.table]
+
+
+@contextmanager
+def writer_lock(cfg):
+    """Hold the index writer locks, or exit at once (SystemExit, status 1) when another run holds one:
+    an exclusive flock on <state_dir>/index.lock (the docstore and state files), then one PostgreSQL
+    session advisory lock per data table name the run can change (_table_lock_names), so two configs
+    whose tables overlap never write at once. The key is the 64-bit hashtextextended of the name as
+    PostgreSQL folds it, with no schema: runs whose search paths differ still agree on it, and the same
+    name in two schemas, or a hash collision, only makes the runs refuse each other. A contender names
+    the flock holder from the kernel's lock table. The operating system releases the flock and the
+    server the advisory locks when the process dies."""
+    cfg.state_dir.mkdir(parents=True, exist_ok=True)
+    path = cfg.state_dir / "index.lock"
+    fd = _open_lock_file(path)
+    try:
+        _take_flock(fd, path)
+        conn = store.connect(cfg)
+        try:
+            conn.autocommit = True   # the locks belong to the session; no transaction stays open
+            with conn.cursor() as cur:
+                for name in _table_lock_names(cfg):
+                    cur.execute("select pg_try_advisory_lock(hashtextextended(lower(%s), 0))", (name,))
+                    if not cur.fetchone()[0]:
+                        raise SystemExit("index already running: table %s is locked by another index run"
+                                         % name)
+            yield
+        finally:
+            conn.close()   # ends the session, which releases the advisory locks
+    finally:
+        os.close(fd)   # releases the flock; the file is kept
+
+
 def run_index(cfg, changed=False, log=print):
-    """Index the corpus. changed=True re-embeds only changed files in the live table. A full run builds
-    cfg.next_table and swaps it in after the pipeline finishes, so search reads the live table until the
-    swap: a failed run drops the new table, and a new table with no rows or under half the live rows is
-    refused (SystemExit) and kept for inspection. Returns a summary dict."""
+    """Index the corpus under writer_lock: while another index run holds it, exit at once. changed=True
+    re-embeds only changed files in the live table. A full run builds cfg.next_table and swaps it in
+    after the pipeline finishes, so search reads the live table until the swap: a failed run drops the
+    new table, and a new table with no rows or under half the live rows is refused (SystemExit) and kept
+    for inspection. Returns a summary dict."""
+    with writer_lock(cfg):
+        return _run_index(cfg, changed)
+
+
+def _run_index(cfg, changed):
     started = time.time()
     entries, scan = corpus.enumerate_corpus(cfg)
     if not entries:
         raise SystemExit("refusing to index: the corpus scan found no files (would delete everything)")
     docs = make_documents(entries)
-    cfg.state_dir.mkdir(parents=True, exist_ok=True)
     if changed:
         vs = store.vector_store(cfg)
         if cfg.docstore_path.exists():

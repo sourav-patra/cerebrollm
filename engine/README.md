@@ -61,7 +61,11 @@ cerebrollm verify PATH "QUOTE" [--ref REF]
 cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [--no-rerank] [--show-text] [--json]
 ```
 
-A full `cerebrollm index` builds the `<table>_next` table while search reads the live table, then swaps it in; a new table with no rows or under half the live rows is refused and kept, and the printed command drops it. `[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
+A full `cerebrollm index` builds the `<table>_next` table while search reads the live table, then swaps it in. A new table with no rows or under half the live rows is refused and kept, and the printed command drops it.
+
+Only one `index` run, full or `--changed`, writes at a time. A second run exits at once with status 1 and one line naming the holder of `<state_dir>/index.lock` by process id, as the kernel lists it, or a table another run has locked. Search and the other commands take no lock.
+
+`[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
 
 `search` defaults: mode hybrid, domain `org`, status `locked` or `current`, then the tier boost
 (T1 x1.30, T2 x1.15, T3 x1.00, T4 x0.85, in `cerebrollm.toml`) applied to the fused score, then the
