@@ -91,7 +91,7 @@ def enumerate_corpus(cfg):
                 "path": rel, "ref": root["ref"], "sha256": hashlib.sha256(data).hexdigest(),
                 "mtime": _mtime(root, rel, commit_date), "text": text,
             })
-    rules.apply_supersession(entries, cfg.default_year)
+    rules.apply_supersession(entries, cfg.default_year, cfg.journal_prefixes)
     entries, stats["duplicates_collapsed"] = rules.collapse_duplicates(entries)
     stats["selected"] = len(entries)
     return entries, {"counts": dict(stats), "skipped_rule": dict(skipped_rule),

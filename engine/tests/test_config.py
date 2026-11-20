@@ -48,6 +48,19 @@ class OllamaUrlTest(unittest.TestCase):
         data["ollama"]["allow_remote"] = True
         config.Config(data, config.DEFAULT_CONFIG)
 
+    def test_journal_prefixes_default_and_validation(self):
+        import tomllib
+        with open(config.DEFAULT_CONFIG, "rb") as f:
+            data = config.expand_paths(tomllib.load(f))
+        data.pop("journal_prefixes", None)
+        self.assertEqual(config.Config(data, config.DEFAULT_CONFIG).journal_prefixes, ["JOURNAL"])
+        data["journal_prefixes"] = ["JOURNAL", "notes-"]
+        self.assertEqual(config.Config(data, config.DEFAULT_CONFIG).journal_prefixes, ["JOURNAL", "notes-"])
+        for bad in ("JOURNAL", ["JOURNAL", ""], [3]):
+            data["journal_prefixes"] = bad
+            with self.assertRaisesRegex(ValueError, "journal_prefixes"):
+                config.Config(data, config.DEFAULT_CONFIG)
+
 
 if __name__ == "__main__":
     unittest.main()

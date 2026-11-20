@@ -18,7 +18,7 @@ REVISION = re.compile(_B + r"(?:rev|r)(\d+)" + _E)
 STATUS_SUPERSEDED = re.compile(r"^[\s>*_#-]*status\b[\s*_]*:[\s*_]*superseded")
 SUPERSEDED_BY = re.compile(r"^[\s>*_#-]*superseded by\b")
 STATUS_WINDOW = 30                 # lines read from the top of a file
-APPEND_ONLY_PREFIX = "JOURNAL"     # daily records: never revisions of one another
+APPEND_ONLY_PREFIX = "JOURNAL"     # default name prefix of daily records: never revisions of one another
 
 SECRET_PATTERNS = [
     re.compile(r"-----BEGIN (?:RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY"),
@@ -137,21 +137,22 @@ def family(filename, default_year=2026):
     return key, (rev, when)
 
 
-def apply_supersession(entries, default_year=2026):
+def apply_supersession(entries, default_year=2026, journal_prefixes=(APPEND_ONLY_PREFIX,)):
     """Mark older family members superseded.
 
     entries: list of dicts with keys root, path, status, text. Mutates status. A family is the
     set of files in one root and one directory with the same family key. Files whose name starts
-    with APPEND_ONLY_PREFIX (JOURNAL) never form a family. Within a family of two or more, every
+    with one of journal_prefixes (default JOURNAL, case-sensitive) never form a family. Within a family of two or more, every
     member whose ordering key is below the maximum becomes `superseded`; members tied at the
     maximum all stay. A status line that declares the file superseded also sets it.
     """
+    prefixes = tuple(journal_prefixes)
     groups = {}
     for e in entries:
         p = PurePosixPath(e["path"])
         key, order = family(p.name, default_year)
         e["_order"] = order
-        if key and not p.name.startswith(APPEND_ONLY_PREFIX):
+        if key and not (prefixes and p.name.startswith(prefixes)):
             groups.setdefault((e["root"], str(p.parent), key), []).append(e)
     for members in groups.values():
         if len(members) < 2:
