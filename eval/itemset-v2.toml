@@ -1,0 +1,15 @@
+# Settings of the v2 public item set (35 items). Read by eval/itemset.py.
+items = "items-v2.jsonl"
+sources = "v2-sources"
+cutoff = "2026-07-01"        # every group 2 source is published on or after this date
+judge = "gpt-oss:20b"        # the grader whose records the report tables use
+runs_dir = "v2"              # default run folder: eval/runs/<runs_dir>
+results = "RESULTS-v2.md"
+
+# Items per (group, kind): group 2 answerable from the saved sources, group 3 unanswerable.
+want = [
+  { group = 2, kind = "exact", count = 10 },
+  { group = 2, kind = "paraphrase", count = 7 },
+  { group = 2, kind = "stale", count = 3 },
+  { group = 3, kind = "unanswerable", count = 15 },
+]

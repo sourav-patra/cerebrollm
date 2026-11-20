@@ -1,11 +1,12 @@
-"""N6a runner: the 35 v2 public items across models and arms. Stdlib only. Rules: eval/GRADING-v2.md.
+"""N6a runner: the public items of one item set (default v2, 35 items) across models and arms. Stdlib only.
+Rules: eval/GRADING-v2.md. --set NAME picks the item set (eval/itemset-NAME.toml, see eval/itemset.py).
 
-  prepare                        (Ubuntu, GPU lock: embeds 35 queries) search once per item, save hits and the A0/A3 prompts
+  prepare                        (Ubuntu, GPU lock: embeds one query per item) search once per item, save hits and the A0/A3 prompts
   gen MODEL [--arms A0,A3] [--runs N] [--jobs J]      send the saved prompts; one record per call, resumable, run k outer
-  grade --judge gpt-oss:20b|gemma4:12b [--models a,b]  (Ubuntu or Windows, GPU lock) one grader call per answer, resumable
+  grade --judge gpt-oss:20b|gemma4:12b|qwen3.5:9b [--models a,b]  (Ubuntu or Windows, GPU lock) one grader call per answer, resumable
   report                         (Ubuntu) tables, agreement, summary.json, RESULTS-v2.md
 
-Records: eval/runs/v2/<model>/<arm>/<id>/run-<k>.json. Grades: eval/runs/v2/judge/<judge>.jsonl.
+Records: eval/runs/<set>/<model>/<arm>/<id>/run-<k>.json. Grades: eval/runs/<set>/judge/<judge>.jsonl.
 """
 import argparse
 import glob
@@ -24,12 +25,18 @@ from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import grade_lib as G  # noqa: E402
+import itemset as IS  # noqa: E402
+import itemset_config as IC  # noqa: E402  (the permitted write roots)
 import judge_v2 as JV  # noqa: E402
 import n2_lib as L  # noqa: E402
 
-# --out (or CEREBROLLM_V2_OUT) writes a run to a fresh folder; one() and cmd_grade() skip records that exist
-V2 = os.path.abspath(os.environ.get("CEREBROLLM_V2_OUT") or os.path.join(L.RUNS, "v2"))
-ITEMS = os.path.join(L.HERE, "items-v2.jsonl")
+# --set (or CEREBROLLM_ITEMSET) picks the item set; --out (or CEREBROLLM_V2_OUT) writes a run to a fresh folder;
+# one() and cmd_grade() skip records that exist
+ITEMSET, ENV_ERROR = IS.load_early()   # --set wins over a bad name in the environment
+if ENV_ERROR and __name__ != "__main__":
+    raise ENV_ERROR
+V2 = os.path.abspath(os.environ.get("CEREBROLLM_V2_OUT") or os.path.join(L.RUNS, ITEMSET.runs_dir))
+ITEMS = ITEMSET.items
 OPTS = {"num_ctx": 16384, "temperature": 0.7, "num_predict": 4096}  # one setting for every local model and arm
 CODEX_MODEL = "gpt-6.1-sol"
 CLAUDE_MODEL = "claude-sonnet-5-5"
@@ -38,6 +45,7 @@ MODELS = {
     "gpt-oss-20b": {"kind": "ollama", "name": "gpt-oss:20b", "think": "medium", "runs": 5},
     "gemma4-12b": {"kind": "ollama", "name": "gemma4:12b", "think": False, "runs": 5},
     "phi4": {"kind": "ollama", "name": "phi4", "runs": 5},
+    "qwen3.5-9b": {"kind": "ollama", "name": "qwen3.5:9b", "think": False, "runs": 5},
     "sonnet-5-5": {"kind": "claude", "runs": 3},
     # "gpt-6.1" (codex) dropped by orchestrator ruling 2026-10-29: codex quota reserved; its 210 calls made before the ruling are not graded or reported
 }
@@ -46,6 +54,82 @@ CODEX_ALLOWED = {"agent_message", "reasoning", "error"}  # any other item type i
 
 def load_items():
     return [json.loads(l) for l in open(ITEMS, encoding="utf-8") if l.strip()]
+
+
+MARKER = "itemset.json"
+MARKER_TMP = ".itemset.json."   # prefix of the temporary file that publish_marker links into place
+
+
+def check_out(roots=None):
+    """Refuse a run folder outside this repository and $HOME/.cerebrollm (symbolic links resolved) before anything is
+    written there."""
+    if not any(IC.inside(os.path.realpath(V2), r) for r in (roots if roots is not None else IC.default_roots())):
+        raise SystemExit("run folder %s is outside this repository and $HOME/.cerebrollm: use a folder such as "
+                         "~/.cerebrollm/runs/NAME" % V2)
+
+
+def local_model(name):
+    """False for a model that Ollama only relays to a hosted service (a `-cloud` tag)."""
+    return not (name.endswith("-cloud") or name.endswith(":cloud"))
+
+
+def require_local(model=None, judge=None):
+    """Item sets other than v2 run only on local Ollama models: their sources and prompts must not leave the machine.
+    v2 keeps its hosted arm."""
+    if ITEMSET.name == "v2":
+        return
+    if model is not None and (MODELS[model]["kind"] != "ollama" or not local_model(MODELS[model]["name"])):
+        raise SystemExit("%s is not a local Ollama model: item set %s runs only on local models" % (model, ITEMSET.name))
+    if judge is not None and not local_model(judge):
+        raise SystemExit("%s is not a local Ollama model: item set %s is graded only by local models" % (judge, ITEMSET.name))
+
+
+def read_marker(marker):
+    """Validate the installed marker: it must name this run's item set."""
+    try:
+        with open(marker, encoding="utf-8") as f:
+            got = json.load(f)
+    except (OSError, ValueError) as e:
+        raise SystemExit("%s cannot be read (%s): use a fresh --out folder" % (marker, e))
+    if not isinstance(got, dict) or not isinstance(got.get("set"), str):
+        raise SystemExit("%s names no item set: use a fresh --out folder" % marker)
+    if got["set"] != ITEMSET.name:
+        raise SystemExit("%s is bound to item set %s but this run is %s: use a fresh --out folder" % (V2, got["set"], ITEMSET.name))
+
+
+def publish_marker(marker):
+    """Install the marker in one exclusive step: a complete temporary file is hard-linked to the marker name, which
+    fails when a marker exists, also one another process installed a moment ago. True when this process installed it."""
+    os.makedirs(V2, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=V2, prefix=MARKER_TMP, suffix=".tmp")   # created with O_EXCL
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as f:
+            json.dump({"set": ITEMSET.name}, f, ensure_ascii=False, indent=1)
+        os.link(tmp, marker)
+        return True
+    except FileExistsError:
+        return False
+    finally:
+        os.remove(tmp)
+
+
+def bind_folder(create=True):
+    """Bind the run folder to this item set before anything is prepared, generated or graded, so that a folder never
+    mixes sets. A folder with files and no marker was made before item sets were settings and holds v2 only; the
+    report (create=False) does not write a marker. A process that loses the race to install the marker validates the
+    installed one before it writes anything."""
+    check_out()
+    marker = os.path.join(V2, MARKER)
+    if not os.path.exists(marker):
+        files = [n for n in os.listdir(V2) if not n.startswith(MARKER_TMP)] if os.path.isdir(V2) else []
+        if files and not os.path.exists(marker):   # asked again: a marker is installed before any file of its run
+            if ITEMSET.name != "v2":
+                raise SystemExit("%s holds files with no item set recorded (v2, made before item sets were settings) but "
+                                 "this run is %s: use a fresh --out folder" % (V2, ITEMSET.name))
+            return
+        if not files and (not create or publish_marker(marker)):
+            return
+    read_marker(marker)
 
 
 def prompt_file(arm, iid):
@@ -66,6 +150,7 @@ def write_json(path, obj):
 
 # ---------------------------------------------------------------- prepare
 def cmd_prepare(arms):
+    bind_folder()
     for it in load_items():
         hits = []
         if "A3" in arms:
@@ -156,6 +241,7 @@ def call_codex(prompt):
 
 
 def call(model, prompt):
+    require_local(model)
     cfg = MODELS[model]
     if cfg["kind"] == "ollama":
         return call_ollama(cfg, prompt)
@@ -207,7 +293,7 @@ def one(model, arm, it, k):
             f.write(json.dumps({"model": model, "arm": arm, "id": it["id"], "run": k, "error": str(e)[:500]}) + "\n")
         print("FAIL", model, arm, it["id"], k, str(e)[:120], flush=True)
         return
-    write_json(path, {"model": model, "arm": arm, "id": it["id"], "run": k, "started_utc": started,
+    write_json(path, {"model": model, "arm": arm, "id": it["id"], "run": k, "set": ITEMSET.name, "started_utc": started,
                       "seconds": round(time.time() - t0, 2), "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
                       **r})
 
@@ -219,8 +305,11 @@ def unload(cfg):
 
 
 def cmd_gen(model, arms, runs, jobs):
+    require_local(model)   # before the folder is bound or anything is sent
     cfg, items = MODELS[model], load_items()
     runs = runs or cfg["runs"]
+    bind_folder()
+    list(all_records())   # refuses a folder that holds records of another item set before anything is generated
     todo = [(arm, it, k) for k in range(1, runs + 1) for arm in arms for it in items
             if not os.path.exists(rec_path(model, arm, it["id"], k))]
     print(f"{model}: {len(todo)} calls to do", flush=True)
@@ -241,10 +330,20 @@ def cmd_gen(model, arms, runs, jobs):
 
 
 # ---------------------------------------------------------------- grading
+def check_set(obj, where):
+    """Refuse a record or grade of another item set: a run folder holds one set. Files made before item sets were
+    settings carry no `set` and belong to v2."""
+    got = obj.get("set", "v2")
+    if got != ITEMSET.name:
+        raise SystemExit("%s is of item set %s but this run is %s: use a fresh --out folder" % (where, got, ITEMSET.name))
+
+
 def all_records(models=None):
     for p in sorted(glob.glob(os.path.join(V2, "*", "A*", "*", "run-*.json"))):
         parts = os.path.relpath(p, V2).replace("\\", "/").split("/")
         if parts[0] in (models or MODELS) and parts[0] in MODELS:
+            with open(p, encoding="utf-8") as f:
+                check_set(json.load(f), p)
             yield parts[0], parts[1], parts[2], int(re.search(r"run-(\d+)", parts[3]).group(1)), p
 
 
@@ -261,12 +360,84 @@ def read_jsonl(path):
     return [json.loads(l) for l in open(path, encoding="utf-8")] if os.path.exists(path) else []
 
 
+def read_grades(path):
+    """The rows of a grader file, each checked to be of this run's item set."""
+    rows = read_jsonl(path)
+    for r in rows:
+        check_set(r, path)
+    return rows
+
+
+def canary_path(judge):
+    return os.path.join(V2, "canary-" + judge.replace(":", "-") + ".json")
+
+
+def grades_sha256(path):
+    """Fingerprint of a grade batch: the sha256 of the grader's jsonl file, or None when there is none."""
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def canary(judge, call=None, digest=None):
+    """Grade the item set's canary answers (eval/itemset-NAME.toml) with `judge` (model digest `digest`) and record each
+    verdict. `grade` adds the fingerprint of the grade batch when it is done; the report checks the set, grader, digest,
+    batch and every configured canary of the record, not only `passed`."""
+    items = {i["id"]: i for i in load_items()}
+    results = []
+    for iid, answer, want in ITEMSET.canaries:
+        results.append({"id": iid, "answer": answer, "want": want,
+                        "got": JV.judge(items[iid], answer, judge, call=call)["verdict"]})
+    rec = {"judge": judge, "judge_digest": digest, "set": ITEMSET.name, "passed": all(r["want"] == r["got"] for r in results),
+           "results": results, "grades_sha256": None}
+    write_json(canary_path(judge), rec)
+    return rec
+
+
+def batch_evidence(judge):
+    """What the canary record and handcheck.json must name to qualify the grades of `judge` in this run folder: the item
+    set, the grader, its model digest (the one value of all its grade rows, else None) and the batch fingerprint."""
+    path = judge_path(judge)
+    digests = {r.get("judge_digest") for r in read_grades(path)}
+    return {"set": ITEMSET.name, "judge": judge, "judge_digest": digests.pop() if len(digests) == 1 else None,
+            "grades_sha256": grades_sha256(path)}
+
+
+def cmd_sample(judge, n, seed):
+    """Draw a random sample of graded answers for the hand check, with a fixed seed, into handcheck-sample.jsonl."""
+    import random
+    bind_folder(create=False)
+    rows = sorted(read_grades(judge_path(judge)), key=lambda r: (r["model"], r["arm"], r["id"], r["run"]))
+    if not rows:
+        raise SystemExit("no grades by %s in %s" % (judge, V2))
+    items = {i["id"]: i for i in load_items()}
+    out = os.path.join(V2, "handcheck-sample.jsonl")
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        for r in random.Random(seed).sample(rows, min(n, len(rows))):
+            with open(rec_path(r["model"], r["arm"], r["id"], r["run"]), encoding="utf-8") as g:
+                answer = json.load(g)["answer"]
+            f.write(json.dumps({"model": r["model"], "arm": r["arm"], "id": r["id"], "run": r["run"],
+                                "question": items[r["id"]]["question"], "answer": answer, "grader_verdict": r["verdict"],
+                                "grader_reason": r["reason"], "your_verdict": None}, ensure_ascii=False) + "\n")
+    hand = dict(batch_evidence(judge), sampled="N", disagreements="D", by="<who>")
+    print("wrote %s: read each answer, set your_verdict to Y or N, then write handcheck.json in the run folder with N "
+          "and D as numbers; the other fields qualify these grades only and must stay as printed:\n%s"
+          % (out, json.dumps(hand, indent=1)))
+
+
 def cmd_grade(judge, models):
+    require_local(judge=judge)
+    bind_folder()
     items = {i["id"]: i for i in load_items()}
     out = judge_path(judge)
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    done = {(r["model"], r["arm"], r["id"], r["run"]) for r in read_jsonl(out)}
+    done = {(r["model"], r["arm"], r["id"], r["run"]) for r in read_grades(out)}
     digest = tags_digest(judge)
+    if ITEMSET.canaries:
+        rec = canary(judge, digest=digest)
+        print("canary check of %s on %s: %s" % (judge, ITEMSET.name, "passed" if rec["passed"] else "FAILED " + json.dumps(
+            [r for r in rec["results"] if r["want"] != r["got"]])), flush=True)
     todo = [r for r in all_records(models) if r[:4] not in done]
     print(f"{judge}: {len(done)} done, {len(todo)} to do", flush=True)
     t0 = time.time()
@@ -278,13 +449,15 @@ def cmd_grade(judge, models):
                      "seconds": 0, "prompt_sha256": None, "info": None}
             else:
                 r = JV.judge(items[i], answer, judge)
-            row = {"model": m, "arm": a, "id": i, "run": k, "kind": items[i]["kind"], "judge": judge,
+            row = {"model": m, "arm": a, "id": i, "run": k, "set": ITEMSET.name, "kind": items[i]["kind"], "judge": judge,
                    "judge_digest": digest, "rubric_un_sha256": JV.RUBRIC_UN_SHA256, "rubric_sha256": JV.J.RUBRIC_SHA256,
                    **{x: r[x] for x in ("verdict", "reason", "attempts", "seconds", "prompt_sha256", "info")}}
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
             f.flush()
             if n % 25 == 0 or r["verdict"] == "error":
                 print(f"{n}/{len(todo)} {m}/{a}/{i}/{k} {r['verdict']} elapsed {time.time() - t0:.0f}s", flush=True)
+    if ITEMSET.canaries:   # the canary record qualifies the batch as it is now
+        write_json(canary_path(judge), dict(rec, grades_sha256=grades_sha256(out)))
     try:
         urllib.request.urlopen(urllib.request.Request(
             L.OLLAMA + "/api/generate", json.dumps({"model": judge, "keep_alive": 0}).encode(),
@@ -309,7 +482,9 @@ def classify(item, answer, verdict, abstained=None):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", help="run folder (default eval/runs/v2); records, grades and the report go there")
+    ap.add_argument("--set", dest="itemset", help="item set (default v2): eval/itemset-NAME.toml")
+    ap.add_argument("--out", help="run folder (default eval/runs/<set>), inside this repository or $HOME/.cerebrollm; "
+                                  "records, grades and the report go there")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("prepare").add_argument("--arms", default="A0,A3")
     g = sub.add_parser("gen")
@@ -320,16 +495,36 @@ if __name__ == "__main__":
     j = sub.add_parser("grade")
     j.add_argument("--judge", required=True, choices=sorted(JV.JUDGES))
     j.add_argument("--models", default=",".join(MODELS))
-    sub.add_parser("report")
+    r = sub.add_parser("report")
+    r.add_argument("--judge", choices=sorted(JV.JUDGES), help="grader whose grades the tables use (default: the item set's grader)")
+    r.add_argument("--retrieval-only", action="store_true",
+                   help="print only how many answerable items the saved searches (arm A3) hold; writes nothing, claims nothing")
+    s = sub.add_parser("sample", help="draw a random sample of graded answers for the hand check")
+    s.add_argument("--judge", choices=sorted(JV.JUDGES), help="default: the item set's grader")
+    s.add_argument("--n", type=int, default=30)
+    s.add_argument("--seed", type=int, default=1)
     a = ap.parse_args()
+    if ENV_ERROR and not a.itemset:
+        raise ENV_ERROR
+    if a.itemset:
+        os.environ[IS.ENV] = a.itemset   # also read by report_v2's own import
+        ITEMSET = IS.load()
+        ITEMS = ITEMSET.items
+        if not os.environ.get("CEREBROLLM_V2_OUT"):
+            V2 = os.path.abspath(os.path.join(L.RUNS, ITEMSET.runs_dir))
     if a.out:
         os.environ["CEREBROLLM_V2_OUT"] = V2 = os.path.abspath(a.out)   # also read by report_v2's own import
+    if a.cmd == "report" and a.judge:
+        os.environ["CEREBROLLM_V2_JUDGE"] = a.judge   # read by report_v2's own import
+    check_out()   # however the folder was named (--out, CEREBROLLM_V2_OUT or the default), before any command
     if a.cmd == "prepare":
         cmd_prepare(a.arms.split(","))
     elif a.cmd == "gen":
         cmd_gen(a.model, a.arms.split(","), a.runs, a.jobs)
     elif a.cmd == "grade":
         cmd_grade(a.judge, a.models.split(","))
+    elif a.cmd == "sample":
+        cmd_sample(a.judge or ITEMSET.judge, a.n, a.seed)
     else:
         import report_v2
-        report_v2.main()
+        report_v2.retrieval_only() if a.retrieval_only else report_v2.main()
