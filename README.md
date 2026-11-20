@@ -36,7 +36,7 @@ The aim is at least 90% right outcomes (a right answer, or a correct `Not in the
 
 ## Quick start
 
-Tested on Ubuntu 24.04, native or under WSL2 on Windows 11. macOS and native Windows are untested.
+Tested on Ubuntu 24.04, native or under WSL2 on Windows 11. macOS has a CI job only (below). Native Windows is untested.
 
 | You need | Why | Check |
 |---|---|---|
@@ -53,6 +53,10 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
 3. Start Ollama, then create the virtual environment and the socket-only PostgreSQL cluster: `bash engine/setup/user.sh`. It is safe to repeat. Check: the last line is `USER SETUP DONE`.
 4. Pull the models: `ollama pull qwen3-embedding:0.6b` and `ollama pull gpt-oss:20b`. Check: `ollama list` shows both.
 5. Without the clone, `pip install cerebrollm` (or `pip install "cerebrollm[rerank]"` for the reranker) gives the same commands; steps 2, 3 and 4 still apply, and `engine/setup/user.sh` shows the PostgreSQL commands. Check: `cerebrollm --help` lists the commands.
+
+### macOS
+
+A CI job runs `engine/tests` on a GitHub macOS runner against PostgreSQL 16 and pgvector; run 44799443609 passed, with the Ollama tests skipped. cerebrollm has not been run on a physical Mac. The setup scripts are Ubuntu only; the Mac steps are in `engine/README.md`.
 
 ### First ask
 

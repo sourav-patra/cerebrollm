@@ -4,6 +4,8 @@ name: tests
 # (engine/tests/test_end_to_end.py, test_swap.py, the stdio case in test_mcp_server.py and the
 # PostgreSQL index writer lock tests in test_index_lock.py) stay in the repository and skip themselves
 # with the cause when the database is not reachable, as it is on a runner.
+# The macos job below installs PostgreSQL 16 from Homebrew, builds pgvector against it from a pinned upstream
+# commit and starts a cluster, so the PostgreSQL tests run there; the Ollama tests still skip with their cause.
 
 on:
   push:
@@ -56,3 +58,80 @@ jobs:
           "$RUNNER_TEMP/wheel-env/bin/pip" install dist/*.whl
           "$RUNNER_TEMP/wheel-env/bin/cerebrollm" --help
           "$RUNNER_TEMP/wheel-env/bin/cerebrollm" ask --help
+
+  # macOS: the engine tests with a real PostgreSQL 16 and pgvector. Runner macos-15 (Apple silicon): GitHub
+  # retired every macOS 14 image on 2026-11-02 (https://github.com/actions/runner-images#available-images, row "macOS 14"), so
+  # macos-14 gets no runner; macos-15 is a supported Apple silicon label pinned to one OS version (macos-latest
+  # moves to a newer one). Homebrew's pgvector formula does not build against PostgreSQL 16
+  # (https://formulae.brew.sh/formula/pgvector), so pgvector is built from a pinned commit against Homebrew's postgresql@16. The cluster is the one engine/setup/user.sh makes on
+  # Linux (socket only, port 54329, database rag_local, role cerebrollm), so the default configuration finds
+  # it. No Ollama runs here: the end-to-end, swap and stdio server tests skip and print why. Everything the
+  # job writes outside the checkout goes under $HOME/.cerebrollm.
+  macos:
+    runs-on: macos-15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+      PGVECTOR_COMMIT: 2627c5ff775ae6d7aef0c430121ccf857842d2f2   # pgvector v0.8.0
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1
+        with:
+          persist-credentials: false   # no step needs authenticated Git access, and later steps run the checked-out code
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0   # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Install PostgreSQL 16 with Homebrew
+        run: |
+          brew install postgresql@16
+          echo "PG=$(brew --prefix postgresql@16)/bin" >> "$GITHUB_ENV"
+      - name: Build and install pgvector against PostgreSQL 16
+        run: |
+          SRC="$HOME/.cerebrollm/build/pgvector"
+          mkdir -p "$SRC"
+          cd "$SRC"
+          git init -q
+          git remote add origin https://github.com/pgvector/pgvector.git
+          git fetch -q --depth 1 origin "$PGVECTOR_COMMIT"
+          git checkout -q --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$PGVECTOR_COMMIT"
+          make OPTFLAGS="" PG_CONFIG="$PG/pg_config"
+          make install PG_CONFIG="$PG/pg_config"
+      - name: Start a socket-only cluster as engine/setup/user.sh does
+        run: |
+          STATE="$HOME/.cerebrollm"
+          mkdir -p "$STATE/tmp"
+          "$PG/initdb" -D "$STATE/pg16" -U cerebrollm --auth=trust
+          mkdir -p "$STATE/pg16/sock"
+          printf "listen_addresses = ''\nunix_socket_directories = '%s'\nport = 54329\n" "$STATE/pg16/sock" >> "$STATE/pg16/postgresql.conf"
+          chmod 700 "$STATE/pg16/sock"
+          "$PG/pg_ctl" -D "$STATE/pg16" -l "$STATE/pg16/server.log" -w start
+          "$PG/createdb" -h "$STATE/pg16/sock" -p 54329 -U cerebrollm rag_local
+          "$PG/psql" -h "$STATE/pg16/sock" -p 54329 -U cerebrollm rag_local -c 'CREATE EXTENSION IF NOT EXISTS vector;'
+          # tests/test_verify.py queries the default data table directly; an empty one stands in for an index.
+          "$PG/psql" -h "$STATE/pg16/sock" -p 54329 -U cerebrollm rag_local -c 'CREATE TABLE IF NOT EXISTS data_chunks (metadata_ json);'
+      - name: Install the package and pytest (no reranker extra, no GPU)
+        run: |
+          # as engine/setup/user.sh does: pip and venv write only under $HOME/.cerebrollm
+          mkdir -p "$HOME/.cerebrollm/pip-cache" "$HOME/.cerebrollm/tmp"
+          export TMPDIR="$HOME/.cerebrollm/tmp" PIP_CACHE_DIR="$HOME/.cerebrollm/pip-cache"
+          python -m venv "$HOME/.cerebrollm/venv"
+          echo "$HOME/.cerebrollm/venv/bin" >> "$GITHUB_PATH"
+          "$HOME/.cerebrollm/venv/bin/pip" install ".[test]"
+      # shell: bash runs with pipefail, so a failing pytest fails the step despite the pipe to tee. The guard
+      # then fails the job if the database was not reachable (a PostgreSQL test skipped); grep exit 1 means the
+      # log was read and holds no such skip, any other status (0 found, 2 unreadable log) fails.
+      - name: Engine tests (Ollama tests skip and say why)
+        shell: bash
+        working-directory: engine
+        run: |
+          LOG="$HOME/.cerebrollm/tmp/engine-tests.log"
+          python -m pytest -q -rs tests | tee "$LOG"
+          found=0
+          grep -q "Postgres unavailable" "$LOG" || found=$?
+          if [ "$found" -ne 1 ]; then
+            echo "PostgreSQL tests were skipped or the log was unreadable (grep status $found)" >&2
+            exit 1
+          fi
+      - name: Stop the cluster
+        if: always()
+        run: '"$PG/pg_ctl" -D "$HOME/.cerebrollm/pg16" stop -m fast || true'

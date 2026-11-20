@@ -61,6 +61,7 @@ def drop_command(cfg):
 
 
 FLOCK_TRIES = 5   # a failed flock whose holder the kernel no longer lists was released meanwhile: retry
+LOCKS_FILE = "/proc/locks"   # the Linux kernel lock table; macOS and the other BSDs have none
 
 
 def _open_lock_file(path):
@@ -86,12 +87,12 @@ def _open_lock_file(path):
 
 
 def _flock_holder(fd):
-    """The process id the kernel lists in /proc/locks for the flock on this file, or None (lock released
-    in the meantime, or no /proc/locks). Linux only, like the supported platforms."""
+    """The process id the kernel lists in LOCKS_FILE (/proc/locks) for the flock on this file, or None
+    (lock released in the meantime, or no lock table on this system, as on macOS)."""
     st = os.fstat(fd)
     dev = "%02x:%02x:%d" % (os.major(st.st_dev), os.minor(st.st_dev), st.st_ino)
     try:
-        with open("/proc/locks") as f:
+        with open(LOCKS_FILE) as f:
             for line in f:
                 parts = line.split()
                 if len(parts) >= 6 and parts[1] == "FLOCK" and parts[5] == dev:
@@ -102,8 +103,9 @@ def _flock_holder(fd):
 
 
 def _take_flock(fd, path):
-    """Take the flock, or exit naming the holder's process id. A holder the kernel no longer lists has
-    released the lock between the two calls, so the flock is tried again (FLOCK_TRIES times)."""
+    """Take the flock, or exit naming the holder's process id when the system lists it. A holder the kernel
+    no longer lists has released the lock between the two calls, so the flock is tried again (FLOCK_TRIES
+    times); a system with no lock table (macOS) never lists one, so the last try exits without an id."""
     for _ in range(FLOCK_TRIES):
         try:
             fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -113,10 +115,10 @@ def _take_flock(fd, path):
             if holder:
                 raise SystemExit("index already running: %s is held by process %d" % (path, holder)) from None
             time.sleep(0.05)
-    # shortcut: reached only where /proc/locks lists no flock holder (no /proc, or a holder in another
-    # PID namespace); replace if such a platform becomes supported.
-    raise SystemExit("index already running: %s is held by another process; this system's lock table "
-                     "(/proc/locks) does not name it" % path)
+    # shortcut: reached where the system lists no flock holder (no /proc/locks, as on macOS, or a holder
+    # in another PID namespace); the message then has no process id. Replace if such a system needs one.
+    raise SystemExit("index already running: %s is held by another process (this system does not list "
+                     "its process id)" % path)
 
 
 def _table_lock_names(cfg):

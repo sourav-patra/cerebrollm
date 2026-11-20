@@ -4,6 +4,7 @@ a random suffix, so two runs of this file never touch each other's tables. The e
 fixed-vector mock, so Ollama is not needed. Skipped with a message only when the Postgres server cannot
 be reached; a wrong database or role fails the tests."""
 import copy
+import fcntl
 import json
 import os
 import subprocess
@@ -30,6 +31,7 @@ FILES = {
     "beta/merge.md": "# Merge\n\nA pull request merges when both checks pass.\n",
 }
 NEW_FILE = ("alpha/new.md", "# New\n\nThe lockquasar token appears only in a file added later.\n")
+NO_PID_LINE = "index already running: %s is held by another process (this system does not list its process id)"
 UNREACHABLE = ("No such file or directory", "Connection refused")   # libpq: no socket, or no listener
 
 
@@ -66,6 +68,77 @@ def wait_for(path, proc, what):
         if time.time() > deadline:
             raise AssertionError("%s: not ready after %d s" % (what, WAIT))
         time.sleep(0.05)
+
+
+def holder_line(lock, pid):
+    """The contention line a second run prints for the flock on lock held by process pid: with the id where
+    the system lists flock holders (Linux, /proc/locks), without it where it does not (macOS)."""
+    if os.path.exists(indexer.LOCKS_FILE):
+        return "index already running: %s is held by process %d" % (lock, pid)
+    return NO_PID_LINE % lock
+
+
+class TestFlockHolderLookup(unittest.TestCase):
+    """The holder lookup on both platforms, with the lock table replaced by a fixture file: no server and
+    no /proc/locks needed. The flock is held through a second open file description in this process,
+    which a flock on a fresh description is refused for, as it is for another process."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(dir=SCRATCH)
+        self.addCleanup(self.tmp.cleanup)
+        self.lock = Path(self.tmp.name) / "index.lock"
+        self.lock.touch()
+        self.held = os.open(self.lock, os.O_RDONLY)
+        self.addCleanup(os.close, self.held)
+        fcntl.flock(self.held, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        self.contender = os.open(self.lock, os.O_RDONLY)
+        self.addCleanup(os.close, self.contender)
+
+    def lock_table(self, pid):
+        """A lock table in the /proc/locks format that lists the held lock under process pid."""
+        st = os.fstat(self.held)
+        dev = "%02x:%02x:%d" % (os.major(st.st_dev), os.minor(st.st_dev), st.st_ino)
+        table = Path(self.tmp.name) / "locks"
+        table.write_text("1: POSIX  ADVISORY  WRITE 777 00:01:1 0 EOF\n"
+                         "2: FLOCK  ADVISORY  WRITE %d %s 0 EOF\n" % (pid, dev))
+        return str(table)
+
+    def take(self):
+        with self.assertRaises(SystemExit) as raised:
+            indexer._take_flock(self.contender, self.lock)
+        return str(raised.exception)
+
+    def test_holder_listed_in_the_lock_table_is_named(self):
+        with mock.patch.object(indexer, "LOCKS_FILE", self.lock_table(424242)):
+            self.assertEqual(self.take(), "index already running: %s is held by process 424242" % self.lock)
+
+    def test_no_lock_table_gives_the_line_without_a_process_id(self):
+        missing = str(Path(self.tmp.name) / "no-such-lock-table")
+        with mock.patch.object(indexer, "LOCKS_FILE", missing):
+            self.assertIsNone(indexer._flock_holder(self.contender))
+            line = self.take()
+        self.assertEqual(line, NO_PID_LINE % self.lock)
+        self.assertNotRegex(line, r"process \d")
+
+    def test_lock_table_without_the_file_gives_the_line_without_a_process_id(self):
+        table = Path(self.tmp.name) / "empty-locks"
+        table.write_text("1: POSIX  ADVISORY  WRITE 777 00:01:1 0 EOF\n")
+        with mock.patch.object(indexer, "LOCKS_FILE", str(table)):
+            self.assertEqual(self.take(), NO_PID_LINE % self.lock)
+
+    def test_holder_released_after_a_failed_attempt_is_overtaken_without_a_lock_table(self):
+        """Without a lock table the first attempt fails and no holder is listed; the holder releases the
+        lock before the second attempt (here during the pause between them), which takes it."""
+        missing = str(Path(self.tmp.name) / "no-such-lock-table")
+        pauses = []
+
+        def holder_releases(seconds):
+            pauses.append(seconds)
+            fcntl.flock(self.held, fcntl.LOCK_UN)
+        with mock.patch.object(indexer, "LOCKS_FILE", missing):
+            with mock.patch.object(indexer.time, "sleep", holder_releases):
+                indexer._take_flock(self.contender, self.lock)   # returns: the flock is taken
+        self.assertEqual(len(pauses), 1)
 
 
 class TestPostgresProbe(unittest.TestCase):
@@ -242,8 +315,7 @@ class TestIndexLock(unittest.TestCase):
         first = self.start_holding_writer()
         line = self.one_error_line(*self.run_cli(*second_args))
         self.assertIsNone(first.poll(), "the first writer must still hold the locks")
-        self.assertEqual(line, "index already running: %s is held by process %d"
-                         % (self.cfg.state_dir / "index.lock", first.pid))
+        self.assertEqual(line, holder_line(self.cfg.state_dir / "index.lock", first.pid))
         # search takes no lock and reads the live table while the build holds both locks
         self.assertEqual(self.search_paths("basaltwren"), ["alpha/review.md"])
         self.assertEqual(self.search_paths("lockquasar"), [])
@@ -318,13 +390,14 @@ class TestIndexLock(unittest.TestCase):
 
     def test_contender_names_the_kernel_holder_not_the_file_content(self):
         """The holder's process id comes from the kernel lock table: whatever id the file holds is never
-        reported, and the file is not rewritten."""
+        reported, and the file is not rewritten. Where there is no lock table (macOS) the line has no id."""
         self.cfg.state_dir.mkdir(parents=True)
         lock = self.cfg.state_dir / "index.lock"
         lock.write_text("999999\n")
         holder = self.start_flock_holder(lock)
         line = self.one_error_line(*self.run_cli("index"))
-        self.assertEqual(line, "index already running: %s is held by process %d" % (lock, holder.pid))
+        self.assertEqual(line, holder_line(lock, holder.pid))
+        self.assertNotIn("999999", line)
         self.assertEqual(lock.read_text(), "999999\n")
 
     def test_flock_released_before_the_holder_lookup_is_retried(self):

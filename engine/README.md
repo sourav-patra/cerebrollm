@@ -49,6 +49,41 @@ Follow the install section of the repository root `README.md`. On Ubuntu 24.04, 
 
 The configuration file is found in this order: `--config PATH`, the environment variable `CEREBROLLM_CONFIG`, then the copy that ships with the package (`python -c "from cerebrollm.config import DEFAULT_CONFIG; print(DEFAULT_CONFIG)"` prints its path; copy it, edit the `[[root]]` and `[[rule]]` entries and pass the copy with `--config`).
 
+## macOS
+
+The `macos` job in `.github/workflows/tests.yml` runs `engine/tests` on a GitHub `macos-15` runner (Apple silicon) against a PostgreSQL 16 cluster with pgvector. Run 44799443609 passed with 190 passed and 6 skipped; the 6 skips are the Ollama tests. It uses `macos-15` because GitHub retired its `macos-14` images on 2 November 2026 ([runner images](https://github.com/actions/runner-images#available-images), row "macOS 14").
+
+No Ollama runs in the job, so the end-to-end, swap and stdio server tests skip and print why. The job fails if a PostgreSQL test skips. cerebrollm has not been run on a physical Mac.
+
+Homebrew's [`pgvector` formula](https://formulae.brew.sh/formula/pgvector) does not build against PostgreSQL 16, so the job builds pgvector from the pinned commit of v0.8.0 against `postgresql@16`. The scripts in `setup/` are Ubuntu only.
+
+On a Mac, install Homebrew and Ollama (from ollama.com) first, then run:
+
+```
+git clone https://github.com/sourav-patra/cerebrollm && cd cerebrollm
+brew install postgresql@16 python@3.12
+PG="$(brew --prefix postgresql@16)/bin"; S="$HOME/.cerebrollm"
+SRC="$S/build/pgvector"; SHA=2627c5ff775ae6d7aef0c430121ccf857842d2f2
+mkdir -p "$SRC" && git -C "$SRC" init -q
+git -C "$SRC" fetch -q --depth 1 https://github.com/pgvector/pgvector.git "$SHA"
+git -C "$SRC" checkout -q --detach FETCH_HEAD
+test "$(git -C "$SRC" rev-parse HEAD)" = "$SHA"
+make -C "$SRC" OPTFLAGS="" PG_CONFIG="$PG/pg_config"
+make -C "$SRC" install PG_CONFIG="$PG/pg_config"
+"$PG/initdb" -D "$S/pg16" -U cerebrollm --auth=trust
+mkdir -p "$S/pg16/sock" && chmod 700 "$S/pg16/sock"
+printf "listen_addresses = ''\nunix_socket_directories = '%s'\nport = 54329\n" "$S/pg16/sock" >> "$S/pg16/postgresql.conf"
+"$PG/pg_ctl" -D "$S/pg16" -l "$S/pg16/server.log" -w start
+"$PG/createdb" -h "$S/pg16/sock" -p 54329 -U cerebrollm rag_local
+"$PG/psql" -h "$S/pg16/sock" -p 54329 -U cerebrollm rag_local -c 'CREATE EXTENSION IF NOT EXISTS vector;'
+python3.12 -m venv "$S/venv" && "$S/venv/bin/pip" install .
+ollama pull qwen3-embedding:0.6b && ollama pull gpt-oss:20b
+```
+
+Checks: the `psql` line prints `CREATE EXTENSION`, and `engine/bin/cerebrollm --help` lists the commands. Then follow "First ask" in the root `README.md` from this clone.
+
+The index lock reads the holder's process id from `/proc/locks`, which macOS lacks. A second `cerebrollm index` there retries the lock five times, 0.05 s apart, and then exits with status 1. Its error line says another process holds `index.lock` and gives no process id.
+
 ## Commands
 
 `bin/cerebrollm` runs the venv's Python from a source checkout. After `pip install`, the `cerebrollm` command does the same; `python -m cerebrollm` works from `engine/`.
@@ -63,7 +98,7 @@ cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [-
 
 A full `cerebrollm index` builds the `<table>_next` table while search reads the live table, then swaps it in. A new table with no rows or under half the live rows is refused and kept, and the printed command drops it.
 
-Only one `index` run, full or `--changed`, writes at a time. A second run exits at once with status 1 and one line naming the holder of `<state_dir>/index.lock` by process id, as the kernel lists it, or a table another run has locked. Search and the other commands take no lock.
+Only one `index` run, full or `--changed`, writes at a time. A second run exits with status 1 and one line. The line names the holder of `<state_dir>/index.lock` by process id, as the kernel lists it, or a table another run has locked. Where the system lists no holder (macOS), the run first retries the lock five times, 0.05 s apart, and the line says another process holds the lock, without a process id. Search and the other commands take no lock.
 
 `[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
 
