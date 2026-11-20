@@ -1,5 +1,6 @@
 """Chunking: table rows become nodes with their context, prose keeps the sentence splitter, and the
 embedded text carries the title and heading path while the displayed text does not."""
+import hashlib
 import unittest
 
 from llama_index.core import Document
@@ -91,6 +92,15 @@ class TestTableRows(unittest.TestCase):
         j3 = next(n for n in nodes if ROW_J3 in n.text)
         self.assertEqual(doc[j3.metadata["char_start"]:j3.metadata["char_end"]], ROW_J3)
         self.assertNotIn("span_text", j3.metadata)
+
+    def test_passage_hash_is_the_hash_of_the_span_text(self):
+        nodes, _ = chunk(DOC)
+        j3 = next(n for n in nodes if ROW_J3 in n.text)
+        self.assertEqual(j3.metadata["passage_sha256"], hashlib.sha256(ROW_J3.encode("utf-8")).hexdigest())
+        prose = next(n for n in nodes if "After the table, more prose." in n.text and "| J" not in n.text)
+        self.assertEqual(prose.metadata["passage_sha256"], hashlib.sha256(prose.text.encode("utf-8")).hexdigest())
+        self.assertTrue(all("passage_sha256" in n.metadata for n in nodes))
+        self.assertNotIn("passage_sha256", prose.get_content(metadata_mode=MetadataMode.EMBED))
 
     def test_sections_without_tables_pass_through(self):
         doc = Document(text="# T\n\nplain prose only.\n", doc_id="d")

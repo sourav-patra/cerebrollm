@@ -79,7 +79,7 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
 4. Ask: `engine/bin/cerebrollm ask "a question your notes answer"`. Check: the output is an answer followed by lines such as `OK  notes/guide.md`. A question your notes do not answer prints `Not in the sources.`
 5. If the reranker is not downloaded the command stops with an error that names the folder. Download it as described next, or add `--no-rerank`. Check: the same `ask` prints an answer or `Not in the sources.` instead of the error.
 
-After you edit notes, `engine/bin/cerebrollm index --changed` re-indexes only the files that changed.
+After you edit notes, `engine/bin/cerebrollm index --changed` re-indexes only the files that changed. After an index format change it rebuilds everything once ([details](engine/README.md#index-format-and-upgrades)).
 
 ### The reranker
 

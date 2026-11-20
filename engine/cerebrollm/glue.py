@@ -189,8 +189,9 @@ class TableRows(TransformComponent):
 
 class LocateChunks(TransformComponent):
     """After SentenceSplitter: set heading_path, title and the character span of each chunk in its
-    document (the splitter's own spans are relative to the section, not the document). A table row's
-    span is the row alone, without the prefix lines. Only path, title and heading_path are part of the
+    document (the splitter's own spans are relative to the section, not the document), and
+    passage_sha256, the sha256 of the text in that span (UTF-8). A table row's span is the row alone,
+    without the prefix lines, so its text is the last char_end - char_start characters of the chunk. Only path, title and heading_path are part of the
     embedded text; the displayed text is the node text and never includes metadata."""
 
     texts: dict
@@ -212,6 +213,9 @@ class LocateChunks(TransformComponent):
                 start = text.find(target)
             n.metadata["char_start"] = start
             n.metadata["char_end"] = start + len(target) if start >= 0 else -1
+            if start >= 0:   # verify accepts a changed file while this exact text still occurs in it
+                n.metadata["passage_sha256"] = hashlib.sha256(
+                    text[start:start + len(target)].encode("utf-8")).hexdigest()
             n.metadata["heading_path"] = heading_path(
                 heads[doc], body_offset(target, start) if start >= 0 else 0)
             n.metadata["title"] = titles[doc]
