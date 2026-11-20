@@ -3,7 +3,8 @@
 cerebrollm collects no telemetry. It has no analytics, crash reporting or
 update check.
 
-`index` reads the Markdown files in the roots you register, sends their chunks to
+`index` reads the Markdown files in the roots you register (and PDF documents, only with the optional
+`cerebrollm[pdf]` extra and a `*.pdf` tier rule; the text layer is read in memory on this machine), sends their chunks to
 the embedding model, and writes rows to a local PostgreSQL database and files to
 the folder `~/.cerebrollm`. `search` and `ask` send the query to the embedding
 model, read the database and read source files for line spans; `ask` also sends

@@ -69,6 +69,10 @@ class Config:
     def state_path(self):
         return self.state_dir / "state.json"
 
+    @property
+    def refused_path(self):
+        return self.state_dir / "last_refused.json"   # the newest index attempt that built nothing; never part of state.json
+
     def project_for(self, root, rel_path):
         if root["kind"] == "git":
             return root["project"]

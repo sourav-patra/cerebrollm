@@ -7,9 +7,12 @@ from pathlib import PurePosixPath
 from llama_index.core import Document
 from llama_index.core.schema import TextNode, TransformComponent
 
+from . import documents
+
 HEADING = re.compile(r"^(#{1,6})[ \t]+(.+?)[ \t#]*$")
 FENCE = re.compile(r"^\s*(```|~~~)")
 TABLE_SEPARATOR = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)*\|?\s*$")
+PAGE_SECTION = re.compile(r"## Page \d+\n")   # the heading documents.read_text puts above each PDF page
 HRULE = re.compile(r"^\s*([-*_])(\s*\1){2,}\s*$")
 # Metadata that is part of the embedded text. Every other metadata key is excluded from it.
 EMBED_KEYS = ("path", "title", "heading_path")
@@ -124,7 +127,8 @@ def _child(node, text, start, end):
 
 class MergeSmall(TransformComponent):
     """After MarkdownNodeParser: a section shorter than min_chars absorbs the section after it,
-    so a bare heading is not a chunk of its own. Merged text is the original slice."""
+    so a bare heading is not a chunk of its own. Merged text is the original slice. A PDF page is never
+    absorbed by the page before it: each page stays its own section."""
 
     texts: dict
     min_chars: int = 200
@@ -134,6 +138,7 @@ class MergeSmall(TransformComponent):
         for n in nodes:
             prev = out[-1] if out else None
             if (prev is not None and prev.ref_doc_id == n.ref_doc_id
+                    and not (documents.is_pdf(n.metadata.get("path", "")) and PAGE_SECTION.match(n.text))
                     and len(prev.text) < self.min_chars
                     and prev.start_char_idx is not None and n.end_char_idx is not None):
                 src = self.texts[n.ref_doc_id]
@@ -149,7 +154,7 @@ class TableRows(TransformComponent):
     the document title, the section (heading path), the table's header row and separator, then the
     row. Prose between tables is kept as it is. A row node carries `row_prefix` (the lines before the
     row), which LocateChunks strips to find the row's own character span, also when the splitter has
-    cut a long row into pieces. Sections without tables pass through."""
+    cut a long row into pieces, and `row_start` (the row's offset in the document), where that search begins. Sections without tables pass through."""
 
     texts: dict
 
@@ -181,8 +186,10 @@ class TableRows(TransformComponent):
                 prefix = "".join(line + "\n" for line in lines)
                 child = _child(n, prefix + row, base + s, base + e)
                 child.metadata["row_prefix"] = prefix
-                child.excluded_embed_metadata_keys.append("row_prefix")
-                child.excluded_llm_metadata_keys.append("row_prefix")
+                child.metadata["row_start"] = base + s   # where the row is in the document: equal rows elsewhere do not count
+                for key in ("row_prefix", "row_start"):
+                    child.excluded_embed_metadata_keys.append(key)
+                    child.excluded_llm_metadata_keys.append(key)
                 out.append(child)
         return out
 
@@ -204,10 +211,11 @@ class LocateChunks(TransformComponent):
                 heads[doc] = headings(text)
                 titles[doc] = doc_title(text, n.metadata.get("path", ""))
             prefix = n.metadata.pop("row_prefix", None)
+            row_start = n.metadata.pop("row_start", None)
             target = n.text
             if prefix and n.text.startswith(prefix) and n.text[len(prefix):].strip():
                 target = n.text[len(prefix):]          # a table row, or the first piece of a split row
-            start = text.find(target, cursor.get(doc, 0))
+            start = text.find(target, max(cursor.get(doc, 0), row_start or 0))
             if start < 0:
                 start = text.find(target)
             n.metadata["char_start"] = start

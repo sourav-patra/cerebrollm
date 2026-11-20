@@ -14,7 +14,7 @@ What sets it apart is the evidence rule: every number names a file in this repos
 |---|---|---|
 | A person who runs local models on Linux with Markdown notes | yes | nothing; the fresh-machine install is not re-checked |
 | A developer who gives an agent a `search` and `verify` tool over MCP (Model Context Protocol, the tool interface AI apps use) | yes | nothing |
-| A small team with PDF and Word documents | no | only Markdown is indexed |
+| A small team with PDF and Word documents | partly | PDFs with a text layer behind the optional `cerebrollm[pdf]` extra (unreleased, quality not measured); no scanned PDFs, no Word documents |
 | A team with a corpus far above 15,000 chunks | no | exact scan (every stored vector is compared with the query); larger sizes are not measured |
 | A developer on macOS or native Windows | unknown | both are untested |
 | A tool that calls web services | no | there is no HTTP API (a web interface other programs can call) |
