@@ -9,7 +9,7 @@ the folder `~/.cerebrollm`. `search` and `ask` send the query to the embedding
 model, read the database and read source files for line spans; `ask` also sends
 the retrieved passages to the generator. `verify` reads source files and the
 database. `status` reads the database and the state file. `search`, `ask`,
-`verify` and `status` write nothing. PostgreSQL is reached over a Unix socket and
+`verify` and `status` write nothing. PostgreSQL is reached over a Unix socket, or over TCP to `127.0.0.1` or `::1` (`[postgres] host`; any other host is refused), and
 Ollama at the address in `cerebrollm.toml`, which defaults to 127.0.0.1:11434.
 An address off this machine is refused unless `[ollama] allow_remote = true`. `ask` refuses model names ending `-cloud` or
 `:cloud`. The package sets `ANONYMIZED_TELEMETRY=False`, `DO_NOT_TRACK=1`,
@@ -32,4 +32,4 @@ and `ask` on 2026-11-08 saw only `127.0.0.1:11434`
 (`eval/runs/network/capture-2026-11-08.txt`, made with `engine/tests/capture_network.py`).
 
 Skipped or not checked: dependency telemetry, and connections made in C code (libpq,
-whose target is the Unix socket in `cerebrollm.toml`), which the capture does not see.
+whose target is the Unix socket or the loopback TCP host in `cerebrollm.toml`), which the capture does not see.

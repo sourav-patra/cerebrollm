@@ -2,7 +2,7 @@
 id: LLD-cerebrollm
 kind: contract
 governs: 0.1.0 as built (section 2 and 3), and the 0.2 issues I-01 to I-12 (section 4, proposed)
-status: LOCKED 2026-10-30 by the owner (content of draft v5)
+status: revision proposed, owner re-lock pending (previous lock: LOCKED 2026-10-30 by the owner (content of draft v5); sha256 38337ffa37140ee6e6ef4af28e9ae80130ddda35129a70f46d4460d78b7c0b60)
 upstream:
   - TRD-cerebrollm-2026-10-30.md (pin: TRD as locked 2026-10-30, sha256 37e2cff553aa760385bc8f03d6852f20e82b4b0a896c2e3e517c06e31e2a3e12)
   - PRD-cerebrollm-2026-10-30.md (pin: PRD as locked 2026-10-30, sha256 622fee4d88bc88bdf7e59d767940b809c6651b72ce343b8075695724f84572f2)
@@ -40,7 +40,7 @@ Test counts come from `grep -c "def test_" engine/tests/test_*.py` (E: 119 in to
 | `status.py` | `collect`, `format_status` | `test_end_to_end.py` |
 | `mcp_server.py` | `search_tool`, `verify_tool`, `_search_page`, `_neutral`, `_guard`, `_down_message`, `run` | `test_mcp_server.py` (19) |
 
-Support files: `engine/cerebrollm.toml`, `engine/models.toml`, `engine/requirements.txt` (pinned versions, no hashes), `engine/setup/root-ubuntu.sh` and `user.sh` (PostgreSQL 16 cluster on a Unix socket, Python environment), `engine/bin/cerebrollm`.
+Support files: `engine/cerebrollm.toml`, `engine/models.toml`, `engine/requirements.txt` (pinned versions, no hashes), `engine/setup/root-ubuntu.sh` and `user.sh` (PostgreSQL 16 cluster on a Unix socket, Python environment), `engine/bin/cerebrollm`, and `docker-compose.yml` (an optional PostgreSQL 16 with pgvector published on 127.0.0.1 only, reached over loopback TCP).
 
 ## 3. Evaluation and study code
 

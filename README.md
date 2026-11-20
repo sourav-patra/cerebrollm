@@ -54,6 +54,21 @@ The commands below are the ones the author ran; the first `index` and `ask` on a
 4. Pull the models: `ollama pull qwen3-embedding:0.6b` and `ollama pull gpt-oss:20b`. Check: `ollama list` shows both.
 5. Without the clone, `pip install cerebrollm` (or `pip install "cerebrollm[rerank]"` for the reranker) gives the same commands; steps 2, 3 and 4 still apply, and `engine/setup/user.sh` shows the PostgreSQL commands. Check: `cerebrollm --help` lists the commands.
 
+### PostgreSQL in Docker
+
+Use Docker for the database instead of the PostgreSQL parts of steps 2 and 3. Compose startup, container health and these steps have not been run on Docker yet; tests cover the client side against a stand-in cluster. [docs/DOCKER.md](docs/DOCKER.md) has the full list.
+
+1. Install Docker Engine 28.0.0 or newer with Compose v2: older Engines can expose a port published on 127.0.0.1 to your network segment. Check: `docker version --format '{{.Server.Version}}'` prints 28.0.0 or higher.
+2. From the clone, start the database. It keeps its data in a Docker volume:
+
+   ```
+   export CEREBROLLM_PG_PASSWORD="choose-a-password"
+   docker compose up -d --wait
+   ```
+
+   Check: `docker compose ps` lists `db` as `healthy`, and `docker compose port db 5432` prints `127.0.0.1:54329`. Do not run plain `docker compose config`: it prints the password.
+3. In your copy of the configuration ("First ask", step 2), replace `socket_dir` under `[postgres]` with `host = "127.0.0.1"` and `password_env = "CEREBROLLM_PG_PASSWORD"`, and set `state_dir = "~/.cerebrollm-docker"` so the new database has its own state (an existing socket index keeps its own). Check: the last line of `engine/bin/cerebrollm --config ~/cerebrollm.toml status` starts with `postgres connection: tcp 127.0.0.1:54329`. Then run the first, full `engine/bin/cerebrollm --config ~/cerebrollm.toml index`.
+
 ### First ask
 
 1. Put your Markdown files in `~/cerebrollm-corpus/notes/`. Check: `ls ~/cerebrollm-corpus/notes` lists them.
@@ -185,6 +200,7 @@ Only Markdown files are indexed. The gate checks that a quote exists in the file
 |---|---|
 | see every measured number, the evaluation method and all limits | [docs/RESULTS.md](docs/RESULTS.md) |
 | fix an install or indexing error | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) |
+| run PostgreSQL in Docker | [docs/DOCKER.md](docs/DOCKER.md) |
 | use each command and its options | [engine/README.md](engine/README.md) |
 | find a file, or learn what was withheld from this repository | [docs/REPOSITORY.md](docs/REPOSITORY.md) |
 | read the locked design: [PRD](docs/design/PRD-cerebrollm-2026-10-30.md), [TRD](docs/design/TRD-cerebrollm-2026-10-30.md), [LLD](docs/design/LLD-cerebrollm-2026-10-30.md), [POLICY](docs/design/POLICY-cerebrollm-2026-10-30.md) | `docs/LOCKS.md` holds the hash of each (locked 2026-10-30); `SECURITY.md`, `CONTRIBUTING.md`, `docs/DATA.md`, `docs/RELEASING.md` and `docs/GOVERNANCE.md` come from the POLICY |
