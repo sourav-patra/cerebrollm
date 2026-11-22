@@ -1,0 +1,18 @@
+# Release gate configuration, read by the release-gate App from the default branch only.
+# The gate runs gitleaks, this identity check and the private-name scan on each release commit
+# and posts the release-gate check. docs/RELEASING.md step 2 describes the same checks.
+# Top-level keys come before the [[exceptions]] tables; a key after them belongs to the last table.
+
+allowed_emails = [
+  "61248036+sourav-patra@users.noreply.github.com",
+  "noreply@github.com",
+  "noreply@anthropic.com",
+]
+
+build = "python -m build"
+smoke = ["cerebrollm --help", "cerebrollm ask --help"]
+
+# noreply@anthropic.com is allowed on this one historical commit only.
+[[exceptions]]
+email = "noreply@anthropic.com"
+commits = ["6ff229626d2215033ef705007fc818a3efeff8a9"]
