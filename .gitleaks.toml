@@ -1,0 +1,18 @@
+# Extends the default gitleaks rules. `gitleaks dir` reads this file from the scanned
+# folder, so it applies however the folder is given; the release gate passes a full path,
+# where the path-based entries of .gitleaksignore do not match.
+[extend]
+useDefault = true
+
+# vLLM's published sample API key, quoted in one saved evaluation prompt (also listed in
+# .gitleaksignore). For the curl-auth-header rule only, a finding is dropped when its whole
+# secret is exactly token-abc123 AND it is in that prompt file. The same value elsewhere,
+# or any other value in that file, is still reported.
+[[rules]]
+id = "curl-auth-header"
+[[rules.allowlists]]
+description = "Published vLLM documentation sample key in one saved prompt"
+condition = "AND"
+regexTarget = "secret"
+regexes = ['''^token-abc123$''']
+paths = ['''(^|/)eval/runs/prompts/A1/ST-18\.txt$''']
