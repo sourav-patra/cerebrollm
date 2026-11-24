@@ -219,8 +219,8 @@ cannot swallow the next page's heading; a quote that itself starts with a fence 
 
 Pages show up in the output. A `search` hit prints `report.pdf (page 4)` where a Markdown hit prints a
 line span (`page_start` and `page_end` in `--json`), the generator sees `Source: report.pdf (page 4)`, and
-`ask` prints `"quote" [report.pdf (page 4)]` when one retrieved passage holds the quote. A passage that
-crosses a page break is named `pages 4-5`.
+`ask` prints `"quote" [report.pdf (page 4)]` when one retrieved passage holds the quote and was indexed from the
+file `verify` read (after a re-index it prints the path alone). A passage across a page break is `pages 4-5`.
 
 Limits:
 
@@ -233,23 +233,28 @@ Limits:
   verify. The `## Page N` lines are added for indexing and display; they are not part of any page, so a quote
   of `## Page 4` verifies only when the PDF itself says so.
 - `verify` prints no page; `ask` and `search` do.
-- To stop indexing PDFs (not possible when they are the only documents; see the paragraph after this list), remove the `*.pdf` rule and run `cerebrollm index`. Do the same before you downgrade
+- To stop indexing PDFs, remove the `*.pdf` rule and run `cerebrollm index` (the two paragraphs after this list
+  say when that cannot rebuild). Do the same before you downgrade
   to a version without PDF support: the older `verify` reads a PDF's raw bytes, so rows indexed from PDFs
   cannot be checked until they are rebuilt away. When PDFs were more than half of the live index, the full
   index stops with `refusing to swap` (a new table under half the live rows is refused) and leaves the live
   index, PDF rows included, as it was (`search` and `verify` already ignore a path that no rule admits, so
   the rows are hidden but not removed). Replacing it is your decision, because it deletes the live index until
   the rebuild has finished (the source files are not touched; the study corpus of 13,431 chunks took 9.7
-  minutes). If you decide to, drop the live table, then index again:
+  minutes). If you decide to, and `index` printed `refusing to swap` for a new table with rows, drop the live table, then index again:
   `python -c "from cerebrollm import config, store; c = config.load('PATH-TO-YOUR-cerebrollm.toml'); store.drop_table(c, c.data_table)"`
   and `cerebrollm index`. `tests/test_pdf_end_to_end.py` runs this procedure.
 - Not tested on PDFs of hundreds of pages. An encrypted PDF that needs a password is meant to be skipped as
   unreadable; that path is not tested.
 
-If PDFs are the only documents any rule admits, removing the PDF rule leaves the scan empty, and `cerebrollm
-index` refuses (`refusing to index: the corpus scan found no files`) before it builds anything. Dropping the
-live table does not help: the next `index` refuses too. Keep the PDF rule, or admit another document, before
-you rebuild.
+If no other document would be indexed once the PDF rule is gone, the full index refuses (`refusing to index: the
+corpus scan found no files`) before building anything; the live index stays. A rule that names a
+file is not enough: it must also avoid the never-index paths and symlinks, pass the secret scan, and not be a
+copy of another file.
+
+Drop the live table only after `index` has printed `refusing to swap` for a new table with more than 0 rows;
+that shows the scan found documents to rebuild from. Dropping it first would leave you with no index, because
+the next `index` refuses too.
 
 ## Chunking, embedded text and synonyms
 

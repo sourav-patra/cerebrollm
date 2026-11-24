@@ -293,6 +293,19 @@ class TestHitsAndCitations(Fixture):
             citations = answer.check_citations(self.cfg, raw, {"docs/report.pdf"}, [current])
             self.assertEqual(citations[0]["page"], "page 2")
 
+    def test_a_generated_heading_does_not_give_a_page_to_a_quote_found_on_another_page(self):
+        # only page 2 holds the text "## Page 1"; the passage of page 1 has that line only as its generated heading
+        data = make_pdf([["alpha"], ["## Page 1"]])
+        (self.root / "docs/report.pdf").write_bytes(data)
+        documents._pdf_text.cache_clear()
+        sha = hashlib.sha256(data).hexdigest()
+        hits = [dict(self.hit("## Page 1\n\nalpha", 1, 1), sha256=sha), dict(self.hit("## Page 2\n\n## Page 1", 2, 2), sha256=sha)]
+        with mock.patch.object(verify, "_indexed_sha", return_value={sha}):
+            citations = answer.check_citations(self.cfg, '"## Page 1" [docs/report.pdf]', {"docs/report.pdf"}, hits)
+        self.assertEqual(citations[0]["verify"], "OK")
+        self.assertNotEqual(citations[0]["page"], "page 1")
+        self.assertEqual(documents.without_page_headings("## Page 2\n\nbody\n## Page 3\n\nmore"), "\n\nbody\n\n\nmore")
+
     def test_markdown_citations_are_unchanged(self):
         raw = '"Plain notes about the port 8080 setting." [docs/notes.md]'
         with mock.patch.object(answer, "check_quote", return_value=("OK", "fine", "ab" * 32)):
@@ -540,6 +553,15 @@ class TestRefusalRecord(unittest.TestCase):
         self.assertEqual(str(raised.exception), "refusing to index: the corpus scan found no files (would delete everything).")
         self.assertEqual(len(logged), 1)
         self.assertIn("could not record", logged[0])
+
+    def test_a_file_that_a_rule_names_but_the_secret_scan_skips_does_not_make_the_corpus_rebuildable(self):
+        (self.root / "a.md").write_text("# Notes\n\npassword: " + "a1" * 14 + "\n")   # long enough for the scan's password rule
+        cfg = self.cfg(self.base / "state")
+        entries, scan = corpus.enumerate_corpus(cfg)
+        self.assertEqual((entries, scan["skipped_secret"]), ([], ["fx:a.md"]))
+        with self.assertRaises(SystemExit) as raised:
+            indexer.run_index(cfg)
+        self.assertTrue(str(raised.exception).startswith("refusing to index: the corpus scan found no files"))
 
     def test_a_failed_replacement_leaves_no_temporary_record(self):
         cfg = self.cfg(self.base / "state")

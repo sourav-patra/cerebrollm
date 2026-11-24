@@ -1,10 +1,12 @@
 """Bytes to text for every source file, in one place.
 
-The corpus reader, `verify` and `search` all call read_text, so a quote is checked against exactly the
-text that was indexed. A Markdown or plain-text file is its bytes decoded as UTF-8 (undecodable bytes
-replaced). A PDF is its text layer, read page by page with pypdf (the optional extra `cerebrollm[pdf]`):
-each page that has text becomes one section, a "## Page N" heading line and then the page's text, so the
-chunker splits at page boundaries and a hit can name its page. A page with no text adds nothing."""
+The corpus reader, `verify` and `search` all call read_text, so all three see the same text. A Markdown or
+plain-text file is its bytes decoded as UTF-8 (undecodable bytes replaced); `verify` checks a quote against all
+of it. A PDF is its text layer, read page by page with pypdf (the optional extra `cerebrollm[pdf]`): each page
+that has text becomes one section, a "## Page N" heading line and then the page's text, so the chunker splits at
+page boundaries and a hit can name its page. A page with no text adds nothing. The heading lines are indexed but
+are not text of the PDF: `verify` checks a PDF quote against each page's body on its own (page_bodies), never
+against a heading and never across a page break."""
 import bisect
 import io
 import re
@@ -15,6 +17,7 @@ PAGE_HEADING = "## Page %d"
 # code and join the pages into one section, so a backslash goes in front of it. The indexed text and the text
 # `verify` checks both carry the backslash, so they still agree; only a quote that starts with a fence differs.
 FENCE_LINE = re.compile(r"(?m)^([ \t]*)(```|~~~)")
+PAGE_HEADING_LINE = re.compile(r"(?m)^## Page \d+[ \t]*$")   # a line shaped like a generated heading
 
 
 class DocumentError(Exception):
@@ -79,6 +82,13 @@ def _pdf_text(data):
     if not parts:
         raise NoTextLayer("the PDF has no text layer")
     return "\n\n".join(parts) + "\n", tuple(pages)
+
+
+def without_page_headings(text):
+    """`text` with every line shaped like a generated page heading emptied. A passage from a PDF holds its
+    page's heading line; a quote that matches only that line is not in the PDF. A line of page text that looks
+    like a heading is emptied as well: the cost is that such a passage names no page, never a wrong one."""
+    return PAGE_HEADING_LINE.sub("", text)
 
 
 def page_bodies(text, pages):
