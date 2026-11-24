@@ -131,14 +131,16 @@ def _refuse_overlong_table_names(cfg):
     stored under its first 63 bytes, which can be another config's table (data_<p>_next of one config
     and the live table of the config named <p>_nex), while the lock keys, hashed from the full names,
     differ. The relations named after the build table (index <t>_next_idx_1, key data_<t>_next_pkey,
-    sequence data_<t>_next_id_seq) are cut too, and the swap renames them by their full names. The
-    longest of all these is the sequence, so one check on it covers every derived name. Refuse such a
-    table name before any lock, file or table is touched."""
+    sequence data_<t>_next_id_seq) are cut too. store.swap_in reads each relation's stored name from the
+    catalog and store._moved derives the new name from it by the table-name prefix, raising RuntimeError
+    for a name that does not start with it, so the swap relies on every derived name keeping the pattern
+    that PostgreSQL gives it when nothing is cut. The longest of all these is the sequence, so one check on
+    it covers every derived name. Refuse such a table name before any lock, file or table is touched."""
     longest = "data_%s_next_id_seq" % cfg.table
     size = len(longest.encode())
     if size > PG_NAME_LIMIT:
         table_size = len(cfg.table.encode())
-        raise SystemExit("refusing to index: the name %s derived from postgres.table is %d bytes and "
+        raise SystemExit("refusing to index: the name %r derived from postgres.table is %d bytes and "
                          "PostgreSQL cuts names at %d, so another config's table could be the same table. "
                          "Use a postgres.table of at most %d bytes (this one is %d)"
                          % (longest, size, PG_NAME_LIMIT, PG_NAME_LIMIT - (size - table_size), table_size))

@@ -212,6 +212,29 @@ class TestIndexLock(unittest.TestCase):
             if mode == "full":
                 self.assertEqual(store.row_count(self.cfg, self.cfg.data_table), summary["chunks_embedded"])
 
+    def wait_for_idle_expiry(self, timeout_ms):
+        """Open a control session with idle_session_timeout timeout_ms, after the writer's lock session,
+        leave it idle, and wait (at most 30 s) until the server has ended it. An idle session of the writer
+        that has no protection is gone by then, because it went idle first."""
+        conn = psycopg2.connect(host=self.cfg.pg["socket_dir"], port=self.cfg.pg["port"],
+                                dbname=self.cfg.pg["database"], user=self.cfg.pg["user"],
+                                options="-c idle_session_timeout=%d" % timeout_ms)
+        try:
+            conn.autocommit = True
+            with conn.cursor() as cur:
+                cur.execute("select pg_backend_pid()")
+                pid = cur.fetchone()[0]
+            deadline = time.time() + 30
+            while True:
+                time.sleep(0.2)
+                with store.sql(self.cfg) as cur:
+                    cur.execute("select count(*) from pg_stat_activity where pid = %s", (pid,))
+                    if cur.fetchone()[0] == 0:
+                        return
+                self.assertLess(time.time(), deadline, "the server did not end the idle control session")
+        finally:
+            conn.close()
+
     def advisory_lock_free(self):
         """No session holds an advisory lock on the live data table (key as the index run derives it)."""
         key = "hashtextextended(lower(%s), 0)"
@@ -308,7 +331,7 @@ class TestIndexLock(unittest.TestCase):
         release the table locks while the run embeds: another config on the same table is still refused."""
         self.index_baseline()
         first = self.start_holding_writer(env_extra={"INDEX_IDLE_TIMEOUT_MS": "1000"})
-        time.sleep(3)   # three times the timeout: an idle lock session would be gone by now
+        self.wait_for_idle_expiry(1000)   # the server has ended an idle session opened after the writer's
         self.assertIsNone(first.poll())
         self.assertFalse(self.advisory_lock_free())
         _, other_json = self.other_config("idle", state_dir=str(Path(self.tmp.name) / "state-idle"))
@@ -320,7 +343,7 @@ class TestIndexLock(unittest.TestCase):
 
     def refusal(self, table):
         shown = "data_%s_next_id_seq" % table
-        return ("refusing to index: the name %s derived from postgres.table is %d bytes and PostgreSQL cuts "
+        return ("refusing to index: the name %r derived from postgres.table is %d bytes and PostgreSQL cuts "
                 "names at 63, so another config's table could be the same table. Use a postgres.table of at "
                 "most 46 bytes (this one is %d)" % (shown, len(shown.encode()), len(table.encode())))
 
@@ -331,15 +354,26 @@ class TestIndexLock(unittest.TestCase):
         would otherwise fold into one table; 47 bytes is one past the longest table that works."""
         long_table = self.table + "p" * (54 - len(self.table))
         for table in (long_table, long_table + "_nex", self.table + "\u00e9" * 12,
-                      self.table + "q" * (47 - len(self.table))):
+                      self.table + "q" * (47 - len(self.table)), long_table + "\nfake second line"):
             with self.subTest(table=table):
                 _, other_json = self.other_config(
                     "long", table=table, state_dir=str(Path(self.tmp.name) / "state-long"))
+                self.cfgs.pop()   # no table is ever created, and tearDown cannot drop a name with a line break
                 line = self.one_error_line(*self.run_cli("index", cfg_json=other_json))
                 self.assertEqual(line, self.refusal(table))
                 self.assertFalse((Path(self.tmp.name) / "state-long").exists())
                 for name in ("data_" + table, "data_%s_next" % table, "data_%s_old" % table):
                     self.assertFalse(self.exists(name))
+
+    def test_overlength_refusal_comes_before_any_connection_or_corpus_scan(self):
+        """The refusal is the first thing run_index does: a connection to the database or a scan of the
+        corpus before it would fail this test."""
+        self.other_config("order", table=self.table + "r" * (47 - len(self.table)))
+        cfg = self.cfgs[-1]
+        with mock.patch("cerebrollm.store.connect", side_effect=AssertionError("connected")),                 mock.patch("cerebrollm.corpus.enumerate_corpus", side_effect=AssertionError("scanned")):
+            with self.assertRaises(SystemExit) as caught:
+                indexer.run_index(cfg)
+        self.assertEqual(str(caught.exception), self.refusal(cfg.table))
 
     def test_longest_accepted_table_name_indexes_and_swaps(self):
         """46 bytes is the longest table: the sequence data_<table>_next_id_seq is then exactly 63 bytes.
