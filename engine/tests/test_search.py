@@ -197,6 +197,47 @@ class TestRRF(unittest.TestCase):
         self.assertEqual(len(fused), 3)
 
 
+class TestTieOrder(unittest.TestCase):
+    """Equal scores must sort the same way whatever order the retriever returned them in, so that offset
+    continuation neither repeats nor skips a hit."""
+
+    def node(self, text, nid, path):
+        return TextNode(text=text, id_=nid, metadata={"root": "fx", "path": path, "ref": "file"})
+
+    def test_run_search_orders_equal_scores_by_path_then_chunk_id(self):
+        from itertools import permutations
+        from unittest import mock
+        nodes = [self.node("one", "n9", "b/x.md"), self.node("two", "n2", "a/x.md"),
+                 self.node("three", "n5", "a/x.md"), self.node("four", "n1", "c/x.md")]
+        data = config.load().data
+        data["root"] = [{"name": "fx", "kind": "dir", "path": "/nonexistent", "ref": "file"}]
+        data["rule"] = [{"root": "fx", "glob": "**/*.md", "tier": "T2", "status": "current"}]
+        cfg = config.Config(data, "test")
+        seen = set()
+        for order in permutations(nodes):
+            index = mock.Mock()
+            index.as_retriever.return_value.retrieve.return_value = [
+                SimpleNamespace(node=n, score=0.5) for n in order]
+            with mock.patch.object(search.VectorStoreIndex, "from_vector_store", return_value=index),                     mock.patch.object(search.store, "vector_store"), mock.patch.object(search.store, "embed_model"):
+                hits = search.run_search(cfg, "change", k=8, mode="vector", all_status=True)
+            seen.add(tuple(h["text"] for h in hits))
+        self.assertEqual(seen, {("two", "three", "one", "four")})   # a/x.md n2, a/x.md n5, b/x.md, c/x.md
+
+    def test_rrf_fuse_orders_equal_fused_scores_by_path_then_chunk_id(self):
+        from itertools import permutations
+        a, b, c = (self.node(t, i, p) for t, i, p in
+                   [("a", "n7", "z.md"), ("b", "n3", "y.md"), ("c", "n4", "y.md")])
+        h = lambda node, score: SimpleNamespace(node=node, score=score)
+        seen = set()
+        for order in permutations([a, b, c]):   # one list of three equal retrieval scores
+            fused = rrf_fuse([[h(n, 0.5) for n in order]])
+            seen.add(tuple(f.node.node_id for f in fused))
+        self.assertEqual(seen, {("n3", "n4", "n7")})
+        for first, second in ((a, b), (b, a)):   # two lists, each with one hit: fused scores are equal
+            fused = rrf_fuse([[h(first, 0.9)], [h(second, 0.9)]])
+            self.assertEqual([f.node.node_id for f in fused], ["n3", "n7"])
+
+
 class TestSanitize(unittest.TestCase):
     def test_tsquery_operators_and_quotes_are_removed(self):
         out = search.sanitize("a & b | !c (d):* <e> 'f' \"g\" \\h")

@@ -56,7 +56,7 @@ The configuration file is found in this order: `--config PATH`, the environment 
 ```
 cerebrollm index [--changed]          # no flag: build <table>_next, then swap it in; --changed: re-embed only changed files
 cerebrollm status                     # counts per tier and status, skips, last index, model and digest
-cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--json]
+cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--json] [--budget TOKENS]
 cerebrollm verify PATH "QUOTE" [--ref REF]
 cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [--no-rerank] [--show-text] [--json]
 ```
@@ -75,6 +75,15 @@ shows rank, score, tier, status, path, line span, ref, project, heading path, sh
 `also_at=[...]` when copies exist elsewhere, and text.
 `SOURCE-CHANGED` is printed when the file on disk no longer matches the indexed sha256, in which
 case the line span may be wrong.
+
+`--budget TOKENS` (50 to 20000) is opt-in and replaces the `token_budget` trimming for that call. The
+whole printed output, measured at 4 characters per token on the final text (or the final JSON), stays
+within TOKENS. Hits are dropped from the lowest rank up and rank order never changes; the last hit kept may
+have its text trimmed (marked `[...]`, and `"truncated": true` in JSON) but never its header line. When not
+even one header fits, no hit is shown. Text output ends with `dropped: n (ranks a-b)`, or `dropped: 0`. With
+`--json`, `--budget` makes the output an object `{"hits": [...], "dropped": n, "dropped_ranks": [a, b],
+"budget_tokens": TOKENS}` (`dropped_ranks` is `[]` when nothing was dropped); without `--budget` the JSON
+is the array it always was. Without `--budget` the output is unchanged. No re-index is needed.
 
 `verify` re-reads the source (file, or `git show REF:PATH`), compares the quote with whitespace
 normalised and requires it to start and end on a word boundary (`port 80` does not match `port 8080`).
@@ -128,11 +137,31 @@ Citation format limit: only `"quote" [path]` (or `[path:12]`, `[path#L12-30]`, `
 ## MCP server
 
 `cerebrollm mcp` serves two tools over MCP on stdio: `search` and `verify`. It is read-only and exposes
-no index, status or write tool. `search` takes `query`, `k`, `mode`, `all_status`, `project`, `page` and `rerank`
-and returns one page of hits (`k` per page, default from `cerebrollm.toml`) capped at `token_budget`.
-The result starts with a line stating that the text is retrieved data, each hit sits between
+no index, status or write tool. `search` takes `query`, `k`, `mode`, `all_status`, `project`, `page`, `rerank`,
+`budget` and `offset`, and returns one page of hits (`k` per page, default from `cerebrollm.toml`). The
+result starts with a line stating that the text is retrieved data, each hit sits between
 `<<<BEGIN RETRIEVED DATA>>>` and `<<<END RETRIEVED DATA>>>`, and the last line says whether another
-page exists. `verify` takes `path`, `quote` and `ref` and returns the code and its detail line. When
+page exists. By default each hit's text is trimmed toward `[search] token_budget`; a page of very long
+headers can still exceed it, because each hit keeps at least 200 characters of text.
+
+`budget` and `offset` are opt-in. `budget` (50 to 20000 tokens) replaces the `token_budget` trimming for the
+call: the whole returned text, wrapper and markers included, is at most `budget` x 4 characters, and so is an
+error line (its cause is cut). Hits are dropped from the lowest rank up, and the last hit kept may have its
+text trimmed, never its header. When hits were dropped and at least one was shown, the last line is
+`Dropped ranks a-b to fit budget N; call search with offset=a.` (`Dropped rank a` for one), so calling again
+with that `offset` returns the first dropped hit. When not even one hit fits, nothing is shown and the line
+is `Dropped ranks a-b: budget N is too small for one hit.` It names no offset: raise the budget. `offset` (1 to 5000) starts the page at that rank instead of at a page boundary; the
+last line then reads `Offset n: ...` and names the offset that continues. `offset` with `page` above 1 is an
+error line, as are a `budget` or `offset` outside its range (`Invalid budget`, `Invalid offset`).
+
+Every call with `budget` or `offset` retrieves the same fixed pool, the top 200 search hits, whatever the
+offset or `k`, because the rank fusion of the two retrieval arms changes with the depth fetched and a
+continuation could otherwise repeat or skip a hit. Ranks past 200 are not returned and not advertised; the
+last line says `rank limit 200 reached`. With `rerank=true` the pool is the top 50 search hits reordered by the
+cross-encoder, and the limit is 50. Printed ranks are positions in the reranked order; `search_rank` is not
+printed. Without `budget` and `offset`, output and paging are unchanged.
+
+`verify` takes `path`, `quote` and `ref` and returns the code and its detail line. When
 Postgres or Ollama is down, a tool returns one line with the cause and the start command; the server
 keeps running.
 

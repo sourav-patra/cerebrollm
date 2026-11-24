@@ -65,17 +65,26 @@ def expand_query(query, synonyms):
     return query + " " + " ".join(extra) if extra else query
 
 
+def tie_key(node):
+    """The identity that orders hits of equal score: root and path, then chunk id. The retrievers set
+    no order among equal scores, and offset continuation needs the same order on every call."""
+    meta = node.metadata
+    root, path = meta.get("root"), meta.get("path")
+    return ("%s:%s" % (root, path) if root else str(path or ""), node.node_id)
+
+
 def rrf_fuse(lists, k=RRF_K):
     """Reciprocal rank fusion of ranked hit lists with the formula of LlamaIndex's QueryFusionRetriever:
-    each list adds 1 / (rank + k), rank counted from 0. Returns NodeWithScore items, best first."""
+    each list adds 1 / (rank + k), rank counted from 0. Returns NodeWithScore items, best first; equal
+    scores, in a list or fused, are ordered by tie_key."""
     scores, first = {}, {}
     for hits in lists:
-        for rank, h in enumerate(sorted(hits, key=lambda x: x.score or 0.0, reverse=True)):
+        for rank, h in enumerate(sorted(hits, key=lambda x: (-(x.score or 0.0), tie_key(x.node)))):
             nid = h.node.node_id
             first.setdefault(nid, h)
             scores[nid] = scores.get(nid, 0.0) + 1.0 / (rank + k)
     return [NodeWithScore(node=first[nid].node, score=s)
-            for nid, s in sorted(scores.items(), key=lambda x: -x[1])]
+            for nid, s in sorted(scores.items(), key=lambda x: (-x[1], tie_key(first[x[0]].node)))]
 
 
 def recency_multiplier(mtime, now, weight, half_life_days):
@@ -174,7 +183,7 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
             score *= recency_multiplier(meta.get("mtime"), now, recency["weight"],
                                         recency["half_life_days"])
         out.append({"score": score, "node": h.node, "meta": meta})
-    out.sort(key=lambda x: -x["score"])
+    out.sort(key=lambda x: (-x["score"], tie_key(x["node"])))
     results = []
     for rank, entry in enumerate(distinct_by_text(out, k), 1):
         o = entry["item"]
@@ -231,3 +240,82 @@ def format_hits(results):
 
 def to_json(results):
     return json.dumps(results, indent=2, ensure_ascii=False)
+
+
+MIN_BUDGET, MAX_BUDGET = 50, 20000   # tokens accepted by the opt-in output budget (CLI --budget, MCP budget)
+
+
+def _trimmed(hit, keep):
+    """The hit with its text cut to `keep` characters and TRUNCATED appended, or the hit itself when
+    the text is not longer than `keep`. The header fields are never touched."""
+    text = hit["text"]
+    if keep >= len(text):
+        return hit
+    return dict(hit, text=text[:keep].rstrip() + TRUNCATED, truncated=True)
+
+
+def fit_budget(hits, budget_tokens, render, extra=0):
+    """Choose which hits fit a token budget (4 chars/token) measured on the final rendered output.
+
+    render(shown, dropped) returns the whole output text for those hit lists, footer included;
+    `extra` is the number of characters printed on top of it (the newline print adds). Hits are
+    dropped from the lowest rank up and rank order never changes. The most hits that fit are shown;
+    the last shown hit may have its text trimmed, never its header. When not even one header fits,
+    no hit is shown. Returns (shown, dropped); the hit dicts passed in are not modified.
+
+    The number of hits is found by binary search, so about log2(n) + log2(longest text) renders are
+    made, not one per hit. Shortcut: the search assumes that showing one more hit never makes the
+    output shorter, which holds because a hit adds more characters than the footer can lose; the
+    answer is always one that render itself measured as fitting."""
+    limit = budget_tokens * 4 - extra
+
+    def fits(shown, dropped):
+        return len(render(shown, dropped)) <= limit
+
+    def possible(n):   # the n-th hit fits whole, or with only its header and the marker
+        return (fits(hits[:n], hits[n:])
+                or fits(hits[:n - 1] + [_trimmed(hits[n - 1], 0)], hits[n:]))
+
+    if fits(hits, []):
+        return list(hits), []
+    lo, hi = 0, len(hits)   # the largest n for which possible(n) holds
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if possible(mid):
+            lo = mid
+        else:
+            hi = mid - 1
+    n = lo
+    if n == 0:
+        return [], list(hits)
+    head, last, dropped = hits[:n - 1], hits[n - 1], hits[n:]
+    if fits(hits[:n], dropped):   # a short hit can be shorter whole than with the marker
+        return hits[:n], dropped
+    lo, hi = 0, len(last["text"]) - 1   # the text cut to lo characters fits; the whole text does not
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if fits(head + [_trimmed(last, mid)], dropped):
+            lo = mid
+        else:
+            hi = mid - 1
+    return head + [_trimmed(last, lo)], dropped
+
+
+def _dropped_ranks(dropped):
+    return [dropped[0]["rank"], dropped[-1]["rank"]] if dropped else []
+
+
+def budgeted_output(results, budget_tokens, as_json):
+    """The CLI output under an opt-in budget: text ending in `dropped: n (ranks a-b)`, or with
+    as_json an object with hits, dropped, dropped_ranks and budget_tokens. The newline print adds is
+    counted. cap_text is not applied: the budget replaces it."""
+    def render(shown, dropped):
+        if as_json:
+            return json.dumps({"hits": shown, "dropped": len(dropped), "dropped_ranks": _dropped_ranks(dropped),
+                               "budget_tokens": budget_tokens}, indent=2, ensure_ascii=False)
+        ranks = _dropped_ranks(dropped)
+        footer = "dropped: %d (ranks %d-%d)" % (len(dropped), ranks[0], ranks[1]) if dropped else "dropped: 0"
+        return format_hits(shown) + footer
+
+    shown, dropped = fit_budget(list(results), budget_tokens, render, extra=1)
+    return render(shown, dropped)

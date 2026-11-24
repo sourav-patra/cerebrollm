@@ -2,6 +2,7 @@
 end-to-end test that starts `bin/cerebrollm mcp` over stdio and skips when Postgres or Ollama is down."""
 import asyncio
 import os
+import re
 import unittest
 from unittest import mock
 
@@ -11,37 +12,13 @@ import psycopg2
 from mcp.client.client import Client
 from mcp.client.stdio import StdioServerParameters
 from cerebrollm import config, mcp_server
+from tests.stubs import FakeSearch, hit, patched_search
 from tests.test_end_to_end import REASON
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BIN = os.path.join(REPO, "bin", "cerebrollm")
 BEGIN, END, WRAPPER = mcp_server.BEGIN, mcp_server.END, mcp_server.WRAPPER_LINE
 BUDGET_CHARS = config.load().search["token_budget"] * 4   # the whole page, at 4 characters per token
-
-
-def hit(rank, text="chunk text", path="alpha/review.md", **kw):
-    h = {"rank": rank, "score": 0.5, "tier": "T1", "status": "locked", "project": "example", "path": path,
-         "ref": "file", "title": "Review", "line_start": 1, "line_end": 3, "source_unchanged": True,
-         "heading_path": "Review", "sha256": "ab" * 32, "also_at": [], "mtime": None, "text": text}
-    h.update(kw)
-    return h
-
-
-class FakeSearch:
-    """Stands in for search.run_search: returns the first k of its hits, best first."""
-
-    def __init__(self, hits, error=None):
-        self.hits, self.error, self.calls = hits, error, []
-
-    def __call__(self, cfg, query, k=None, mode=None, all_status=False, project=None, synonyms=None):
-        self.calls.append({"k": k, "mode": mode, "all_status": all_status, "project": project})
-        if self.error:
-            raise self.error
-        return [dict(h) for h in self.hits[:k]]
-
-
-def patched_search(fake):
-    return mock.patch("cerebrollm.search.run_search", fake)
 
 
 class TestSearchPaging(unittest.TestCase):
@@ -228,6 +205,17 @@ class TestToolList(unittest.TestCase):
         names = sorted(t.name for t in asyncio.run(mcp_server.server.list_tools()))
         self.assertEqual(names, ["search", "verify"])
 
+    def test_search_registers_budget_and_offset_as_optional_integers(self):
+        tool = next(t for t in asyncio.run(mcp_server.server.list_tools()) if t.name == "search")
+        props = tool.input_schema["properties"] if hasattr(tool, "input_schema") else tool.inputSchema["properties"]
+        for name in ("budget", "offset"):
+            self.assertIn(name, props)
+            self.assertIn("integer", str(props[name]))
+        required = (tool.input_schema if hasattr(tool, "input_schema") else tool.inputSchema).get("required", [])
+        self.assertEqual(required, ["query"])
+        self.assertIn("budget", tool.description)
+        self.assertIn("offset", tool.description)
+
 
 @unittest.skipIf(REASON, REASON or "")
 class TestStdioServer(unittest.TestCase):
@@ -239,9 +227,28 @@ class TestStdioServer(unittest.TestCase):
                 tools = await client.list_tools()
                 result = await client.call_tool(
                     "search", {"query": "how many review rounds does a change get", "k": 2})
-                return tools, result
+                # budget and offset go over the transport too: a small budget drops hits, and the
+                # offset the last line names returns the first dropped one.
+                args = {"query": "how many review rounds does a change get", "k": 8, "budget": 200}
+                first = await client.call_tool("search", dict(args, offset=1))
+                lines = first.content[0].text.splitlines()
+                again = None
+                found = re.search(r"call search with offset=(\d+)", lines[-1])
+                if found:
+                    again = (int(found.group(1)),
+                             await client.call_tool("search", dict(args, offset=int(found.group(1)))))
+                return tools, result, first, again
 
-        tools, result = asyncio.run(session())
+        tools, result, first, again = asyncio.run(session())
+        self.assertFalse(first.is_error)
+        first_text = first.content[0].text
+        self.assertLessEqual(len(first_text), 800)                   # 200 tokens at 4 characters
+        self.assertEqual(first_text.splitlines()[0], WRAPPER)
+        self.assertRegex(first_text.splitlines()[-1], r"^(Dropped |Offset 1:)")
+        if again:
+            offset, resumed = again
+            self.assertFalse(resumed.is_error)
+            self.assertIn("#%d score=" % offset, resumed.content[0].text)   # resumes at the dropped hit
         self.assertEqual(sorted(t.name for t in tools.tools), ["search", "verify"])
         self.assertFalse(result.is_error)
         text = result.content[0].text
