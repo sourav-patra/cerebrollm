@@ -61,6 +61,7 @@ def drop_command(cfg):
 
 
 FLOCK_TRIES = 5   # a failed flock whose holder the kernel no longer lists was released meanwhile: retry
+PG_NAME_LIMIT = 63   # NAMEDATALEN - 1: PostgreSQL cuts every identifier at this many bytes
 
 
 def _open_lock_file(path):
@@ -125,6 +126,24 @@ def _table_lock_names(cfg):
     return [cfg.data_table, cfg.next_data_table, "data_%s_old" % cfg.table]
 
 
+def _refuse_overlong_table_names(cfg):
+    """PostgreSQL cuts an identifier at NAMEDATALEN - 1 = 63 bytes. A derived table name past that is
+    stored under its first 63 bytes, which can be another config's table (data_<p>_next of one config
+    and the live table of the config named <p>_nex), while the lock keys, hashed from the full names,
+    differ. The relations named after the build table (index <t>_next_idx_1, key data_<t>_next_pkey,
+    sequence data_<t>_next_id_seq) are cut too, and the swap renames them by their full names. The
+    longest of all these is the sequence, so one check on it covers every derived name. Refuse such a
+    table name before any lock, file or table is touched."""
+    longest = "data_%s_next_id_seq" % cfg.table
+    size = len(longest.encode())
+    if size > PG_NAME_LIMIT:
+        table_size = len(cfg.table.encode())
+        raise SystemExit("refusing to index: the name %s derived from postgres.table is %d bytes and "
+                         "PostgreSQL cuts names at %d, so another config's table could be the same table. "
+                         "Use a postgres.table of at most %d bytes (this one is %d)"
+                         % (longest, size, PG_NAME_LIMIT, PG_NAME_LIMIT - (size - table_size), table_size))
+
+
 @contextmanager
 def writer_lock(cfg):
     """Hold the index writer locks, or exit at once (SystemExit, status 1) when another run holds one:
@@ -134,7 +153,10 @@ def writer_lock(cfg):
     PostgreSQL folds it, with no schema: runs whose search paths differ still agree on it, and the same
     name in two schemas, or a hash collision, only makes the runs refuse each other. A contender names
     the flock holder from the kernel's lock table. The operating system releases the flock and the
-    server the advisory locks when the process dies."""
+    server the advisory locks when the process dies. The lock session sets idle_session_timeout to 0: it
+    stays idle for the whole run, and a server that ends idle sessions would release the advisory locks.
+    A table name whose derived names PostgreSQL would cut is refused first (_refuse_overlong_table_names)."""
+    _refuse_overlong_table_names(cfg)
     cfg.state_dir.mkdir(parents=True, exist_ok=True)
     path = cfg.state_dir / "index.lock"
     fd = _open_lock_file(path)
@@ -144,6 +166,7 @@ def writer_lock(cfg):
         try:
             conn.autocommit = True   # the locks belong to the session; no transaction stays open
             with conn.cursor() as cur:
+                cur.execute("SET idle_session_timeout = 0")
                 for name in _table_lock_names(cfg):
                     cur.execute("select pg_try_advisory_lock(hashtextextended(lower(%s), 0))", (name,))
                     if not cur.fetchone()[0]:

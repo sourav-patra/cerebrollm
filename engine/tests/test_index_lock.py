@@ -137,6 +137,7 @@ class TestIndexLock(unittest.TestCase):
     def start(self, *args, hold=False, cfg_json=None, env_extra=None):
         env = dict(os.environ)
         env.pop("INDEX_HOLD_DIR", None)
+        env.pop("INDEX_IDLE_TIMEOUT_MS", None)
         if hold:
             env["INDEX_HOLD_DIR"] = str(self.hold)
         env.update(env_extra or {})
@@ -169,8 +170,8 @@ class TestIndexLock(unittest.TestCase):
         out, err = p.communicate(timeout=WAIT)
         return p.returncode, out, err
 
-    def start_holding_writer(self):
-        first = self.start("index", hold=True)
+    def start_holding_writer(self, env_extra=None):
+        first = self.start("index", hold=True, env_extra=env_extra)
         try:
             wait_for(self.hold / "inside", first, "holding writer")
         except AssertionError as exc:
@@ -301,6 +302,59 @@ class TestIndexLock(unittest.TestCase):
         self.assertEqual(line, self.table_refusal(self.cfg.next_data_table))
         self.assertIsNone(first.poll())
         self.assert_consistent("full", self.release(first))
+
+    def test_lock_session_outlives_the_server_idle_timeout(self):
+        """A server that ends idle sessions after one second (set for the writer's connections) does not
+        release the table locks while the run embeds: another config on the same table is still refused."""
+        self.index_baseline()
+        first = self.start_holding_writer(env_extra={"INDEX_IDLE_TIMEOUT_MS": "1000"})
+        time.sleep(3)   # three times the timeout: an idle lock session would be gone by now
+        self.assertIsNone(first.poll())
+        self.assertFalse(self.advisory_lock_free())
+        _, other_json = self.other_config("idle", state_dir=str(Path(self.tmp.name) / "state-idle"))
+        line = self.one_error_line(*self.run_cli("index", cfg_json=other_json))
+        self.assertEqual(line, self.table_refusal(self.cfg.data_table))
+        self.assert_consistent("full", self.release(first))
+
+    # --- names PostgreSQL would cut ------------------------------------------------------------
+
+    def refusal(self, table):
+        shown = "data_%s_next_id_seq" % table
+        return ("refusing to index: the name %s derived from postgres.table is %d bytes and PostgreSQL cuts "
+                "names at 63, so another config's table could be the same table. Use a postgres.table of at "
+                "most 46 bytes (this one is %d)" % (shown, len(shown.encode()), len(table.encode())))
+
+    def test_overlength_derived_names_are_refused_before_any_lock(self):
+        """A table name whose derived names (data_<table>_next, its key and its sequence) pass 63 bytes
+        is refused before the lock file, the database or the corpus is touched. The refusal counts bytes,
+        not characters. The 54-byte table and its "_nex" neighbour are the pair whose names PostgreSQL
+        would otherwise fold into one table; 47 bytes is one past the longest table that works."""
+        long_table = self.table + "p" * (54 - len(self.table))
+        for table in (long_table, long_table + "_nex", self.table + "\u00e9" * 12,
+                      self.table + "q" * (47 - len(self.table))):
+            with self.subTest(table=table):
+                _, other_json = self.other_config(
+                    "long", table=table, state_dir=str(Path(self.tmp.name) / "state-long"))
+                line = self.one_error_line(*self.run_cli("index", cfg_json=other_json))
+                self.assertEqual(line, self.refusal(table))
+                self.assertFalse((Path(self.tmp.name) / "state-long").exists())
+                for name in ("data_" + table, "data_%s_next" % table, "data_%s_old" % table):
+                    self.assertFalse(self.exists(name))
+
+    def test_longest_accepted_table_name_indexes_and_swaps(self):
+        """46 bytes is the longest table: the sequence data_<table>_next_id_seq is then exactly 63 bytes.
+        A full run, a second full run (which swaps over a live table) and a changed run all finish."""
+        table = self.table + "b" * (46 - len(self.table))
+        _, other_json = self.other_config("edge", table=table, state_dir=str(Path(self.tmp.name) / "state-edge"))
+        cfg = self.cfgs[-1]
+        embedded = []
+        for args in (["index"], ["index"], ["index", "--changed"]):
+            code, out, err = self.run_cli(*args, cfg_json=other_json)
+            self.assertEqual(code, 0, err)
+            embedded.append(json.loads(out)["chunks_embedded"])
+        self.assertGreater(embedded[0], 0)
+        self.assertEqual(store.row_count(cfg, cfg.data_table), embedded[1])
+        self.assertFalse(self.exists(cfg.next_data_table))
 
     # --- naming the holder ---------------------------------------------------------------------
 
