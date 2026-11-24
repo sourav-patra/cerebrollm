@@ -2,6 +2,19 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+Two index runs never write at once. No re-index needed.
+
+- `cerebrollm index` and `cerebrollm index --changed` take their locks before they read the corpus. They hold them until the run ends or fails.
+- An exclusive lock on `<state_dir>/index.lock` guards `docstore.json`, `docstore.next.json` and `state.json`. The file is created empty when absent and never written; an existing file is only opened to lock it.
+- PostgreSQL advisory locks cover every data table a run can change: the live table, `<table>_next` and `<table>_old`. They also stop two configs whose tables are the same or overlap.
+- A second run exits at once with status 1 and one line on stderr. The line names the lock file and the holder's process id from the kernel lock table (`/proc/locks`), or the locked table. It never waits.
+- The operating system and the server release the locks when the holding process dies, including by SIGKILL. `search`, `verify`, `ask`, `status` and `mcp` take no lock.
+- `index` refuses an `index.lock` that is a symbolic link or not a regular file.
+- The lock session sets `idle_session_timeout` to 0, so a server, database or role default that ends idle sessions cannot release the table locks during a long embedding step.
+- `index` now refuses a `postgres.table` that is too long for PostgreSQL's identifier limit. The limit and when it is checked are in [Commands](engine/README.md#commands).
+
 ## 0.2.0
 
 `ask` prints only what `verify` confirmed. No re-index needed.

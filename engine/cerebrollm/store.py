@@ -25,10 +25,14 @@ def embed_model(cfg):
                            query_instruction=cfg.ollama.get("query_prefix") or None)
 
 
+def connect(cfg):
+    return psycopg2.connect(host=cfg.pg["socket_dir"], port=cfg.pg["port"],
+                            dbname=cfg.pg["database"], user=cfg.pg["user"])
+
+
 @contextmanager
 def sql(cfg):
-    conn = psycopg2.connect(host=cfg.pg["socket_dir"], port=cfg.pg["port"],
-                            dbname=cfg.pg["database"], user=cfg.pg["user"])
+    conn = connect(cfg)
     try:
         with conn, conn.cursor() as cur:
             yield cur
