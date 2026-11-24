@@ -297,6 +297,24 @@ class TestRankLimits(FixedConfig):
                             again = mcp_server.search_tool("q", k=k, offset=int(m), budget=budget)
                             self.assertFalse(again.startswith("Invalid"), again)
 
+    def test_a_budget_only_page_at_the_pool_edge_reports_the_rank_limit(self):
+        limit = "rank limit 200 reached; no ranks past it can be returned."
+        with patched_search(FakeSearch(make_hits(300, text_len=3))):
+            out = mcp_server.search_tool("q", k=50, page=4, budget=20000)
+            self.assertEqual(shown_ranks(out), list(range(151, 201)))
+            self.assertEqual(out.splitlines()[-1], "Page 4: " + limit)
+            out = mcp_server.search_tool("q", k=50, page=5, budget=20000)   # wholly past the pool
+            self.assertEqual(shown_ranks(out), [])
+            self.assertEqual(out.splitlines()[-1], "Page 5: " + limit)
+            out = mcp_server.search_tool("q", k=50, page=100, budget=50)   # the longest page line, smallest budget
+            self.assertLessEqual(len(out), 200)
+            self.assertEqual(out.splitlines()[-1], "Page 100: " + limit)
+            out = mcp_server.search_tool("q", k=50, page=3, budget=20000)   # a page before the edge
+            self.assertEqual(out.splitlines()[-1], "Page 3: another page exists, call search with page=4.")
+        with patched_search(FakeSearch(make_hits(10, text_len=3))):   # fewer hits than the pool: plain end
+            self.assertEqual(mcp_server.search_tool("q", k=5, page=2, budget=20000).splitlines()[-1],
+                             "Page 2: no further page.")
+
     def test_the_rank_limit_is_reported_not_advertised(self):
         with patched_search(FakeSearch(make_hits(300, text_len=3))):
             for off, k in ((200, 50), (151, 50), (200, 1), (250, 5)):

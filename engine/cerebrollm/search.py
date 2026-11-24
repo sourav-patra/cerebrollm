@@ -65,17 +65,26 @@ def expand_query(query, synonyms):
     return query + " " + " ".join(extra) if extra else query
 
 
+def tie_key(node):
+    """The identity that orders hits of equal score: root and path, then chunk id. The retrievers set
+    no order among equal scores, and offset continuation needs the same order on every call."""
+    meta = node.metadata
+    root, path = meta.get("root"), meta.get("path")
+    return ("%s:%s" % (root, path) if root else str(path or ""), node.node_id)
+
+
 def rrf_fuse(lists, k=RRF_K):
     """Reciprocal rank fusion of ranked hit lists with the formula of LlamaIndex's QueryFusionRetriever:
-    each list adds 1 / (rank + k), rank counted from 0. Returns NodeWithScore items, best first."""
+    each list adds 1 / (rank + k), rank counted from 0. Returns NodeWithScore items, best first; equal
+    scores, in a list or fused, are ordered by tie_key."""
     scores, first = {}, {}
     for hits in lists:
-        for rank, h in enumerate(sorted(hits, key=lambda x: x.score or 0.0, reverse=True)):
+        for rank, h in enumerate(sorted(hits, key=lambda x: (-(x.score or 0.0), tie_key(x.node)))):
             nid = h.node.node_id
             first.setdefault(nid, h)
             scores[nid] = scores.get(nid, 0.0) + 1.0 / (rank + k)
     return [NodeWithScore(node=first[nid].node, score=s)
-            for nid, s in sorted(scores.items(), key=lambda x: -x[1])]
+            for nid, s in sorted(scores.items(), key=lambda x: (-x[1], tie_key(first[x[0]].node)))]
 
 
 def recency_multiplier(mtime, now, weight, half_life_days):
@@ -174,7 +183,7 @@ def run_search(cfg, query, k=None, mode=None, all_status=False, project=None, sy
             score *= recency_multiplier(meta.get("mtime"), now, recency["weight"],
                                         recency["half_life_days"])
         out.append({"score": score, "node": h.node, "meta": meta})
-    out.sort(key=lambda x: -x["score"])
+    out.sort(key=lambda x: (-x["score"], tie_key(x["node"])))
     results = []
     for rank, entry in enumerate(distinct_by_text(out, k), 1):
         o = entry["item"]

@@ -88,7 +88,11 @@ def _neutral(block):
     return block.replace(BEGIN, "[begin marker text]").replace(END, "[end marker text]")
 
 
-def _page_line(page, more):
+def _page_line(page, more, limit=None):
+    """The last line of a page. limit: the call reached the last rank of the fixed pool, where more
+    hits may exist, so it says the rank limit instead of "no further page"."""
+    if limit:
+        return "Page %d: rank limit %d reached; no ranks past it can be returned." % (page, limit)
     if more:
         return "Page %d: another page exists, call search with page=%d." % (page, page + 1)
     return "Page %d: no further page." % page
@@ -154,12 +158,12 @@ def _search_page(cfg, query, size, page, mode, all_status, project, use_rerank=F
         hits = search.run_search(cfg, query, k=fetch, mode=mode, all_status=all_status, project=project)
     shown = hits[start:end]
     more = len(hits) > end
+    at_limit = explicit and end >= limit and len(hits) >= limit
     if offset:
-        at_limit = end >= limit and len(hits) >= limit
         footer = _offset_line(offset, size, more, limit if at_limit else None)
         empty = "No hits at offset %d." % offset
     else:
-        footer, empty = _page_line(page, more), "No hits on page %d." % page
+        footer, empty = _page_line(page, more, limit if at_limit else None), "No hits on page %d." % page
     if budget is not None:
         # The budget counts the whole returned text; it replaces the token_budget trimming. Positions
         # (start + index + 1) name the dropped hits, because offset counts positions in the shown order.
