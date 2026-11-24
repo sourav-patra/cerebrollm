@@ -47,6 +47,8 @@ only Apache-2.0 or MIT models as allowed.
 
 Follow the install section of the repository root `README.md`. On Ubuntu 24.04, `setup/root-ubuntu.sh` (needs sudo, run once by a person) installs the packages and `setup/user.sh` (no root, safe to re-run) creates the environment and the PostgreSQL cluster. Defaults: virtual environment `$HOME/.cerebrollm/venv`, PostgreSQL cluster `$HOME/.cerebrollm/pg16` with database `rag_local`, user `cerebrollm`, Unix socket `$HOME/.cerebrollm/pg16/sock`, port 54329, no TCP; Ollama with `qwen3-embedding:0.6b`; state in `$HOME/.cerebrollm`. Paths in `cerebrollm.toml` accept `~` and `$VARS`, and an unset variable stops the load with the key that uses it.
 
+`[postgres]` chooses the connection. `socket_dir` (the default) is the Unix socket of the cluster that `setup/user.sh` creates. For a PostgreSQL that listens on TCP, such as the one in the repository's `docker-compose.yml`, replace `socket_dir` with `host` (the address `127.0.0.1` or `::1`; `localhost` is read as `127.0.0.1`; `port` is the TCP port, an integer from 1 to 65535) and give that database its own `state_dir`, because `docstore.json` and `state.json` there describe one database (`index --changed` refuses a state folder that belongs to another database or an empty one) and, when the server wants a password, add `password_env`, the name of an environment variable that holds it. The password is never read from the file; a named variable that is unset or empty stops the load with its name. Setting both `host` and `socket_dir`, or neither, is refused, and so is `password_env` without `host`. `cerebrollm status` prints `postgres connection: unix socket` or `postgres connection: tcp <host>:<port>` with the variable name, never the password. Any other `host` is refused when the configuration loads: remote databases are not supported in this release (the connection has no `sslmode` setting and is unencrypted). A TCP connection that accepts and then stalls fails after 10 seconds.
+
 The configuration file is found in this order: `--config PATH`, the environment variable `CEREBROLLM_CONFIG`, then the copy that ships with the package (`python -c "from cerebrollm.config import DEFAULT_CONFIG; print(DEFAULT_CONFIG)"` prints its path; copy it, edit the `[[root]]` and `[[rule]]` entries and pass the copy with `--config`).
 
 ## Commands
@@ -211,7 +213,7 @@ abbreviation. Matching ignores case and a plural `s`. The vector arm embeds the 
 never-index rule checked through `corpus.enumerate_corpus` on a temp folder (the drafts folder is never
 read), table rows, embedded text and span checks, synonyms, search-time collapse and fusion, recency and
 output formatting, verify outcomes on a temp file, and one end-to-end run on a
-fixture folder against the real Postgres (own table, dropped afterwards) and Ollama. Test scratch files
+fixture folder against the real Postgres (own table, dropped afterwards) and Ollama. `test_postgres_tcp.py` starts its own loopback PostgreSQL cluster (skipped with the cause when PostgreSQL 16 or pgvector is missing). Test scratch files
 go under `$HOME/.cerebrollm/test-scratch`. The end-to-end test is skipped with a message if either is down.
 
 ## Known limits and not measured

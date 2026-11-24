@@ -26,7 +26,8 @@ def socket_dir_open(mode):
 def collect(cfg):
     st = store.read_state(cfg)
     out = {"state": st, "tiers": [], "never_violations": None, "chunks": 0, "documents": 0,
-           "num_ctx": cfg.ollama_options["num_ctx"], "socket_mode": socket_dir_mode(cfg.pg["socket_dir"])}
+           "num_ctx": cfg.ollama_options["num_ctx"], "connection": cfg.pg_connection_label(),
+           "socket_mode": None if cfg.pg_host else socket_dir_mode(cfg.pg["socket_dir"])}
     if not store.table_exists(cfg):
         return out
     with store.sql(cfg) as cur:
@@ -60,7 +61,9 @@ def format_status(cfg, s):
         st.get("last_index_time"), last.get("mode"), last.get("duration_s"), last.get("chunks_embedded")))
     lines.append("embedding model: %s  digest: %s  num_ctx: %s" % (
         st.get("embedding_model"), st.get("embedding_digest"), s["num_ctx"]))
-    lines.append("postgres socket folder: %s  mode %s" % (cfg.pg["socket_dir"], s["socket_mode"]))
-    if socket_dir_open(s["socket_mode"]):
-        lines.append("WARNING: other local users can reach the database socket; run: chmod 700 %s" % cfg.pg["socket_dir"])
+    lines.append(cfg.pg_connection_label())
+    if not cfg.pg_host:   # the socket folder checks apply to the Unix socket only
+        lines.append("postgres socket folder: %s  mode %s" % (cfg.pg["socket_dir"], s["socket_mode"]))
+        if socket_dir_open(s["socket_mode"]):
+            lines.append("WARNING: other local users can reach the database socket; run: chmod 700 %s" % cfg.pg["socket_dir"])
     return "\n".join(lines)

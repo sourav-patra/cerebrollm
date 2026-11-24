@@ -39,8 +39,7 @@ def main():
         ['git', '-C', str(REPO), 'rev-parse', 'HEAD'], capture_output=True, text=True).stdout.strip()
     evidence['source_hashes'] = {str(p.relative_to(REPO)): hashlib.sha256(p.read_bytes()).hexdigest()
                                  for p in [REPO / 'cerebrollm.toml', *sorted((REPO / 'cerebrollm').glob('*.py'))]}
-    conn = psycopg2.connect(host=cfg.pg['socket_dir'], port=cfg.pg['port'],
-                            dbname=cfg.pg['database'], user=cfg.pg['user'], connect_timeout=5)
+    conn = psycopg2.connect(**{**cfg.pg_connect_args(), 'connect_timeout': 5})   # socket or loopback TCP, as configured
     conn.set_session(readonly=True)
     with conn, conn.cursor() as cur:
         cur.execute("SELECT column_name,data_type FROM information_schema.columns WHERE table_name=%s ORDER BY ordinal_position", (cfg.data_table,))

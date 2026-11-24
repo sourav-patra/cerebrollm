@@ -2,7 +2,7 @@
 id: TRD-cerebrollm
 kind: contract
 governs: 0.1.0 (first public release); items marked P are proposals for 0.2
-status: LOCKED 2026-10-30 by the owner (content of draft v4)
+status: revision proposed, owner re-lock pending (previous lock: LOCKED 2026-10-30 by the owner (content of draft v4); sha256 37e2cff553aa760385bc8f03d6852f20e82b4b0a896c2e3e517c06e31e2a3e12)
 upstream: PRD-cerebrollm-2026-10-30.md (pin: PRD as locked 2026-10-30, sha256 622fee4d88bc88bdf7e59d767940b809c6651b72ce343b8075695724f84572f2)
 figures: figures/trd-components.svg, figures/trd-ask-sequence.svg
 checked-at: source revision 02a00dd, 2026-10-30 (the public repository starts a new history; the hash is for the review record)
@@ -36,7 +36,7 @@ Figure 1. Shows: the components, the entry points (heavy border) and what crosse
 | Rules | never-index, tier and status, supersession, duplicate collapse, secret scan | `rules.py` | does I/O |
 | Chunker | headings, merge of short sections, one node per table row, sentence split, character spans | `glue.py`, `indexer.chunk_steps` | embeds metadata other than path, title and heading path |
 | Indexer | full rebuild into `chunks_next` then swap; `--changed` upsert and delete | `indexer.py`, `store.py` | swaps a table that is empty or under half the live rows |
-| Store | Postgres with pgvector over a Unix socket; vector and keyword columns | `store.py` | listens on TCP |
+| Store | Postgres with pgvector over a Unix socket (default) or over TCP to 127.0.0.1 or ::1 only, with the password read from an environment variable; vector and keyword columns | `store.py` | listens on TCP, or connects to a host off this machine |
 | Search | vector and keyword retrieval fused by reciprocal rank (k = 60), tier and recency boosts, one hit per distinct chunk text | `search.py` | returns `draft` or `superseded` without `--all-status` |
 | Reranker | local cross-encoder over the top 20, keeps 8 | `rerank.py` | fetches weights at query time |
 | ask pipeline | prompt, generator call, citation parser, gate `decide` | `answer.py` | prints an answer other than the abstention line without an OK citation |
@@ -85,7 +85,7 @@ Global option `--config PATH`; the environment variable `CEREBROLLM_CONFIG` does
 | Domain | Holds | Trust and controls |
 |---|---|---|
 | D1 corpus files | the user's Markdown | read only; text is data, never instructions; read through `corpus.read_source`, which resolves the real path and refuses one outside a directory root; enumeration skips symlinks |
-| D2 index | chunk text, vectors, metadata, file hashes | local Postgres on a Unix socket, trust authentication, folder permissions are the control; derived data, rebuilt from D1 |
+| D2 index | chunk text, vectors, metadata, file hashes | local Postgres: by default on a Unix socket with trust authentication, where folder permissions are the control; optionally over TCP to 127.0.0.1 or ::1 only, with password authentication and the client connecting to that numeric address; derived data, rebuilt from D1 |
 | D3 model server | chunk text, queries, prompts, answers | Ollama at the configured address; loopback by default; not restricted by code (K-8) |
 | D4 reranker weights | a cross-encoder in a local folder | pinned by revision and sha256 in `models.toml`; not re-hashed at load (K-5) |
 | D5 generator output | text with quotes | untrusted until each quote passes `verify` |

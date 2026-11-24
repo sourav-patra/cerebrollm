@@ -2,7 +2,7 @@
 id: POLICY-cerebrollm
 kind: contract
 governs: 0.1.0 (first public release) and the 0.1.x line
-status: LOCKED 2026-10-30 by the owner (content of draft v4; the states in section 1 are as observed at the checked-at revision, before the lock)
+status: revision proposed, owner re-lock pending (previous lock: LOCKED 2026-10-30 by the owner (content of draft v4; the states in section 1 are as observed at the checked-at revision, before the lock); sha256 b242589a11e14c2bea669de0b601c4b59c3985d0bcfbd10f88d052f400ad4702)
 upstream: PRD-cerebrollm-2026-10-30.md (pin: PRD as locked 2026-10-30, sha256 622fee4d88bc88bdf7e59d767940b809c6651b72ce343b8075695724f84572f2); TRD and LLD follow
 published-files: SECURITY.md, CONTRIBUTING.md, docs/DATA.md, docs/RELEASING.md, LICENSE, NOTICE, docs/GOVERNANCE.md
 checked-at: source revision 02a00dd, 2026-10-30
@@ -119,7 +119,8 @@ the folder `~/.cerebrollm`. `search` and `ask` send the query to the embedding
 model, read the database and read source files for line spans; `ask` also sends
 the retrieved passages to the generator. `verify` reads source files and the
 database. `status` reads the database and the state file. `search`, `ask`,
-`verify` and `status` write nothing. PostgreSQL is reached over a Unix socket and
+`verify` and `status` write nothing. PostgreSQL is reached over a Unix socket, or over TCP to
+127.0.0.1 or ::1 (any other host is refused), and
 Ollama at the address in `cerebrollm.toml`, which defaults to 127.0.0.1:11434
 and is not restricted to loopback. `ask` refuses model names ending `-cloud` or
 `:cloud`. The package sets `ANONYMIZED_TELEMETRY=False`, `DO_NOT_TRACK=1`,
