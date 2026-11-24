@@ -13,7 +13,7 @@ Two index runs never write at once. No re-index needed.
 - The operating system and the server release the locks when the holding process dies, including by SIGKILL. `search`, `verify`, `ask`, `status` and `mcp` take no lock.
 - `index` refuses an `index.lock` that is a symbolic link or not a regular file.
 - The lock session sets `idle_session_timeout` to 0, so a server, database or role default that ends idle sessions cannot release the table locks during a long embedding step.
-- `index` refuses a `postgres.table` longer than 46 bytes, before it takes any lock. PostgreSQL cuts names at 63 bytes, so a longer table's derived names (`data_<table>_next`, its key and its sequence) could become another config's table, and that config's run would drop or rebuild it. A shorter name is unaffected.
+- `index` refuses a `postgres.table` longer than 46 bytes, before it takes any lock. The limit and its source are in [engine/README.md](engine/README.md). A shorter name is unaffected.
 
 ## 0.2.0
 

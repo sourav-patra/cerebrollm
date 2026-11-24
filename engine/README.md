@@ -65,7 +65,7 @@ A full `cerebrollm index` builds the `<table>_next` table while search reads the
 
 Only one `index` run, full or `--changed`, writes at a time. A second run exits at once with status 1 and one line naming the holder of `<state_dir>/index.lock` by process id, as the kernel lists it, or a table another run has locked. Search and the other commands take no lock.
 
-`postgres.table` may be at most 46 bytes, because PostgreSQL cuts the names derived from it (`data_<table>_next`, its key and its sequence) at 63 bytes. A longer name is refused before any lock is taken.
+`postgres.table` may be at most 46 bytes. PostgreSQL cuts names at 63 bytes, and the longest name derived from the table is the sequence `data_<table>_next_id_seq`, 17 bytes longer than the table name; a cut name could match another config's table. `index` checks this in `_refuse_overlong_table_names` (`engine/cerebrollm/indexer.py`) and refuses a longer name before it takes any lock.
 
 `[ollama] query_prefix` (optional; set for Qwen3-Embedding) is put before each search query and never before documents. `[ollama] num_ctx = 8192` is sent to Ollama with each embed call; `cerebrollm status` prints it.
 
