@@ -81,6 +81,15 @@ def _pdf_text(data):
     return "\n\n".join(parts) + "\n", tuple(pages)
 
 
+def page_bodies(text, pages):
+    """The texts a quote may be matched against: one per page of a PDF, without the generated "## Page N"
+    heading, so a quote can neither match a heading the PDF does not hold nor run across a page break; the
+    whole text, as a one-item list, for a file that is not a PDF (`pages` is None)."""
+    if pages is None:
+        return [text]
+    return [text[start + len(PAGE_HEADING % number) + 2:end] for number, start, end in pages]
+
+
 def page_range(pages, start, end):
     """(first page, last page) holding the character span start..end of a PDF's text; (None, None) when
     `pages` is None or the span is unknown (start below 0)."""

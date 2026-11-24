@@ -210,7 +210,7 @@ PDF that a rule admits is skipped.
    with the install command.
 
 How a PDF is read: `cerebrollm/documents.py` turns the file's bytes into text, and the corpus reader,
-`verify` and `search` all call that one function, so a quote is checked against exactly the text that
+`verify` and `search` all call that one function, so a quote is checked against the page text that
 was indexed. Each page that has text becomes one section: a `## Page N` line, then the page's text; the
 page keeps its number when an earlier page has no text. Short pages are not merged into the next page.
 The file's sha256 is over its bytes, as for any file. A page line that opens a code fence (three backticks or
@@ -229,10 +229,11 @@ Limits:
 - Text comes out in the order the PDF stores it; multi-column pages, tables and headers or footers can read
   out of order or repeat on every page. A quote is checked against that extracted text, not against the
   page as printed.
-- A quote that spans a page break does not verify, because the `## Page N` line sits between the two parts.
-  The same line is part of the indexed text, so a quote of `## Page 4` itself verifies.
+- `verify` checks a quote against one page's own text at a time. A quote that spans a page break does not
+  verify. The `## Page N` lines are added for indexing and display; they are not part of any page, so a quote
+  of `## Page 4` verifies only when the PDF itself says so.
 - `verify` prints no page; `ask` and `search` do.
-- To stop indexing PDFs, remove the `*.pdf` rule and run `cerebrollm index`. Do the same before you downgrade
+- To stop indexing PDFs (not possible when they are the only documents; see the paragraph after this list), remove the `*.pdf` rule and run `cerebrollm index`. Do the same before you downgrade
   to a version without PDF support: the older `verify` reads a PDF's raw bytes, so rows indexed from PDFs
   cannot be checked until they are rebuilt away. When PDFs were more than half of the live index, the full
   index stops with `refusing to swap` (a new table under half the live rows is refused) and leaves the live
@@ -244,6 +245,11 @@ Limits:
   and `cerebrollm index`. `tests/test_pdf_end_to_end.py` runs this procedure.
 - Not tested on PDFs of hundreds of pages. An encrypted PDF that needs a password is meant to be skipped as
   unreadable; that path is not tested.
+
+If PDFs are the only documents any rule admits, removing the PDF rule leaves the scan empty, and `cerebrollm
+index` refuses (`refusing to index: the corpus scan found no files`) before it builds anything. Dropping the
+live table does not help: the next `index` refuses too. Keep the PDF rule, or admit another document, before
+you rebuild.
 
 ## Chunking, embedded text and synonyms
 

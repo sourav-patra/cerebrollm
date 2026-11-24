@@ -76,15 +76,20 @@ def record_refusal(cfg, scan):
     show why (the PDFs it skipped). It is its own file, replaced whole, never part of state.json: an index that
     succeeds meanwhile loses nothing, and `status` shows the record only when it is newer than the last
     successful index. Nothing is written when the state folder is inside a registered root. Returns whether
-    a record was written."""
+    a record was written; raises OSError when the state folder cannot be written (run_index reports that and
+    still refuses)."""
     if state_dir_in_a_root(cfg):
         return False
     cfg.state_dir.mkdir(parents=True, exist_ok=True)
     record = {"epoch": time.time(), "time": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
               "files_seen": scan["counts"].get("seen", 0), "pdf": scan["pdf"]}
     tmp = cfg.state_dir / ("last_refused.%d.tmp" % os.getpid())
-    tmp.write_text(json.dumps(record, indent=2, sort_keys=True))
-    os.replace(tmp, cfg.refused_path)
+    try:
+        tmp.write_text(json.dumps(record, indent=2, sort_keys=True))
+        os.replace(tmp, cfg.refused_path)
+    except BaseException:
+        tmp.unlink(missing_ok=True)   # no half-written record is left behind
+        raise
     return True
 
 
@@ -96,7 +101,10 @@ def run_index(cfg, changed=False, log=print):
     started = time.time()
     entries, scan = corpus.enumerate_corpus(cfg)
     if not entries:
-        record_refusal(cfg, scan)
+        try:
+            record_refusal(cfg, scan)
+        except OSError as exc:   # a read-only or full state folder must not hide why the index refused
+            log("could not record this attempt for `status` (%s: %s)" % (type(exc).__name__, exc))
         raise SystemExit(" ".join(["refusing to index: the corpus scan found no files (would delete everything)."]
                                   + ["%s." % line for line in documents.pdf_lines(scan["pdf"])]))
     docs = make_documents(entries)
@@ -145,6 +153,8 @@ def run_index(cfg, changed=False, log=print):
         "duplicates_collapsed": scan["counts"].get("duplicates_collapsed", 0),
         "pdf": scan["pdf"],
     }
-    store.write_state(cfg, last_index=summary, last_index_time=time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+    finished = time.time()   # last_index_epoch keeps the fraction that last_index_time drops; `status` compares epochs
+    store.write_state(cfg, last_index=summary, last_index_epoch=finished,
+                      last_index_time=time.strftime("%Y-%m-%dT%H:%M:%S%z", time.localtime(finished)),
                       embedding_model=cfg.ollama["model"], embedding_digest=store.model_digest(cfg))
     return summary

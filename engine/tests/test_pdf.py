@@ -2,6 +2,7 @@
 and `search`; each page is its own section; hits and citations name the page; a PDF without a text layer
 is skipped and counted. No database. The tests that read a real PDF need the extra `cerebrollm[pdf]`."""
 import copy
+import datetime
 import hashlib
 import sys
 import tempfile
@@ -131,9 +132,9 @@ class TestCorpus(Fixture):
         self.assertEqual(self.verify_ok("docs/report.pdf", "The retry limit is 3 attempts."), "OK")
         self.assertEqual(self.verify_ok("docs/report.pdf", "The retry limit is 9 attempts."), "MISSING")
         self.assertEqual(self.verify_ok("docs/report.pdf", "Set the flag (see the guide) to enable it."), "OK")
-        # the "## Page N" line is part of the text that was indexed, so it is also what a quote is checked against
-        self.assertEqual(self.verify_ok("docs/report.pdf", "## Page 3"), "OK")
-        self.assertEqual(self.verify_ok("docs/report.pdf", "## Page 2"), "MISSING")   # page 2 has no text and no section
+        # the "## Page N" line is indexed text but not text of the PDF, so a quote is never checked against it
+        self.assertEqual(self.verify_ok("docs/report.pdf", "## Page 3"), "MISSING")
+        self.assertEqual(self.verify_ok("docs/report.pdf", "## Page 2"), "MISSING")
 
     def test_a_quote_across_a_page_break_does_not_verify(self):
         self.assertEqual(self.verify_ok("docs/report.pdf", "The default port is 8080. The retry limit is 3 attempts."),
@@ -261,7 +262,7 @@ class TestHitsAndCitations(Fixture):
     def test_ask_prints_the_page_of_a_verified_pdf_quote(self):
         hits = [self.hit("The default port is 8080.", 1, 1), self.hit("The retry limit is 3 attempts.", 3, 3)]
         raw = '"The retry limit is 3 attempts." [docs/report.pdf]'
-        with mock.patch.object(answer, "run_verify", return_value=("OK", "fine")):
+        with mock.patch.object(answer, "check_quote", return_value=("OK", "fine", "ab" * 32)):
             citations = answer.check_citations(self.cfg, raw, {"docs/report.pdf"}, hits)
         self.assertEqual(citations[0]["page"], "page 3")
         self.assertEqual(answer.verified_quotes(citations), '"The retry limit is 3 attempts." [docs/report.pdf (page 3)]')
@@ -269,14 +270,32 @@ class TestHitsAndCitations(Fixture):
     def test_a_quote_no_single_passage_holds_prints_without_a_page(self):
         hits = [self.hit("The default port is 8080.", 1, 1)]
         raw = '"The retry limit is 3 attempts." [docs/report.pdf]'
-        with mock.patch.object(answer, "run_verify", return_value=("OK", "fine")):
+        with mock.patch.object(answer, "check_quote", return_value=("OK", "fine", "ab" * 32)):
             citations = answer.check_citations(self.cfg, raw, {"docs/report.pdf"}, hits)
         self.assertIsNone(citations[0]["page"])
         self.assertEqual(answer.verified_quotes(citations), '"The retry limit is 3 attempts." [docs/report.pdf]')
 
+    def test_a_page_is_named_only_for_the_version_that_verified(self):
+        # the passage was indexed from a file whose quote sat on page 1; the file was then replaced and
+        # re-indexed with the quote on page 2, so verify answers OK for the new bytes
+        old = make_pdf([["The retry limit is 3 attempts."], ["Other text."]])
+        new = make_pdf([["Other text."], ["The retry limit is 3 attempts."]])
+        (self.root / "docs/report.pdf").write_bytes(new)
+        documents._pdf_text.cache_clear()
+        raw = '"The retry limit is 3 attempts." [docs/report.pdf]'
+        stale = dict(self.hit("The retry limit is 3 attempts.", 1, 1), sha256=hashlib.sha256(old).hexdigest())
+        with mock.patch.object(verify, "_indexed_sha", return_value={hashlib.sha256(new).hexdigest()}):
+            citations = answer.check_citations(self.cfg, raw, {"docs/report.pdf"}, [stale])
+            self.assertEqual(citations[0]["verify"], "OK")
+            self.assertIsNone(citations[0]["page"])
+            self.assertEqual(answer.verified_quotes(citations), '"The retry limit is 3 attempts." [docs/report.pdf]')
+            current = dict(stale, sha256=hashlib.sha256(new).hexdigest(), page_start=2, page_end=2)
+            citations = answer.check_citations(self.cfg, raw, {"docs/report.pdf"}, [current])
+            self.assertEqual(citations[0]["page"], "page 2")
+
     def test_markdown_citations_are_unchanged(self):
         raw = '"Plain notes about the port 8080 setting." [docs/notes.md]'
-        with mock.patch.object(answer, "run_verify", return_value=("OK", "fine")):
+        with mock.patch.object(answer, "check_quote", return_value=("OK", "fine", "ab" * 32)):
             citations = answer.check_citations(self.cfg, raw, {"docs/notes.md"}, [self.hit("x", None, None, "docs/notes.md")])
         self.assertNotIn("page", citations[0])
         self.assertEqual(answer.verified_quotes(citations), '"Plain notes about the port 8080 setting." [docs/notes.md]')
@@ -343,6 +362,33 @@ class TestSourceOfAHit(Fixture):
         (self.root / "docs/report.pdf").write_bytes(b"%PDF-1.4 damaged")
         documents._pdf_text.cache_clear()
         self.assertEqual(search._line_span(self.cfg, meta), (None, None, False, None, None))
+
+
+@unittest.skipIf(NEEDS_EXTRA, NEEDS_EXTRA or "")
+class TestPdfQuoteMatching(Fixture):
+    """verify matches a quote against one page's own text: not the generated page headings, not across a break."""
+    PDFS = {"docs/one.pdf": [["alpha"]], "docs/two.pdf": [["alpha"], ["beta"]],
+            "docs/lit.pdf": [["See Page 7 for the retry limit."]]}
+
+    def test_a_quote_inside_one_page_verifies(self):
+        self.assertEqual(self.verify_ok("docs/two.pdf", "alpha"), "OK")
+        self.assertEqual(self.verify_ok("docs/two.pdf", "beta"), "OK")
+        self.assertEqual(self.verify_ok("docs/lit.pdf", "See Page 7 for the retry limit."), "OK")
+        self.assertEqual(self.verify_ok("docs/lit.pdf", "Page 7 for the retry"), "OK")
+
+    def test_a_generated_page_heading_is_not_in_the_pdf(self):
+        self.assertEqual(self.verify_ok("docs/one.pdf", "Page 1"), "MISSING")
+        self.assertEqual(self.verify_ok("docs/one.pdf", "## Page 1"), "MISSING")
+        self.assertEqual(self.verify_ok("docs/lit.pdf", "Page 1"), "MISSING")
+
+    def test_a_quote_across_a_page_break_does_not_verify(self):
+        self.assertEqual(self.verify_ok("docs/two.pdf", "alpha ## Page 2 beta"), "MISSING")
+        self.assertEqual(self.verify_ok("docs/two.pdf", "alpha beta"), "MISSING")
+
+    def test_page_bodies_are_the_text_after_each_heading(self):
+        text, pages = documents.read_text(make_pdf([["alpha", "gamma"], None, ["beta"]]), "r.pdf")
+        self.assertEqual(documents.page_bodies(text, pages), ["alpha\ngamma", "beta"])
+        self.assertEqual(documents.page_bodies("# plain\n", None), ["# plain\n"])
 
 
 @unittest.skipIf(NEEDS_EXTRA, NEEDS_EXTRA or "")
@@ -483,6 +529,36 @@ class TestRefusalRecord(unittest.TestCase):
             indexer.run_index(cfg)
         self.assertEqual(cfg.state_path.read_bytes(), before)
         self.assertEqual(sorted(p.name for p in cfg.state_dir.iterdir()), ["last_refused.json", "state.json"])
+
+    def test_a_refusal_record_that_cannot_be_written_does_not_hide_the_refusal(self):
+        state = self.base / "state"
+        state.write_text("a file where the state folder should be")   # mkdir on it raises FileExistsError
+        cfg = self.cfg(state)
+        logged = []
+        with self.assertRaises(SystemExit) as raised:
+            indexer.run_index(cfg, log=logged.append)
+        self.assertEqual(str(raised.exception), "refusing to index: the corpus scan found no files (would delete everything).")
+        self.assertEqual(len(logged), 1)
+        self.assertIn("could not record", logged[0])
+
+    def test_a_failed_replacement_leaves_no_temporary_record(self):
+        cfg = self.cfg(self.base / "state")
+        with mock.patch("cerebrollm.indexer.os.replace", side_effect=OSError("disk full")):
+            with self.assertRaises(OSError):
+                indexer.record_refusal(cfg, {"counts": {}, "pdf": {}})
+        self.assertEqual(list(cfg.state_dir.iterdir()), [])
+
+    def test_a_refusal_and_an_index_in_the_same_second_are_ordered_by_their_epochs(self):
+        cfg = self.cfg(self.base / "state")
+        cfg.state_dir.mkdir()
+        cfg.refused_path.write_text('{"epoch": 1800000000.1, "time": "t", "files_seen": 2, "pdf": {}}')
+        # the index finished at 1800000000.9; its time string is cut to whole seconds (1800000000)
+        after = {"last_index_time": "2027-01-15T08:00:00+0000", "last_index_epoch": 1800000000.9}
+        before = {"last_index_time": "2027-01-15T08:00:00+0000", "last_index_epoch": 1799999999.5}
+        self.assertEqual(datetime.datetime.strptime(after["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp(),
+                         1800000000.0)
+        self.assertIsNone(status.newer_refusal(cfg, after))
+        self.assertEqual(status.newer_refusal(cfg, before)["files_seen"], 2)
 
     def test_status_shows_the_record_only_when_it_is_newer_than_the_last_index(self):
         cfg = self.cfg(self.base / "state")

@@ -121,7 +121,7 @@ Run on 2026-10-30: `gpt-oss-20b` prints `missing [('G2-EX-04', 3)]` for both gen
 - Answering from a model's own memory when the documents are silent. The layer abstains instead.
 - A hosted retrieval, embedding or reranking service, and any `-cloud` model in the engine.
 - Writing to, editing or deleting the user's documents. The engine reads them.
-- File types other than Markdown, and any multi-user server, login or access control.
+- File types other than Markdown, except the opt-in PDF text layer of RQ-09 (the `pdf` extra is installed and a tier rule names the PDFs; a PDF without a text layer is skipped and counted), and any multi-user server, login or access control.
 - Approximate vector indexes and scale beyond about 15,000 chunks until measured.
 - Training or fine-tuning a model.
 - Proving that a model's cited line answers the question. `verify` proves the quote exists in an indexed file; a grader or a person judges relevance.

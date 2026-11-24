@@ -2,6 +2,7 @@
 Skipped with the cause when either is down or the pdf extra is missing. Own table (a new name each run, dropped afterwards) and state directory."""
 import copy
 import tempfile
+import time
 import unittest
 import uuid
 from pathlib import Path
@@ -58,6 +59,7 @@ class TestPdfEndToEnd(unittest.TestCase):
         self.assertEqual(summary["documents"], 2)                    # notes.md and report.pdf; scan.pdf is skipped
         self.assertEqual(summary["pdf"], {"indexed": 1, "no_text_layer": 1})
         self.assertEqual(summary["chunks_located"], summary["chunks_embedded"])
+        self.assertLess(abs(store.read_state(cfg)["last_index_epoch"] - time.time()), 600)   # `status` compares this
 
         hits = search.run_search(cfg, "zephyrpdf retry limit attempts", k=5, mode="lexical")
         pdf_hits = [h for h in hits if h["path"] == "report.pdf"]

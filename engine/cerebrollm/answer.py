@@ -14,7 +14,7 @@ import tomllib
 import httpx
 
 from . import documents, rerank, search
-from .verify import _found, _requested, run_verify
+from .verify import _found, _requested, check_quote
 
 ABSTAIN = "Not in the sources."
 CANDIDATES, KEEP = 20, 8
@@ -163,12 +163,14 @@ def decide(answer, citations):
 NOT_RETRIEVED = "NOT_RETRIEVED"   # a citation of a file the generator was not shown; never counts, verify is not run
 
 
-def citation_page(path, quote, hits):
+def citation_page(path, quote, hits, sha256):
     """The page label ("page 4") of a quote in a PDF: the page of the first retrieved passage of that file
-    that holds the quote (compared as `verify` compares), else None."""
+    that holds the quote (compared as `verify` compares) and was indexed from the bytes `verify` just read
+    (`sha256`, from check_quote), else None. A file replaced and re-indexed since the search keeps its
+    old passages' page numbers out of the answer."""
     for h in hits or []:
         if (_requested(h["path"]) == _requested(path) and h.get("page_start") is not None
-                and _found(quote, h.get("text") or "")):
+                and sha256 and h.get("sha256") == sha256 and _found(quote, h.get("text") or "")):
             return documents.page_label(h["page_start"], h.get("page_end"))
     return None
 
@@ -181,12 +183,12 @@ def check_citations(cfg, answer, retrieved=None, hits=None):
     out = []
     for path, quote in extract_citations(answer or "", retrieved):
         if shown is not None and _requested(path) not in shown:   # "./a/b.md" is "a/b.md"; "../x" is never shown
-            code, detail = NOT_RETRIEVED, "path is not among the %d retrieved passages" % KEEP
+            code, detail, sha256 = NOT_RETRIEVED, "path is not among the %d retrieved passages" % KEEP, None
         else:
-            code, detail = run_verify(cfg, path, quote)
+            code, detail, sha256 = check_quote(cfg, path, quote)
         entry = {"path": path, "quote": quote, "verify": code, "detail": detail}
         if code == "OK" and documents.is_pdf(path):
-            entry["page"] = citation_page(path, quote, hits)
+            entry["page"] = citation_page(path, quote, hits, sha256)
         out.append(entry)
     return out
 

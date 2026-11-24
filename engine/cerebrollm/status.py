@@ -30,7 +30,10 @@ def newer_refusal(cfg, state):
     last successful index in `state`; else None."""
     try:
         refused = json.loads(cfg.refused_path.read_text())
-        built = datetime.datetime.strptime(state["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
+        # last_index_epoch has the same precision as the refusal's epoch; a state file from before it existed
+        # has only the time string, which is cut to whole seconds.
+        built = float(state["last_index_epoch"]) if "last_index_epoch" in state else datetime.datetime.strptime(
+            state["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
     except (KeyError, TypeError):   # no successful index yet
         built = 0.0
     except (OSError, ValueError):   # no record, or one that cannot be read
