@@ -310,6 +310,35 @@ class TestFormatWarning(unittest.TestCase):
                 self.assertTrue(err.startswith("WARNING:"), (raw, argv))
                 self.assertTrue(out.strip(), (raw, argv))
 
+    def run_real_status(self, *flags):
+        """cli.main(["status"]) through the real status module; only the config and the database lookup (no
+        Postgres here) are replaced."""
+        out, err = io.StringIO(), io.StringIO()
+        with mock.patch.object(config, "load", return_value=self.cfg), \
+                mock.patch.object(store, "table_exists", return_value=False), \
+                contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = cli.main(["status", *flags])
+        return code, out.getvalue(), err.getvalue()
+
+    def test_status_reports_a_state_file_it_cannot_read_instead_of_failing(self):
+        for raw in ("null", "[1, 2]", '{"last_index": {"mode": "fu'):
+            self.write_raw(raw)
+            code, out, err = self.run_real_status()
+            self.assertEqual(code, 0, raw)
+            self.assertIn("documents 0  chunks 0", out, raw)
+            self.assertEqual(err.count("\n"), 1, raw)
+            self.assertIn("cannot be read", err, raw)
+            code, out, err = self.run_real_status("--json")
+            self.assertEqual(code, 0, raw)
+            self.assertEqual(json.loads(out)["state"], {}, raw)
+
+    def test_status_reads_a_state_file_it_can_read(self):
+        self.write_state(last_index={"mode": "full", "index_format": store.INDEX_FORMAT,
+                                     "index_table": store.index_table(self.cfg)}, embedding_model="m1")
+        code, out, err = self.run_real_status()
+        self.assertEqual((code, err), (0, ""))
+        self.assertIn("embedding model: m1", out)
+
     def test_a_state_file_that_is_not_an_object_warns_and_is_replaced_on_write(self):
         for raw in ("null", "[1, 2]"):
             self.write_raw(raw)
