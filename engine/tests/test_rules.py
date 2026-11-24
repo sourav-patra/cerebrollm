@@ -150,6 +150,34 @@ class TestSupersession(unittest.TestCase):
         self.assertEqual(status["M/JOURNAL_x-r1.md"], "current")
         self.assertEqual(status["M/x-r1.md"], "superseded")
 
+    def test_configured_journal_prefixes_keep_dated_files_current(self):
+        names = ["notes-2026-11-10.md", "notes-2026-11-11.md", "notes-2026-11-12.md"]
+        entries = [{"root": "r", "path": "d/" + n, "status": "current", "text": ""} for n in names]
+        entries += [{"root": "r", "path": "d/JOURNAL_a-2026-10-20.md", "status": "current", "text": ""},
+                    {"root": "r", "path": "d/JOURNAL_a-2026-10-21.md", "status": "current", "text": ""}]
+        rules.apply_supersession(entries, journal_prefixes=["notes-"])
+        status = {e["path"]: e["status"] for e in entries}
+        self.assertEqual({p for p, s in status.items() if s == "current"},
+                         {"d/" + n for n in names} | {"d/JOURNAL_a-2026-10-21.md"})   # JOURNAL no longer listed
+        self.assertEqual(status["d/JOURNAL_a-2026-10-20.md"], "superseded")
+
+    def test_default_journal_prefix_supersedes_other_dated_files(self):
+        names = ["notes-2026-11-10.md", "notes-2026-11-11.md"]
+        entries = [{"root": "r", "path": "d/" + n, "status": "current", "text": ""} for n in names]
+        rules.apply_supersession(entries)
+        self.assertEqual({e["path"]: e["status"] for e in entries},
+                         {"d/notes-2026-11-10.md": "superseded", "d/notes-2026-11-11.md": "current"})
+
+    def test_prefix_match_is_case_sensitive_and_empty_list_exempts_nothing(self):
+        entries = [{"root": "r", "path": "d/journal_a-2026-10-20.md", "status": "current", "text": ""},
+                   {"root": "r", "path": "d/journal_a-2026-10-21.md", "status": "current", "text": ""}]
+        rules.apply_supersession(entries)
+        self.assertEqual(entries[0]["status"], "superseded")
+        entries = [{"root": "r", "path": "d/JOURNAL_a-2026-10-20.md", "status": "current", "text": ""},
+                   {"root": "r", "path": "d/JOURNAL_a-2026-10-21.md", "status": "current", "text": ""}]
+        rules.apply_supersession(entries, journal_prefixes=[])
+        self.assertEqual(entries[0]["status"], "superseded")
+
     def test_family_key(self):
         self.assertEqual(rules.family("GUIDE-PROJECT-REV3-2026-10-18.md")[0], "guide-project")
         self.assertEqual(rules.family("GUIDE-PROJECT-2026-10-11.md")[0], "guide-project")
