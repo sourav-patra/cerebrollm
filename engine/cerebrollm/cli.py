@@ -6,6 +6,15 @@ import sys
 from . import __version__, config
 
 
+def _date_arg(text):
+    from . import search
+    try:
+        search.parse_instant(text)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from None
+    return text
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="cerebrollm", description=__doc__)
     ap.add_argument("--config", help="path to cerebrollm.toml")
@@ -21,6 +30,9 @@ def main(argv=None):
     p.add_argument("--mode", choices=["lexical", "vector", "hybrid"])
     p.add_argument("--all-status", action="store_true", help="include draft and superseded; no tier boost")
     p.add_argument("--project")
+    p.add_argument("--path-prefix", help="only documents at or under this root-relative path, at a path-segment boundary")
+    p.add_argument("--since", type=_date_arg, help="only documents dated at or after this ISO 8601 date or date-time (a bare date is 00:00 UTC)")
+    p.add_argument("--until", type=_date_arg, help="only documents dated at or before this ISO 8601 date or date-time (a bare date includes that whole day, UTC)")
     p.add_argument("--synonyms", action="store_true", default=None, help="apply the [synonyms] table to the lexical arm (off by default)")
     p.add_argument("--json", action="store_true")
 
@@ -50,7 +62,14 @@ def main(argv=None):
         print(json.dumps(run_index(cfg, changed=args.changed), indent=2))
     elif args.cmd == "search":
         from . import search
-        results = search.run_search(cfg, args.query, args.k, args.mode, args.all_status, args.project, args.synonyms)
+        scope = {name: getattr(args, name) for name in ("path_prefix", "since", "until")
+                 if getattr(args, name) is not None}
+        try:
+            search.parse_scope(args.since, args.until)
+        except ValueError as exc:
+            ap.error(str(exc))
+        results = search.run_search(cfg, args.query, args.k, args.mode, args.all_status, args.project, args.synonyms,
+                                    **scope)
         results = search.cap_text(results, cfg.search["token_budget"])
         print(search.to_json(results) if args.json else search.format_hits(results))
     elif args.cmd == "ask":

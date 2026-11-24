@@ -56,7 +56,7 @@ The configuration file is found in this order: `--config PATH`, the environment 
 ```
 cerebrollm index [--changed]          # no flag: build <table>_next, then swap it in; --changed: re-embed only changed files
 cerebrollm status                     # counts per tier and status, skips, last index, model and digest
-cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--json]
+cerebrollm search "QUESTION" [--k 8] [--mode lexical|vector|hybrid] [--all-status] [--project P] [--path-prefix PATH] [--since T] [--until T] [--json]
 cerebrollm verify PATH "QUOTE" [--ref REF]
 cerebrollm ask "QUESTION" [--model gpt-oss:20b] [--think low|medium|high|off] [--no-rerank] [--show-text] [--json]
 ```
@@ -75,6 +75,37 @@ shows rank, score, tier, status, path, line span, ref, project, heading path, sh
 `also_at=[...]` when copies exist elsewhere, and text.
 `SOURCE-CHANGED` is printed when the file on disk no longer matches the indexed sha256, in which
 case the line span may be wrong.
+
+`--path-prefix`, `--since` and `--until` narrow a search and combine with each other and with `--project`.
+They apply inside both retrieval arms, before each arm's candidate limit, so a matching passage that ranks
+below the unfiltered candidates can still be found. The result can hold fewer than `k` hits when fewer documents
+match, when matching passages share the same chunk text (shown once), or when the usual eligibility checks drop
+a row.
+
+- `--path-prefix PATH` keeps documents whose root-relative `path` is `PATH` or lies under it, at a path-segment
+  boundary: `a/b` matches `a/b` and `a/b/x.md`, never `a/bc.md`. One trailing `/` is ignored, and `%`, `_` and `\` in
+  the prefix are literal.
+- `--since T` and `--until T` take an ISO 8601 date or date-time and compare it as an instant with the document's
+  indexed date (the commit date of the configured ref for a git root, the file date for a folder root), so
+  `2026-01-01T05:30:00+05:30` and `2026-01-01T00:00:00Z` are the same bound. A bare date is 00:00 UTC for
+  `--since`; for `--until` it includes that whole day (up to, not including, the next 00:00 UTC). A date-time
+  needs `T` between date and time (`2026-01-01T12:00:00`; a space is invalid), is UTC when it has no offset, and
+  is an inclusive bound. A bad date (an empty string included), or a `--since`
+  after `--until`, exits with status 2 and an argparse error. A document whose indexed date cannot be read as an
+  ISO 8601 date-time matches no date bound; it does not affect other documents.
+- Limits: a copy listed in `also_at` is not matched, only the path of the hit itself, so a search under
+  `--path-prefix` does not find a document through its duplicate elsewhere. A file whose date moved with its
+  content unchanged keeps the date indexed for it: `cerebrollm index --changed` leaves a document alone when its
+  content and classification are unchanged, so only a full `cerebrollm index` stores the new date. The
+  filters need no re-index.
+- How it runs: the matching document ids are looked up first (one query on the live table) and passed to both
+  arms as one list, so identical paths in different roots are told apart; every hit is then checked against the
+  path and date range again. A full index swap that lands between the lookup and the retrieval can therefore
+  cost hits, and never adds one outside the range. A list of 1,000 documents was tested, and one run with 3,000 took 0.74 s for the
+  three searches on the development machine; larger lists are not measured. To measure one, run from `engine/`:
+  `CEREBROLLM_SCOPE_BULK_DOCS=10000 python -m pytest -q -rs tests/test_scope_filters.py -k long_path_list --durations=3`
+  (needs Postgres; it indexes that many one-line documents into a table of its own and searches them under one
+  prefix in each mode).
 
 `verify` re-reads the source (file, or `git show REF:PATH`), compares the quote with whitespace
 normalised and requires it to start and end on a word boundary (`port 80` does not match `port 8080`).
@@ -128,7 +159,8 @@ Citation format limit: only `"quote" [path]` (or `[path:12]`, `[path#L12-30]`, `
 ## MCP server
 
 `cerebrollm mcp` serves two tools over MCP on stdio: `search` and `verify`. It is read-only and exposes
-no index, status or write tool. `search` takes `query`, `k`, `mode`, `all_status`, `project`, `page` and `rerank`
+no index, status or write tool. `search` takes `query`, `k`, `mode`, `all_status`, `project`, `page`, `rerank`, and the optional `path_prefix`, `since` and `until` (same meaning as the command line flags;
+a bad date returns one `Invalid date` line)
 and returns one page of hits (`k` per page, default from `cerebrollm.toml`) capped at `token_budget`.
 The result starts with a line stating that the text is retrieved data, each hit sits between
 `<<<BEGIN RETRIEVED DATA>>>` and `<<<END RETRIEVED DATA>>>`, and the last line says whether another
@@ -213,6 +245,9 @@ read), table rows, embedded text and span checks, synonyms, search-time collapse
 output formatting, verify outcomes on a temp file, and one end-to-end run on a
 fixture folder against the real Postgres (own table, dropped afterwards) and Ollama. Test scratch files
 go under `$HOME/.cerebrollm/test-scratch`. The end-to-end test is skipped with a message if either is down.
+`tests/test_scope_filters.py` indexes small fixture folders and git repositories into tables of its own
+(`cerebrollm_scope_<label>_<random>`, refused if already in use, dropped afterwards) with a stand-in embedding
+model, so it needs Postgres but not Ollama; it is skipped with a message when Postgres is down.
 
 ## Known limits and not measured
 
