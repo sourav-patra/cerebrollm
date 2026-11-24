@@ -167,12 +167,12 @@ def citation_page(path, quote, hits, sha256):
     """The page label ("page 4") of a quote in a PDF: the page of the first retrieved passage of that file
     that holds the quote (compared as `verify` compares) and was indexed from the bytes `verify` just read
     (`sha256`, from check_quote), else None. A file replaced and re-indexed since the search keeps its
-    old passages' page numbers out of the answer. The generated page heading of a passage is not searched,
-    so a quote that only another page holds is not credited to this passage's page."""
+    old passages' page numbers out of the answer. Known limit: the passage text starts with its generated
+    "## Page N" line, so a quote equal to such a line (found by verify on a page whose own text holds it) can
+    be credited to the page whose heading it matches (engine/README.md, PDF documents, limits)."""
     for h in hits or []:
         if (_requested(h["path"]) == _requested(path) and h.get("page_start") is not None
-                and sha256 and h.get("sha256") == sha256
-                and _found(quote, documents.without_page_headings(h.get("text") or ""))):
+                and sha256 and h.get("sha256") == sha256 and _found(quote, h.get("text") or "")):
             return documents.page_label(h["page_start"], h.get("page_end"))
     return None
 

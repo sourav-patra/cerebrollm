@@ -25,15 +25,28 @@ def socket_dir_open(mode):
     return mode.isdigit() and int(mode, 8) & 0o077 != 0
 
 
+def last_index_epoch(state):
+    """When the last successful index finished, as seconds since the epoch. last_index_time is cut to whole
+    seconds; last_index_epoch keeps the fraction, so it is used when its whole second equals that of
+    last_index_time. An older engine that indexed after a downgrade updates last_index_time and leaves a stale
+    last_index_epoch, which then disagrees, so the time string wins. KeyError when `state` has no
+    last_index_time (no successful index yet); ValueError when it cannot be read."""
+    built = datetime.datetime.strptime(state["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
+    try:
+        epoch = float(state["last_index_epoch"])
+        if int(epoch) == int(built):
+            return epoch
+    except (KeyError, TypeError, ValueError, OverflowError):
+        pass
+    return built
+
+
 def newer_refusal(cfg, state):
     """The record of an index attempt that found no files (indexer.record_refusal), when it is newer than the
     last successful index in `state`; else None."""
     try:
         refused = json.loads(cfg.refused_path.read_text())
-        # last_index_epoch has the same precision as the refusal's epoch; a state file from before it existed
-        # has only the time string, which is cut to whole seconds.
-        built = float(state["last_index_epoch"]) if "last_index_epoch" in state else datetime.datetime.strptime(
-            state["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
+        built = last_index_epoch(state)
     except (KeyError, TypeError):   # no successful index yet
         built = 0.0
     except (OSError, ValueError):   # no record, or one that cannot be read

@@ -293,8 +293,9 @@ class TestHitsAndCitations(Fixture):
             citations = answer.check_citations(self.cfg, raw, {"docs/report.pdf"}, [current])
             self.assertEqual(citations[0]["page"], "page 2")
 
-    def test_a_generated_heading_does_not_give_a_page_to_a_quote_found_on_another_page(self):
-        # only page 2 holds the text "## Page 1"; the passage of page 1 has that line only as its generated heading
+    def test_known_limit_a_quote_equal_to_a_generated_heading_can_name_the_heading_s_page(self):
+        # Pins the limit written in engine/README.md. Only page 2 holds the text "## Page 1", so verify accepts the
+        # quote, but the passage of page 1 starts with that line as its generated heading and is listed first.
         data = make_pdf([["alpha"], ["## Page 1"]])
         (self.root / "docs/report.pdf").write_bytes(data)
         documents._pdf_text.cache_clear()
@@ -303,8 +304,10 @@ class TestHitsAndCitations(Fixture):
         with mock.patch.object(verify, "_indexed_sha", return_value={sha}):
             citations = answer.check_citations(self.cfg, '"## Page 1" [docs/report.pdf]', {"docs/report.pdf"}, hits)
         self.assertEqual(citations[0]["verify"], "OK")
-        self.assertNotEqual(citations[0]["page"], "page 1")
-        self.assertEqual(documents.without_page_headings("## Page 2\n\nbody\n## Page 3\n\nmore"), "\n\nbody\n\n\nmore")
+        self.assertEqual(citations[0]["page"], "page 1")   # the limit: the page whose generated heading matches
+        with mock.patch.object(verify, "_indexed_sha", return_value={sha}):
+            citations = answer.check_citations(self.cfg, '"## Page 1" [docs/report.pdf]', {"docs/report.pdf"}, hits[::-1])
+        self.assertEqual(citations[0]["page"], "page 2")   # the first passage that holds the text decides
 
     def test_markdown_citations_are_unchanged(self):
         raw = '"Plain notes about the port 8080 setting." [docs/notes.md]'
@@ -581,6 +584,21 @@ class TestRefusalRecord(unittest.TestCase):
                          1800000000.0)
         self.assertIsNone(status.newer_refusal(cfg, after))
         self.assertEqual(status.newer_refusal(cfg, before)["files_seen"], 2)
+
+    def test_a_stale_epoch_left_by_an_older_engine_is_ignored(self):
+        # this version indexed at 1800000000.5; after a downgrade the older engine refused at 1800000200.1 and then
+        # indexed successfully at 08:05:00 (1800000300), updating last_index_time but not last_index_epoch
+        cfg = self.cfg(self.base / "state")
+        cfg.state_dir.mkdir()
+        cfg.refused_path.write_text('{"epoch": 1800000200.1, "time": "t", "files_seen": 2, "pdf": {}}')
+        stale = {"last_index_time": "2027-01-15T08:05:00+0000", "last_index_epoch": 1800000000.5}
+        self.assertEqual(status.last_index_epoch(stale), 1800000300.0)
+        self.assertIsNone(status.newer_refusal(cfg, stale))
+        agreeing = {"last_index_time": "2027-01-15T08:05:00+0000", "last_index_epoch": 1800000300.9}
+        self.assertEqual(status.last_index_epoch(agreeing), 1800000300.9)
+        for garbage in ("x", None, float("inf")):
+            self.assertEqual(status.last_index_epoch({"last_index_time": "2027-01-15T08:05:00+0000",
+                                                      "last_index_epoch": garbage}), 1800000300.0)
 
     def test_status_shows_the_record_only_when_it_is_newer_than_the_last_index(self):
         cfg = self.cfg(self.base / "state")

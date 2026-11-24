@@ -17,7 +17,6 @@ PAGE_HEADING = "## Page %d"
 # code and join the pages into one section, so a backslash goes in front of it. The indexed text and the text
 # `verify` checks both carry the backslash, so they still agree; only a quote that starts with a fence differs.
 FENCE_LINE = re.compile(r"(?m)^([ \t]*)(```|~~~)")
-PAGE_HEADING_LINE = re.compile(r"(?m)^## Page \d+[ \t]*$")   # a line shaped like a generated heading
 
 
 class DocumentError(Exception):
@@ -82,13 +81,6 @@ def _pdf_text(data):
     if not parts:
         raise NoTextLayer("the PDF has no text layer")
     return "\n\n".join(parts) + "\n", tuple(pages)
-
-
-def without_page_headings(text):
-    """`text` with every line shaped like a generated page heading emptied. A passage from a PDF holds its
-    page's heading line; a quote that matches only that line is not in the PDF. A line of page text that looks
-    like a heading is emptied as well: the cost is that such a passage names no page, never a wrong one."""
-    return PAGE_HEADING_LINE.sub("", text)
 
 
 def page_bodies(text, pages):

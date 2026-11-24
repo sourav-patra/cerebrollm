@@ -1,8 +1,8 @@
 """A PDF through the whole pipeline against the real Postgres and Ollama: index, search, verify, ask, status.
 Skipped with the cause when either is down or the pdf extra is missing. Own table (a new name each run, dropped afterwards) and state directory."""
 import copy
+import datetime
 import tempfile
-import time
 import unittest
 import uuid
 from pathlib import Path
@@ -59,7 +59,9 @@ class TestPdfEndToEnd(unittest.TestCase):
         self.assertEqual(summary["documents"], 2)                    # notes.md and report.pdf; scan.pdf is skipped
         self.assertEqual(summary["pdf"], {"indexed": 1, "no_text_layer": 1})
         self.assertEqual(summary["chunks_located"], summary["chunks_embedded"])
-        self.assertLess(abs(store.read_state(cfg)["last_index_epoch"] - time.time()), 600)   # `status` compares this
+        state = store.read_state(cfg)   # `status` compares last_index_epoch; it must agree with last_index_time to the second
+        stamp = datetime.datetime.strptime(state["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
+        self.assertEqual(int(state["last_index_epoch"]), int(stamp))
 
         hits = search.run_search(cfg, "zephyrpdf retry limit attempts", k=5, mode="lexical")
         pdf_hits = [h for h in hits if h["path"] == "report.pdf"]

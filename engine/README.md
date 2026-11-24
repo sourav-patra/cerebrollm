@@ -220,7 +220,8 @@ cannot swallow the next page's heading; a quote that itself starts with a fence 
 Pages show up in the output. A `search` hit prints `report.pdf (page 4)` where a Markdown hit prints a
 line span (`page_start` and `page_end` in `--json`), the generator sees `Source: report.pdf (page 4)`, and
 `ask` prints `"quote" [report.pdf (page 4)]` when one retrieved passage holds the quote and was indexed from the
-file `verify` read (after a re-index it prints the path alone). A passage across a page break is `pages 4-5`.
+file `verify` read (if the PDF's bytes changed after the search, it prints the path alone). A passage across a
+page break is `pages 4-5`.
 
 Limits:
 
@@ -233,17 +234,26 @@ Limits:
   verify. The `## Page N` lines are added for indexing and display; they are not part of any page, so a quote
   of `## Page 4` verifies only when the PDF itself says so.
 - `verify` prints no page; `ask` and `search` do.
-- To stop indexing PDFs, remove the `*.pdf` rule and run `cerebrollm index` (the two paragraphs after this list
-  say when that cannot rebuild). Do the same before you downgrade
+- `ask` finds a quote's page by searching the retrieved passages, and the first passage of a page starts with
+  its generated `## Page N` line. Known limit: when a quote equals such a line (`## Page 1`) and only another page holds that
+  text in the PDF, `verify` accepts it and `ask` can name the page whose generated heading matched. Quotes of
+  page text are not affected.
+- To stop indexing PDFs, remove the `*.pdf` rule from your configuration file and run
+  `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml index` (the two paragraphs after this list say when that
+  cannot rebuild). Do the same before you downgrade
   to a version without PDF support: the older `verify` reads a PDF's raw bytes, so rows indexed from PDFs
   cannot be checked until they are rebuilt away. When PDFs were more than half of the live index, the full
   index stops with `refusing to swap` (a new table under half the live rows is refused) and leaves the live
   index, PDF rows included, as it was (`search` and `verify` already ignore a path that no rule admits, so
   the rows are hidden but not removed). Replacing it is your decision, because it deletes the live index until
   the rebuild has finished (the source files are not touched; the study corpus of 13,431 chunks took 9.7
-  minutes). If you decide to, and `index` printed `refusing to swap` for a new table with rows, drop the live table, then index again:
+  minutes). If you decide to, and that `index` printed `refusing to swap` for a new table with rows, drop the
+  live table of the same configuration file, then index again with it:
   `python -c "from cerebrollm import config, store; c = config.load('PATH-TO-YOUR-cerebrollm.toml'); store.drop_table(c, c.data_table)"`
-  and `cerebrollm index`. `tests/test_pdf_end_to_end.py` runs this procedure.
+  and `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml index`. Check with
+  `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml status`. Use the one path in every command: without
+  `--config`, `cerebrollm` reads `CEREBROLLM_CONFIG` or the shipped default, which can be another index.
+  `tests/test_pdf_end_to_end.py` runs this procedure.
 - Not tested on PDFs of hundreds of pages. An encrypted PDF that needs a password is meant to be skipped as
   unreadable; that path is not tested.
 
@@ -252,9 +262,9 @@ corpus scan found no files`) before building anything; the live index stays. A r
 file is not enough: it must also avoid the never-index paths and symlinks, pass the secret scan, and not be a
 copy of another file.
 
-Drop the live table only after `index` has printed `refusing to swap` for a new table with more than 0 rows;
-that shows the scan found documents to rebuild from. Dropping it first would leave you with no index, because
-the next `index` refuses too.
+Drop the live table only after `index`, run with the same `--config` file with its PDF rule removed, has
+printed `refusing to swap` for a new table with more than 0 rows; that shows the scan found documents to
+rebuild from. Dropping it first would leave you with no index, because the next `index` refuses too.
 
 ## Chunking, embedded text and synonyms
 
