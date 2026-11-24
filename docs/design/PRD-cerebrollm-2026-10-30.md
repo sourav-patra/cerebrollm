@@ -2,7 +2,7 @@
 id: PRD-cerebrollm
 kind: contract
 governs: 0.1.0 (first public release); section 6 lists what 0.2 proposes
-status: LOCKED 2026-10-30 by the owner (content of draft v6)
+status: revision proposed, owner re-lock pending (RQ-09 only: opt-in PDF text); locked 2026-10-30 by the owner on sha256 622fee4d88bc88bdf7e59d767940b809c6651b72ce343b8075695724f84572f2 (content of draft v6)
 sources: README.md (Aim, agreed 2026-10-29), engine/ code and tests, eval/RESULTS.md, eval/GRADING-v2.md, eval/RESULTS-v2.md, eval/runs/v2/summary.json, research/model-study/STUDY-DONE.md, eval/runs/retrieval/R-summary.md
 checked-at: engine code at source revision 02a00dd (unchanged at 233ef75: `git diff --stat 02a00dd 233ef75 -- engine` prints nothing); results at 233ef75, 2026-10-30 (the public repository starts a new history; the hashes are for the review record)
 ---
@@ -79,7 +79,7 @@ Priority: must for 0.1.0, should for 0.1.0 if it can be checked, P for a proposa
 | RQ-06 | `verify` returns OK, CHANGED, MISSING, GONE or UNINDEXED and exits 0 only for OK | `engine/tests/test_verify.py` | R: 7 tests, passed on 2026-10-29. must |
 | RQ-07 | The MCP server offers `search` and `verify` only, read-only, with retrieved text marked as data | `engine/tests/test_mcp_server.py` | R: 19 tests, passed on 2026-10-29. must |
 | RQ-08 | In the default configuration `index`, `search`, `ask` and `verify` call no hosted model or embedding service (a non-loopback Ollama address is not refused until LLD I-04); `ask` refuses model names ending `-cloud` or `:cloud` | tests for the refusal; a network capture during `ask` | R: refusal tested on 2026-10-29. N: no capture has been run; command: run `ask` under `strace -f -e trace=connect` and list the addresses. must |
-| RQ-09 | Only Markdown that matches a tier rule is indexed; never-index paths, symlinks and files flagged by the secret scan are skipped and counted | `engine/tests/test_rules.py`, `test_corpus.py` | R: passed on 2026-10-29. must |
+| RQ-09 | Only Markdown that matches a tier rule is indexed, and, when the optional `pdf` extra is installed and a tier rule names them, the text layer of PDF documents (a PDF without a text layer is skipped and counted); never-index paths, symlinks and files flagged by the secret scan are skipped and counted | `engine/tests/test_rules.py`, `test_corpus.py`, `test_pdf.py` | R: Markdown part passed on 2026-10-29; the PDF part is a proposed revision, tested in `test_pdf.py` on 2026-11-21. must |
 | RQ-10 | Default search returns `locked` and `current` documents, boosted by tier and recency; `superseded` and `draft` appear only with `--all-status` | `engine/tests/test_search.py`, `test_rules.py` | R: passed on 2026-10-29. must |
 | RQ-11 | A full rebuild fills a new table and swaps it in; a new table that is empty or under half the live rows is refused | `engine/tests/test_swap.py` | R: 9 tests, passed on 2026-10-29. must |
 | RQ-12 | The evaluation compares arms with and without retrieval on public items and publishes the item files, the grading rules and the per-answer records | `eval/` contents; `python3 eval/check_items_v2.py` | E: v1 comparison in `eval/RESULTS.md`; R: v2 graded in `eval/RESULTS-v2.md`. must |
@@ -121,7 +121,7 @@ Run on 2026-10-30: `gpt-oss-20b` prints `missing [('G2-EX-04', 3)]` for both gen
 - Answering from a model's own memory when the documents are silent. The layer abstains instead.
 - A hosted retrieval, embedding or reranking service, and any `-cloud` model in the engine.
 - Writing to, editing or deleting the user's documents. The engine reads them.
-- File types other than Markdown, and any multi-user server, login or access control.
+- File types other than Markdown, except the opt-in PDF text layer of RQ-09 (the `pdf` extra is installed and a tier rule names the PDFs; a PDF without a text layer is skipped and counted), and any multi-user server, login or access control.
 - Approximate vector indexes and scale beyond about 15,000 chunks until measured.
 - Training or fine-tuning a model.
 - Proving that a model's cited line answers the question. `verify` proves the quote exists in an indexed file; a grader or a person judges relevance.

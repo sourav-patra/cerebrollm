@@ -5,7 +5,7 @@ import posixpath
 import re
 import unicodedata
 
-from . import corpus, rules, store
+from . import corpus, documents, rules, store
 
 LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 MARKER = re.compile(r"(?m)^\s*(?:[-+#>]+|\d+\.)\s+")
@@ -121,6 +121,14 @@ def _indexed_sha(cfg, root_name, rel, ref):
 
 def run_verify(cfg, path, quote, ref=None):
     """Return (code, detail); code is OK, CHANGED, MISSING, GONE or UNINDEXED."""
+    return check_quote(cfg, path, quote, ref)[:2]
+
+
+def check_quote(cfg, path, quote, ref=None):
+    """Return (code, detail, sha256) as run_verify does, plus the full sha256 of the file bytes the quote was
+    checked against (None when no file was read or the quote was not found in it). A caller that reuses facts
+    it took from an earlier read of the file, such as a page number, uses them only when this hash is the
+    hash it took them from."""
     seen_gone, absent = False, None
     for root, rel, rref in _resolve(cfg, path, ref):
         asked = _requested(rel)
@@ -144,19 +152,24 @@ def run_verify(cfg, path, quote, ref=None):
         except (FileNotFoundError, IsADirectoryError, PermissionError):
             seen_gone = True
             continue
-        text = data.decode("utf-8", "replace")
-        if rules.secret_hit(text) or not _found(quote, text):
-            return "MISSING", "quote not found in %s@%s" % (asked, rref)
+        try:
+            text, pages = documents.read_text(data, rel)
+        except documents.DocumentError:   # a PDF the index skipped answers as a quote that is absent
+            return "MISSING", "quote not found in %s@%s" % (asked, rref), None
+        # A PDF quote is matched against each page's own text (page_bodies), not the whole text with its
+        # generated page headings: a heading is not in the file, and a quote cannot run across a page break.
+        if rules.secret_hit(text) or not any(_found(quote, body) for body in documents.page_bodies(text, pages)):
+            return "MISSING", "quote not found in %s@%s" % (asked, rref), None
         sha = hashlib.sha256(data).hexdigest()
         indexed = _indexed_sha(cfg, root["name"], rel, rref)
         if not indexed:
-            return "UNINDEXED", "quote present but %s@%s is not in the index; sha256 %s" % (rel, rref, sha[:12])
+            return "UNINDEXED", "quote present but %s@%s is not in the index; sha256 %s" % (rel, rref, sha[:12]), sha
         if sha in indexed:
-            return "OK", "%s@%s sha256 %s" % (rel, rref, sha[:12])
+            return "OK", "%s@%s sha256 %s" % (rel, rref, sha[:12]), sha
         return "CHANGED", "quote present; %s@%s changed since indexing (now %s, indexed %s)" % (
-            rel, rref, sha[:12], sorted(indexed)[0][:12])
+            rel, rref, sha[:12], sorted(indexed)[0][:12]), sha
     if absent:
-        return absent
+        return absent + (None,)
     if seen_gone:
-        return "GONE", "source not found: " + path
-    return "GONE", "no registered root matches: " + path
+        return "GONE", "source not found: " + path, None
+    return "GONE", "no registered root matches: " + path, None

@@ -61,7 +61,7 @@ class TestCitations(unittest.TestCase):
     def test_check_citations_runs_verify_for_each_pair(self):
         text = '"%s" [alpha/review.md] "%s" [x/y.md]' % (QUOTE, "Another sentence that is long enough.")
         codes = iter([("OK", "fine"), ("MISSING", "gone")])
-        with mock.patch("cerebrollm.answer.run_verify", lambda cfg, p, q: next(codes)) as _:
+        with mock.patch("cerebrollm.answer.check_quote", lambda cfg, p, q: next(codes) + (None,)) as _:
             out = answer.check_citations(None, text)
         self.assertEqual([c["verify"] for c in out], ["OK", "MISSING"])
         self.assertEqual(out[1]["path"], "x/y.md")
@@ -131,7 +131,7 @@ def pipeline(generated, verify_codes, hits=None, **kw):
     cfg = config.load()
     with mock.patch("cerebrollm.search.run_search", lambda *a, **k: [dict(h) for h in hits]), \
             mock.patch.object(rerank, "_model", FakeEncoder()), \
-            mock.patch("cerebrollm.answer.run_verify", lambda c, p, q: (verify_codes.pop(0), "d")):
+            mock.patch("cerebrollm.answer.check_quote", lambda c, p, q: (verify_codes.pop(0), "d", None)):
         return answer.ask(cfg, "review rounds", generate=lambda prompt: generated, **kw)
 
 
@@ -192,7 +192,7 @@ class TestAsk(unittest.TestCase):
         self.assertFalse(res["abstained"])
         cfg = config.load()
         hits = [hit(1, text="alpha text")]
-        with mock.patch("cerebrollm.search.run_search", lambda *a, **k: [dict(h) for h in hits]),                 mock.patch.object(rerank, "_model", FakeEncoder()),                 mock.patch("cerebrollm.answer.run_verify", lambda c, p, q: ("OK", "d")):
+        with mock.patch("cerebrollm.search.run_search", lambda *a, **k: [dict(h) for h in hits]),                 mock.patch.object(rerank, "_model", FakeEncoder()),                 mock.patch("cerebrollm.answer.check_quote", lambda c, p, q: ("OK", "d", None)):
             res = answer.ask(cfg, "What does review_rounds set?", has=lambda t: t == "reviewrounds",
                              generate=lambda p: GOOD)
         self.assertFalse(res["abstained"])
@@ -278,7 +278,7 @@ class TestCli(unittest.TestCase):
         with mock.patch("cerebrollm.search.run_search", lambda *a, **k: [hit(1, text="alpha")]), \
                 mock.patch.object(rerank, "_model", FakeEncoder()), \
                 mock.patch("cerebrollm.answer.ollama_generate", lambda *a, **k: generated), \
-                mock.patch("cerebrollm.answer.run_verify", lambda c, p, q: (codes.pop(0), "d")), \
+                mock.patch("cerebrollm.answer.check_quote", lambda c, p, q: (codes.pop(0), "d", None)), \
                 contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
             rc = cli.main(["ask", *argv])
         return rc, out.getvalue(), err.getvalue()

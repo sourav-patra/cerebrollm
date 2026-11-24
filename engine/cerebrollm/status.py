@@ -1,8 +1,10 @@
 """cerebrollm status."""
+import datetime
+import json
 import os
 import stat
 
-from . import rules, store
+from . import documents, rules, store
 
 
 def socket_dir_mode(path):
@@ -21,6 +23,35 @@ def socket_dir_mode(path):
 def socket_dir_open(mode):
     """True when a group or other bit is set: another local user can reach the database socket."""
     return mode.isdigit() and int(mode, 8) & 0o077 != 0
+
+
+def last_index_epoch(state):
+    """When the last successful index finished, as seconds since the epoch. last_index_time is cut to whole
+    seconds; last_index_epoch keeps the fraction, so it is used when its whole second equals that of
+    last_index_time. An older engine that indexed after a downgrade updates last_index_time and leaves a stale
+    last_index_epoch, which then disagrees, so the time string wins. KeyError when `state` has no
+    last_index_time (no successful index yet); ValueError when it cannot be read."""
+    built = datetime.datetime.strptime(state["last_index_time"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
+    try:
+        epoch = float(state["last_index_epoch"])
+        if int(epoch) == int(built):
+            return epoch
+    except (KeyError, TypeError, ValueError, OverflowError):
+        pass
+    return built
+
+
+def newer_refusal(cfg, state):
+    """The record of an index attempt that found no files (indexer.record_refusal), when it is newer than the
+    last successful index in `state`; else None."""
+    try:
+        refused = json.loads(cfg.refused_path.read_text())
+        built = last_index_epoch(state)
+    except (KeyError, TypeError):   # no successful index yet
+        built = 0.0
+    except (OSError, ValueError):   # no record, or one that cannot be read
+        return None
+    return refused if isinstance(refused, dict) and refused.get("epoch", 0) > built else None
 
 
 def collect(cfg):
@@ -56,6 +87,12 @@ def format_status(cfg, s):
     lines.append("skipped by secret scan: %d" % len(last.get("skipped_secret", [])))
     lines.append("files seen %s  matched no tier rule %s  duplicate paths collapsed %s" % (
         last.get("files_seen"), last.get("no_rule"), last.get("duplicates_collapsed")))
+    lines += documents.pdf_lines(last.get("pdf") or {})
+    refused = newer_refusal(cfg, st)
+    if refused:   # the newest index attempt built nothing, so the counts above are from an earlier run
+        lines.append("last index attempt (%s) found no files to index; files seen %s" % (
+            refused.get("time"), refused.get("files_seen")))
+        lines += ["  " + line for line in documents.pdf_lines(refused.get("pdf") or {})]
     lines.append("last index: %s  mode=%s  duration=%ss  chunks embedded=%s" % (
         st.get("last_index_time"), last.get("mode"), last.get("duration_s"), last.get("chunks_embedded")))
     lines.append("embedding model: %s  digest: %s  num_ctx: %s" % (

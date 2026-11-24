@@ -6,7 +6,7 @@ import re
 import subprocess
 from collections import Counter
 
-from . import rules
+from . import documents, rules
 
 SAFE_REF = re.compile(r"[A-Za-z0-9._/@^~][A-Za-z0-9._/@^~-]*")
 
@@ -59,7 +59,7 @@ def _mtime(root, rel_path, commit_date):
 def enumerate_corpus(cfg):
     """Return (entries, stats). Each entry is a dict ready for the indexer."""
     entries, stats = [], Counter()
-    skipped_secret, skipped_rule = [], Counter()
+    skipped_secret, skipped_rule, pdf = [], Counter(), Counter()
     for root in cfg.roots.values():
         commit_date = None
         if root["kind"] == "git":
@@ -79,7 +79,11 @@ def enumerate_corpus(cfg):
                 stats["no_rule"] += 1
                 continue
             data = read_source(root, rel)
-            text = data.decode("utf-8", "replace")
+            try:
+                text, _ = documents.read_text(data, rel)
+            except documents.DocumentError as exc:   # a PDF with no text layer, damaged, or no PDF extra installed
+                pdf[exc.code] += 1
+                continue
             secret = rules.secret_hit(text)
             if secret:
                 skipped_secret.append(root["name"] + ":" + rel)
@@ -93,9 +97,12 @@ def enumerate_corpus(cfg):
             })
     rules.apply_supersession(entries, cfg.default_year)
     entries, stats["duplicates_collapsed"] = rules.collapse_duplicates(entries)
+    pdf["indexed"] = sum(1 for e in entries if documents.is_pdf(e["path"]))   # after copies collapse
+    if not pdf["indexed"]:
+        del pdf["indexed"]
     stats["selected"] = len(entries)
     return entries, {"counts": dict(stats), "skipped_rule": dict(skipped_rule),
-                     "skipped_secret": skipped_secret}
+                     "skipped_secret": skipped_secret, "pdf": dict(pdf)}
 
 
 def doc_id(entry):

@@ -177,7 +177,7 @@ The full tables, the v2 evaluation method and every limit are in [docs/RESULTS.m
 
 `ask` trades answers for safety: it removes most confidently wrong runs and says `Not in the sources.` more often, including on some questions the notes answer.
 
-Only Markdown files are indexed. The gate checks that a quote exists in the file, not that it answers the question.
+Markdown files are indexed; PDFs too with the extra `cerebrollm[pdf]` and a `*.pdf` tier rule, and a citation then names its page ([setup](engine/README.md#pdf-documents)). The gate checks that a quote exists in the file, not that it answers the question.
 
 ## Docs
 

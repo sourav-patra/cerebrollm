@@ -33,9 +33,11 @@ the corpus reader, the search and the four commands.
 | bge-m3 model (BAAI), the earlier embedding model, compared in the model study | MIT |
 | SQLAlchemy, pgvector (Python), mcp, tiktoken | MIT |
 | asyncpg, nltk | Apache-2.0 |
+| pypdf (optional `pdf` extra) | BSD-3-Clause |
 | psycopg2-binary | LGPL-3.0 with exceptions (used as a library, unmodified) |
 
-Read from package metadata on 26 Oct 2026 for the Python packages (`importlib.metadata`); the PostgreSQL,
+Read from package metadata on 26 Oct 2026 for the Python packages (`importlib.metadata`), except pypdf, whose
+licence was read on its PyPI page (release 7.1.1, published 18 Nov 2026) on 21 Nov 2026; the PostgreSQL,
 pgvector, Ollama and bge-m3 licences are as recorded in the plan.
 `requirements.txt` pins every installed package.
 
@@ -140,8 +142,8 @@ Register the server with an MCP host as a stdio server whose command is `cerebro
 
 ## What is indexed
 
-Only Markdown files that match a tier rule. A rule match is first-wins, in the order of
-`cerebrollm.toml`.
+Markdown files that match a tier rule, and PDF documents when the pdf extra is installed and a rule names
+them (next section). A rule match is first-wins, in the order of `cerebrollm.toml`.
 
 | Tier | Status | Where (the rules shipped in `cerebrollm.toml`; edit them for your own folders) |
 |---|---|---|
@@ -185,6 +187,88 @@ with `weight` and `half_life_days` in `[search.recency]` of `cerebrollm.toml`. T
 step between adjacent hybrid ranks near the top of the list (about 0.5 to 0.8 %), so the boost
 reorders near-ties and does not reverse a clearly better text match.
 
+## PDF documents
+
+PDFs are off until you turn them on. The shipped rules match `*.md` only, and without the extra installed a
+PDF that a rule admits is skipped.
+
+1. Install the extra into the same environment as cerebrollm: `pip install 'cerebrollm[pdf]'`. It adds
+   `pypdf` (pure Python, BSD-3-Clause licence; the range is the tested release, `>=7.1.1,<7.2`), which
+   reads each page's text layer. There is no OCR and no layout model.
+2. Add a rule for your PDFs to your own `cerebrollm.toml`, for example:
+
+   ```toml
+   [[rule]]
+   root = "notes"
+   glob = "**/*.pdf"
+   tier = "T2"
+   status = "current"
+   ```
+
+3. Run `cerebrollm index`. `cerebrollm status` prints the result on one line: `pdf files: indexed N  skipped
+   without a text layer N  skipped unreadable N`, or, when the extra is missing, `pdf files skipped: N`
+   with the install command.
+
+How a PDF is read: `cerebrollm/documents.py` turns the file's bytes into text, and the corpus reader,
+`verify` and `search` all call that one function, so a quote is checked against the page text that
+was indexed. Each page that has text becomes one section: a `## Page N` line, then the page's text; the
+page keeps its number when an earlier page has no text. Short pages are not merged into the next page.
+The file's sha256 is over its bytes, as for any file. A page line that opens a code fence (three backticks or
+three tildes) gets a backslash in front, in the indexed text and in the text `verify` checks, so that the fence
+cannot swallow the next page's heading; a quote that itself starts with a fence therefore does not verify.
+
+Pages show up in the output. A `search` hit prints `report.pdf (page 4)` where a Markdown hit prints a
+line span (`page_start` and `page_end` in `--json`), the generator sees `Source: report.pdf (page 4)`, and
+`ask` prints `"quote" [report.pdf (page 4)]` when one retrieved passage holds the quote and was indexed from the
+file `verify` read (if the PDF's bytes changed after the search, it prints the path alone). A passage across a
+page break is `pages 4-5`.
+
+Limits:
+
+- A PDF with no text layer (a scan) is skipped and counted. Run OCR on it first and add the result as a
+  new file.
+- Text comes out in the order the PDF stores it; multi-column pages, tables and headers or footers can read
+  out of order or repeat on every page. A quote is checked against that extracted text, not against the
+  page as printed.
+- `verify` checks a quote against one page's own text at a time. A quote that spans a page break does not
+  verify. The `## Page N` lines are added for indexing and display; they are not part of any page, so a quote
+  of `## Page 4` verifies only when the PDF itself says so.
+- `verify` prints no page; `ask` and `search` do.
+- `ask` finds a quote's page by searching the retrieved passages, and the first passage of a page starts with
+  its generated `## Page N` line. Known limit: a quote that a passage matches only through that generated
+  line, alone (`## Page 1`) or joined to the text after it (`Page 1 alpha`), can be named for that passage's
+  page when `verify` accepted it on another page that holds those words.
+- To stop indexing PDFs, remove the `*.pdf` rule from your configuration file and run
+  `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml index` (the two paragraphs after this list say when that
+  cannot rebuild). Do the same before you downgrade
+  to a version without PDF support: the older `verify` reads a PDF's raw bytes, so rows indexed from PDFs
+  cannot be checked until they are rebuilt away. When PDFs were more than half of the live index, the full
+  index stops with `refusing to swap` (a new table under half the live rows is refused) and leaves the live
+  index, PDF rows included, as it was (`search` and `verify` already ignore a path that no rule admits, so
+  the rows are hidden but not removed). Replacing it is your decision, because it deletes the live index until
+  the rebuild has finished (the source files are not touched; the study corpus of 13,431 chunks took 9.7
+  minutes). If you decide to, and that `index` printed `refusing to swap` for a new table with rows, drop the
+  live table of the same configuration file, then index again with it:
+  `python -c "from cerebrollm import config, store; c = config.load('PATH-TO-YOUR-cerebrollm.toml'); store.drop_table(c, c.data_table)"`
+  and `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml index`. Check with
+  `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml status`. Use the one path in every command: without
+  `--config`, `cerebrollm` reads `CEREBROLLM_CONFIG` or the shipped default, which can be another index.
+  `tests/test_pdf_end_to_end.py` runs this procedure.
+- Not tested on PDFs of hundreds of pages. An encrypted PDF that needs a password is meant to be skipped as
+  unreadable; that path is not tested.
+
+If no other document would be indexed once the PDF rule is gone, the full index refuses (`refusing to index: the
+corpus scan found no files`) before building anything; the live index stays. A rule that names a
+file is not enough: it must also avoid the never-index paths and symlinks, pass the secret scan, and not be a
+copy of another file.
+
+Drop the live table only after `index`, run with the same `--config` file with its PDF rule removed, has
+printed `refusing to swap` for a new table with more than 0 rows. The scan then found documents, and the next
+`index` can swap in, because a missing live table counts as 0 rows.
+
+Two cases refuse again after a drop: a scan that finds no files (`refusing to index`) and a new table with 0
+rows (`refusing to swap`, `has 0 rows`). Dropping the live table cures neither, and you would have no index.
+
 ## Chunking, embedded text and synonyms
 
 Table rows: a Markdown table (a line starting `|`, then a dashes separator line, then the lines starting
@@ -210,8 +294,9 @@ abbreviation. Matching ignores case and a plural `s`. The vector arm embeds the 
 `python -m pytest -q` from `engine/`: rules, supersession and duplicate tables, the drafts
 never-index rule checked through `corpus.enumerate_corpus` on a temp folder (the drafts folder is never
 read), table rows, embedded text and span checks, synonyms, search-time collapse and fusion, recency and
-output formatting, verify outcomes on a temp file, and one end-to-end run on a
-fixture folder against the real Postgres (own table, dropped afterwards) and Ollama. Test scratch files
+output formatting, verify outcomes on a temp file, PDF reading, paging and counting (fixture PDFs built in
+the tests; they need the pdf extra and say so when it is missing), and end-to-end runs on a
+fixture folder, one of them with PDFs, against the real Postgres (own tables, dropped afterwards) and Ollama. Test scratch files
 go under `$HOME/.cerebrollm/test-scratch`. The end-to-end test is skipped with a message if either is down.
 
 ## Known limits and not measured
