@@ -235,9 +235,9 @@ Limits:
   of `## Page 4` verifies only when the PDF itself says so.
 - `verify` prints no page; `ask` and `search` do.
 - `ask` finds a quote's page by searching the retrieved passages, and the first passage of a page starts with
-  its generated `## Page N` line. Known limit: when a quote equals such a line (`## Page 1`) and only another page holds that
-  text in the PDF, `verify` accepts it and `ask` can name the page whose generated heading matched. Quotes of
-  page text are not affected.
+  its generated `## Page N` line. Known limit: a quote that a passage matches only through that generated
+  line, alone (`## Page 1`) or joined to the text after it (`Page 1 alpha`), can be named for that passage's
+  page when `verify` accepted it on another page that holds those words.
 - To stop indexing PDFs, remove the `*.pdf` rule from your configuration file and run
   `cerebrollm --config PATH-TO-YOUR-cerebrollm.toml index` (the two paragraphs after this list say when that
   cannot rebuild). Do the same before you downgrade
@@ -263,8 +263,11 @@ file is not enough: it must also avoid the never-index paths and symlinks, pass 
 copy of another file.
 
 Drop the live table only after `index`, run with the same `--config` file with its PDF rule removed, has
-printed `refusing to swap` for a new table with more than 0 rows; that shows the scan found documents to
-rebuild from. Dropping it first would leave you with no index, because the next `index` refuses too.
+printed `refusing to swap` for a new table with more than 0 rows. The scan then found documents, and the next
+`index` can swap in, because a missing live table counts as 0 rows.
+
+Two cases refuse again after a drop: a scan that finds no files (`refusing to index`) and a new table with 0
+rows (`refusing to swap`, `has 0 rows`). Dropping the live table cures neither, and you would have no index.
 
 ## Chunking, embedded text and synonyms
 
