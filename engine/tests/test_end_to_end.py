@@ -111,7 +111,8 @@ class TestEndToEnd(unittest.TestCase):
         again = run_index(cfg, changed=True)
         self.assertEqual(again["chunks_embedded"], 0)            # nothing changed, nothing embedded
 
-        (self.root / "alpha/review.md").write_text(FILES["alpha/review.md"] + "\nAn extra line.\n")
+        # an edit inside the passage that holds the quote (an edit elsewhere keeps OK: test_passage_hash)
+        (self.root / "alpha/review.md").write_text(FILES["alpha/review.md"].replace("marks this", "marks the"))
         self.assertEqual(verify.run_verify(cfg, "alpha/review.md", "two review rounds")[0], "CHANGED")
         third = run_index(cfg, changed=True)
         self.assertGreater(third["chunks_embedded"], 0)

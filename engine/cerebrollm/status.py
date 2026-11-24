@@ -24,7 +24,10 @@ def socket_dir_open(mode):
 
 
 def collect(cfg):
-    st = store.read_state(cfg)
+    try:
+        st = store.read_state(cfg)
+    except (ValueError, OSError):
+        st = {}   # main() has already warned on stderr that state.json cannot be read; status still reports the rest
     out = {"state": st, "tiers": [], "never_violations": None, "chunks": 0, "documents": 0,
            "num_ctx": cfg.ollama_options["num_ctx"], "socket_mode": socket_dir_mode(cfg.pg["socket_dir"])}
     if not store.table_exists(cfg):

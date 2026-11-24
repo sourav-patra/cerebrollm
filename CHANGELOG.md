@@ -2,6 +2,13 @@
 
 Versions follow `pyproject.toml`. Each entry says whether a full `cerebrollm index` is needed after the upgrade.
 
+## Unreleased
+
+Quotes stay checkable after unrelated edits. A full `cerebrollm index` is needed once; `cerebrollm index --changed` does it by itself on an index from 0.2.0 or earlier.
+
+- The index stores the sha256 of each passage's text (a chunk, or a table row alone) next to its character span. `verify` still answers `OK` when the whole file is unchanged; when the file changed, it now answers `OK` if an indexed passage that holds the whole quote still occurs in the file with identical text, and `CHANGED` otherwise. An edit elsewhere in the file, or a passage moved within it, no longer makes `verify` answer `CHANGED` and `ask` abstain until the next index run. A quote that spans two passages, or one whose passage had a word edited, still answers `CHANGED`; the passage must sit between whitespace or file edges, so text glued to it gives `CHANGED`, while text added after a space (a table row with a cell appended) leaves a quote of the old row `OK`. Passage evidence comes only from rows indexed from the root, path and ref `verify` was asked about, never from a collapsed copy, and the quote must occur in the passage with only whitespace normalised: a quote that matches only after Markdown links or backticks are dropped answers `CHANGED` for a changed file. A changed file that is not valid UTF-8 gets no passage evidence, nor does a passage indexed from such bytes. The five codes and the exit rule are unchanged.
+- `state.json` records the index format and the database and table it was written to (`index_format` and `index_table` inside `last_index`; the format is now 2). When it does not record format 2 for the configured table, `index --changed` runs a full index: an index from 0.2.0 or earlier, a missing or unreadable state file, a marker written for another table, or an index run by an older version after a downgrade (its run replaces `last_index`, so returning to this version rebuilds once). While `state.json` records an older or unknown format for the table, or cannot be read, `status`, `search`, `verify` and `ask` print one warning line on stderr until an index run completes and rewrites it; `status` prints the rest of its report with an empty last-index section when `state.json` cannot be read. `verify` never reads `state.json`: rows without passage hashes keep the whole-file check of 0.2.0, and rows that carry them can answer `OK` from passage evidence whatever the state file says.
+
 ## 0.2.0
 
 `ask` prints only what `verify` confirmed. No re-index needed.

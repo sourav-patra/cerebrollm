@@ -23,8 +23,9 @@ class TestVerify(unittest.TestCase):
         self.file.write_text("# Title\n\nA change gets  two review\nrounds before merge.\n")
         self.sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
 
-    def run_verify(self, path, quote, indexed):
-        with mock.patch.object(verify, "_indexed_sha", return_value=indexed):
+    def run_verify(self, path, quote, indexed, passages=()):
+        with mock.patch.object(verify, "_indexed_sha", return_value=indexed), \
+                mock.patch.object(verify, "_indexed_passages", return_value=list(passages)):
             return verify.run_verify(self.cfg, path, quote)[0]
 
     def test_ok_whitespace_normalised(self):
@@ -139,6 +140,94 @@ class TestVerify(unittest.TestCase):
 
     def test_changed(self):
         self.assertEqual(self.run_verify("doc.md", "A change gets", {"0" * 64}), "CHANGED")
+
+    def passage_case(self, before, after, passage, quote):
+        """verify after the file went from `before` to `after`, with `passage` indexed from `before`."""
+        self.file.write_text(before)
+        old_sha = hashlib.sha256(self.file.read_bytes()).hexdigest()
+        self.file.write_text(after)
+        return self.run_verify("doc.md", quote, {old_sha}, [(passage, hashlib.sha256(passage.encode()).hexdigest())])
+
+    PARA = "Every change gets two review rounds before it merges.\n"
+
+    def test_edit_outside_the_passage_keeps_ok(self):
+        self.assertEqual(self.passage_case("# T\n\n" + self.PARA, "# Title, edited\n\nNew text.\n\n" + self.PARA,
+                                           self.PARA, "two review rounds before it merges"), "OK")
+
+    def test_edit_inside_the_passage_is_changed(self):
+        self.assertEqual(self.passage_case("# T\n\n" + self.PARA, "# T\n\n" + self.PARA.replace("Every", "Each"),
+                                           self.PARA, "two review rounds before it merges"), "CHANGED")
+
+    def test_a_passage_without_the_quote_does_not_count(self):
+        other = "Another paragraph that stays.\n"
+        self.assertEqual(self.passage_case(other + "\n" + self.PARA, other + "\n" + self.PARA.replace("Every", "Each"),
+                                           other, "two review rounds before it merges"), "CHANGED")
+
+    def test_a_passage_whose_text_does_not_match_its_hash_does_not_count(self):
+        self.file.write_text("# T\n\n" + self.PARA + "edited\n")
+        self.assertEqual(self.run_verify("doc.md", "two review rounds", {"0" * 64}, [(self.PARA, "1" * 64)]),
+                         "CHANGED")
+
+    def test_the_quote_must_lie_inside_the_passage_occurrence(self):
+        # the passage ended in "port 80"; the file now continues it into "port 8080", and another line holds
+        # "port 80" on its own: the quote is in the file and in the passage text, but not inside the passage
+        passage = "The service listens on port 80"
+        self.assertEqual(self.passage_case(passage + "\n\nOld note.\n",
+                                           passage + "80\n\nIt listens on port 80 today.\n",
+                                           passage, "listens on port 80"), "CHANGED")
+        self.assertEqual(self.passage_case(passage + "\n\nOld note.\n", passage + "\n\nNew note.\n",
+                                           passage, "listens on port 80"), "OK")
+
+    def test_a_passage_glued_to_a_word_does_not_count(self):
+        self.assertEqual(self.passage_case(self.PARA, "Prefix" + self.PARA, self.PARA.rstrip("\n"),
+                                           "two review rounds before it merges"), "CHANGED")
+
+    def test_a_quote_that_matches_the_passage_only_through_markdown_is_changed(self):
+        # the passage holds "`port` 80"; the edited file puts the unchanged passage inside a link destination,
+        # where the whole-file Markdown fallback drops it, and holds the quote plainly elsewhere
+        passage = "Use `port` 80 now."
+        self.assertEqual(self.passage_case(passage + "\n",
+                                           "[docs]( " + passage + " )\n\nUse port 80 now.\n",
+                                           passage, "Use port 80 now."), "CHANGED")
+        # the same quote written as the passage holds it, backticks included, is inside the passage
+        self.assertEqual(self.passage_case(passage + "\n", "Intro.\n\n" + passage + "\n",
+                                           passage, "Use `port` 80 now."), "OK")
+
+    def test_a_file_that_is_not_valid_utf8_gets_no_passage_evidence(self):
+        # the indexed passage held the bytes A\xffB; the edit makes them A\xfeB, which decodes to the same text
+        before = ("Intro.\n\n" + self.PARA.replace("before", "(A\xffB) before")).encode("latin-1")
+        passage = before.decode("utf-8", "replace").split("\n\n", 1)[1].rstrip("\n")
+        self.file.write_bytes(before)
+        old_sha = hashlib.sha256(before).hexdigest()
+        self.file.write_bytes(before.replace(b"\xff", b"\xfe"))
+        passages = [(passage, hashlib.sha256(passage.encode()).hexdigest())]
+        self.assertEqual(self.run_verify("doc.md", "two review rounds", {old_sha}, passages), "CHANGED")
+
+    def test_a_passage_indexed_from_invalid_bytes_is_not_evidence(self):
+        # a passage holding U+FFFD came from bytes that were not valid UTF-8; a valid file now holding a real
+        # U+FFFD at that place has other bytes, so the passage text does not prove them unchanged
+        passage = "Every change gets two review rounds (A\ufffdB) before it merges."
+        self.file.write_text("Edited intro.\n\n" + passage + "\n", encoding="utf-8")
+        self.assertEqual(self.run_verify("doc.md", "two review rounds", {"0" * 64},
+                                         [(passage, hashlib.sha256(passage.encode()).hexdigest())]), "CHANGED")
+
+    def test_collapsed_copies_are_never_passage_rows(self):
+        cond, params = verify._source_rows(self.cfg, "fx", "doc.md", "file", copies=False)
+        self.assertNotIn("also_at", cond)
+        self.assertEqual(params, ["fx", "doc.md", "file"])
+
+    def test_source_rows_are_bound_to_root_path_and_ref(self):
+        cond, params = verify._source_rows(self.cfg, "fx", "doc.md", "file")
+        self.assertIn("metadata_->>'root' = %s", cond)
+        self.assertEqual(params, ["fx", "doc.md", "file", "fx:doc.md"])
+        cond, params = verify._source_rows(self.cfg, "fx", "doc.md", "v1")   # another ref: no collapsed copies
+        self.assertNotIn("also_at", cond)
+        self.assertEqual(params, ["fx", "doc.md", "v1"])
+
+    def test_ok_only_needs_one_unchanged_passage_holding_the_quote(self):
+        edited = self.PARA.replace("Every", "Each")
+        self.assertEqual(self.passage_case(self.PARA + "\n" + self.PARA, edited + "\n" + self.PARA, self.PARA,
+                                           "two review rounds before it merges"), "OK")
 
     def test_gone(self):
         self.assertEqual(self.run_verify("nope.md", "A change gets", {self.sha}), "GONE")
@@ -295,6 +384,7 @@ class TestIndexedShaQuery(unittest.TestCase):
     def test_a_path_with_a_quote_is_a_parameter(self):
         cfg = config.load()
         self.assertEqual(verify._indexed_sha(cfg, "notes", "it's'; drop table x; --.md", "file"), set())
+        self.assertEqual(verify._indexed_passages(cfg, "notes", "it's'; drop table x; --.md", "file"), [])
 
 
 if __name__ == "__main__":

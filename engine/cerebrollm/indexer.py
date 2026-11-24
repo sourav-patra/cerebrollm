@@ -60,8 +60,19 @@ def run_index(cfg, changed=False, log=print):
     """Index the corpus. changed=True re-embeds only changed files in the live table. A full run builds
     cfg.next_table and swaps it in after the pipeline finishes, so search reads the live table until the
     swap: a failed run drops the new table, and a new table with no rows or under half the live rows is
-    refused (SystemExit) and kept for inspection. Returns a summary dict."""
+    refused (SystemExit) and kept for inspection. changed=True runs in full instead unless state.json shows
+    that the last run wrote rows of store.INDEX_FORMAT (also when state.json is missing or unreadable while a
+    table or docstore remains), so old and new rows never mix. The summary, which carries index_format,
+    is written to state.json only after the run completes. Returns the summary dict."""
     started = time.time()
+    try:
+        found = store.index_format(store.read_state(cfg), store.index_table(cfg))
+    except (OSError, ValueError):   # unreadable state: a full run, whose write_state replaces the file
+        found = None
+    if changed and found != store.INDEX_FORMAT:
+        print("the index has format %s; running a full index to format %d"
+              % (found or "unknown", store.INDEX_FORMAT), file=sys.stderr)   # stdout is the JSON summary
+        changed = False
     entries, scan = corpus.enumerate_corpus(cfg)
     if not entries:
         raise SystemExit("refusing to index: the corpus scan found no files (would delete everything)")
@@ -109,6 +120,7 @@ def run_index(cfg, changed=False, log=print):
         "skipped_rule": scan["skipped_rule"], "skipped_secret": scan["skipped_secret"],
         "no_rule": scan["counts"].get("no_rule", 0), "files_seen": scan["counts"]["seen"],
         "duplicates_collapsed": scan["counts"].get("duplicates_collapsed", 0),
+        "index_format": store.INDEX_FORMAT, "index_table": store.index_table(cfg),
     }
     store.write_state(cfg, last_index=summary, last_index_time=time.strftime("%Y-%m-%dT%H:%M:%S%z"),
                       embedding_model=cfg.ollama["model"], embedding_digest=store.model_digest(cfg))

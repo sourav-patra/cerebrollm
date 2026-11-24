@@ -2,7 +2,7 @@
 id: TRD-cerebrollm
 kind: contract
 governs: 0.1.0 (first public release); items marked P are proposals for 0.2
-status: LOCKED 2026-10-30 by the owner (content of draft v4)
+status: revision proposed 2026-11-21, owner re-lock pending (the owner locked draft v4 on 2026-10-30, sha256 37e2cff553aa760385bc8f03d6852f20e82b4b0a896c2e3e517c06e31e2a3e12; this file is that draft with the passage-hash lines changed)
 upstream: PRD-cerebrollm-2026-10-30.md (pin: PRD as locked 2026-10-30, sha256 622fee4d88bc88bdf7e59d767940b809c6651b72ce343b8075695724f84572f2)
 figures: figures/trd-components.svg, figures/trd-ask-sequence.svg
 checked-at: source revision 02a00dd, 2026-10-30 (the public repository starts a new history; the hash is for the review record)
@@ -34,13 +34,13 @@ Figure 1. Shows: the components, the entry points (heavy border) and what crosse
 | Config | loads `cerebrollm.toml`, expands `~` and `$VARS` in path keys, refuses an unset variable | `config.py` | expands variables outside path keys |
 | Corpus reader | lists roots, applies never-index rules before any read, reads bytes, dates files | `corpus.py`, `rules.py` | lists a symlink as a file or enters a linked directory; reads a real path outside a directory root (a symlink whose target is inside the root is read) |
 | Rules | never-index, tier and status, supersession, duplicate collapse, secret scan | `rules.py` | does I/O |
-| Chunker | headings, merge of short sections, one node per table row, sentence split, character spans | `glue.py`, `indexer.chunk_steps` | embeds metadata other than path, title and heading path |
-| Indexer | full rebuild into `chunks_next` then swap; `--changed` upsert and delete | `indexer.py`, `store.py` | swaps a table that is empty or under half the live rows |
+| Chunker | headings, merge of short sections, one node per table row, sentence split, character spans and the sha256 of each chunk's text | `glue.py`, `indexer.chunk_steps` | embeds metadata other than path, title and heading path |
+| Indexer | full rebuild into `chunks_next` then swap; `--changed` upsert and delete, or a full rebuild when `state.json` does not record the current index format for the configured database and table; records the format and that table in `state.json` after a run completes | `indexer.py`, `store.py` | swaps a table that is empty or under half the live rows |
 | Store | Postgres with pgvector over a Unix socket; vector and keyword columns | `store.py` | listens on TCP |
 | Search | vector and keyword retrieval fused by reciprocal rank (k = 60), tier and recency boosts, one hit per distinct chunk text | `search.py` | returns `draft` or `superseded` without `--all-status` |
 | Reranker | local cross-encoder over the top 20, keeps 8 | `rerank.py` | fetches weights at query time |
 | ask pipeline | prompt, generator call, citation parser, gate `decide` | `answer.py` | prints an answer other than the abstention line without an OK citation |
-| verify | re-reads the source, compares the normalised quote and the indexed sha256 | `verify.py` | writes anything |
+| verify | re-reads the source, compares the normalised quote, then the indexed sha256 of the file or, when the file changed, of an indexed chunk of the same root, path and ref (never a collapsed copy) that occurs byte for byte in the file between whitespace or file edges and holds the quote with only whitespace normalised, used only when the file is valid UTF-8; ambiguous evidence gives `CHANGED` | `verify.py` | writes anything |
 | MCP server | `search` and `verify` over stdio, hit text wrapped as data | `mcp_server.py` | exposes index, status or any write |
 
 ### 2.2 Order of calls in `ask`
@@ -52,7 +52,7 @@ Figure 2. Shows: the eight steps of one `ask` call, the replies, and the failure
 ### 2.3 Index build
 
 1. `corpus.enumerate_corpus` walks each root without following links, drops paths by the never-index rules, matches the first tier rule (a file with no rule is not indexed), reads the file, drops it if the secret scan matches, then applies supersession and collapses byte-identical copies.
-2. The chunker splits at headings, lets a section under 200 characters absorb the section after it, makes one node per Markdown table row, splits prose at 800 tokens with 60 overlap, and records each chunk's span.
+2. The chunker splits at headings, lets a section under 200 characters absorb the section after it, makes one node per Markdown table row, splits prose at 800 tokens with 60 overlap, and records each chunk's span and the sha256 of its text (for a table row, the row alone).
 3. The embedding model (Ollama) embeds each chunk with its path, title and heading path; documents carry no query prefix.
 4. A full run writes `chunks_next` and swaps it in only if it holds at least half the live rows; otherwise it stops, keeps the new table for inspection and prints the drop command.
 
@@ -60,7 +60,7 @@ Figure 2. Shows: the eight steps of one `ask` call, the replies, and the failure
 
 | Command | Effect | Stdout | Exit |
 |---|---|---|---|
-| `index [--changed]` | build or update the index | JSON summary | 0; 1 with a message on a refused swap or an empty corpus |
+| `index [--changed]` | build or update the index; `--changed` on an older index format runs a full rebuild | JSON summary | 0; 1 with a message on a refused swap or an empty corpus |
 | `status [--json]` | counts, skips, last index, model digest | text or JSON | 0 |
 | `search QUERY [--k --mode --all-status --project --synonyms --json]` | ranked hits | text or JSON, trimmed toward 2,000 tokens (`search.cap_text`) | 0 |
 | `ask QUESTION [--model --think --no-rerank --json]` | pipeline of figure 2 | answer and verify codes, or exactly `Not in the sources.` | 0; 2 on any failure, empty stdout |
@@ -68,6 +68,8 @@ Figure 2. Shows: the eight steps of one `ask` call, the replies, and the failure
 | `mcp` | serve over stdio | MCP protocol | until the host disconnects |
 
 Global option `--config PATH`; the environment variable `CEREBROLLM_CONFIG` does the same.
+
+When `state.json` records an older or unknown index format for the configured table, or cannot be read, `status`, `search`, `verify` and `ask` print one warning line on stderr until a full `index` (or `index --changed`, which then runs in full) completes and rewrites it; stdout is unchanged. A missing `state.json` gives no warning.
 
 | MCP tool | Parameters | Returns |
 |---|---|---|
@@ -78,14 +80,14 @@ Global option `--config PATH`; the environment variable `CEREBROLLM_CONFIG` does
 |---|---|
 | `cerebrollm.toml` | domain, state folder, Postgres socket and table, Ollama address and embedding model, chunking, search defaults, tier and recency weights, roots, never-index lists, tier rules |
 | `models.toml` | allow-list of Ollama models with role, licence, context cap and digest; the reranker entry with revision, folder, weights sha256 |
-| `~/.cerebrollm/` | `state.json`, `docstore.json` (chunk text), `docstore.next.json` during a rebuild, the PostgreSQL cluster, downloaded model folders |
+| `~/.cerebrollm/` | `state.json` (last index run, embedding model, index format), `docstore.json` (chunk text), `docstore.next.json` during a rebuild, the PostgreSQL cluster, downloaded model folders |
 
 ## 4. Data and trust domains
 
 | Domain | Holds | Trust and controls |
 |---|---|---|
 | D1 corpus files | the user's Markdown | read only; text is data, never instructions; read through `corpus.read_source`, which resolves the real path and refuses one outside a directory root; enumeration skips symlinks |
-| D2 index | chunk text, vectors, metadata, file hashes | local Postgres on a Unix socket, trust authentication, folder permissions are the control; derived data, rebuilt from D1 |
+| D2 index | chunk text, vectors, metadata, file and chunk hashes | local Postgres on a Unix socket, trust authentication, folder permissions are the control; derived data, rebuilt from D1 |
 | D3 model server | chunk text, queries, prompts, answers | Ollama at the configured address; loopback by default; not restricted by code (K-8) |
 | D4 reranker weights | a cross-encoder in a local folder | pinned by revision and sha256 in `models.toml`; not re-hashed at load (K-5) |
 | D5 generator output | text with quotes | untrusted until each quote passes `verify` |
@@ -117,7 +119,7 @@ Global option `--config PATH`; the environment variable `CEREBROLLM_CONFIG` does
 | TQ-04 | Default search is `locked` and `current` with tier and recency boosts | RQ-10 | `engine/tests/test_search.py` | R: passed 2026-10-29 |
 | TQ-05 | The reranker keeps 8 of 20 and is optional | RQ-15 | `engine/tests/test_answer.py`; `eval/runs/retrieval/measure_rerank.py` | R: 45 of 60 without, 46 with (`eval/runs/retrieval/R-summary.md`) |
 | TQ-06 | `decide` is the only path to a printed answer | RQ-04, RQ-05 | `engine/tests/test_answer.py` gate and CLI tests; graded arm A4 | R: tests passed 2026-10-29; R: arm A4 graded, 28 of 35 right outcome and 7 of 104 confidently wrong runs for `gpt-oss:20b` (PRD 2.1) |
-| TQ-07 | `verify` returns the five codes and reads only inside a root | RQ-06 | `engine/tests/test_verify.py` | R: passed 2026-10-29 |
+| TQ-07 | `verify` returns the five codes and reads only inside a root; after an edit, `OK` only while an indexed chunk of that source still occurs with identical text and the quote lies inside it, else `CHANGED` | RQ-06 | `engine/tests/test_verify.py`, `engine/tests/test_passage_hash.py` | R: passed 2026-10-29; N: the passage cases were not run for this document (command: `cd engine && python -m pytest -q -rs tests/test_verify.py tests/test_passage_hash.py`) |
 | TQ-08 | The MCP server exposes exactly two read-only tools and wraps hits as data | RQ-07 | `engine/tests/test_mcp_server.py` | R: passed 2026-10-29 |
 | TQ-09 | In the default configuration no code path sends data to a hosted service; a non-loopback Ollama address is not refused until I-04, so this rule fails for such a configuration | RQ-08 | `grep -rnE "https?://" engine/cerebrollm`; network capture under `strace -f -e trace=connect` during `index` and `ask` | E: grep lists one loopback default; E: `__init__.py` sets the opt-out defaults; N: capture not run (LLD I-09) |
 | TQ-10 | Only allow-listed Apache-2.0 or MIT models are pulled or called | RQ-14 | `research/model-study/test_model_guard.py`; `engine/tests/test_answer.py` model check | R: model-check tests passed 2026-10-29; N: guard tests not re-run |
