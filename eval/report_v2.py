@@ -66,16 +66,17 @@ def retrieval_hit(item):
                for q in item["quotes"])
 
 
-def target_blocker():
+def target_blocker(want):
     """Why the grader's verdicts cannot yet support the item set's target, or None. Two records of the run folder are
     needed: the grader's canary check, passed (`run_v2.py grade` writes it), and a hand check of a random sample of
-    graded answers with no disagreement (`run_v2.py sample` draws the sample; the person writes handcheck.json). Each
-    record counts only for the grades it names: the item set, the grader, the grader's model digest and the sha256 of
-    its grades file (R.batch_evidence); the canary record must also hold every configured canary with the expected
-    verdict, whatever its `passed` says."""
+    graded answers with no disagreement (`run_v2.py sample` draws the sample; the person writes handcheck.json, naming
+    themselves in `reviewer` and declaring `reviewer_kind` "person"; the declaration is the writer's own). Each
+    record counts only for the grades it names: `want`, the evidence of the one read of the grades file that the
+    tables are built from (R.read_batch): the item set, the grader, the grader's model digest and the sha256 of its
+    grades file. The canary record must also hold every configured canary with the expected verdict, whatever its
+    `passed` says."""
     if IS.target_pct is None:
         return None
-    want = R.batch_evidence(PRIMARY)
     if want["judge_digest"] is None:
         return "the grades of %s do not record one model digest" % PRIMARY
     try:
@@ -101,6 +102,9 @@ def target_blocker():
     stale = [k for k, v in want.items() if hand.get(k) != v]
     if stale:
         return "handcheck.json is for other grades (%s differ)" % ", ".join(stale)
+    reviewer = hand.get("reviewer")
+    if not (isinstance(reviewer, str) and reviewer.strip() and hand.get("reviewer_kind") == "person"):
+        return "the hand check was not recorded as done by a person"
     if not isinstance(hand.get("sampled"), int) or hand["sampled"] < HANDCHECK_MIN:
         return "the hand check sampled fewer than %d graded answers" % HANDCHECK_MIN
     if hand.get("disagreements") != 0:
@@ -164,7 +168,8 @@ def main():
     items = {i["id"]: i for i in R.load_items()}
     answerable = [i for i in items.values() if i["kind"] != "unanswerable"]
     unans = [i for i in items.values() if i["kind"] == "unanswerable"]
-    judged = {(r["model"], r["arm"], r["id"], r["run"]): r for r in R.read_grades(R.judge_path(PRIMARY))}
+    primary_rows, want = R.read_batch(PRIMARY)   # one read: the tables and the target check use the same batch
+    judged = {(r["model"], r["arm"], r["id"], r["run"]): r for r in primary_rows}
     second = {(r["model"], r["arm"], r["id"], r["run"]): r for r in R.read_grades(R.judge_path(SECOND))}
     recs = {}
     for m, a, i, k, p in R.all_records():
@@ -198,7 +203,7 @@ def main():
            f"Right outcome (of {n_all}, majority) | Confidently wrong items (majority) | Confidently wrong (runs) | Abstained wrong (runs) | Empty (runs) | Aim 90% / under 2% |")
     lines += ["## Per model and arm\n", hdr, "|" + "---|" * 12]
     bounds = []
-    blocker = target_blocker()
+    blocker = target_blocker(want)
     for (m, a), per in sorted(rows.items(), key=lambda x: (list(R.MODELS).index(x[0][0]), x[0][1])):
         cl = {i: per.get(i, []) for i in items}
         cw_any, bound_line = rule_of_three(f"{m} {a}", cl, target_pct=IS.target_pct, blocker=blocker)
@@ -236,7 +241,7 @@ def main():
     nh = sum(bool(v) for v in hits.values())
     missing = [k for k, v in hits.items() if v is None]
     partial = (f" {len(hits) - len(missing)} of {len(hits)} were checked; missing retrieval records: {', '.join(missing)}."
-               if 0 < len(missing) < len(hits) else "")
+               if missing else "")
     lines += ["\n## Retrieval and citations (arm A3)\n",
               f"Top-8 default search holds every quoted line for {nh} of {len(answerable)} answerable items "
               f"(`{SRC}/retrieval/A3/`). Not-hit items: {', '.join(k for k, v in hits.items() if v is False) or 'none'}.{partial}\n",

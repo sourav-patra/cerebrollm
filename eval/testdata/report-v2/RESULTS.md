@@ -28,7 +28,7 @@ Aim: right outcome at least 90 percent of the 35 items (majority) and confidentl
 
 ## Retrieval and citations (arm A3)
 
-Top-8 default search holds every quoted line for 0 of 20 answerable items (`./retrieval/A3/`). Not-hit items: none.
+Top-8 default search holds every quoted line for 0 of 20 answerable items (`./retrieval/A3/`). Not-hit items: none. 0 of 20 were checked; missing retrieval records: G2-EX-01, G2-EX-02, G2-EX-03, G2-EX-04, G2-EX-05, G2-PA-01, G2-PA-02, G2-PA-03, G2-ST-01, G2-ST-02, G2-ST-03, G2-EX-06, G2-EX-07, G2-EX-08, G2-PA-04, G2-PA-05, G2-EX-09, G2-EX-10, G2-PA-06, G2-PA-07.
 
 | Model | A3 answers | With a verified citation | Share |
 |---|---|---|---|

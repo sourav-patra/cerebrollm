@@ -4,7 +4,7 @@
 
 That figure is a calculation under one condition: that the items are independent draws from the item population. This hand-drafted set does not meet it.
 
-The counts per kind are fixed (50, 35, 14 and 64), 11 of the 14 stale items share one question shape, some items quote the same source line, and uv supplies 79 of the 163 items. So 1.8% is not a bound on, or an estimate of, a population rate, and it does not bound the run-level rate.
+The counts per kind are fixed (50, 35, 14 and 64), 8 of the 14 stale items share one question shape, some items quote the same source line, and uv supplies 79 of the 163 items. So 1.8% is not a bound on, or an estimate of, a population rate, and it does not bound the run-level rate.
 
 It applies only when no item has a confidently wrong run, and it needs at least 154 items to print under 2.0% (3 / 153 prints 2.0%).
 
@@ -47,7 +47,7 @@ The proportions follow v2 within 5 percentage points per kind. The items were dr
 
 Limits to read the results with:
 
-- Eleven of the 14 stale items ask for "the latest patch release of X that uv added" (CPython 3.10 to 3.16, PyPy, GraalPy, OpenSSL, Docker images). The other three are the Ruff minimum supported Rust version, the default status of Ruff rule F406 and the pydantic jiter version.
+- Eight of the 14 stale items ask which is "the latest" CPython or PyPy release "that uv added" (V3-ST-01 to 07 and 09). Eleven of the 14 are uv items; the other three are the Ruff minimum supported Rust version, the default status of Ruff rule F406 and the pydantic jiter version.
 - Each newest value in those items replaces older ones in earlier files. The items share a shape, and some share the line that holds the newest version.
 - uv has 42 of the 68 files and 79 of the 163 items.
 - The 8 unanswerable items on real flags that the notes do not cover can be answered from a model's own knowledge. A model that does so is confidently wrong by the v2 rule.
@@ -120,10 +120,14 @@ The run uses a corpus folder, a table and a state folder of its own. It never wr
 
 6. Hand check. A person reads the 30 answers of `~/.cerebrollm/runs/v3-qwen/handcheck-sample.jsonl` (drawn at random with a fixed seed from the graded answers) and compares each with the grader's verdict.
 
-   The result goes into `~/.cerebrollm/runs/v3-qwen/handcheck.json` with the fields `sample` prints. `set`, `judge`, `judge_digest` (the grader's model digest in the grade rows) and `grades_sha256` (the sha256 of the grader's jsonl file) stay as printed; `sampled`, `disagreements` and `by` are filled in.
+   The result goes into `~/.cerebrollm/runs/v3-qwen/handcheck.json` with the fields `sample` prints. `set`, `judge`, `judge_digest` (the grader's model digest in the grade rows) and `grades_sha256` (the sha256 of the grader's jsonl file) stay as printed; `sampled`, `disagreements`, `reviewer` and `reviewer_kind` are filled in.
+
+   `reviewer` is the name of the person who read the answers and `reviewer_kind` is `person`. The report accepts the hand check only with a non-empty `reviewer` and `reviewer_kind` equal to `person`, and otherwise prints `not claimed (the hand check was not recorded as done by a person)`.
+
+   Both fields are the writer's own declaration; the report cannot tell who wrote the file.
 7. Report: `python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen report --judge qwen3.8:27b`. It fails when nothing is graded and when an item has fewer than 3 graded runs.
 
-   Its "rule of three" lines end with `Target under 2%: reached`, `not reached`, or `not claimed (reason)`. The reason names a missing or failed canary check, a missing hand check, a sample under 30, a disagreement, or a canary record or hand check made for other grades.
+   Its "rule of three" lines end with `Target under 2%: reached`, `not reached`, or `not claimed (reason)`. The reason names a missing or failed canary check, a missing hand check, a hand check not declared as done by a person, a sample under 30, a disagreement, or a canary record or hand check made for other grades.
 
    The canary record and `handcheck.json` count only when their set, grader, model digest and grades fingerprint match the grades the report reads, so grading more answers after the hand check makes both stale; the canary record must also hold every canary of `eval/itemset-v3.toml` with its expected verdict.
 

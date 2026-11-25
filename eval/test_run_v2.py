@@ -188,6 +188,14 @@ def canary_record(out, judge="qwen3.8:27b", item_set="v3", got=None):
     return dict(evidence(out, judge, item_set), passed=all(r["want"] == r["got"] for r in results), results=results)
 
 
+PERSON = {"reviewer": "A. Reader", "reviewer_kind": "person"}   # who the hand check says made it
+
+
+def hand_check(out, judge="qwen3.8:27b", item_set="v3", sampled=30, disagreements=0, who=None):
+    """The record of a hand check of the grades of `judge`, declared as made by a person unless `who` gives other fields."""
+    return dict(evidence(out, judge, item_set), sampled=sampled, disagreements=disagreements, **(PERSON if who is None else who))
+
+
 def synthetic_v3_run(out, items, wrong=(), item_set="v3", canary=True, handcheck=True):
     """qwen3.5-9b, arm A4, 3 runs per item, graded by qwen3.8:27b; the items at the indexes in `wrong` get a wrong answer.
     The folder is bound to the set; the canary record (all passed) and the hand-check record, both naming these grades,
@@ -207,7 +215,7 @@ def synthetic_v3_run(out, items, wrong=(), item_set="v3", canary=True, handcheck
     if canary:
         write_json(os.path.join(out, "canary-qwen3.8-27b.json"), canary_record(out, item_set=item_set))
     if handcheck:
-        write_json(os.path.join(out, "handcheck.json"), dict(evidence(out, item_set=item_set), sampled=30, disagreements=0, by="test"))
+        write_json(os.path.join(out, "handcheck.json"), hand_check(out, item_set=item_set))
 
 
 def run_report(out, *flags, after=()):
@@ -330,8 +338,8 @@ class ItemSetReport(unittest.TestCase):
             for rec, path, want in (
                     (canary_record(out, got={"It is 42.": "Y"}),
                      "canary-qwen3.8-27b.json", "the grader canary check of qwen3.8:27b failed on 'It is 42.'"),
-                    (dict(evidence(out), sampled=29, disagreements=0), "handcheck.json", "sampled fewer than 30"),
-                    (dict(evidence(out), sampled=30, disagreements=1), "handcheck.json", "found 1 disagreements")):
+                    (hand_check(out, sampled=29), "handcheck.json", "sampled fewer than 30"),
+                    (hand_check(out, disagreements=1), "handcheck.json", "found 1 disagreements")):
                 write_json(os.path.join(out, path), rec)
                 run_report(out, "--set", "v3")
                 self.assertIn("Target under 2%: not claimed (", read(os.path.join(out, "RESULTS.md")))
@@ -541,8 +549,126 @@ class ItemSetReport(unittest.TestCase):
             self.assertIn("not claimed (the grader canary check of %s has not run)" % other, claim("--judge", other))
             write_json(os.path.join(out, "canary-qwen3.6-35b-a3b-coding-mtp-q4_K_M.json"), canary_record(out, judge=other))
             self.assertIn("not claimed (handcheck.json is for other grades (judge differ)", claim("--judge", other))
-            write_json(hand, dict(evidence(out, judge=other), sampled=30, disagreements=0))
+            write_json(hand, hand_check(out, judge=other))
             self.assertTrue(claim("--judge", other).endswith("Target under 2%: reached"))
+
+    def test_hand_check_counts_only_when_it_declares_a_person(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            hand = os.path.join(out, "handcheck.json")
+
+            def claim():
+                run_report(out, "--set", "v3")
+                return [l for l in read(os.path.join(out, "RESULTS.md")).splitlines() if "Target under 2%" in l][0]
+            synthetic_v3_run(out, items)
+            self.assertTrue(claim().endswith("Target under 2%: reached"))   # a named person is accepted
+            for who in ({}, {"reviewer": "A. Reader"}, {"reviewer_kind": "person"},
+                        {"reviewer": "A. Reader", "reviewer_kind": "agent"}, {"reviewer": "A. Reader", "reviewer_kind": "Person"},
+                        {"reviewer": "", "reviewer_kind": "person"}, {"reviewer": "  ", "reviewer_kind": "person"},
+                        {"reviewer": 7, "reviewer_kind": "person"}, {"by": "A. Reader"}):
+                write_json(hand, hand_check(out, who=who))
+                self.assertIn("Target under 2%: not claimed (the hand check was not recorded as done by a person)", claim(), who)
+            write_json(hand, hand_check(out, sampled=29, who={"reviewer": "A. Reader", "reviewer_kind": "agent"}))
+            self.assertIn("was not recorded as done by a person", claim())   # who made it is checked before how much was read
+
+    def test_report_says_so_when_every_retrieval_record_is_missing(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        answerable = [i for i in items if i["kind"] != "unanswerable"]
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            synthetic_v3_run(out, items)   # no retrieval folder at all, as in an A4-only run
+            run_report(out, "--set", "v3")
+            none = read(os.path.join(out, "RESULTS.md"))
+            for n, it in enumerate(answerable):
+                write_json(os.path.join(out, "retrieval", "A3", it["id"] + ".json"),
+                           [{"path": "x/" + q["path"], "line_start": q["line"], "line_end": q["line"]} for q in it["quotes"]])
+            run_report(out, "--set", "v3")
+            every = read(os.path.join(out, "RESULTS.md"))
+        n = len(answerable)
+        self.assertIn("holds every quoted line for 0 of %d answerable items" % n, none)
+        self.assertIn("0 of %d were checked; missing retrieval records: %s" % (n, ", ".join(i["id"] for i in answerable)), none)
+        self.assertIn("holds every quoted line for %d of %d answerable items" % (n, n), every)
+        self.assertNotIn("missing retrieval records", every)   # nothing missing: no explanation, as before
+        self.assertIn("Not-hit items: none.\n", every)
+
+    def test_target_check_uses_the_grade_batch_the_tables_were_built_from(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        late = json.dumps(judge_row("qwen3.5-9b", "A4", items[0], 4, "Y", "v3"))
+        code = ("import sys, report_v2 as RV\n"
+                "orig = RV.verified_cites\n"
+                "def later(records):\n"   # the grade file grows after the report read it for the tables
+                "    if sys.argv[1]:\n"
+                "        with open(RV.R.judge_path(RV.PRIMARY), 'a', encoding='utf-8', newline='\\n') as f:\n"
+                "            f.write(sys.argv[1] + '\\n')\n"
+                "    return orig(records)\n"
+                "RV.verified_cites = later\n"
+                "RV.main()\n")
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            grades = os.path.join(out, "judge", "qwen3.8-27b.jsonl")
+            synthetic_v3_run(out, items)
+            before = read(grades)
+            open(grades, "a", encoding="utf-8", newline="\n").write(late + "\n")
+            write_json(os.path.join(out, "canary-qwen3.8-27b.json"), canary_record(out))   # both checks name the later batch
+            write_json(os.path.join(out, "handcheck.json"), hand_check(out))
+            open(grades, "w", encoding="utf-8", newline="\n").write(before)
+
+            def target(extra):
+                subprocess.run([sys.executable, "-c", code, extra], capture_output=True, text=True, check=True, cwd=HERE,
+                               env=dict(os.environ, CEREBROLLM_ITEMSET="v3", CEREBROLLM_V2_OUT=out))
+                return [l for l in read(os.path.join(out, "RESULTS.md")).splitlines() if "Target under 2%" in l][0]
+            # the tables read the file as it was; the checks name the file as it became: not claimed
+            self.assertIn("Target under 2%: not claimed (the canary record of qwen3.8:27b is for other grades "
+                          "(grades_sha256 differ)", target(late))
+            self.assertTrue(target("").endswith("Target under 2%: reached"))   # the file now is what the checks name
+
+    def test_sample_prints_the_evidence_of_the_batch_it_drew_from(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        late = json.dumps(judge_row("qwen3.5-9b", "A4", items[0], 4, "Y", "v3"))
+        code = ("import sys, run_v2 as R\n"
+                "orig, grown = R.rec_path, []\n"
+                "def later(*a):\n"   # the grade file grows while the sample's answers are being read
+                "    if not grown:\n"
+                "        grown.append(1)\n"
+                "        with open(R.judge_path('qwen3.8:27b'), 'a', encoding='utf-8', newline='\\n') as f:\n"
+                "            f.write(sys.argv[1] + '\\n')\n"
+                "    return orig(*a)\n"
+                "R.rec_path = later\n"
+                "R.cmd_sample('qwen3.8:27b', 30, 1)\n")
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            grades = os.path.join(out, "judge", "qwen3.8-27b.jsonl")
+            synthetic_v3_run(out, items)
+            sampled_batch = evidence(out)
+            p = subprocess.run([sys.executable, "-c", code, late], capture_output=True, text=True, check=True, cwd=HERE,
+                               env=dict(os.environ, CEREBROLLM_ITEMSET="v3", CEREBROLLM_V2_OUT=out))
+            printed = json.loads(p.stdout[p.stdout.index("{"):])
+            self.assertEqual({k: printed[k] for k in sampled_batch}, sampled_batch)   # the batch the rows came from
+            self.assertEqual(len(read(grades).splitlines()), 3 * len(items) + 1)   # the file did grow
+            self.assertNotEqual(evidence(out)["grades_sha256"], printed["grades_sha256"])
+            rows = [json.loads(l) for l in read(os.path.join(out, "handcheck-sample.jsonl")).splitlines()]
+            self.assertEqual(len(rows), 30)
+            self.assertFalse([r for r in rows if r["run"] == 4])   # no row of the later grades
+            # a hand check copied from this output no longer qualifies the grown file
+            write_json(os.path.join(out, "canary-qwen3.8-27b.json"), canary_record(out))
+            write_json(os.path.join(out, "handcheck.json"), dict(printed, sampled=30, disagreements=0, **PERSON))
+            run_report(out, "--set", "v3")
+            self.assertIn("Target under 2%: not claimed (handcheck.json is for other grades (grades_sha256 differ)",
+                          read(os.path.join(out, "RESULTS.md")))
+
+    def test_sample_asks_for_the_reviewer_fields_the_gate_checks(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            synthetic_v3_run(out, items)
+            p = subprocess.run([sys.executable, os.path.join(HERE, "run_v2.py"), "--set", "v3", "--out", out, "sample"],
+                               capture_output=True, text=True, cwd=HERE, check=True)
+        printed = json.loads(p.stdout[p.stdout.index("{"):])
+        self.assertIn("reviewer", printed)
+        self.assertIn("reviewer_kind", printed)
+        self.assertNotIn("by", printed)
+        self.assertIn("reviewer_kind to person", p.stdout)
 
     def test_grade_records_the_digest_and_batch_its_canary_qualifies_and_sample_prints_them(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()][:5]

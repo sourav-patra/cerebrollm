@@ -11,6 +11,7 @@ Records: eval/runs/<set>/<model>/<arm>/<id>/run-<k>.json. Grades: eval/runs/<set
 import argparse
 import glob
 import hashlib
+import io
 import json
 import os
 import re
@@ -395,20 +396,34 @@ def canary(judge, call=None, digest=None):
     return rec
 
 
-def batch_evidence(judge):
-    """What the canary record and handcheck.json must name to qualify the grades of `judge` in this run folder: the item
-    set, the grader, its model digest (the one value of all its grade rows, else None) and the batch fingerprint."""
+def read_batch(judge):
+    """The grade rows of `judge` and what the canary record and handcheck.json must name to qualify exactly those rows:
+    the item set, the grader, its model digest (the one value of all its grade rows, else None) and the batch
+    fingerprint. The file is read once, as bytes; rows and fingerprint come from that one snapshot."""
     path = judge_path(judge)
-    digests = {r.get("judge_digest") for r in read_grades(path)}
-    return {"set": ITEMSET.name, "judge": judge, "judge_digest": digests.pop() if len(digests) == 1 else None,
-            "grades_sha256": grades_sha256(path)}
+    if not os.path.exists(path):
+        return [], {"set": ITEMSET.name, "judge": judge, "judge_digest": None, "grades_sha256": None}
+    with open(path, "rb") as f:
+        data = f.read()
+    rows = [json.loads(l) for l in io.TextIOWrapper(io.BytesIO(data), encoding="utf-8")]
+    for r in rows:
+        check_set(r, path)
+    digests = {r.get("judge_digest") for r in rows}
+    return rows, {"set": ITEMSET.name, "judge": judge, "judge_digest": digests.pop() if len(digests) == 1 else None,
+                  "grades_sha256": hashlib.sha256(data).hexdigest()}
+
+
+def batch_evidence(judge):
+    """The evidence of `read_batch` alone, for callers that need no rows."""
+    return read_batch(judge)[1]
 
 
 def cmd_sample(judge, n, seed):
     """Draw a random sample of graded answers for the hand check, with a fixed seed, into handcheck-sample.jsonl."""
     import random
     bind_folder(create=False)
-    rows = sorted(read_grades(judge_path(judge)), key=lambda r: (r["model"], r["arm"], r["id"], r["run"]))
+    graded, evidence = read_batch(judge)   # one read: the rows, the digest and the hash all describe the same file
+    rows = sorted(graded, key=lambda r: (r["model"], r["arm"], r["id"], r["run"]))
     if not rows:
         raise SystemExit("no grades by %s in %s" % (judge, V2))
     items = {i["id"]: i for i in load_items()}
@@ -420,10 +435,12 @@ def cmd_sample(judge, n, seed):
             f.write(json.dumps({"model": r["model"], "arm": r["arm"], "id": r["id"], "run": r["run"],
                                 "question": items[r["id"]]["question"], "answer": answer, "grader_verdict": r["verdict"],
                                 "grader_reason": r["reason"], "your_verdict": None}, ensure_ascii=False) + "\n")
-    hand = dict(batch_evidence(judge), sampled="N", disagreements="D", by="<who>")
+    hand = dict(evidence, sampled="N", disagreements="D", reviewer="<name of the person who read the answers>",
+                reviewer_kind="<person>")
     print("wrote %s: read each answer, set your_verdict to Y or N, then write handcheck.json in the run folder with N "
-          "and D as numbers; the other fields qualify these grades only and must stay as printed:\n%s"
-          % (out, json.dumps(hand, indent=1)))
+          "and D as numbers, reviewer as the name of the person who read the answers and reviewer_kind to person; the "
+          "report accepts no other value of reviewer_kind, and it is what the writer declares. The other fields qualify "
+          "these grades only and must stay as printed:\n%s" % (out, json.dumps(hand, indent=1)))
 
 
 def cmd_grade(judge, models):
