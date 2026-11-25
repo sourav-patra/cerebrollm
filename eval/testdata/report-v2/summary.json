@@ -1,0 +1,332 @@
+{
+ "models": {
+  "gpt-oss-20b": {
+   "A4": {
+    "records_graded": 105,
+    "correct_majority_of_20": 17,
+    "correct_runs": 51,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 14,
+    "right_outcome_majority_of_35": 31,
+    "confidently_wrong_items_majority": 2,
+    "confidently_wrong_runs": 6,
+    "abstained_wrong_runs": 6,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "not met",
+    "items_any_confidently_wrong": 2,
+    "by_kind_majority_ok": {
+     "exact": 9,
+     "paraphrase": 5,
+     "stale": 3,
+     "unanswerable": 14
+    }
+   }
+  },
+  "gemma4-12b": {
+   "A0": {
+    "records_graded": 105,
+    "correct_majority_of_20": 20,
+    "correct_runs": 60,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 35,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 0,
+    "abstained_wrong_runs": 0,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "met",
+    "items_any_confidently_wrong": 0,
+    "by_kind_majority_ok": {
+     "exact": 10,
+     "paraphrase": 7,
+     "stale": 3,
+     "unanswerable": 15
+    }
+   },
+   "A4": {
+    "records_graded": 105,
+    "correct_majority_of_20": 18,
+    "correct_runs": 54,
+    "answerable_runs": 60,
+    "abstained_correctly_majority_of_15": 15,
+    "right_outcome_majority_of_35": 33,
+    "confidently_wrong_items_majority": 0,
+    "confidently_wrong_runs": 0,
+    "abstained_wrong_runs": 6,
+    "empty_runs": 0,
+    "error_runs": 0,
+    "aim": "met",
+    "items_any_confidently_wrong": 0,
+    "by_kind_majority_ok": {
+     "exact": 10,
+     "paraphrase": 5,
+     "stale": 3,
+     "unanswerable": 15
+    }
+   }
+  }
+ },
+ "retrieval_hit_items": 0,
+ "judge_agreement": {
+  "same": 84,
+  "total": 105,
+  "kappa": -0.089
+ },
+ "judge_disagreements": [
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G2-EX-01",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G2-EX-04",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G2-PA-01",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G2-PA-02",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G2-PA-03",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G2-PA-04",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G3-UN-01",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G3-UN-02",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gpt-oss-20b",
+    "A4",
+    "G3-UN-09",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G2-EX-01",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G2-PA-01",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G2-PA-02",
+    1
+   ],
+   "gpt-oss": "N",
+   "gemma4": "Y",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G2-PA-03",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G2-PA-04",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G3-UN-02",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A4",
+    "G3-UN-09",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A0",
+    "G2-EX-01",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A0",
+    "G2-PA-03",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A0",
+    "G2-PA-04",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A0",
+    "G3-UN-02",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  },
+  {
+   "key": [
+    "gemma4-12b",
+    "A0",
+    "G3-UN-09",
+    1
+   ],
+   "gpt-oss": "Y",
+   "gemma4": "N",
+   "reason_gpt-oss": "synthetic",
+   "reason_gemma4": "synthetic"
+  }
+ ],
+ "grader_errors": 0
+}

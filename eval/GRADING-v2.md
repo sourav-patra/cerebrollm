@@ -4,7 +4,7 @@
 
 ## Items
 
-`eval/items-v2.jsonl` holds 35 public items. Group 1 (own project docs, about 27 picks) is private: it lives in `~/.cerebrollm/private-eval/items.json` outside this repository and is loaded only with `--private`. The owner marks each pick keep or drop in `PICKS.md` before any model sees it.
+`eval/items-v2.jsonl` holds 35 public items. The counts per group and kind, the cutoff date and the grader of this set are the settings in `eval/itemset-v2.toml`; the larger v3 set has its own settings file and is described in `eval/ITEMS-v3.md`. Group 1 (own project docs, about 27 picks) is private: it lives in `~/.cerebrollm/private-eval/items.json` outside this repository and is loaded only with `--private`. The owner marks each pick keep or drop in `PICKS.md` before any model sees it.
 
 | Group | What | Kinds | Where the sources are |
 |---|---|---|---|
@@ -22,7 +22,7 @@ Fields are those of `items.jsonl` plus `group`, and: `released` (group 2: newest
 
 ## Checking
 
-`python3 eval/check_items_v2.py [--private ~/.cerebrollm/private-eval/items.json]` (it reads `SOURCES.txt` beside that file for the projects folder and the never-open list; `--sources` and `--notes-root` override) verifies every path, line and quote, the publication date of each group 2 source (on or after 2026-07-01), the group counts, that no `absent_terms` entry occurs in the corpus, and for group 1 the sha256 and line range recorded at pick time. A note that changed since it was picked fails the check: re-pick it. Tests: `python3 -m unittest eval/test_check_items_v2.py`.
+`python3 eval/check_items_v2.py --set v2 [--private ~/.cerebrollm/private-eval/items.json]` (it reads `SOURCES.txt` beside that file for the projects folder and the never-open list; `--sources` and `--notes-root` override) verifies every path, line and quote, the publication date of each group 2 source (on or after 2026-07-01), the group counts, that no `absent_terms` entry occurs in the corpus, and for group 1 the sha256 and line range recorded at pick time. A note that changed since it was picked fails the check: re-pick it. Tests: `python3 -m unittest eval/test_check_items_v2.py`.
 
 ## Model-grader rubric for unanswerable items (development step N6a, frozen before the first graded call)
 
