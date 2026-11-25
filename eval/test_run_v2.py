@@ -623,6 +623,30 @@ class ItemSetReport(unittest.TestCase):
                           "(grades_sha256 differ)", target(late))
             self.assertTrue(target("").endswith("Target under 2%: reached"))   # the file now is what the checks name
 
+    def test_report_reads_a_grader_file_once_when_the_cross_check_grader_is_the_primary(self):
+        items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        code = ("import builtins, os, report_v2 as RV\n"
+                "target, opened, real = os.path.abspath(RV.R.judge_path('gemma4:12b')), [], builtins.open\n"
+                "def counting(f, *a, **k):\n"
+                "    if isinstance(f, str) and os.path.abspath(f) == target:\n"
+                "        opened.append(f)\n"
+                "    return real(f, *a, **k)\n"
+                "builtins.open = counting\n"
+                "RV.main()\n"
+                "builtins.open = real\n"
+                "print('OPENS', len(opened))\n")
+        with tmpdir() as d:
+            out = os.path.join(d, "run")
+            synthetic_v3_run(out, items)
+            write_rows(os.path.join(out, "judge", "gemma4-12b.jsonl"),
+                       [json.loads(l) for l in read(os.path.join(out, "judge", "qwen3.8-27b.jsonl")).splitlines()])
+            for judge in ("gemma4:12b", "qwen3.8:27b"):   # the cross-check grader as primary, and as the second grader
+                p = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True, cwd=HERE,
+                                   env=dict(os.environ, CEREBROLLM_ITEMSET="v3", CEREBROLLM_V2_OUT=out, CEREBROLLM_V2_JUDGE=judge))
+                self.assertEqual(p.stdout.strip().splitlines()[-1], "OPENS 1", judge)   # one read of the file either way
+                self.assertIn("Same verdict on %d of %d answers (100.0%%)" % ((3 * len(items),) * 2),
+                              read(os.path.join(out, "RESULTS.md")))   # the cross-check still has its rows
+
     def test_sample_prints_the_evidence_of_the_batch_it_drew_from(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
         late = json.dumps(judge_row("qwen3.5-9b", "A4", items[0], 4, "Y", "v3"))

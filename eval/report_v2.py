@@ -170,7 +170,9 @@ def main():
     unans = [i for i in items.values() if i["kind"] == "unanswerable"]
     primary_rows, want = R.read_batch(PRIMARY)   # one read: the tables and the target check use the same batch
     judged = {(r["model"], r["arm"], r["id"], r["run"]): r for r in primary_rows}
-    second = {(r["model"], r["arm"], r["id"], r["run"]): r for r in R.read_grades(R.judge_path(SECOND))}
+    # the cross-check grader may be the primary one (`report --judge gemma4:12b`): then it is the same batch, not a second read
+    second_rows = primary_rows if SECOND == PRIMARY else R.read_grades(R.judge_path(SECOND))
+    second = {(r["model"], r["arm"], r["id"], r["run"]): r for r in second_rows}
     recs = {}
     for m, a, i, k, p in R.all_records():
         d = json.load(open(p, encoding="utf-8"))
