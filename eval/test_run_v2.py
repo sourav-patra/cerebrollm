@@ -146,8 +146,9 @@ def judge_row(model, arm, it, k, verdict, item_set=None):
 
 def synthetic_v2_run(out, items):
     """A saved run of the 35 v2 items: two models, arm A4 (and A0 for one), 3 runs each, graded by both judges.
-    Two items get a wrong answer from the first model and two answerable items abstain in arm A4. The golden
-    files in testdata/report-v2/ were made from this run by the report as it was before item sets were settings."""
+    Two items get a wrong answer from the first model and two answerable items abstain in arm A4. The files in
+    testdata/report-v2/ and testdata/report-v2-qwen/ are the reports of this run as the current report writes them;
+    when the report's text changes on purpose they are regenerated with the report, never edited by hand."""
     judge = {"gpt-oss:20b": [], "gemma4:12b": [], "qwen3.5:9b": []}
     for model, arms in (("gpt-oss-20b", ("A4",)), ("gemma4-12b", ("A4", "A0"))):
         for arm in arms:
@@ -229,7 +230,7 @@ def read(path):
 
 
 class ItemSetReport(unittest.TestCase):
-    def test_v2_report_is_byte_identical_to_the_one_before_item_sets_were_settings(self):
+    def test_v2_report_matches_the_saved_v2_report_fixture(self):
         items = [json.loads(l) for l in open(IS.load("v2").items, encoding="utf-8") if l.strip()]
         with tmpdir() as d:
             out = os.path.join(d, "run")
@@ -622,6 +623,29 @@ class ItemSetReport(unittest.TestCase):
             self.assertIn("Target under 2%: not claimed (the canary record of qwen3.8:27b is for other grades "
                           "(grades_sha256 differ)", target(late))
             self.assertTrue(target("").endswith("Target under 2%: reached"))   # the file now is what the checks name
+
+    def test_a_grade_row_with_a_digest_that_is_not_a_string_still_reports_but_never_qualifies_a_claim(self):
+        v2_items = [json.loads(l) for l in open(IS.load("v2").items, encoding="utf-8") if l.strip()]
+        v3_items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]
+        for bad in ([DIGEST], {"d": DIGEST}, 7):
+            with tmpdir() as d:
+                out = os.path.join(d, "v2")   # v2 has no target: its rows report whatever their digests are
+                synthetic_v2_run(out, v2_items)
+                path = os.path.join(out, "judge", "gpt-oss-20b.jsonl")
+                rows = [json.loads(l) for l in read(path).splitlines()]
+                write_rows(path, [dict(rows[0], judge_digest=bad)] + rows[1:])
+                run_report(out)
+                self.assertEqual(read(os.path.join(out, "RESULTS.md")).replace(shlex.quote(out), "<OUT>"),
+                                 read(os.path.join(HERE, "testdata", "report-v2", "RESULTS.md")), bad)
+            with tmpdir() as d:
+                out = os.path.join(d, "v3")   # v3 has a target: such rows report but do not qualify it
+                synthetic_v3_run(out, v3_items)
+                grades = os.path.join(out, "judge", "qwen3.8-27b.jsonl")
+                rows = [json.loads(l) for l in read(grades).splitlines()]
+                write_rows(grades, [dict(rows[0], judge_digest=bad)] + rows[1:])
+                run_report(out, "--set", "v3")
+                self.assertIn("Target under 2%: not claimed (the grades of qwen3.8:27b do not record one model digest)",
+                              read(os.path.join(out, "RESULTS.md")), bad)
 
     def test_report_reads_a_grader_file_once_when_the_cross_check_grader_is_the_primary(self):
         items = [json.loads(l) for l in open(IS.load("v3").items, encoding="utf-8") if l.strip()]

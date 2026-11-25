@@ -408,14 +408,9 @@ def read_batch(judge):
     rows = [json.loads(l) for l in io.TextIOWrapper(io.BytesIO(data), encoding="utf-8")]
     for r in rows:
         check_set(r, path)
-    digests = {r.get("judge_digest") for r in rows}
-    return rows, {"set": ITEMSET.name, "judge": judge, "judge_digest": digests.pop() if len(digests) == 1 else None,
-                  "grades_sha256": hashlib.sha256(data).hexdigest()}
-
-
-def batch_evidence(judge):
-    """The evidence of `read_batch` alone, for callers that need no rows."""
-    return read_batch(judge)[1]
+    digests = [r.get("judge_digest") for r in rows]   # a digest that is not a string (a list, an object) is no evidence
+    one = digests[0] if digests and isinstance(digests[0], str) and all(d == digests[0] for d in digests) else None
+    return rows, {"set": ITEMSET.name, "judge": judge, "judge_digest": one, "grades_sha256": hashlib.sha256(data).hexdigest()}
 
 
 def cmd_sample(judge, n, seed):
