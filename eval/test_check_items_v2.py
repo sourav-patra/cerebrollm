@@ -343,6 +343,24 @@ class ItemSets(unittest.TestCase):
     def test_v3_gold_and_superseded_answers_grade_as_expected(self):
         grade_checks(self, v3_items())
 
+    def _v3_item(self, item_id):
+        return next(i for i in v3_items() if i["id"] == item_id)
+
+    def _accepts(self, item_id, answer):
+        return G.key_facts_ok(self._v3_item(item_id), G.tokens(answer))[0]
+
+    def test_v3_st_08_key_fact_needs_the_exact_build(self):
+        for answer in ("build 25.5.5", "It updates to build 25.5.5."):
+            self.assertTrue(self._accepts("V3-ST-08", answer), answer)
+        for answer in ("build 25.5.4", "25.5", "build 25.4.4"):
+            self.assertFalse(self._accepts("V3-ST-08", answer), answer)
+
+    def test_v3_st_14_key_fact_needs_the_exact_jiter_version(self):
+        for answer in ("jiter v0.19.0", "jiter 0.19.0", "v 0.19.0"):
+            self.assertTrue(self._accepts("V3-ST-14", answer), answer)
+        for answer in ("0.19.1", "0.18.0", "19.0"):
+            self.assertFalse(self._accepts("V3-ST-14", answer), answer)
+
     def test_v3_questions_are_not_in_the_v2_set(self):
         self.assertFalse({i["question"] for i in public_rows()} & {i["question"] for i in v3_items()})
 

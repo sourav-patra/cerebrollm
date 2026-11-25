@@ -1,10 +1,14 @@
 # Item set v3: 163 public items over the release notes of Ruff, uv and pydantic
 
-`eval/items-v3.jsonl` is a second public question set. With 163 items, a run with no confidently wrong item prints a 95% upper bound of 1.8% (3 / 163) on the share of such items. The 35 items of v2 print 8.6%.
+`eval/items-v3.jsonl` is a second public question set. With 163 items, a run with no confidently wrong item prints 1.8% (3 / 163) as the 95% upper bound by the rule of three. The 35 items of v2 print 8.6%.
 
-The bound needs at least 154 items to print under 2.0% (3 / 153 prints 2.0%). It applies only when no item has a confidently wrong run. It is conditional on independent draws from the item population, as the report states beside it, and it does not bound the run-level rate.
+That figure is a calculation under one condition: that the items are independent draws from the item population. This hand-drafted set does not meet it.
 
-The report claims the target only when the grader passed its canary check and a person has read a random sample of graded answers (see "Running the set"). Otherwise it prints "not claimed" with the reason.
+The counts per kind are fixed (50, 35, 14 and 64), 11 of the 14 stale items share one question shape, some items quote the same source line, and uv supplies 79 of the 163 items. So 1.8% is not a bound on, or an estimate of, a population rate, and it does not bound the run-level rate.
+
+It applies only when no item has a confidently wrong run, and it needs at least 154 items to print under 2.0% (3 / 153 prints 2.0%).
+
+The report claims the target only when the grader passed its canary check and a person has read a random sample of graded answers (see "Running the set"). Otherwise it prints "not claimed" with the reason. This gate checks the canary verdicts and a seeded sample of graded answers; it does not check how the items were chosen.
 
 Settings of the set (counts, cutoff date, grader, target, canaries) are in `eval/itemset-v3.toml`; those of v2 are in `eval/itemset-v2.toml`. `eval/itemset.py` reads them.
 
