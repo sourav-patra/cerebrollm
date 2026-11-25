@@ -122,7 +122,9 @@ The run uses a corpus folder, a table and a state folder of its own. It never wr
 
    The result goes into `~/.cerebrollm/runs/v3-qwen/handcheck.json` with the fields `sample` prints. `set`, `judge`, `judge_digest` (the grader's model digest in the grade rows) and `grades_sha256` (the sha256 of the grader's jsonl file) stay as printed; `sampled`, `disagreements`, `reviewer` and `reviewer_kind` are filled in.
 
-   `reviewer` is the name of the person who read the answers and `reviewer_kind` is `person`. The report accepts the hand check only with a non-empty `reviewer` and `reviewer_kind` equal to `person`, and otherwise prints `not claimed (the hand check was not recorded as done by a person)`.
+   `reviewer` is the name of the person who read the answers and `reviewer_kind` is `person`. The report accepts the hand check only with a non-empty `reviewer` and `reviewer_kind` equal to `person`.
+
+   Without them it prints `not claimed (the hand check was not recorded as done by a person)`. That happens when the results would otherwise reach the target and the canary check, the hand check's presence and its grades evidence all pass first. Results that miss the target print `not reached`.
 
    Both fields are the writer's own declaration; the report cannot tell who wrote the file.
 7. Report: `python3 eval/run_v2.py --set v3 --out ~/.cerebrollm/runs/v3-qwen report --judge qwen3.8:27b`. It fails when nothing is graded and when an item has fewer than 3 graded runs.
